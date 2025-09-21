@@ -1,0 +1,125 @@
+@layer utilities {
+  .-order-first {
+    order: 9999;
+  }
+  .-order-last {
+    order: -9999;
+  }
+  .-order-none {
+    order: 0;
+  }
+  .order-first {
+    order: -9999;
+  }
+  .order-last {
+    order: 9999;
+  }
+  .order-none {
+    order: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:-order-first {
+      order: 9999;
+    }
+    .sm\:-order-last {
+      order: -9999;
+    }
+    .sm\:-order-none {
+      order: 0;
+    }
+    .sm\:order-first {
+      order: -9999;
+    }
+    .sm\:order-last {
+      order: 9999;
+    }
+    .sm\:order-none {
+      order: 0;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:-order-first {
+      order: 9999;
+    }
+    .md\:-order-last {
+      order: -9999;
+    }
+    .md\:-order-none {
+      order: 0;
+    }
+    .md\:order-first {
+      order: -9999;
+    }
+    .md\:order-last {
+      order: 9999;
+    }
+    .md\:order-none {
+      order: 0;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:-order-first {
+      order: 9999;
+    }
+    .lg\:-order-last {
+      order: -9999;
+    }
+    .lg\:-order-none {
+      order: 0;
+    }
+    .lg\:order-first {
+      order: -9999;
+    }
+    .lg\:order-last {
+      order: 9999;
+    }
+    .lg\:order-none {
+      order: 0;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:-order-first {
+      order: 9999;
+    }
+    .xl\:-order-last {
+      order: -9999;
+    }
+    .xl\:-order-none {
+      order: 0;
+    }
+    .xl\:order-first {
+      order: -9999;
+    }
+    .xl\:order-last {
+      order: 9999;
+    }
+    .xl\:order-none {
+      order: 0;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:-order-first {
+      order: 9999;
+    }
+    .\32xl\:-order-last {
+      order: -9999;
+    }
+    .\32xl\:-order-none {
+      order: 0;
+    }
+    .\32xl\:order-first {
+      order: -9999;
+    }
+    .\32xl\:order-last {
+      order: 9999;
+    }
+    .\32xl\:order-none {
+      order: 0;
+    }
+  }
+}

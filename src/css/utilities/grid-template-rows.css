@@ -1,0 +1,53 @@
+@layer utilities {
+  .grid-rows-none {
+    grid-template-rows: none;
+  }
+  .grid-rows-subgrid {
+    grid-template-rows: subgrid;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:grid-rows-none {
+      grid-template-rows: none;
+    }
+    .sm\:grid-rows-subgrid {
+      grid-template-rows: subgrid;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:grid-rows-none {
+      grid-template-rows: none;
+    }
+    .md\:grid-rows-subgrid {
+      grid-template-rows: subgrid;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:grid-rows-none {
+      grid-template-rows: none;
+    }
+    .lg\:grid-rows-subgrid {
+      grid-template-rows: subgrid;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:grid-rows-none {
+      grid-template-rows: none;
+    }
+    .xl\:grid-rows-subgrid {
+      grid-template-rows: subgrid;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:grid-rows-none {
+      grid-template-rows: none;
+    }
+    .\32xl\:grid-rows-subgrid {
+      grid-template-rows: subgrid;
+    }
+  }
+}

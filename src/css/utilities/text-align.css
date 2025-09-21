@@ -1,0 +1,125 @@
+@layer utilities {
+  .text-left {
+    text-align: left;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-justify {
+    text-align: justify;
+  }
+  .text-start {
+    text-align: start;
+  }
+  .text-end {
+    text-align: end;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-left {
+      text-align: left;
+    }
+    .sm\:text-center {
+      text-align: center;
+    }
+    .sm\:text-right {
+      text-align: right;
+    }
+    .sm\:text-justify {
+      text-align: justify;
+    }
+    .sm\:text-start {
+      text-align: start;
+    }
+    .sm\:text-end {
+      text-align: end;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:text-left {
+      text-align: left;
+    }
+    .md\:text-center {
+      text-align: center;
+    }
+    .md\:text-right {
+      text-align: right;
+    }
+    .md\:text-justify {
+      text-align: justify;
+    }
+    .md\:text-start {
+      text-align: start;
+    }
+    .md\:text-end {
+      text-align: end;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:text-left {
+      text-align: left;
+    }
+    .lg\:text-center {
+      text-align: center;
+    }
+    .lg\:text-right {
+      text-align: right;
+    }
+    .lg\:text-justify {
+      text-align: justify;
+    }
+    .lg\:text-start {
+      text-align: start;
+    }
+    .lg\:text-end {
+      text-align: end;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:text-left {
+      text-align: left;
+    }
+    .xl\:text-center {
+      text-align: center;
+    }
+    .xl\:text-right {
+      text-align: right;
+    }
+    .xl\:text-justify {
+      text-align: justify;
+    }
+    .xl\:text-start {
+      text-align: start;
+    }
+    .xl\:text-end {
+      text-align: end;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:text-left {
+      text-align: left;
+    }
+    .\32xl\:text-center {
+      text-align: center;
+    }
+    .\32xl\:text-right {
+      text-align: right;
+    }
+    .\32xl\:text-justify {
+      text-align: justify;
+    }
+    .\32xl\:text-start {
+      text-align: start;
+    }
+    .\32xl\:text-end {
+      text-align: end;
+    }
+  }
+}

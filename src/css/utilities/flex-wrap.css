@@ -1,0 +1,71 @@
+@layer utilities {
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  .flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .sm\:flex-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+    .sm\:flex-nowrap {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .md\:flex-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+    .md\:flex-nowrap {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .lg\:flex-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+    .lg\:flex-nowrap {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .xl\:flex-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+    .xl\:flex-nowrap {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .\32xl\:flex-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+    .\32xl\:flex-nowrap {
+      flex-wrap: nowrap;
+    }
+  }
+}

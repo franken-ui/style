@@ -1,0 +1,110 @@
+@layer styles {
+  /* Leading */
+  .leading {
+    line-height: calc(var(--spacing) * var(--leading));
+  }
+
+  /* Arbitrary leading with bracket selector */
+  .\[leading\] {
+    line-height: var(--leading);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:leading {
+      line-height: calc(var(--spacing) * var(--sm-leading, var(--leading)));
+    }
+
+    .sm\:\[leading\] {
+      line-height: var(--sm-leading, var(--leading));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:leading {
+      line-height: calc(
+        var(--spacing) * var(--md-leading, var(--sm-leading, var(--leading)))
+      );
+    }
+
+    .md\:\[leading\] {
+      line-height: var(--md-leading, var(--sm-leading, var(--leading)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:leading {
+      line-height: calc(
+        var(--spacing) *
+          var(
+            --lg-leading,
+            var(--md-leading, var(--sm-leading, var(--leading)))
+          )
+      );
+    }
+
+    .lg\:\[leading\] {
+      line-height: var(
+        --lg-leading,
+        var(--md-leading, var(--sm-leading, var(--leading)))
+      );
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:leading {
+      line-height: calc(
+        var(--spacing) *
+          var(
+            --xl-leading,
+            var(
+              --lg-leading,
+              var(--md-leading, var(--sm-leading, var(--leading)))
+            )
+          )
+      );
+    }
+
+    .xl\:\[leading\] {
+      line-height: var(
+        --xl-leading,
+        var(--lg-leading, var(--md-leading, var(--sm-leading, var(--leading))))
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:leading {
+      line-height: calc(
+        var(--spacing) *
+          var(
+            --\32xl-leading,
+            var(
+              --xl-leading,
+              var(
+                --lg-leading,
+                var(--md-leading, var(--sm-leading, var(--leading)))
+              )
+            )
+          )
+      );
+    }
+
+    .\32xl\:\[leading\] {
+      line-height: var(
+        --\32xl-leading,
+        var(
+          --xl-leading,
+          var(
+            --lg-leading,
+            var(--md-leading, var(--sm-leading, var(--leading)))
+          )
+        )
+      );
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@layer styles {
+  /* === Bottom (scaled by --spacing) === */
+  .bottom {
+    bottom: calc(var(--spacing) * var(--bottom));
+  }
+
+  /* === Bracketed Bottom (raw value, as-is) === */
+  .\[bottom\] {
+    bottom: var(--bottom);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:bottom {
+      bottom: calc(var(--spacing) * var(--sm-bottom, var(--bottom)));
+    }
+    .sm\:\[bottom\] {
+      bottom: var(--sm-bottom, var(--bottom));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:bottom {
+      bottom: calc(
+        var(--spacing) * var(--md-bottom, var(--sm-bottom, var(--bottom)))
+      );
+    }
+    .md\:\[bottom\] {
+      bottom: var(--md-bottom, var(--sm-bottom, var(--bottom)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:bottom {
+      bottom: calc(
+        var(--spacing) *
+          var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
+      );
+    }
+    .lg\:\[bottom\] {
+      bottom: var(
+        --lg-bottom,
+        var(--md-bottom, var(--sm-bottom, var(--bottom)))
+      );
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:bottom {
+      bottom: calc(
+        var(--spacing) *
+          var(
+            --xl-bottom,
+            var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
+          )
+      );
+    }
+    .xl\:\[bottom\] {
+      bottom: var(
+        --xl-bottom,
+        var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:bottom {
+      bottom: calc(
+        var(--spacing) *
+          var(
+            --\32xl-bottom,
+            var(
+              --xl-bottom,
+              var(
+                --lg-bottom,
+                var(--md-bottom, var(--sm-bottom, var(--bottom)))
+              )
+            )
+          )
+      );
+    }
+    .\32xl\:\[bottom\] {
+      bottom: var(
+        --\32xl-bottom,
+        var(
+          --xl-bottom,
+          var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
+        )
+      );
+    }
+  }
+}

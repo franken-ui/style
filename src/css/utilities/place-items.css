@@ -1,0 +1,143 @@
+@layer utilities {
+  .place-items-start {
+    place-items: start;
+  }
+  .place-items-end {
+    place-items: end;
+  }
+  .place-items-center {
+    place-items: center;
+  }
+  .place-items-baseline {
+    place-items: baseline;
+  }
+  .place-items-stretch {
+    place-items: stretch;
+  }
+  .place-items-end-safe {
+    place-items: safe end;
+  }
+  .place-items-center-safe {
+    place-items: safe center;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:place-items-start {
+      place-items: start;
+    }
+    .sm\:place-items-end {
+      place-items: end;
+    }
+    .sm\:place-items-center {
+      place-items: center;
+    }
+    .sm\:place-items-baseline {
+      place-items: baseline;
+    }
+    .sm\:place-items-stretch {
+      place-items: stretch;
+    }
+    .sm\:place-items-end-safe {
+      place-items: safe end;
+    }
+    .sm\:place-items-center-safe {
+      place-items: safe center;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:place-items-start {
+      place-items: start;
+    }
+    .md\:place-items-end {
+      place-items: end;
+    }
+    .md\:place-items-center {
+      place-items: center;
+    }
+    .md\:place-items-baseline {
+      place-items: baseline;
+    }
+    .md\:place-items-stretch {
+      place-items: stretch;
+    }
+    .md\:place-items-end-safe {
+      place-items: safe end;
+    }
+    .md\:place-items-center-safe {
+      place-items: safe center;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:place-items-start {
+      place-items: start;
+    }
+    .lg\:place-items-end {
+      place-items: end;
+    }
+    .lg\:place-items-center {
+      place-items: center;
+    }
+    .lg\:place-items-baseline {
+      place-items: baseline;
+    }
+    .lg\:place-items-stretch {
+      place-items: stretch;
+    }
+    .lg\:place-items-end-safe {
+      place-items: safe end;
+    }
+    .lg\:place-items-center-safe {
+      place-items: safe center;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:place-items-start {
+      place-items: start;
+    }
+    .xl\:place-items-end {
+      place-items: end;
+    }
+    .xl\:place-items-center {
+      place-items: center;
+    }
+    .xl\:place-items-baseline {
+      place-items: baseline;
+    }
+    .xl\:place-items-stretch {
+      place-items: stretch;
+    }
+    .xl\:place-items-end-safe {
+      place-items: safe end;
+    }
+    .xl\:place-items-center-safe {
+      place-items: safe center;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:place-items-start {
+      place-items: start;
+    }
+    .\32xl\:place-items-end {
+      place-items: end;
+    }
+    .\32xl\:place-items-center {
+      place-items: center;
+    }
+    .\32xl\:place-items-baseline {
+      place-items: baseline;
+    }
+    .\32xl\:place-items-stretch {
+      place-items: stretch;
+    }
+    .\32xl\:place-items-end-safe {
+      place-items: safe end;
+    }
+    .\32xl\:place-items-center-safe {
+      place-items: safe center;
+    }
+  }
+}

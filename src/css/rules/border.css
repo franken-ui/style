@@ -1,0 +1,348 @@
+@layer styles {
+  .border {
+    border-style: var(--border-style, var(--tw-border-style, solid));
+    border-width: var(--border-width, 1px);
+    border-color: color-mix(
+      in oklab,
+      var(--border-color) var(--border-color-opacity, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:border {
+      border-style: var(
+        --sm-border-style,
+        var(--border-style, var(--tw-border-style, solid))
+      );
+      border-width: var(--sm-border-width, var(--border-width, 1px));
+      border-color: color-mix(
+        in oklab,
+        var(--sm-border-color, var(--border-color))
+          var(--sm-border-color-opacity, var(--border-color-opacity, 100%)),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:border {
+      border-style: var(
+        --md-border-style,
+        var(--border-style, var(--tw-border-style, solid))
+      );
+      border-width: var(--md-border-width, var(--border-width, 1px));
+      border-color: color-mix(
+        in oklab,
+        var(--md-border-color, var(--border-color))
+          var(--md-border-color-opacity, var(--border-color-opacity, 100%)),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border {
+      border-style: var(
+        --lg-border-style,
+        var(--border-style, var(--tw-border-style, solid))
+      );
+      border-width: var(--lg-border-width, var(--border-width, 1px));
+      border-color: color-mix(
+        in oklab,
+        var(--lg-border-color, var(--border-color))
+          var(--lg-border-color-opacity, var(--border-color-opacity, 100%)),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:border {
+      border-style: var(
+        --xl-border-style,
+        var(--border-style, var(--tw-border-style, solid))
+      );
+      border-width: var(--xl-border-width, var(--border-width, 1px));
+      border-color: color-mix(
+        in oklab,
+        var(--xl-border-color, var(--border-color))
+          var(--xl-border-color-opacity, var(--border-color-opacity, 100%)),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:border {
+      border-style: var(
+        --\32xl-border-style,
+        var(--border-style, var(--tw-border-style, solid))
+      );
+      border-width: var(--\32xl-border-width, var(--border-width, 1px));
+      border-color: color-mix(
+        in oklab,
+        var(--\32xl-border-color, var(--border-color))
+          var(--\32xl-border-color-opacity, var(--border-color-opacity, 100%)),
+        transparent
+      );
+    }
+  }
+
+  /* === Dark Mode === */
+  .dark .border {
+    border-color: color-mix(
+      in oklab,
+      var(--dark-border-color, var(--border-color))
+        var(--dark-border-color-opacity, var(--border-color-opacity, 100%)),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .dark .sm\:border {
+      border-color: color-mix(
+        in oklab,
+        var(
+            --dark-sm-border-color,
+            var(
+              --dark-border-color,
+              var(--sm-border-color, var(--border-color))
+            )
+          )
+          var(
+            --dark-sm-border-color-opacity,
+            var(
+              --dark-border-color-opacity,
+              var(--sm-border-color-opacity, var(--border-color-opacity, 100%))
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .dark .md\:border {
+      border-color: color-mix(
+        in oklab,
+        var(
+            --dark-md-border-color,
+            var(
+              --dark-sm-border-color,
+              var(
+                --dark-border-color,
+                var(
+                  --md-border-color,
+                  var(--sm-border-color, var(--border-color))
+                )
+              )
+            )
+          )
+          var(
+            --dark-md-border-color-opacity,
+            var(
+              --dark-sm-border-color-opacity,
+              var(
+                --dark-border-color-opacity,
+                var(
+                  --md-border-color-opacity,
+                  var(
+                    --sm-border-color-opacity,
+                    var(--border-color-opacity, 100%)
+                  )
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .dark .lg\:border {
+      border-color: color-mix(
+        in oklab,
+        var(
+            --dark-lg-border-color,
+            var(
+              --dark-md-border-color,
+              var(
+                --dark-sm-border-color,
+                var(
+                  --dark-border-color,
+                  var(
+                    --lg-border-color,
+                    var(
+                      --md-border-color,
+                      var(--sm-border-color, var(--border-color))
+                    )
+                  )
+                )
+              )
+            )
+          )
+          var(
+            --dark-lg-border-color-opacity,
+            var(
+              --dark-md-border-color-opacity,
+              var(
+                --dark-sm-border-color-opacity,
+                var(
+                  --dark-border-color-opacity,
+                  var(
+                    --lg-border-color-opacity,
+                    var(
+                      --md-border-color-opacity,
+                      var(
+                        --sm-border-color-opacity,
+                        var(--border-color-opacity, 100%)
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .dark .xl\:border {
+      border-color: color-mix(
+        in oklab,
+        var(
+            --dark-xl-border-color,
+            var(
+              --dark-lg-border-color,
+              var(
+                --dark-md-border-color,
+                var(
+                  --dark-sm-border-color,
+                  var(
+                    --dark-border-color,
+                    var(
+                      --xl-border-color,
+                      var(
+                        --lg-border-color,
+                        var(
+                          --md-border-color,
+                          var(--sm-border-color, var(--border-color))
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+          var(
+            --dark-xl-border-color-opacity,
+            var(
+              --dark-lg-border-color-opacity,
+              var(
+                --dark-md-border-color-opacity,
+                var(
+                  --dark-sm-border-color-opacity,
+                  var(
+                    --dark-border-color-opacity,
+                    var(
+                      --xl-border-color-opacity,
+                      var(
+                        --lg-border-color-opacity,
+                        var(
+                          --md-border-color-opacity,
+                          var(
+                            --sm-border-color-opacity,
+                            var(--border-color-opacity, 100%)
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .dark .\32xl\:border {
+      border-color: color-mix(
+        in oklab,
+        var(
+            --dark-2xl-border-color,
+            var(
+              --dark-xl-border-color,
+              var(
+                --dark-lg-border-color,
+                var(
+                  --dark-md-border-color,
+                  var(
+                    --dark-sm-border-color,
+                    var(
+                      --dark-border-color,
+                      var(
+                        --\32xl-border-color,
+                        var(
+                          --xl-border-color,
+                          var(
+                            --lg-border-color,
+                            var(
+                              --md-border-color,
+                              var(--sm-border-color, var(--border-color))
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+          var(
+            --dark-2xl-border-color-opacity,
+            var(
+              --dark-xl-border-color-opacity,
+              var(
+                --dark-lg-border-color-opacity,
+                var(
+                  --dark-md-border-color-opacity,
+                  var(
+                    --dark-sm-border-color-opacity,
+                    var(
+                      --dark-border-color-opacity,
+                      var(
+                        --\32xl-border-color-opacity,
+                        var(
+                          --xl-border-color-opacity,
+                          var(
+                            --lg-border-color-opacity,
+                            var(
+                              --md-border-color-opacity,
+                              var(
+                                --sm-border-color-opacity,
+                                var(--border-color-opacity, 100%)
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+}

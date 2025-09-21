@@ -1,0 +1,125 @@
+@layer utilities {
+  .leading-loose {
+    line-height: 2;
+  }
+  .leading-none {
+    line-height: 1;
+  }
+  .leading-normal {
+    line-height: 1.5;
+  }
+  .leading-relaxed {
+    line-height: 1.625;
+  }
+  .leading-snug {
+    line-height: 1.375;
+  }
+  .leading-tight {
+    line-height: 1.25;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:leading-loose {
+      line-height: 2;
+    }
+    .sm\:leading-none {
+      line-height: 1;
+    }
+    .sm\:leading-normal {
+      line-height: 1.5;
+    }
+    .sm\:leading-relaxed {
+      line-height: 1.625;
+    }
+    .sm\:leading-snug {
+      line-height: 1.375;
+    }
+    .sm\:leading-tight {
+      line-height: 1.25;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:leading-loose {
+      line-height: 2;
+    }
+    .md\:leading-none {
+      line-height: 1;
+    }
+    .md\:leading-normal {
+      line-height: 1.5;
+    }
+    .md\:leading-relaxed {
+      line-height: 1.625;
+    }
+    .md\:leading-snug {
+      line-height: 1.375;
+    }
+    .md\:leading-tight {
+      line-height: 1.25;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:leading-loose {
+      line-height: 2;
+    }
+    .lg\:leading-none {
+      line-height: 1;
+    }
+    .lg\:leading-normal {
+      line-height: 1.5;
+    }
+    .lg\:leading-relaxed {
+      line-height: 1.625;
+    }
+    .lg\:leading-snug {
+      line-height: 1.375;
+    }
+    .lg\:leading-tight {
+      line-height: 1.25;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:leading-loose {
+      line-height: 2;
+    }
+    .xl\:leading-none {
+      line-height: 1;
+    }
+    .xl\:leading-normal {
+      line-height: 1.5;
+    }
+    .xl\:leading-relaxed {
+      line-height: 1.625;
+    }
+    .xl\:leading-snug {
+      line-height: 1.375;
+    }
+    .xl\:leading-tight {
+      line-height: 1.25;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:leading-loose {
+      line-height: 2;
+    }
+    .\32xl\:leading-none {
+      line-height: 1;
+    }
+    .\32xl\:leading-normal {
+      line-height: 1.5;
+    }
+    .\32xl\:leading-relaxed {
+      line-height: 1.625;
+    }
+    .\32xl\:leading-snug {
+      line-height: 1.375;
+    }
+    .\32xl\:leading-tight {
+      line-height: 1.25;
+    }
+  }
+}

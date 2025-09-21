@@ -1,0 +1,197 @@
+@layer utilities {
+  .place-content-center {
+    place-content: center;
+  }
+  .place-content-start {
+    place-content: start;
+  }
+  .place-content-end {
+    place-content: end;
+  }
+  .place-content-between {
+    place-content: space-between;
+  }
+  .place-content-around {
+    place-content: space-around;
+  }
+  .place-content-evenly {
+    place-content: space-evenly;
+  }
+  .place-content-baseline {
+    place-content: baseline;
+  }
+  .place-content-stretch {
+    place-content: stretch;
+  }
+  .place-content-end-safe {
+    place-content: safe end;
+  }
+  .place-content-center-safe {
+    place-content: safe center;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:place-content-center {
+      place-content: center;
+    }
+    .sm\:place-content-start {
+      place-content: start;
+    }
+    .sm\:place-content-end {
+      place-content: end;
+    }
+    .sm\:place-content-between {
+      place-content: space-between;
+    }
+    .sm\:place-content-around {
+      place-content: space-around;
+    }
+    .sm\:place-content-evenly {
+      place-content: space-evenly;
+    }
+    .sm\:place-content-baseline {
+      place-content: baseline;
+    }
+    .sm\:place-content-stretch {
+      place-content: stretch;
+    }
+    .sm\:place-content-end-safe {
+      place-content: safe end;
+    }
+    .sm\:place-content-center-safe {
+      place-content: safe center;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:place-content-center {
+      place-content: center;
+    }
+    .md\:place-content-start {
+      place-content: start;
+    }
+    .md\:place-content-end {
+      place-content: end;
+    }
+    .md\:place-content-between {
+      place-content: space-between;
+    }
+    .md\:place-content-around {
+      place-content: space-around;
+    }
+    .md\:place-content-evenly {
+      place-content: space-evenly;
+    }
+    .md\:place-content-baseline {
+      place-content: baseline;
+    }
+    .md\:place-content-stretch {
+      place-content: stretch;
+    }
+    .md\:place-content-end-safe {
+      place-content: safe end;
+    }
+    .md\:place-content-center-safe {
+      place-content: safe center;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:place-content-center {
+      place-content: center;
+    }
+    .lg\:place-content-start {
+      place-content: start;
+    }
+    .lg\:place-content-end {
+      place-content: end;
+    }
+    .lg\:place-content-between {
+      place-content: space-between;
+    }
+    .lg\:place-content-around {
+      place-content: space-around;
+    }
+    .lg\:place-content-evenly {
+      place-content: space-evenly;
+    }
+    .lg\:place-content-baseline {
+      place-content: baseline;
+    }
+    .lg\:place-content-stretch {
+      place-content: stretch;
+    }
+    .lg\:place-content-end-safe {
+      place-content: safe end;
+    }
+    .lg\:place-content-center-safe {
+      place-content: safe center;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:place-content-center {
+      place-content: center;
+    }
+    .xl\:place-content-start {
+      place-content: start;
+    }
+    .xl\:place-content-end {
+      place-content: end;
+    }
+    .xl\:place-content-between {
+      place-content: space-between;
+    }
+    .xl\:place-content-around {
+      place-content: space-around;
+    }
+    .xl\:place-content-evenly {
+      place-content: space-evenly;
+    }
+    .xl\:place-content-baseline {
+      place-content: baseline;
+    }
+    .xl\:place-content-stretch {
+      place-content: stretch;
+    }
+    .xl\:place-content-end-safe {
+      place-content: safe end;
+    }
+    .xl\:place-content-center-safe {
+      place-content: safe center;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:place-content-center {
+      place-content: center;
+    }
+    .\32xl\:place-content-start {
+      place-content: start;
+    }
+    .\32xl\:place-content-end {
+      place-content: end;
+    }
+    .\32xl\:place-content-between {
+      place-content: space-between;
+    }
+    .\32xl\:place-content-around {
+      place-content: space-around;
+    }
+    .\32xl\:place-content-evenly {
+      place-content: space-evenly;
+    }
+    .\32xl\:place-content-baseline {
+      place-content: baseline;
+    }
+    .\32xl\:place-content-stretch {
+      place-content: stretch;
+    }
+    .\32xl\:place-content-end-safe {
+      place-content: safe end;
+    }
+    .\32xl\:place-content-center-safe {
+      place-content: safe center;
+    }
+  }
+}

@@ -1,0 +1,406 @@
+@layer styles {
+  /* Inset */
+  .inset {
+    inset: calc(var(--spacing) * var(--inset));
+  }
+
+  /* Inline start / Inline end / inset-x / inset-y */
+  .start {
+    inset-inline-start: calc(var(--spacing) * var(--start));
+  }
+
+  .end {
+    inset-inline-end: calc(var(--spacing) * var(--end));
+  }
+
+  .inset-x {
+    inset-inline: calc(var(--spacing) * var(--inset-x));
+  }
+
+  .inset-y {
+    inset-block: calc(var(--spacing) * var(--inset-y));
+  }
+
+  /* === Bracketed Inset (raw values, as-is) === */
+  .\[inset\] {
+    inset: var(--inset);
+  }
+  .\[start\] {
+    inset-inline-start: var(--start);
+  }
+  .\[end\] {
+    inset-inline-end: var(--end);
+  }
+  .\[inset-x\] {
+    inset-inline: var(--inset-x);
+  }
+  .\[inset-y\] {
+    inset-block: var(--inset-y);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:inset {
+      inset: calc(var(--spacing) * var(--sm-inset, var(--inset)));
+    }
+
+    .sm\:start {
+      inset-inline-start: calc(var(--spacing) * var(--sm-start, var(--start)));
+    }
+
+    .sm\:end {
+      inset-inline-end: calc(var(--spacing) * var(--sm-end, var(--end)));
+    }
+
+    .sm\:inset-x {
+      inset-inline: calc(var(--spacing) * var(--sm-inset-x, var(--inset-x)));
+    }
+
+    .sm\:inset-y {
+      inset-block: calc(var(--spacing) * var(--sm-inset-y, var(--inset-y)));
+    }
+
+    .sm\:\[inset\] {
+      inset: var(--sm-inset, var(--inset));
+    }
+    .sm\:\[start\] {
+      inset-inline-start: var(--sm-start, var(--start));
+    }
+    .sm\:\[end\] {
+      inset-inline-end: var(--sm-end, var(--end));
+    }
+    .sm\:\[inset-x\] {
+      inset-inline: var(--sm-inset-x, var(--inset-x));
+    }
+    .sm\:\[inset-y\] {
+      inset-block: var(--sm-inset-y, var(--inset-y));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:inset {
+      inset: calc(
+        var(--spacing) * var(--md-inset, var(--sm-inset, var(--inset)))
+      );
+    }
+
+    .md\:start {
+      inset-inline-start: calc(
+        var(--spacing) * var(--md-start, var(--sm-start, var(--start)))
+      );
+    }
+
+    .md\:end {
+      inset-inline-end: calc(
+        var(--spacing) * var(--md-end, var(--sm-end, var(--end)))
+      );
+    }
+
+    .md\:inset-x {
+      inset-inline: calc(
+        var(--spacing) * var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
+      );
+    }
+
+    .md\:inset-y {
+      inset-block: calc(
+        var(--spacing) * var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
+      );
+    }
+
+    .md\:\[inset\] {
+      inset: var(--md-inset, var(--sm-inset, var(--inset)));
+    }
+    .md\:\[start\] {
+      inset-inline-start: var(--md-start, var(--sm-start, var(--start)));
+    }
+    .md\:\[end\] {
+      inset-inline-end: var(--md-end, var(--sm-end, var(--end)));
+    }
+    .md\:\[inset-x\] {
+      inset-inline: var(--md-inset-x, var(--sm-inset-x, var(--inset-x)));
+    }
+    .md\:\[inset-y\] {
+      inset-block: var(--md-inset-y, var(--sm-inset-y, var(--inset-y)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:inset {
+      inset: calc(
+        var(--spacing) *
+          var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
+      );
+    }
+
+    .lg\:start {
+      inset-inline-start: calc(
+        var(--spacing) *
+          var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
+      );
+    }
+
+    .lg\:end {
+      inset-inline-end: calc(
+        var(--spacing) * var(--lg-end, var(--md-end, var(--sm-end, var(--end))))
+      );
+    }
+
+    .lg\:inset-x {
+      inset-inline: calc(
+        var(--spacing) *
+          var(
+            --lg-inset-x,
+            var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
+          )
+      );
+    }
+
+    .lg\:inset-y {
+      inset-block: calc(
+        var(--spacing) *
+          var(
+            --lg-inset-y,
+            var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
+          )
+      );
+    }
+
+    .lg\:\[inset\] {
+      inset: var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))));
+    }
+    .lg\:\[start\] {
+      inset-inline-start: var(
+        --lg-start,
+        var(--md-start, var(--sm-start, var(--start)))
+      );
+    }
+    .lg\:\[end\] {
+      inset-inline-end: var(--lg-end, var(--md-end, var(--sm-end, var(--end))));
+    }
+    .lg\:\[inset-x\] {
+      inset-inline: var(
+        --lg-inset-x,
+        var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
+      );
+    }
+    .lg\:\[inset-y\] {
+      inset-block: var(
+        --lg-inset-y,
+        var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
+      );
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:inset {
+      inset: calc(
+        var(--spacing) *
+          var(
+            --xl-inset,
+            var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
+          )
+      );
+    }
+
+    .xl\:start {
+      inset-inline-start: calc(
+        var(--spacing) *
+          var(
+            --xl-start,
+            var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
+          )
+      );
+    }
+
+    .xl\:end {
+      inset-inline-end: calc(
+        var(--spacing) *
+          var(--xl-end, var(--lg-end, var(--md-end, var(--sm-end, var(--end)))))
+      );
+    }
+
+    .xl\:inset-x {
+      inset-inline: calc(
+        var(--spacing) *
+          var(
+            --xl-inset-x,
+            var(
+              --lg-inset-x,
+              var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
+            )
+          )
+      );
+    }
+
+    .xl\:inset-y {
+      inset-block: calc(
+        var(--spacing) *
+          var(
+            --xl-inset-y,
+            var(
+              --lg-inset-y,
+              var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
+            )
+          )
+      );
+    }
+
+    .xl\:\[inset\] {
+      inset: var(
+        --xl-inset,
+        var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
+      );
+    }
+    .xl\:\[start\] {
+      inset-inline-start: var(
+        --xl-start,
+        var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
+      );
+    }
+    .xl\:\[end\] {
+      inset-inline-end: var(
+        --xl-end,
+        var(--lg-end, var(--md-end, var(--sm-end, var(--end))))
+      );
+    }
+    .xl\:\[inset-x\] {
+      inset-inline: var(
+        --xl-inset-x,
+        var(--lg-inset-x, var(--md-inset-x, var(--sm-inset-x, var(--inset-x))))
+      );
+    }
+    .xl\:\[inset-y\] {
+      inset-block: var(
+        --xl-inset-y,
+        var(--lg-inset-y, var(--md-inset-y, var(--sm-inset-y, var(--inset-y))))
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:inset {
+      inset: calc(
+        var(--spacing) *
+          var(
+            --\32xl-inset,
+            var(
+              --xl-inset,
+              var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
+            )
+          )
+      );
+    }
+
+    .\32xl\:start {
+      inset-inline-start: calc(
+        var(--spacing) *
+          var(
+            --\32xl-start,
+            var(
+              --xl-start,
+              var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
+            )
+          )
+      );
+    }
+
+    .\32xl\:end {
+      inset-inline-end: calc(
+        var(--spacing) *
+          var(
+            --\32xl-end,
+            var(
+              --xl-end,
+              var(--lg-end, var(--md-end, var(--sm-end, var(--end))))
+            )
+          )
+      );
+    }
+
+    .\32xl\:inset-x {
+      inset-inline: calc(
+        var(--spacing) *
+          var(
+            --\32xl-inset-x,
+            var(
+              --xl-inset-x,
+              var(
+                --lg-inset-x,
+                var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
+              )
+            )
+          )
+      );
+    }
+
+    .\32xl\:inset-y {
+      inset-block: calc(
+        var(--spacing) *
+          var(
+            --\32xl-inset-y,
+            var(
+              --xl-inset-y,
+              var(
+                --lg-inset-y,
+                var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
+              )
+            )
+          )
+      );
+    }
+
+    .\32xl\:\[inset\] {
+      inset: var(
+        --\32xl-inset,
+        var(
+          --xl-inset,
+          var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
+        )
+      );
+    }
+    .\32xl\:\[start\] {
+      inset-inline-start: var(
+        --\32xl-start,
+        var(
+          --xl-start,
+          var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
+        )
+      );
+    }
+    .\32xl\:\[end\] {
+      inset-inline-end: var(
+        --\32xl-end,
+        var(--xl-end, var(--lg-end, var(--md-end, var(--sm-end, var(--end)))))
+      );
+    }
+    .\32xl\:\[inset-x\] {
+      inset-inline: var(
+        --\32xl-inset-x,
+        var(
+          --xl-inset-x,
+          var(
+            --lg-inset-x,
+            var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
+          )
+        )
+      );
+    }
+    .\32xl\:\[inset-y\] {
+      inset-block: var(
+        --\32xl-inset-y,
+        var(
+          --xl-inset-y,
+          var(
+            --lg-inset-y,
+            var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
+          )
+        )
+      );
+    }
+  }
+}

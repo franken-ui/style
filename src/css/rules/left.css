@@ -1,0 +1,93 @@
+@layer styles {
+  /* Left */
+  .left {
+    left: calc(var(--spacing) * var(--left));
+  }
+
+  /* Arbitrary left with bracket selector */
+  .\[left\] {
+    left: var(--left);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:left {
+      left: calc(var(--spacing) * var(--sm-left, var(--left)));
+    }
+
+    .sm\:\[left\] {
+      left: var(--sm-left, var(--left));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:left {
+      left: calc(var(--spacing) * var(--md-left, var(--sm-left, var(--left))));
+    }
+
+    .md\:\[left\] {
+      left: var(--md-left, var(--sm-left, var(--left)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:left {
+      left: calc(
+        var(--spacing) *
+          var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
+      );
+    }
+
+    .lg\:\[left\] {
+      left: var(--lg-left, var(--md-left, var(--sm-left, var(--left))));
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:left {
+      left: calc(
+        var(--spacing) *
+          var(
+            --xl-left,
+            var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
+          )
+      );
+    }
+
+    .xl\:\[left\] {
+      left: var(
+        --xl-left,
+        var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:left {
+      left: calc(
+        var(--spacing) *
+          var(
+            --\32xl-left,
+            var(
+              --xl-left,
+              var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
+            )
+          )
+      );
+    }
+
+    .\32xl\:\[left\] {
+      left: var(
+        --\32xl-left,
+        var(
+          --xl-left,
+          var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
+        )
+      );
+    }
+  }
+}

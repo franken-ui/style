@@ -1,0 +1,161 @@
+@layer utilities {
+  .border-solid {
+    --tw-border-style: solid;
+    border-style: solid;
+  }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
+  .border-dotted {
+    --tw-border-style: dotted;
+    border-style: dotted;
+  }
+  .border-double {
+    --tw-border-style: double;
+    border-style: double;
+  }
+  .border-hidden {
+    --tw-border-style: hidden;
+    border-style: hidden;
+  }
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:border-solid {
+      --tw-border-style: solid;
+      border-style: solid;
+    }
+    .sm\:border-dashed {
+      --tw-border-style: dashed;
+      border-style: dashed;
+    }
+    .sm\:border-dotted {
+      --tw-border-style: dotted;
+      border-style: dotted;
+    }
+    .sm\:border-double {
+      --tw-border-style: double;
+      border-style: double;
+    }
+    .sm\:border-hidden {
+      --tw-border-style: hidden;
+      border-style: hidden;
+    }
+    .sm\:border-none {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:border-solid {
+      --tw-border-style: solid;
+      border-style: solid;
+    }
+    .md\:border-dashed {
+      --tw-border-style: dashed;
+      border-style: dashed;
+    }
+    .md\:border-dotted {
+      --tw-border-style: dotted;
+      border-style: dotted;
+    }
+    .md\:border-double {
+      --tw-border-style: double;
+      border-style: double;
+    }
+    .md\:border-hidden {
+      --tw-border-style: hidden;
+      border-style: hidden;
+    }
+    .md\:border-none {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border-solid {
+      --tw-border-style: solid;
+      border-style: solid;
+    }
+    .lg\:border-dashed {
+      --tw-border-style: dashed;
+      border-style: dashed;
+    }
+    .lg\:border-dotted {
+      --tw-border-style: dotted;
+      border-style: dotted;
+    }
+    .lg\:border-double {
+      --tw-border-style: double;
+      border-style: double;
+    }
+    .lg\:border-hidden {
+      --tw-border-style: hidden;
+      border-style: hidden;
+    }
+    .lg\:border-none {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:border-solid {
+      --tw-border-style: solid;
+      border-style: solid;
+    }
+    .xl\:border-dashed {
+      --tw-border-style: dashed;
+      border-style: dashed;
+    }
+    .xl\:border-dotted {
+      --tw-border-style: dotted;
+      border-style: dotted;
+    }
+    .xl\:border-double {
+      --tw-border-style: double;
+      border-style: double;
+    }
+    .xl\:border-hidden {
+      --tw-border-style: hidden;
+      border-style: hidden;
+    }
+    .xl\:border-none {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:border-solid {
+      --tw-border-style: solid;
+      border-style: solid;
+    }
+    .\32xl\:border-dashed {
+      --tw-border-style: dashed;
+      border-style: dashed;
+    }
+    .\32xl\:border-dotted {
+      --tw-border-style: dotted;
+      border-style: dotted;
+    }
+    .\32xl\:border-double {
+      --tw-border-style: double;
+      border-style: double;
+    }
+    .\32xl\:border-hidden {
+      --tw-border-style: hidden;
+      border-style: hidden;
+    }
+    .\32xl\:border-none {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
+}

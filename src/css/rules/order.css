@@ -1,0 +1,87 @@
+@layer styles {
+  /* Order */
+  .order {
+    order: var(--order);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:order {
+      order: var(--sm-order, var(--order));
+    }
+
+    .sm\:-order {
+      order: calc(var(--sm-order, var(--order)) * -1);
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:order {
+      order: var(--md-order, var(--sm-order, var(--order)));
+    }
+
+    .md\:-order {
+      order: calc(var(--md-order, var(--sm-order, var(--order))) * -1);
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:order {
+      order: var(--lg-order, var(--md-order, var(--sm-order, var(--order))));
+    }
+
+    .lg\:-order {
+      order: calc(
+        var(--lg-order, var(--md-order, var(--sm-order, var(--order)))) * -1
+      );
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:order {
+      order: var(
+        --xl-order,
+        var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
+      );
+    }
+
+    .xl\:-order {
+      order: calc(
+        var(
+            --xl-order,
+            var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
+          ) *
+          -1
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:order {
+      order: var(
+        --\32xl-order,
+        var(
+          --xl-order,
+          var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
+        )
+      );
+    }
+
+    .\32xl\:-order {
+      order: calc(
+        var(
+            --\32xl-order,
+            var(
+              --xl-order,
+              var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
+            )
+          ) *
+          -1
+      );
+    }
+  }
+}

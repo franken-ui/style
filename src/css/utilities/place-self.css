@@ -1,0 +1,143 @@
+@layer utilities {
+  .place-self-auto {
+    place-self: auto;
+  }
+  .place-self-start {
+    place-self: start;
+  }
+  .place-self-end {
+    place-self: end;
+  }
+  .place-self-center {
+    place-self: center;
+  }
+  .place-self-stretch {
+    place-self: stretch;
+  }
+  .place-self-end-safe {
+    place-self: safe end;
+  }
+  .place-self-center-safe {
+    place-self: safe center;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:place-self-auto {
+      place-self: auto;
+    }
+    .sm\:place-self-start {
+      place-self: start;
+    }
+    .sm\:place-self-end {
+      place-self: end;
+    }
+    .sm\:place-self-center {
+      place-self: center;
+    }
+    .sm\:place-self-stretch {
+      place-self: stretch;
+    }
+    .sm\:place-self-end-safe {
+      place-self: safe end;
+    }
+    .sm\:place-self-center-safe {
+      place-self: safe center;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:place-self-auto {
+      place-self: auto;
+    }
+    .md\:place-self-start {
+      place-self: start;
+    }
+    .md\:place-self-end {
+      place-self: end;
+    }
+    .md\:place-self-center {
+      place-self: center;
+    }
+    .md\:place-self-stretch {
+      place-self: stretch;
+    }
+    .md\:place-self-end-safe {
+      place-self: safe end;
+    }
+    .md\:place-self-center-safe {
+      place-self: safe center;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:place-self-auto {
+      place-self: auto;
+    }
+    .lg\:place-self-start {
+      place-self: start;
+    }
+    .lg\:place-self-end {
+      place-self: end;
+    }
+    .lg\:place-self-center {
+      place-self: center;
+    }
+    .lg\:place-self-stretch {
+      place-self: stretch;
+    }
+    .lg\:place-self-end-safe {
+      place-self: safe end;
+    }
+    .lg\:place-self-center-safe {
+      place-self: safe center;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:place-self-auto {
+      place-self: auto;
+    }
+    .xl\:place-self-start {
+      place-self: start;
+    }
+    .xl\:place-self-end {
+      place-self: end;
+    }
+    .xl\:place-self-center {
+      place-self: center;
+    }
+    .xl\:place-self-stretch {
+      place-self: stretch;
+    }
+    .xl\:place-self-end-safe {
+      place-self: safe end;
+    }
+    .xl\:place-self-center-safe {
+      place-self: safe center;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:place-self-auto {
+      place-self: auto;
+    }
+    .\32xl\:place-self-start {
+      place-self: start;
+    }
+    .\32xl\:place-self-end {
+      place-self: end;
+    }
+    .\32xl\:place-self-center {
+      place-self: center;
+    }
+    .\32xl\:place-self-stretch {
+      place-self: stretch;
+    }
+    .\32xl\:place-self-end-safe {
+      place-self: safe end;
+    }
+    .\32xl\:place-self-center-safe {
+      place-self: safe center;
+    }
+  }
+}

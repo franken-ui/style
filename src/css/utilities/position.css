@@ -1,0 +1,107 @@
+@layer utilities {
+  .static {
+    position: static;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .sticky {
+    position: sticky;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:static {
+      position: static;
+    }
+    .sm\:fixed {
+      position: fixed;
+    }
+    .sm\:absolute {
+      position: absolute;
+    }
+    .sm\:relative {
+      position: relative;
+    }
+    .sm\:sticky {
+      position: sticky;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:static {
+      position: static;
+    }
+    .md\:fixed {
+      position: fixed;
+    }
+    .md\:absolute {
+      position: absolute;
+    }
+    .md\:relative {
+      position: relative;
+    }
+    .md\:sticky {
+      position: sticky;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:static {
+      position: static;
+    }
+    .lg\:fixed {
+      position: fixed;
+    }
+    .lg\:absolute {
+      position: absolute;
+    }
+    .lg\:relative {
+      position: relative;
+    }
+    .lg\:sticky {
+      position: sticky;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:static {
+      position: static;
+    }
+    .xl\:fixed {
+      position: fixed;
+    }
+    .xl\:absolute {
+      position: absolute;
+    }
+    .xl\:relative {
+      position: relative;
+    }
+    .xl\:sticky {
+      position: sticky;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:static {
+      position: static;
+    }
+    .\32xl\:fixed {
+      position: fixed;
+    }
+    .\32xl\:absolute {
+      position: absolute;
+    }
+    .\32xl\:relative {
+      position: relative;
+    }
+    .\32xl\:sticky {
+      position: sticky;
+    }
+  }
+}

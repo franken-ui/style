@@ -1,0 +1,94 @@
+@layer utilities {
+  .row-auto {
+    grid-row: auto;
+  }
+  .row-span-full {
+    grid-row: 1 / -1;
+  }
+  .row-start-auto {
+    grid-row-start: auto;
+  }
+  .row-end-auto {
+    grid-row-end: auto;
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:row-auto {
+      grid-row: auto;
+    }
+    .sm\:row-span-full {
+      grid-row: 1 / -1;
+    }
+    .sm\:row-start-auto {
+      grid-row-start: auto;
+    }
+    .sm\:row-end-auto {
+      grid-row-end: auto;
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:row-auto {
+      grid-row: auto;
+    }
+    .md\:row-span-full {
+      grid-row: 1 / -1;
+    }
+    .md\:row-start-auto {
+      grid-row-start: auto;
+    }
+    .md\:row-end-auto {
+      grid-row-end: auto;
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:row-auto {
+      grid-row: auto;
+    }
+    .lg\:row-span-full {
+      grid-row: 1 / -1;
+    }
+    .lg\:row-start-auto {
+      grid-row-start: auto;
+    }
+    .lg\:row-end-auto {
+      grid-row-end: auto;
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:row-auto {
+      grid-row: auto;
+    }
+    .xl\:row-span-full {
+      grid-row: 1 / -1;
+    }
+    .xl\:row-start-auto {
+      grid-row-start: auto;
+    }
+    .xl\:row-end-auto {
+      grid-row-end: auto;
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:row-auto {
+      grid-row: auto;
+    }
+    .\32xl\:row-span-full {
+      grid-row: 1 / -1;
+    }
+    .\32xl\:row-start-auto {
+      grid-row-start: auto;
+    }
+    .\32xl\:row-end-auto {
+      grid-row-end: auto;
+    }
+  }
+}

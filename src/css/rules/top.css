@@ -1,0 +1,86 @@
+@layer styles {
+  /* Top */
+  .top {
+    top: calc(var(--spacing) * var(--top));
+  }
+
+  /* Arbitrary top with bracket selector */
+  .\[top\] {
+    top: var(--top);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:top {
+      top: calc(var(--spacing) * var(--sm-top, var(--top)));
+    }
+
+    .sm\:\[top\] {
+      top: var(--sm-top, var(--top));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:top {
+      top: calc(var(--spacing) * var(--md-top, var(--sm-top, var(--top))));
+    }
+
+    .md\:\[top\] {
+      top: var(--md-top, var(--sm-top, var(--top)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:top {
+      top: calc(
+        var(--spacing) * var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
+      );
+    }
+
+    .lg\:\[top\] {
+      top: var(--lg-top, var(--md-top, var(--sm-top, var(--top))));
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:top {
+      top: calc(
+        var(--spacing) *
+          var(--xl-top, var(--lg-top, var(--md-top, var(--sm-top, var(--top)))))
+      );
+    }
+
+    .xl\:\[top\] {
+      top: var(
+        --xl-top,
+        var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:top {
+      top: calc(
+        var(--spacing) *
+          var(
+            --\32xl-top,
+            var(
+              --xl-top,
+              var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
+            )
+          )
+      );
+    }
+
+    .\32xl\:\[top\] {
+      top: var(
+        --\32xl-top,
+        var(--xl-top, var(--lg-top, var(--md-top, var(--sm-top, var(--top)))))
+      );
+    }
+  }
+}

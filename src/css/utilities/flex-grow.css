@@ -1,0 +1,176 @@
+@layer utilities {
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .flex-grow-0 {
+    flex-grow: 0;
+  }
+  .grow {
+    flex-grow: 1;
+  }
+  .grow-0 {
+    flex-grow: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:flex-grow {
+      flex-grow: 1;
+    }
+    .sm\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .sm\:grow {
+      flex-grow: 1;
+    }
+    .sm\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:flex-grow {
+      flex-grow: 1;
+    }
+    .md\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .md\:grow {
+      flex-grow: 1;
+    }
+    .md\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:flex-grow {
+      flex-grow: 1;
+    }
+    .lg\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .lg\:grow {
+      flex-grow: 1;
+    }
+    .lg\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:flex-grow {
+      flex-grow: 1;
+    }
+    .xl\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .xl\:grow {
+      flex-grow: 1;
+    }
+    .xl\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:flex-grow {
+      flex-grow: 1;
+    }
+    .\32xl\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .\32xl\:grow {
+      flex-grow: 1;
+    }
+    .\32xl\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .flex-grow-0 {
+    flex-grow: 0;
+  }
+  .grow {
+    flex-grow: 1;
+  }
+  .grow-0 {
+    flex-grow: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:flex-grow {
+      flex-grow: 1;
+    }
+    .sm\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .sm\:grow {
+      flex-grow: 1;
+    }
+    .sm\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:flex-grow {
+      flex-grow: 1;
+    }
+    .md\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .md\:grow {
+      flex-grow: 1;
+    }
+    .md\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:flex-grow {
+      flex-grow: 1;
+    }
+    .lg\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .lg\:grow {
+      flex-grow: 1;
+    }
+    .lg\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:flex-grow {
+      flex-grow: 1;
+    }
+    .xl\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .xl\:grow {
+      flex-grow: 1;
+    }
+    .xl\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:flex-grow {
+      flex-grow: 1;
+    }
+    .\32xl\:flex-grow-0 {
+      flex-grow: 0;
+    }
+    .\32xl\:grow {
+      flex-grow: 1;
+    }
+    .\32xl\:grow-0 {
+      flex-grow: 0;
+    }
+  }
+}

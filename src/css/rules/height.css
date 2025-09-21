@@ -1,0 +1,75 @@
+@layer styles {
+  /* === Height (scaled by --spacing) === */
+  .h {
+    height: calc(var(--spacing) * var(--h));
+  }
+
+  /* === Bracketed Height (raw value, as-is) === */
+  .\[h\] {
+    height: var(--h);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:h {
+      height: calc(var(--spacing) * var(--sm-h, var(--h)));
+    }
+    .sm\:\[h\] {
+      height: var(--sm-h, var(--h));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:h {
+      height: calc(var(--spacing) * var(--md-h, var(--sm-h, var(--h))));
+    }
+    .md\:\[h\] {
+      height: var(--md-h, var(--sm-h, var(--h)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:h {
+      height: calc(
+        var(--spacing) * var(--lg-h, var(--md-h, var(--sm-h, var(--h))))
+      );
+    }
+    .lg\:\[h\] {
+      height: var(--lg-h, var(--md-h, var(--sm-h, var(--h))));
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:h {
+      height: calc(
+        var(--spacing) *
+          var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))))
+      );
+    }
+    .xl\:\[h\] {
+      height: var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))));
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:h {
+      height: calc(
+        var(--spacing) *
+          var(
+            --\32xl-h,
+            var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))))
+          )
+      );
+    }
+    .\32xl\:\[h\] {
+      height: var(
+        --\32xl-h,
+        var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))))
+      );
+    }
+  }
+}

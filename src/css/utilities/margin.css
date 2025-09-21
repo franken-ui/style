@@ -1,0 +1,259 @@
+@layer utilities {
+  /* === Base Margin === */
+  .m-auto {
+    margin: auto;
+  }
+
+  /* Directions */
+  .mt-auto {
+    margin-top: auto;
+  }
+
+  .mb-auto {
+    margin-bottom: auto;
+  }
+
+  .ml-auto {
+    margin-left: auto;
+  }
+
+  .mr-auto {
+    margin-right: auto;
+  }
+
+  .ms-auto {
+    margin-inline-start: auto;
+  }
+
+  .me-auto {
+    margin-inline-end: auto;
+  }
+
+  /* Axis shorthands */
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  /* === Breakpoints === */
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:m-auto {
+      margin: auto;
+    }
+
+    /* Directions */
+    .sm\:mt-auto {
+      margin-top: auto;
+    }
+
+    .sm\:mb-auto {
+      margin-bottom: auto;
+    }
+
+    .sm\:ml-auto {
+      margin-left: auto;
+    }
+
+    .sm\:mr-auto {
+      margin-right: auto;
+    }
+
+    .sm\:ms-auto {
+      margin-inline-start: auto;
+    }
+
+    .sm\:me-auto {
+      margin-inline-end: auto;
+    }
+
+    /* Axis shorthands */
+    .sm\:mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sm\:my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:m-auto {
+      margin: auto;
+    }
+
+    /* Directions */
+    .md\:mt-auto {
+      margin-top: auto;
+    }
+
+    .md\:mb-auto {
+      margin-bottom: auto;
+    }
+
+    .md\:ml-auto {
+      margin-left: auto;
+    }
+
+    .md\:mr-auto {
+      margin-right: auto;
+    }
+
+    .md\:ms-auto {
+      margin-inline-start: auto;
+    }
+
+    .md\:me-auto {
+      margin-inline-end: auto;
+    }
+
+    /* Axis shorthands */
+    .md\:mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .md\:my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:m-auto {
+      margin: auto;
+    }
+
+    /* Directions */
+    .lg\:mt-auto {
+      margin-top: auto;
+    }
+
+    .lg\:mb-auto {
+      margin-bottom: auto;
+    }
+
+    .lg\:ml-auto {
+      margin-left: auto;
+    }
+
+    .lg\:mr-auto {
+      margin-right: auto;
+    }
+
+    .lg\:ms-auto {
+      margin-inline-start: auto;
+    }
+
+    .lg\:me-auto {
+      margin-inline-end: auto;
+    }
+
+    /* Axis shorthands */
+    .lg\:mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lg\:my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:m-auto {
+      margin: auto;
+    }
+
+    /* Directions */
+    .xl\:mt-auto {
+      margin-top: auto;
+    }
+
+    .xl\:mb-auto {
+      margin-bottom: auto;
+    }
+
+    .xl\:ml-auto {
+      margin-left: auto;
+    }
+
+    .xl\:mr-auto {
+      margin-right: auto;
+    }
+
+    .xl\:ms-auto {
+      margin-inline-start: auto;
+    }
+
+    .xl\:me-auto {
+      margin-inline-end: auto;
+    }
+
+    /* Axis shorthands */
+    .xl\:mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .xl\:my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:m-auto {
+      margin: auto;
+    }
+
+    /* Directions */
+    .\32xl\:mt-auto {
+      margin-top: auto;
+    }
+
+    .\32xl\:mb-auto {
+      margin-bottom: auto;
+    }
+
+    .\32xl\:ml-auto {
+      margin-left: auto;
+    }
+
+    .\32xl\:mr-auto {
+      margin-right: auto;
+    }
+
+    .\32xl\:ms-auto {
+      margin-inline-start: auto;
+    }
+
+    .\32xl\:me-auto {
+      margin-inline-end: auto;
+    }
+
+    /* Axis shorthands */
+    .\32xl\:mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .\32xl\:my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}

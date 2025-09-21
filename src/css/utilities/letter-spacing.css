@@ -1,0 +1,233 @@
+@layer utilities {
+  .-tracking-normal {
+    letter-spacing: -0em;
+  }
+  .-tracking-tight {
+    letter-spacing: 0.025em;
+  }
+  .-tracking-tighter {
+    letter-spacing: 0.05em;
+  }
+  .-tracking-wide {
+    letter-spacing: -0.025em;
+  }
+  .-tracking-wider {
+    letter-spacing: -0.05em;
+  }
+  .-tracking-widest {
+    letter-spacing: -0.1em;
+  }
+  .tracking-normal {
+    letter-spacing: 0em;
+  }
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+  .tracking-tighter {
+    letter-spacing: -0.05em;
+  }
+  .tracking-wide {
+    letter-spacing: 0.025em;
+  }
+  .tracking-wider {
+    letter-spacing: 0.05em;
+  }
+  .tracking-widest {
+    letter-spacing: 0.1em;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:-tracking-normal {
+      letter-spacing: -0em;
+    }
+    .sm\:-tracking-tight {
+      letter-spacing: 0.025em;
+    }
+    .sm\:-tracking-tighter {
+      letter-spacing: 0.05em;
+    }
+    .sm\:-tracking-wide {
+      letter-spacing: -0.025em;
+    }
+    .sm\:-tracking-wider {
+      letter-spacing: -0.05em;
+    }
+    .sm\:-tracking-widest {
+      letter-spacing: -0.1em;
+    }
+    .sm\:tracking-normal {
+      letter-spacing: 0em;
+    }
+    .sm\:tracking-tight {
+      letter-spacing: -0.025em;
+    }
+    .sm\:tracking-tighter {
+      letter-spacing: -0.05em;
+    }
+    .sm\:tracking-wide {
+      letter-spacing: 0.025em;
+    }
+    .sm\:tracking-wider {
+      letter-spacing: 0.05em;
+    }
+    .sm\:tracking-widest {
+      letter-spacing: 0.1em;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:-tracking-normal {
+      letter-spacing: -0em;
+    }
+    .md\:-tracking-tight {
+      letter-spacing: 0.025em;
+    }
+    .md\:-tracking-tighter {
+      letter-spacing: 0.05em;
+    }
+    .md\:-tracking-wide {
+      letter-spacing: -0.025em;
+    }
+    .md\:-tracking-wider {
+      letter-spacing: -0.05em;
+    }
+    .md\:-tracking-widest {
+      letter-spacing: -0.1em;
+    }
+    .md\:tracking-normal {
+      letter-spacing: 0em;
+    }
+    .md\:tracking-tight {
+      letter-spacing: -0.025em;
+    }
+    .md\:tracking-tighter {
+      letter-spacing: -0.05em;
+    }
+    .md\:tracking-wide {
+      letter-spacing: 0.025em;
+    }
+    .md\:tracking-wider {
+      letter-spacing: 0.05em;
+    }
+    .md\:tracking-widest {
+      letter-spacing: 0.1em;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:-tracking-normal {
+      letter-spacing: -0em;
+    }
+    .lg\:-tracking-tight {
+      letter-spacing: 0.025em;
+    }
+    .lg\:-tracking-tighter {
+      letter-spacing: 0.05em;
+    }
+    .lg\:-tracking-wide {
+      letter-spacing: -0.025em;
+    }
+    .lg\:-tracking-wider {
+      letter-spacing: -0.05em;
+    }
+    .lg\:-tracking-widest {
+      letter-spacing: -0.1em;
+    }
+    .lg\:tracking-normal {
+      letter-spacing: 0em;
+    }
+    .lg\:tracking-tight {
+      letter-spacing: -0.025em;
+    }
+    .lg\:tracking-tighter {
+      letter-spacing: -0.05em;
+    }
+    .lg\:tracking-wide {
+      letter-spacing: 0.025em;
+    }
+    .lg\:tracking-wider {
+      letter-spacing: 0.05em;
+    }
+    .lg\:tracking-widest {
+      letter-spacing: 0.1em;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:-tracking-normal {
+      letter-spacing: -0em;
+    }
+    .xl\:-tracking-tight {
+      letter-spacing: 0.025em;
+    }
+    .xl\:-tracking-tighter {
+      letter-spacing: 0.05em;
+    }
+    .xl\:-tracking-wide {
+      letter-spacing: -0.025em;
+    }
+    .xl\:-tracking-wider {
+      letter-spacing: -0.05em;
+    }
+    .xl\:-tracking-widest {
+      letter-spacing: -0.1em;
+    }
+    .xl\:tracking-normal {
+      letter-spacing: 0em;
+    }
+    .xl\:tracking-tight {
+      letter-spacing: -0.025em;
+    }
+    .xl\:tracking-tighter {
+      letter-spacing: -0.05em;
+    }
+    .xl\:tracking-wide {
+      letter-spacing: 0.025em;
+    }
+    .xl\:tracking-wider {
+      letter-spacing: 0.05em;
+    }
+    .xl\:tracking-widest {
+      letter-spacing: 0.1em;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:-tracking-normal {
+      letter-spacing: -0em;
+    }
+    .\32xl\:-tracking-tight {
+      letter-spacing: 0.025em;
+    }
+    .\32xl\:-tracking-tighter {
+      letter-spacing: 0.05em;
+    }
+    .\32xl\:-tracking-wide {
+      letter-spacing: -0.025em;
+    }
+    .\32xl\:-tracking-wider {
+      letter-spacing: -0.05em;
+    }
+    .\32xl\:-tracking-widest {
+      letter-spacing: -0.1em;
+    }
+    .\32xl\:tracking-normal {
+      letter-spacing: 0em;
+    }
+    .\32xl\:tracking-tight {
+      letter-spacing: -0.025em;
+    }
+    .\32xl\:tracking-tighter {
+      letter-spacing: -0.05em;
+    }
+    .\32xl\:tracking-wide {
+      letter-spacing: 0.025em;
+    }
+    .\32xl\:tracking-wider {
+      letter-spacing: 0.05em;
+    }
+    .\32xl\:tracking-widest {
+      letter-spacing: 0.1em;
+    }
+  }
+}

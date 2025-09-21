@@ -1,0 +1,187 @@
+@layer styles {
+  /* === Base Col Utilities === */
+  .col {
+    grid-column: var(--col);
+  }
+  .col-span {
+    grid-column: span var(--col-span) / span var(--col-span);
+  }
+  .col-start {
+    grid-column-start: var(--col-start);
+  }
+  .col-end {
+    grid-column-end: var(--col-end);
+  }
+
+  /* === Breakpoints === */
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:col {
+      grid-column: var(--sm-col, var(--col));
+    }
+    .sm\:col-span {
+      grid-column: span var(--sm-col-span, var(--col-span)) / span
+        var(--sm-col-span, var(--col-span));
+    }
+    .sm\:col-start {
+      grid-column-start: var(--sm-col-start, var(--col-start));
+    }
+    .sm\:col-end {
+      grid-column-end: var(--sm-col-end, var(--col-end));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:col {
+      grid-column: var(--md-col, var(--sm-col, var(--col)));
+    }
+    .md\:col-span {
+      grid-column: span
+        var(--md-col-span, var(--sm-col-span, var(--col-span))) / span
+        var(--md-col-span, var(--sm-col-span, var(--col-span)));
+    }
+    .md\:col-start {
+      grid-column-start: var(
+        --md-col-start,
+        var(--sm-col-start, var(--col-start))
+      );
+    }
+    .md\:col-end {
+      grid-column-end: var(--md-col-end, var(--sm-col-end, var(--col-end)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:col {
+      grid-column: var(--lg-col, var(--md-col, var(--sm-col, var(--col))));
+    }
+    .lg\:col-span {
+      grid-column: span
+        var(
+          --lg-col-span,
+          var(--md-col-span, var(--sm-col-span, var(--col-span)))
+        ) /
+        span
+        var(
+          --lg-col-span,
+          var(--md-col-span, var(--sm-col-span, var(--col-span)))
+        );
+    }
+    .lg\:col-start {
+      grid-column-start: var(
+        --lg-col-start,
+        var(--md-col-start, var(--sm-col-start, var(--col-start)))
+      );
+    }
+    .lg\:col-end {
+      grid-column-end: var(
+        --lg-col-end,
+        var(--md-col-end, var(--sm-col-end, var(--col-end)))
+      );
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:col {
+      grid-column: var(
+        --xl-col,
+        var(--lg-col, var(--md-col, var(--sm-col, var(--col))))
+      );
+    }
+    .xl\:col-span {
+      grid-column: span
+        var(
+          --xl-col-span,
+          var(
+            --lg-col-span,
+            var(--md-col-span, var(--sm-col-span, var(--col-span)))
+          )
+        ) /
+        span
+        var(
+          --xl-col-span,
+          var(
+            --lg-col-span,
+            var(--md-col-span, var(--sm-col-span, var(--col-span)))
+          )
+        );
+    }
+    .xl\:col-start {
+      grid-column-start: var(
+        --xl-col-start,
+        var(
+          --lg-col-start,
+          var(--md-col-start, var(--sm-col-start, var(--col-start)))
+        )
+      );
+    }
+    .xl\:col-end {
+      grid-column-end: var(
+        --xl-col-end,
+        var(--lg-col-end, var(--md-col-end, var(--sm-col-end, var(--col-end))))
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:col {
+      grid-column: var(
+        --\32xl-col,
+        var(--xl-col, var(--lg-col, var(--md-col, var(--sm-col, var(--col)))))
+      );
+    }
+    .\32xl\:col-span {
+      grid-column: span
+        var(
+          --\32xl-col-span,
+          var(
+            --xl-col-span,
+            var(
+              --lg-col-span,
+              var(--md-col-span, var(--sm-col-span, var(--col-span)))
+            )
+          )
+        ) /
+        span
+        var(
+          --\32xl-col-span,
+          var(
+            --xl-col-span,
+            var(
+              --lg-col-span,
+              var(--md-col-span, var(--sm-col-span, var(--col-span)))
+            )
+          )
+        );
+    }
+    .\32xl\:col-start {
+      grid-column-start: var(
+        --\32xl-col-start,
+        var(
+          --xl-col-start,
+          var(
+            --lg-col-start,
+            var(--md-col-start, var(--sm-col-start, var(--col-start)))
+          )
+        )
+      );
+    }
+    .\32xl\:col-end {
+      grid-column-end: var(
+        --\32xl-col-end,
+        var(
+          --xl-col-end,
+          var(
+            --lg-col-end,
+            var(--md-col-end, var(--sm-col-end, var(--col-end)))
+          )
+        )
+      );
+    }
+  }
+}

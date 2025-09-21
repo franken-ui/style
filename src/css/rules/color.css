@@ -1,0 +1,331 @@
+@layer styles {
+  /* === Light Mode === */
+  .color {
+    color: color-mix(
+      in oklab,
+      var(--color) var(--color-opacity, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:color {
+      color: color-mix(
+        in oklab,
+        var(--sm-color, var(--color))
+          var(--sm-color-opacity, var(--color-opacity, 100%)),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:color {
+      color: color-mix(
+        in oklab,
+        var(--md-color, var(--sm-color, var(--color)))
+          var(
+            --md-color-opacity,
+            var(--sm-color-opacity, var(--color-opacity, 100%))
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:color {
+      color: color-mix(
+        in oklab,
+        var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+          var(
+            --lg-color-opacity,
+            var(
+              --md-color-opacity,
+              var(--sm-color-opacity, var(--color-opacity, 100%))
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:color {
+      color: color-mix(
+        in oklab,
+        var(
+            --xl-color,
+            var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+          )
+          var(
+            --xl-color-opacity,
+            var(
+              --lg-color-opacity,
+              var(
+                --md-color-opacity,
+                var(--sm-color-opacity, var(--color-opacity, 100%))
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:color {
+      color: color-mix(
+        in oklab,
+        var(
+            --\32xl-color,
+            var(
+              --xl-color,
+              var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+            )
+          )
+          var(
+            --\32xl-color-opacity,
+            var(
+              --xl-color-opacity,
+              var(
+                --lg-color-opacity,
+                var(
+                  --md-color-opacity,
+                  var(--sm-color-opacity, var(--color-opacity, 100%))
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  /* === Dark Mode === */
+  .dark .color {
+    color: color-mix(
+      in oklab,
+      var(--dark-color, var(--color))
+        var(--dark-color-opacity, var(--color-opacity, 100%)),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .dark .sm\:color {
+      color: color-mix(
+        in oklab,
+        var(--dark-sm-color, var(--dark-color, var(--sm-color, var(--color))))
+          var(
+            --dark-sm-color-opacity,
+            var(
+              --dark-color-opacity,
+              var(--sm-color-opacity, var(--color-opacity, 100%))
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .dark .md\:color {
+      color: color-mix(
+        in oklab,
+        var(
+            --dark-md-color,
+            var(
+              --dark-sm-color,
+              var(--dark-color, var(--md-color, var(--sm-color, var(--color))))
+            )
+          )
+          var(
+            --dark-md-color-opacity,
+            var(
+              --dark-sm-color-opacity,
+              var(
+                --dark-color-opacity,
+                var(
+                  --md-color-opacity,
+                  var(--sm-color-opacity, var(--color-opacity, 100%))
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .dark .lg\:color {
+      color: color-mix(
+        in oklab,
+        var(
+            --dark-lg-color,
+            var(
+              --dark-md-color,
+              var(
+                --dark-sm-color,
+                var(
+                  --dark-color,
+                  var(
+                    --lg-color,
+                    var(--md-color, var(--sm-color, var(--color)))
+                  )
+                )
+              )
+            )
+          )
+          var(
+            --dark-lg-color-opacity,
+            var(
+              --dark-md-color-opacity,
+              var(
+                --dark-sm-color-opacity,
+                var(
+                  --dark-color-opacity,
+                  var(
+                    --lg-color-opacity,
+                    var(
+                      --md-color-opacity,
+                      var(--sm-color-opacity, var(--color-opacity, 100%))
+                    )
+                  )
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .dark .xl\:color {
+      color: color-mix(
+        in oklab,
+        var(
+            --dark-xl-color,
+            var(
+              --dark-lg-color,
+              var(
+                --dark-md-color,
+                var(
+                  --dark-sm-color,
+                  var(
+                    --dark-color,
+                    var(
+                      --xl-color,
+                      var(
+                        --lg-color,
+                        var(--md-color, var(--sm-color, var(--color)))
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+          var(
+            --dark-xl-color-opacity,
+            var(
+              --dark-lg-color-opacity,
+              var(
+                --dark-md-color-opacity,
+                var(
+                  --dark-sm-color-opacity,
+                  var(
+                    --dark-color-opacity,
+                    var(
+                      --xl-color-opacity,
+                      var(
+                        --lg-color-opacity,
+                        var(
+                          --md-color-opacity,
+                          var(--sm-color-opacity, var(--color-opacity, 100%))
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .dark .\32xl\:color {
+      color: color-mix(
+        in oklab,
+        var(
+            --dark-2xl-color,
+            var(
+              --dark-xl-color,
+              var(
+                --dark-lg-color,
+                var(
+                  --dark-md-color,
+                  var(
+                    --dark-sm-color,
+                    var(
+                      --dark-color,
+                      var(
+                        --\32xl-color,
+                        var(
+                          --xl-color,
+                          var(
+                            --lg-color,
+                            var(--md-color, var(--sm-color, var(--color)))
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+          var(
+            --dark-2xl-color-opacity,
+            var(
+              --dark-xl-color-opacity,
+              var(
+                --dark-lg-color-opacity,
+                var(
+                  --dark-md-color-opacity,
+                  var(
+                    --dark-sm-color-opacity,
+                    var(
+                      --dark-color-opacity,
+                      var(
+                        --\32xl-color-opacity,
+                        var(
+                          --xl-color-opacity,
+                          var(
+                            --lg-color-opacity,
+                            var(
+                              --md-color-opacity,
+                              var(
+                                --sm-color-opacity,
+                                var(--color-opacity, 100%)
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+}

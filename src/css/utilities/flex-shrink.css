@@ -1,0 +1,89 @@
+@layer utilities {
+  .flex-shrink {
+    flex-shrink: 1;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  .shrink {
+    flex-shrink: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:flex-shrink {
+      flex-shrink: 1;
+    }
+    .sm\:flex-shrink-0 {
+      flex-shrink: 0;
+    }
+    .sm\:shrink {
+      flex-shrink: 1;
+    }
+    .sm\:shrink-0 {
+      flex-shrink: 0;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:flex-shrink {
+      flex-shrink: 1;
+    }
+    .md\:flex-shrink-0 {
+      flex-shrink: 0;
+    }
+    .md\:shrink {
+      flex-shrink: 1;
+    }
+    .md\:shrink-0 {
+      flex-shrink: 0;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:flex-shrink {
+      flex-shrink: 1;
+    }
+    .lg\:flex-shrink-0 {
+      flex-shrink: 0;
+    }
+    .lg\:shrink {
+      flex-shrink: 1;
+    }
+    .lg\:shrink-0 {
+      flex-shrink: 0;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:flex-shrink {
+      flex-shrink: 1;
+    }
+    .xl\:flex-shrink-0 {
+      flex-shrink: 0;
+    }
+    .xl\:shrink {
+      flex-shrink: 1;
+    }
+    .xl\:shrink-0 {
+      flex-shrink: 0;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:flex-shrink {
+      flex-shrink: 1;
+    }
+    .\32xl\:flex-shrink-0 {
+      flex-shrink: 0;
+    }
+    .\32xl\:shrink {
+      flex-shrink: 1;
+    }
+    .\32xl\:shrink-0 {
+      flex-shrink: 0;
+    }
+  }
+}

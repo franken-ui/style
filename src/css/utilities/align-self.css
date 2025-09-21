@@ -1,0 +1,179 @@
+@layer utilities {
+  .self-auto {
+    align-self: auto;
+  }
+  .self-start {
+    align-self: flex-start;
+  }
+  .self-end {
+    align-self: flex-end;
+  }
+  .self-center {
+    align-self: center;
+  }
+  .self-stretch {
+    align-self: stretch;
+  }
+  .self-baseline {
+    align-self: baseline;
+  }
+  .self-end-safe {
+    align-self: safe flex-end;
+  }
+  .self-center-safe {
+    align-self: safe center;
+  }
+  .self-baseline-last {
+    align-self: last baseline;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:self-auto {
+      align-self: auto;
+    }
+    .sm\:self-start {
+      align-self: flex-start;
+    }
+    .sm\:self-end {
+      align-self: flex-end;
+    }
+    .sm\:self-center {
+      align-self: center;
+    }
+    .sm\:self-stretch {
+      align-self: stretch;
+    }
+    .sm\:self-baseline {
+      align-self: baseline;
+    }
+    .sm\:self-end-safe {
+      align-self: self flex-end;
+    }
+    .sm\:self-center-safe {
+      align-self: self center;
+    }
+    .sm\:self-baseline-last {
+      align-self: last baseline;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:self-auto {
+      align-self: auto;
+    }
+    .md\:self-start {
+      align-self: flex-start;
+    }
+    .md\:self-end {
+      align-self: flex-end;
+    }
+    .md\:self-center {
+      align-self: center;
+    }
+    .md\:self-stretch {
+      align-self: stretch;
+    }
+    .md\:self-baseline {
+      align-self: baseline;
+    }
+    .md\:self-end-safe {
+      align-self: self flex-end;
+    }
+    .md\:self-center-safe {
+      align-self: self center;
+    }
+    .md\:self-baseline-last {
+      align-self: last baseline;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:self-auto {
+      align-self: auto;
+    }
+    .lg\:self-start {
+      align-self: flex-start;
+    }
+    .lg\:self-end {
+      align-self: flex-end;
+    }
+    .lg\:self-center {
+      align-self: center;
+    }
+    .lg\:self-stretch {
+      align-self: stretch;
+    }
+    .lg\:self-baseline {
+      align-self: baseline;
+    }
+    .lg\:self-end-safe {
+      align-self: self flex-end;
+    }
+    .lg\:self-center-safe {
+      align-self: self center;
+    }
+    .lg\:self-baseline-last {
+      align-self: last baseline;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:self-auto {
+      align-self: auto;
+    }
+    .xl\:self-start {
+      align-self: flex-start;
+    }
+    .xl\:self-end {
+      align-self: flex-end;
+    }
+    .xl\:self-center {
+      align-self: center;
+    }
+    .xl\:self-stretch {
+      align-self: stretch;
+    }
+    .xl\:self-baseline {
+      align-self: baseline;
+    }
+    .xl\:self-end-safe {
+      align-self: self flex-end;
+    }
+    .xl\:self-center-safe {
+      align-self: self center;
+    }
+    .xl\:self-baseline-last {
+      align-self: last baseline;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:self-auto {
+      align-self: auto;
+    }
+    .\32xl\:self-start {
+      align-self: flex-start;
+    }
+    .\32xl\:self-end {
+      align-self: flex-end;
+    }
+    .\32xl\:self-center {
+      align-self: center;
+    }
+    .\32xl\:self-stretch {
+      align-self: stretch;
+    }
+    .\32xl\:self-baseline {
+      align-self: baseline;
+    }
+    .\32xl\:self-end-safe {
+      align-self: self flex-end;
+    }
+    .\32xl\:self-center-safe {
+      align-self: self center;
+    }
+    .\32xl\:self-baseline-last {
+      align-self: last baseline;
+    }
+  }
+}

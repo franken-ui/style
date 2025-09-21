@@ -1,0 +1,53 @@
+@layer utilities {
+  .italic {
+    font-style: italic;
+  }
+  .not-italic {
+    font-style: normal;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:italic {
+      font-style: italic;
+    }
+    .sm\:not-italic {
+      font-style: normal;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:italic {
+      font-style: italic;
+    }
+    .md\:not-italic {
+      font-style: normal;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:italic {
+      font-style: italic;
+    }
+    .lg\:not-italic {
+      font-style: normal;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:italic {
+      font-style: italic;
+    }
+    .xl\:not-italic {
+      font-style: normal;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:italic {
+      font-style: italic;
+    }
+    .\32xl\:not-italic {
+      font-style: normal;
+    }
+  }
+}

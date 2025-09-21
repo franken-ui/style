@@ -1,0 +1,183 @@
+@layer styles {
+  .row {
+    grid-row: var(--row);
+  }
+  .row-span {
+    grid-row: span var(--row-span) / span var(--row-span);
+  }
+  .row-start {
+    grid-row-start: var(--row-start);
+  }
+  .row-end {
+    grid-row-end: var(--row-end);
+  }
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:row {
+      grid-row: var(--sm-row, var(--row));
+    }
+    .sm\:row-span {
+      grid-row: span var(--sm-row-span, var(--row-span)) / span
+        var(--sm-row-span, var(--row-span));
+    }
+    .sm\:row-start {
+      grid-row-start: var(--sm-row-start, var(--row-start));
+    }
+    .sm\:row-end {
+      grid-row-end: var(--sm-row-end, var(--row-end));
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:row {
+      grid-row: var(--md-row, var(--sm-row, var(--row)));
+    }
+    .md\:row-span {
+      grid-row: span var(--md-row-span, var(--sm-row-span, var(--row-span))) /
+        span var(--md-row-span, var(--sm-row-span, var(--row-span)));
+    }
+    .md\:row-start {
+      grid-row-start: var(
+        --md-row-start,
+        var(--sm-row-start, var(--row-start))
+      );
+    }
+    .md\:row-end {
+      grid-row-end: var(--md-row-end, var(--sm-row-end, var(--row-end)));
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:row {
+      grid-row: var(--lg-row, var(--md-row, var(--sm-row, var(--row))));
+    }
+    .lg\:row-span {
+      grid-row: span
+        var(
+          --lg-row-span,
+          var(--md-row-span, var(--sm-row-span, var(--row-span)))
+        ) /
+        span
+        var(
+          --lg-row-span,
+          var(--md-row-span, var(--sm-row-span, var(--row-span)))
+        );
+    }
+    .lg\:row-start {
+      grid-row-start: var(
+        --lg-row-start,
+        var(--md-row-start, var(--sm-row-start, var(--row-start)))
+      );
+    }
+    .lg\:row-end {
+      grid-row-end: var(
+        --lg-row-end,
+        var(--md-row-end, var(--sm-row-end, var(--row-end)))
+      );
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:row {
+      grid-row: var(
+        --xl-row,
+        var(--lg-row, var(--md-row, var(--sm-row, var(--row))))
+      );
+    }
+    .xl\:row-span {
+      grid-row: span
+        var(
+          --xl-row-span,
+          var(
+            --lg-row-span,
+            var(--md-row-span, var(--sm-row-span, var(--row-span)))
+          )
+        ) /
+        span
+        var(
+          --xl-row-span,
+          var(
+            --lg-row-span,
+            var(--md-row-span, var(--sm-row-span, var(--row-span)))
+          )
+        );
+    }
+    .xl\:row-start {
+      grid-row-start: var(
+        --xl-row-start,
+        var(
+          --lg-row-start,
+          var(--md-row-start, var(--sm-row-start, var(--row-start)))
+        )
+      );
+    }
+    .xl\:row-end {
+      grid-row-end: var(
+        --xl-row-end,
+        var(--lg-row-end, var(--md-row-end, var(--sm-row-end, var(--row-end))))
+      );
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:row {
+      grid-row: var(
+        --\32xl-row,
+        var(--xl-row, var(--lg-row, var(--md-row, var(--sm-row, var(--row)))))
+      );
+    }
+    .\32xl\:row-span {
+      grid-row: span
+        var(
+          --\32xl-row-span,
+          var(
+            --xl-row-span,
+            var(
+              --lg-row-span,
+              var(--md-row-span, var(--sm-row-span, var(--row-span)))
+            )
+          )
+        ) /
+        span
+        var(
+          --\32xl-row-span,
+          var(
+            --xl-row-span,
+            var(
+              --lg-row-span,
+              var(--md-row-span, var(--sm-row-span, var(--row-span)))
+            )
+          )
+        );
+    }
+    .\32xl\:row-start {
+      grid-row-start: var(
+        --\32xl-row-start,
+        var(
+          --xl-row-start,
+          var(
+            --lg-row-start,
+            var(--md-row-start, var(--sm-row-start, var(--row-start)))
+          )
+        )
+      );
+    }
+    .\32xl\:row-end {
+      grid-row-end: var(
+        --\32xl-row-end,
+        var(
+          --xl-row-end,
+          var(
+            --lg-row-end,
+            var(--md-row-end, var(--sm-row-end, var(--row-end)))
+          )
+        )
+      );
+    }
+  }
+}

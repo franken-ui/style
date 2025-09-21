@@ -1,0 +1,62 @@
+@layer styles {
+  .from-position {
+    --tw-gradient-from-position: var(--from-position);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:from-position {
+      --tw-gradient-from-position: var(
+        --sm-from-position,
+        var(--from-position)
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:from-position {
+      --tw-gradient-from-position: var(
+        --md-from-position,
+        var(--sm-from-position, var(--from-position))
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:from-position {
+      --tw-gradient-from-position: var(
+        --lg-from-position,
+        var(--md-from-position, var(--sm-from-position, var(--from-position)))
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:from-position {
+      --tw-gradient-from-position: var(
+        --xl-from-position,
+        var(
+          --lg-from-position,
+          var(--md-from-position, var(--sm-from-position, var(--from-position)))
+        )
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:from-position {
+      --tw-gradient-from-position: var(
+        --\32xl-from-position,
+        var(
+          --xl-from-position,
+          var(
+            --lg-from-position,
+            var(
+              --md-from-position,
+              var(--sm-from-position, var(--from-position))
+            )
+          )
+        )
+      );
+    }
+  }
+}

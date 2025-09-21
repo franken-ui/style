@@ -1,0 +1,161 @@
+@layer utilities {
+  .items-start {
+    align-items: flex-start;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-stretch {
+    align-items: stretch;
+  }
+  .items-baseline {
+    align-items: baseline;
+  }
+  .items-end-safe {
+    align-items: safe flex-end;
+  }
+  .items-center-safe {
+    align-items: safe center;
+  }
+  .items-baseline-last {
+    align-items: last baseline;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:items-start {
+      align-items: flex-start;
+    }
+    .sm\:items-end {
+      align-items: flex-end;
+    }
+    .sm\:items-center {
+      align-items: center;
+    }
+    .sm\:items-stretch {
+      align-items: stretch;
+    }
+    .sm\:items-baseline {
+      align-items: baseline;
+    }
+    .sm\:items-end-safe {
+      align-items: self flex-end;
+    }
+    .sm\:items-center-safe {
+      align-items: self center;
+    }
+    .sm\:items-baseline-last {
+      align-items: last baseline;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:items-start {
+      align-items: flex-start;
+    }
+    .md\:items-end {
+      align-items: flex-end;
+    }
+    .md\:items-center {
+      align-items: center;
+    }
+    .md\:items-stretch {
+      align-items: stretch;
+    }
+    .md\:items-baseline {
+      align-items: baseline;
+    }
+    .md\:items-end-safe {
+      align-items: self flex-end;
+    }
+    .md\:items-center-safe {
+      align-items: self center;
+    }
+    .md\:items-baseline-last {
+      align-items: last baseline;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:items-start {
+      align-items: flex-start;
+    }
+    .lg\:items-end {
+      align-items: flex-end;
+    }
+    .lg\:items-center {
+      align-items: center;
+    }
+    .lg\:items-stretch {
+      align-items: stretch;
+    }
+    .lg\:items-baseline {
+      align-items: baseline;
+    }
+    .lg\:items-end-safe {
+      align-items: self flex-end;
+    }
+    .lg\:items-center-safe {
+      align-items: self center;
+    }
+    .lg\:items-baseline-last {
+      align-items: last baseline;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:items-start {
+      align-items: flex-start;
+    }
+    .xl\:items-end {
+      align-items: flex-end;
+    }
+    .xl\:items-center {
+      align-items: center;
+    }
+    .xl\:items-stretch {
+      align-items: stretch;
+    }
+    .xl\:items-baseline {
+      align-items: baseline;
+    }
+    .xl\:items-end-safe {
+      align-items: self flex-end;
+    }
+    .xl\:items-center-safe {
+      align-items: self center;
+    }
+    .xl\:items-baseline-last {
+      align-items: last baseline;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:items-start {
+      align-items: flex-start;
+    }
+    .\32xl\:items-end {
+      align-items: flex-end;
+    }
+    .\32xl\:items-center {
+      align-items: center;
+    }
+    .\32xl\:items-stretch {
+      align-items: stretch;
+    }
+    .\32xl\:items-baseline {
+      align-items: baseline;
+    }
+    .\32xl\:items-end-safe {
+      align-items: self flex-end;
+    }
+    .\32xl\:items-center-safe {
+      align-items: self center;
+    }
+    .\32xl\:items-baseline-last {
+      align-items: last baseline;
+    }
+  }
+}

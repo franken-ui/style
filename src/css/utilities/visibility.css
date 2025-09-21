@@ -1,0 +1,71 @@
+@layer utilities {
+  .visible {
+    visibility: visible;
+  }
+  .invisible {
+    visibility: hidden;
+  }
+  .collapse {
+    visibility: collapse;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:visible {
+      visibility: visible;
+    }
+    .sm\:invisible {
+      visibility: hidden;
+    }
+    .sm\:collapse {
+      visibility: collapse;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:visible {
+      visibility: visible;
+    }
+    .md\:invisible {
+      visibility: hidden;
+    }
+    .md\:collapse {
+      visibility: collapse;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:visible {
+      visibility: visible;
+    }
+    .lg\:invisible {
+      visibility: hidden;
+    }
+    .lg\:collapse {
+      visibility: collapse;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:visible {
+      visibility: visible;
+    }
+    .xl\:invisible {
+      visibility: hidden;
+    }
+    .xl\:collapse {
+      visibility: collapse;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:visible {
+      visibility: visible;
+    }
+    .\32xl\:invisible {
+      visibility: hidden;
+    }
+    .\32xl\:collapse {
+      visibility: collapse;
+    }
+  }
+}

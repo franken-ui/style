@@ -1,0 +1,143 @@
+@layer utilities {
+  .justify-items-start {
+    justify-items: start;
+  }
+  .justify-items-end {
+    justify-items: end;
+  }
+  .justify-items-center {
+    justify-items: center;
+  }
+  .justify-items-stretch {
+    justify-items: stretch;
+  }
+  .justify-items-end-safe {
+    justify-items: safe end;
+  }
+  .justify-items-center-safe {
+    justify-items: safe center;
+  }
+  .justify-items-normal {
+    justify-items: normal;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:justify-items-start {
+      justify-items: start;
+    }
+    .sm\:justify-items-end {
+      justify-items: end;
+    }
+    .sm\:justify-items-center {
+      justify-items: center;
+    }
+    .sm\:justify-items-stretch {
+      justify-items: stretch;
+    }
+    .sm\:justify-items-end-safe {
+      justify-items: safe end;
+    }
+    .sm\:justify-items-center-safe {
+      justify-items: safe center;
+    }
+    .sm\:justify-items-normal {
+      justify-items: normal;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:justify-items-start {
+      justify-items: start;
+    }
+    .md\:justify-items-end {
+      justify-items: end;
+    }
+    .md\:justify-items-center {
+      justify-items: center;
+    }
+    .md\:justify-items-stretch {
+      justify-items: stretch;
+    }
+    .md\:justify-items-end-safe {
+      justify-items: safe end;
+    }
+    .md\:justify-items-center-safe {
+      justify-items: safe center;
+    }
+    .md\:justify-items-normal {
+      justify-items: normal;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:justify-items-start {
+      justify-items: start;
+    }
+    .lg\:justify-items-end {
+      justify-items: end;
+    }
+    .lg\:justify-items-center {
+      justify-items: center;
+    }
+    .lg\:justify-items-stretch {
+      justify-items: stretch;
+    }
+    .lg\:justify-items-end-safe {
+      justify-items: safe end;
+    }
+    .lg\:justify-items-center-safe {
+      justify-items: safe center;
+    }
+    .lg\:justify-items-normal {
+      justify-items: normal;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:justify-items-start {
+      justify-items: start;
+    }
+    .xl\:justify-items-end {
+      justify-items: end;
+    }
+    .xl\:justify-items-center {
+      justify-items: center;
+    }
+    .xl\:justify-items-stretch {
+      justify-items: stretch;
+    }
+    .xl\:justify-items-end-safe {
+      justify-items: safe end;
+    }
+    .xl\:justify-items-center-safe {
+      justify-items: safe center;
+    }
+    .xl\:justify-items-normal {
+      justify-items: normal;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:justify-items-start {
+      justify-items: start;
+    }
+    .\32xl\:justify-items-end {
+      justify-items: end;
+    }
+    .\32xl\:justify-items-center {
+      justify-items: center;
+    }
+    .\32xl\:justify-items-stretch {
+      justify-items: stretch;
+    }
+    .\32xl\:justify-items-end-safe {
+      justify-items: safe end;
+    }
+    .\32xl\:justify-items-center-safe {
+      justify-items: safe center;
+    }
+    .\32xl\:justify-items-normal {
+      justify-items: normal;
+    }
+  }
+}

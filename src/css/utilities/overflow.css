@@ -1,0 +1,287 @@
+@layer utilities {
+  .overflow-auto {
+    overflow: auto;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-clip {
+    overflow: clip;
+  }
+  .overflow-visible {
+    overflow: visible;
+  }
+  .overflow-scroll {
+    overflow: scroll;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+  .overflow-y-hidden {
+    overflow-y: hidden;
+  }
+  .overflow-x-clip {
+    overflow-x: clip;
+  }
+  .overflow-y-clip {
+    overflow-y: clip;
+  }
+  .overflow-x-visible {
+    overflow-x: visible;
+  }
+  .overflow-y-visible {
+    overflow-y: visible;
+  }
+  .overflow-x-scroll {
+    overflow-x: scroll;
+  }
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:overflow-auto {
+      overflow: auto;
+    }
+    .sm\:overflow-hidden {
+      overflow: hidden;
+    }
+    .sm\:overflow-clip {
+      overflow: clip;
+    }
+    .sm\:overflow-visible {
+      overflow: visible;
+    }
+    .sm\:overflow-scroll {
+      overflow: scroll;
+    }
+    .sm\:overflow-x-auto {
+      overflow-x: auto;
+    }
+    .sm\:overflow-y-auto {
+      overflow-y: auto;
+    }
+    .sm\:overflow-x-hidden {
+      overflow-x: hidden;
+    }
+    .sm\:overflow-y-hidden {
+      overflow-y: hidden;
+    }
+    .sm\:overflow-x-clip {
+      overflow-x: clip;
+    }
+    .sm\:overflow-y-clip {
+      overflow-y: clip;
+    }
+    .sm\:overflow-x-visible {
+      overflow-x: visible;
+    }
+    .sm\:overflow-y-visible {
+      overflow-y: visible;
+    }
+    .sm\:overflow-x-scroll {
+      overflow-x: scroll;
+    }
+    .sm\:overflow-y-scroll {
+      overflow-y: scroll;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:overflow-auto {
+      overflow: auto;
+    }
+    .md\:overflow-hidden {
+      overflow: hidden;
+    }
+    .md\:overflow-clip {
+      overflow: clip;
+    }
+    .md\:overflow-visible {
+      overflow: visible;
+    }
+    .md\:overflow-scroll {
+      overflow: scroll;
+    }
+    .md\:overflow-x-auto {
+      overflow-x: auto;
+    }
+    .md\:overflow-y-auto {
+      overflow-y: auto;
+    }
+    .md\:overflow-x-hidden {
+      overflow-x: hidden;
+    }
+    .md\:overflow-y-hidden {
+      overflow-y: hidden;
+    }
+    .md\:overflow-x-clip {
+      overflow-x: clip;
+    }
+    .md\:overflow-y-clip {
+      overflow-y: clip;
+    }
+    .md\:overflow-x-visible {
+      overflow-x: visible;
+    }
+    .md\:overflow-y-visible {
+      overflow-y: visible;
+    }
+    .md\:overflow-x-scroll {
+      overflow-x: scroll;
+    }
+    .md\:overflow-y-scroll {
+      overflow-y: scroll;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:overflow-auto {
+      overflow: auto;
+    }
+    .lg\:overflow-hidden {
+      overflow: hidden;
+    }
+    .lg\:overflow-clip {
+      overflow: clip;
+    }
+    .lg\:overflow-visible {
+      overflow: visible;
+    }
+    .lg\:overflow-scroll {
+      overflow: scroll;
+    }
+    .lg\:overflow-x-auto {
+      overflow-x: auto;
+    }
+    .lg\:overflow-y-auto {
+      overflow-y: auto;
+    }
+    .lg\:overflow-x-hidden {
+      overflow-x: hidden;
+    }
+    .lg\:overflow-y-hidden {
+      overflow-y: hidden;
+    }
+    .lg\:overflow-x-clip {
+      overflow-x: clip;
+    }
+    .lg\:overflow-y-clip {
+      overflow-y: clip;
+    }
+    .lg\:overflow-x-visible {
+      overflow-x: visible;
+    }
+    .lg\:overflow-y-visible {
+      overflow-y: visible;
+    }
+    .lg\:overflow-x-scroll {
+      overflow-x: scroll;
+    }
+    .lg\:overflow-y-scroll {
+      overflow-y: scroll;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:overflow-auto {
+      overflow: auto;
+    }
+    .xl\:overflow-hidden {
+      overflow: hidden;
+    }
+    .xl\:overflow-clip {
+      overflow: clip;
+    }
+    .xl\:overflow-visible {
+      overflow: visible;
+    }
+    .xl\:overflow-scroll {
+      overflow: scroll;
+    }
+    .xl\:overflow-x-auto {
+      overflow-x: auto;
+    }
+    .xl\:overflow-y-auto {
+      overflow-y: auto;
+    }
+    .xl\:overflow-x-hidden {
+      overflow-x: hidden;
+    }
+    .xl\:overflow-y-hidden {
+      overflow-y: hidden;
+    }
+    .xl\:overflow-x-clip {
+      overflow-x: clip;
+    }
+    .xl\:overflow-y-clip {
+      overflow-y: clip;
+    }
+    .xl\:overflow-x-visible {
+      overflow-x: visible;
+    }
+    .xl\:overflow-y-visible {
+      overflow-y: visible;
+    }
+    .xl\:overflow-x-scroll {
+      overflow-x: scroll;
+    }
+    .xl\:overflow-y-scroll {
+      overflow-y: scroll;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:overflow-auto {
+      overflow: auto;
+    }
+    .\32xl\:overflow-hidden {
+      overflow: hidden;
+    }
+    .\32xl\:overflow-clip {
+      overflow: clip;
+    }
+    .\32xl\:overflow-visible {
+      overflow: visible;
+    }
+    .\32xl\:overflow-scroll {
+      overflow: scroll;
+    }
+    .\32xl\:overflow-x-auto {
+      overflow-x: auto;
+    }
+    .\32xl\:overflow-y-auto {
+      overflow-y: auto;
+    }
+    .\32xl\:overflow-x-hidden {
+      overflow-x: hidden;
+    }
+    .\32xl\:overflow-y-hidden {
+      overflow-y: hidden;
+    }
+    .\32xl\:overflow-x-clip {
+      overflow-x: clip;
+    }
+    .\32xl\:overflow-y-clip {
+      overflow-y: clip;
+    }
+    .\32xl\:overflow-x-visible {
+      overflow-x: visible;
+    }
+    .\32xl\:overflow-y-visible {
+      overflow-y: visible;
+    }
+    .\32xl\:overflow-x-scroll {
+      overflow-x: scroll;
+    }
+    .\32xl\:overflow-y-scroll {
+      overflow-y: scroll;
+    }
+  }
+}

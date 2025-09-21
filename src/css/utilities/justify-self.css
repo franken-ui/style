@@ -1,0 +1,143 @@
+@layer utilities {
+  .justify-self-auto {
+    justify-self: auto;
+  }
+  .justify-self-start {
+    justify-self: start;
+  }
+  .justify-self-end {
+    justify-self: end;
+  }
+  .justify-self-center {
+    justify-self: center;
+  }
+  .justify-self-stretch {
+    justify-self: stretch;
+  }
+  .justify-self-end-safe {
+    justify-self: safe end;
+  }
+  .justify-self-center-safe {
+    justify-self: safe center;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:justify-self-auto {
+      justify-self: auto;
+    }
+    .sm\:justify-self-start {
+      justify-self: start;
+    }
+    .sm\:justify-self-end {
+      justify-self: end;
+    }
+    .sm\:justify-self-center {
+      justify-self: center;
+    }
+    .sm\:justify-self-stretch {
+      justify-self: stretch;
+    }
+    .sm\:justify-self-end-safe {
+      justify-self: safe end;
+    }
+    .sm\:justify-self-center-safe {
+      justify-self: safe center;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:justify-self-auto {
+      justify-self: auto;
+    }
+    .md\:justify-self-start {
+      justify-self: start;
+    }
+    .md\:justify-self-end {
+      justify-self: end;
+    }
+    .md\:justify-self-center {
+      justify-self: center;
+    }
+    .md\:justify-self-stretch {
+      justify-self: stretch;
+    }
+    .md\:justify-self-end-safe {
+      justify-self: safe end;
+    }
+    .md\:justify-self-center-safe {
+      justify-self: safe center;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:justify-self-auto {
+      justify-self: auto;
+    }
+    .lg\:justify-self-start {
+      justify-self: start;
+    }
+    .lg\:justify-self-end {
+      justify-self: end;
+    }
+    .lg\:justify-self-center {
+      justify-self: center;
+    }
+    .lg\:justify-self-stretch {
+      justify-self: stretch;
+    }
+    .lg\:justify-self-end-safe {
+      justify-self: safe end;
+    }
+    .lg\:justify-self-center-safe {
+      justify-self: safe center;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:justify-self-auto {
+      justify-self: auto;
+    }
+    .xl\:justify-self-start {
+      justify-self: start;
+    }
+    .xl\:justify-self-end {
+      justify-self: end;
+    }
+    .xl\:justify-self-center {
+      justify-self: center;
+    }
+    .xl\:justify-self-stretch {
+      justify-self: stretch;
+    }
+    .xl\:justify-self-end-safe {
+      justify-self: safe end;
+    }
+    .xl\:justify-self-center-safe {
+      justify-self: safe center;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:justify-self-auto {
+      justify-self: auto;
+    }
+    .\32xl\:justify-self-start {
+      justify-self: start;
+    }
+    .\32xl\:justify-self-end {
+      justify-self: end;
+    }
+    .\32xl\:justify-self-center {
+      justify-self: center;
+    }
+    .\32xl\:justify-self-stretch {
+      justify-self: stretch;
+    }
+    .\32xl\:justify-self-end-safe {
+      justify-self: safe end;
+    }
+    .\32xl\:justify-self-center-safe {
+      justify-self: safe center;
+    }
+  }
+}

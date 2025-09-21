@@ -1,0 +1,89 @@
+@layer utilities {
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .lowercase {
+    text-transform: lowercase;
+  }
+  .capitalize {
+    text-transform: capitalize;
+  }
+  .normal-case {
+    text-transform: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:uppercase {
+      text-transform: uppercase;
+    }
+    .sm\:lowercase {
+      text-transform: lowercase;
+    }
+    .sm\:capitalize {
+      text-transform: capitalize;
+    }
+    .sm\:normal-case {
+      text-transform: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:uppercase {
+      text-transform: uppercase;
+    }
+    .md\:lowercase {
+      text-transform: lowercase;
+    }
+    .md\:capitalize {
+      text-transform: capitalize;
+    }
+    .md\:normal-case {
+      text-transform: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:uppercase {
+      text-transform: uppercase;
+    }
+    .lg\:lowercase {
+      text-transform: lowercase;
+    }
+    .lg\:capitalize {
+      text-transform: capitalize;
+    }
+    .lg\:normal-case {
+      text-transform: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:uppercase {
+      text-transform: uppercase;
+    }
+    .xl\:lowercase {
+      text-transform: lowercase;
+    }
+    .xl\:capitalize {
+      text-transform: capitalize;
+    }
+    .xl\:normal-case {
+      text-transform: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:uppercase {
+      text-transform: uppercase;
+    }
+    .\32xl\:lowercase {
+      text-transform: lowercase;
+    }
+    .\32xl\:capitalize {
+      text-transform: capitalize;
+    }
+    .\32xl\:normal-case {
+      text-transform: none;
+    }
+  }
+}

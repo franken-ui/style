@@ -1,0 +1,179 @@
+@layer utilities {
+  .font-black {
+    font-weight: 900;
+  }
+  .font-bold {
+    font-weight: 700;
+  }
+  .font-extrabold {
+    font-weight: 800;
+  }
+  .font-extralight {
+    font-weight: 200;
+  }
+  .font-light {
+    font-weight: 300;
+  }
+  .font-medium {
+    font-weight: 500;
+  }
+  .font-normal {
+    font-weight: 400;
+  }
+  .font-semibold {
+    font-weight: 600;
+  }
+  .font-thin {
+    font-weight: 100;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:font-black {
+      font-weight: 900;
+    }
+    .sm\:font-bold {
+      font-weight: 700;
+    }
+    .sm\:font-extrabold {
+      font-weight: 800;
+    }
+    .sm\:font-extralight {
+      font-weight: 200;
+    }
+    .sm\:font-light {
+      font-weight: 300;
+    }
+    .sm\:font-medium {
+      font-weight: 500;
+    }
+    .sm\:font-normal {
+      font-weight: 400;
+    }
+    .sm\:font-semibold {
+      font-weight: 600;
+    }
+    .sm\:font-thin {
+      font-weight: 100;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:font-black {
+      font-weight: 900;
+    }
+    .md\:font-bold {
+      font-weight: 700;
+    }
+    .md\:font-extrabold {
+      font-weight: 800;
+    }
+    .md\:font-extralight {
+      font-weight: 200;
+    }
+    .md\:font-light {
+      font-weight: 300;
+    }
+    .md\:font-medium {
+      font-weight: 500;
+    }
+    .md\:font-normal {
+      font-weight: 400;
+    }
+    .md\:font-semibold {
+      font-weight: 600;
+    }
+    .md\:font-thin {
+      font-weight: 100;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:font-black {
+      font-weight: 900;
+    }
+    .lg\:font-bold {
+      font-weight: 700;
+    }
+    .lg\:font-extrabold {
+      font-weight: 800;
+    }
+    .lg\:font-extralight {
+      font-weight: 200;
+    }
+    .lg\:font-light {
+      font-weight: 300;
+    }
+    .lg\:font-medium {
+      font-weight: 500;
+    }
+    .lg\:font-normal {
+      font-weight: 400;
+    }
+    .lg\:font-semibold {
+      font-weight: 600;
+    }
+    .lg\:font-thin {
+      font-weight: 100;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:font-black {
+      font-weight: 900;
+    }
+    .xl\:font-bold {
+      font-weight: 700;
+    }
+    .xl\:font-extrabold {
+      font-weight: 800;
+    }
+    .xl\:font-extralight {
+      font-weight: 200;
+    }
+    .xl\:font-light {
+      font-weight: 300;
+    }
+    .xl\:font-medium {
+      font-weight: 500;
+    }
+    .xl\:font-normal {
+      font-weight: 400;
+    }
+    .xl\:font-semibold {
+      font-weight: 600;
+    }
+    .xl\:font-thin {
+      font-weight: 100;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:font-black {
+      font-weight: 900;
+    }
+    .\32xl\:font-bold {
+      font-weight: 700;
+    }
+    .\32xl\:font-extrabold {
+      font-weight: 800;
+    }
+    .\32xl\:font-extralight {
+      font-weight: 200;
+    }
+    .\32xl\:font-light {
+      font-weight: 300;
+    }
+    .\32xl\:font-medium {
+      font-weight: 500;
+    }
+    .\32xl\:font-normal {
+      font-weight: 400;
+    }
+    .\32xl\:font-semibold {
+      font-weight: 600;
+    }
+    .\32xl\:font-thin {
+      font-weight: 100;
+    }
+  }
+}

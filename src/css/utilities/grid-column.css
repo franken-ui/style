@@ -1,0 +1,100 @@
+@layer utilities {
+  /* === Base utilities === */
+  .col-auto {
+    grid-column: auto;
+  }
+
+  .col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  .col-start-auto {
+    grid-column-start: auto;
+  }
+
+  .col-end-auto {
+    grid-column-end: auto;
+  }
+
+  /* === Breakpoints === */
+
+  /* sm */
+  @media (min-width: 40rem) {
+    .sm\:col-auto {
+      grid-column: auto;
+    }
+    .sm\:col-span-full {
+      grid-column: 1 / -1;
+    }
+    .sm\:col-start-auto {
+      grid-column-start: auto;
+    }
+    .sm\:col-end-auto {
+      grid-column-end: auto;
+    }
+  }
+
+  /* md */
+  @media (min-width: 48rem) {
+    .md\:col-auto {
+      grid-column: auto;
+    }
+    .md\:col-span-full {
+      grid-column: 1 / -1;
+    }
+    .md\:col-start-auto {
+      grid-column-start: auto;
+    }
+    .md\:col-end-auto {
+      grid-column-end: auto;
+    }
+  }
+
+  /* lg */
+  @media (min-width: 64rem) {
+    .lg\:col-auto {
+      grid-column: auto;
+    }
+    .lg\:col-span-full {
+      grid-column: 1 / -1;
+    }
+    .lg\:col-start-auto {
+      grid-column-start: auto;
+    }
+    .lg\:col-end-auto {
+      grid-column-end: auto;
+    }
+  }
+
+  /* xl */
+  @media (min-width: 80rem) {
+    .xl\:col-auto {
+      grid-column: auto;
+    }
+    .xl\:col-span-full {
+      grid-column: 1 / -1;
+    }
+    .xl\:col-start-auto {
+      grid-column-start: auto;
+    }
+    .xl\:col-end-auto {
+      grid-column-end: auto;
+    }
+  }
+
+  /* 2xl */
+  @media (min-width: 96rem) {
+    .\32xl\:col-auto {
+      grid-column: auto;
+    }
+    .\32xl\:col-span-full {
+      grid-column: 1 / -1;
+    }
+    .\32xl\:col-start-auto {
+      grid-column-start: auto;
+    }
+    .\32xl\:col-end-auto {
+      grid-column-end: auto;
+    }
+  }
+}
