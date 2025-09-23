@@ -1,0 +1,83 @@
+@layer utilities {
+  .aspect-square {
+    aspect-ratio: 1/1;
+  }
+
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
+
+  .aspect-auto {
+    aspect-ratio: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .sm\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+
+    .sm\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .md\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+
+    .md\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .lg\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+
+    .lg\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .xl\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+
+    .xl\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .\32xl\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+
+    .\32xl\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+}

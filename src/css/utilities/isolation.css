@@ -1,0 +1,53 @@
+@layer utilities {
+  .isolate {
+    isolation: isolate;
+  }
+  .isolation-auto {
+    isolation: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:isolate {
+      isolation: isolate;
+    }
+    .sm\:isolation-auto {
+      isolation: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:isolate {
+      isolation: isolate;
+    }
+    .md\:isolation-auto {
+      isolation: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:isolate {
+      isolation: isolate;
+    }
+    .lg\:isolation-auto {
+      isolation: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:isolate {
+      isolation: isolate;
+    }
+    .xl\:isolation-auto {
+      isolation: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:isolate {
+      isolation: isolate;
+    }
+    .\32xl\:isolation-auto {
+      isolation: auto;
+    }
+  }
+}

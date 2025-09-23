@@ -1,0 +1,107 @@
+@layer utilities {
+  .object-contain {
+    object-fit: contain;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .object-fill {
+    object-fit: fill;
+  }
+  .object-none {
+    object-fit: none;
+  }
+  .object-scale-down {
+    object-fit: scale-down;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:object-contain {
+      object-fit: contain;
+    }
+    .sm\:object-cover {
+      object-fit: cover;
+    }
+    .sm\:object-fill {
+      object-fit: fill;
+    }
+    .sm\:object-none {
+      object-fit: none;
+    }
+    .sm\:object-scale-down {
+      object-fit: scale-down;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:object-contain {
+      object-fit: contain;
+    }
+    .md\:object-cover {
+      object-fit: cover;
+    }
+    .md\:object-fill {
+      object-fit: fill;
+    }
+    .md\:object-none {
+      object-fit: none;
+    }
+    .md\:object-scale-down {
+      object-fit: scale-down;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:object-contain {
+      object-fit: contain;
+    }
+    .lg\:object-cover {
+      object-fit: cover;
+    }
+    .lg\:object-fill {
+      object-fit: fill;
+    }
+    .lg\:object-none {
+      object-fit: none;
+    }
+    .lg\:object-scale-down {
+      object-fit: scale-down;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:object-contain {
+      object-fit: contain;
+    }
+    .xl\:object-cover {
+      object-fit: cover;
+    }
+    .xl\:object-fill {
+      object-fit: fill;
+    }
+    .xl\:object-none {
+      object-fit: none;
+    }
+    .xl\:object-scale-down {
+      object-fit: scale-down;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:object-contain {
+      object-fit: contain;
+    }
+    .\32xl\:object-cover {
+      object-fit: cover;
+    }
+    .\32xl\:object-fill {
+      object-fit: fill;
+    }
+    .\32xl\:object-none {
+      object-fit: none;
+    }
+    .\32xl\:object-scale-down {
+      object-fit: scale-down;
+    }
+  }
+}

@@ -1,0 +1,179 @@
+@layer utilities {
+  .object-bottom {
+    object-position: bottom;
+  }
+  .object-center {
+    object-position: center;
+  }
+  .object-left {
+    object-position: left;
+  }
+  .object-left-bottom {
+    object-position: left bottom;
+  }
+  .object-left-top {
+    object-position: left top;
+  }
+  .object-right {
+    object-position: right;
+  }
+  .object-right-bottom {
+    object-position: right bottom;
+  }
+  .object-right-top {
+    object-position: right top;
+  }
+  .object-top {
+    object-position: top;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:object-bottom {
+      object-position: bottom;
+    }
+    .sm\:object-center {
+      object-position: center;
+    }
+    .sm\:object-left {
+      object-position: left;
+    }
+    .sm\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .sm\:object-left-top {
+      object-position: left top;
+    }
+    .sm\:object-right {
+      object-position: right;
+    }
+    .sm\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .sm\:object-right-top {
+      object-position: right top;
+    }
+    .sm\:object-top {
+      object-position: top;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:object-bottom {
+      object-position: bottom;
+    }
+    .md\:object-center {
+      object-position: center;
+    }
+    .md\:object-left {
+      object-position: left;
+    }
+    .md\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .md\:object-left-top {
+      object-position: left top;
+    }
+    .md\:object-right {
+      object-position: right;
+    }
+    .md\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .md\:object-right-top {
+      object-position: right top;
+    }
+    .md\:object-top {
+      object-position: top;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:object-bottom {
+      object-position: bottom;
+    }
+    .lg\:object-center {
+      object-position: center;
+    }
+    .lg\:object-left {
+      object-position: left;
+    }
+    .lg\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .lg\:object-left-top {
+      object-position: left top;
+    }
+    .lg\:object-right {
+      object-position: right;
+    }
+    .lg\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .lg\:object-right-top {
+      object-position: right top;
+    }
+    .lg\:object-top {
+      object-position: top;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:object-bottom {
+      object-position: bottom;
+    }
+    .xl\:object-center {
+      object-position: center;
+    }
+    .xl\:object-left {
+      object-position: left;
+    }
+    .xl\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .xl\:object-left-top {
+      object-position: left top;
+    }
+    .xl\:object-right {
+      object-position: right;
+    }
+    .xl\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .xl\:object-right-top {
+      object-position: right top;
+    }
+    .xl\:object-top {
+      object-position: top;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:object-bottom {
+      object-position: bottom;
+    }
+    .\32xl\:object-center {
+      object-position: center;
+    }
+    .\32xl\:object-left {
+      object-position: left;
+    }
+    .\32xl\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .\32xl\:object-left-top {
+      object-position: left top;
+    }
+    .\32xl\:object-right {
+      object-position: right;
+    }
+    .\32xl\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .\32xl\:object-right-top {
+      object-position: right top;
+    }
+    .\32xl\:object-top {
+      object-position: top;
+    }
+  }
+}

@@ -77,6 +77,15 @@
   .self-baseline-last {
     align-self: last baseline;
   }
+  .aspect-square {
+    aspect-ratio: 1/1;
+  }
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
+  .aspect-auto {
+    aspect-ratio: auto;
+  }
   .rounded-xs {
     border-radius: var(--radius-xs);
   }
@@ -611,6 +620,142 @@
     --tw-border-style: none;
     border-style: none;
   }
+  .decoration-slice,
+  .box-decoration-slice {
+    -webkit-box-decoration-break: slice;
+    box-decoration-break: slice;
+  }
+  .decoration-clone,
+  .box-decoration-clone {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  .box-border {
+    box-sizing: border-box;
+  }
+  .box-content {
+    box-sizing: content-box;
+  }
+  .break-after-auto {
+    break-after: auto;
+  }
+  .break-after-avoid {
+    break-after: avoid;
+  }
+  .break-after-all {
+    break-after: all;
+  }
+  .break-after-avoid-page {
+    break-after: avoid-page;
+  }
+  .break-after-page {
+    break-after: page;
+  }
+  .break-after-left {
+    break-after: left;
+  }
+  .break-after-right {
+    break-after: right;
+  }
+  .break-after-column {
+    break-after: column;
+  }
+  .break-before-auto {
+    break-before: auto;
+  }
+  .break-before-avoid {
+    break-before: avoid;
+  }
+  .break-before-all {
+    break-before: all;
+  }
+  .break-before-avoid-page {
+    break-before: avoid-page;
+  }
+  .break-before-page {
+    break-before: page;
+  }
+  .break-before-left {
+    break-before: left;
+  }
+  .break-before-right {
+    break-before: right;
+  }
+  .break-before-column {
+    break-before: column;
+  }
+  .break-inside-auto {
+    break-inside: auto;
+  }
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+  .break-inside-avoid-page {
+    break-inside: avoid-page;
+  }
+  .break-inside-avoid-column {
+    break-inside: avoid-column;
+  }
+  .clear-start {
+    clear: inline-start;
+  }
+  .clear-end {
+    clear: inline-end;
+  }
+  .clear-left {
+    clear: left;
+  }
+  .clear-right {
+    clear: right;
+  }
+  .clear-both {
+    clear: both;
+  }
+  .clear-none {
+    clear: none;
+  }
+  .columns-3xs {
+    columns: var(--container-3xs);
+  }
+  .columns-2xs {
+    columns: var(--container-2xs);
+  }
+  .columns-xs {
+    columns: var(--container-xs);
+  }
+  .columns-sm {
+    columns: var(--container-sm);
+  }
+  .columns-md {
+    columns: var(--container-md);
+  }
+  .columns-lg {
+    columns: var(--container-lg);
+  }
+  .columns-xl {
+    columns: var(--container-xl);
+  }
+  .columns-2xl {
+    columns: var(--container-2xl);
+  }
+  .columns-3xl {
+    columns: var(--container-3xl);
+  }
+  .columns-4xl {
+    columns: var(--container-4xl);
+  }
+  .columns-5xl {
+    columns: var(--container-5xl);
+  }
+  .columns-6xl {
+    columns: var(--container-6xl);
+  }
+  .columns-7xl {
+    columns: var(--container-7xl);
+  }
+  .columns-auto {
+    columns: auto;
+  }
   .block {
     display: block;
   }
@@ -775,6 +920,21 @@
   }
   .flex-none {
     flex: none;
+  }
+  .float-start {
+    float: inline-start;
+  }
+  .float-end {
+    float: inline-end;
+  }
+  .float-right {
+    float: right;
+  }
+  .float-left {
+    float: left;
+  }
+  .float-none {
+    float: none;
   }
   .text-xs {
     font: var(--text-xs);
@@ -1011,6 +1171,12 @@
   }
   .end-full {
     inset-inline-end: 100%;
+  }
+  .isolate {
+    isolation: isolate;
+  }
+  .isolation-auto {
+    isolation: auto;
   }
   .justify-normal {
     justify-content: normal;
@@ -1395,6 +1561,48 @@
   .min-w-fit {
     min-width: fit-content;
   }
+  .object-contain {
+    object-fit: contain;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .object-fill {
+    object-fit: fill;
+  }
+  .object-none {
+    object-fit: none;
+  }
+  .object-scale-down {
+    object-fit: scale-down;
+  }
+  .object-bottom {
+    object-position: bottom;
+  }
+  .object-center {
+    object-position: center;
+  }
+  .object-left {
+    object-position: left;
+  }
+  .object-left-bottom {
+    object-position: left bottom;
+  }
+  .object-left-top {
+    object-position: left top;
+  }
+  .object-right {
+    object-position: right;
+  }
+  .object-right-bottom {
+    object-position: right bottom;
+  }
+  .object-right-top {
+    object-position: right top;
+  }
+  .object-top {
+    object-position: top;
+  }
   .-order-first {
     order: 9999;
   }
@@ -1457,6 +1665,33 @@
   }
   .overflow-y-scroll {
     overflow-y: scroll;
+  }
+  .overscroll-auto {
+    overscroll-behavior: auto;
+  }
+  .overscroll-contain {
+    overscroll-behavior: contain;
+  }
+  .overscroll-none {
+    overscroll-behavior: none;
+  }
+  .overscroll-y-auto {
+    overscroll-behavior-y: auto;
+  }
+  .overscroll-y-contain {
+    overscroll-behavior-y: contain;
+  }
+  .overscroll-y-none {
+    overscroll-behavior-y: none;
+  }
+  .overscroll-x-auto {
+    overscroll-behavior-x: auto;
+  }
+  .overscroll-x-contain {
+    overscroll-behavior-x: contain;
+  }
+  .overscroll-x-none {
+    overscroll-behavior-x: none;
   }
   .place-content-center {
     place-content: center;
@@ -1713,6 +1948,9 @@
   .w-fit {
     width: fit-content;
   }
+  .z-auto {
+    z-index: auto;
+  }
   @media (min-width: 40rem) {
     .sm\:content-normal {
       align-content: normal;
@@ -1791,6 +2029,15 @@
     }
     .sm\:self-baseline-last {
       align-self: last baseline;
+    }
+    .sm\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+    .sm\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+    .sm\:aspect-auto {
+      aspect-ratio: auto;
     }
     .sm\:rounded-xs {
       border-radius: var(--radius-xs);
@@ -2326,6 +2573,142 @@
       --tw-border-style: none;
       border-style: none;
     }
+    .sm\:decoration-slice,
+    .sm\:box-decoration-slice {
+      -webkit-box-decoration-break: slice;
+      box-decoration-break: slice;
+    }
+    .sm\:decoration-clone,
+    .sm\:box-decoration-clone {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .sm\:box-border {
+      box-sizing: border-box;
+    }
+    .sm\:box-content {
+      box-sizing: content-box;
+    }
+    .sm\:break-after-auto {
+      break-after: auto;
+    }
+    .sm\:break-after-avoid {
+      break-after: avoid;
+    }
+    .sm\:break-after-all {
+      break-after: all;
+    }
+    .sm\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .sm\:break-after-page {
+      break-after: page;
+    }
+    .sm\:break-after-left {
+      break-after: left;
+    }
+    .sm\:break-after-right {
+      break-after: right;
+    }
+    .sm\:break-after-column {
+      break-after: column;
+    }
+    .sm\:break-before-auto {
+      break-before: auto;
+    }
+    .sm\:break-before-avoid {
+      break-before: avoid;
+    }
+    .sm\:break-before-all {
+      break-before: all;
+    }
+    .sm\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .sm\:break-before-page {
+      break-before: page;
+    }
+    .sm\:break-before-left {
+      break-before: left;
+    }
+    .sm\:break-before-right {
+      break-before: right;
+    }
+    .sm\:break-before-column {
+      break-before: column;
+    }
+    .sm\:break-inside-auto {
+      break-inside: auto;
+    }
+    .sm\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .sm\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .sm\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+    .sm\:clear-start {
+      clear: inline-start;
+    }
+    .sm\:clear-end {
+      clear: inline-end;
+    }
+    .sm\:clear-left {
+      clear: left;
+    }
+    .sm\:clear-right {
+      clear: right;
+    }
+    .sm\:clear-both {
+      clear: both;
+    }
+    .sm\:clear-none {
+      clear: none;
+    }
+    .sm\:columns-3xs {
+      columns: var(--container-3xs);
+    }
+    .sm\:columns-2xs {
+      columns: var(--container-2xs);
+    }
+    .sm\:columns-xs {
+      columns: var(--container-xs);
+    }
+    .sm\:columns-sm {
+      columns: var(--container-sm);
+    }
+    .sm\:columns-md {
+      columns: var(--container-md);
+    }
+    .sm\:columns-lg {
+      columns: var(--container-lg);
+    }
+    .sm\:columns-xl {
+      columns: var(--container-xl);
+    }
+    .sm\:columns-2xl {
+      columns: var(--container-2xl);
+    }
+    .sm\:columns-3xl {
+      columns: var(--container-3xl);
+    }
+    .sm\:columns-4xl {
+      columns: var(--container-4xl);
+    }
+    .sm\:columns-5xl {
+      columns: var(--container-5xl);
+    }
+    .sm\:columns-6xl {
+      columns: var(--container-6xl);
+    }
+    .sm\:columns-7xl {
+      columns: var(--container-7xl);
+    }
+    .sm\:columns-auto {
+      columns: auto;
+    }
     .sm\:block {
       display: block;
     }
@@ -2490,6 +2873,21 @@
     }
     .sm\:flex-none {
       flex: none;
+    }
+    .sm\:float-start {
+      float: inline-start;
+    }
+    .sm\:float-end {
+      float: inline-end;
+    }
+    .sm\:float-right {
+      float: right;
+    }
+    .sm\:float-left {
+      float: left;
+    }
+    .sm\:float-none {
+      float: none;
     }
     .sm\:text-xs {
       font: var(--text-xs);
@@ -2726,6 +3124,12 @@
     }
     .sm\:end-full {
       inset-inline-end: 100%;
+    }
+    .sm\:isolate {
+      isolation: isolate;
+    }
+    .sm\:isolation-auto {
+      isolation: auto;
     }
     .sm\:justify-normal {
       justify-content: normal;
@@ -3110,6 +3514,48 @@
     .sm\:min-w-fit {
       min-width: fit-content;
     }
+    .sm\:object-contain {
+      object-fit: contain;
+    }
+    .sm\:object-cover {
+      object-fit: cover;
+    }
+    .sm\:object-fill {
+      object-fit: fill;
+    }
+    .sm\:object-none {
+      object-fit: none;
+    }
+    .sm\:object-scale-down {
+      object-fit: scale-down;
+    }
+    .sm\:object-bottom {
+      object-position: bottom;
+    }
+    .sm\:object-center {
+      object-position: center;
+    }
+    .sm\:object-left {
+      object-position: left;
+    }
+    .sm\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .sm\:object-left-top {
+      object-position: left top;
+    }
+    .sm\:object-right {
+      object-position: right;
+    }
+    .sm\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .sm\:object-right-top {
+      object-position: right top;
+    }
+    .sm\:object-top {
+      object-position: top;
+    }
     .sm\:-order-first {
       order: 9999;
     }
@@ -3172,6 +3618,33 @@
     }
     .sm\:overflow-y-scroll {
       overflow-y: scroll;
+    }
+    .sm\:overscroll-auto {
+      overscroll-behavior: auto;
+    }
+    .sm\:overscroll-contain {
+      overscroll-behavior: contain;
+    }
+    .sm\:overscroll-none {
+      overscroll-behavior: none;
+    }
+    .sm\:overscroll-y-auto {
+      overscroll-behavior-y: auto;
+    }
+    .sm\:overscroll-y-contain {
+      overscroll-behavior-y: contain;
+    }
+    .sm\:overscroll-y-none {
+      overscroll-behavior-y: none;
+    }
+    .sm\:overscroll-x-auto {
+      overscroll-behavior-x: auto;
+    }
+    .sm\:overscroll-x-contain {
+      overscroll-behavior-x: contain;
+    }
+    .sm\:overscroll-x-none {
+      overscroll-behavior-x: none;
     }
     .sm\:place-content-center {
       place-content: center;
@@ -3428,6 +3901,9 @@
     .sm\:w-fit {
       width: fit-content;
     }
+    .sm\:z-auto {
+      z-index: auto;
+    }
   }
   @media (min-width: 48rem) {
     .md\:content-normal {
@@ -3507,6 +3983,15 @@
     }
     .md\:self-baseline-last {
       align-self: last baseline;
+    }
+    .md\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+    .md\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+    .md\:aspect-auto {
+      aspect-ratio: auto;
     }
     .md\:rounded-xs {
       border-radius: var(--radius-xs);
@@ -4042,6 +4527,142 @@
       --tw-border-style: none;
       border-style: none;
     }
+    .md\:decoration-slice,
+    .md\:box-decoration-slice {
+      -webkit-box-decoration-break: slice;
+      box-decoration-break: slice;
+    }
+    .md\:decoration-clone,
+    .md\:box-decoration-clone {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .md\:box-border {
+      box-sizing: border-box;
+    }
+    .md\:box-content {
+      box-sizing: content-box;
+    }
+    .md\:break-after-auto {
+      break-after: auto;
+    }
+    .md\:break-after-avoid {
+      break-after: avoid;
+    }
+    .md\:break-after-all {
+      break-after: all;
+    }
+    .md\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .md\:break-after-page {
+      break-after: page;
+    }
+    .md\:break-after-left {
+      break-after: left;
+    }
+    .md\:break-after-right {
+      break-after: right;
+    }
+    .md\:break-after-column {
+      break-after: column;
+    }
+    .md\:break-before-auto {
+      break-before: auto;
+    }
+    .md\:break-before-avoid {
+      break-before: avoid;
+    }
+    .md\:break-before-all {
+      break-before: all;
+    }
+    .md\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .md\:break-before-page {
+      break-before: page;
+    }
+    .md\:break-before-left {
+      break-before: left;
+    }
+    .md\:break-before-right {
+      break-before: right;
+    }
+    .md\:break-before-column {
+      break-before: column;
+    }
+    .md\:break-inside-auto {
+      break-inside: auto;
+    }
+    .md\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .md\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .md\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+    .md\:clear-start {
+      clear: inline-start;
+    }
+    .md\:clear-end {
+      clear: inline-end;
+    }
+    .md\:clear-left {
+      clear: left;
+    }
+    .md\:clear-right {
+      clear: right;
+    }
+    .md\:clear-both {
+      clear: both;
+    }
+    .md\:clear-none {
+      clear: none;
+    }
+    .md\:columns-3xs {
+      columns: var(--container-3xs);
+    }
+    .md\:columns-2xs {
+      columns: var(--container-2xs);
+    }
+    .md\:columns-xs {
+      columns: var(--container-xs);
+    }
+    .md\:columns-sm {
+      columns: var(--container-sm);
+    }
+    .md\:columns-md {
+      columns: var(--container-md);
+    }
+    .md\:columns-lg {
+      columns: var(--container-lg);
+    }
+    .md\:columns-xl {
+      columns: var(--container-xl);
+    }
+    .md\:columns-2xl {
+      columns: var(--container-2xl);
+    }
+    .md\:columns-3xl {
+      columns: var(--container-3xl);
+    }
+    .md\:columns-4xl {
+      columns: var(--container-4xl);
+    }
+    .md\:columns-5xl {
+      columns: var(--container-5xl);
+    }
+    .md\:columns-6xl {
+      columns: var(--container-6xl);
+    }
+    .md\:columns-7xl {
+      columns: var(--container-7xl);
+    }
+    .md\:columns-auto {
+      columns: auto;
+    }
     .md\:block {
       display: block;
     }
@@ -4206,6 +4827,21 @@
     }
     .md\:flex-none {
       flex: none;
+    }
+    .md\:float-start {
+      float: inline-start;
+    }
+    .md\:float-end {
+      float: inline-end;
+    }
+    .md\:float-right {
+      float: right;
+    }
+    .md\:float-left {
+      float: left;
+    }
+    .md\:float-none {
+      float: none;
     }
     .md\:text-xs {
       font: var(--text-xs);
@@ -4442,6 +5078,12 @@
     }
     .md\:end-full {
       inset-inline-end: 100%;
+    }
+    .md\:isolate {
+      isolation: isolate;
+    }
+    .md\:isolation-auto {
+      isolation: auto;
     }
     .md\:justify-normal {
       justify-content: normal;
@@ -4826,6 +5468,48 @@
     .md\:min-w-fit {
       min-width: fit-content;
     }
+    .md\:object-contain {
+      object-fit: contain;
+    }
+    .md\:object-cover {
+      object-fit: cover;
+    }
+    .md\:object-fill {
+      object-fit: fill;
+    }
+    .md\:object-none {
+      object-fit: none;
+    }
+    .md\:object-scale-down {
+      object-fit: scale-down;
+    }
+    .md\:object-bottom {
+      object-position: bottom;
+    }
+    .md\:object-center {
+      object-position: center;
+    }
+    .md\:object-left {
+      object-position: left;
+    }
+    .md\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .md\:object-left-top {
+      object-position: left top;
+    }
+    .md\:object-right {
+      object-position: right;
+    }
+    .md\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .md\:object-right-top {
+      object-position: right top;
+    }
+    .md\:object-top {
+      object-position: top;
+    }
     .md\:-order-first {
       order: 9999;
     }
@@ -4888,6 +5572,33 @@
     }
     .md\:overflow-y-scroll {
       overflow-y: scroll;
+    }
+    .md\:overscroll-auto {
+      overscroll-behavior: auto;
+    }
+    .md\:overscroll-contain {
+      overscroll-behavior: contain;
+    }
+    .md\:overscroll-none {
+      overscroll-behavior: none;
+    }
+    .md\:overscroll-y-auto {
+      overscroll-behavior-y: auto;
+    }
+    .md\:overscroll-y-contain {
+      overscroll-behavior-y: contain;
+    }
+    .md\:overscroll-y-none {
+      overscroll-behavior-y: none;
+    }
+    .md\:overscroll-x-auto {
+      overscroll-behavior-x: auto;
+    }
+    .md\:overscroll-x-contain {
+      overscroll-behavior-x: contain;
+    }
+    .md\:overscroll-x-none {
+      overscroll-behavior-x: none;
     }
     .md\:place-content-center {
       place-content: center;
@@ -5144,6 +5855,9 @@
     .md\:w-fit {
       width: fit-content;
     }
+    .md\:z-auto {
+      z-index: auto;
+    }
   }
   @media (min-width: 64rem) {
     .lg\:content-normal {
@@ -5223,6 +5937,15 @@
     }
     .lg\:self-baseline-last {
       align-self: last baseline;
+    }
+    .lg\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+    .lg\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+    .lg\:aspect-auto {
+      aspect-ratio: auto;
     }
     .lg\:rounded-xs {
       border-radius: var(--radius-xs);
@@ -5758,6 +6481,142 @@
       --tw-border-style: none;
       border-style: none;
     }
+    .lg\:decoration-slice,
+    .lg\:box-decoration-slice {
+      -webkit-box-decoration-break: slice;
+      box-decoration-break: slice;
+    }
+    .lg\:decoration-clone,
+    .lg\:box-decoration-clone {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .lg\:box-border {
+      box-sizing: border-box;
+    }
+    .lg\:box-content {
+      box-sizing: content-box;
+    }
+    .lg\:break-after-auto {
+      break-after: auto;
+    }
+    .lg\:break-after-avoid {
+      break-after: avoid;
+    }
+    .lg\:break-after-all {
+      break-after: all;
+    }
+    .lg\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .lg\:break-after-page {
+      break-after: page;
+    }
+    .lg\:break-after-left {
+      break-after: left;
+    }
+    .lg\:break-after-right {
+      break-after: right;
+    }
+    .lg\:break-after-column {
+      break-after: column;
+    }
+    .lg\:break-before-auto {
+      break-before: auto;
+    }
+    .lg\:break-before-avoid {
+      break-before: avoid;
+    }
+    .lg\:break-before-all {
+      break-before: all;
+    }
+    .lg\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .lg\:break-before-page {
+      break-before: page;
+    }
+    .lg\:break-before-left {
+      break-before: left;
+    }
+    .lg\:break-before-right {
+      break-before: right;
+    }
+    .lg\:break-before-column {
+      break-before: column;
+    }
+    .lg\:break-inside-auto {
+      break-inside: auto;
+    }
+    .lg\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .lg\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .lg\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+    .lg\:clear-start {
+      clear: inline-start;
+    }
+    .lg\:clear-end {
+      clear: inline-end;
+    }
+    .lg\:clear-left {
+      clear: left;
+    }
+    .lg\:clear-right {
+      clear: right;
+    }
+    .lg\:clear-both {
+      clear: both;
+    }
+    .lg\:clear-none {
+      clear: none;
+    }
+    .lg\:columns-3xs {
+      columns: var(--container-3xs);
+    }
+    .lg\:columns-2xs {
+      columns: var(--container-2xs);
+    }
+    .lg\:columns-xs {
+      columns: var(--container-xs);
+    }
+    .lg\:columns-sm {
+      columns: var(--container-sm);
+    }
+    .lg\:columns-md {
+      columns: var(--container-md);
+    }
+    .lg\:columns-lg {
+      columns: var(--container-lg);
+    }
+    .lg\:columns-xl {
+      columns: var(--container-xl);
+    }
+    .lg\:columns-2xl {
+      columns: var(--container-2xl);
+    }
+    .lg\:columns-3xl {
+      columns: var(--container-3xl);
+    }
+    .lg\:columns-4xl {
+      columns: var(--container-4xl);
+    }
+    .lg\:columns-5xl {
+      columns: var(--container-5xl);
+    }
+    .lg\:columns-6xl {
+      columns: var(--container-6xl);
+    }
+    .lg\:columns-7xl {
+      columns: var(--container-7xl);
+    }
+    .lg\:columns-auto {
+      columns: auto;
+    }
     .lg\:block {
       display: block;
     }
@@ -5922,6 +6781,21 @@
     }
     .lg\:flex-none {
       flex: none;
+    }
+    .lg\:float-start {
+      float: inline-start;
+    }
+    .lg\:float-end {
+      float: inline-end;
+    }
+    .lg\:float-right {
+      float: right;
+    }
+    .lg\:float-left {
+      float: left;
+    }
+    .lg\:float-none {
+      float: none;
     }
     .lg\:text-xs {
       font: var(--text-xs);
@@ -6158,6 +7032,12 @@
     }
     .lg\:end-full {
       inset-inline-end: 100%;
+    }
+    .lg\:isolate {
+      isolation: isolate;
+    }
+    .lg\:isolation-auto {
+      isolation: auto;
     }
     .lg\:justify-normal {
       justify-content: normal;
@@ -6542,6 +7422,48 @@
     .lg\:min-w-fit {
       min-width: fit-content;
     }
+    .lg\:object-contain {
+      object-fit: contain;
+    }
+    .lg\:object-cover {
+      object-fit: cover;
+    }
+    .lg\:object-fill {
+      object-fit: fill;
+    }
+    .lg\:object-none {
+      object-fit: none;
+    }
+    .lg\:object-scale-down {
+      object-fit: scale-down;
+    }
+    .lg\:object-bottom {
+      object-position: bottom;
+    }
+    .lg\:object-center {
+      object-position: center;
+    }
+    .lg\:object-left {
+      object-position: left;
+    }
+    .lg\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .lg\:object-left-top {
+      object-position: left top;
+    }
+    .lg\:object-right {
+      object-position: right;
+    }
+    .lg\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .lg\:object-right-top {
+      object-position: right top;
+    }
+    .lg\:object-top {
+      object-position: top;
+    }
     .lg\:-order-first {
       order: 9999;
     }
@@ -6604,6 +7526,33 @@
     }
     .lg\:overflow-y-scroll {
       overflow-y: scroll;
+    }
+    .lg\:overscroll-auto {
+      overscroll-behavior: auto;
+    }
+    .lg\:overscroll-contain {
+      overscroll-behavior: contain;
+    }
+    .lg\:overscroll-none {
+      overscroll-behavior: none;
+    }
+    .lg\:overscroll-y-auto {
+      overscroll-behavior-y: auto;
+    }
+    .lg\:overscroll-y-contain {
+      overscroll-behavior-y: contain;
+    }
+    .lg\:overscroll-y-none {
+      overscroll-behavior-y: none;
+    }
+    .lg\:overscroll-x-auto {
+      overscroll-behavior-x: auto;
+    }
+    .lg\:overscroll-x-contain {
+      overscroll-behavior-x: contain;
+    }
+    .lg\:overscroll-x-none {
+      overscroll-behavior-x: none;
     }
     .lg\:place-content-center {
       place-content: center;
@@ -6860,6 +7809,9 @@
     .lg\:w-fit {
       width: fit-content;
     }
+    .lg\:z-auto {
+      z-index: auto;
+    }
   }
   @media (min-width: 80rem) {
     .xl\:content-normal {
@@ -6939,6 +7891,15 @@
     }
     .xl\:self-baseline-last {
       align-self: last baseline;
+    }
+    .xl\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+    .xl\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+    .xl\:aspect-auto {
+      aspect-ratio: auto;
     }
     .xl\:rounded-xs {
       border-radius: var(--radius-xs);
@@ -7474,6 +8435,142 @@
       --tw-border-style: none;
       border-style: none;
     }
+    .xl\:decoration-slice,
+    .xl\:box-decoration-slice {
+      -webkit-box-decoration-break: slice;
+      box-decoration-break: slice;
+    }
+    .xl\:decoration-clone,
+    .xl\:box-decoration-clone {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .xl\:box-border {
+      box-sizing: border-box;
+    }
+    .xl\:box-content {
+      box-sizing: content-box;
+    }
+    .xl\:break-after-auto {
+      break-after: auto;
+    }
+    .xl\:break-after-avoid {
+      break-after: avoid;
+    }
+    .xl\:break-after-all {
+      break-after: all;
+    }
+    .xl\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .xl\:break-after-page {
+      break-after: page;
+    }
+    .xl\:break-after-left {
+      break-after: left;
+    }
+    .xl\:break-after-right {
+      break-after: right;
+    }
+    .xl\:break-after-column {
+      break-after: column;
+    }
+    .xl\:break-before-auto {
+      break-before: auto;
+    }
+    .xl\:break-before-avoid {
+      break-before: avoid;
+    }
+    .xl\:break-before-all {
+      break-before: all;
+    }
+    .xl\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .xl\:break-before-page {
+      break-before: page;
+    }
+    .xl\:break-before-left {
+      break-before: left;
+    }
+    .xl\:break-before-right {
+      break-before: right;
+    }
+    .xl\:break-before-column {
+      break-before: column;
+    }
+    .xl\:break-inside-auto {
+      break-inside: auto;
+    }
+    .xl\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .xl\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .xl\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+    .xl\:clear-start {
+      clear: inline-start;
+    }
+    .xl\:clear-end {
+      clear: inline-end;
+    }
+    .xl\:clear-left {
+      clear: left;
+    }
+    .xl\:clear-right {
+      clear: right;
+    }
+    .xl\:clear-both {
+      clear: both;
+    }
+    .xl\:clear-none {
+      clear: none;
+    }
+    .xl\:columns-3xs {
+      columns: var(--container-3xs);
+    }
+    .xl\:columns-2xs {
+      columns: var(--container-2xs);
+    }
+    .xl\:columns-xs {
+      columns: var(--container-xs);
+    }
+    .xl\:columns-sm {
+      columns: var(--container-sm);
+    }
+    .xl\:columns-md {
+      columns: var(--container-md);
+    }
+    .xl\:columns-lg {
+      columns: var(--container-lg);
+    }
+    .xl\:columns-xl {
+      columns: var(--container-xl);
+    }
+    .xl\:columns-2xl {
+      columns: var(--container-2xl);
+    }
+    .xl\:columns-3xl {
+      columns: var(--container-3xl);
+    }
+    .xl\:columns-4xl {
+      columns: var(--container-4xl);
+    }
+    .xl\:columns-5xl {
+      columns: var(--container-5xl);
+    }
+    .xl\:columns-6xl {
+      columns: var(--container-6xl);
+    }
+    .xl\:columns-7xl {
+      columns: var(--container-7xl);
+    }
+    .xl\:columns-auto {
+      columns: auto;
+    }
     .xl\:block {
       display: block;
     }
@@ -7638,6 +8735,21 @@
     }
     .xl\:flex-none {
       flex: none;
+    }
+    .xl\:float-start {
+      float: inline-start;
+    }
+    .xl\:float-end {
+      float: inline-end;
+    }
+    .xl\:float-right {
+      float: right;
+    }
+    .xl\:float-left {
+      float: left;
+    }
+    .xl\:float-none {
+      float: none;
     }
     .xl\:text-xs {
       font: var(--text-xs);
@@ -7874,6 +8986,12 @@
     }
     .xl\:end-full {
       inset-inline-end: 100%;
+    }
+    .xl\:isolate {
+      isolation: isolate;
+    }
+    .xl\:isolation-auto {
+      isolation: auto;
     }
     .xl\:justify-normal {
       justify-content: normal;
@@ -8258,6 +9376,48 @@
     .xl\:min-w-fit {
       min-width: fit-content;
     }
+    .xl\:object-contain {
+      object-fit: contain;
+    }
+    .xl\:object-cover {
+      object-fit: cover;
+    }
+    .xl\:object-fill {
+      object-fit: fill;
+    }
+    .xl\:object-none {
+      object-fit: none;
+    }
+    .xl\:object-scale-down {
+      object-fit: scale-down;
+    }
+    .xl\:object-bottom {
+      object-position: bottom;
+    }
+    .xl\:object-center {
+      object-position: center;
+    }
+    .xl\:object-left {
+      object-position: left;
+    }
+    .xl\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .xl\:object-left-top {
+      object-position: left top;
+    }
+    .xl\:object-right {
+      object-position: right;
+    }
+    .xl\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .xl\:object-right-top {
+      object-position: right top;
+    }
+    .xl\:object-top {
+      object-position: top;
+    }
     .xl\:-order-first {
       order: 9999;
     }
@@ -8320,6 +9480,33 @@
     }
     .xl\:overflow-y-scroll {
       overflow-y: scroll;
+    }
+    .xl\:overscroll-auto {
+      overscroll-behavior: auto;
+    }
+    .xl\:overscroll-contain {
+      overscroll-behavior: contain;
+    }
+    .xl\:overscroll-none {
+      overscroll-behavior: none;
+    }
+    .xl\:overscroll-y-auto {
+      overscroll-behavior-y: auto;
+    }
+    .xl\:overscroll-y-contain {
+      overscroll-behavior-y: contain;
+    }
+    .xl\:overscroll-y-none {
+      overscroll-behavior-y: none;
+    }
+    .xl\:overscroll-x-auto {
+      overscroll-behavior-x: auto;
+    }
+    .xl\:overscroll-x-contain {
+      overscroll-behavior-x: contain;
+    }
+    .xl\:overscroll-x-none {
+      overscroll-behavior-x: none;
     }
     .xl\:place-content-center {
       place-content: center;
@@ -8576,6 +9763,9 @@
     .xl\:w-fit {
       width: fit-content;
     }
+    .xl\:z-auto {
+      z-index: auto;
+    }
   }
   @media (min-width: 96rem) {
     .\32xl\:content-normal {
@@ -8655,6 +9845,15 @@
     }
     .\32xl\:self-baseline-last {
       align-self: last baseline;
+    }
+    .\32xl\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+    .\32xl\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+    .\32xl\:aspect-auto {
+      aspect-ratio: auto;
     }
     .\32xl\:rounded-xs {
       border-radius: var(--radius-xs);
@@ -9190,6 +10389,142 @@
       --tw-border-style: none;
       border-style: none;
     }
+    .\32xl\:decoration-slice,
+    .\32xl\:box-decoration-slice {
+      -webkit-box-decoration-break: slice;
+      box-decoration-break: slice;
+    }
+    .\32xl\:decoration-clone,
+    .\32xl\:box-decoration-clone {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .\32xl\:box-border {
+      box-sizing: border-box;
+    }
+    .\32xl\:box-content {
+      box-sizing: content-box;
+    }
+    .\32xl\:break-after-auto {
+      break-after: auto;
+    }
+    .\32xl\:break-after-avoid {
+      break-after: avoid;
+    }
+    .\32xl\:break-after-all {
+      break-after: all;
+    }
+    .\32xl\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .\32xl\:break-after-page {
+      break-after: page;
+    }
+    .\32xl\:break-after-left {
+      break-after: left;
+    }
+    .\32xl\:break-after-right {
+      break-after: right;
+    }
+    .\32xl\:break-after-column {
+      break-after: column;
+    }
+    .\32xl\:break-before-auto {
+      break-before: auto;
+    }
+    .\32xl\:break-before-avoid {
+      break-before: avoid;
+    }
+    .\32xl\:break-before-all {
+      break-before: all;
+    }
+    .\32xl\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .\32xl\:break-before-page {
+      break-before: page;
+    }
+    .\32xl\:break-before-left {
+      break-before: left;
+    }
+    .\32xl\:break-before-right {
+      break-before: right;
+    }
+    .\32xl\:break-before-column {
+      break-before: column;
+    }
+    .\32xl\:break-inside-auto {
+      break-inside: auto;
+    }
+    .\32xl\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .\32xl\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .\32xl\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+    .\32xl\:clear-start {
+      clear: inline-start;
+    }
+    .\32xl\:clear-end {
+      clear: inline-end;
+    }
+    .\32xl\:clear-left {
+      clear: left;
+    }
+    .\32xl\:clear-right {
+      clear: right;
+    }
+    .\32xl\:clear-both {
+      clear: both;
+    }
+    .\32xl\:clear-none {
+      clear: none;
+    }
+    .\32xl\:columns-3xs {
+      columns: var(--container-3xs);
+    }
+    .\32xl\:columns-2xs {
+      columns: var(--container-2xs);
+    }
+    .\32xl\:columns-xs {
+      columns: var(--container-xs);
+    }
+    .\32xl\:columns-sm {
+      columns: var(--container-sm);
+    }
+    .\32xl\:columns-md {
+      columns: var(--container-md);
+    }
+    .\32xl\:columns-lg {
+      columns: var(--container-lg);
+    }
+    .\32xl\:columns-xl {
+      columns: var(--container-xl);
+    }
+    .\32xl\:columns-2xl {
+      columns: var(--container-2xl);
+    }
+    .\32xl\:columns-3xl {
+      columns: var(--container-3xl);
+    }
+    .\32xl\:columns-4xl {
+      columns: var(--container-4xl);
+    }
+    .\32xl\:columns-5xl {
+      columns: var(--container-5xl);
+    }
+    .\32xl\:columns-6xl {
+      columns: var(--container-6xl);
+    }
+    .\32xl\:columns-7xl {
+      columns: var(--container-7xl);
+    }
+    .\32xl\:columns-auto {
+      columns: auto;
+    }
     .\32xl\:block {
       display: block;
     }
@@ -9354,6 +10689,21 @@
     }
     .\32xl\:flex-none {
       flex: none;
+    }
+    .\32xl\:float-start {
+      float: inline-start;
+    }
+    .\32xl\:float-end {
+      float: inline-end;
+    }
+    .\32xl\:float-right {
+      float: right;
+    }
+    .\32xl\:float-left {
+      float: left;
+    }
+    .\32xl\:float-none {
+      float: none;
     }
     .\32xl\:text-xs {
       font: var(--text-xs);
@@ -9590,6 +10940,12 @@
     }
     .\32xl\:end-full {
       inset-inline-end: 100%;
+    }
+    .\32xl\:isolate {
+      isolation: isolate;
+    }
+    .\32xl\:isolation-auto {
+      isolation: auto;
     }
     .\32xl\:justify-normal {
       justify-content: normal;
@@ -9974,6 +11330,48 @@
     .\32xl\:min-w-fit {
       min-width: fit-content;
     }
+    .\32xl\:object-contain {
+      object-fit: contain;
+    }
+    .\32xl\:object-cover {
+      object-fit: cover;
+    }
+    .\32xl\:object-fill {
+      object-fit: fill;
+    }
+    .\32xl\:object-none {
+      object-fit: none;
+    }
+    .\32xl\:object-scale-down {
+      object-fit: scale-down;
+    }
+    .\32xl\:object-bottom {
+      object-position: bottom;
+    }
+    .\32xl\:object-center {
+      object-position: center;
+    }
+    .\32xl\:object-left {
+      object-position: left;
+    }
+    .\32xl\:object-left-bottom {
+      object-position: left bottom;
+    }
+    .\32xl\:object-left-top {
+      object-position: left top;
+    }
+    .\32xl\:object-right {
+      object-position: right;
+    }
+    .\32xl\:object-right-bottom {
+      object-position: right bottom;
+    }
+    .\32xl\:object-right-top {
+      object-position: right top;
+    }
+    .\32xl\:object-top {
+      object-position: top;
+    }
     .\32xl\:-order-first {
       order: 9999;
     }
@@ -10036,6 +11434,33 @@
     }
     .\32xl\:overflow-y-scroll {
       overflow-y: scroll;
+    }
+    .\32xl\:overscroll-auto {
+      overscroll-behavior: auto;
+    }
+    .\32xl\:overscroll-contain {
+      overscroll-behavior: contain;
+    }
+    .\32xl\:overscroll-none {
+      overscroll-behavior: none;
+    }
+    .\32xl\:overscroll-y-auto {
+      overscroll-behavior-y: auto;
+    }
+    .\32xl\:overscroll-y-contain {
+      overscroll-behavior-y: contain;
+    }
+    .\32xl\:overscroll-y-none {
+      overscroll-behavior-y: none;
+    }
+    .\32xl\:overscroll-x-auto {
+      overscroll-behavior-x: auto;
+    }
+    .\32xl\:overscroll-x-contain {
+      overscroll-behavior-x: contain;
+    }
+    .\32xl\:overscroll-x-none {
+      overscroll-behavior-x: none;
     }
     .\32xl\:place-content-center {
       place-content: center;
@@ -10291,6 +11716,9 @@
     }
     .\32xl\:w-fit {
       width: fit-content;
+    }
+    .\32xl\:z-auto {
+      z-index: auto;
     }
   }
 }

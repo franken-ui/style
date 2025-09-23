@@ -1,0 +1,125 @@
+@layer utilities {
+  .clear-start {
+    clear: inline-start;
+  }
+  .clear-end {
+    clear: inline-end;
+  }
+  .clear-left {
+    clear: left;
+  }
+  .clear-right {
+    clear: right;
+  }
+  .clear-both {
+    clear: both;
+  }
+  .clear-none {
+    clear: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:clear-start {
+      clear: inline-start;
+    }
+    .sm\:clear-end {
+      clear: inline-end;
+    }
+    .sm\:clear-left {
+      clear: left;
+    }
+    .sm\:clear-right {
+      clear: right;
+    }
+    .sm\:clear-both {
+      clear: both;
+    }
+    .sm\:clear-none {
+      clear: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:clear-start {
+      clear: inline-start;
+    }
+    .md\:clear-end {
+      clear: inline-end;
+    }
+    .md\:clear-left {
+      clear: left;
+    }
+    .md\:clear-right {
+      clear: right;
+    }
+    .md\:clear-both {
+      clear: both;
+    }
+    .md\:clear-none {
+      clear: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:clear-start {
+      clear: inline-start;
+    }
+    .lg\:clear-end {
+      clear: inline-end;
+    }
+    .lg\:clear-left {
+      clear: left;
+    }
+    .lg\:clear-right {
+      clear: right;
+    }
+    .lg\:clear-both {
+      clear: both;
+    }
+    .lg\:clear-none {
+      clear: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:clear-start {
+      clear: inline-start;
+    }
+    .xl\:clear-end {
+      clear: inline-end;
+    }
+    .xl\:clear-left {
+      clear: left;
+    }
+    .xl\:clear-right {
+      clear: right;
+    }
+    .xl\:clear-both {
+      clear: both;
+    }
+    .xl\:clear-none {
+      clear: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:clear-start {
+      clear: inline-start;
+    }
+    .\32xl\:clear-end {
+      clear: inline-end;
+    }
+    .\32xl\:clear-left {
+      clear: left;
+    }
+    .\32xl\:clear-right {
+      clear: right;
+    }
+    .\32xl\:clear-both {
+      clear: both;
+    }
+    .\32xl\:clear-none {
+      clear: none;
+    }
+  }
+}

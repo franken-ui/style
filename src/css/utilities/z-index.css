@@ -1,0 +1,35 @@
+@layer utilities {
+  .z-auto {
+    z-index: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:z-auto {
+      z-index: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:z-auto {
+      z-index: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:z-auto {
+      z-index: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:z-auto {
+      z-index: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:z-auto {
+      z-index: auto;
+    }
+  }
+}

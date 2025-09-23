@@ -1,0 +1,161 @@
+@layer utilities {
+  .break-after-auto {
+    break-after: auto;
+  }
+  .break-after-avoid {
+    break-after: avoid;
+  }
+  .break-after-all {
+    break-after: all;
+  }
+  .break-after-avoid-page {
+    break-after: avoid-page;
+  }
+  .break-after-page {
+    break-after: page;
+  }
+  .break-after-left {
+    break-after: left;
+  }
+  .break-after-right {
+    break-after: right;
+  }
+  .break-after-column {
+    break-after: column;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:break-after-auto {
+      break-after: auto;
+    }
+    .sm\:break-after-avoid {
+      break-after: avoid;
+    }
+    .sm\:break-after-all {
+      break-after: all;
+    }
+    .sm\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .sm\:break-after-page {
+      break-after: page;
+    }
+    .sm\:break-after-left {
+      break-after: left;
+    }
+    .sm\:break-after-right {
+      break-after: right;
+    }
+    .sm\:break-after-column {
+      break-after: column;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:break-after-auto {
+      break-after: auto;
+    }
+    .md\:break-after-avoid {
+      break-after: avoid;
+    }
+    .md\:break-after-all {
+      break-after: all;
+    }
+    .md\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .md\:break-after-page {
+      break-after: page;
+    }
+    .md\:break-after-left {
+      break-after: left;
+    }
+    .md\:break-after-right {
+      break-after: right;
+    }
+    .md\:break-after-column {
+      break-after: column;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:break-after-auto {
+      break-after: auto;
+    }
+    .lg\:break-after-avoid {
+      break-after: avoid;
+    }
+    .lg\:break-after-all {
+      break-after: all;
+    }
+    .lg\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .lg\:break-after-page {
+      break-after: page;
+    }
+    .lg\:break-after-left {
+      break-after: left;
+    }
+    .lg\:break-after-right {
+      break-after: right;
+    }
+    .lg\:break-after-column {
+      break-after: column;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:break-after-auto {
+      break-after: auto;
+    }
+    .xl\:break-after-avoid {
+      break-after: avoid;
+    }
+    .xl\:break-after-all {
+      break-after: all;
+    }
+    .xl\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .xl\:break-after-page {
+      break-after: page;
+    }
+    .xl\:break-after-left {
+      break-after: left;
+    }
+    .xl\:break-after-right {
+      break-after: right;
+    }
+    .xl\:break-after-column {
+      break-after: column;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:break-after-auto {
+      break-after: auto;
+    }
+    .\32xl\:break-after-avoid {
+      break-after: avoid;
+    }
+    .\32xl\:break-after-all {
+      break-after: all;
+    }
+    .\32xl\:break-after-avoid-page {
+      break-after: avoid-page;
+    }
+    .\32xl\:break-after-page {
+      break-after: page;
+    }
+    .\32xl\:break-after-left {
+      break-after: left;
+    }
+    .\32xl\:break-after-right {
+      break-after: right;
+    }
+    .\32xl\:break-after-column {
+      break-after: column;
+    }
+  }
+}

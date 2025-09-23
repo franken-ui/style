@@ -1,4 +1,7 @@
 @layer styles {
+  .aspect {
+    aspect-ratio: var(--aspect);
+  }
   .bg {
     background-color: color-mix(
       in oklab,
@@ -101,6 +104,9 @@
         var(--dark-color-opacity, var(--color-opacity, 100%)),
       transparent
     );
+  }
+  .columns {
+    columns: var(--columns);
   }
   .basis {
     flex-basis: calc(var(--spacing) * var(--basis));
@@ -332,6 +338,9 @@
   .\[min-w\] {
     min-width: var(--min-w);
   }
+  .object {
+    object-position: var(--object);
+  }
   .order {
     order: var(--order);
   }
@@ -498,7 +507,13 @@
   .\[w\] {
     width: var(--w);
   }
+  .z {
+    z-index: var(--z);
+  }
   @media (min-width: 40rem) {
+    .sm\:aspect {
+      aspect-ratio: var(--sm-aspect, var(--aspect));
+    }
     .sm\:bg {
       background-color: color-mix(
         in oklab,
@@ -631,6 +646,9 @@
           ),
         transparent
       );
+    }
+    .sm\:columns {
+      columns: var(--sm-columns, var(--columns));
     }
     .sm\:basis {
       flex-basis: calc(var(--spacing) * var(--sm-basis, var(--basis)));
@@ -879,6 +897,9 @@
     .sm\:\[min-w\] {
       min-width: var(--sm-min-w, var(--min-w));
     }
+    .sm\:object {
+      object-position: var(--sm-object, var(--object));
+    }
     .sm\:order {
       order: var(--sm-order, var(--order));
     }
@@ -1068,8 +1089,14 @@
     .sm\:\[w\] {
       width: var(--sm-w, var(--w));
     }
+    .sm\:z {
+      z-index: var(--sm-z, var(--z));
+    }
   }
   @media (min-width: 48rem) {
+    .md\:aspect {
+      aspect-ratio: var(--md-aspect, var(--sm-aspect, var(--aspect)));
+    }
     .md\:bg {
       background-color: color-mix(
         in oklab,
@@ -1307,6 +1334,9 @@
           ),
         transparent
       );
+    }
+    .md\:columns {
+      columns: var(--md-columns, var(--sm-columns, var(--columns)));
     }
     .md\:basis {
       flex-basis: calc(
@@ -1627,6 +1657,9 @@
     .md\:\[min-w\] {
       min-width: var(--md-min-w, var(--sm-min-w, var(--min-w)));
     }
+    .md\:object {
+      object-position: var(--md-object, var(--sm-object, var(--object)));
+    }
     .md\:order {
       order: var(--md-order, var(--sm-order, var(--order)));
     }
@@ -1866,8 +1899,17 @@
     .md\:\[w\] {
       width: var(--md-w, var(--sm-w, var(--w)));
     }
+    .md\:z {
+      z-index: var(--md-z, var(--sm-z, var(--z)));
+    }
   }
   @media (min-width: 64rem) {
+    .lg\:aspect {
+      aspect-ratio: var(
+        --lg-aspect,
+        var(--md-aspect, var(--sm-aspect, var(--aspect)))
+      );
+    }
     .lg\:bg {
       background-color: color-mix(
         in oklab,
@@ -2156,6 +2198,12 @@
             )
           ),
         transparent
+      );
+    }
+    .lg\:columns {
+      columns: var(
+        --lg-columns,
+        var(--md-columns, var(--sm-columns, var(--columns)))
       );
     }
     .lg\:basis {
@@ -2627,6 +2675,12 @@
         var(--md-min-w, var(--sm-min-w, var(--min-w)))
       );
     }
+    .lg\:object {
+      object-position: var(
+        --lg-object,
+        var(--md-object, var(--sm-object, var(--object)))
+      );
+    }
     .lg\:order {
       order: var(--lg-order, var(--md-order, var(--sm-order, var(--order))));
     }
@@ -2969,8 +3023,17 @@
     .lg\:\[w\] {
       width: var(--lg-w, var(--md-w, var(--sm-w, var(--w))));
     }
+    .lg\:z {
+      z-index: var(--lg-z, var(--md-z, var(--sm-z, var(--z))));
+    }
   }
   @media (min-width: 80rem) {
+    .xl\:aspect {
+      aspect-ratio: var(
+        --xl-aspect,
+        var(--lg-aspect, var(--md-aspect, var(--sm-aspect, var(--aspect))))
+      );
+    }
     .xl\:bg {
       background-color: color-mix(
         in oklab,
@@ -3370,6 +3433,12 @@
             )
           ),
         transparent
+      );
+    }
+    .xl\:columns {
+      columns: var(
+        --xl-columns,
+        var(--lg-columns, var(--md-columns, var(--sm-columns, var(--columns))))
       );
     }
     .xl\:basis {
@@ -4004,6 +4073,12 @@
         var(--lg-min-w, var(--md-min-w, var(--sm-min-w, var(--min-w))))
       );
     }
+    .xl\:object {
+      object-position: var(
+        --xl-object,
+        var(--lg-object, var(--md-object, var(--sm-object, var(--object))))
+      );
+    }
     .xl\:order {
       order: var(
         --xl-order,
@@ -4458,8 +4533,20 @@
     .xl\:\[w\] {
       width: var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))));
     }
+    .xl\:z {
+      z-index: var(--xl-z, var(--lg-z, var(--md-z, var(--sm-z, var(--z)))));
+    }
   }
   @media (min-width: 96rem) {
+    .\32xl\:aspect {
+      aspect-ratio: var(
+        --\32xl-aspect,
+        var(
+          --xl-aspect,
+          var(--lg-aspect, var(--md-aspect, var(--sm-aspect, var(--aspect))))
+        )
+      );
+    }
     .\32xl\:bg {
       background-color: color-mix(
         in oklab,
@@ -4985,6 +5072,18 @@
             )
           ),
         transparent
+      );
+    }
+    .\32xl\:columns {
+      columns: var(
+        --\32xl-columns,
+        var(
+          --xl-columns,
+          var(
+            --lg-columns,
+            var(--md-columns, var(--sm-columns, var(--columns)))
+          )
+        )
       );
     }
     .\32xl\:basis {
@@ -5856,6 +5955,15 @@
         )
       );
     }
+    .\32xl\:object {
+      object-position: var(
+        --\32xl-object,
+        var(
+          --xl-object,
+          var(--lg-object, var(--md-object, var(--sm-object, var(--object))))
+        )
+      );
+    }
     .\32xl\:order {
       order: var(
         --\32xl-order,
@@ -6464,6 +6572,12 @@
       width: var(
         --\32xl-w,
         var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))))
+      );
+    }
+    .\32xl\:z {
+      z-index: var(
+        --\32xl-z,
+        var(--xl-z, var(--lg-z, var(--md-z, var(--sm-z, var(--z)))))
       );
     }
   }

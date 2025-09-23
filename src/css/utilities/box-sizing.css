@@ -1,0 +1,53 @@
+@layer utilities {
+  .box-border {
+    box-sizing: border-box;
+  }
+  .box-content {
+    box-sizing: content-box;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:box-border {
+      box-sizing: border-box;
+    }
+    .sm\:box-content {
+      box-sizing: content-box;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:box-border {
+      box-sizing: border-box;
+    }
+    .md\:box-content {
+      box-sizing: content-box;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:box-border {
+      box-sizing: border-box;
+    }
+    .lg\:box-content {
+      box-sizing: content-box;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:box-border {
+      box-sizing: border-box;
+    }
+    .xl\:box-content {
+      box-sizing: content-box;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:box-border {
+      box-sizing: border-box;
+    }
+    .\32xl\:box-content {
+      box-sizing: content-box;
+    }
+  }
+}

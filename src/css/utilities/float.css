@@ -1,0 +1,107 @@
+@layer utilities {
+  .float-start {
+    float: inline-start;
+  }
+  .float-end {
+    float: inline-end;
+  }
+  .float-right {
+    float: right;
+  }
+  .float-left {
+    float: left;
+  }
+  .float-none {
+    float: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:float-start {
+      float: inline-start;
+    }
+    .sm\:float-end {
+      float: inline-end;
+    }
+    .sm\:float-right {
+      float: right;
+    }
+    .sm\:float-left {
+      float: left;
+    }
+    .sm\:float-none {
+      float: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:float-start {
+      float: inline-start;
+    }
+    .md\:float-end {
+      float: inline-end;
+    }
+    .md\:float-right {
+      float: right;
+    }
+    .md\:float-left {
+      float: left;
+    }
+    .md\:float-none {
+      float: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:float-start {
+      float: inline-start;
+    }
+    .lg\:float-end {
+      float: inline-end;
+    }
+    .lg\:float-right {
+      float: right;
+    }
+    .lg\:float-left {
+      float: left;
+    }
+    .lg\:float-none {
+      float: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:float-start {
+      float: inline-start;
+    }
+    .xl\:float-end {
+      float: inline-end;
+    }
+    .xl\:float-right {
+      float: right;
+    }
+    .xl\:float-left {
+      float: left;
+    }
+    .xl\:float-none {
+      float: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:float-start {
+      float: inline-start;
+    }
+    .\32xl\:float-end {
+      float: inline-end;
+    }
+    .\32xl\:float-right {
+      float: right;
+    }
+    .\32xl\:float-left {
+      float: left;
+    }
+    .\32xl\:float-none {
+      float: none;
+    }
+  }
+}

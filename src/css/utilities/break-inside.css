@@ -1,0 +1,89 @@
+@layer utilities {
+  .break-inside-auto {
+    break-inside: auto;
+  }
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+  .break-inside-avoid-page {
+    break-inside: avoid-page;
+  }
+  .break-inside-avoid-column {
+    break-inside: avoid-column;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:break-inside-auto {
+      break-inside: auto;
+    }
+    .sm\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .sm\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .sm\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:break-inside-auto {
+      break-inside: auto;
+    }
+    .md\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .md\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .md\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:break-inside-auto {
+      break-inside: auto;
+    }
+    .lg\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .lg\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .lg\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:break-inside-auto {
+      break-inside: auto;
+    }
+    .xl\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .xl\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .xl\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:break-inside-auto {
+      break-inside: auto;
+    }
+    .\32xl\:break-inside-avoid {
+      break-inside: avoid;
+    }
+    .\32xl\:break-inside-avoid-page {
+      break-inside: avoid-page;
+    }
+    .\32xl\:break-inside-avoid-column {
+      break-inside: avoid-column;
+    }
+  }
+}

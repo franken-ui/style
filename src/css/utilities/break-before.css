@@ -1,0 +1,161 @@
+@layer utilities {
+  .break-before-auto {
+    break-before: auto;
+  }
+  .break-before-avoid {
+    break-before: avoid;
+  }
+  .break-before-all {
+    break-before: all;
+  }
+  .break-before-avoid-page {
+    break-before: avoid-page;
+  }
+  .break-before-page {
+    break-before: page;
+  }
+  .break-before-left {
+    break-before: left;
+  }
+  .break-before-right {
+    break-before: right;
+  }
+  .break-before-column {
+    break-before: column;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:break-before-auto {
+      break-before: auto;
+    }
+    .sm\:break-before-avoid {
+      break-before: avoid;
+    }
+    .sm\:break-before-all {
+      break-before: all;
+    }
+    .sm\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .sm\:break-before-page {
+      break-before: page;
+    }
+    .sm\:break-before-left {
+      break-before: left;
+    }
+    .sm\:break-before-right {
+      break-before: right;
+    }
+    .sm\:break-before-column {
+      break-before: column;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:break-before-auto {
+      break-before: auto;
+    }
+    .md\:break-before-avoid {
+      break-before: avoid;
+    }
+    .md\:break-before-all {
+      break-before: all;
+    }
+    .md\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .md\:break-before-page {
+      break-before: page;
+    }
+    .md\:break-before-left {
+      break-before: left;
+    }
+    .md\:break-before-right {
+      break-before: right;
+    }
+    .md\:break-before-column {
+      break-before: column;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:break-before-auto {
+      break-before: auto;
+    }
+    .lg\:break-before-avoid {
+      break-before: avoid;
+    }
+    .lg\:break-before-all {
+      break-before: all;
+    }
+    .lg\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .lg\:break-before-page {
+      break-before: page;
+    }
+    .lg\:break-before-left {
+      break-before: left;
+    }
+    .lg\:break-before-right {
+      break-before: right;
+    }
+    .lg\:break-before-column {
+      break-before: column;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:break-before-auto {
+      break-before: auto;
+    }
+    .xl\:break-before-avoid {
+      break-before: avoid;
+    }
+    .xl\:break-before-all {
+      break-before: all;
+    }
+    .xl\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .xl\:break-before-page {
+      break-before: page;
+    }
+    .xl\:break-before-left {
+      break-before: left;
+    }
+    .xl\:break-before-right {
+      break-before: right;
+    }
+    .xl\:break-before-column {
+      break-before: column;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:break-before-auto {
+      break-before: auto;
+    }
+    .\32xl\:break-before-avoid {
+      break-before: avoid;
+    }
+    .\32xl\:break-before-all {
+      break-before: all;
+    }
+    .\32xl\:break-before-avoid-page {
+      break-before: avoid-page;
+    }
+    .\32xl\:break-before-page {
+      break-before: page;
+    }
+    .\32xl\:break-before-left {
+      break-before: left;
+    }
+    .\32xl\:break-before-right {
+      break-before: right;
+    }
+    .\32xl\:break-before-column {
+      break-before: column;
+    }
+  }
+}
