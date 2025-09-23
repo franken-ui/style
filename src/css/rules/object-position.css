@@ -1,26 +1,26 @@
 @layer styles {
   /* Object-position */
-  .object {
+  .object-position {
     object-position: var(--object);
   }
 
   /* sm */
   @media (min-width: 40rem) {
-    .sm\:object {
+    .sm\:object-position {
       object-position: var(--sm-object, var(--object));
     }
   }
 
   /* md */
   @media (min-width: 48rem) {
-    .md\:object {
+    .md\:object-position {
       object-position: var(--md-object, var(--sm-object, var(--object)));
     }
   }
 
   /* lg */
   @media (min-width: 64rem) {
-    .lg\:object {
+    .lg\:object-position {
       object-position: var(
         --lg-object,
         var(--md-object, var(--sm-object, var(--object)))
@@ -30,7 +30,7 @@
 
   /* xl */
   @media (min-width: 80rem) {
-    .xl\:object {
+    .xl\:object-position {
       object-position: var(
         --xl-object,
         var(--lg-object, var(--md-object, var(--sm-object, var(--object))))
@@ -40,7 +40,7 @@
 
   /* 2xl */
   @media (min-width: 96rem) {
-    .\32xl\:object {
+    .\32xl\:object-position {
       object-position: var(
         --\32xl-object,
         var(
