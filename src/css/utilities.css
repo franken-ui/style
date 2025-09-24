@@ -864,6 +864,18 @@
   .basis-full {
     flex-basis: 100%;
   }
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+  .flex-auto {
+    flex: 1 1 auto;
+  }
+  .flex-initial {
+    flex: 0 1 auto;
+  }
+  .flex-none {
+    flex: none;
+  }
   .flex-row {
     flex-direction: row;
   }
@@ -908,18 +920,6 @@
   }
   .flex-nowrap {
     flex-wrap: nowrap;
-  }
-  .flex-1 {
-    flex: 1 1 0%;
-  }
-  .flex-auto {
-    flex: 1 1 auto;
-  }
-  .flex-initial {
-    flex: 0 1 auto;
-  }
-  .flex-none {
-    flex: none;
   }
   .float-start {
     float: inline-start;
@@ -2817,6 +2817,18 @@
     .sm\:basis-full {
       flex-basis: 100%;
     }
+    .sm\:flex-1 {
+      flex: 1 1 0%;
+    }
+    .sm\:flex-auto {
+      flex: 1 1 auto;
+    }
+    .sm\:flex-initial {
+      flex: 0 1 auto;
+    }
+    .sm\:flex-none {
+      flex: none;
+    }
     .sm\:flex-row {
       flex-direction: row;
     }
@@ -2861,18 +2873,6 @@
     }
     .sm\:flex-nowrap {
       flex-wrap: nowrap;
-    }
-    .sm\:flex-1 {
-      flex: 1 1 0%;
-    }
-    .sm\:flex-auto {
-      flex: 1 1 auto;
-    }
-    .sm\:flex-initial {
-      flex: 0 1 auto;
-    }
-    .sm\:flex-none {
-      flex: none;
     }
     .sm\:float-start {
       float: inline-start;
@@ -4771,6 +4771,18 @@
     .md\:basis-full {
       flex-basis: 100%;
     }
+    .md\:flex-1 {
+      flex: 1 1 0%;
+    }
+    .md\:flex-auto {
+      flex: 1 1 auto;
+    }
+    .md\:flex-initial {
+      flex: 0 1 auto;
+    }
+    .md\:flex-none {
+      flex: none;
+    }
     .md\:flex-row {
       flex-direction: row;
     }
@@ -4815,18 +4827,6 @@
     }
     .md\:flex-nowrap {
       flex-wrap: nowrap;
-    }
-    .md\:flex-1 {
-      flex: 1 1 0%;
-    }
-    .md\:flex-auto {
-      flex: 1 1 auto;
-    }
-    .md\:flex-initial {
-      flex: 0 1 auto;
-    }
-    .md\:flex-none {
-      flex: none;
     }
     .md\:float-start {
       float: inline-start;
@@ -6725,6 +6725,18 @@
     .lg\:basis-full {
       flex-basis: 100%;
     }
+    .lg\:flex-1 {
+      flex: 1 1 0%;
+    }
+    .lg\:flex-auto {
+      flex: 1 1 auto;
+    }
+    .lg\:flex-initial {
+      flex: 0 1 auto;
+    }
+    .lg\:flex-none {
+      flex: none;
+    }
     .lg\:flex-row {
       flex-direction: row;
     }
@@ -6769,18 +6781,6 @@
     }
     .lg\:flex-nowrap {
       flex-wrap: nowrap;
-    }
-    .lg\:flex-1 {
-      flex: 1 1 0%;
-    }
-    .lg\:flex-auto {
-      flex: 1 1 auto;
-    }
-    .lg\:flex-initial {
-      flex: 0 1 auto;
-    }
-    .lg\:flex-none {
-      flex: none;
     }
     .lg\:float-start {
       float: inline-start;
@@ -8679,6 +8679,18 @@
     .xl\:basis-full {
       flex-basis: 100%;
     }
+    .xl\:flex-1 {
+      flex: 1 1 0%;
+    }
+    .xl\:flex-auto {
+      flex: 1 1 auto;
+    }
+    .xl\:flex-initial {
+      flex: 0 1 auto;
+    }
+    .xl\:flex-none {
+      flex: none;
+    }
     .xl\:flex-row {
       flex-direction: row;
     }
@@ -8723,18 +8735,6 @@
     }
     .xl\:flex-nowrap {
       flex-wrap: nowrap;
-    }
-    .xl\:flex-1 {
-      flex: 1 1 0%;
-    }
-    .xl\:flex-auto {
-      flex: 1 1 auto;
-    }
-    .xl\:flex-initial {
-      flex: 0 1 auto;
-    }
-    .xl\:flex-none {
-      flex: none;
     }
     .xl\:float-start {
       float: inline-start;
@@ -10633,6 +10633,18 @@
     .\32xl\:basis-full {
       flex-basis: 100%;
     }
+    .\32xl\:flex-1 {
+      flex: 1 1 0%;
+    }
+    .\32xl\:flex-auto {
+      flex: 1 1 auto;
+    }
+    .\32xl\:flex-initial {
+      flex: 0 1 auto;
+    }
+    .\32xl\:flex-none {
+      flex: none;
+    }
     .\32xl\:flex-row {
       flex-direction: row;
     }
@@ -10677,18 +10689,6 @@
     }
     .\32xl\:flex-nowrap {
       flex-wrap: nowrap;
-    }
-    .\32xl\:flex-1 {
-      flex: 1 1 0%;
-    }
-    .\32xl\:flex-auto {
-      flex: 1 1 auto;
-    }
-    .\32xl\:flex-initial {
-      flex: 0 1 auto;
-    }
-    .\32xl\:flex-none {
-      flex: none;
     }
     .\32xl\:float-start {
       float: inline-start;

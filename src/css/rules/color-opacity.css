@@ -1,0 +1,86 @@
+@layer styles {
+  .color\/o {
+    color: color-mix(in oklab, var(--color) var(--color-o, 100%), transparent);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--sm-color, var(--color)) var(--sm-color-o, var(--color-o, 100%)),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--md-color, var(--sm-color, var(--color)))
+          var(--md-color-o, var(--sm-color-o, var(--color-o, 100%))),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+          var(
+            --lg-color-o,
+            var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(
+            --xl-color,
+            var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+          )
+          var(
+            --xl-color-o,
+            var(
+              --lg-color-o,
+              var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
+            )
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(
+            --\32xl-color,
+            var(
+              --xl-color,
+              var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+            )
+          )
+          var(
+            --\32xl-color-o,
+            var(
+              --xl-color-o,
+              var(
+                --lg-color-o,
+                var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
+              )
+            )
+          ),
+        transparent
+      );
+    }
+  }
+}

@@ -1,89 +1,40 @@
 @layer styles {
   .bg {
-    background-color: color-mix(
-      in oklab,
-      var(--bg) var(--bg-opacity, 100%),
-      transparent
-    );
+    background-color: var(--bg);
   }
 
   @media (min-width: 40rem) {
     .sm\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(--sm-bg, var(--bg)) var(--sm-bg-opacity, var(--bg-opacity, 100%)),
-        transparent
-      );
+      background-color: var(--sm-bg, var(--bg));
     }
   }
 
   @media (min-width: 48rem) {
     .md\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(--md-bg, var(--sm-bg, var(--bg)))
-          var(--md-bg-opacity, var(--sm-bg-opacity, var(--bg-opacity, 100%))),
-        transparent
-      );
+      background-color: var(--md-bg, var(--sm-bg, var(--bg)));
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-          var(
-            --lg-bg-opacity,
-            var(--md-bg-opacity, var(--sm-bg-opacity, var(--bg-opacity, 100%)))
-          ),
-        transparent
-      );
+      background-color: var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))));
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
-          var(
-            --xl-bg-opacity,
-            var(
-              --lg-bg-opacity,
-              var(
-                --md-bg-opacity,
-                var(--sm-bg-opacity, var(--bg-opacity, 100%))
-              )
-            )
-          ),
-        transparent
+      background-color: var(
+        --xl-bg,
+        var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
       );
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(
-            --\32xl-bg,
-            var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
-          )
-          var(
-            --\32xl-bg-opacity,
-            var(
-              --xl-bg-opacity,
-              var(
-                --lg-bg-opacity,
-                var(
-                  --md-bg-opacity,
-                  var(--sm-bg-opacity, var(--bg-opacity, 100%))
-                )
-              )
-            )
-          ),
-        transparent
+      background-color: var(
+        --\32xl-bg,
+        var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
       );
     }
   }

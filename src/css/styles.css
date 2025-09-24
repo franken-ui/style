@@ -3,16 +3,12 @@
     aspect-ratio: var(--aspect);
   }
   .bg {
-    background-color: color-mix(
-      in oklab,
-      var(--bg) var(--bg-opacity, 100%),
-      transparent
-    );
+    background-color: var(--bg);
   }
-  .dark .bg {
+  .bg\/o {
     background-color: color-mix(
       in oklab,
-      var(--dark-bg, var(--bg)) var(--dark-bg-opacity, var(--bg-opacity, 100%)),
+      var(--bg) var(--bg-o, 100%),
       transparent
     );
   }
@@ -67,23 +63,6 @@
   .rounded-bl {
     border-bottom-left-radius: var(--rounded-bl);
   }
-  .border {
-    border-style: var(--border-style, var(--tw-border-style, solid));
-    border-width: var(--border-width, 1px);
-    border-color: color-mix(
-      in oklab,
-      var(--border-color) var(--border-color-opacity, 100%),
-      transparent
-    );
-  }
-  .dark .border {
-    border-color: color-mix(
-      in oklab,
-      var(--dark-border-color, var(--border-color))
-        var(--dark-border-color-opacity, var(--border-color-opacity, 100%)),
-      transparent
-    );
-  }
   .bottom {
     bottom: calc(var(--spacing) * var(--bottom));
   }
@@ -91,19 +70,10 @@
     bottom: var(--bottom);
   }
   .color {
-    color: color-mix(
-      in oklab,
-      var(--color) var(--color-opacity, 100%),
-      transparent
-    );
+    color: var(--color);
   }
-  .dark .color {
-    color: color-mix(
-      in oklab,
-      var(--dark-color, var(--color))
-        var(--dark-color-opacity, var(--color-opacity, 100%)),
-      transparent
-    );
+  .color\/o {
+    color: color-mix(in oklab, var(--color) var(--color-o, 100%), transparent);
   }
   .columns {
     columns: var(--columns);
@@ -114,6 +84,9 @@
   .\[basis\] {
     flex-basis: var(--basis);
   }
+  .flex {
+    flex: var(--flex);
+  }
   .flex-grow,
   .grow {
     flex-grow: var(--flex-grow, var(--grow));
@@ -121,12 +94,6 @@
   .flex-shrink,
   .shrink {
     flex-shrink: var(--flex-shrink, var(--shrink));
-  }
-  .flex {
-    flex: var(--flex);
-  }
-  .from-position {
-    --tw-gradient-from-position: var(--from-position);
   }
   .from {
     --tw-gradient-from: color-mix(
@@ -141,19 +108,8 @@
       var(--tw-gradient-to) var(--tw-gradient-to-position)
     );
   }
-  .dark .from {
-    --tw-gradient-from: color-mix(
-      in oklab,
-      var(--dark-from, var(--from))
-        var(--dark-from-opacity, var(--from-opacity, 100%)),
-      transparent
-    );
-    --tw-gradient-stops: var(
-      --tw-gradient-via-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-from) var(--tw-gradient-from-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
+  .from-position {
+    --tw-gradient-from-position: var(--from-position);
   }
   .gap {
     gap: calc(var(--spacing) * var(--gap));
@@ -338,7 +294,7 @@
   .\[min-w\] {
     min-width: var(--min-w);
   }
-  .object {
+  .object-position {
     object-position: var(--object);
   }
   .order {
@@ -436,26 +392,10 @@
     margin-block-start: calc(var(--space-y) * var(--space-y-reverse));
     margin-block-end: calc(var(--space-y) * (1 - var(--space-y-reverse)));
   }
-  .to-position {
-    --tw-gradient-to-position: var(--to-position);
-  }
   .to {
     --tw-gradient-to: color-mix(
       in oklab,
       var(--to) var(--to-opacity, 100%),
-      transparent
-    );
-    --tw-gradient-stops: var(
-      --tw-gradient-via-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-from) var(--tw-gradient-from-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .dark .to {
-    --tw-gradient-to: color-mix(
-      in oklab,
-      var(--dark-to, var(--to)) var(--dark-to-opacity, var(--to-opacity, 100%)),
       transparent
     );
     --tw-gradient-stops: var(
@@ -471,8 +411,8 @@
   .\[top\] {
     top: var(--top);
   }
-  .via-position {
-    --tw-gradient-via-position: var(--via-position);
+  .to-position {
+    --tw-gradient-to-position: var(--to-position);
   }
   .via {
     --tw-gradient-via: color-mix(
@@ -487,19 +427,8 @@
       var(--tw-gradient-to) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
-  .dark .via {
-    --tw-gradient-via: color-mix(
-      in oklab,
-      var(--dark-via, var(--via))
-        var(--dark-via-opacity, var(--via-opacity, 100%)),
-      transparent
-    );
-    --tw-gradient-via-stops:
-      var(--tw-gradient-position),
-      var(--tw-gradient-from) var(--tw-gradient-from-position),
-      var(--tw-gradient-via) var(--tw-gradient-via-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  .via-position {
+    --tw-gradient-via-position: var(--via-position);
   }
   .w {
     width: calc(var(--spacing) * var(--w));
@@ -515,23 +444,12 @@
       aspect-ratio: var(--sm-aspect, var(--aspect));
     }
     .sm\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(--sm-bg, var(--bg)) var(--sm-bg-opacity, var(--bg-opacity, 100%)),
-        transparent
-      );
+      background-color: var(--sm-bg, var(--bg));
     }
-    .dark .sm\:bg {
+    .sm\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--dark-sm-bg, var(--dark-bg, var(--sm-bg, var(--bg))))
-          var(
-            --dark-sm-bg-opacity,
-            var(
-              --dark-bg-opacity,
-              var(--sm-bg-opacity, var(--bg-opacity, 100%))
-            )
-          ),
+        var(--sm-bg, var(--bg)) var(--sm-bg-o, var(--bg-o, 100%)),
         transparent
       );
     }
@@ -586,39 +504,6 @@
     .sm\:rounded-bl {
       border-bottom-left-radius: var(--sm-rounded-bl, var(--rounded-bl));
     }
-    .sm\:border {
-      border-style: var(
-        --sm-border-style,
-        var(--border-style, var(--tw-border-style, solid))
-      );
-      border-width: var(--sm-border-width, var(--border-width, 1px));
-      border-color: color-mix(
-        in oklab,
-        var(--sm-border-color, var(--border-color))
-          var(--sm-border-color-opacity, var(--border-color-opacity, 100%)),
-        transparent
-      );
-    }
-    .dark .sm\:border {
-      border-color: color-mix(
-        in oklab,
-        var(
-            --dark-sm-border-color,
-            var(
-              --dark-border-color,
-              var(--sm-border-color, var(--border-color))
-            )
-          )
-          var(
-            --dark-sm-border-color-opacity,
-            var(
-              --dark-border-color-opacity,
-              var(--sm-border-color-opacity, var(--border-color-opacity, 100%))
-            )
-          ),
-        transparent
-      );
-    }
     .sm\:bottom {
       bottom: calc(var(--spacing) * var(--sm-bottom, var(--bottom)));
     }
@@ -626,24 +511,12 @@
       bottom: var(--sm-bottom, var(--bottom));
     }
     .sm\:color {
-      color: color-mix(
-        in oklab,
-        var(--sm-color, var(--color))
-          var(--sm-color-opacity, var(--color-opacity, 100%)),
-        transparent
-      );
+      color: var(--sm-color, var(--color));
     }
-    .dark .sm\:color {
+    .sm\:color\/o {
       color: color-mix(
         in oklab,
-        var(--dark-sm-color, var(--dark-color, var(--sm-color, var(--color))))
-          var(
-            --dark-sm-color-opacity,
-            var(
-              --dark-color-opacity,
-              var(--sm-color-opacity, var(--color-opacity, 100%))
-            )
-          ),
+        var(--sm-color, var(--color)) var(--sm-color-o, var(--color-o, 100%)),
         transparent
       );
     }
@@ -655,6 +528,9 @@
     }
     .sm\:\[basis\] {
       flex-basis: var(--sm-basis, var(--basis));
+    }
+    .sm\:flex {
+      flex: var(--sm-flex, var(--flex));
     }
     .sm\:flex-grow,
     .sm\:grow {
@@ -670,15 +546,6 @@
         var(--sm-shrink, var(--flex-shrink, var(--shrink)))
       );
     }
-    .sm\:flex {
-      flex: var(--sm-flex, var(--flex));
-    }
-    .sm\:from-position {
-      --tw-gradient-from-position: var(
-        --sm-from-position,
-        var(--from-position)
-      );
-    }
     .sm\:from {
       --tw-gradient-from: color-mix(
         in oklab,
@@ -686,18 +553,10 @@
         transparent
       );
     }
-    .dark .sm\:from {
-      --tw-gradient-from: color-mix(
-        in oklab,
-        var(--dark-sm-from, var(--dark-from, var(--sm-from, var(--from))))
-          var(
-            --dark-sm-from-opacity,
-            var(
-              --dark-from-opacity,
-              var(--sm-from-opacity, var(--from-opacity, 100%))
-            )
-          ),
-        transparent
+    .sm\:from-position {
+      --tw-gradient-from-position: var(
+        --sm-from-position,
+        var(--from-position)
       );
     }
     .sm\:gap {
@@ -897,7 +756,7 @@
     .sm\:\[min-w\] {
       min-width: var(--sm-min-w, var(--min-w));
     }
-    .sm\:object {
+    .sm\:object-position {
       object-position: var(--sm-object, var(--object));
     }
     .sm\:order {
@@ -1014,27 +873,10 @@
         var(--sm-space-y, var(--space-y)) * (1 - var(--space-y-reverse))
       );
     }
-    .sm\:to-position {
-      --tw-gradient-to-position: var(--sm-to-position, var(--to-position));
-    }
     .sm\:to {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--sm-to) var(--sm-to-opacity, 100%),
-        transparent
-      );
-    }
-    .dark .sm\:to {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--dark-sm-to, var(--dark-to, var(--sm-to, var(--to))))
-          var(
-            --dark-sm-to-opacity,
-            var(
-              --dark-to-opacity,
-              var(--sm-to-opacity, var(--to-opacity, 100%))
-            )
-          ),
         transparent
       );
     }
@@ -1044,8 +886,8 @@
     .sm\:\[top\] {
       top: var(--sm-top, var(--top));
     }
-    .sm\:via-position {
-      --tw-gradient-via-position: var(--sm-via-position, var(--via-position));
+    .sm\:to-position {
+      --tw-gradient-to-position: var(--sm-to-position, var(--to-position));
     }
     .sm\:via {
       --tw-gradient-via: color-mix(
@@ -1062,26 +904,8 @@
       );
       --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .dark .sm\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--dark-sm-via, var(--dark-via, var(--sm-via, var(--via))))
-          var(
-            --dark-sm-via-opacity,
-            var(
-              --dark-via-opacity,
-              var(--sm-via-opacity, var(--via-opacity, 100%))
-            )
-          ),
-        transparent
-      );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
+    .sm\:via-position {
+      --tw-gradient-via-position: var(--sm-via-position, var(--via-position));
     }
     .sm\:w {
       width: calc(var(--spacing) * var(--sm-w, var(--w)));
@@ -1098,36 +922,13 @@
       aspect-ratio: var(--md-aspect, var(--sm-aspect, var(--aspect)));
     }
     .md\:bg {
+      background-color: var(--md-bg, var(--sm-bg, var(--bg)));
+    }
+    .md\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--md-bg, var(--sm-bg, var(--bg)))
-          var(--md-bg-opacity, var(--sm-bg-opacity, var(--bg-opacity, 100%))),
-        transparent
-      );
-    }
-    .dark .md\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(
-            --dark-md-bg,
-            var(
-              --dark-sm-bg,
-              var(--dark-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-            )
-          )
-          var(
-            --dark-md-bg-opacity,
-            var(
-              --dark-sm-bg-opacity,
-              var(
-                --dark-bg-opacity,
-                var(
-                  --md-bg-opacity,
-                  var(--sm-bg-opacity, var(--bg-opacity, 100%))
-                )
-              )
-            )
-          ),
+          var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))),
         transparent
       );
     }
@@ -1242,54 +1043,6 @@
         var(--sm-rounded-bl, var(--rounded-bl))
       );
     }
-    .md\:border {
-      border-style: var(
-        --md-border-style,
-        var(--border-style, var(--tw-border-style, solid))
-      );
-      border-width: var(--md-border-width, var(--border-width, 1px));
-      border-color: color-mix(
-        in oklab,
-        var(--md-border-color, var(--border-color))
-          var(--md-border-color-opacity, var(--border-color-opacity, 100%)),
-        transparent
-      );
-    }
-    .dark .md\:border {
-      border-color: color-mix(
-        in oklab,
-        var(
-            --dark-md-border-color,
-            var(
-              --dark-sm-border-color,
-              var(
-                --dark-border-color,
-                var(
-                  --md-border-color,
-                  var(--sm-border-color, var(--border-color))
-                )
-              )
-            )
-          )
-          var(
-            --dark-md-border-color-opacity,
-            var(
-              --dark-sm-border-color-opacity,
-              var(
-                --dark-border-color-opacity,
-                var(
-                  --md-border-color-opacity,
-                  var(
-                    --sm-border-color-opacity,
-                    var(--border-color-opacity, 100%)
-                  )
-                )
-              )
-            )
-          ),
-        transparent
-      );
-    }
     .md\:bottom {
       bottom: calc(
         var(--spacing) * var(--md-bottom, var(--sm-bottom, var(--bottom)))
@@ -1299,39 +1052,13 @@
       bottom: var(--md-bottom, var(--sm-bottom, var(--bottom)));
     }
     .md\:color {
+      color: var(--md-color, var(--sm-color, var(--color)));
+    }
+    .md\:color\/o {
       color: color-mix(
         in oklab,
         var(--md-color, var(--sm-color, var(--color)))
-          var(
-            --md-color-opacity,
-            var(--sm-color-opacity, var(--color-opacity, 100%))
-          ),
-        transparent
-      );
-    }
-    .dark .md\:color {
-      color: color-mix(
-        in oklab,
-        var(
-            --dark-md-color,
-            var(
-              --dark-sm-color,
-              var(--dark-color, var(--md-color, var(--sm-color, var(--color))))
-            )
-          )
-          var(
-            --dark-md-color-opacity,
-            var(
-              --dark-sm-color-opacity,
-              var(
-                --dark-color-opacity,
-                var(
-                  --md-color-opacity,
-                  var(--sm-color-opacity, var(--color-opacity, 100%))
-                )
-              )
-            )
-          ),
+          var(--md-color-o, var(--sm-color-o, var(--color-o, 100%))),
         transparent
       );
     }
@@ -1345,6 +1072,9 @@
     }
     .md\:\[basis\] {
       flex-basis: var(--md-basis, var(--sm-basis, var(--basis)));
+    }
+    .md\:flex {
+      flex: var(--md-flex, var(--sm-flex, var(--flex)));
     }
     .md\:flex-grow,
     .md\:grow {
@@ -1369,15 +1099,6 @@
         )
       );
     }
-    .md\:flex {
-      flex: var(--md-flex, var(--sm-flex, var(--flex)));
-    }
-    .md\:from-position {
-      --tw-gradient-from-position: var(
-        --md-from-position,
-        var(--sm-from-position, var(--from-position))
-      );
-    }
     .md\:from {
       --tw-gradient-from: color-mix(
         in oklab,
@@ -1385,30 +1106,10 @@
         transparent
       );
     }
-    .dark .md\:from {
-      --tw-gradient-from: color-mix(
-        in oklab,
-        var(
-            --dark-md-from,
-            var(
-              --dark-sm-from,
-              var(--dark-from, var(--md-from, var(--sm-from, var(--from))))
-            )
-          )
-          var(
-            --dark-md-from-opacity,
-            var(
-              --dark-sm-from-opacity,
-              var(
-                --dark-from-opacity,
-                var(
-                  --md-from-opacity,
-                  var(--sm-from-opacity, var(--from-opacity, 100%))
-                )
-              )
-            )
-          ),
-        transparent
+    .md\:from-position {
+      --tw-gradient-from-position: var(
+        --md-from-position,
+        var(--sm-from-position, var(--from-position))
       );
     }
     .md\:gap {
@@ -1657,7 +1358,7 @@
     .md\:\[min-w\] {
       min-width: var(--md-min-w, var(--sm-min-w, var(--min-w)));
     }
-    .md\:object {
+    .md\:object-position {
       object-position: var(--md-object, var(--sm-object, var(--object)));
     }
     .md\:order {
@@ -1794,42 +1495,10 @@
           (1 - var(--space-y-reverse))
       );
     }
-    .md\:to-position {
-      --tw-gradient-to-position: var(
-        --md-to-position,
-        var(--sm-to-position, var(--to-position))
-      );
-    }
     .md\:to {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--md-to) var(--md-to-opacity, 100%),
-        transparent
-      );
-    }
-    .dark .md\:to {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(
-            --dark-md-to,
-            var(
-              --dark-sm-to,
-              var(--dark-to, var(--md-to, var(--sm-to, var(--to))))
-            )
-          )
-          var(
-            --dark-md-to-opacity,
-            var(
-              --dark-sm-to-opacity,
-              var(
-                --dark-to-opacity,
-                var(
-                  --md-to-opacity,
-                  var(--sm-to-opacity, var(--to-opacity, 100%))
-                )
-              )
-            )
-          ),
         transparent
       );
     }
@@ -1839,10 +1508,10 @@
     .md\:\[top\] {
       top: var(--md-top, var(--sm-top, var(--top)));
     }
-    .md\:via-position {
-      --tw-gradient-via-position: var(
-        --md-via-position,
-        var(--sm-via-position, var(--via-position))
+    .md\:to-position {
+      --tw-gradient-to-position: var(
+        --md-to-position,
+        var(--sm-to-position, var(--to-position))
       );
     }
     .md\:via {
@@ -1860,38 +1529,11 @@
       );
       --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .dark .md\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(
-            --dark-md-via,
-            var(
-              --dark-sm-via,
-              var(--dark-via, var(--md-via, var(--sm-via, var(--via))))
-            )
-          )
-          var(
-            --dark-md-via-opacity,
-            var(
-              --dark-sm-via-opacity,
-              var(
-                --dark-via-opacity,
-                var(
-                  --md-via-opacity,
-                  var(--sm-via-opacity, var(--via-opacity, 100%))
-                )
-              )
-            )
-          ),
-        transparent
+    .md\:via-position {
+      --tw-gradient-via-position: var(
+        --md-via-position,
+        var(--sm-via-position, var(--via-position))
       );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
     .md\:w {
       width: calc(var(--spacing) * var(--md-w, var(--sm-w, var(--w))));
@@ -1911,51 +1553,13 @@
       );
     }
     .lg\:bg {
+      background-color: var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))));
+    }
+    .lg\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-          var(
-            --lg-bg-opacity,
-            var(--md-bg-opacity, var(--sm-bg-opacity, var(--bg-opacity, 100%)))
-          ),
-        transparent
-      );
-    }
-    .dark .lg\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(
-            --dark-lg-bg,
-            var(
-              --dark-md-bg,
-              var(
-                --dark-sm-bg,
-                var(
-                  --dark-bg,
-                  var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-                )
-              )
-            )
-          )
-          var(
-            --dark-lg-bg-opacity,
-            var(
-              --dark-md-bg-opacity,
-              var(
-                --dark-sm-bg-opacity,
-                var(
-                  --dark-bg-opacity,
-                  var(
-                    --lg-bg-opacity,
-                    var(
-                      --md-bg-opacity,
-                      var(--sm-bg-opacity, var(--bg-opacity, 100%))
-                    )
-                  )
-                )
-              )
-            )
-          ),
+          var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%)))),
         transparent
       );
     }
@@ -2073,66 +1677,6 @@
         var(--md-rounded-bl, var(--sm-rounded-bl, var(--rounded-bl)))
       );
     }
-    .lg\:border {
-      border-style: var(
-        --lg-border-style,
-        var(--border-style, var(--tw-border-style, solid))
-      );
-      border-width: var(--lg-border-width, var(--border-width, 1px));
-      border-color: color-mix(
-        in oklab,
-        var(--lg-border-color, var(--border-color))
-          var(--lg-border-color-opacity, var(--border-color-opacity, 100%)),
-        transparent
-      );
-    }
-    .dark .lg\:border {
-      border-color: color-mix(
-        in oklab,
-        var(
-            --dark-lg-border-color,
-            var(
-              --dark-md-border-color,
-              var(
-                --dark-sm-border-color,
-                var(
-                  --dark-border-color,
-                  var(
-                    --lg-border-color,
-                    var(
-                      --md-border-color,
-                      var(--sm-border-color, var(--border-color))
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-lg-border-color-opacity,
-            var(
-              --dark-md-border-color-opacity,
-              var(
-                --dark-sm-border-color-opacity,
-                var(
-                  --dark-border-color-opacity,
-                  var(
-                    --lg-border-color-opacity,
-                    var(
-                      --md-border-color-opacity,
-                      var(
-                        --sm-border-color-opacity,
-                        var(--border-color-opacity, 100%)
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
-      );
-    }
     .lg\:bottom {
       bottom: calc(
         var(--spacing) *
@@ -2146,56 +1690,15 @@
       );
     }
     .lg\:color {
+      color: var(--lg-color, var(--md-color, var(--sm-color, var(--color))));
+    }
+    .lg\:color\/o {
       color: color-mix(
         in oklab,
         var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
           var(
-            --lg-color-opacity,
-            var(
-              --md-color-opacity,
-              var(--sm-color-opacity, var(--color-opacity, 100%))
-            )
-          ),
-        transparent
-      );
-    }
-    .dark .lg\:color {
-      color: color-mix(
-        in oklab,
-        var(
-            --dark-lg-color,
-            var(
-              --dark-md-color,
-              var(
-                --dark-sm-color,
-                var(
-                  --dark-color,
-                  var(
-                    --lg-color,
-                    var(--md-color, var(--sm-color, var(--color)))
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-lg-color-opacity,
-            var(
-              --dark-md-color-opacity,
-              var(
-                --dark-sm-color-opacity,
-                var(
-                  --dark-color-opacity,
-                  var(
-                    --lg-color-opacity,
-                    var(
-                      --md-color-opacity,
-                      var(--sm-color-opacity, var(--color-opacity, 100%))
-                    )
-                  )
-                )
-              )
-            )
+            --lg-color-o,
+            var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
           ),
         transparent
       );
@@ -2217,6 +1720,9 @@
         --lg-basis,
         var(--md-basis, var(--sm-basis, var(--basis)))
       );
+    }
+    .lg\:flex {
+      flex: var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))));
     }
     .lg\:flex-grow,
     .lg\:grow {
@@ -2253,15 +1759,6 @@
         )
       );
     }
-    .lg\:flex {
-      flex: var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))));
-    }
-    .lg\:from-position {
-      --tw-gradient-from-position: var(
-        --lg-from-position,
-        var(--md-from-position, var(--sm-from-position, var(--from-position)))
-      );
-    }
     .lg\:from {
       --tw-gradient-from: color-mix(
         in oklab,
@@ -2269,42 +1766,10 @@
         transparent
       );
     }
-    .dark .lg\:from {
-      --tw-gradient-from: color-mix(
-        in oklab,
-        var(
-            --dark-lg-from,
-            var(
-              --dark-md-from,
-              var(
-                --dark-sm-from,
-                var(
-                  --dark-from,
-                  var(--lg-from, var(--md-from, var(--sm-from, var(--from))))
-                )
-              )
-            )
-          )
-          var(
-            --dark-lg-from-opacity,
-            var(
-              --dark-md-from-opacity,
-              var(
-                --dark-sm-from-opacity,
-                var(
-                  --dark-from-opacity,
-                  var(
-                    --lg-from-opacity,
-                    var(
-                      --md-from-opacity,
-                      var(--sm-from-opacity, var(--from-opacity, 100%))
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
+    .lg\:from-position {
+      --tw-gradient-from-position: var(
+        --lg-from-position,
+        var(--md-from-position, var(--sm-from-position, var(--from-position)))
       );
     }
     .lg\:gap {
@@ -2675,7 +2140,7 @@
         var(--md-min-w, var(--sm-min-w, var(--min-w)))
       );
     }
-    .lg\:object {
+    .lg\:object-position {
       object-position: var(
         --lg-object,
         var(--md-object, var(--sm-object, var(--object)))
@@ -2884,54 +2349,10 @@
           (1 - var(--space-y-reverse))
       );
     }
-    .lg\:to-position {
-      --tw-gradient-to-position: var(
-        --lg-to-position,
-        var(--md-to-position, var(--sm-to-position, var(--to-position)))
-      );
-    }
     .lg\:to {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--lg-to) var(--lg-to-opacity, 100%),
-        transparent
-      );
-    }
-    .dark .lg\:to {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(
-            --dark-lg-to,
-            var(
-              --dark-md-to,
-              var(
-                --dark-sm-to,
-                var(
-                  --dark-to,
-                  var(--lg-to, var(--md-to, var(--sm-to, var(--to))))
-                )
-              )
-            )
-          )
-          var(
-            --dark-lg-to-opacity,
-            var(
-              --dark-md-to-opacity,
-              var(
-                --dark-sm-to-opacity,
-                var(
-                  --dark-to-opacity,
-                  var(
-                    --lg-to-opacity,
-                    var(
-                      --md-to-opacity,
-                      var(--sm-to-opacity, var(--to-opacity, 100%))
-                    )
-                  )
-                )
-              )
-            )
-          ),
         transparent
       );
     }
@@ -2943,10 +2364,10 @@
     .lg\:\[top\] {
       top: var(--lg-top, var(--md-top, var(--sm-top, var(--top))));
     }
-    .lg\:via-position {
-      --tw-gradient-via-position: var(
-        --lg-via-position,
-        var(--md-via-position, var(--sm-via-position, var(--via-position)))
+    .lg\:to-position {
+      --tw-gradient-to-position: var(
+        --lg-to-position,
+        var(--md-to-position, var(--sm-to-position, var(--to-position)))
       );
     }
     .lg\:via {
@@ -2970,50 +2391,11 @@
       );
       --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .dark .lg\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(
-            --dark-lg-via,
-            var(
-              --dark-md-via,
-              var(
-                --dark-sm-via,
-                var(
-                  --dark-via,
-                  var(--lg-via, var(--md-via, var(--sm-via, var(--via))))
-                )
-              )
-            )
-          )
-          var(
-            --dark-lg-via-opacity,
-            var(
-              --dark-md-via-opacity,
-              var(
-                --dark-sm-via-opacity,
-                var(
-                  --dark-via-opacity,
-                  var(
-                    --lg-via-opacity,
-                    var(
-                      --md-via-opacity,
-                      var(--sm-via-opacity, var(--via-opacity, 100%))
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
+    .lg\:via-position {
+      --tw-gradient-via-position: var(
+        --lg-via-position,
+        var(--md-via-position, var(--sm-via-position, var(--via-position)))
       );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
     .lg\:w {
       width: calc(
@@ -3035,68 +2417,18 @@
       );
     }
     .xl\:bg {
+      background-color: var(
+        --xl-bg,
+        var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
+      );
+    }
+    .xl\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
           var(
-            --xl-bg-opacity,
-            var(
-              --lg-bg-opacity,
-              var(
-                --md-bg-opacity,
-                var(--sm-bg-opacity, var(--bg-opacity, 100%))
-              )
-            )
-          ),
-        transparent
-      );
-    }
-    .dark .xl\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(
-            --dark-xl-bg,
-            var(
-              --dark-lg-bg,
-              var(
-                --dark-md-bg,
-                var(
-                  --dark-sm-bg,
-                  var(
-                    --dark-bg,
-                    var(
-                      --xl-bg,
-                      var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-xl-bg-opacity,
-            var(
-              --dark-lg-bg-opacity,
-              var(
-                --dark-md-bg-opacity,
-                var(
-                  --dark-sm-bg-opacity,
-                  var(
-                    --dark-bg-opacity,
-                    var(
-                      --xl-bg-opacity,
-                      var(
-                        --lg-bg-opacity,
-                        var(
-                          --md-bg-opacity,
-                          var(--sm-bg-opacity, var(--bg-opacity, 100%))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
+            --xl-bg-o,
+            var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
           ),
         transparent
       );
@@ -3275,78 +2607,6 @@
         )
       );
     }
-    .xl\:border {
-      border-style: var(
-        --xl-border-style,
-        var(--border-style, var(--tw-border-style, solid))
-      );
-      border-width: var(--xl-border-width, var(--border-width, 1px));
-      border-color: color-mix(
-        in oklab,
-        var(--xl-border-color, var(--border-color))
-          var(--xl-border-color-opacity, var(--border-color-opacity, 100%)),
-        transparent
-      );
-    }
-    .dark .xl\:border {
-      border-color: color-mix(
-        in oklab,
-        var(
-            --dark-xl-border-color,
-            var(
-              --dark-lg-border-color,
-              var(
-                --dark-md-border-color,
-                var(
-                  --dark-sm-border-color,
-                  var(
-                    --dark-border-color,
-                    var(
-                      --xl-border-color,
-                      var(
-                        --lg-border-color,
-                        var(
-                          --md-border-color,
-                          var(--sm-border-color, var(--border-color))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-xl-border-color-opacity,
-            var(
-              --dark-lg-border-color-opacity,
-              var(
-                --dark-md-border-color-opacity,
-                var(
-                  --dark-sm-border-color-opacity,
-                  var(
-                    --dark-border-color-opacity,
-                    var(
-                      --xl-border-color-opacity,
-                      var(
-                        --lg-border-color-opacity,
-                        var(
-                          --md-border-color-opacity,
-                          var(
-                            --sm-border-color-opacity,
-                            var(--border-color-opacity, 100%)
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
-      );
-    }
     .xl\:bottom {
       bottom: calc(
         var(--spacing) *
@@ -3363,6 +2623,12 @@
       );
     }
     .xl\:color {
+      color: var(
+        --xl-color,
+        var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+      );
+    }
+    .xl\:color\/o {
       color: color-mix(
         in oklab,
         var(
@@ -3370,66 +2636,10 @@
             var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
           )
           var(
-            --xl-color-opacity,
+            --xl-color-o,
             var(
-              --lg-color-opacity,
-              var(
-                --md-color-opacity,
-                var(--sm-color-opacity, var(--color-opacity, 100%))
-              )
-            )
-          ),
-        transparent
-      );
-    }
-    .dark .xl\:color {
-      color: color-mix(
-        in oklab,
-        var(
-            --dark-xl-color,
-            var(
-              --dark-lg-color,
-              var(
-                --dark-md-color,
-                var(
-                  --dark-sm-color,
-                  var(
-                    --dark-color,
-                    var(
-                      --xl-color,
-                      var(
-                        --lg-color,
-                        var(--md-color, var(--sm-color, var(--color)))
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-xl-color-opacity,
-            var(
-              --dark-lg-color-opacity,
-              var(
-                --dark-md-color-opacity,
-                var(
-                  --dark-sm-color-opacity,
-                  var(
-                    --dark-color-opacity,
-                    var(
-                      --xl-color-opacity,
-                      var(
-                        --lg-color-opacity,
-                        var(
-                          --md-color-opacity,
-                          var(--sm-color-opacity, var(--color-opacity, 100%))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
+              --lg-color-o,
+              var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
             )
           ),
         transparent
@@ -3454,6 +2664,12 @@
       flex-basis: var(
         --xl-basis,
         var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
+      );
+    }
+    .xl\:flex {
+      flex: var(
+        --xl-flex,
+        var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
       );
     }
     .xl\:flex-grow,
@@ -3506,10 +2722,11 @@
         )
       );
     }
-    .xl\:flex {
-      flex: var(
-        --xl-flex,
-        var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
+    .xl\:from {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--xl-from) var(--xl-from-opacity, 100%),
+        transparent
       );
     }
     .xl\:from-position {
@@ -3519,66 +2736,6 @@
           --lg-from-position,
           var(--md-from-position, var(--sm-from-position, var(--from-position)))
         )
-      );
-    }
-    .xl\:from {
-      --tw-gradient-from: color-mix(
-        in oklab,
-        var(--xl-from) var(--xl-from-opacity, 100%),
-        transparent
-      );
-    }
-    .dark .xl\:from {
-      --tw-gradient-from: color-mix(
-        in oklab,
-        var(
-            --dark-xl-from,
-            var(
-              --dark-lg-from,
-              var(
-                --dark-md-from,
-                var(
-                  --dark-sm-from,
-                  var(
-                    --dark-from,
-                    var(
-                      --xl-from,
-                      var(
-                        --lg-from,
-                        var(--md-from, var(--sm-from, var(--from)))
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-xl-from-opacity,
-            var(
-              --dark-lg-from-opacity,
-              var(
-                --dark-md-from-opacity,
-                var(
-                  --dark-sm-from-opacity,
-                  var(
-                    --dark-from-opacity,
-                    var(
-                      --xl-from-opacity,
-                      var(
-                        --lg-from-opacity,
-                        var(
-                          --md-from-opacity,
-                          var(--sm-from-opacity, var(--from-opacity, 100%))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
       );
     }
     .xl\:gap {
@@ -4073,7 +3230,7 @@
         var(--lg-min-w, var(--md-min-w, var(--sm-min-w, var(--min-w))))
       );
     }
-    .xl\:object {
+    .xl\:object-position {
       object-position: var(
         --xl-object,
         var(--lg-object, var(--md-object, var(--sm-object, var(--object))))
@@ -4356,69 +3513,10 @@
           (1 - var(--space-y-reverse))
       );
     }
-    .xl\:to-position {
-      --tw-gradient-to-position: var(
-        --xl-to-position,
-        var(
-          --lg-to-position,
-          var(--md-to-position, var(--sm-to-position, var(--to-position)))
-        )
-      );
-    }
     .xl\:to {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--xl-to) var(--xl-to-opacity, 100%),
-        transparent
-      );
-    }
-    .dark .xl\:to {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(
-            --dark-xl-to,
-            var(
-              --dark-lg-to,
-              var(
-                --dark-md-to,
-                var(
-                  --dark-sm-to,
-                  var(
-                    --dark-to,
-                    var(
-                      --xl-to,
-                      var(--lg-to, var(--md-to, var(--sm-to, var(--to))))
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-xl-to-opacity,
-            var(
-              --dark-lg-to-opacity,
-              var(
-                --dark-md-to-opacity,
-                var(
-                  --dark-sm-to-opacity,
-                  var(
-                    --dark-to-opacity,
-                    var(
-                      --xl-to-opacity,
-                      var(
-                        --lg-to-opacity,
-                        var(
-                          --md-to-opacity,
-                          var(--sm-to-opacity, var(--to-opacity, 100%))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
         transparent
       );
     }
@@ -4434,12 +3532,12 @@
         var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
       );
     }
-    .xl\:via-position {
-      --tw-gradient-via-position: var(
-        --xl-via-position,
+    .xl\:to-position {
+      --tw-gradient-to-position: var(
+        --xl-to-position,
         var(
-          --lg-via-position,
-          var(--md-via-position, var(--sm-via-position, var(--via-position)))
+          --lg-to-position,
+          var(--md-to-position, var(--sm-to-position, var(--to-position)))
         )
       );
     }
@@ -4467,62 +3565,14 @@
       );
       --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .dark .xl\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
+    .xl\:via-position {
+      --tw-gradient-via-position: var(
+        --xl-via-position,
         var(
-            --dark-xl-via,
-            var(
-              --dark-lg-via,
-              var(
-                --dark-md-via,
-                var(
-                  --dark-sm-via,
-                  var(
-                    --dark-via,
-                    var(
-                      --xl-via,
-                      var(--lg-via, var(--md-via, var(--sm-via, var(--via))))
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-xl-via-opacity,
-            var(
-              --dark-lg-via-opacity,
-              var(
-                --dark-md-via-opacity,
-                var(
-                  --dark-sm-via-opacity,
-                  var(
-                    --dark-via-opacity,
-                    var(
-                      --xl-via-opacity,
-                      var(
-                        --lg-via-opacity,
-                        var(
-                          --md-via-opacity,
-                          var(--sm-via-opacity, var(--via-opacity, 100%))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
+          --lg-via-position,
+          var(--md-via-position, var(--sm-via-position, var(--via-position)))
+        )
       );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
     .xl\:w {
       width: calc(
@@ -4548,6 +3598,12 @@
       );
     }
     .\32xl\:bg {
+      background-color: var(
+        --\32xl-bg,
+        var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
+      );
+    }
+    .\32xl\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(
@@ -4555,78 +3611,10 @@
             var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
           )
           var(
-            --\32xl-bg-opacity,
+            --\32xl-bg-o,
             var(
-              --xl-bg-opacity,
-              var(
-                --lg-bg-opacity,
-                var(
-                  --md-bg-opacity,
-                  var(--sm-bg-opacity, var(--bg-opacity, 100%))
-                )
-              )
-            )
-          ),
-        transparent
-      );
-    }
-    .dark .\32xl\:bg {
-      background-color: color-mix(
-        in oklab,
-        var(
-            --dark-2xl-bg,
-            var(
-              --dark-xl-bg,
-              var(
-                --dark-lg-bg,
-                var(
-                  --dark-md-bg,
-                  var(
-                    --dark-sm-bg,
-                    var(
-                      --dark-bg,
-                      var(
-                        --\32xl-bg,
-                        var(
-                          --xl-bg,
-                          var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-2xl-bg-opacity,
-            var(
-              --dark-xl-bg-opacity,
-              var(
-                --dark-lg-bg-opacity,
-                var(
-                  --dark-md-bg-opacity,
-                  var(
-                    --dark-sm-bg-opacity,
-                    var(
-                      --dark-bg-opacity,
-                      var(
-                        --\32xl-bg-opacity,
-                        var(
-                          --xl-bg-opacity,
-                          var(
-                            --lg-bg-opacity,
-                            var(
-                              --md-bg-opacity,
-                              var(--sm-bg-opacity, var(--bg-opacity, 100%))
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
+              --xl-bg-o,
+              var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
             )
           ),
         transparent
@@ -4872,90 +3860,6 @@
         )
       );
     }
-    .\32xl\:border {
-      border-style: var(
-        --\32xl-border-style,
-        var(--border-style, var(--tw-border-style, solid))
-      );
-      border-width: var(--\32xl-border-width, var(--border-width, 1px));
-      border-color: color-mix(
-        in oklab,
-        var(--\32xl-border-color, var(--border-color))
-          var(--\32xl-border-color-opacity, var(--border-color-opacity, 100%)),
-        transparent
-      );
-    }
-    .dark .\32xl\:border {
-      border-color: color-mix(
-        in oklab,
-        var(
-            --dark-2xl-border-color,
-            var(
-              --dark-xl-border-color,
-              var(
-                --dark-lg-border-color,
-                var(
-                  --dark-md-border-color,
-                  var(
-                    --dark-sm-border-color,
-                    var(
-                      --dark-border-color,
-                      var(
-                        --\32xl-border-color,
-                        var(
-                          --xl-border-color,
-                          var(
-                            --lg-border-color,
-                            var(
-                              --md-border-color,
-                              var(--sm-border-color, var(--border-color))
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-2xl-border-color-opacity,
-            var(
-              --dark-xl-border-color-opacity,
-              var(
-                --dark-lg-border-color-opacity,
-                var(
-                  --dark-md-border-color-opacity,
-                  var(
-                    --dark-sm-border-color-opacity,
-                    var(
-                      --dark-border-color-opacity,
-                      var(
-                        --\32xl-border-color-opacity,
-                        var(
-                          --xl-border-color-opacity,
-                          var(
-                            --lg-border-color-opacity,
-                            var(
-                              --md-border-color-opacity,
-                              var(
-                                --sm-border-color-opacity,
-                                var(--border-color-opacity, 100%)
-                              )
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
-      );
-    }
     .\32xl\:bottom {
       bottom: calc(
         var(--spacing) *
@@ -4981,6 +3885,15 @@
       );
     }
     .\32xl\:color {
+      color: var(
+        --\32xl-color,
+        var(
+          --xl-color,
+          var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
+        )
+      );
+    }
+    .\32xl\:color\/o {
       color: color-mix(
         in oklab,
         var(
@@ -4991,83 +3904,12 @@
             )
           )
           var(
-            --\32xl-color-opacity,
+            --\32xl-color-o,
             var(
-              --xl-color-opacity,
+              --xl-color-o,
               var(
-                --lg-color-opacity,
-                var(
-                  --md-color-opacity,
-                  var(--sm-color-opacity, var(--color-opacity, 100%))
-                )
-              )
-            )
-          ),
-        transparent
-      );
-    }
-    .dark .\32xl\:color {
-      color: color-mix(
-        in oklab,
-        var(
-            --dark-2xl-color,
-            var(
-              --dark-xl-color,
-              var(
-                --dark-lg-color,
-                var(
-                  --dark-md-color,
-                  var(
-                    --dark-sm-color,
-                    var(
-                      --dark-color,
-                      var(
-                        --\32xl-color,
-                        var(
-                          --xl-color,
-                          var(
-                            --lg-color,
-                            var(--md-color, var(--sm-color, var(--color)))
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-2xl-color-opacity,
-            var(
-              --dark-xl-color-opacity,
-              var(
-                --dark-lg-color-opacity,
-                var(
-                  --dark-md-color-opacity,
-                  var(
-                    --dark-sm-color-opacity,
-                    var(
-                      --dark-color-opacity,
-                      var(
-                        --\32xl-color-opacity,
-                        var(
-                          --xl-color-opacity,
-                          var(
-                            --lg-color-opacity,
-                            var(
-                              --md-color-opacity,
-                              var(
-                                --sm-color-opacity,
-                                var(--color-opacity, 100%)
-                              )
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
+                --lg-color-o,
+                var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
               )
             )
           ),
@@ -5104,6 +3946,15 @@
         var(
           --xl-basis,
           var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
+        )
+      );
+    }
+    .\32xl\:flex {
+      flex: var(
+        --\32xl-flex,
+        var(
+          --xl-flex,
+          var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
         )
       );
     }
@@ -5169,13 +4020,11 @@
         )
       );
     }
-    .\32xl\:flex {
-      flex: var(
-        --\32xl-flex,
-        var(
-          --xl-flex,
-          var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
-        )
+    .\32xl\:from {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--\32xl-from) var(--\32xl-from-opacity, 100%),
+        transparent
       );
     }
     .\32xl\:from-position {
@@ -5191,78 +4040,6 @@
             )
           )
         )
-      );
-    }
-    .\32xl\:from {
-      --tw-gradient-from: color-mix(
-        in oklab,
-        var(--\32xl-from) var(--\32xl-from-opacity, 100%),
-        transparent
-      );
-    }
-    .dark .\32xl\:from {
-      --tw-gradient-from: color-mix(
-        in oklab,
-        var(
-            --dark-2xl-from,
-            var(
-              --dark-xl-from,
-              var(
-                --dark-lg-from,
-                var(
-                  --dark-md-from,
-                  var(
-                    --dark-sm-from,
-                    var(
-                      --dark-from,
-                      var(
-                        --\32xl-from,
-                        var(
-                          --xl-from,
-                          var(
-                            --lg-from,
-                            var(--md-from, var(--sm-from, var(--from)))
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-2xl-from-opacity,
-            var(
-              --dark-xl-from-opacity,
-              var(
-                --dark-lg-from-opacity,
-                var(
-                  --dark-md-from-opacity,
-                  var(
-                    --dark-sm-from-opacity,
-                    var(
-                      --dark-from-opacity,
-                      var(
-                        --\32xl-from-opacity,
-                        var(
-                          --xl-from-opacity,
-                          var(
-                            --lg-from-opacity,
-                            var(
-                              --md-from-opacity,
-                              var(--sm-from-opacity, var(--from-opacity, 100%))
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
       );
     }
     .\32xl\:gap {
@@ -5955,7 +4732,7 @@
         )
       );
     }
-    .\32xl\:object {
+    .\32xl\:object-position {
       object-position: var(
         --\32xl-object,
         var(
@@ -6343,84 +5120,10 @@
           (1 - var(--space-y-reverse))
       );
     }
-    .\32xl\:to-position {
-      --tw-gradient-to-position: var(
-        --\32xl-to-position,
-        var(
-          --xl-to-position,
-          var(
-            --lg-to-position,
-            var(--md-to-position, var(--sm-to-position, var(--to-position)))
-          )
-        )
-      );
-    }
     .\32xl\:to {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--\32xl-to) var(--\32xl-to-opacity, 100%),
-        transparent
-      );
-    }
-    .dark .\32xl\:to {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(
-            --dark-2xl-to,
-            var(
-              --dark-xl-to,
-              var(
-                --dark-lg-to,
-                var(
-                  --dark-md-to,
-                  var(
-                    --dark-sm-to,
-                    var(
-                      --dark-to,
-                      var(
-                        --\32xl-to,
-                        var(
-                          --xl-to,
-                          var(--lg-to, var(--md-to, var(--sm-to, var(--to))))
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-          var(
-            --dark-2xl-to-opacity,
-            var(
-              --dark-xl-to-opacity,
-              var(
-                --dark-lg-to-opacity,
-                var(
-                  --dark-md-to-opacity,
-                  var(
-                    --dark-sm-to-opacity,
-                    var(
-                      --dark-to-opacity,
-                      var(
-                        --\32xl-to-opacity,
-                        var(
-                          --xl-to-opacity,
-                          var(
-                            --lg-to-opacity,
-                            var(
-                              --md-to-opacity,
-                              var(--sm-to-opacity, var(--to-opacity, 100%))
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
         transparent
       );
     }
@@ -6442,14 +5145,14 @@
         var(--xl-top, var(--lg-top, var(--md-top, var(--sm-top, var(--top)))))
       );
     }
-    .\32xl\:via-position {
-      --tw-gradient-via-position: var(
-        --\32xl-via-position,
+    .\32xl\:to-position {
+      --tw-gradient-to-position: var(
+        --\32xl-to-position,
         var(
-          --xl-via-position,
+          --xl-to-position,
           var(
-            --lg-via-position,
-            var(--md-via-position, var(--sm-via-position, var(--via-position)))
+            --lg-to-position,
+            var(--md-to-position, var(--sm-to-position, var(--to-position)))
           )
         )
       );
@@ -6487,77 +5190,17 @@
       );
       --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .dark .\32xl\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
+    .\32xl\:via-position {
+      --tw-gradient-via-position: var(
+        --\32xl-via-position,
         var(
-            --dark-2xl-via,
-            var(
-              --dark-xl-via,
-              var(
-                --dark-lg-via,
-                var(
-                  --dark-md-via,
-                  var(
-                    --dark-sm-via,
-                    var(
-                      --dark-via,
-                      var(
-                        --\32xl-via,
-                        var(
-                          --xl-via,
-                          var(
-                            --lg-via,
-                            var(--md-via, var(--sm-via, var(--via)))
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
+          --xl-via-position,
           var(
-            --dark-2xl-via-opacity,
-            var(
-              --dark-xl-via-opacity,
-              var(
-                --dark-lg-via-opacity,
-                var(
-                  --dark-md-via-opacity,
-                  var(
-                    --dark-sm-via-opacity,
-                    var(
-                      --dark-via-opacity,
-                      var(
-                        --\32xl-via-opacity,
-                        var(
-                          --xl-via-opacity,
-                          var(
-                            --lg-via-opacity,
-                            var(
-                              --md-via-opacity,
-                              var(--sm-via-opacity, var(--via-opacity, 100%))
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-        transparent
+            --lg-via-position,
+            var(--md-via-position, var(--sm-via-position, var(--via-position)))
+          )
+        )
       );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
     .\32xl\:w {
       width: calc(

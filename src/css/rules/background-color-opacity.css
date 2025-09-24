@@ -1,0 +1,75 @@
+@layer styles {
+  .bg\/o {
+    background-color: color-mix(
+      in oklab,
+      var(--bg) var(--bg-o, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--sm-bg, var(--bg)) var(--sm-bg-o, var(--bg-o, 100%)),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--md-bg, var(--sm-bg, var(--bg)))
+          var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
+          var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%)))),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
+          var(
+            --xl-bg-o,
+            var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
+          ),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(
+            --\32xl-bg,
+            var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
+          )
+          var(
+            --\32xl-bg-o,
+            var(
+              --xl-bg-o,
+              var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
+            )
+          ),
+        transparent
+      );
+    }
+  }
+}
