@@ -1,115 +1,53 @@
 @layer styles {
-  /* === Normal grid-cols (repeat N x minmax(0,1fr)) === */
   .grid-cols {
     grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
   }
-
-  /* === Bracketed grid-cols (raw value, as-is) === */
   .\[grid-cols\] {
     grid-template-columns: var(--grid-cols);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:grid-cols {
-      grid-template-columns: repeat(
-        var(--sm-grid-cols, var(--grid-cols)),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--sm-grid-cols), minmax(0, 1fr));
     }
     .sm\:\[grid-cols\] {
-      grid-template-columns: var(--sm-grid-cols, var(--grid-cols));
+      grid-template-columns: var(--sm-grid-cols);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:grid-cols {
-      grid-template-columns: repeat(
-        var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols))),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--md-grid-cols), minmax(0, 1fr));
     }
     .md\:\[grid-cols\] {
-      grid-template-columns: var(
-        --md-grid-cols,
-        var(--sm-grid-cols, var(--grid-cols))
-      );
+      grid-template-columns: var(--md-grid-cols);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:grid-cols {
-      grid-template-columns: repeat(
-        var(
-          --lg-grid-cols,
-          var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--lg-grid-cols), minmax(0, 1fr));
     }
     .lg\:\[grid-cols\] {
-      grid-template-columns: var(
-        --lg-grid-cols,
-        var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-      );
+      grid-template-columns: var(--lg-grid-cols);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:grid-cols {
-      grid-template-columns: repeat(
-        var(
-          --xl-grid-cols,
-          var(
-            --lg-grid-cols,
-            var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--xl-grid-cols), minmax(0, 1fr));
     }
     .xl\:\[grid-cols\] {
-      grid-template-columns: var(
-        --xl-grid-cols,
-        var(
-          --lg-grid-cols,
-          var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-        )
-      );
+      grid-template-columns: var(--xl-grid-cols);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:grid-cols {
-      grid-template-columns: repeat(
-        var(
-          --\32xl-grid-cols,
-          var(
-            --xl-grid-cols,
-            var(
-              --lg-grid-cols,
-              var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-            )
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--\32xl-grid-cols), minmax(0, 1fr));
     }
     .\32xl\:\[grid-cols\] {
-      grid-template-columns: var(
-        --\32xl-grid-cols,
-        var(
-          --xl-grid-cols,
-          var(
-            --lg-grid-cols,
-            var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-          )
-        )
-      );
+      grid-template-columns: var(--\32xl-grid-cols);
     }
   }
 }

@@ -1,6 +1,10 @@
 @layer styles {
-  .via {
-    --tw-gradient-via: var(--via);
+  .via\/o {
+    --tw-gradient-via: color-mix(
+      in oklab,
+      var(--via) var(--via-o, 100%),
+      transparent
+    );
     --tw-gradient-stops: var(
       --tw-gradient-via-stops,
       var(--tw-gradient-position),
@@ -10,8 +14,12 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:via {
-      --tw-gradient-via: var(--sm-via);
+    .sm\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--sm-via) var(--sm-via-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-via-stops,
         var(--tw-gradient-position),
@@ -22,8 +30,12 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:via {
-      --tw-gradient-via: var(--md-via);
+    .md\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--md-via) var(--md-via-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-via-stops,
         var(--tw-gradient-position),
@@ -34,8 +46,12 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:via {
-      --tw-gradient-via: var(--lg-via);
+    .lg\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--lg-via) var(--lg-via-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-via-stops,
         var(--tw-gradient-position),
@@ -46,8 +62,12 @@
   }
 
   @media (min-width: 80rem) {
-    .xl\:via {
-      --tw-gradient-via: var(--xl-via);
+    .xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--xl-via) var(--xl-via-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-via-stops,
         var(--tw-gradient-position),
@@ -58,8 +78,12 @@
   }
 
   @media (min-width: 96rem) {
-    .\32xl\:via {
-      --tw-gradient-via: var(--\32xl-via);
+    .\32xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--\32xl-via) var(--\32xl-via-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-via-stops,
         var(--tw-gradient-position),

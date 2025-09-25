@@ -5,40 +5,31 @@
 
   @media (min-width: 40rem) {
     .sm\:color {
-      color: var(--sm-color, var(--color));
+      color: var(--sm-color);
     }
   }
 
   @media (min-width: 48rem) {
     .md\:color {
-      color: var(--md-color, var(--sm-color, var(--color)));
+      color: var(--md-color);
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:color {
-      color: var(--lg-color, var(--md-color, var(--sm-color, var(--color))));
+      color: var(--lg-color);
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:color {
-      color: var(
-        --xl-color,
-        var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
-      );
+      color: var(--xl-color);
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:color {
-      color: var(
-        --\32xl-color,
-        var(
-          --xl-color,
-          var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
-        )
-      );
+      color: var(--\32xl-color);
     }
   }
 }

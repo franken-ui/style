@@ -1,86 +1,53 @@
 @layer styles {
-  /* Top */
   .top {
     top: calc(var(--spacing) * var(--top));
   }
-
-  /* Arbitrary top with bracket selector */
   .\[top\] {
     top: var(--top);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:top {
-      top: calc(var(--spacing) * var(--sm-top, var(--top)));
+      top: calc(var(--spacing) * var(--sm-top));
     }
-
     .sm\:\[top\] {
-      top: var(--sm-top, var(--top));
+      top: var(--sm-top);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:top {
-      top: calc(var(--spacing) * var(--md-top, var(--sm-top, var(--top))));
+      top: calc(var(--spacing) * var(--md-top));
     }
-
     .md\:\[top\] {
-      top: var(--md-top, var(--sm-top, var(--top)));
+      top: var(--md-top);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:top {
-      top: calc(
-        var(--spacing) * var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
-      );
+      top: calc(var(--spacing) * var(--lg-top));
     }
-
     .lg\:\[top\] {
-      top: var(--lg-top, var(--md-top, var(--sm-top, var(--top))));
+      top: var(--lg-top);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:top {
-      top: calc(
-        var(--spacing) *
-          var(--xl-top, var(--lg-top, var(--md-top, var(--sm-top, var(--top)))))
-      );
+      top: calc(var(--spacing) * var(--xl-top));
     }
-
     .xl\:\[top\] {
-      top: var(
-        --xl-top,
-        var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
-      );
+      top: var(--xl-top);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:top {
-      top: calc(
-        var(--spacing) *
-          var(
-            --\32xl-top,
-            var(
-              --xl-top,
-              var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
-            )
-          )
-      );
+      top: calc(var(--spacing) * var(--\32xl-top));
     }
-
     .\32xl\:\[top\] {
-      top: var(
-        --\32xl-top,
-        var(--xl-top, var(--lg-top, var(--md-top, var(--sm-top, var(--top)))))
-      );
+      top: var(--\32xl-top);
     }
   }
 }

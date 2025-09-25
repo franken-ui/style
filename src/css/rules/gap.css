@@ -1,17 +1,13 @@
 @layer styles {
-  /* === Base Gap (scaled by --spacing) === */
   .gap {
     gap: calc(var(--spacing) * var(--gap));
   }
-
   .gap-x {
     column-gap: calc(var(--spacing) * var(--gap-x, var(--gap)));
   }
   .gap-y {
     row-gap: calc(var(--spacing) * var(--gap-y, var(--gap)));
   }
-
-  /* === Bracketed Gap (raw values) === */
   .\[gap\] {
     gap: var(--gap);
   }
@@ -22,238 +18,108 @@
     row-gap: var(--gap-y, var(--gap));
   }
 
-  /* === Breakpoints === */
-
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:gap {
-      gap: calc(var(--spacing) * var(--sm-gap, var(--gap)));
+      gap: calc(var(--spacing) * var(--sm-gap));
     }
     .sm\:gap-x {
-      column-gap: calc(
-        var(--spacing) * var(--sm-gap-x, var(--gap-x, var(--gap)))
-      );
+      column-gap: calc(var(--spacing) * var(--sm-gap-x, var(--gap)));
     }
     .sm\:gap-y {
-      row-gap: calc(var(--spacing) * var(--sm-gap-y, var(--gap-y, var(--gap))));
+      row-gap: calc(var(--spacing) * var(--sm-gap-y, var(--gap)));
     }
-
     .sm\:\[gap\] {
-      gap: var(--sm-gap, var(--gap));
+      gap: var(--sm-gap);
     }
     .sm\:\[gap-x\] {
-      column-gap: var(--sm-gap-x, var(--gap-x, var(--gap)));
+      column-gap: var(--sm-gap-x, var(--gap));
     }
     .sm\:\[gap-y\] {
-      row-gap: var(--sm-gap-y, var(--gap-y, var(--gap)));
+      row-gap: var(--sm-gap-y, var(--gap));
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:gap {
-      gap: calc(var(--spacing) * var(--md-gap, var(--sm-gap, var(--gap))));
+      gap: calc(var(--spacing) * var(--md-gap));
     }
     .md\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-      );
+      column-gap: calc(var(--spacing) * var(--md-gap-x, var(--gap)));
     }
     .md\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-      );
+      row-gap: calc(var(--spacing) * var(--md-gap-y, var(--gap)));
     }
-
     .md\:\[gap\] {
-      gap: var(--md-gap, var(--sm-gap, var(--gap)));
+      gap: var(--md-gap);
     }
     .md\:\[gap-x\] {
-      column-gap: var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))));
+      column-gap: var(--md-gap-x, var(--gap));
     }
     .md\:\[gap-y\] {
-      row-gap: var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))));
+      row-gap: var(--md-gap-y, var(--gap));
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:gap {
-      gap: calc(
-        var(--spacing) * var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))))
-      );
+      gap: calc(var(--spacing) * var(--lg-gap));
     }
     .lg\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(
-            --lg-gap-x,
-            var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-          )
-      );
+      column-gap: calc(var(--spacing) * var(--lg-gap-x, var(--gap)));
     }
     .lg\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(
-            --lg-gap-y,
-            var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-          )
-      );
+      row-gap: calc(var(--spacing) * var(--lg-gap-y, var(--gap)));
     }
-
     .lg\:\[gap\] {
-      gap: var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))));
+      gap: var(--lg-gap);
     }
     .lg\:\[gap-x\] {
-      column-gap: var(
-        --lg-gap-x,
-        var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-      );
+      column-gap: var(--lg-gap-x, var(--gap));
     }
     .lg\:\[gap-y\] {
-      row-gap: var(
-        --lg-gap-y,
-        var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-      );
+      row-gap: var(--lg-gap-y, var(--gap));
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:gap {
-      gap: calc(
-        var(--spacing) *
-          var(--xl-gap, var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap)))))
-      );
+      gap: calc(var(--spacing) * var(--xl-gap));
     }
     .xl\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(
-            --xl-gap-x,
-            var(
-              --lg-gap-x,
-              var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-            )
-          )
-      );
+      column-gap: calc(var(--spacing) * var(--xl-gap-x, var(--gap)));
     }
     .xl\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(
-            --xl-gap-y,
-            var(
-              --lg-gap-y,
-              var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-            )
-          )
-      );
+      row-gap: calc(var(--spacing) * var(--xl-gap-y, var(--gap)));
     }
-
     .xl\:\[gap\] {
-      gap: var(
-        --xl-gap,
-        var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))))
-      );
+      gap: var(--xl-gap);
     }
     .xl\:\[gap-x\] {
-      column-gap: var(
-        --xl-gap-x,
-        var(
-          --lg-gap-x,
-          var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-        )
-      );
+      column-gap: var(--xl-gap-x, var(--gap));
     }
     .xl\:\[gap-y\] {
-      row-gap: var(
-        --xl-gap-y,
-        var(
-          --lg-gap-y,
-          var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-        )
-      );
+      row-gap: var(--xl-gap-y, var(--gap));
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:gap {
-      gap: calc(
-        var(--spacing) *
-          var(
-            --\32xl-gap,
-            var(
-              --xl-gap,
-              var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))))
-            )
-          )
-      );
+      gap: calc(var(--spacing) * var(--\32xl-gap));
     }
     .\32xl\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(
-            --\32xl-gap-x,
-            var(
-              --xl-gap-x,
-              var(
-                --lg-gap-x,
-                var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-              )
-            )
-          )
-      );
+      column-gap: calc(var(--spacing) * var(--\32xl-gap-x, var(--gap)));
     }
     .\32xl\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(
-            --\32xl-gap-y,
-            var(
-              --xl-gap-y,
-              var(
-                --lg-gap-y,
-                var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-              )
-            )
-          )
-      );
+      row-gap: calc(var(--spacing) * var(--\32xl-gap-y, var(--gap)));
     }
-
     .\32xl\:\[gap\] {
-      gap: var(
-        --\32xl-gap,
-        var(--xl-gap, var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap)))))
-      );
+      gap: var(--\32xl-gap);
     }
     .\32xl\:\[gap-x\] {
-      column-gap: var(
-        --\32xl-gap-x,
-        var(
-          --xl-gap-x,
-          var(
-            --lg-gap-x,
-            var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-          )
-        )
-      );
+      column-gap: var(--\32xl-gap-x, var(--gap));
     }
     .\32xl\:\[gap-y\] {
-      row-gap: var(
-        --\32xl-gap-y,
-        var(
-          --xl-gap-y,
-          var(
-            --lg-gap-y,
-            var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-          )
-        )
-      );
+      row-gap: var(--\32xl-gap-y, var(--gap));
     }
   }
 }

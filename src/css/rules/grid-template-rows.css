@@ -1,115 +1,53 @@
 @layer styles {
-  /* === Normal grid-rows (repeat N x minmax(0,1fr)) === */
   .grid-rows {
     grid-template-rows: repeat(var(--grid-rows), minmax(0, 1fr));
   }
-
-  /* === Bracketed grid-rows (raw value, as-is) === */
   .\[grid-rows\] {
     grid-template-rows: var(--grid-rows);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:grid-rows {
-      grid-template-rows: repeat(
-        var(--sm-grid-rows, var(--grid-rows)),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--sm-grid-rows), minmax(0, 1fr));
     }
     .sm\:\[grid-rows\] {
-      grid-template-rows: var(--sm-grid-rows, var(--grid-rows));
+      grid-template-rows: var(--sm-grid-rows);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:grid-rows {
-      grid-template-rows: repeat(
-        var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows))),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--md-grid-rows), minmax(0, 1fr));
     }
     .md\:\[grid-rows\] {
-      grid-template-rows: var(
-        --md-grid-rows,
-        var(--sm-grid-rows, var(--grid-rows))
-      );
+      grid-template-rows: var(--md-grid-rows);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:grid-rows {
-      grid-template-rows: repeat(
-        var(
-          --lg-grid-rows,
-          var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--lg-grid-rows), minmax(0, 1fr));
     }
     .lg\:\[grid-rows\] {
-      grid-template-rows: var(
-        --lg-grid-rows,
-        var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-      );
+      grid-template-rows: var(--lg-grid-rows);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:grid-rows {
-      grid-template-rows: repeat(
-        var(
-          --xl-grid-rows,
-          var(
-            --lg-grid-rows,
-            var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--xl-grid-rows), minmax(0, 1fr));
     }
     .xl\:\[grid-rows\] {
-      grid-template-rows: var(
-        --xl-grid-rows,
-        var(
-          --lg-grid-rows,
-          var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-        )
-      );
+      grid-template-rows: var(--xl-grid-rows);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:grid-rows {
-      grid-template-rows: repeat(
-        var(
-          --\32xl-grid-rows,
-          var(
-            --xl-grid-rows,
-            var(
-              --lg-grid-rows,
-              var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-            )
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--\32xl-grid-rows), minmax(0, 1fr));
     }
     .\32xl\:\[grid-rows\] {
-      grid-template-rows: var(
-        --\32xl-grid-rows,
-        var(
-          --xl-grid-rows,
-          var(
-            --lg-grid-rows,
-            var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-          )
-        )
-      );
+      grid-template-rows: var(--\32xl-grid-rows);
     }
   }
 }

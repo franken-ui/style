@@ -1,133 +1,65 @@
 @layer styles {
-  /* Size */
   .size {
     width: calc(var(--spacing) * var(--size));
     height: calc(var(--spacing) * var(--size));
   }
-
   .\[size\] {
     width: var(--size);
     height: var(--size);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:size {
-      width: calc(var(--spacing) * var(--sm-size, var(--size)));
-      height: calc(var(--spacing) * var(--sm-size, var(--size)));
+      width: calc(var(--spacing) * var(--sm-size));
+      height: calc(var(--spacing) * var(--sm-size));
     }
-
     .sm\:\[size\] {
-      width: var(--sm-size, var(--size));
-      height: var(--sm-size, var(--size));
+      width: var(--sm-size);
+      height: var(--sm-size);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:size {
-      width: calc(var(--spacing) * var(--md-size, var(--sm-size, var(--size))));
-      height: calc(
-        var(--spacing) * var(--md-size, var(--sm-size, var(--size)))
-      );
+      width: calc(var(--spacing) * var(--md-size));
+      height: calc(var(--spacing) * var(--md-size));
     }
-
     .md\:\[size\] {
-      width: var(--md-size, var(--sm-size, var(--size)));
-      height: var(--md-size, var(--sm-size, var(--size)));
+      width: var(--md-size);
+      height: var(--md-size);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:size {
-      width: calc(
-        var(--spacing) *
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
-      height: calc(
-        var(--spacing) *
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
+      width: calc(var(--spacing) * var(--lg-size));
+      height: calc(var(--spacing) * var(--lg-size));
     }
-
     .lg\:\[size\] {
-      width: var(--lg-size, var(--md-size, var(--sm-size, var(--size))));
-      height: var(--lg-size, var(--md-size, var(--sm-size, var(--size))));
+      width: var(--lg-size);
+      height: var(--lg-size);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:size {
-      width: calc(
-        var(--spacing) *
-          var(
-            --xl-size,
-            var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-          )
-      );
-      height: calc(
-        var(--spacing) *
-          var(
-            --xl-size,
-            var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-          )
-      );
+      width: calc(var(--spacing) * var(--xl-size));
+      height: calc(var(--spacing) * var(--xl-size));
     }
-
     .xl\:\[size\] {
-      width: var(
-        --xl-size,
-        var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
-      height: var(
-        --xl-size,
-        var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
+      width: var(--xl-size);
+      height: var(--xl-size);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:size {
-      width: calc(
-        var(--spacing) *
-          var(
-            --\32xl-size,
-            var(
-              --xl-size,
-              var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-            )
-          )
-      );
-      height: calc(
-        var(--spacing) *
-          var(
-            --\32xl-size,
-            var(
-              --xl-size,
-              var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-            )
-          )
-      );
+      width: calc(var(--spacing) * var(--\32xl-size));
+      height: calc(var(--spacing) * var(--\32xl-size));
     }
-
     .\32xl\:\[size\] {
-      width: var(
-        --\32xl-size,
-        var(
-          --xl-size,
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-        )
-      );
-      height: var(
-        --\32xl-size,
-        var(
-          --xl-size,
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-        )
-      );
+      width: var(--\32xl-size);
+      height: var(--\32xl-size);
     }
   }
 }

@@ -1,93 +1,53 @@
 @layer styles {
-  /* === Flex-basis (scaled by --spacing) === */
   .basis {
     flex-basis: calc(var(--spacing) * var(--basis));
   }
-
-  /* === Bracketed Flex-basis (raw value, as-is) === */
   .\[basis\] {
     flex-basis: var(--basis);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:basis {
-      flex-basis: calc(var(--spacing) * var(--sm-basis, var(--basis)));
+      flex-basis: calc(var(--spacing) * var(--sm-basis));
     }
     .sm\:\[basis\] {
-      flex-basis: var(--sm-basis, var(--basis));
+      flex-basis: var(--sm-basis);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:basis {
-      flex-basis: calc(
-        var(--spacing) * var(--md-basis, var(--sm-basis, var(--basis)))
-      );
+      flex-basis: calc(var(--spacing) * var(--md-basis));
     }
     .md\:\[basis\] {
-      flex-basis: var(--md-basis, var(--sm-basis, var(--basis)));
+      flex-basis: var(--md-basis);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:basis {
-      flex-basis: calc(
-        var(--spacing) *
-          var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-      );
+      flex-basis: calc(var(--spacing) * var(--lg-basis));
     }
     .lg\:\[basis\] {
-      flex-basis: var(
-        --lg-basis,
-        var(--md-basis, var(--sm-basis, var(--basis)))
-      );
+      flex-basis: var(--lg-basis);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:basis {
-      flex-basis: calc(
-        var(--spacing) *
-          var(
-            --xl-basis,
-            var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-          )
-      );
+      flex-basis: calc(var(--spacing) * var(--xl-basis));
     }
     .xl\:\[basis\] {
-      flex-basis: var(
-        --xl-basis,
-        var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-      );
+      flex-basis: var(--xl-basis);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:basis {
-      flex-basis: calc(
-        var(--spacing) *
-          var(
-            --\32xl-basis,
-            var(
-              --xl-basis,
-              var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-            )
-          )
-      );
+      flex-basis: calc(var(--spacing) * var(--\32xl-basis));
     }
     .\32xl\:\[basis\] {
-      flex-basis: var(
-        --\32xl-basis,
-        var(
-          --xl-basis,
-          var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-        )
-      );
+      flex-basis: var(--\32xl-basis);
     }
   }
 }

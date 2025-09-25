@@ -87,18 +87,25 @@
   .flex {
     flex: var(--flex);
   }
-  .flex-grow,
   .grow {
-    flex-grow: var(--flex-grow, var(--grow));
+    flex-grow: var(--grow);
   }
-  .flex-shrink,
   .shrink {
-    flex-shrink: var(--flex-shrink, var(--shrink));
+    flex-shrink: var(--shrink);
   }
   .from {
+    --tw-gradient-from: var(--from);
+    --tw-gradient-stops: var(
+      --tw-gradient-from-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position)
+    );
+  }
+  .from\/o {
     --tw-gradient-from: color-mix(
       in oklab,
-      var(--from) var(--from-opacity, 100%),
+      var(--from) var(--from-o, 100%),
       transparent
     );
     --tw-gradient-stops: var(
@@ -223,52 +230,52 @@
     margin: var(--m);
   }
   .mt {
-    margin-top: calc(var(--spacing) * var(--mt, var(--m)));
+    margin-top: calc(var(--spacing) * var(--mt));
   }
   .\[mt\] {
-    margin-top: var(--mt, var(--m));
+    margin-top: var(--mt);
   }
   .mb {
-    margin-bottom: calc(var(--spacing) * var(--mb, var(--m)));
+    margin-bottom: calc(var(--spacing) * var(--mb));
   }
   .\[mb\] {
-    margin-bottom: var(--mb, var(--m));
+    margin-bottom: var(--mb);
   }
   .ml {
-    margin-left: calc(var(--spacing) * var(--ml, var(--m)));
+    margin-left: calc(var(--spacing) * var(--ml));
   }
   .\[ml\] {
-    margin-left: var(--ml, var(--m));
+    margin-left: var(--ml);
   }
   .mr {
-    margin-right: calc(var(--spacing) * var(--mr, var(--m)));
+    margin-right: calc(var(--spacing) * var(--mr));
   }
   .\[mr\] {
-    margin-right: var(--mr, var(--m));
+    margin-right: var(--mr);
   }
   .ms {
-    margin-inline-start: calc(var(--spacing) * var(--ms, var(--m)));
+    margin-inline-start: calc(var(--spacing) * var(--ms));
   }
   .\[ms\] {
-    margin-inline-start: var(--ms, var(--m));
+    margin-inline-start: var(--ms);
   }
   .me {
-    margin-inline-end: calc(var(--spacing) * var(--me, var(--m)));
+    margin-inline-end: calc(var(--spacing) * var(--me));
   }
   .\[me\] {
-    margin-inline-end: var(--me, var(--m));
+    margin-inline-end: var(--me);
   }
   .mx {
-    margin-inline: calc(var(--spacing) * var(--mx, var(--m)));
+    margin-inline: calc(var(--spacing) * var(--mx));
   }
   .\[mx\] {
-    margin-inline: var(--mx, var(--m));
+    margin-inline: var(--mx);
   }
   .my {
-    margin-block: calc(var(--spacing) * var(--my, var(--m)));
+    margin-block: calc(var(--spacing) * var(--my));
   }
   .\[my\] {
-    margin-block: var(--my, var(--m));
+    margin-block: var(--my);
   }
   .max-h {
     max-height: calc(var(--spacing) * var(--max-h));
@@ -295,7 +302,7 @@
     min-width: var(--min-w);
   }
   .object-position {
-    object-position: var(--object);
+    object-position: var(--object-position);
   }
   .order {
     order: var(--order);
@@ -370,40 +377,52 @@
   }
   .space-x > :not(:last-child) {
     margin-inline-start: calc(
-      var(--spacing) * var(--space-x) * var(--space-x-reverse)
+      var(--spacing) * var(--space-x) * var(--tw-space-x-reverse)
     );
     margin-inline-end: calc(
-      var(--spacing) * var(--space-x) * (1 - var(--space-x-reverse))
+      var(--spacing) * var(--space-x) * (1 - var(--tw-space-x-reverse))
     );
   }
   .\[space-x\] > :not(:last-child) {
-    margin-inline-start: calc(var(--space-x) * var(--space-x-reverse));
-    margin-inline-end: calc(var(--space-x) * (1 - var(--space-x-reverse)));
+    margin-inline-start: calc(var(--space-x) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(var(--space-x) * (1 - var(--tw-space-x-reverse)));
   }
   .space-y > :not(:last-child) {
     margin-block-start: calc(
-      var(--spacing) * var(--space-y) * var(--space-y-reverse)
+      var(--spacing) * var(--space-y) * var(--tw-space-y-reverse)
     );
     margin-block-end: calc(
-      var(--spacing) * var(--space-y) * (1 - var(--space-y-reverse))
+      var(--spacing) * var(--space-y) * (1 - var(--tw-space-y-reverse))
     );
   }
   .\[space-y\] > :not(:last-child) {
-    margin-block-start: calc(var(--space-y) * var(--space-y-reverse));
-    margin-block-end: calc(var(--space-y) * (1 - var(--space-y-reverse)));
+    margin-block-start: calc(var(--space-y) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--space-y) * (1 - var(--tw-space-y-reverse)));
   }
   .to {
+    --tw-gradient-to: var(--to);
+    --tw-gradient-stops: var(
+      --tw-gradient-to-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .to\/o {
     --tw-gradient-to: color-mix(
       in oklab,
-      var(--to) var(--to-opacity, 100%),
+      var(--to) var(--to-o, 100%),
       transparent
     );
     --tw-gradient-stops: var(
-      --tw-gradient-via-stops,
+      --tw-gradient-to-stops,
       var(--tw-gradient-position),
-      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position),
       var(--tw-gradient-to) var(--tw-gradient-to-position)
     );
+  }
+  .to-position {
+    --tw-gradient-to-position: var(--to-position);
   }
   .top {
     top: calc(var(--spacing) * var(--top));
@@ -411,21 +430,27 @@
   .\[top\] {
     top: var(--top);
   }
-  .to-position {
-    --tw-gradient-to-position: var(--to-position);
-  }
   .via {
+    --tw-gradient-via: var(--via);
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-via) var(--tw-gradient-via-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .via\/o {
     --tw-gradient-via: color-mix(
       in oklab,
-      var(--via) var(--via-opacity, 100%),
+      var(--via) var(--via-o, 100%),
       transparent
     );
-    --tw-gradient-via-stops:
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
       var(--tw-gradient-position),
-      var(--tw-gradient-from) var(--tw-gradient-from-position),
       var(--tw-gradient-via) var(--tw-gradient-via-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-via-stops);
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
   }
   .via-position {
     --tw-gradient-via-position: var(--via-position);
@@ -441,4787 +466,2381 @@
   }
   @media (min-width: 40rem) {
     .sm\:aspect {
-      aspect-ratio: var(--sm-aspect, var(--aspect));
+      aspect-ratio: var(--sm-aspect);
     }
     .sm\:bg {
-      background-color: var(--sm-bg, var(--bg));
+      background-color: var(--sm-bg);
     }
     .sm\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--sm-bg, var(--bg)) var(--sm-bg-o, var(--bg-o, 100%)),
+        var(--sm-bg) var(--sm-bg-o, 100%),
         transparent
       );
     }
     .sm\:rounded {
-      border-radius: var(--sm-rounded, var(--rounded));
+      border-radius: var(--sm-rounded);
     }
     .sm\:rounded-s {
-      border-start-start-radius: var(--sm-rounded-s, var(--rounded-s));
-      border-end-start-radius: var(--sm-rounded-s, var(--rounded-s));
+      border-start-start-radius: var(--sm-rounded-s);
+      border-end-start-radius: var(--sm-rounded-s);
     }
     .sm\:rounded-e {
-      border-start-end-radius: var(--sm-rounded-e, var(--rounded-e));
-      border-end-end-radius: var(--sm-rounded-e, var(--rounded-e));
+      border-start-end-radius: var(--sm-rounded-e);
+      border-end-end-radius: var(--sm-rounded-e);
     }
     .sm\:rounded-t {
-      border-top-left-radius: var(--sm-rounded-t, var(--rounded-t));
-      border-top-right-radius: var(--sm-rounded-t, var(--rounded-t));
+      border-top-left-radius: var(--sm-rounded-t);
+      border-top-right-radius: var(--sm-rounded-t);
     }
     .sm\:rounded-r {
-      border-top-right-radius: var(--sm-rounded-r, var(--rounded-r));
-      border-bottom-right-radius: var(--sm-rounded-r, var(--rounded-r));
+      border-top-right-radius: var(--sm-rounded-r);
+      border-bottom-right-radius: var(--sm-rounded-r);
     }
     .sm\:rounded-b {
-      border-bottom-right-radius: var(--sm-rounded-b, var(--rounded-b));
-      border-bottom-left-radius: var(--sm-rounded-b, var(--rounded-b));
+      border-bottom-right-radius: var(--sm-rounded-b);
+      border-bottom-left-radius: var(--sm-rounded-b);
     }
     .sm\:rounded-l {
-      border-top-left-radius: var(--sm-rounded-l, var(--rounded-l));
-      border-bottom-left-radius: var(--sm-rounded-l, var(--rounded-l));
+      border-top-left-radius: var(--sm-rounded-l);
+      border-bottom-left-radius: var(--sm-rounded-l);
     }
     .sm\:rounded-ss {
-      border-start-start-radius: var(--sm-rounded-ss, var(--rounded-ss));
+      border-start-start-radius: var(--sm-rounded-ss);
     }
     .sm\:rounded-se {
-      border-start-end-radius: var(--sm-rounded-se, var(--rounded-se));
+      border-start-end-radius: var(--sm-rounded-se);
     }
     .sm\:rounded-ee {
-      border-end-end-radius: var(--sm-rounded-ee, var(--rounded-ee));
+      border-end-end-radius: var(--sm-rounded-ee);
     }
     .sm\:rounded-es {
-      border-end-start-radius: var(--sm-rounded-es, var(--rounded-es));
+      border-end-start-radius: var(--sm-rounded-es);
     }
     .sm\:rounded-tl {
-      border-top-left-radius: var(--sm-rounded-tl, var(--rounded-tl));
+      border-top-left-radius: var(--sm-rounded-tl);
     }
     .sm\:rounded-tr {
-      border-top-right-radius: var(--sm-rounded-tr, var(--rounded-tr));
+      border-top-right-radius: var(--sm-rounded-tr);
     }
     .sm\:rounded-br {
-      border-bottom-right-radius: var(--sm-rounded-br, var(--rounded-br));
+      border-bottom-right-radius: var(--sm-rounded-br);
     }
     .sm\:rounded-bl {
-      border-bottom-left-radius: var(--sm-rounded-bl, var(--rounded-bl));
+      border-bottom-left-radius: var(--sm-rounded-bl);
     }
     .sm\:bottom {
-      bottom: calc(var(--spacing) * var(--sm-bottom, var(--bottom)));
+      bottom: calc(var(--spacing) * var(--sm-bottom));
     }
     .sm\:\[bottom\] {
-      bottom: var(--sm-bottom, var(--bottom));
+      bottom: var(--sm-bottom);
     }
     .sm\:color {
-      color: var(--sm-color, var(--color));
+      color: var(--sm-color);
     }
     .sm\:color\/o {
       color: color-mix(
         in oklab,
-        var(--sm-color, var(--color)) var(--sm-color-o, var(--color-o, 100%)),
+        var(--sm-color) var(--sm-color-o, 100%),
         transparent
       );
     }
     .sm\:columns {
-      columns: var(--sm-columns, var(--columns));
+      columns: var(--sm-columns);
     }
     .sm\:basis {
-      flex-basis: calc(var(--spacing) * var(--sm-basis, var(--basis)));
+      flex-basis: calc(var(--spacing) * var(--sm-basis));
     }
     .sm\:\[basis\] {
-      flex-basis: var(--sm-basis, var(--basis));
+      flex-basis: var(--sm-basis);
     }
     .sm\:flex {
-      flex: var(--sm-flex, var(--flex));
+      flex: var(--sm-flex);
     }
-    .sm\:flex-grow,
     .sm\:grow {
-      flex-grow: var(
-        --sm-flex-grow,
-        var(--sm-grow, var(--flex-grow, var(--grow)))
-      );
+      flex-grow: var(--sm-grow);
     }
-    .sm\:flex-shrink,
     .sm\:shrink {
-      flex-shrink: var(
-        --sm-flex-shrink,
-        var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-      );
+      flex-shrink: var(--sm-shrink);
     }
     .sm\:from {
+      --tw-gradient-from: var(--sm-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .sm\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
-        var(--sm-from) var(--sm-from-opacity, 100%),
+        var(--sm-from) var(--sm-from-o, 100%),
         transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
     .sm\:from-position {
-      --tw-gradient-from-position: var(
-        --sm-from-position,
-        var(--from-position)
-      );
+      --tw-gradient-from-position: var(--sm-from-position);
     }
     .sm\:gap {
-      gap: calc(var(--spacing) * var(--sm-gap, var(--gap)));
+      gap: calc(var(--spacing) * var(--sm-gap));
     }
     .sm\:gap-x {
-      column-gap: calc(
-        var(--spacing) * var(--sm-gap-x, var(--gap-x, var(--gap)))
-      );
+      column-gap: calc(var(--spacing) * var(--sm-gap-x, var(--gap)));
     }
     .sm\:gap-y {
-      row-gap: calc(var(--spacing) * var(--sm-gap-y, var(--gap-y, var(--gap))));
+      row-gap: calc(var(--spacing) * var(--sm-gap-y, var(--gap)));
     }
     .sm\:\[gap\] {
-      gap: var(--sm-gap, var(--gap));
+      gap: var(--sm-gap);
     }
     .sm\:\[gap-x\] {
-      column-gap: var(--sm-gap-x, var(--gap-x, var(--gap)));
+      column-gap: var(--sm-gap-x, var(--gap));
     }
     .sm\:\[gap-y\] {
-      row-gap: var(--sm-gap-y, var(--gap-y, var(--gap)));
+      row-gap: var(--sm-gap-y, var(--gap));
     }
     .sm\:col {
-      grid-column: var(--sm-col, var(--col));
+      grid-column: var(--sm-col);
     }
     .sm\:col-span {
-      grid-column: span var(--sm-col-span, var(--col-span)) / span
-        var(--sm-col-span, var(--col-span));
+      grid-column: span var(--sm-col-span) / span var(--sm-col-span);
     }
     .sm\:col-start {
-      grid-column-start: var(--sm-col-start, var(--col-start));
+      grid-column-start: var(--sm-col-start);
     }
     .sm\:col-end {
-      grid-column-end: var(--sm-col-end, var(--col-end));
+      grid-column-end: var(--sm-col-end);
     }
     .sm\:row {
-      grid-row: var(--sm-row, var(--row));
+      grid-row: var(--sm-row);
     }
     .sm\:row-span {
-      grid-row: span var(--sm-row-span, var(--row-span)) / span
-        var(--sm-row-span, var(--row-span));
+      grid-row: span var(--sm-row-span) / span var(--sm-row-span);
     }
     .sm\:row-start {
-      grid-row-start: var(--sm-row-start, var(--row-start));
+      grid-row-start: var(--sm-row-start);
     }
     .sm\:row-end {
-      grid-row-end: var(--sm-row-end, var(--row-end));
+      grid-row-end: var(--sm-row-end);
     }
     .sm\:grid-cols {
-      grid-template-columns: repeat(
-        var(--sm-grid-cols, var(--grid-cols)),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--sm-grid-cols), minmax(0, 1fr));
     }
     .sm\:\[grid-cols\] {
-      grid-template-columns: var(--sm-grid-cols, var(--grid-cols));
+      grid-template-columns: var(--sm-grid-cols);
     }
     .sm\:grid-rows {
-      grid-template-rows: repeat(
-        var(--sm-grid-rows, var(--grid-rows)),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--sm-grid-rows), minmax(0, 1fr));
     }
     .sm\:\[grid-rows\] {
-      grid-template-rows: var(--sm-grid-rows, var(--grid-rows));
+      grid-template-rows: var(--sm-grid-rows);
     }
     .sm\:h {
-      height: calc(var(--spacing) * var(--sm-h, var(--h)));
+      height: calc(var(--spacing) * var(--sm-h));
     }
     .sm\:\[h\] {
-      height: var(--sm-h, var(--h));
+      height: var(--sm-h);
     }
     .sm\:inset {
-      inset: calc(var(--spacing) * var(--sm-inset, var(--inset)));
+      inset: calc(var(--spacing) * var(--sm-inset));
     }
     .sm\:start {
-      inset-inline-start: calc(var(--spacing) * var(--sm-start, var(--start)));
+      inset-inline-start: calc(var(--spacing) * var(--sm-start));
     }
     .sm\:end {
-      inset-inline-end: calc(var(--spacing) * var(--sm-end, var(--end)));
+      inset-inline-end: calc(var(--spacing) * var(--sm-end));
     }
     .sm\:inset-x {
-      inset-inline: calc(var(--spacing) * var(--sm-inset-x, var(--inset-x)));
+      inset-inline: calc(var(--spacing) * var(--sm-inset-x));
     }
     .sm\:inset-y {
-      inset-block: calc(var(--spacing) * var(--sm-inset-y, var(--inset-y)));
+      inset-block: calc(var(--spacing) * var(--sm-inset-y));
     }
     .sm\:\[inset\] {
-      inset: var(--sm-inset, var(--inset));
+      inset: var(--sm-inset);
     }
     .sm\:\[start\] {
-      inset-inline-start: var(--sm-start, var(--start));
+      inset-inline-start: var(--sm-start);
     }
     .sm\:\[end\] {
-      inset-inline-end: var(--sm-end, var(--end));
+      inset-inline-end: var(--sm-end);
     }
     .sm\:\[inset-x\] {
-      inset-inline: var(--sm-inset-x, var(--inset-x));
+      inset-inline: var(--sm-inset-x);
     }
     .sm\:\[inset-y\] {
-      inset-block: var(--sm-inset-y, var(--inset-y));
+      inset-block: var(--sm-inset-y);
     }
     .sm\:left {
-      left: calc(var(--spacing) * var(--sm-left, var(--left)));
+      left: calc(var(--spacing) * var(--sm-left));
     }
     .sm\:\[left\] {
-      left: var(--sm-left, var(--left));
+      left: var(--sm-left);
     }
     .sm\:tracking {
-      letter-spacing: var(--sm-tracking, var(--tracking));
+      letter-spacing: var(--sm-tracking);
     }
     .sm\:leading {
-      line-height: calc(var(--spacing) * var(--sm-leading, var(--leading)));
+      line-height: calc(var(--spacing) * var(--sm-leading));
     }
     .sm\:\[leading\] {
-      line-height: var(--sm-leading, var(--leading));
+      line-height: var(--sm-leading);
     }
     .sm\:m {
-      margin: calc(var(--spacing) * var(--sm-m, var(--m)));
+      margin: calc(var(--spacing) * var(--sm-m));
     }
     .sm\:\[m\] {
-      margin: var(--sm-m, var(--m));
+      margin: var(--sm-m);
     }
     .sm\:mt {
-      margin-top: calc(var(--spacing) * var(--sm-mt, var(--mt, var(--m))));
+      margin-top: calc(var(--spacing) * var(--sm-mt));
     }
     .sm\:\[mt\] {
-      margin-top: var(--sm-mt, var(--mt, var(--m)));
+      margin-top: var(--sm-mt);
     }
     .sm\:mb {
-      margin-bottom: calc(var(--spacing) * var(--sm-mb, var(--mb, var(--m))));
+      margin-bottom: calc(var(--spacing) * var(--sm-mb));
     }
     .sm\:\[mb\] {
-      margin-bottom: var(--sm-mb, var(--mb, var(--m)));
+      margin-bottom: var(--sm-mb);
     }
     .sm\:ml {
-      margin-left: calc(var(--spacing) * var(--sm-ml, var(--ml, var(--m))));
+      margin-left: calc(var(--spacing) * var(--sm-ml));
     }
     .sm\:\[ml\] {
-      margin-left: var(--sm-ml, var(--ml, var(--m)));
+      margin-left: var(--sm-ml);
     }
     .sm\:mr {
-      margin-right: calc(var(--spacing) * var(--sm-mr, var(--mr, var(--m))));
+      margin-right: calc(var(--spacing) * var(--sm-mr));
     }
     .sm\:\[mr\] {
-      margin-right: var(--sm-mr, var(--mr, var(--m)));
+      margin-right: var(--sm-mr);
     }
     .sm\:ms {
-      margin-inline-start: calc(
-        var(--spacing) * var(--sm-ms, var(--ms, var(--m)))
-      );
+      margin-inline-start: calc(var(--spacing) * var(--sm-ms));
     }
     .sm\:\[ms\] {
-      margin-inline-start: var(--sm-ms, var(--ms, var(--m)));
+      margin-inline-start: var(--sm-ms);
     }
     .sm\:me {
-      margin-inline-end: calc(
-        var(--spacing) * var(--sm-me, var(--me, var(--m)))
-      );
+      margin-inline-end: calc(var(--spacing) * var(--sm-me));
     }
     .sm\:\[me\] {
-      margin-inline-end: var(--sm-me, var(--me, var(--m)));
+      margin-inline-end: var(--sm-me);
     }
     .sm\:mx {
-      margin-inline: calc(var(--spacing) * var(--sm-mx, var(--mx, var(--m))));
+      margin-inline: calc(var(--spacing) * var(--sm-mx));
     }
     .sm\:\[mx\] {
-      margin-inline: var(--sm-mx, var(--mx, var(--m)));
+      margin-inline: var(--sm-mx);
     }
     .sm\:my {
-      margin-block: calc(var(--spacing) * var(--sm-my, var(--my, var(--m))));
+      margin-block: calc(var(--spacing) * var(--sm-my));
     }
     .sm\:\[my\] {
-      margin-block: var(--sm-my, var(--my, var(--m)));
+      margin-block: var(--sm-my);
     }
     .sm\:max-h {
-      max-height: calc(var(--spacing) * var(--sm-max-h, var(--max-h)));
+      max-height: calc(var(--spacing) * var(--sm-max-h));
     }
     .sm\:\[max-h\] {
-      max-height: var(--sm-max-h, var(--max-h));
+      max-height: var(--sm-max-h);
     }
     .sm\:max-w {
-      max-width: calc(var(--spacing) * var(--sm-max-w, var(--max-w)));
+      max-width: calc(var(--spacing) * var(--sm-max-w));
     }
     .sm\:\[max-w\] {
-      max-width: var(--sm-max-w, var(--max-w));
+      max-width: var(--sm-max-w);
     }
     .sm\:min-h {
-      min-height: calc(var(--spacing) * var(--sm-min-h, var(--min-h)));
+      min-height: calc(var(--spacing) * var(--sm-min-h));
     }
     .sm\:\[min-h\] {
-      min-height: var(--sm-min-h, var(--min-h));
+      min-height: var(--sm-min-h);
     }
     .sm\:min-w {
-      min-width: calc(var(--spacing) * var(--sm-min-w, var(--min-w)));
+      min-width: calc(var(--spacing) * var(--sm-min-w));
     }
     .sm\:\[min-w\] {
-      min-width: var(--sm-min-w, var(--min-w));
+      min-width: var(--sm-min-w);
     }
     .sm\:object-position {
-      object-position: var(--sm-object, var(--object));
+      object-position: var(--sm-object-position);
     }
     .sm\:order {
-      order: var(--sm-order, var(--order));
-    }
-    .sm\:-order {
-      order: calc(var(--sm-order, var(--order)) * -1);
+      order: var(--sm-order);
     }
     .sm\:p {
-      padding: calc(var(--spacing) * var(--sm-p, var(--p)));
+      padding: calc(var(--spacing) * var(--sm-p));
     }
     .sm\:\[p\] {
-      padding: var(--sm-p, var(--p));
+      padding: var(--sm-p);
     }
     .sm\:pt {
-      padding-top: calc(var(--spacing) * var(--sm-pt, var(--pt, var(--p))));
-    }
-    .sm\:\[pt\] {
-      padding-top: var(--sm-pt, var(--pt, var(--p)));
+      padding-top: calc(var(--spacing) * var(--sm-pt, var(--p)));
     }
     .sm\:pb {
-      padding-bottom: calc(var(--spacing) * var(--sm-pb, var(--pb, var(--p))));
-    }
-    .sm\:\[pb\] {
-      padding-bottom: var(--sm-pb, var(--pb, var(--p)));
+      padding-bottom: calc(var(--spacing) * var(--sm-pb, var(--p)));
     }
     .sm\:pl {
-      padding-left: calc(var(--spacing) * var(--sm-pl, var(--pl, var(--p))));
-    }
-    .sm\:\[pl\] {
-      padding-left: var(--sm-pl, var(--pl, var(--p)));
+      padding-left: calc(var(--spacing) * var(--sm-pl, var(--p)));
     }
     .sm\:pr {
-      padding-right: calc(var(--spacing) * var(--sm-pr, var(--pr, var(--p))));
-    }
-    .sm\:\[pr\] {
-      padding-right: var(--sm-pr, var(--pr, var(--p)));
+      padding-right: calc(var(--spacing) * var(--sm-pr, var(--p)));
     }
     .sm\:ps {
-      padding-inline-start: calc(
-        var(--spacing) * var(--sm-ps, var(--ps, var(--p)))
-      );
-    }
-    .sm\:\[ps\] {
-      padding-inline-start: var(--sm-ps, var(--ps, var(--p)));
+      padding-inline-start: calc(var(--spacing) * var(--sm-ps, var(--p)));
     }
     .sm\:pe {
-      padding-inline-end: calc(
-        var(--spacing) * var(--sm-pe, var(--pe, var(--p)))
-      );
+      padding-inline-end: calc(var(--spacing) * var(--sm-pe, var(--p)));
+    }
+    .sm\:\[pt\] {
+      padding-top: var(--sm-pt, var(--p));
+    }
+    .sm\:\[pb\] {
+      padding-bottom: var(--sm-pb, var(--p));
+    }
+    .sm\:\[pl\] {
+      padding-left: var(--sm-pl, var(--p));
+    }
+    .sm\:\[pr\] {
+      padding-right: var(--sm-pr, var(--p));
+    }
+    .sm\:\[ps\] {
+      padding-inline-start: var(--sm-ps, var(--p));
     }
     .sm\:\[pe\] {
-      padding-inline-end: var(--sm-pe, var(--pe, var(--p)));
+      padding-inline-end: var(--sm-pe, var(--p));
     }
     .sm\:px {
-      padding-inline: calc(var(--spacing) * var(--sm-px, var(--px, var(--p))));
-    }
-    .sm\:\[px\] {
-      padding-inline: var(--sm-px, var(--px, var(--p)));
+      padding-inline: calc(var(--spacing) * var(--sm-px, var(--p)));
     }
     .sm\:py {
-      padding-block: calc(var(--spacing) * var(--sm-py, var(--py, var(--p))));
+      padding-block: calc(var(--spacing) * var(--sm-py, var(--p)));
+    }
+    .sm\:\[px\] {
+      padding-inline: var(--sm-px, var(--p));
     }
     .sm\:\[py\] {
-      padding-block: var(--sm-py, var(--py, var(--p)));
+      padding-block: var(--sm-py, var(--p));
     }
     .sm\:right {
-      right: calc(var(--spacing) * var(--sm-right, var(--right)));
+      right: calc(var(--spacing) * var(--sm-right));
     }
     .sm\:\[right\] {
-      right: var(--sm-right, var(--right));
+      right: var(--sm-right);
     }
     .sm\:size {
-      width: calc(var(--spacing) * var(--sm-size, var(--size)));
-      height: calc(var(--spacing) * var(--sm-size, var(--size)));
+      width: calc(var(--spacing) * var(--sm-size));
+      height: calc(var(--spacing) * var(--sm-size));
     }
     .sm\:\[size\] {
-      width: var(--sm-size, var(--size));
-      height: var(--sm-size, var(--size));
+      width: var(--sm-size);
+      height: var(--sm-size);
     }
     .sm\:space-x > :not(:last-child) {
       margin-inline-start: calc(
-        var(--spacing) * var(--sm-space-x, var(--space-x)) *
-          var(--space-x-reverse)
+        var(--spacing) * var(--sm-space-x) * var(--tw-space-x-reverse)
       );
       margin-inline-end: calc(
-        var(--spacing) * var(--sm-space-x, var(--space-x)) *
-          (1 - var(--space-x-reverse))
+        var(--spacing) * var(--sm-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .sm\:\[space-x\] > :not(:last-child) {
-      margin-inline-start: calc(
-        var(--sm-space-x, var(--space-x)) * var(--space-x-reverse)
-      );
+      margin-inline-start: calc(var(--sm-space-x) * var(--tw-space-x-reverse));
       margin-inline-end: calc(
-        var(--sm-space-x, var(--space-x)) * (1 - var(--space-x-reverse))
+        var(--sm-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .sm\:space-y > :not(:last-child) {
       margin-block-start: calc(
-        var(--spacing) * var(--sm-space-y, var(--space-y)) *
-          var(--space-y-reverse)
+        var(--spacing) * var(--sm-space-y) * var(--tw-space-y-reverse)
       );
       margin-block-end: calc(
-        var(--spacing) * var(--sm-space-y, var(--space-y)) *
-          (1 - var(--space-y-reverse))
+        var(--spacing) * var(--sm-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .sm\:\[space-y\] > :not(:last-child) {
-      margin-block-start: calc(
-        var(--sm-space-y, var(--space-y)) * var(--space-y-reverse)
-      );
+      margin-block-start: calc(var(--sm-space-y) * var(--tw-space-y-reverse));
       margin-block-end: calc(
-        var(--sm-space-y, var(--space-y)) * (1 - var(--space-y-reverse))
+        var(--sm-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .sm\:to {
+      --tw-gradient-to: var(--sm-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .sm\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
-        var(--sm-to) var(--sm-to-opacity, 100%),
+        var(--sm-to) var(--sm-to-o, 100%),
         transparent
       );
-    }
-    .sm\:top {
-      top: calc(var(--spacing) * var(--sm-top, var(--top)));
-    }
-    .sm\:\[top\] {
-      top: var(--sm-top, var(--top));
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
     .sm\:to-position {
-      --tw-gradient-to-position: var(--sm-to-position, var(--to-position));
+      --tw-gradient-to-position: var(--sm-to-position);
+    }
+    .sm\:top {
+      top: calc(var(--spacing) * var(--sm-top));
+    }
+    .sm\:\[top\] {
+      top: var(--sm-top);
     }
     .sm\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--sm-via, var(--via))
-          var(--sm-via-opacity, var(--via-opacity, 100%)),
-        transparent
-      );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
+      --tw-gradient-via: var(--sm-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
         var(--tw-gradient-via) var(--tw-gradient-via-position),
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
+    }
+    .sm\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--sm-via) var(--sm-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
     .sm\:via-position {
-      --tw-gradient-via-position: var(--sm-via-position, var(--via-position));
+      --tw-gradient-via-position: var(--sm-via-position);
     }
     .sm\:w {
-      width: calc(var(--spacing) * var(--sm-w, var(--w)));
+      width: calc(var(--spacing) * var(--sm-w));
     }
     .sm\:\[w\] {
-      width: var(--sm-w, var(--w));
+      width: var(--sm-w);
     }
     .sm\:z {
-      z-index: var(--sm-z, var(--z));
+      z-index: var(--sm-z);
     }
   }
   @media (min-width: 48rem) {
     .md\:aspect {
-      aspect-ratio: var(--md-aspect, var(--sm-aspect, var(--aspect)));
+      aspect-ratio: var(--md-aspect);
     }
     .md\:bg {
-      background-color: var(--md-bg, var(--sm-bg, var(--bg)));
+      background-color: var(--md-bg);
     }
     .md\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--md-bg, var(--sm-bg, var(--bg)))
-          var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))),
+        var(--md-bg) var(--md-bg-o, 100%),
         transparent
       );
     }
     .md\:rounded {
-      border-radius: var(--md-rounded, var(--sm-rounded, var(--rounded)));
+      border-radius: var(--md-rounded);
     }
     .md\:rounded-s {
-      border-start-start-radius: var(
-        --md-rounded-s,
-        var(--sm-rounded-s, var(--rounded-s))
-      );
-      border-end-start-radius: var(
-        --md-rounded-s,
-        var(--sm-rounded-s, var(--rounded-s))
-      );
+      border-start-start-radius: var(--md-rounded-s);
+      border-end-start-radius: var(--md-rounded-s);
     }
     .md\:rounded-e {
-      border-start-end-radius: var(
-        --md-rounded-e,
-        var(--sm-rounded-e, var(--rounded-e))
-      );
-      border-end-end-radius: var(
-        --md-rounded-e,
-        var(--sm-rounded-e, var(--rounded-e))
-      );
+      border-start-end-radius: var(--md-rounded-e);
+      border-end-end-radius: var(--md-rounded-e);
     }
     .md\:rounded-t {
-      border-top-left-radius: var(
-        --md-rounded-t,
-        var(--sm-rounded-t, var(--rounded-t))
-      );
-      border-top-right-radius: var(
-        --md-rounded-t,
-        var(--sm-rounded-t, var(--rounded-t))
-      );
+      border-top-left-radius: var(--md-rounded-t);
+      border-top-right-radius: var(--md-rounded-t);
     }
     .md\:rounded-r {
-      border-top-right-radius: var(
-        --md-rounded-r,
-        var(--sm-rounded-r, var(--rounded-r))
-      );
-      border-bottom-right-radius: var(
-        --md-rounded-r,
-        var(--sm-rounded-r, var(--rounded-r))
-      );
+      border-top-right-radius: var(--md-rounded-r);
+      border-bottom-right-radius: var(--md-rounded-r);
     }
     .md\:rounded-b {
-      border-bottom-right-radius: var(
-        --md-rounded-b,
-        var(--sm-rounded-b, var(--rounded-b))
-      );
-      border-bottom-left-radius: var(
-        --md-rounded-b,
-        var(--sm-rounded-b, var(--rounded-b))
-      );
+      border-bottom-right-radius: var(--md-rounded-b);
+      border-bottom-left-radius: var(--md-rounded-b);
     }
     .md\:rounded-l {
-      border-top-left-radius: var(
-        --md-rounded-l,
-        var(--sm-rounded-l, var(--rounded-l))
-      );
-      border-bottom-left-radius: var(
-        --md-rounded-l,
-        var(--sm-rounded-l, var(--rounded-l))
-      );
+      border-top-left-radius: var(--md-rounded-l);
+      border-bottom-left-radius: var(--md-rounded-l);
     }
     .md\:rounded-ss {
-      border-start-start-radius: var(
-        --md-rounded-ss,
-        var(--sm-rounded-ss, var(--rounded-ss))
-      );
+      border-start-start-radius: var(--md-rounded-ss);
     }
     .md\:rounded-se {
-      border-start-end-radius: var(
-        --md-rounded-se,
-        var(--sm-rounded-se, var(--rounded-se))
-      );
+      border-start-end-radius: var(--md-rounded-se);
     }
     .md\:rounded-ee {
-      border-end-end-radius: var(
-        --md-rounded-ee,
-        var(--sm-rounded-ee, var(--rounded-ee))
-      );
+      border-end-end-radius: var(--md-rounded-ee);
     }
     .md\:rounded-es {
-      border-end-start-radius: var(
-        --md-rounded-es,
-        var(--sm-rounded-es, var(--rounded-es))
-      );
+      border-end-start-radius: var(--md-rounded-es);
     }
     .md\:rounded-tl {
-      border-top-left-radius: var(
-        --md-rounded-tl,
-        var(--sm-rounded-tl, var(--rounded-tl))
-      );
+      border-top-left-radius: var(--md-rounded-tl);
     }
     .md\:rounded-tr {
-      border-top-right-radius: var(
-        --md-rounded-tr,
-        var(--sm-rounded-tr, var(--rounded-tr))
-      );
+      border-top-right-radius: var(--md-rounded-tr);
     }
     .md\:rounded-br {
-      border-bottom-right-radius: var(
-        --md-rounded-br,
-        var(--sm-rounded-br, var(--rounded-br))
-      );
+      border-bottom-right-radius: var(--md-rounded-br);
     }
     .md\:rounded-bl {
-      border-bottom-left-radius: var(
-        --md-rounded-bl,
-        var(--sm-rounded-bl, var(--rounded-bl))
-      );
+      border-bottom-left-radius: var(--md-rounded-bl);
     }
     .md\:bottom {
-      bottom: calc(
-        var(--spacing) * var(--md-bottom, var(--sm-bottom, var(--bottom)))
-      );
+      bottom: calc(var(--spacing) * var(--md-bottom));
     }
     .md\:\[bottom\] {
-      bottom: var(--md-bottom, var(--sm-bottom, var(--bottom)));
+      bottom: var(--md-bottom);
     }
     .md\:color {
-      color: var(--md-color, var(--sm-color, var(--color)));
+      color: var(--md-color);
     }
     .md\:color\/o {
       color: color-mix(
         in oklab,
-        var(--md-color, var(--sm-color, var(--color)))
-          var(--md-color-o, var(--sm-color-o, var(--color-o, 100%))),
+        var(--md-color) var(--md-color-o, 100%),
         transparent
       );
     }
     .md\:columns {
-      columns: var(--md-columns, var(--sm-columns, var(--columns)));
+      columns: var(--md-columns);
     }
     .md\:basis {
-      flex-basis: calc(
-        var(--spacing) * var(--md-basis, var(--sm-basis, var(--basis)))
-      );
+      flex-basis: calc(var(--spacing) * var(--md-basis));
     }
     .md\:\[basis\] {
-      flex-basis: var(--md-basis, var(--sm-basis, var(--basis)));
+      flex-basis: var(--md-basis);
     }
     .md\:flex {
-      flex: var(--md-flex, var(--sm-flex, var(--flex)));
+      flex: var(--md-flex);
     }
-    .md\:flex-grow,
     .md\:grow {
-      flex-grow: var(
-        --md-flex-grow,
-        var(
-          --md-grow,
-          var(--sm-flex-grow, var(--sm-grow, var(--flex-grow, var(--grow))))
-        )
-      );
+      flex-grow: var(--md-grow);
     }
-    .md\:flex-shrink,
     .md\:shrink {
-      flex-shrink: var(
-        --md-flex-shrink,
-        var(
-          --md-shrink,
-          var(
-            --sm-flex-shrink,
-            var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-          )
-        )
-      );
+      flex-shrink: var(--md-shrink);
     }
     .md\:from {
+      --tw-gradient-from: var(--md-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .md\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
-        var(--md-from) var(--md-from-opacity, 100%),
+        var(--md-from) var(--md-from-o, 100%),
         transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
     .md\:from-position {
-      --tw-gradient-from-position: var(
-        --md-from-position,
-        var(--sm-from-position, var(--from-position))
-      );
+      --tw-gradient-from-position: var(--md-from-position);
     }
     .md\:gap {
-      gap: calc(var(--spacing) * var(--md-gap, var(--sm-gap, var(--gap))));
+      gap: calc(var(--spacing) * var(--md-gap));
     }
     .md\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-      );
+      column-gap: calc(var(--spacing) * var(--md-gap-x, var(--gap)));
     }
     .md\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-      );
+      row-gap: calc(var(--spacing) * var(--md-gap-y, var(--gap)));
     }
     .md\:\[gap\] {
-      gap: var(--md-gap, var(--sm-gap, var(--gap)));
+      gap: var(--md-gap);
     }
     .md\:\[gap-x\] {
-      column-gap: var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))));
+      column-gap: var(--md-gap-x, var(--gap));
     }
     .md\:\[gap-y\] {
-      row-gap: var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))));
+      row-gap: var(--md-gap-y, var(--gap));
     }
     .md\:col {
-      grid-column: var(--md-col, var(--sm-col, var(--col)));
+      grid-column: var(--md-col);
     }
     .md\:col-span {
-      grid-column: span
-        var(--md-col-span, var(--sm-col-span, var(--col-span))) / span
-        var(--md-col-span, var(--sm-col-span, var(--col-span)));
+      grid-column: span var(--md-col-span) / span var(--md-col-span);
     }
     .md\:col-start {
-      grid-column-start: var(
-        --md-col-start,
-        var(--sm-col-start, var(--col-start))
-      );
+      grid-column-start: var(--md-col-start);
     }
     .md\:col-end {
-      grid-column-end: var(--md-col-end, var(--sm-col-end, var(--col-end)));
+      grid-column-end: var(--md-col-end);
     }
     .md\:row {
-      grid-row: var(--md-row, var(--sm-row, var(--row)));
+      grid-row: var(--md-row);
     }
     .md\:row-span {
-      grid-row: span var(--md-row-span, var(--sm-row-span, var(--row-span))) /
-        span var(--md-row-span, var(--sm-row-span, var(--row-span)));
+      grid-row: span var(--md-row-span) / span var(--md-row-span);
     }
     .md\:row-start {
-      grid-row-start: var(
-        --md-row-start,
-        var(--sm-row-start, var(--row-start))
-      );
+      grid-row-start: var(--md-row-start);
     }
     .md\:row-end {
-      grid-row-end: var(--md-row-end, var(--sm-row-end, var(--row-end)));
+      grid-row-end: var(--md-row-end);
     }
     .md\:grid-cols {
-      grid-template-columns: repeat(
-        var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols))),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--md-grid-cols), minmax(0, 1fr));
     }
     .md\:\[grid-cols\] {
-      grid-template-columns: var(
-        --md-grid-cols,
-        var(--sm-grid-cols, var(--grid-cols))
-      );
+      grid-template-columns: var(--md-grid-cols);
     }
     .md\:grid-rows {
-      grid-template-rows: repeat(
-        var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows))),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--md-grid-rows), minmax(0, 1fr));
     }
     .md\:\[grid-rows\] {
-      grid-template-rows: var(
-        --md-grid-rows,
-        var(--sm-grid-rows, var(--grid-rows))
-      );
+      grid-template-rows: var(--md-grid-rows);
     }
     .md\:h {
-      height: calc(var(--spacing) * var(--md-h, var(--sm-h, var(--h))));
+      height: calc(var(--spacing) * var(--md-h));
     }
     .md\:\[h\] {
-      height: var(--md-h, var(--sm-h, var(--h)));
+      height: var(--md-h);
     }
     .md\:inset {
-      inset: calc(
-        var(--spacing) * var(--md-inset, var(--sm-inset, var(--inset)))
-      );
+      inset: calc(var(--spacing) * var(--md-inset));
     }
     .md\:start {
-      inset-inline-start: calc(
-        var(--spacing) * var(--md-start, var(--sm-start, var(--start)))
-      );
+      inset-inline-start: calc(var(--spacing) * var(--md-start));
     }
     .md\:end {
-      inset-inline-end: calc(
-        var(--spacing) * var(--md-end, var(--sm-end, var(--end)))
-      );
+      inset-inline-end: calc(var(--spacing) * var(--md-end));
     }
     .md\:inset-x {
-      inset-inline: calc(
-        var(--spacing) * var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
-      );
+      inset-inline: calc(var(--spacing) * var(--md-inset-x));
     }
     .md\:inset-y {
-      inset-block: calc(
-        var(--spacing) * var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
-      );
+      inset-block: calc(var(--spacing) * var(--md-inset-y));
     }
     .md\:\[inset\] {
-      inset: var(--md-inset, var(--sm-inset, var(--inset)));
+      inset: var(--md-inset);
     }
     .md\:\[start\] {
-      inset-inline-start: var(--md-start, var(--sm-start, var(--start)));
+      inset-inline-start: var(--md-start);
     }
     .md\:\[end\] {
-      inset-inline-end: var(--md-end, var(--sm-end, var(--end)));
+      inset-inline-end: var(--md-end);
     }
     .md\:\[inset-x\] {
-      inset-inline: var(--md-inset-x, var(--sm-inset-x, var(--inset-x)));
+      inset-inline: var(--md-inset-x);
     }
     .md\:\[inset-y\] {
-      inset-block: var(--md-inset-y, var(--sm-inset-y, var(--inset-y)));
+      inset-block: var(--md-inset-y);
     }
     .md\:left {
-      left: calc(var(--spacing) * var(--md-left, var(--sm-left, var(--left))));
+      left: calc(var(--spacing) * var(--md-left));
     }
     .md\:\[left\] {
-      left: var(--md-left, var(--sm-left, var(--left)));
+      left: var(--md-left);
     }
     .md\:tracking {
-      letter-spacing: var(--md-tracking, var(--sm-tracking, var(--tracking)));
+      letter-spacing: var(--md-tracking);
     }
     .md\:leading {
-      line-height: calc(
-        var(--spacing) * var(--md-leading, var(--sm-leading, var(--leading)))
-      );
+      line-height: calc(var(--spacing) * var(--md-leading));
     }
     .md\:\[leading\] {
-      line-height: var(--md-leading, var(--sm-leading, var(--leading)));
+      line-height: var(--md-leading);
     }
     .md\:m {
-      margin: calc(var(--spacing) * var(--md-m, var(--sm-m, var(--m))));
+      margin: calc(var(--spacing) * var(--md-m));
     }
     .md\:\[m\] {
-      margin: var(--md-m, var(--sm-m, var(--m)));
+      margin: var(--md-m);
     }
     .md\:mt {
-      margin-top: calc(
-        var(--spacing) * var(--md-mt, var(--sm-mt, var(--mt, var(--m))))
-      );
+      margin-top: calc(var(--spacing) * var(--md-mt));
     }
     .md\:\[mt\] {
-      margin-top: var(--md-mt, var(--sm-mt, var(--mt, var(--m))));
+      margin-top: var(--md-mt);
     }
     .md\:mb {
-      margin-bottom: calc(
-        var(--spacing) * var(--md-mb, var(--sm-mb, var(--mb, var(--m))))
-      );
+      margin-bottom: calc(var(--spacing) * var(--md-mb));
     }
     .md\:\[mb\] {
-      margin-bottom: var(--md-mb, var(--sm-mb, var(--mb, var(--m))));
+      margin-bottom: var(--md-mb);
     }
     .md\:ml {
-      margin-left: calc(
-        var(--spacing) * var(--md-ml, var(--sm-ml, var(--ml, var(--m))))
-      );
+      margin-left: calc(var(--spacing) * var(--md-ml));
     }
     .md\:\[ml\] {
-      margin-left: var(--md-ml, var(--sm-ml, var(--ml, var(--m))));
+      margin-left: var(--md-ml);
     }
     .md\:mr {
-      margin-right: calc(
-        var(--spacing) * var(--md-mr, var(--sm-mr, var(--mr, var(--m))))
-      );
+      margin-right: calc(var(--spacing) * var(--md-mr));
     }
     .md\:\[mr\] {
-      margin-right: var(--md-mr, var(--sm-mr, var(--mr, var(--m))));
+      margin-right: var(--md-mr);
     }
     .md\:ms {
-      margin-inline-start: calc(
-        var(--spacing) * var(--md-ms, var(--sm-ms, var(--ms, var(--m))))
-      );
+      margin-inline-start: calc(var(--spacing) * var(--md-ms));
     }
     .md\:\[ms\] {
-      margin-inline-start: var(--md-ms, var(--sm-ms, var(--ms, var(--m))));
+      margin-inline-start: var(--md-ms);
     }
     .md\:me {
-      margin-inline-end: calc(
-        var(--spacing) * var(--md-me, var(--sm-me, var(--me, var(--m))))
-      );
+      margin-inline-end: calc(var(--spacing) * var(--md-me));
     }
     .md\:\[me\] {
-      margin-inline-end: var(--md-me, var(--sm-me, var(--me, var(--m))));
+      margin-inline-end: var(--md-me);
     }
     .md\:mx {
-      margin-inline: calc(
-        var(--spacing) * var(--md-mx, var(--sm-mx, var(--mx, var(--m))))
-      );
+      margin-inline: calc(var(--spacing) * var(--md-mx));
     }
     .md\:\[mx\] {
-      margin-inline: var(--md-mx, var(--sm-mx, var(--mx, var(--m))));
+      margin-inline: var(--md-mx);
     }
     .md\:my {
-      margin-block: calc(
-        var(--spacing) * var(--md-my, var(--sm-my, var(--my, var(--m))))
-      );
+      margin-block: calc(var(--spacing) * var(--md-my));
     }
     .md\:\[my\] {
-      margin-block: var(--md-my, var(--sm-my, var(--my, var(--m))));
+      margin-block: var(--md-my);
     }
     .md\:max-h {
-      max-height: calc(
-        var(--spacing) * var(--md-max-h, var(--sm-max-h, var(--max-h)))
-      );
+      max-height: calc(var(--spacing) * var(--md-max-h));
     }
     .md\:\[max-h\] {
-      max-height: var(--md-max-h, var(--sm-max-h, var(--max-h)));
+      max-height: var(--md-max-h);
     }
     .md\:max-w {
-      max-width: calc(
-        var(--spacing) * var(--md-max-w, var(--sm-max-w, var(--max-w)))
-      );
+      max-width: calc(var(--spacing) * var(--md-max-w));
     }
     .md\:\[max-w\] {
-      max-width: var(--md-max-w, var(--sm-max-w, var(--max-w)));
+      max-width: var(--md-max-w);
     }
     .md\:min-h {
-      min-height: calc(
-        var(--spacing) * var(--md-min-h, var(--sm-min-h, var(--min-h)))
-      );
+      min-height: calc(var(--spacing) * var(--md-min-h));
     }
     .md\:\[min-h\] {
-      min-height: var(--md-min-h, var(--sm-min-h, var(--min-h)));
+      min-height: var(--md-min-h);
     }
     .md\:min-w {
-      min-width: calc(
-        var(--spacing) * var(--md-min-w, var(--sm-min-w, var(--min-w)))
-      );
+      min-width: calc(var(--spacing) * var(--md-min-w));
     }
     .md\:\[min-w\] {
-      min-width: var(--md-min-w, var(--sm-min-w, var(--min-w)));
+      min-width: var(--md-min-w);
     }
     .md\:object-position {
-      object-position: var(--md-object, var(--sm-object, var(--object)));
+      object-position: var(--md-object-position);
     }
     .md\:order {
-      order: var(--md-order, var(--sm-order, var(--order)));
-    }
-    .md\:-order {
-      order: calc(var(--md-order, var(--sm-order, var(--order))) * -1);
+      order: var(--md-order);
     }
     .md\:p {
-      padding: calc(var(--spacing) * var(--md-p, var(--sm-p, var(--p))));
+      padding: calc(var(--spacing) * var(--md-p));
     }
     .md\:\[p\] {
-      padding: var(--md-p, var(--sm-p, var(--p)));
+      padding: var(--md-p);
     }
     .md\:pt {
-      padding-top: calc(
-        var(--spacing) * var(--md-pt, var(--sm-pt, var(--pt, var(--p))))
-      );
-    }
-    .md\:\[pt\] {
-      padding-top: var(--md-pt, var(--sm-pt, var(--pt, var(--p))));
+      padding-top: calc(var(--spacing) * var(--md-pt, var(--p)));
     }
     .md\:pb {
-      padding-bottom: calc(
-        var(--spacing) * var(--md-pb, var(--sm-pb, var(--pb, var(--p))))
-      );
-    }
-    .md\:\[pb\] {
-      padding-bottom: var(--md-pb, var(--sm-pb, var(--pb, var(--p))));
+      padding-bottom: calc(var(--spacing) * var(--md-pb, var(--p)));
     }
     .md\:pl {
-      padding-left: calc(
-        var(--spacing) * var(--md-pl, var(--sm-pl, var(--pl, var(--p))))
-      );
-    }
-    .md\:\[pl\] {
-      padding-left: var(--md-pl, var(--sm-pl, var(--pl, var(--p))));
+      padding-left: calc(var(--spacing) * var(--md-pl, var(--p)));
     }
     .md\:pr {
-      padding-right: calc(
-        var(--spacing) * var(--md-pr, var(--sm-pr, var(--pr, var(--p))))
-      );
-    }
-    .md\:\[pr\] {
-      padding-right: var(--md-pr, var(--sm-pr, var(--pr, var(--p))));
+      padding-right: calc(var(--spacing) * var(--md-pr, var(--p)));
     }
     .md\:ps {
-      padding-inline-start: calc(
-        var(--spacing) * var(--md-ps, var(--sm-ps, var(--ps, var(--p))))
-      );
-    }
-    .md\:\[ps\] {
-      padding-inline-start: var(--md-ps, var(--sm-ps, var(--ps, var(--p))));
+      padding-inline-start: calc(var(--spacing) * var(--md-ps, var(--p)));
     }
     .md\:pe {
-      padding-inline-end: calc(
-        var(--spacing) * var(--md-pe, var(--sm-pe, var(--pe, var(--p))))
-      );
+      padding-inline-end: calc(var(--spacing) * var(--md-pe, var(--p)));
+    }
+    .md\:\[pt\] {
+      padding-top: var(--md-pt, var(--p));
+    }
+    .md\:\[pb\] {
+      padding-bottom: var(--md-pb, var(--p));
+    }
+    .md\:\[pl\] {
+      padding-left: var(--md-pl, var(--p));
+    }
+    .md\:\[pr\] {
+      padding-right: var(--md-pr, var(--p));
+    }
+    .md\:\[ps\] {
+      padding-inline-start: var(--md-ps, var(--p));
     }
     .md\:\[pe\] {
-      padding-inline-end: var(--md-pe, var(--sm-pe, var(--pe, var(--p))));
+      padding-inline-end: var(--md-pe, var(--p));
     }
     .md\:px {
-      padding-inline: calc(
-        var(--spacing) * var(--md-px, var(--sm-px, var(--px, var(--p))))
-      );
-    }
-    .md\:\[px\] {
-      padding-inline: var(--md-px, var(--sm-px, var(--px, var(--p))));
+      padding-inline: calc(var(--spacing) * var(--md-px, var(--p)));
     }
     .md\:py {
-      padding-block: calc(
-        var(--spacing) * var(--md-py, var(--sm-py, var(--py, var(--p))))
-      );
+      padding-block: calc(var(--spacing) * var(--md-py, var(--p)));
+    }
+    .md\:\[px\] {
+      padding-inline: var(--md-px, var(--p));
     }
     .md\:\[py\] {
-      padding-block: var(--md-py, var(--sm-py, var(--py, var(--p))));
+      padding-block: var(--md-py, var(--p));
     }
     .md\:right {
-      right: calc(
-        var(--spacing) * var(--md-right, var(--sm-right, var(--right)))
-      );
+      right: calc(var(--spacing) * var(--md-right));
     }
     .md\:\[right\] {
-      right: var(--md-right, var(--sm-right, var(--right)));
+      right: var(--md-right);
     }
     .md\:size {
-      width: calc(var(--spacing) * var(--md-size, var(--sm-size, var(--size))));
-      height: calc(
-        var(--spacing) * var(--md-size, var(--sm-size, var(--size)))
-      );
+      width: calc(var(--spacing) * var(--md-size));
+      height: calc(var(--spacing) * var(--md-size));
     }
     .md\:\[size\] {
-      width: var(--md-size, var(--sm-size, var(--size)));
-      height: var(--md-size, var(--sm-size, var(--size)));
+      width: var(--md-size);
+      height: var(--md-size);
     }
     .md\:space-x > :not(:last-child) {
       margin-inline-start: calc(
-        var(--spacing) * var(--md-space-x, var(--sm-space-x, var(--space-x))) *
-          var(--space-x-reverse)
+        var(--spacing) * var(--md-space-x) * var(--tw-space-x-reverse)
       );
       margin-inline-end: calc(
-        var(--spacing) * var(--md-space-x, var(--sm-space-x, var(--space-x))) *
-          (1 - var(--space-x-reverse))
+        var(--spacing) * var(--md-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .md\:\[space-x\] > :not(:last-child) {
-      margin-inline-start: calc(
-        var(--md-space-x, var(--sm-space-x, var(--space-x))) *
-          var(--space-x-reverse)
-      );
+      margin-inline-start: calc(var(--md-space-x) * var(--tw-space-x-reverse));
       margin-inline-end: calc(
-        var(--md-space-x, var(--sm-space-x, var(--space-x))) *
-          (1 - var(--space-x-reverse))
+        var(--md-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .md\:space-y > :not(:last-child) {
       margin-block-start: calc(
-        var(--spacing) * var(--md-space-y, var(--sm-space-y, var(--space-y))) *
-          var(--space-y-reverse)
+        var(--spacing) * var(--md-space-y) * var(--tw-space-y-reverse)
       );
       margin-block-end: calc(
-        var(--spacing) * var(--md-space-y, var(--sm-space-y, var(--space-y))) *
-          (1 - var(--space-y-reverse))
+        var(--spacing) * var(--md-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .md\:\[space-y\] > :not(:last-child) {
-      margin-block-start: calc(
-        var(--md-space-y, var(--sm-space-y, var(--space-y))) *
-          var(--space-y-reverse)
-      );
+      margin-block-start: calc(var(--md-space-y) * var(--tw-space-y-reverse));
       margin-block-end: calc(
-        var(--md-space-y, var(--sm-space-y, var(--space-y))) *
-          (1 - var(--space-y-reverse))
+        var(--md-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .md\:to {
+      --tw-gradient-to: var(--md-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .md\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
-        var(--md-to) var(--md-to-opacity, 100%),
+        var(--md-to) var(--md-to-o, 100%),
         transparent
       );
-    }
-    .md\:top {
-      top: calc(var(--spacing) * var(--md-top, var(--sm-top, var(--top))));
-    }
-    .md\:\[top\] {
-      top: var(--md-top, var(--sm-top, var(--top)));
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
     .md\:to-position {
-      --tw-gradient-to-position: var(
-        --md-to-position,
-        var(--sm-to-position, var(--to-position))
-      );
+      --tw-gradient-to-position: var(--md-to-position);
+    }
+    .md\:top {
+      top: calc(var(--spacing) * var(--md-top));
+    }
+    .md\:\[top\] {
+      top: var(--md-top);
     }
     .md\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--md-via, var(--sm-via, var(--via)))
-          var(--md-via-opacity, var(--sm-via-opacity, var(--via-opacity, 100%))),
-        transparent
-      );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
+      --tw-gradient-via: var(--md-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
         var(--tw-gradient-via) var(--tw-gradient-via-position),
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .md\:via-position {
-      --tw-gradient-via-position: var(
-        --md-via-position,
-        var(--sm-via-position, var(--via-position))
+    .md\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--md-via) var(--md-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .md\:via-position {
+      --tw-gradient-via-position: var(--md-via-position);
+    }
     .md\:w {
-      width: calc(var(--spacing) * var(--md-w, var(--sm-w, var(--w))));
+      width: calc(var(--spacing) * var(--md-w));
     }
     .md\:\[w\] {
-      width: var(--md-w, var(--sm-w, var(--w)));
+      width: var(--md-w);
     }
     .md\:z {
-      z-index: var(--md-z, var(--sm-z, var(--z)));
+      z-index: var(--md-z);
     }
   }
   @media (min-width: 64rem) {
     .lg\:aspect {
-      aspect-ratio: var(
-        --lg-aspect,
-        var(--md-aspect, var(--sm-aspect, var(--aspect)))
-      );
+      aspect-ratio: var(--lg-aspect);
     }
     .lg\:bg {
-      background-color: var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))));
+      background-color: var(--lg-bg);
     }
     .lg\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-          var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%)))),
+        var(--lg-bg) var(--lg-bg-o, 100%),
         transparent
       );
     }
     .lg\:rounded {
-      border-radius: var(
-        --lg-rounded,
-        var(--md-rounded, var(--sm-rounded, var(--rounded)))
-      );
+      border-radius: var(--lg-rounded);
     }
     .lg\:rounded-s {
-      border-start-start-radius: var(
-        --lg-rounded-s,
-        var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-      );
-      border-end-start-radius: var(
-        --lg-rounded-s,
-        var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-      );
+      border-start-start-radius: var(--lg-rounded-s);
+      border-end-start-radius: var(--lg-rounded-s);
     }
     .lg\:rounded-e {
-      border-start-end-radius: var(
-        --lg-rounded-e,
-        var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-      );
-      border-end-end-radius: var(
-        --lg-rounded-e,
-        var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-      );
+      border-start-end-radius: var(--lg-rounded-e);
+      border-end-end-radius: var(--lg-rounded-e);
     }
     .lg\:rounded-t {
-      border-top-left-radius: var(
-        --lg-rounded-t,
-        var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-      );
-      border-top-right-radius: var(
-        --lg-rounded-t,
-        var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-      );
+      border-top-left-radius: var(--lg-rounded-t);
+      border-top-right-radius: var(--lg-rounded-t);
     }
     .lg\:rounded-r {
-      border-top-right-radius: var(
-        --lg-rounded-r,
-        var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-      );
-      border-bottom-right-radius: var(
-        --lg-rounded-r,
-        var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-      );
+      border-top-right-radius: var(--lg-rounded-r);
+      border-bottom-right-radius: var(--lg-rounded-r);
     }
     .lg\:rounded-b {
-      border-bottom-right-radius: var(
-        --lg-rounded-b,
-        var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-      );
-      border-bottom-left-radius: var(
-        --lg-rounded-b,
-        var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-      );
+      border-bottom-right-radius: var(--lg-rounded-b);
+      border-bottom-left-radius: var(--lg-rounded-b);
     }
     .lg\:rounded-l {
-      border-top-left-radius: var(
-        --lg-rounded-l,
-        var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-      );
-      border-bottom-left-radius: var(
-        --lg-rounded-l,
-        var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-      );
+      border-top-left-radius: var(--lg-rounded-l);
+      border-bottom-left-radius: var(--lg-rounded-l);
     }
     .lg\:rounded-ss {
-      border-start-start-radius: var(
-        --lg-rounded-ss,
-        var(--md-rounded-ss, var(--sm-rounded-ss, var(--rounded-ss)))
-      );
+      border-start-start-radius: var(--lg-rounded-ss);
     }
     .lg\:rounded-se {
-      border-start-end-radius: var(
-        --lg-rounded-se,
-        var(--md-rounded-se, var(--sm-rounded-se, var(--rounded-se)))
-      );
+      border-start-end-radius: var(--lg-rounded-se);
     }
     .lg\:rounded-ee {
-      border-end-end-radius: var(
-        --lg-rounded-ee,
-        var(--md-rounded-ee, var(--sm-rounded-ee, var(--rounded-ee)))
-      );
+      border-end-end-radius: var(--lg-rounded-ee);
     }
     .lg\:rounded-es {
-      border-end-start-radius: var(
-        --lg-rounded-es,
-        var(--md-rounded-es, var(--sm-rounded-es, var(--rounded-es)))
-      );
+      border-end-start-radius: var(--lg-rounded-es);
     }
     .lg\:rounded-tl {
-      border-top-left-radius: var(
-        --lg-rounded-tl,
-        var(--md-rounded-tl, var(--sm-rounded-tl, var(--rounded-tl)))
-      );
+      border-top-left-radius: var(--lg-rounded-tl);
     }
     .lg\:rounded-tr {
-      border-top-right-radius: var(
-        --lg-rounded-tr,
-        var(--md-rounded-tr, var(--sm-rounded-tr, var(--rounded-tr)))
-      );
+      border-top-right-radius: var(--lg-rounded-tr);
     }
     .lg\:rounded-br {
-      border-bottom-right-radius: var(
-        --lg-rounded-br,
-        var(--md-rounded-br, var(--sm-rounded-br, var(--rounded-br)))
-      );
+      border-bottom-right-radius: var(--lg-rounded-br);
     }
     .lg\:rounded-bl {
-      border-bottom-left-radius: var(
-        --lg-rounded-bl,
-        var(--md-rounded-bl, var(--sm-rounded-bl, var(--rounded-bl)))
-      );
+      border-bottom-left-radius: var(--lg-rounded-bl);
     }
     .lg\:bottom {
-      bottom: calc(
-        var(--spacing) *
-          var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
-      );
+      bottom: calc(var(--spacing) * var(--lg-bottom));
     }
     .lg\:\[bottom\] {
-      bottom: var(
-        --lg-bottom,
-        var(--md-bottom, var(--sm-bottom, var(--bottom)))
-      );
+      bottom: var(--lg-bottom);
     }
     .lg\:color {
-      color: var(--lg-color, var(--md-color, var(--sm-color, var(--color))));
+      color: var(--lg-color);
     }
     .lg\:color\/o {
       color: color-mix(
         in oklab,
-        var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
-          var(
-            --lg-color-o,
-            var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
-          ),
+        var(--lg-color) var(--lg-color-o, 100%),
         transparent
       );
     }
     .lg\:columns {
-      columns: var(
-        --lg-columns,
-        var(--md-columns, var(--sm-columns, var(--columns)))
-      );
+      columns: var(--lg-columns);
     }
     .lg\:basis {
-      flex-basis: calc(
-        var(--spacing) *
-          var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-      );
+      flex-basis: calc(var(--spacing) * var(--lg-basis));
     }
     .lg\:\[basis\] {
-      flex-basis: var(
-        --lg-basis,
-        var(--md-basis, var(--sm-basis, var(--basis)))
-      );
+      flex-basis: var(--lg-basis);
     }
     .lg\:flex {
-      flex: var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))));
+      flex: var(--lg-flex);
     }
-    .lg\:flex-grow,
     .lg\:grow {
-      flex-grow: var(
-        --lg-flex-grow,
-        var(
-          --lg-grow,
-          var(
-            --md-flex-grow,
-            var(
-              --md-grow,
-              var(--sm-flex-grow, var(--sm-grow, var(--flex-grow, var(--grow))))
-            )
-          )
-        )
-      );
+      flex-grow: var(--lg-grow);
     }
-    .lg\:flex-shrink,
     .lg\:shrink {
-      flex-shrink: var(
-        --lg-flex-shrink,
-        var(
-          --lg-shrink,
-          var(
-            --md-flex-shrink,
-            var(
-              --md-shrink,
-              var(
-                --sm-flex-shrink,
-                var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-              )
-            )
-          )
-        )
-      );
+      flex-shrink: var(--lg-shrink);
     }
     .lg\:from {
+      --tw-gradient-from: var(--lg-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .lg\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
-        var(--lg-from) var(--lg-from-opacity, 100%),
+        var(--lg-from) var(--lg-from-o, 100%),
         transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
     .lg\:from-position {
-      --tw-gradient-from-position: var(
-        --lg-from-position,
-        var(--md-from-position, var(--sm-from-position, var(--from-position)))
-      );
+      --tw-gradient-from-position: var(--lg-from-position);
     }
     .lg\:gap {
-      gap: calc(
-        var(--spacing) * var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))))
-      );
+      gap: calc(var(--spacing) * var(--lg-gap));
     }
     .lg\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(
-            --lg-gap-x,
-            var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-          )
-      );
+      column-gap: calc(var(--spacing) * var(--lg-gap-x, var(--gap)));
     }
     .lg\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(
-            --lg-gap-y,
-            var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-          )
-      );
+      row-gap: calc(var(--spacing) * var(--lg-gap-y, var(--gap)));
     }
     .lg\:\[gap\] {
-      gap: var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))));
+      gap: var(--lg-gap);
     }
     .lg\:\[gap-x\] {
-      column-gap: var(
-        --lg-gap-x,
-        var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-      );
+      column-gap: var(--lg-gap-x, var(--gap));
     }
     .lg\:\[gap-y\] {
-      row-gap: var(
-        --lg-gap-y,
-        var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-      );
+      row-gap: var(--lg-gap-y, var(--gap));
     }
     .lg\:col {
-      grid-column: var(--lg-col, var(--md-col, var(--sm-col, var(--col))));
+      grid-column: var(--lg-col);
     }
     .lg\:col-span {
-      grid-column: span
-        var(
-          --lg-col-span,
-          var(--md-col-span, var(--sm-col-span, var(--col-span)))
-        ) /
-        span
-        var(
-          --lg-col-span,
-          var(--md-col-span, var(--sm-col-span, var(--col-span)))
-        );
+      grid-column: span var(--lg-col-span) / span var(--lg-col-span);
     }
     .lg\:col-start {
-      grid-column-start: var(
-        --lg-col-start,
-        var(--md-col-start, var(--sm-col-start, var(--col-start)))
-      );
+      grid-column-start: var(--lg-col-start);
     }
     .lg\:col-end {
-      grid-column-end: var(
-        --lg-col-end,
-        var(--md-col-end, var(--sm-col-end, var(--col-end)))
-      );
+      grid-column-end: var(--lg-col-end);
     }
     .lg\:row {
-      grid-row: var(--lg-row, var(--md-row, var(--sm-row, var(--row))));
+      grid-row: var(--lg-row);
     }
     .lg\:row-span {
-      grid-row: span
-        var(
-          --lg-row-span,
-          var(--md-row-span, var(--sm-row-span, var(--row-span)))
-        ) /
-        span
-        var(
-          --lg-row-span,
-          var(--md-row-span, var(--sm-row-span, var(--row-span)))
-        );
+      grid-row: span var(--lg-row-span) / span var(--lg-row-span);
     }
     .lg\:row-start {
-      grid-row-start: var(
-        --lg-row-start,
-        var(--md-row-start, var(--sm-row-start, var(--row-start)))
-      );
+      grid-row-start: var(--lg-row-start);
     }
     .lg\:row-end {
-      grid-row-end: var(
-        --lg-row-end,
-        var(--md-row-end, var(--sm-row-end, var(--row-end)))
-      );
+      grid-row-end: var(--lg-row-end);
     }
     .lg\:grid-cols {
-      grid-template-columns: repeat(
-        var(
-          --lg-grid-cols,
-          var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--lg-grid-cols), minmax(0, 1fr));
     }
     .lg\:\[grid-cols\] {
-      grid-template-columns: var(
-        --lg-grid-cols,
-        var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-      );
+      grid-template-columns: var(--lg-grid-cols);
     }
     .lg\:grid-rows {
-      grid-template-rows: repeat(
-        var(
-          --lg-grid-rows,
-          var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--lg-grid-rows), minmax(0, 1fr));
     }
     .lg\:\[grid-rows\] {
-      grid-template-rows: var(
-        --lg-grid-rows,
-        var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-      );
+      grid-template-rows: var(--lg-grid-rows);
     }
     .lg\:h {
-      height: calc(
-        var(--spacing) * var(--lg-h, var(--md-h, var(--sm-h, var(--h))))
-      );
+      height: calc(var(--spacing) * var(--lg-h));
     }
     .lg\:\[h\] {
-      height: var(--lg-h, var(--md-h, var(--sm-h, var(--h))));
+      height: var(--lg-h);
     }
     .lg\:inset {
-      inset: calc(
-        var(--spacing) *
-          var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
-      );
+      inset: calc(var(--spacing) * var(--lg-inset));
     }
     .lg\:start {
-      inset-inline-start: calc(
-        var(--spacing) *
-          var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
-      );
+      inset-inline-start: calc(var(--spacing) * var(--lg-start));
     }
     .lg\:end {
-      inset-inline-end: calc(
-        var(--spacing) * var(--lg-end, var(--md-end, var(--sm-end, var(--end))))
-      );
+      inset-inline-end: calc(var(--spacing) * var(--lg-end));
     }
     .lg\:inset-x {
-      inset-inline: calc(
-        var(--spacing) *
-          var(
-            --lg-inset-x,
-            var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
-          )
-      );
+      inset-inline: calc(var(--spacing) * var(--lg-inset-x));
     }
     .lg\:inset-y {
-      inset-block: calc(
-        var(--spacing) *
-          var(
-            --lg-inset-y,
-            var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
-          )
-      );
+      inset-block: calc(var(--spacing) * var(--lg-inset-y));
     }
     .lg\:\[inset\] {
-      inset: var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))));
+      inset: var(--lg-inset);
     }
     .lg\:\[start\] {
-      inset-inline-start: var(
-        --lg-start,
-        var(--md-start, var(--sm-start, var(--start)))
-      );
+      inset-inline-start: var(--lg-start);
     }
     .lg\:\[end\] {
-      inset-inline-end: var(--lg-end, var(--md-end, var(--sm-end, var(--end))));
+      inset-inline-end: var(--lg-end);
     }
     .lg\:\[inset-x\] {
-      inset-inline: var(
-        --lg-inset-x,
-        var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
-      );
+      inset-inline: var(--lg-inset-x);
     }
     .lg\:\[inset-y\] {
-      inset-block: var(
-        --lg-inset-y,
-        var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
-      );
+      inset-block: var(--lg-inset-y);
     }
     .lg\:left {
-      left: calc(
-        var(--spacing) *
-          var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
-      );
+      left: calc(var(--spacing) * var(--lg-left));
     }
     .lg\:\[left\] {
-      left: var(--lg-left, var(--md-left, var(--sm-left, var(--left))));
+      left: var(--lg-left);
     }
     .lg\:tracking {
-      letter-spacing: var(
-        --lg-tracking,
-        var(--md-tracking, var(--sm-tracking, var(--tracking)))
-      );
+      letter-spacing: var(--lg-tracking);
     }
     .lg\:leading {
-      line-height: calc(
-        var(--spacing) *
-          var(
-            --lg-leading,
-            var(--md-leading, var(--sm-leading, var(--leading)))
-          )
-      );
+      line-height: calc(var(--spacing) * var(--lg-leading));
     }
     .lg\:\[leading\] {
-      line-height: var(
-        --lg-leading,
-        var(--md-leading, var(--sm-leading, var(--leading)))
-      );
+      line-height: var(--lg-leading);
     }
     .lg\:m {
-      margin: calc(
-        var(--spacing) * var(--lg-m, var(--md-m, var(--sm-m, var(--m))))
-      );
+      margin: calc(var(--spacing) * var(--lg-m));
     }
     .lg\:\[m\] {
-      margin: var(--lg-m, var(--md-m, var(--sm-m, var(--m))));
+      margin: var(--lg-m);
     }
     .lg\:mt {
-      margin-top: calc(
-        var(--spacing) *
-          var(--lg-mt, var(--md-mt, var(--sm-mt, var(--mt, var(--m)))))
-      );
+      margin-top: calc(var(--spacing) * var(--lg-mt));
     }
     .lg\:\[mt\] {
-      margin-top: var(--lg-mt, var(--md-mt, var(--sm-mt, var(--mt, var(--m)))));
+      margin-top: var(--lg-mt);
     }
     .lg\:mb {
-      margin-bottom: calc(
-        var(--spacing) *
-          var(--lg-mb, var(--md-mb, var(--sm-mb, var(--mb, var(--m)))))
-      );
+      margin-bottom: calc(var(--spacing) * var(--lg-mb));
     }
     .lg\:\[mb\] {
-      margin-bottom: var(
-        --lg-mb,
-        var(--md-mb, var(--sm-mb, var(--mb, var(--m))))
-      );
+      margin-bottom: var(--lg-mb);
     }
     .lg\:ml {
-      margin-left: calc(
-        var(--spacing) *
-          var(--lg-ml, var(--md-ml, var(--sm-ml, var(--ml, var(--m)))))
-      );
+      margin-left: calc(var(--spacing) * var(--lg-ml));
     }
     .lg\:\[ml\] {
-      margin-left: var(
-        --lg-ml,
-        var(--md-ml, var(--sm-ml, var(--ml, var(--m))))
-      );
+      margin-left: var(--lg-ml);
     }
     .lg\:mr {
-      margin-right: calc(
-        var(--spacing) *
-          var(--lg-mr, var(--md-mr, var(--sm-mr, var(--mr, var(--m)))))
-      );
+      margin-right: calc(var(--spacing) * var(--lg-mr));
     }
     .lg\:\[mr\] {
-      margin-right: var(
-        --lg-mr,
-        var(--md-mr, var(--sm-mr, var(--mr, var(--m))))
-      );
+      margin-right: var(--lg-mr);
     }
     .lg\:ms {
-      margin-inline-start: calc(
-        var(--spacing) *
-          var(--lg-ms, var(--md-ms, var(--sm-ms, var(--ms, var(--m)))))
-      );
+      margin-inline-start: calc(var(--spacing) * var(--lg-ms));
     }
     .lg\:\[ms\] {
-      margin-inline-start: var(
-        --lg-ms,
-        var(--md-ms, var(--sm-ms, var(--ms, var(--m))))
-      );
+      margin-inline-start: var(--lg-ms);
     }
     .lg\:me {
-      margin-inline-end: calc(
-        var(--spacing) *
-          var(--lg-me, var(--md-me, var(--sm-me, var(--me, var(--m)))))
-      );
+      margin-inline-end: calc(var(--spacing) * var(--lg-me));
     }
     .lg\:\[me\] {
-      margin-inline-end: var(
-        --lg-me,
-        var(--md-me, var(--sm-me, var(--me, var(--m))))
-      );
+      margin-inline-end: var(--lg-me);
     }
     .lg\:mx {
-      margin-inline: calc(
-        var(--spacing) *
-          var(--lg-mx, var(--md-mx, var(--sm-mx, var(--mx, var(--m)))))
-      );
+      margin-inline: calc(var(--spacing) * var(--lg-mx));
     }
     .lg\:\[mx\] {
-      margin-inline: var(
-        --lg-mx,
-        var(--md-mx, var(--sm-mx, var(--mx, var(--m))))
-      );
+      margin-inline: var(--lg-mx);
     }
     .lg\:my {
-      margin-block: calc(
-        var(--spacing) *
-          var(--lg-my, var(--md-my, var(--sm-my, var(--my, var(--m)))))
-      );
+      margin-block: calc(var(--spacing) * var(--lg-my));
     }
     .lg\:\[my\] {
-      margin-block: var(
-        --lg-my,
-        var(--md-my, var(--sm-my, var(--my, var(--m))))
-      );
+      margin-block: var(--lg-my);
     }
     .lg\:max-h {
-      max-height: calc(
-        var(--spacing) *
-          var(--lg-max-h, var(--md-max-h, var(--sm-max-h, var(--max-h))))
-      );
+      max-height: calc(var(--spacing) * var(--lg-max-h));
     }
     .lg\:\[max-h\] {
-      max-height: var(
-        --lg-max-h,
-        var(--md-max-h, var(--sm-max-h, var(--max-h)))
-      );
+      max-height: var(--lg-max-h);
     }
     .lg\:max-w {
-      max-width: calc(
-        var(--spacing) *
-          var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-      );
+      max-width: calc(var(--spacing) * var(--lg-max-w));
     }
     .lg\:\[max-w\] {
-      max-width: var(
-        --lg-max-w,
-        var(--md-max-w, var(--sm-max-w, var(--max-w)))
-      );
+      max-width: var(--lg-max-w);
     }
     .lg\:min-h {
-      min-height: calc(
-        var(--spacing) *
-          var(--lg-min-h, var(--md-min-h, var(--sm-min-h, var(--min-h))))
-      );
+      min-height: calc(var(--spacing) * var(--lg-min-h));
     }
     .lg\:\[min-h\] {
-      min-height: var(
-        --lg-min-h,
-        var(--md-min-h, var(--sm-min-h, var(--min-h)))
-      );
+      min-height: var(--lg-min-h);
     }
     .lg\:min-w {
-      min-width: calc(
-        var(--spacing) *
-          var(--lg-min-w, var(--md-min-w, var(--sm-min-w, var(--min-w))))
-      );
+      min-width: calc(var(--spacing) * var(--lg-min-w));
     }
     .lg\:\[min-w\] {
-      min-width: var(
-        --lg-min-w,
-        var(--md-min-w, var(--sm-min-w, var(--min-w)))
-      );
+      min-width: var(--lg-min-w);
     }
     .lg\:object-position {
-      object-position: var(
-        --lg-object,
-        var(--md-object, var(--sm-object, var(--object)))
-      );
+      object-position: var(--lg-object-position);
     }
     .lg\:order {
-      order: var(--lg-order, var(--md-order, var(--sm-order, var(--order))));
-    }
-    .lg\:-order {
-      order: calc(
-        var(--lg-order, var(--md-order, var(--sm-order, var(--order)))) * -1
-      );
+      order: var(--lg-order);
     }
     .lg\:p {
-      padding: calc(
-        var(--spacing) * var(--lg-p, var(--md-p, var(--sm-p, var(--p))))
-      );
+      padding: calc(var(--spacing) * var(--lg-p));
     }
     .lg\:\[p\] {
-      padding: var(--lg-p, var(--md-p, var(--sm-p, var(--p))));
+      padding: var(--lg-p);
     }
     .lg\:pt {
-      padding-top: calc(
-        var(--spacing) *
-          var(--lg-pt, var(--md-pt, var(--sm-pt, var(--pt, var(--p)))))
-      );
-    }
-    .lg\:\[pt\] {
-      padding-top: var(
-        --lg-pt,
-        var(--md-pt, var(--sm-pt, var(--pt, var(--p))))
-      );
+      padding-top: calc(var(--spacing) * var(--lg-pt, var(--p)));
     }
     .lg\:pb {
-      padding-bottom: calc(
-        var(--spacing) *
-          var(--lg-pb, var(--md-pb, var(--sm-pb, var(--pb, var(--p)))))
-      );
-    }
-    .lg\:\[pb\] {
-      padding-bottom: var(
-        --lg-pb,
-        var(--md-pb, var(--sm-pb, var(--pb, var(--p))))
-      );
+      padding-bottom: calc(var(--spacing) * var(--lg-pb, var(--p)));
     }
     .lg\:pl {
-      padding-left: calc(
-        var(--spacing) *
-          var(--lg-pl, var(--md-pl, var(--sm-pl, var(--pl, var(--p)))))
-      );
-    }
-    .lg\:\[pl\] {
-      padding-left: var(
-        --lg-pl,
-        var(--md-pl, var(--sm-pl, var(--pl, var(--p))))
-      );
+      padding-left: calc(var(--spacing) * var(--lg-pl, var(--p)));
     }
     .lg\:pr {
-      padding-right: calc(
-        var(--spacing) *
-          var(--lg-pr, var(--md-pr, var(--sm-pr, var(--pr, var(--p)))))
-      );
-    }
-    .lg\:\[pr\] {
-      padding-right: var(
-        --lg-pr,
-        var(--md-pr, var(--sm-pr, var(--pr, var(--p))))
-      );
+      padding-right: calc(var(--spacing) * var(--lg-pr, var(--p)));
     }
     .lg\:ps {
-      padding-inline-start: calc(
-        var(--spacing) *
-          var(--lg-ps, var(--md-ps, var(--sm-ps, var(--ps, var(--p)))))
-      );
-    }
-    .lg\:\[ps\] {
-      padding-inline-start: var(
-        --lg-ps,
-        var(--md-ps, var(--sm-ps, var(--ps, var(--p))))
-      );
+      padding-inline-start: calc(var(--spacing) * var(--lg-ps, var(--p)));
     }
     .lg\:pe {
-      padding-inline-end: calc(
-        var(--spacing) *
-          var(--lg-pe, var(--md-pe, var(--sm-pe, var(--pe, var(--p)))))
-      );
+      padding-inline-end: calc(var(--spacing) * var(--lg-pe, var(--p)));
+    }
+    .lg\:\[pt\] {
+      padding-top: var(--lg-pt, var(--p));
+    }
+    .lg\:\[pb\] {
+      padding-bottom: var(--lg-pb, var(--p));
+    }
+    .lg\:\[pl\] {
+      padding-left: var(--lg-pl, var(--p));
+    }
+    .lg\:\[pr\] {
+      padding-right: var(--lg-pr, var(--p));
+    }
+    .lg\:\[ps\] {
+      padding-inline-start: var(--lg-ps, var(--p));
     }
     .lg\:\[pe\] {
-      padding-inline-end: var(
-        --lg-pe,
-        var(--md-pe, var(--sm-pe, var(--pe, var(--p))))
-      );
+      padding-inline-end: var(--lg-pe, var(--p));
     }
     .lg\:px {
-      padding-inline: calc(
-        var(--spacing) *
-          var(--lg-px, var(--md-px, var(--sm-px, var(--px, var(--p)))))
-      );
-    }
-    .lg\:\[px\] {
-      padding-inline: var(
-        --lg-px,
-        var(--md-px, var(--sm-px, var(--px, var(--p))))
-      );
+      padding-inline: calc(var(--spacing) * var(--lg-px, var(--p)));
     }
     .lg\:py {
-      padding-block: calc(
-        var(--spacing) *
-          var(--lg-py, var(--md-py, var(--sm-py, var(--py, var(--p)))))
-      );
+      padding-block: calc(var(--spacing) * var(--lg-py, var(--p)));
+    }
+    .lg\:\[px\] {
+      padding-inline: var(--lg-px, var(--p));
     }
     .lg\:\[py\] {
-      padding-block: var(
-        --lg-py,
-        var(--md-py, var(--sm-py, var(--py, var(--p))))
-      );
+      padding-block: var(--lg-py, var(--p));
     }
     .lg\:right {
-      right: calc(
-        var(--spacing) *
-          var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-      );
+      right: calc(var(--spacing) * var(--lg-right));
     }
     .lg\:\[right\] {
-      right: var(--lg-right, var(--md-right, var(--sm-right, var(--right))));
+      right: var(--lg-right);
     }
     .lg\:size {
-      width: calc(
-        var(--spacing) *
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
-      height: calc(
-        var(--spacing) *
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
+      width: calc(var(--spacing) * var(--lg-size));
+      height: calc(var(--spacing) * var(--lg-size));
     }
     .lg\:\[size\] {
-      width: var(--lg-size, var(--md-size, var(--sm-size, var(--size))));
-      height: var(--lg-size, var(--md-size, var(--sm-size, var(--size))));
+      width: var(--lg-size);
+      height: var(--lg-size);
     }
     .lg\:space-x > :not(:last-child) {
       margin-inline-start: calc(
-        var(--spacing) *
-          var(
-            --lg-space-x,
-            var(--md-space-x, var(--sm-space-x, var(--space-x)))
-          ) *
-          var(--space-x-reverse)
+        var(--spacing) * var(--lg-space-x) * var(--tw-space-x-reverse)
       );
       margin-inline-end: calc(
-        var(--spacing) *
-          var(
-            --lg-space-x,
-            var(--md-space-x, var(--sm-space-x, var(--space-x)))
-          ) *
-          (1 - var(--space-x-reverse))
+        var(--spacing) * var(--lg-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .lg\:\[space-x\] > :not(:last-child) {
-      margin-inline-start: calc(
-        var(
-            --lg-space-x,
-            var(--md-space-x, var(--sm-space-x, var(--space-x)))
-          ) *
-          var(--space-x-reverse)
-      );
+      margin-inline-start: calc(var(--lg-space-x) * var(--tw-space-x-reverse));
       margin-inline-end: calc(
-        var(
-            --lg-space-x,
-            var(--md-space-x, var(--sm-space-x, var(--space-x)))
-          ) *
-          (1 - var(--space-x-reverse))
+        var(--lg-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .lg\:space-y > :not(:last-child) {
       margin-block-start: calc(
-        var(--spacing) *
-          var(
-            --lg-space-y,
-            var(--md-space-y, var(--sm-space-y, var(--space-y)))
-          ) *
-          var(--space-y-reverse)
+        var(--spacing) * var(--lg-space-y) * var(--tw-space-y-reverse)
       );
       margin-block-end: calc(
-        var(--spacing) *
-          var(
-            --lg-space-y,
-            var(--md-space-y, var(--sm-space-y, var(--space-y)))
-          ) *
-          (1 - var(--space-y-reverse))
+        var(--spacing) * var(--lg-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .lg\:\[space-y\] > :not(:last-child) {
-      margin-block-start: calc(
-        var(
-            --lg-space-y,
-            var(--md-space-y, var(--sm-space-y, var(--space-y)))
-          ) *
-          var(--space-y-reverse)
-      );
+      margin-block-start: calc(var(--lg-space-y) * var(--tw-space-y-reverse));
       margin-block-end: calc(
-        var(
-            --lg-space-y,
-            var(--md-space-y, var(--sm-space-y, var(--space-y)))
-          ) *
-          (1 - var(--space-y-reverse))
+        var(--lg-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .lg\:to {
+      --tw-gradient-to: var(--lg-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .lg\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
-        var(--lg-to) var(--lg-to-opacity, 100%),
+        var(--lg-to) var(--lg-to-o, 100%),
         transparent
       );
-    }
-    .lg\:top {
-      top: calc(
-        var(--spacing) * var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
-    }
-    .lg\:\[top\] {
-      top: var(--lg-top, var(--md-top, var(--sm-top, var(--top))));
     }
     .lg\:to-position {
-      --tw-gradient-to-position: var(
-        --lg-to-position,
-        var(--md-to-position, var(--sm-to-position, var(--to-position)))
-      );
+      --tw-gradient-to-position: var(--lg-to-position);
+    }
+    .lg\:top {
+      top: calc(var(--spacing) * var(--lg-top));
+    }
+    .lg\:\[top\] {
+      top: var(--lg-top);
     }
     .lg\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--lg-via, var(--md-via, var(--sm-via, var(--via))))
-          var(
-            --lg-via-opacity,
-            var(
-              --md-via-opacity,
-              var(--sm-via-opacity, var(--via-opacity, 100%))
-            )
-          ),
-        transparent
-      );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
+      --tw-gradient-via: var(--lg-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
         var(--tw-gradient-via) var(--tw-gradient-via-position),
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
+    }
+    .lg\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--lg-via) var(--lg-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
     .lg\:via-position {
-      --tw-gradient-via-position: var(
-        --lg-via-position,
-        var(--md-via-position, var(--sm-via-position, var(--via-position)))
-      );
+      --tw-gradient-via-position: var(--lg-via-position);
     }
     .lg\:w {
-      width: calc(
-        var(--spacing) * var(--lg-w, var(--md-w, var(--sm-w, var(--w))))
-      );
+      width: calc(var(--spacing) * var(--lg-w));
     }
     .lg\:\[w\] {
-      width: var(--lg-w, var(--md-w, var(--sm-w, var(--w))));
+      width: var(--lg-w);
     }
     .lg\:z {
-      z-index: var(--lg-z, var(--md-z, var(--sm-z, var(--z))));
+      z-index: var(--lg-z);
     }
   }
   @media (min-width: 80rem) {
     .xl\:aspect {
-      aspect-ratio: var(
-        --xl-aspect,
-        var(--lg-aspect, var(--md-aspect, var(--sm-aspect, var(--aspect))))
-      );
+      aspect-ratio: var(--xl-aspect);
     }
     .xl\:bg {
-      background-color: var(
-        --xl-bg,
-        var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-      );
+      background-color: var(--xl-bg);
     }
     .xl\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
-          var(
-            --xl-bg-o,
-            var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
-          ),
+        var(--xl-bg) var(--xl-bg-o, 100%),
         transparent
       );
     }
     .xl\:rounded {
-      border-radius: var(
-        --xl-rounded,
-        var(--lg-rounded, var(--md-rounded, var(--sm-rounded, var(--rounded))))
-      );
+      border-radius: var(--xl-rounded);
     }
     .xl\:rounded-s {
-      border-start-start-radius: var(
-        --xl-rounded-s,
-        var(
-          --lg-rounded-s,
-          var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-        )
-      );
-      border-end-start-radius: var(
-        --xl-rounded-s,
-        var(
-          --lg-rounded-s,
-          var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-        )
-      );
+      border-start-start-radius: var(--xl-rounded-s);
+      border-end-start-radius: var(--xl-rounded-s);
     }
     .xl\:rounded-e {
-      border-start-end-radius: var(
-        --xl-rounded-e,
-        var(
-          --lg-rounded-e,
-          var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-        )
-      );
-      border-end-end-radius: var(
-        --xl-rounded-e,
-        var(
-          --lg-rounded-e,
-          var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-        )
-      );
+      border-start-end-radius: var(--xl-rounded-e);
+      border-end-end-radius: var(--xl-rounded-e);
     }
     .xl\:rounded-t {
-      border-top-left-radius: var(
-        --xl-rounded-t,
-        var(
-          --lg-rounded-t,
-          var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-        )
-      );
-      border-top-right-radius: var(
-        --xl-rounded-t,
-        var(
-          --lg-rounded-t,
-          var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-        )
-      );
+      border-top-left-radius: var(--xl-rounded-t);
+      border-top-right-radius: var(--xl-rounded-t);
     }
     .xl\:rounded-r {
-      border-top-right-radius: var(
-        --xl-rounded-r,
-        var(
-          --lg-rounded-r,
-          var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-        )
-      );
-      border-bottom-right-radius: var(
-        --xl-rounded-r,
-        var(
-          --lg-rounded-r,
-          var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-        )
-      );
+      border-top-right-radius: var(--xl-rounded-r);
+      border-bottom-right-radius: var(--xl-rounded-r);
     }
     .xl\:rounded-b {
-      border-bottom-right-radius: var(
-        --xl-rounded-b,
-        var(
-          --lg-rounded-b,
-          var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-        )
-      );
-      border-bottom-left-radius: var(
-        --xl-rounded-b,
-        var(
-          --lg-rounded-b,
-          var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-        )
-      );
+      border-bottom-right-radius: var(--xl-rounded-b);
+      border-bottom-left-radius: var(--xl-rounded-b);
     }
     .xl\:rounded-l {
-      border-top-left-radius: var(
-        --xl-rounded-l,
-        var(
-          --lg-rounded-l,
-          var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-        )
-      );
-      border-bottom-left-radius: var(
-        --xl-rounded-l,
-        var(
-          --lg-rounded-l,
-          var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-        )
-      );
+      border-top-left-radius: var(--xl-rounded-l);
+      border-bottom-left-radius: var(--xl-rounded-l);
     }
     .xl\:rounded-ss {
-      border-start-start-radius: var(
-        --xl-rounded-ss,
-        var(
-          --lg-rounded-ss,
-          var(--md-rounded-ss, var(--sm-rounded-ss, var(--rounded-ss)))
-        )
-      );
+      border-start-start-radius: var(--xl-rounded-ss);
     }
     .xl\:rounded-se {
-      border-start-end-radius: var(
-        --xl-rounded-se,
-        var(
-          --lg-rounded-se,
-          var(--md-rounded-se, var(--sm-rounded-se, var(--rounded-se)))
-        )
-      );
+      border-start-end-radius: var(--xl-rounded-se);
     }
     .xl\:rounded-ee {
-      border-end-end-radius: var(
-        --xl-rounded-ee,
-        var(
-          --lg-rounded-ee,
-          var(--md-rounded-ee, var(--sm-rounded-ee, var(--rounded-ee)))
-        )
-      );
+      border-end-end-radius: var(--xl-rounded-ee);
     }
     .xl\:rounded-es {
-      border-end-start-radius: var(
-        --xl-rounded-es,
-        var(
-          --lg-rounded-es,
-          var(--md-rounded-es, var(--sm-rounded-es, var(--rounded-es)))
-        )
-      );
+      border-end-start-radius: var(--xl-rounded-es);
     }
     .xl\:rounded-tl {
-      border-top-left-radius: var(
-        --xl-rounded-tl,
-        var(
-          --lg-rounded-tl,
-          var(--md-rounded-tl, var(--sm-rounded-tl, var(--rounded-tl)))
-        )
-      );
+      border-top-left-radius: var(--xl-rounded-tl);
     }
     .xl\:rounded-tr {
-      border-top-right-radius: var(
-        --xl-rounded-tr,
-        var(
-          --lg-rounded-tr,
-          var(--md-rounded-tr, var(--sm-rounded-tr, var(--rounded-tr)))
-        )
-      );
+      border-top-right-radius: var(--xl-rounded-tr);
     }
     .xl\:rounded-br {
-      border-bottom-right-radius: var(
-        --xl-rounded-br,
-        var(
-          --lg-rounded-br,
-          var(--md-rounded-br, var(--sm-rounded-br, var(--rounded-br)))
-        )
-      );
+      border-bottom-right-radius: var(--xl-rounded-br);
     }
     .xl\:rounded-bl {
-      border-bottom-left-radius: var(
-        --xl-rounded-bl,
-        var(
-          --lg-rounded-bl,
-          var(--md-rounded-bl, var(--sm-rounded-bl, var(--rounded-bl)))
-        )
-      );
+      border-bottom-left-radius: var(--xl-rounded-bl);
     }
     .xl\:bottom {
-      bottom: calc(
-        var(--spacing) *
-          var(
-            --xl-bottom,
-            var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
-          )
-      );
+      bottom: calc(var(--spacing) * var(--xl-bottom));
     }
     .xl\:\[bottom\] {
-      bottom: var(
-        --xl-bottom,
-        var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
-      );
+      bottom: var(--xl-bottom);
     }
     .xl\:color {
-      color: var(
-        --xl-color,
-        var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
-      );
+      color: var(--xl-color);
     }
     .xl\:color\/o {
       color: color-mix(
         in oklab,
-        var(
-            --xl-color,
-            var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
-          )
-          var(
-            --xl-color-o,
-            var(
-              --lg-color-o,
-              var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
-            )
-          ),
+        var(--xl-color) var(--xl-color-o, 100%),
         transparent
       );
     }
     .xl\:columns {
-      columns: var(
-        --xl-columns,
-        var(--lg-columns, var(--md-columns, var(--sm-columns, var(--columns))))
-      );
+      columns: var(--xl-columns);
     }
     .xl\:basis {
-      flex-basis: calc(
-        var(--spacing) *
-          var(
-            --xl-basis,
-            var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-          )
-      );
+      flex-basis: calc(var(--spacing) * var(--xl-basis));
     }
     .xl\:\[basis\] {
-      flex-basis: var(
-        --xl-basis,
-        var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-      );
+      flex-basis: var(--xl-basis);
     }
     .xl\:flex {
-      flex: var(
-        --xl-flex,
-        var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
-      );
+      flex: var(--xl-flex);
     }
-    .xl\:flex-grow,
     .xl\:grow {
-      flex-grow: var(
-        --xl-flex-grow,
-        var(
-          --xl-grow,
-          var(
-            --lg-flex-grow,
-            var(
-              --lg-grow,
-              var(
-                --md-flex-grow,
-                var(
-                  --md-grow,
-                  var(
-                    --sm-flex-grow,
-                    var(--sm-grow, var(--flex-grow, var(--grow)))
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-grow: var(--xl-grow);
     }
-    .xl\:flex-shrink,
     .xl\:shrink {
-      flex-shrink: var(
-        --xl-flex-shrink,
-        var(
-          --xl-shrink,
-          var(
-            --lg-flex-shrink,
-            var(
-              --lg-shrink,
-              var(
-                --md-flex-shrink,
-                var(
-                  --md-shrink,
-                  var(
-                    --sm-flex-shrink,
-                    var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-shrink: var(--xl-shrink);
     }
     .xl\:from {
+      --tw-gradient-from: var(--xl-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .xl\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
-        var(--xl-from) var(--xl-from-opacity, 100%),
+        var(--xl-from) var(--xl-from-o, 100%),
         transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
     .xl\:from-position {
-      --tw-gradient-from-position: var(
-        --xl-from-position,
-        var(
-          --lg-from-position,
-          var(--md-from-position, var(--sm-from-position, var(--from-position)))
-        )
-      );
+      --tw-gradient-from-position: var(--xl-from-position);
     }
     .xl\:gap {
-      gap: calc(
-        var(--spacing) *
-          var(--xl-gap, var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap)))))
-      );
+      gap: calc(var(--spacing) * var(--xl-gap));
     }
     .xl\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(
-            --xl-gap-x,
-            var(
-              --lg-gap-x,
-              var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-            )
-          )
-      );
+      column-gap: calc(var(--spacing) * var(--xl-gap-x, var(--gap)));
     }
     .xl\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(
-            --xl-gap-y,
-            var(
-              --lg-gap-y,
-              var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-            )
-          )
-      );
+      row-gap: calc(var(--spacing) * var(--xl-gap-y, var(--gap)));
     }
     .xl\:\[gap\] {
-      gap: var(
-        --xl-gap,
-        var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))))
-      );
+      gap: var(--xl-gap);
     }
     .xl\:\[gap-x\] {
-      column-gap: var(
-        --xl-gap-x,
-        var(
-          --lg-gap-x,
-          var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-        )
-      );
+      column-gap: var(--xl-gap-x, var(--gap));
     }
     .xl\:\[gap-y\] {
-      row-gap: var(
-        --xl-gap-y,
-        var(
-          --lg-gap-y,
-          var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-        )
-      );
+      row-gap: var(--xl-gap-y, var(--gap));
     }
     .xl\:col {
-      grid-column: var(
-        --xl-col,
-        var(--lg-col, var(--md-col, var(--sm-col, var(--col))))
-      );
+      grid-column: var(--xl-col);
     }
     .xl\:col-span {
-      grid-column: span
-        var(
-          --xl-col-span,
-          var(
-            --lg-col-span,
-            var(--md-col-span, var(--sm-col-span, var(--col-span)))
-          )
-        ) /
-        span
-        var(
-          --xl-col-span,
-          var(
-            --lg-col-span,
-            var(--md-col-span, var(--sm-col-span, var(--col-span)))
-          )
-        );
+      grid-column: span var(--xl-col-span) / span var(--xl-col-span);
     }
     .xl\:col-start {
-      grid-column-start: var(
-        --xl-col-start,
-        var(
-          --lg-col-start,
-          var(--md-col-start, var(--sm-col-start, var(--col-start)))
-        )
-      );
+      grid-column-start: var(--xl-col-start);
     }
     .xl\:col-end {
-      grid-column-end: var(
-        --xl-col-end,
-        var(--lg-col-end, var(--md-col-end, var(--sm-col-end, var(--col-end))))
-      );
+      grid-column-end: var(--xl-col-end);
     }
     .xl\:row {
-      grid-row: var(
-        --xl-row,
-        var(--lg-row, var(--md-row, var(--sm-row, var(--row))))
-      );
+      grid-row: var(--xl-row);
     }
     .xl\:row-span {
-      grid-row: span
-        var(
-          --xl-row-span,
-          var(
-            --lg-row-span,
-            var(--md-row-span, var(--sm-row-span, var(--row-span)))
-          )
-        ) /
-        span
-        var(
-          --xl-row-span,
-          var(
-            --lg-row-span,
-            var(--md-row-span, var(--sm-row-span, var(--row-span)))
-          )
-        );
+      grid-row: span var(--xl-row-span) / span var(--xl-row-span);
     }
     .xl\:row-start {
-      grid-row-start: var(
-        --xl-row-start,
-        var(
-          --lg-row-start,
-          var(--md-row-start, var(--sm-row-start, var(--row-start)))
-        )
-      );
+      grid-row-start: var(--xl-row-start);
     }
     .xl\:row-end {
-      grid-row-end: var(
-        --xl-row-end,
-        var(--lg-row-end, var(--md-row-end, var(--sm-row-end, var(--row-end))))
-      );
+      grid-row-end: var(--xl-row-end);
     }
     .xl\:grid-cols {
-      grid-template-columns: repeat(
-        var(
-          --xl-grid-cols,
-          var(
-            --lg-grid-cols,
-            var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--xl-grid-cols), minmax(0, 1fr));
     }
     .xl\:\[grid-cols\] {
-      grid-template-columns: var(
-        --xl-grid-cols,
-        var(
-          --lg-grid-cols,
-          var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-        )
-      );
+      grid-template-columns: var(--xl-grid-cols);
     }
     .xl\:grid-rows {
-      grid-template-rows: repeat(
-        var(
-          --xl-grid-rows,
-          var(
-            --lg-grid-rows,
-            var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--xl-grid-rows), minmax(0, 1fr));
     }
     .xl\:\[grid-rows\] {
-      grid-template-rows: var(
-        --xl-grid-rows,
-        var(
-          --lg-grid-rows,
-          var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-        )
-      );
+      grid-template-rows: var(--xl-grid-rows);
     }
     .xl\:h {
-      height: calc(
-        var(--spacing) *
-          var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))))
-      );
+      height: calc(var(--spacing) * var(--xl-h));
     }
     .xl\:\[h\] {
-      height: var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))));
+      height: var(--xl-h);
     }
     .xl\:inset {
-      inset: calc(
-        var(--spacing) *
-          var(
-            --xl-inset,
-            var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
-          )
-      );
+      inset: calc(var(--spacing) * var(--xl-inset));
     }
     .xl\:start {
-      inset-inline-start: calc(
-        var(--spacing) *
-          var(
-            --xl-start,
-            var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
-          )
-      );
+      inset-inline-start: calc(var(--spacing) * var(--xl-start));
     }
     .xl\:end {
-      inset-inline-end: calc(
-        var(--spacing) *
-          var(--xl-end, var(--lg-end, var(--md-end, var(--sm-end, var(--end)))))
-      );
+      inset-inline-end: calc(var(--spacing) * var(--xl-end));
     }
     .xl\:inset-x {
-      inset-inline: calc(
-        var(--spacing) *
-          var(
-            --xl-inset-x,
-            var(
-              --lg-inset-x,
-              var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
-            )
-          )
-      );
+      inset-inline: calc(var(--spacing) * var(--xl-inset-x));
     }
     .xl\:inset-y {
-      inset-block: calc(
-        var(--spacing) *
-          var(
-            --xl-inset-y,
-            var(
-              --lg-inset-y,
-              var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
-            )
-          )
-      );
+      inset-block: calc(var(--spacing) * var(--xl-inset-y));
     }
     .xl\:\[inset\] {
-      inset: var(
-        --xl-inset,
-        var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
-      );
+      inset: var(--xl-inset);
     }
     .xl\:\[start\] {
-      inset-inline-start: var(
-        --xl-start,
-        var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
-      );
+      inset-inline-start: var(--xl-start);
     }
     .xl\:\[end\] {
-      inset-inline-end: var(
-        --xl-end,
-        var(--lg-end, var(--md-end, var(--sm-end, var(--end))))
-      );
+      inset-inline-end: var(--xl-end);
     }
     .xl\:\[inset-x\] {
-      inset-inline: var(
-        --xl-inset-x,
-        var(--lg-inset-x, var(--md-inset-x, var(--sm-inset-x, var(--inset-x))))
-      );
+      inset-inline: var(--xl-inset-x);
     }
     .xl\:\[inset-y\] {
-      inset-block: var(
-        --xl-inset-y,
-        var(--lg-inset-y, var(--md-inset-y, var(--sm-inset-y, var(--inset-y))))
-      );
+      inset-block: var(--xl-inset-y);
     }
     .xl\:left {
-      left: calc(
-        var(--spacing) *
-          var(
-            --xl-left,
-            var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
-          )
-      );
+      left: calc(var(--spacing) * var(--xl-left));
     }
     .xl\:\[left\] {
-      left: var(
-        --xl-left,
-        var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
-      );
+      left: var(--xl-left);
     }
     .xl\:tracking {
-      letter-spacing: var(
-        --xl-tracking,
-        var(
-          --lg-tracking,
-          var(--md-tracking, var(--sm-tracking, var(--tracking)))
-        )
-      );
+      letter-spacing: var(--xl-tracking);
     }
     .xl\:leading {
-      line-height: calc(
-        var(--spacing) *
-          var(
-            --xl-leading,
-            var(
-              --lg-leading,
-              var(--md-leading, var(--sm-leading, var(--leading)))
-            )
-          )
-      );
+      line-height: calc(var(--spacing) * var(--xl-leading));
     }
     .xl\:\[leading\] {
-      line-height: var(
-        --xl-leading,
-        var(--lg-leading, var(--md-leading, var(--sm-leading, var(--leading))))
-      );
+      line-height: var(--xl-leading);
     }
     .xl\:m {
-      margin: calc(
-        var(--spacing) *
-          var(--xl-m, var(--lg-m, var(--md-m, var(--sm-m, var(--m)))))
-      );
+      margin: calc(var(--spacing) * var(--xl-m));
     }
     .xl\:\[m\] {
-      margin: var(--xl-m, var(--lg-m, var(--md-m, var(--sm-m, var(--m)))));
+      margin: var(--xl-m);
     }
     .xl\:mt {
-      margin-top: calc(
-        var(--spacing) *
-          var(
-            --xl-mt,
-            var(--lg-mt, var(--md-mt, var(--sm-mt, var(--mt, var(--m)))))
-          )
-      );
+      margin-top: calc(var(--spacing) * var(--xl-mt));
     }
     .xl\:\[mt\] {
-      margin-top: var(
-        --xl-mt,
-        var(--lg-mt, var(--md-mt, var(--sm-mt, var(--mt, var(--m)))))
-      );
+      margin-top: var(--xl-mt);
     }
     .xl\:mb {
-      margin-bottom: calc(
-        var(--spacing) *
-          var(
-            --xl-mb,
-            var(--lg-mb, var(--md-mb, var(--sm-mb, var(--mb, var(--m)))))
-          )
-      );
+      margin-bottom: calc(var(--spacing) * var(--xl-mb));
     }
     .xl\:\[mb\] {
-      margin-bottom: var(
-        --xl-mb,
-        var(--lg-mb, var(--md-mb, var(--sm-mb, var(--mb, var(--m)))))
-      );
+      margin-bottom: var(--xl-mb);
     }
     .xl\:ml {
-      margin-left: calc(
-        var(--spacing) *
-          var(
-            --xl-ml,
-            var(--lg-ml, var(--md-ml, var(--sm-ml, var(--ml, var(--m)))))
-          )
-      );
+      margin-left: calc(var(--spacing) * var(--xl-ml));
     }
     .xl\:\[ml\] {
-      margin-left: var(
-        --xl-ml,
-        var(--lg-ml, var(--md-ml, var(--sm-ml, var(--ml, var(--m)))))
-      );
+      margin-left: var(--xl-ml);
     }
     .xl\:mr {
-      margin-right: calc(
-        var(--spacing) *
-          var(
-            --xl-mr,
-            var(--lg-mr, var(--md-mr, var(--sm-mr, var(--mr, var(--m)))))
-          )
-      );
+      margin-right: calc(var(--spacing) * var(--xl-mr));
     }
     .xl\:\[mr\] {
-      margin-right: var(
-        --xl-mr,
-        var(--lg-mr, var(--md-mr, var(--sm-mr, var(--mr, var(--m)))))
-      );
+      margin-right: var(--xl-mr);
     }
     .xl\:ms {
-      margin-inline-start: calc(
-        var(--spacing) *
-          var(
-            --xl-ms,
-            var(--lg-ms, var(--md-ms, var(--sm-ms, var(--ms, var(--m)))))
-          )
-      );
+      margin-inline-start: calc(var(--spacing) * var(--xl-ms));
     }
     .xl\:\[ms\] {
-      margin-inline-start: var(
-        --xl-ms,
-        var(--lg-ms, var(--md-ms, var(--sm-ms, var(--ms, var(--m)))))
-      );
+      margin-inline-start: var(--xl-ms);
     }
     .xl\:me {
-      margin-inline-end: calc(
-        var(--spacing) *
-          var(
-            --xl-me,
-            var(--lg-me, var(--md-me, var(--sm-me, var(--me, var(--m)))))
-          )
-      );
+      margin-inline-end: calc(var(--spacing) * var(--xl-me));
     }
     .xl\:\[me\] {
-      margin-inline-end: var(
-        --xl-me,
-        var(--lg-me, var(--md-me, var(--sm-me, var(--me, var(--m)))))
-      );
+      margin-inline-end: var(--xl-me);
     }
     .xl\:mx {
-      margin-inline: calc(
-        var(--spacing) *
-          var(
-            --xl-mx,
-            var(--lg-mx, var(--md-mx, var(--sm-mx, var(--mx, var(--m)))))
-          )
-      );
+      margin-inline: calc(var(--spacing) * var(--xl-mx));
     }
     .xl\:\[mx\] {
-      margin-inline: var(
-        --xl-mx,
-        var(--lg-mx, var(--md-mx, var(--sm-mx, var(--mx, var(--m)))))
-      );
+      margin-inline: var(--xl-mx);
     }
     .xl\:my {
-      margin-block: calc(
-        var(--spacing) *
-          var(
-            --xl-my,
-            var(--lg-my, var(--md-my, var(--sm-my, var(--my, var(--m)))))
-          )
-      );
+      margin-block: calc(var(--spacing) * var(--xl-my));
     }
     .xl\:\[my\] {
-      margin-block: var(
-        --xl-my,
-        var(--lg-my, var(--md-my, var(--sm-my, var(--my, var(--m)))))
-      );
+      margin-block: var(--xl-my);
     }
     .xl\:max-h {
-      max-height: calc(
-        var(--spacing) *
-          var(
-            --xl-max-h,
-            var(--lg-max-h, var(--md-max-h, var(--sm-max-h, var(--max-h))))
-          )
-      );
+      max-height: calc(var(--spacing) * var(--xl-max-h));
     }
     .xl\:\[max-h\] {
-      max-height: var(
-        --xl-max-h,
-        var(--lg-max-h, var(--md-max-h, var(--sm-max-h, var(--max-h))))
-      );
+      max-height: var(--xl-max-h);
     }
     .xl\:max-w {
-      max-width: calc(
-        var(--spacing) *
-          var(
-            --xl-max-w,
-            var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-          )
-      );
+      max-width: calc(var(--spacing) * var(--xl-max-w));
     }
     .xl\:\[max-w\] {
-      max-width: var(
-        --xl-max-w,
-        var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-      );
+      max-width: var(--xl-max-w);
     }
     .xl\:min-h {
-      min-height: calc(
-        var(--spacing) *
-          var(
-            --xl-min-h,
-            var(--lg-min-h, var(--md-min-h, var(--sm-min-h, var(--min-h))))
-          )
-      );
+      min-height: calc(var(--spacing) * var(--xl-min-h));
     }
     .xl\:\[min-h\] {
-      min-height: var(
-        --xl-min-h,
-        var(--lg-min-h, var(--md-min-h, var(--sm-min-h, var(--min-h))))
-      );
+      min-height: var(--xl-min-h);
     }
     .xl\:min-w {
-      min-width: calc(
-        var(--spacing) *
-          var(
-            --xl-min-w,
-            var(--lg-min-w, var(--md-min-w, var(--sm-min-w, var(--min-w))))
-          )
-      );
+      min-width: calc(var(--spacing) * var(--xl-min-w));
     }
     .xl\:\[min-w\] {
-      min-width: var(
-        --xl-min-w,
-        var(--lg-min-w, var(--md-min-w, var(--sm-min-w, var(--min-w))))
-      );
+      min-width: var(--xl-min-w);
     }
     .xl\:object-position {
-      object-position: var(
-        --xl-object,
-        var(--lg-object, var(--md-object, var(--sm-object, var(--object))))
-      );
+      object-position: var(--xl-object-position);
     }
     .xl\:order {
-      order: var(
-        --xl-order,
-        var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
-      );
-    }
-    .xl\:-order {
-      order: calc(
-        var(
-            --xl-order,
-            var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
-          ) *
-          -1
-      );
+      order: var(--xl-order);
     }
     .xl\:p {
-      padding: calc(
-        var(--spacing) *
-          var(--xl-p, var(--lg-p, var(--md-p, var(--sm-p, var(--p)))))
-      );
+      padding: calc(var(--spacing) * var(--xl-p));
     }
     .xl\:\[p\] {
-      padding: var(--xl-p, var(--lg-p, var(--md-p, var(--sm-p, var(--p)))));
+      padding: var(--xl-p);
     }
     .xl\:pt {
-      padding-top: calc(
-        var(--spacing) *
-          var(
-            --xl-pt,
-            var(--lg-pt, var(--md-pt, var(--sm-pt, var(--pt, var(--p)))))
-          )
-      );
-    }
-    .xl\:\[pt\] {
-      padding-top: var(
-        --xl-pt,
-        var(--lg-pt, var(--md-pt, var(--sm-pt, var(--pt, var(--p)))))
-      );
+      padding-top: calc(var(--spacing) * var(--xl-pt, var(--p)));
     }
     .xl\:pb {
-      padding-bottom: calc(
-        var(--spacing) *
-          var(
-            --xl-pb,
-            var(--lg-pb, var(--md-pb, var(--sm-pb, var(--pb, var(--p)))))
-          )
-      );
-    }
-    .xl\:\[pb\] {
-      padding-bottom: var(
-        --xl-pb,
-        var(--lg-pb, var(--md-pb, var(--sm-pb, var(--pb, var(--p)))))
-      );
+      padding-bottom: calc(var(--spacing) * var(--xl-pb, var(--p)));
     }
     .xl\:pl {
-      padding-left: calc(
-        var(--spacing) *
-          var(
-            --xl-pl,
-            var(--lg-pl, var(--md-pl, var(--sm-pl, var(--pl, var(--p)))))
-          )
-      );
-    }
-    .xl\:\[pl\] {
-      padding-left: var(
-        --xl-pl,
-        var(--lg-pl, var(--md-pl, var(--sm-pl, var(--pl, var(--p)))))
-      );
+      padding-left: calc(var(--spacing) * var(--xl-pl, var(--p)));
     }
     .xl\:pr {
-      padding-right: calc(
-        var(--spacing) *
-          var(
-            --xl-pr,
-            var(--lg-pr, var(--md-pr, var(--sm-pr, var(--pr, var(--p)))))
-          )
-      );
-    }
-    .xl\:\[pr\] {
-      padding-right: var(
-        --xl-pr,
-        var(--lg-pr, var(--md-pr, var(--sm-pr, var(--pr, var(--p)))))
-      );
+      padding-right: calc(var(--spacing) * var(--xl-pr, var(--p)));
     }
     .xl\:ps {
-      padding-inline-start: calc(
-        var(--spacing) *
-          var(
-            --xl-ps,
-            var(--lg-ps, var(--md-ps, var(--sm-ps, var(--ps, var(--p)))))
-          )
-      );
-    }
-    .xl\:\[ps\] {
-      padding-inline-start: var(
-        --xl-ps,
-        var(--lg-ps, var(--md-ps, var(--sm-ps, var(--ps, var(--p)))))
-      );
+      padding-inline-start: calc(var(--spacing) * var(--xl-ps, var(--p)));
     }
     .xl\:pe {
-      padding-inline-end: calc(
-        var(--spacing) *
-          var(
-            --xl-pe,
-            var(--lg-pe, var(--md-pe, var(--sm-pe, var(--pe, var(--p)))))
-          )
-      );
+      padding-inline-end: calc(var(--spacing) * var(--xl-pe, var(--p)));
+    }
+    .xl\:\[pt\] {
+      padding-top: var(--xl-pt, var(--p));
+    }
+    .xl\:\[pb\] {
+      padding-bottom: var(--xl-pb, var(--p));
+    }
+    .xl\:\[pl\] {
+      padding-left: var(--xl-pl, var(--p));
+    }
+    .xl\:\[pr\] {
+      padding-right: var(--xl-pr, var(--p));
+    }
+    .xl\:\[ps\] {
+      padding-inline-start: var(--xl-ps, var(--p));
     }
     .xl\:\[pe\] {
-      padding-inline-end: var(
-        --xl-pe,
-        var(--lg-pe, var(--md-pe, var(--sm-pe, var(--pe, var(--p)))))
-      );
+      padding-inline-end: var(--xl-pe, var(--p));
     }
     .xl\:px {
-      padding-inline: calc(
-        var(--spacing) *
-          var(
-            --xl-px,
-            var(--lg-px, var(--md-px, var(--sm-px, var(--px, var(--p)))))
-          )
-      );
-    }
-    .xl\:\[px\] {
-      padding-inline: var(
-        --xl-px,
-        var(--lg-px, var(--md-px, var(--sm-px, var(--px, var(--p)))))
-      );
+      padding-inline: calc(var(--spacing) * var(--xl-px, var(--p)));
     }
     .xl\:py {
-      padding-block: calc(
-        var(--spacing) *
-          var(
-            --xl-py,
-            var(--lg-py, var(--md-py, var(--sm-py, var(--py, var(--p)))))
-          )
-      );
+      padding-block: calc(var(--spacing) * var(--xl-py, var(--p)));
+    }
+    .xl\:\[px\] {
+      padding-inline: var(--xl-px, var(--p));
     }
     .xl\:\[py\] {
-      padding-block: var(
-        --xl-py,
-        var(--lg-py, var(--md-py, var(--sm-py, var(--py, var(--p)))))
-      );
+      padding-block: var(--xl-py, var(--p));
     }
     .xl\:right {
-      right: calc(
-        var(--spacing) *
-          var(
-            --xl-right,
-            var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-          )
-      );
+      right: calc(var(--spacing) * var(--xl-right));
     }
     .xl\:\[right\] {
-      right: var(
-        --xl-right,
-        var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-      );
+      right: var(--xl-right);
     }
     .xl\:size {
-      width: calc(
-        var(--spacing) *
-          var(
-            --xl-size,
-            var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-          )
-      );
-      height: calc(
-        var(--spacing) *
-          var(
-            --xl-size,
-            var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-          )
-      );
+      width: calc(var(--spacing) * var(--xl-size));
+      height: calc(var(--spacing) * var(--xl-size));
     }
     .xl\:\[size\] {
-      width: var(
-        --xl-size,
-        var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
-      height: var(
-        --xl-size,
-        var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-      );
+      width: var(--xl-size);
+      height: var(--xl-size);
     }
     .xl\:space-x > :not(:last-child) {
       margin-inline-start: calc(
-        var(--spacing) *
-          var(
-            --xl-space-x,
-            var(
-              --lg-space-x,
-              var(--md-space-x, var(--sm-space-x, var(--space-x)))
-            )
-          ) *
-          var(--space-x-reverse)
+        var(--spacing) * var(--xl-space-x) * var(--tw-space-x-reverse)
       );
       margin-inline-end: calc(
-        var(--spacing) *
-          var(
-            --xl-space-x,
-            var(
-              --lg-space-x,
-              var(--md-space-x, var(--sm-space-x, var(--space-x)))
-            )
-          ) *
-          (1 - var(--space-x-reverse))
+        var(--spacing) * var(--xl-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .xl\:\[space-x\] > :not(:last-child) {
-      margin-inline-start: calc(
-        var(
-            --xl-space-x,
-            var(
-              --lg-space-x,
-              var(--md-space-x, var(--sm-space-x, var(--space-x)))
-            )
-          ) *
-          var(--space-x-reverse)
-      );
+      margin-inline-start: calc(var(--xl-space-x) * var(--tw-space-x-reverse));
       margin-inline-end: calc(
-        var(
-            --xl-space-x,
-            var(
-              --lg-space-x,
-              var(--md-space-x, var(--sm-space-x, var(--space-x)))
-            )
-          ) *
-          (1 - var(--space-x-reverse))
+        var(--xl-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .xl\:space-y > :not(:last-child) {
       margin-block-start: calc(
-        var(--spacing) *
-          var(
-            --xl-space-y,
-            var(
-              --lg-space-y,
-              var(--md-space-y, var(--sm-space-y, var(--space-y)))
-            )
-          ) *
-          var(--space-y-reverse)
+        var(--spacing) * var(--xl-space-y) * var(--tw-space-y-reverse)
       );
       margin-block-end: calc(
-        var(--spacing) *
-          var(
-            --xl-space-y,
-            var(
-              --lg-space-y,
-              var(--md-space-y, var(--sm-space-y, var(--space-y)))
-            )
-          ) *
-          (1 - var(--space-y-reverse))
+        var(--spacing) * var(--xl-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .xl\:\[space-y\] > :not(:last-child) {
-      margin-block-start: calc(
-        var(
-            --xl-space-y,
-            var(
-              --lg-space-y,
-              var(--md-space-y, var(--sm-space-y, var(--space-y)))
-            )
-          ) *
-          var(--space-y-reverse)
-      );
+      margin-block-start: calc(var(--xl-space-y) * var(--tw-space-y-reverse));
       margin-block-end: calc(
-        var(
-            --xl-space-y,
-            var(
-              --lg-space-y,
-              var(--md-space-y, var(--sm-space-y, var(--space-y)))
-            )
-          ) *
-          (1 - var(--space-y-reverse))
+        var(--xl-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .xl\:to {
+      --tw-gradient-to: var(--xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .xl\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
-        var(--xl-to) var(--xl-to-opacity, 100%),
+        var(--xl-to) var(--xl-to-o, 100%),
         transparent
       );
-    }
-    .xl\:top {
-      top: calc(
-        var(--spacing) *
-          var(--xl-top, var(--lg-top, var(--md-top, var(--sm-top, var(--top)))))
-      );
-    }
-    .xl\:\[top\] {
-      top: var(
-        --xl-top,
-        var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
     .xl\:to-position {
-      --tw-gradient-to-position: var(
-        --xl-to-position,
-        var(
-          --lg-to-position,
-          var(--md-to-position, var(--sm-to-position, var(--to-position)))
-        )
-      );
+      --tw-gradient-to-position: var(--xl-to-position);
+    }
+    .xl\:top {
+      top: calc(var(--spacing) * var(--xl-top));
+    }
+    .xl\:\[top\] {
+      top: var(--xl-top);
     }
     .xl\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--xl-via, var(--lg-via, var(--md-via, var(--sm-via, var(--via)))))
-          var(
-            --xl-via-opacity,
-            var(
-              --lg-via-opacity,
-              var(
-                --md-via-opacity,
-                var(--sm-via-opacity, var(--via-opacity, 100%))
-              )
-            )
-          ),
-        transparent
-      );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
+      --tw-gradient-via: var(--xl-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
         var(--tw-gradient-via) var(--tw-gradient-via-position),
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
+    }
+    .xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--xl-via) var(--xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
     .xl\:via-position {
-      --tw-gradient-via-position: var(
-        --xl-via-position,
-        var(
-          --lg-via-position,
-          var(--md-via-position, var(--sm-via-position, var(--via-position)))
-        )
-      );
+      --tw-gradient-via-position: var(--xl-via-position);
     }
     .xl\:w {
-      width: calc(
-        var(--spacing) *
-          var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))))
-      );
+      width: calc(var(--spacing) * var(--xl-w));
     }
     .xl\:\[w\] {
-      width: var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))));
+      width: var(--xl-w);
     }
     .xl\:z {
-      z-index: var(--xl-z, var(--lg-z, var(--md-z, var(--sm-z, var(--z)))));
+      z-index: var(--xl-z);
     }
   }
   @media (min-width: 96rem) {
     .\32xl\:aspect {
-      aspect-ratio: var(
-        --\32xl-aspect,
-        var(
-          --xl-aspect,
-          var(--lg-aspect, var(--md-aspect, var(--sm-aspect, var(--aspect))))
-        )
-      );
+      aspect-ratio: var(--\32xl-aspect);
     }
     .\32xl\:bg {
-      background-color: var(
-        --\32xl-bg,
-        var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
-      );
+      background-color: var(--\32xl-bg);
     }
     .\32xl\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(
-            --\32xl-bg,
-            var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
-          )
-          var(
-            --\32xl-bg-o,
-            var(
-              --xl-bg-o,
-              var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
-            )
-          ),
+        var(--\32xl-bg) var(--\32xl-bg-o, 100%),
         transparent
       );
     }
     .\32xl\:rounded {
-      border-radius: var(
-        --\32xl-rounded,
-        var(
-          --xl-rounded,
-          var(
-            --lg-rounded,
-            var(--md-rounded, var(--sm-rounded, var(--rounded)))
-          )
-        )
-      );
+      border-radius: var(--\32xl-rounded);
     }
     .\32xl\:rounded-s {
-      border-start-start-radius: var(
-        --\32xl-rounded-s,
-        var(
-          --xl-rounded-s,
-          var(
-            --lg-rounded-s,
-            var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-          )
-        )
-      );
-      border-end-start-radius: var(
-        --\32xl-rounded-s,
-        var(
-          --xl-rounded-s,
-          var(
-            --lg-rounded-s,
-            var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-          )
-        )
-      );
+      border-start-start-radius: var(--\32xl-rounded-s);
+      border-end-start-radius: var(--\32xl-rounded-s);
     }
     .\32xl\:rounded-e {
-      border-start-end-radius: var(
-        --\32xl-rounded-e,
-        var(
-          --xl-rounded-e,
-          var(
-            --lg-rounded-e,
-            var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-          )
-        )
-      );
-      border-end-end-radius: var(
-        --\32xl-rounded-e,
-        var(
-          --xl-rounded-e,
-          var(
-            --lg-rounded-e,
-            var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-          )
-        )
-      );
+      border-start-end-radius: var(--\32xl-rounded-e);
+      border-end-end-radius: var(--\32xl-rounded-e);
     }
     .\32xl\:rounded-t {
-      border-top-left-radius: var(
-        --\32xl-rounded-t,
-        var(
-          --xl-rounded-t,
-          var(
-            --lg-rounded-t,
-            var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-          )
-        )
-      );
-      border-top-right-radius: var(
-        --\32xl-rounded-t,
-        var(
-          --xl-rounded-t,
-          var(
-            --lg-rounded-t,
-            var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-          )
-        )
-      );
+      border-top-left-radius: var(--\32xl-rounded-t);
+      border-top-right-radius: var(--\32xl-rounded-t);
     }
     .\32xl\:rounded-r {
-      border-top-right-radius: var(
-        --\32xl-rounded-r,
-        var(
-          --xl-rounded-r,
-          var(
-            --lg-rounded-r,
-            var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-          )
-        )
-      );
-      border-bottom-right-radius: var(
-        --\32xl-rounded-r,
-        var(
-          --xl-rounded-r,
-          var(
-            --lg-rounded-r,
-            var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-          )
-        )
-      );
+      border-top-right-radius: var(--\32xl-rounded-r);
+      border-bottom-right-radius: var(--\32xl-rounded-r);
     }
     .\32xl\:rounded-b {
-      border-bottom-right-radius: var(
-        --\32xl-rounded-b,
-        var(
-          --xl-rounded-b,
-          var(
-            --lg-rounded-b,
-            var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-          )
-        )
-      );
-      border-bottom-left-radius: var(
-        --\32xl-rounded-b,
-        var(
-          --xl-rounded-b,
-          var(
-            --lg-rounded-b,
-            var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-          )
-        )
-      );
+      border-bottom-right-radius: var(--\32xl-rounded-b);
+      border-bottom-left-radius: var(--\32xl-rounded-b);
     }
     .\32xl\:rounded-l {
-      border-top-left-radius: var(
-        --\32xl-rounded-l,
-        var(
-          --xl-rounded-l,
-          var(
-            --lg-rounded-l,
-            var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-          )
-        )
-      );
-      border-bottom-left-radius: var(
-        --\32xl-rounded-l,
-        var(
-          --xl-rounded-l,
-          var(
-            --lg-rounded-l,
-            var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-          )
-        )
-      );
+      border-top-left-radius: var(--\32xl-rounded-l);
+      border-bottom-left-radius: var(--\32xl-rounded-l);
     }
     .\32xl\:rounded-ss {
-      border-start-start-radius: var(
-        --\32xl-rounded-ss,
-        var(
-          --xl-rounded-ss,
-          var(
-            --lg-rounded-ss,
-            var(--md-rounded-ss, var(--sm-rounded-ss, var(--rounded-ss)))
-          )
-        )
-      );
+      border-start-start-radius: var(--\32xl-rounded-ss);
     }
     .\32xl\:rounded-se {
-      border-start-end-radius: var(
-        --\32xl-rounded-se,
-        var(
-          --xl-rounded-se,
-          var(
-            --lg-rounded-se,
-            var(--md-rounded-se, var(--sm-rounded-se, var(--rounded-se)))
-          )
-        )
-      );
+      border-start-end-radius: var(--\32xl-rounded-se);
     }
     .\32xl\:rounded-ee {
-      border-end-end-radius: var(
-        --\32xl-rounded-ee,
-        var(
-          --xl-rounded-ee,
-          var(
-            --lg-rounded-ee,
-            var(--md-rounded-ee, var(--sm-rounded-ee, var(--rounded-ee)))
-          )
-        )
-      );
+      border-end-end-radius: var(--\32xl-rounded-ee);
     }
     .\32xl\:rounded-es {
-      border-end-start-radius: var(
-        --\32xl-rounded-es,
-        var(
-          --xl-rounded-es,
-          var(
-            --lg-rounded-es,
-            var(--md-rounded-es, var(--sm-rounded-es, var(--rounded-es)))
-          )
-        )
-      );
+      border-end-start-radius: var(--\32xl-rounded-es);
     }
     .\32xl\:rounded-tl {
-      border-top-left-radius: var(
-        --\32xl-rounded-tl,
-        var(
-          --xl-rounded-tl,
-          var(
-            --lg-rounded-tl,
-            var(--md-rounded-tl, var(--sm-rounded-tl, var(--rounded-tl)))
-          )
-        )
-      );
+      border-top-left-radius: var(--\32xl-rounded-tl);
     }
     .\32xl\:rounded-tr {
-      border-top-right-radius: var(
-        --\32xl-rounded-tr,
-        var(
-          --xl-rounded-tr,
-          var(
-            --lg-rounded-tr,
-            var(--md-rounded-tr, var(--sm-rounded-tr, var(--rounded-tr)))
-          )
-        )
-      );
+      border-top-right-radius: var(--\32xl-rounded-tr);
     }
     .\32xl\:rounded-br {
-      border-bottom-right-radius: var(
-        --\32xl-rounded-br,
-        var(
-          --xl-rounded-br,
-          var(
-            --lg-rounded-br,
-            var(--md-rounded-br, var(--sm-rounded-br, var(--rounded-br)))
-          )
-        )
-      );
+      border-bottom-right-radius: var(--\32xl-rounded-br);
     }
     .\32xl\:rounded-bl {
-      border-bottom-left-radius: var(
-        --\32xl-rounded-bl,
-        var(
-          --xl-rounded-bl,
-          var(
-            --lg-rounded-bl,
-            var(--md-rounded-bl, var(--sm-rounded-bl, var(--rounded-bl)))
-          )
-        )
-      );
+      border-bottom-left-radius: var(--\32xl-rounded-bl);
     }
     .\32xl\:bottom {
-      bottom: calc(
-        var(--spacing) *
-          var(
-            --\32xl-bottom,
-            var(
-              --xl-bottom,
-              var(
-                --lg-bottom,
-                var(--md-bottom, var(--sm-bottom, var(--bottom)))
-              )
-            )
-          )
-      );
+      bottom: calc(var(--spacing) * var(--\32xl-bottom));
     }
     .\32xl\:\[bottom\] {
-      bottom: var(
-        --\32xl-bottom,
-        var(
-          --xl-bottom,
-          var(--lg-bottom, var(--md-bottom, var(--sm-bottom, var(--bottom))))
-        )
-      );
+      bottom: var(--\32xl-bottom);
     }
     .\32xl\:color {
-      color: var(
-        --\32xl-color,
-        var(
-          --xl-color,
-          var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
-        )
-      );
+      color: var(--\32xl-color);
     }
     .\32xl\:color\/o {
       color: color-mix(
         in oklab,
-        var(
-            --\32xl-color,
-            var(
-              --xl-color,
-              var(--lg-color, var(--md-color, var(--sm-color, var(--color))))
-            )
-          )
-          var(
-            --\32xl-color-o,
-            var(
-              --xl-color-o,
-              var(
-                --lg-color-o,
-                var(--md-color-o, var(--sm-color-o, var(--color-o, 100%)))
-              )
-            )
-          ),
+        var(--\32xl-color) var(--\32xl-color-o, 100%),
         transparent
       );
     }
     .\32xl\:columns {
-      columns: var(
-        --\32xl-columns,
-        var(
-          --xl-columns,
-          var(
-            --lg-columns,
-            var(--md-columns, var(--sm-columns, var(--columns)))
-          )
-        )
-      );
+      columns: var(--\32xl-columns);
     }
     .\32xl\:basis {
-      flex-basis: calc(
-        var(--spacing) *
-          var(
-            --\32xl-basis,
-            var(
-              --xl-basis,
-              var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-            )
-          )
-      );
+      flex-basis: calc(var(--spacing) * var(--\32xl-basis));
     }
     .\32xl\:\[basis\] {
-      flex-basis: var(
-        --\32xl-basis,
-        var(
-          --xl-basis,
-          var(--lg-basis, var(--md-basis, var(--sm-basis, var(--basis))))
-        )
-      );
+      flex-basis: var(--\32xl-basis);
     }
     .\32xl\:flex {
-      flex: var(
-        --\32xl-flex,
-        var(
-          --xl-flex,
-          var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
-        )
-      );
+      flex: var(--\32xl-flex);
     }
-    .\32xl\:flex-grow,
     .\32xl\:grow {
-      flex-grow: var(
-        --\32xl-flex-grow,
-        var(
-          --\32xl-grow,
-          var(
-            --xl-flex-grow,
-            var(
-              --xl-grow,
-              var(
-                --lg-flex-grow,
-                var(
-                  --lg-grow,
-                  var(
-                    --md-flex-grow,
-                    var(
-                      --md-grow,
-                      var(
-                        --sm-flex-grow,
-                        var(--sm-grow, var(--flex-grow, var(--grow)))
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-grow: var(--\32xl-grow);
     }
-    .\32xl\:flex-shrink,
     .\32xl\:shrink {
-      flex-shrink: var(
-        --\32xl-flex-shrink,
-        var(
-          --\32xl-shrink,
-          var(
-            --xl-flex-shrink,
-            var(
-              --xl-shrink,
-              var(
-                --lg-flex-shrink,
-                var(
-                  --lg-shrink,
-                  var(
-                    --md-flex-shrink,
-                    var(
-                      --md-shrink,
-                      var(
-                        --sm-flex-shrink,
-                        var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-shrink: var(--\32xl-shrink);
     }
     .\32xl\:from {
+      --tw-gradient-from: var(--\32xl-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .\32xl\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
-        var(--\32xl-from) var(--\32xl-from-opacity, 100%),
+        var(--\32xl-from) var(--\32xl-from-o, 100%),
         transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
     .\32xl\:from-position {
-      --tw-gradient-from-position: var(
-        --\32xl-from-position,
-        var(
-          --xl-from-position,
-          var(
-            --lg-from-position,
-            var(
-              --md-from-position,
-              var(--sm-from-position, var(--from-position))
-            )
-          )
-        )
-      );
+      --tw-gradient-from-position: var(--\32xl-from-position);
     }
     .\32xl\:gap {
-      gap: calc(
-        var(--spacing) *
-          var(
-            --\32xl-gap,
-            var(
-              --xl-gap,
-              var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap))))
-            )
-          )
-      );
+      gap: calc(var(--spacing) * var(--\32xl-gap));
     }
     .\32xl\:gap-x {
-      column-gap: calc(
-        var(--spacing) *
-          var(
-            --\32xl-gap-x,
-            var(
-              --xl-gap-x,
-              var(
-                --lg-gap-x,
-                var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-              )
-            )
-          )
-      );
+      column-gap: calc(var(--spacing) * var(--\32xl-gap-x, var(--gap)));
     }
     .\32xl\:gap-y {
-      row-gap: calc(
-        var(--spacing) *
-          var(
-            --\32xl-gap-y,
-            var(
-              --xl-gap-y,
-              var(
-                --lg-gap-y,
-                var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-              )
-            )
-          )
-      );
+      row-gap: calc(var(--spacing) * var(--\32xl-gap-y, var(--gap)));
     }
     .\32xl\:\[gap\] {
-      gap: var(
-        --\32xl-gap,
-        var(--xl-gap, var(--lg-gap, var(--md-gap, var(--sm-gap, var(--gap)))))
-      );
+      gap: var(--\32xl-gap);
     }
     .\32xl\:\[gap-x\] {
-      column-gap: var(
-        --\32xl-gap-x,
-        var(
-          --xl-gap-x,
-          var(
-            --lg-gap-x,
-            var(--md-gap-x, var(--sm-gap-x, var(--gap-x, var(--gap))))
-          )
-        )
-      );
+      column-gap: var(--\32xl-gap-x, var(--gap));
     }
     .\32xl\:\[gap-y\] {
-      row-gap: var(
-        --\32xl-gap-y,
-        var(
-          --xl-gap-y,
-          var(
-            --lg-gap-y,
-            var(--md-gap-y, var(--sm-gap-y, var(--gap-y, var(--gap))))
-          )
-        )
-      );
+      row-gap: var(--\32xl-gap-y, var(--gap));
     }
     .\32xl\:col {
-      grid-column: var(
-        --\32xl-col,
-        var(--xl-col, var(--lg-col, var(--md-col, var(--sm-col, var(--col)))))
-      );
+      grid-column: var(--\32xl-col);
     }
     .\32xl\:col-span {
-      grid-column: span
-        var(
-          --\32xl-col-span,
-          var(
-            --xl-col-span,
-            var(
-              --lg-col-span,
-              var(--md-col-span, var(--sm-col-span, var(--col-span)))
-            )
-          )
-        ) /
-        span
-        var(
-          --\32xl-col-span,
-          var(
-            --xl-col-span,
-            var(
-              --lg-col-span,
-              var(--md-col-span, var(--sm-col-span, var(--col-span)))
-            )
-          )
-        );
+      grid-column: span var(--\32xl-col-span) / span var(--\32xl-col-span);
     }
     .\32xl\:col-start {
-      grid-column-start: var(
-        --\32xl-col-start,
-        var(
-          --xl-col-start,
-          var(
-            --lg-col-start,
-            var(--md-col-start, var(--sm-col-start, var(--col-start)))
-          )
-        )
-      );
+      grid-column-start: var(--\32xl-col-start);
     }
     .\32xl\:col-end {
-      grid-column-end: var(
-        --\32xl-col-end,
-        var(
-          --xl-col-end,
-          var(
-            --lg-col-end,
-            var(--md-col-end, var(--sm-col-end, var(--col-end)))
-          )
-        )
-      );
+      grid-column-end: var(--\32xl-col-end);
     }
     .\32xl\:row {
-      grid-row: var(
-        --\32xl-row,
-        var(--xl-row, var(--lg-row, var(--md-row, var(--sm-row, var(--row)))))
-      );
+      grid-row: var(--\32xl-row);
     }
     .\32xl\:row-span {
-      grid-row: span
-        var(
-          --\32xl-row-span,
-          var(
-            --xl-row-span,
-            var(
-              --lg-row-span,
-              var(--md-row-span, var(--sm-row-span, var(--row-span)))
-            )
-          )
-        ) /
-        span
-        var(
-          --\32xl-row-span,
-          var(
-            --xl-row-span,
-            var(
-              --lg-row-span,
-              var(--md-row-span, var(--sm-row-span, var(--row-span)))
-            )
-          )
-        );
+      grid-row: span var(--\32xl-row-span) / span var(--\32xl-row-span);
     }
     .\32xl\:row-start {
-      grid-row-start: var(
-        --\32xl-row-start,
-        var(
-          --xl-row-start,
-          var(
-            --lg-row-start,
-            var(--md-row-start, var(--sm-row-start, var(--row-start)))
-          )
-        )
-      );
+      grid-row-start: var(--\32xl-row-start);
     }
     .\32xl\:row-end {
-      grid-row-end: var(
-        --\32xl-row-end,
-        var(
-          --xl-row-end,
-          var(
-            --lg-row-end,
-            var(--md-row-end, var(--sm-row-end, var(--row-end)))
-          )
-        )
-      );
+      grid-row-end: var(--\32xl-row-end);
     }
     .\32xl\:grid-cols {
-      grid-template-columns: repeat(
-        var(
-          --\32xl-grid-cols,
-          var(
-            --xl-grid-cols,
-            var(
-              --lg-grid-cols,
-              var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-            )
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-columns: repeat(var(--\32xl-grid-cols), minmax(0, 1fr));
     }
     .\32xl\:\[grid-cols\] {
-      grid-template-columns: var(
-        --\32xl-grid-cols,
-        var(
-          --xl-grid-cols,
-          var(
-            --lg-grid-cols,
-            var(--md-grid-cols, var(--sm-grid-cols, var(--grid-cols)))
-          )
-        )
-      );
+      grid-template-columns: var(--\32xl-grid-cols);
     }
     .\32xl\:grid-rows {
-      grid-template-rows: repeat(
-        var(
-          --\32xl-grid-rows,
-          var(
-            --xl-grid-rows,
-            var(
-              --lg-grid-rows,
-              var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-            )
-          )
-        ),
-        minmax(0, 1fr)
-      );
+      grid-template-rows: repeat(var(--\32xl-grid-rows), minmax(0, 1fr));
     }
     .\32xl\:\[grid-rows\] {
-      grid-template-rows: var(
-        --\32xl-grid-rows,
-        var(
-          --xl-grid-rows,
-          var(
-            --lg-grid-rows,
-            var(--md-grid-rows, var(--sm-grid-rows, var(--grid-rows)))
-          )
-        )
-      );
+      grid-template-rows: var(--\32xl-grid-rows);
     }
     .\32xl\:h {
-      height: calc(
-        var(--spacing) *
-          var(
-            --\32xl-h,
-            var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))))
-          )
-      );
+      height: calc(var(--spacing) * var(--\32xl-h));
     }
     .\32xl\:\[h\] {
-      height: var(
-        --\32xl-h,
-        var(--xl-h, var(--lg-h, var(--md-h, var(--sm-h, var(--h)))))
-      );
+      height: var(--\32xl-h);
     }
     .\32xl\:inset {
-      inset: calc(
-        var(--spacing) *
-          var(
-            --\32xl-inset,
-            var(
-              --xl-inset,
-              var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
-            )
-          )
-      );
+      inset: calc(var(--spacing) * var(--\32xl-inset));
     }
     .\32xl\:start {
-      inset-inline-start: calc(
-        var(--spacing) *
-          var(
-            --\32xl-start,
-            var(
-              --xl-start,
-              var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
-            )
-          )
-      );
+      inset-inline-start: calc(var(--spacing) * var(--\32xl-start));
     }
     .\32xl\:end {
-      inset-inline-end: calc(
-        var(--spacing) *
-          var(
-            --\32xl-end,
-            var(
-              --xl-end,
-              var(--lg-end, var(--md-end, var(--sm-end, var(--end))))
-            )
-          )
-      );
+      inset-inline-end: calc(var(--spacing) * var(--\32xl-end));
     }
     .\32xl\:inset-x {
-      inset-inline: calc(
-        var(--spacing) *
-          var(
-            --\32xl-inset-x,
-            var(
-              --xl-inset-x,
-              var(
-                --lg-inset-x,
-                var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
-              )
-            )
-          )
-      );
+      inset-inline: calc(var(--spacing) * var(--\32xl-inset-x));
     }
     .\32xl\:inset-y {
-      inset-block: calc(
-        var(--spacing) *
-          var(
-            --\32xl-inset-y,
-            var(
-              --xl-inset-y,
-              var(
-                --lg-inset-y,
-                var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
-              )
-            )
-          )
-      );
+      inset-block: calc(var(--spacing) * var(--\32xl-inset-y));
     }
     .\32xl\:\[inset\] {
-      inset: var(
-        --\32xl-inset,
-        var(
-          --xl-inset,
-          var(--lg-inset, var(--md-inset, var(--sm-inset, var(--inset))))
-        )
-      );
+      inset: var(--\32xl-inset);
     }
     .\32xl\:\[start\] {
-      inset-inline-start: var(
-        --\32xl-start,
-        var(
-          --xl-start,
-          var(--lg-start, var(--md-start, var(--sm-start, var(--start))))
-        )
-      );
+      inset-inline-start: var(--\32xl-start);
     }
     .\32xl\:\[end\] {
-      inset-inline-end: var(
-        --\32xl-end,
-        var(--xl-end, var(--lg-end, var(--md-end, var(--sm-end, var(--end)))))
-      );
+      inset-inline-end: var(--\32xl-end);
     }
     .\32xl\:\[inset-x\] {
-      inset-inline: var(
-        --\32xl-inset-x,
-        var(
-          --xl-inset-x,
-          var(
-            --lg-inset-x,
-            var(--md-inset-x, var(--sm-inset-x, var(--inset-x)))
-          )
-        )
-      );
+      inset-inline: var(--\32xl-inset-x);
     }
     .\32xl\:\[inset-y\] {
-      inset-block: var(
-        --\32xl-inset-y,
-        var(
-          --xl-inset-y,
-          var(
-            --lg-inset-y,
-            var(--md-inset-y, var(--sm-inset-y, var(--inset-y)))
-          )
-        )
-      );
+      inset-block: var(--\32xl-inset-y);
     }
     .\32xl\:left {
-      left: calc(
-        var(--spacing) *
-          var(
-            --\32xl-left,
-            var(
-              --xl-left,
-              var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
-            )
-          )
-      );
+      left: calc(var(--spacing) * var(--\32xl-left));
     }
     .\32xl\:\[left\] {
-      left: var(
-        --\32xl-left,
-        var(
-          --xl-left,
-          var(--lg-left, var(--md-left, var(--sm-left, var(--left))))
-        )
-      );
+      left: var(--\32xl-left);
     }
     .\32xl\:tracking {
-      letter-spacing: var(
-        --\32xl-tracking,
-        var(
-          --xl-tracking,
-          var(
-            --lg-tracking,
-            var(--md-tracking, var(--sm-tracking, var(--tracking)))
-          )
-        )
-      );
+      letter-spacing: var(--\32xl-tracking);
     }
     .\32xl\:leading {
-      line-height: calc(
-        var(--spacing) *
-          var(
-            --\32xl-leading,
-            var(
-              --xl-leading,
-              var(
-                --lg-leading,
-                var(--md-leading, var(--sm-leading, var(--leading)))
-              )
-            )
-          )
-      );
+      line-height: calc(var(--spacing) * var(--\32xl-leading));
     }
     .\32xl\:\[leading\] {
-      line-height: var(
-        --\32xl-leading,
-        var(
-          --xl-leading,
-          var(
-            --lg-leading,
-            var(--md-leading, var(--sm-leading, var(--leading)))
-          )
-        )
-      );
+      line-height: var(--\32xl-leading);
     }
     .\32xl\:m {
-      margin: calc(
-        var(--spacing) *
-          var(
-            --\32xl-m,
-            var(--xl-m, var(--lg-m, var(--md-m, var(--sm-m, var(--m)))))
-          )
-      );
+      margin: calc(var(--spacing) * var(--\32xl-m));
     }
     .\32xl\:\[m\] {
-      margin: var(
-        --\32xl-m,
-        var(--xl-m, var(--lg-m, var(--md-m, var(--sm-m, var(--m)))))
-      );
+      margin: var(--\32xl-m);
     }
     .\32xl\:mt {
-      margin-top: calc(
-        var(--spacing) *
-          var(
-            --\32xl-mt,
-            var(
-              --xl-mt,
-              var(--lg-mt, var(--md-mt, var(--sm-mt, var(--mt, var(--m)))))
-            )
-          )
-      );
+      margin-top: calc(var(--spacing) * var(--\32xl-mt));
     }
     .\32xl\:\[mt\] {
-      margin-top: var(
-        --\32xl-mt,
-        var(
-          --xl-mt,
-          var(--lg-mt, var(--md-mt, var(--sm-mt, var(--mt, var(--m)))))
-        )
-      );
+      margin-top: var(--\32xl-mt);
     }
     .\32xl\:mb {
-      margin-bottom: calc(
-        var(--spacing) *
-          var(
-            --\32xl-mb,
-            var(
-              --xl-mb,
-              var(--lg-mb, var(--md-mb, var(--sm-mb, var(--mb, var(--m)))))
-            )
-          )
-      );
+      margin-bottom: calc(var(--spacing) * var(--\32xl-mb));
     }
     .\32xl\:\[mb\] {
-      margin-bottom: var(
-        --\32xl-mb,
-        var(
-          --xl-mb,
-          var(--lg-mb, var(--md-mb, var(--sm-mb, var(--mb, var(--m)))))
-        )
-      );
+      margin-bottom: var(--\32xl-mb);
     }
     .\32xl\:ml {
-      margin-left: calc(
-        var(--spacing) *
-          var(
-            --\32xl-ml,
-            var(
-              --xl-ml,
-              var(--lg-ml, var(--md-ml, var(--sm-ml, var(--ml, var(--m)))))
-            )
-          )
-      );
+      margin-left: calc(var(--spacing) * var(--\32xl-ml));
     }
     .\32xl\:\[ml\] {
-      margin-left: var(
-        --\32xl-ml,
-        var(
-          --xl-ml,
-          var(--lg-ml, var(--md-ml, var(--sm-ml, var(--ml, var(--m)))))
-        )
-      );
+      margin-left: var(--\32xl-ml);
     }
     .\32xl\:mr {
-      margin-right: calc(
-        var(--spacing) *
-          var(
-            --\32xl-mr,
-            var(
-              --xl-mr,
-              var(--lg-mr, var(--md-mr, var(--sm-mr, var(--mr, var(--m)))))
-            )
-          )
-      );
+      margin-right: calc(var(--spacing) * var(--\32xl-mr));
     }
     .\32xl\:\[mr\] {
-      margin-right: var(
-        --\32xl-mr,
-        var(
-          --xl-mr,
-          var(--lg-mr, var(--md-mr, var(--sm-mr, var(--mr, var(--m)))))
-        )
-      );
+      margin-right: var(--\32xl-mr);
     }
     .\32xl\:ms {
-      margin-inline-start: calc(
-        var(--spacing) *
-          var(
-            --\32xl-ms,
-            var(
-              --xl-ms,
-              var(--lg-ms, var(--md-ms, var(--sm-ms, var(--ms, var(--m)))))
-            )
-          )
-      );
+      margin-inline-start: calc(var(--spacing) * var(--\32xl-ms));
     }
     .\32xl\:\[ms\] {
-      margin-inline-start: var(
-        --\32xl-ms,
-        var(
-          --xl-ms,
-          var(--lg-ms, var(--md-ms, var(--sm-ms, var(--ms, var(--m)))))
-        )
-      );
+      margin-inline-start: var(--\32xl-ms);
     }
     .\32xl\:me {
-      margin-inline-end: calc(
-        var(--spacing) *
-          var(
-            --\32xl-me,
-            var(
-              --xl-me,
-              var(--lg-me, var(--md-me, var(--sm-me, var(--me, var(--m)))))
-            )
-          )
-      );
+      margin-inline-end: calc(var(--spacing) * var(--\32xl-me));
     }
     .\32xl\:\[me\] {
-      margin-inline-end: var(
-        --\32xl-me,
-        var(
-          --xl-me,
-          var(--lg-me, var(--md-me, var(--sm-me, var(--me, var(--m)))))
-        )
-      );
+      margin-inline-end: var(--\32xl-me);
     }
     .\32xl\:mx {
-      margin-inline: calc(
-        var(--spacing) *
-          var(
-            --\32xl-mx,
-            var(
-              --xl-mx,
-              var(--lg-mx, var(--md-mx, var(--sm-mx, var(--mx, var(--m)))))
-            )
-          )
-      );
+      margin-inline: calc(var(--spacing) * var(--\32xl-mx));
     }
     .\32xl\:\[mx\] {
-      margin-inline: var(
-        --\32xl-mx,
-        var(
-          --xl-mx,
-          var(--lg-mx, var(--md-mx, var(--sm-mx, var(--mx, var(--m)))))
-        )
-      );
+      margin-inline: var(--\32xl-mx);
     }
     .\32xl\:my {
-      margin-block: calc(
-        var(--spacing) *
-          var(
-            --\32xl-my,
-            var(
-              --xl-my,
-              var(--lg-my, var(--md-my, var(--sm-my, var(--my, var(--m)))))
-            )
-          )
-      );
+      margin-block: calc(var(--spacing) * var(--\32xl-my));
     }
     .\32xl\:\[my\] {
-      margin-block: var(
-        --\32xl-my,
-        var(
-          --xl-my,
-          var(--lg-my, var(--md-my, var(--sm-my, var(--my, var(--m)))))
-        )
-      );
+      margin-block: var(--\32xl-my);
     }
     .\32xl\:max-h {
-      max-height: calc(
-        var(--spacing) *
-          var(
-            --\32xl-max-h,
-            var(
-              --xl-max-h,
-              var(--lg-max-h, var(--md-max-h, var(--sm-max-h, var(--max-h))))
-            )
-          )
-      );
+      max-height: calc(var(--spacing) * var(--\32xl-max-h));
     }
     .\32xl\:\[max-h\] {
-      max-height: var(
-        --\32xl-max-h,
-        var(
-          --xl-max-h,
-          var(--lg-max-h, var(--md-max-h, var(--sm-max-h, var(--max-h))))
-        )
-      );
+      max-height: var(--\32xl-max-h);
     }
     .\32xl\:max-w {
-      max-width: calc(
-        var(--spacing) *
-          var(
-            --\32xl-max-w,
-            var(
-              --xl-max-w,
-              var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-            )
-          )
-      );
+      max-width: calc(var(--spacing) * var(--\32xl-max-w));
     }
     .\32xl\:\[max-w\] {
-      max-width: var(
-        --\32xl-max-w,
-        var(
-          --xl-max-w,
-          var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-        )
-      );
+      max-width: var(--\32xl-max-w);
     }
     .\32xl\:min-h {
-      min-height: calc(
-        var(--spacing) *
-          var(
-            --\32xl-min-h,
-            var(
-              --xl-min-h,
-              var(--lg-min-h, var(--md-min-h, var(--sm-min-h, var(--min-h))))
-            )
-          )
-      );
+      min-height: calc(var(--spacing) * var(--\32xl-min-h));
     }
     .\32xl\:\[min-h\] {
-      min-height: var(
-        --\32xl-min-h,
-        var(
-          --xl-min-h,
-          var(--lg-min-h, var(--md-min-h, var(--sm-min-h, var(--min-h))))
-        )
-      );
+      min-height: var(--\32xl-min-h);
     }
     .\32xl\:min-w {
-      min-width: calc(
-        var(--spacing) *
-          var(
-            --\32xl-min-w,
-            var(
-              --xl-min-w,
-              var(--lg-min-w, var(--md-min-w, var(--sm-min-w, var(--min-w))))
-            )
-          )
-      );
+      min-width: calc(var(--spacing) * var(--\32xl-min-w));
     }
     .\32xl\:\[min-w\] {
-      min-width: var(
-        --\32xl-min-w,
-        var(
-          --xl-min-w,
-          var(--lg-min-w, var(--md-min-w, var(--sm-min-w, var(--min-w))))
-        )
-      );
+      min-width: var(--\32xl-min-w);
     }
     .\32xl\:object-position {
-      object-position: var(
-        --\32xl-object,
-        var(
-          --xl-object,
-          var(--lg-object, var(--md-object, var(--sm-object, var(--object))))
-        )
-      );
+      object-position: var(--\32xl-object-position);
     }
     .\32xl\:order {
-      order: var(
-        --\32xl-order,
-        var(
-          --xl-order,
-          var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
-        )
-      );
-    }
-    .\32xl\:-order {
-      order: calc(
-        var(
-            --\32xl-order,
-            var(
-              --xl-order,
-              var(--lg-order, var(--md-order, var(--sm-order, var(--order))))
-            )
-          ) *
-          -1
-      );
+      order: var(--\32xl-order);
     }
     .\32xl\:p {
-      padding: calc(
-        var(--spacing) *
-          var(
-            --\32xl-p,
-            var(--xl-p, var(--lg-p, var(--md-p, var(--sm-p, var(--p)))))
-          )
-      );
+      padding: calc(var(--spacing) * var(--\32xl-p));
     }
     .\32xl\:\[p\] {
-      padding: var(
-        --\32xl-p,
-        var(--xl-p, var(--lg-p, var(--md-p, var(--sm-p, var(--p)))))
-      );
+      padding: var(--\32xl-p);
     }
     .\32xl\:pt {
-      padding-top: calc(
-        var(--spacing) *
-          var(
-            --\32xl-pt,
-            var(
-              --xl-pt,
-              var(--lg-pt, var(--md-pt, var(--sm-pt, var(--pt, var(--p)))))
-            )
-          )
-      );
-    }
-    .\32xl\:\[pt\] {
-      padding-top: var(
-        --\32xl-pt,
-        var(
-          --xl-pt,
-          var(--lg-pt, var(--md-pt, var(--sm-pt, var(--pt, var(--p)))))
-        )
-      );
+      padding-top: calc(var(--spacing) * var(--\32xl-pt, var(--p)));
     }
     .\32xl\:pb {
-      padding-bottom: calc(
-        var(--spacing) *
-          var(
-            --\32xl-pb,
-            var(
-              --xl-pb,
-              var(--lg-pb, var(--md-pb, var(--sm-pb, var(--pb, var(--p)))))
-            )
-          )
-      );
-    }
-    .\32xl\:\[pb\] {
-      padding-bottom: var(
-        --\32xl-pb,
-        var(
-          --xl-pb,
-          var(--lg-pb, var(--md-pb, var(--sm-pb, var(--pb, var(--p)))))
-        )
-      );
+      padding-bottom: calc(var(--spacing) * var(--\32xl-pb, var(--p)));
     }
     .\32xl\:pl {
-      padding-left: calc(
-        var(--spacing) *
-          var(
-            --\32xl-pl,
-            var(
-              --xl-pl,
-              var(--lg-pl, var(--md-pl, var(--sm-pl, var(--pl, var(--p)))))
-            )
-          )
-      );
-    }
-    .\32xl\:\[pl\] {
-      padding-left: var(
-        --\32xl-pl,
-        var(
-          --xl-pl,
-          var(--lg-pl, var(--md-pl, var(--sm-pl, var(--pl, var(--p)))))
-        )
-      );
+      padding-left: calc(var(--spacing) * var(--\32xl-pl, var(--p)));
     }
     .\32xl\:pr {
-      padding-right: calc(
-        var(--spacing) *
-          var(
-            --\32xl-pr,
-            var(
-              --xl-pr,
-              var(--lg-pr, var(--md-pr, var(--sm-pr, var(--pr, var(--p)))))
-            )
-          )
-      );
-    }
-    .\32xl\:\[pr\] {
-      padding-right: var(
-        --\32xl-pr,
-        var(
-          --xl-pr,
-          var(--lg-pr, var(--md-pr, var(--sm-pr, var(--pr, var(--p)))))
-        )
-      );
+      padding-right: calc(var(--spacing) * var(--\32xl-pr, var(--p)));
     }
     .\32xl\:ps {
-      padding-inline-start: calc(
-        var(--spacing) *
-          var(
-            --\32xl-ps,
-            var(
-              --xl-ps,
-              var(--lg-ps, var(--md-ps, var(--sm-ps, var(--ps, var(--p)))))
-            )
-          )
-      );
-    }
-    .\32xl\:\[ps\] {
-      padding-inline-start: var(
-        --\32xl-ps,
-        var(
-          --xl-ps,
-          var(--lg-ps, var(--md-ps, var(--sm-ps, var(--ps, var(--p)))))
-        )
-      );
+      padding-inline-start: calc(var(--spacing) * var(--\32xl-ps, var(--p)));
     }
     .\32xl\:pe {
-      padding-inline-end: calc(
-        var(--spacing) *
-          var(
-            --\32xl-pe,
-            var(
-              --xl-pe,
-              var(--lg-pe, var(--md-pe, var(--sm-pe, var(--pe, var(--p)))))
-            )
-          )
-      );
+      padding-inline-end: calc(var(--spacing) * var(--\32xl-pe, var(--p)));
+    }
+    .\32xl\:\[pt\] {
+      padding-top: var(--\32xl-pt, var(--p));
+    }
+    .\32xl\:\[pb\] {
+      padding-bottom: var(--\32xl-pb, var(--p));
+    }
+    .\32xl\:\[pl\] {
+      padding-left: var(--\32xl-pl, var(--p));
+    }
+    .\32xl\:\[pr\] {
+      padding-right: var(--\32xl-pr, var(--p));
+    }
+    .\32xl\:\[ps\] {
+      padding-inline-start: var(--\32xl-ps, var(--p));
     }
     .\32xl\:\[pe\] {
-      padding-inline-end: var(
-        --\32xl-pe,
-        var(
-          --xl-pe,
-          var(--lg-pe, var(--md-pe, var(--sm-pe, var(--pe, var(--p)))))
-        )
-      );
+      padding-inline-end: var(--\32xl-pe, var(--p));
     }
     .\32xl\:px {
-      padding-inline: calc(
-        var(--spacing) *
-          var(
-            --\32xl-px,
-            var(
-              --xl-px,
-              var(--lg-px, var(--md-px, var(--sm-px, var(--px, var(--p)))))
-            )
-          )
-      );
-    }
-    .\32xl\:\[px\] {
-      padding-inline: var(
-        --\32xl-px,
-        var(
-          --xl-px,
-          var(--lg-px, var(--md-px, var(--sm-px, var(--px, var(--p)))))
-        )
-      );
+      padding-inline: calc(var(--spacing) * var(--\32xl-px, var(--p)));
     }
     .\32xl\:py {
-      padding-block: calc(
-        var(--spacing) *
-          var(
-            --\32xl-py,
-            var(
-              --xl-py,
-              var(--lg-py, var(--md-py, var(--sm-py, var(--py, var(--p)))))
-            )
-          )
-      );
+      padding-block: calc(var(--spacing) * var(--\32xl-py, var(--p)));
+    }
+    .\32xl\:\[px\] {
+      padding-inline: var(--\32xl-px, var(--p));
     }
     .\32xl\:\[py\] {
-      padding-block: var(
-        --\32xl-py,
-        var(
-          --xl-py,
-          var(--lg-py, var(--md-py, var(--sm-py, var(--py, var(--p)))))
-        )
-      );
+      padding-block: var(--\32xl-py, var(--p));
     }
     .\32xl\:right {
-      right: calc(
-        var(--spacing) *
-          var(
-            --\32xl-right,
-            var(
-              --xl-right,
-              var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-            )
-          )
-      );
+      right: calc(var(--spacing) * var(--\32xl-right));
     }
     .\32xl\:\[right\] {
-      right: var(
-        --\32xl-right,
-        var(
-          --xl-right,
-          var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-        )
-      );
+      right: var(--\32xl-right);
     }
     .\32xl\:size {
-      width: calc(
-        var(--spacing) *
-          var(
-            --\32xl-size,
-            var(
-              --xl-size,
-              var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-            )
-          )
-      );
-      height: calc(
-        var(--spacing) *
-          var(
-            --\32xl-size,
-            var(
-              --xl-size,
-              var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-            )
-          )
-      );
+      width: calc(var(--spacing) * var(--\32xl-size));
+      height: calc(var(--spacing) * var(--\32xl-size));
     }
     .\32xl\:\[size\] {
-      width: var(
-        --\32xl-size,
-        var(
-          --xl-size,
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-        )
-      );
-      height: var(
-        --\32xl-size,
-        var(
-          --xl-size,
-          var(--lg-size, var(--md-size, var(--sm-size, var(--size))))
-        )
-      );
+      width: var(--\32xl-size);
+      height: var(--\32xl-size);
     }
     .\32xl\:space-x > :not(:last-child) {
       margin-inline-start: calc(
-        var(--spacing) *
-          var(
-            --\32xl-space-x,
-            var(
-              --xl-space-x,
-              var(
-                --lg-space-x,
-                var(--md-space-x, var(--sm-space-x, var(--space-x)))
-              )
-            )
-          ) *
-          var(--space-x-reverse)
+        var(--spacing) * var(--\32xl-space-x) * var(--tw-space-x-reverse)
       );
       margin-inline-end: calc(
-        var(--spacing) *
-          var(
-            --\32xl-space-x,
-            var(
-              --xl-space-x,
-              var(
-                --lg-space-x,
-                var(--md-space-x, var(--sm-space-x, var(--space-x)))
-              )
-            )
-          ) *
-          (1 - var(--space-x-reverse))
+        var(--spacing) * var(--\32xl-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .\32xl\:\[space-x\] > :not(:last-child) {
       margin-inline-start: calc(
-        var(
-            --\32xl-space-x,
-            var(
-              --xl-space-x,
-              var(
-                --lg-space-x,
-                var(--md-space-x, var(--sm-space-x, var(--space-x)))
-              )
-            )
-          ) *
-          var(--space-x-reverse)
+        var(--\32xl-space-x) * var(--tw-space-x-reverse)
       );
       margin-inline-end: calc(
-        var(
-            --\32xl-space-x,
-            var(
-              --xl-space-x,
-              var(
-                --lg-space-x,
-                var(--md-space-x, var(--sm-space-x, var(--space-x)))
-              )
-            )
-          ) *
-          (1 - var(--space-x-reverse))
+        var(--\32xl-space-x) * (1 - var(--tw-space-x-reverse))
       );
     }
     .\32xl\:space-y > :not(:last-child) {
       margin-block-start: calc(
-        var(--spacing) *
-          var(
-            --\32xl-space-y,
-            var(
-              --xl-space-y,
-              var(
-                --lg-space-y,
-                var(--md-space-y, var(--sm-space-y, var(--space-y)))
-              )
-            )
-          ) *
-          var(--space-y-reverse)
+        var(--spacing) * var(--\32xl-space-y) * var(--tw-space-y-reverse)
       );
       margin-block-end: calc(
-        var(--spacing) *
-          var(
-            --\32xl-space-y,
-            var(
-              --xl-space-y,
-              var(
-                --lg-space-y,
-                var(--md-space-y, var(--sm-space-y, var(--space-y)))
-              )
-            )
-          ) *
-          (1 - var(--space-y-reverse))
+        var(--spacing) * var(--\32xl-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .\32xl\:\[space-y\] > :not(:last-child) {
       margin-block-start: calc(
-        var(
-            --\32xl-space-y,
-            var(
-              --xl-space-y,
-              var(
-                --lg-space-y,
-                var(--md-space-y, var(--sm-space-y, var(--space-y)))
-              )
-            )
-          ) *
-          var(--space-y-reverse)
+        var(--\32xl-space-y) * var(--tw-space-y-reverse)
       );
       margin-block-end: calc(
-        var(
-            --\32xl-space-y,
-            var(
-              --xl-space-y,
-              var(
-                --lg-space-y,
-                var(--md-space-y, var(--sm-space-y, var(--space-y)))
-              )
-            )
-          ) *
-          (1 - var(--space-y-reverse))
+        var(--\32xl-space-y) * (1 - var(--tw-space-y-reverse))
       );
     }
     .\32xl\:to {
+      --tw-gradient-to: var(--\32xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .\32xl\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
-        var(--\32xl-to) var(--\32xl-to-opacity, 100%),
+        var(--\32xl-to) var(--\32xl-to-o, 100%),
         transparent
       );
-    }
-    .\32xl\:top {
-      top: calc(
-        var(--spacing) *
-          var(
-            --\32xl-top,
-            var(
-              --xl-top,
-              var(--lg-top, var(--md-top, var(--sm-top, var(--top))))
-            )
-          )
-      );
-    }
-    .\32xl\:\[top\] {
-      top: var(
-        --\32xl-top,
-        var(--xl-top, var(--lg-top, var(--md-top, var(--sm-top, var(--top)))))
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
     .\32xl\:to-position {
-      --tw-gradient-to-position: var(
-        --\32xl-to-position,
-        var(
-          --xl-to-position,
-          var(
-            --lg-to-position,
-            var(--md-to-position, var(--sm-to-position, var(--to-position)))
-          )
-        )
-      );
+      --tw-gradient-to-position: var(--\32xl-to-position);
+    }
+    .\32xl\:top {
+      top: calc(var(--spacing) * var(--\32xl-top));
+    }
+    .\32xl\:\[top\] {
+      top: var(--\32xl-top);
     }
     .\32xl\:via {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(
-            --\32xl-via,
-            var(
-              --xl-via,
-              var(--lg-via, var(--md-via, var(--sm-via, var(--via))))
-            )
-          )
-          var(
-            --\32xl-via-opacity,
-            var(
-              --xl-via-opacity,
-              var(
-                --lg-via-opacity,
-                var(
-                  --md-via-opacity,
-                  var(--sm-via-opacity, var(--via-opacity, 100%))
-                )
-              )
-            )
-          ),
-        transparent
-      );
-      --tw-gradient-via-stops: var(
-        --tw-gradient-position,
-        var(--tw-gradient-from) var(--tw-gradient-from-position),
+      --tw-gradient-via: var(--\32xl-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
         var(--tw-gradient-via) var(--tw-gradient-via-position),
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
-      --tw-gradient-stops: var(--tw-gradient-via-stops);
+    }
+    .\32xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--\32xl-via) var(--\32xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
     .\32xl\:via-position {
-      --tw-gradient-via-position: var(
-        --\32xl-via-position,
-        var(
-          --xl-via-position,
-          var(
-            --lg-via-position,
-            var(--md-via-position, var(--sm-via-position, var(--via-position)))
-          )
-        )
-      );
+      --tw-gradient-via-position: var(--\32xl-via-position);
     }
     .\32xl\:w {
-      width: calc(
-        var(--spacing) *
-          var(
-            --\32xl-w,
-            var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))))
-          )
-      );
+      width: calc(var(--spacing) * var(--\32xl-w));
     }
     .\32xl\:\[w\] {
-      width: var(
-        --\32xl-w,
-        var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))))
-      );
+      width: var(--\32xl-w);
     }
     .\32xl\:z {
-      z-index: var(
-        --\32xl-z,
-        var(--xl-z, var(--lg-z, var(--md-z, var(--sm-z, var(--z)))))
-      );
+      z-index: var(--\32xl-z);
     }
   }
 }

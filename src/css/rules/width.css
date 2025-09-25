@@ -1,80 +1,53 @@
 @layer styles {
-  /* Width */
   .w {
     width: calc(var(--spacing) * var(--w));
   }
-
-  /* Arbitrary width with bracket selector */
   .\[w\] {
     width: var(--w);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:w {
-      width: calc(var(--spacing) * var(--sm-w, var(--w)));
+      width: calc(var(--spacing) * var(--sm-w));
     }
-
     .sm\:\[w\] {
-      width: var(--sm-w, var(--w));
+      width: var(--sm-w);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:w {
-      width: calc(var(--spacing) * var(--md-w, var(--sm-w, var(--w))));
+      width: calc(var(--spacing) * var(--md-w));
     }
-
     .md\:\[w\] {
-      width: var(--md-w, var(--sm-w, var(--w)));
+      width: var(--md-w);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:w {
-      width: calc(
-        var(--spacing) * var(--lg-w, var(--md-w, var(--sm-w, var(--w))))
-      );
+      width: calc(var(--spacing) * var(--lg-w));
     }
-
     .lg\:\[w\] {
-      width: var(--lg-w, var(--md-w, var(--sm-w, var(--w))));
+      width: var(--lg-w);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:w {
-      width: calc(
-        var(--spacing) *
-          var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))))
-      );
+      width: calc(var(--spacing) * var(--xl-w));
     }
-
     .xl\:\[w\] {
-      width: var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))));
+      width: var(--xl-w);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:w {
-      width: calc(
-        var(--spacing) *
-          var(
-            --\32xl-w,
-            var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))))
-          )
-      );
+      width: calc(var(--spacing) * var(--\32xl-w));
     }
-
     .\32xl\:\[w\] {
-      width: var(
-        --\32xl-w,
-        var(--xl-w, var(--lg-w, var(--md-w, var(--sm-w, var(--w)))))
-      );
+      width: var(--\32xl-w);
     }
   }
 }

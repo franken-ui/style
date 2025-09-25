@@ -2,776 +2,322 @@
   .rounded {
     border-radius: var(--rounded);
   }
-
   .rounded-s {
     border-start-start-radius: var(--rounded-s);
     border-end-start-radius: var(--rounded-s);
   }
-
   .rounded-e {
     border-start-end-radius: var(--rounded-e);
     border-end-end-radius: var(--rounded-e);
   }
-
   .rounded-t {
     border-top-left-radius: var(--rounded-t);
     border-top-right-radius: var(--rounded-t);
   }
-
   .rounded-r {
     border-top-right-radius: var(--rounded-r);
     border-bottom-right-radius: var(--rounded-r);
   }
-
   .rounded-b {
     border-bottom-right-radius: var(--rounded-b);
     border-bottom-left-radius: var(--rounded-b);
   }
-
   .rounded-l {
     border-top-left-radius: var(--rounded-l);
     border-bottom-left-radius: var(--rounded-l);
   }
-
   .rounded-ss {
     border-start-start-radius: var(--rounded-ss);
   }
-
   .rounded-se {
     border-start-end-radius: var(--rounded-se);
   }
-
   .rounded-ee {
     border-end-end-radius: var(--rounded-ee);
   }
-
   .rounded-es {
     border-end-start-radius: var(--rounded-es);
   }
-
   .rounded-tl {
     border-top-left-radius: var(--rounded-tl);
   }
-
   .rounded-tr {
     border-top-right-radius: var(--rounded-tr);
   }
-
   .rounded-br {
     border-bottom-right-radius: var(--rounded-br);
   }
-
   .rounded-bl {
     border-bottom-left-radius: var(--rounded-bl);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:rounded {
-      border-radius: var(--sm-rounded, var(--rounded));
+      border-radius: var(--sm-rounded);
     }
     .sm\:rounded-s {
-      border-start-start-radius: var(--sm-rounded-s, var(--rounded-s));
-      border-end-start-radius: var(--sm-rounded-s, var(--rounded-s));
+      border-start-start-radius: var(--sm-rounded-s);
+      border-end-start-radius: var(--sm-rounded-s);
     }
     .sm\:rounded-e {
-      border-start-end-radius: var(--sm-rounded-e, var(--rounded-e));
-      border-end-end-radius: var(--sm-rounded-e, var(--rounded-e));
+      border-start-end-radius: var(--sm-rounded-e);
+      border-end-end-radius: var(--sm-rounded-e);
     }
     .sm\:rounded-t {
-      border-top-left-radius: var(--sm-rounded-t, var(--rounded-t));
-      border-top-right-radius: var(--sm-rounded-t, var(--rounded-t));
+      border-top-left-radius: var(--sm-rounded-t);
+      border-top-right-radius: var(--sm-rounded-t);
     }
     .sm\:rounded-r {
-      border-top-right-radius: var(--sm-rounded-r, var(--rounded-r));
-      border-bottom-right-radius: var(--sm-rounded-r, var(--rounded-r));
+      border-top-right-radius: var(--sm-rounded-r);
+      border-bottom-right-radius: var(--sm-rounded-r);
     }
     .sm\:rounded-b {
-      border-bottom-right-radius: var(--sm-rounded-b, var(--rounded-b));
-      border-bottom-left-radius: var(--sm-rounded-b, var(--rounded-b));
+      border-bottom-right-radius: var(--sm-rounded-b);
+      border-bottom-left-radius: var(--sm-rounded-b);
     }
     .sm\:rounded-l {
-      border-top-left-radius: var(--sm-rounded-l, var(--rounded-l));
-      border-bottom-left-radius: var(--sm-rounded-l, var(--rounded-l));
+      border-top-left-radius: var(--sm-rounded-l);
+      border-bottom-left-radius: var(--sm-rounded-l);
     }
     .sm\:rounded-ss {
-      border-start-start-radius: var(--sm-rounded-ss, var(--rounded-ss));
+      border-start-start-radius: var(--sm-rounded-ss);
     }
     .sm\:rounded-se {
-      border-start-end-radius: var(--sm-rounded-se, var(--rounded-se));
+      border-start-end-radius: var(--sm-rounded-se);
     }
     .sm\:rounded-ee {
-      border-end-end-radius: var(--sm-rounded-ee, var(--rounded-ee));
+      border-end-end-radius: var(--sm-rounded-ee);
     }
     .sm\:rounded-es {
-      border-end-start-radius: var(--sm-rounded-es, var(--rounded-es));
+      border-end-start-radius: var(--sm-rounded-es);
     }
     .sm\:rounded-tl {
-      border-top-left-radius: var(--sm-rounded-tl, var(--rounded-tl));
+      border-top-left-radius: var(--sm-rounded-tl);
     }
     .sm\:rounded-tr {
-      border-top-right-radius: var(--sm-rounded-tr, var(--rounded-tr));
+      border-top-right-radius: var(--sm-rounded-tr);
     }
     .sm\:rounded-br {
-      border-bottom-right-radius: var(--sm-rounded-br, var(--rounded-br));
+      border-bottom-right-radius: var(--sm-rounded-br);
     }
     .sm\:rounded-bl {
-      border-bottom-left-radius: var(--sm-rounded-bl, var(--rounded-bl));
+      border-bottom-left-radius: var(--sm-rounded-bl);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:rounded {
-      border-radius: var(--md-rounded, var(--sm-rounded, var(--rounded)));
+      border-radius: var(--md-rounded);
     }
     .md\:rounded-s {
-      border-start-start-radius: var(
-        --md-rounded-s,
-        var(--sm-rounded-s, var(--rounded-s))
-      );
-      border-end-start-radius: var(
-        --md-rounded-s,
-        var(--sm-rounded-s, var(--rounded-s))
-      );
+      border-start-start-radius: var(--md-rounded-s);
+      border-end-start-radius: var(--md-rounded-s);
     }
     .md\:rounded-e {
-      border-start-end-radius: var(
-        --md-rounded-e,
-        var(--sm-rounded-e, var(--rounded-e))
-      );
-      border-end-end-radius: var(
-        --md-rounded-e,
-        var(--sm-rounded-e, var(--rounded-e))
-      );
+      border-start-end-radius: var(--md-rounded-e);
+      border-end-end-radius: var(--md-rounded-e);
     }
     .md\:rounded-t {
-      border-top-left-radius: var(
-        --md-rounded-t,
-        var(--sm-rounded-t, var(--rounded-t))
-      );
-      border-top-right-radius: var(
-        --md-rounded-t,
-        var(--sm-rounded-t, var(--rounded-t))
-      );
+      border-top-left-radius: var(--md-rounded-t);
+      border-top-right-radius: var(--md-rounded-t);
     }
     .md\:rounded-r {
-      border-top-right-radius: var(
-        --md-rounded-r,
-        var(--sm-rounded-r, var(--rounded-r))
-      );
-      border-bottom-right-radius: var(
-        --md-rounded-r,
-        var(--sm-rounded-r, var(--rounded-r))
-      );
+      border-top-right-radius: var(--md-rounded-r);
+      border-bottom-right-radius: var(--md-rounded-r);
     }
     .md\:rounded-b {
-      border-bottom-right-radius: var(
-        --md-rounded-b,
-        var(--sm-rounded-b, var(--rounded-b))
-      );
-      border-bottom-left-radius: var(
-        --md-rounded-b,
-        var(--sm-rounded-b, var(--rounded-b))
-      );
+      border-bottom-right-radius: var(--md-rounded-b);
+      border-bottom-left-radius: var(--md-rounded-b);
     }
     .md\:rounded-l {
-      border-top-left-radius: var(
-        --md-rounded-l,
-        var(--sm-rounded-l, var(--rounded-l))
-      );
-      border-bottom-left-radius: var(
-        --md-rounded-l,
-        var(--sm-rounded-l, var(--rounded-l))
-      );
+      border-top-left-radius: var(--md-rounded-l);
+      border-bottom-left-radius: var(--md-rounded-l);
     }
     .md\:rounded-ss {
-      border-start-start-radius: var(
-        --md-rounded-ss,
-        var(--sm-rounded-ss, var(--rounded-ss))
-      );
+      border-start-start-radius: var(--md-rounded-ss);
     }
     .md\:rounded-se {
-      border-start-end-radius: var(
-        --md-rounded-se,
-        var(--sm-rounded-se, var(--rounded-se))
-      );
+      border-start-end-radius: var(--md-rounded-se);
     }
     .md\:rounded-ee {
-      border-end-end-radius: var(
-        --md-rounded-ee,
-        var(--sm-rounded-ee, var(--rounded-ee))
-      );
+      border-end-end-radius: var(--md-rounded-ee);
     }
     .md\:rounded-es {
-      border-end-start-radius: var(
-        --md-rounded-es,
-        var(--sm-rounded-es, var(--rounded-es))
-      );
+      border-end-start-radius: var(--md-rounded-es);
     }
     .md\:rounded-tl {
-      border-top-left-radius: var(
-        --md-rounded-tl,
-        var(--sm-rounded-tl, var(--rounded-tl))
-      );
+      border-top-left-radius: var(--md-rounded-tl);
     }
     .md\:rounded-tr {
-      border-top-right-radius: var(
-        --md-rounded-tr,
-        var(--sm-rounded-tr, var(--rounded-tr))
-      );
+      border-top-right-radius: var(--md-rounded-tr);
     }
     .md\:rounded-br {
-      border-bottom-right-radius: var(
-        --md-rounded-br,
-        var(--sm-rounded-br, var(--rounded-br))
-      );
+      border-bottom-right-radius: var(--md-rounded-br);
     }
     .md\:rounded-bl {
-      border-bottom-left-radius: var(
-        --md-rounded-bl,
-        var(--sm-rounded-bl, var(--rounded-bl))
-      );
+      border-bottom-left-radius: var(--md-rounded-bl);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:rounded {
-      border-radius: var(
-        --lg-rounded,
-        var(--md-rounded, var(--sm-rounded, var(--rounded)))
-      );
+      border-radius: var(--lg-rounded);
     }
     .lg\:rounded-s {
-      border-start-start-radius: var(
-        --lg-rounded-s,
-        var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-      );
-      border-end-start-radius: var(
-        --lg-rounded-s,
-        var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-      );
+      border-start-start-radius: var(--lg-rounded-s);
+      border-end-start-radius: var(--lg-rounded-s);
     }
     .lg\:rounded-e {
-      border-start-end-radius: var(
-        --lg-rounded-e,
-        var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-      );
-      border-end-end-radius: var(
-        --lg-rounded-e,
-        var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-      );
+      border-start-end-radius: var(--lg-rounded-e);
+      border-end-end-radius: var(--lg-rounded-e);
     }
     .lg\:rounded-t {
-      border-top-left-radius: var(
-        --lg-rounded-t,
-        var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-      );
-      border-top-right-radius: var(
-        --lg-rounded-t,
-        var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-      );
+      border-top-left-radius: var(--lg-rounded-t);
+      border-top-right-radius: var(--lg-rounded-t);
     }
     .lg\:rounded-r {
-      border-top-right-radius: var(
-        --lg-rounded-r,
-        var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-      );
-      border-bottom-right-radius: var(
-        --lg-rounded-r,
-        var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-      );
+      border-top-right-radius: var(--lg-rounded-r);
+      border-bottom-right-radius: var(--lg-rounded-r);
     }
     .lg\:rounded-b {
-      border-bottom-right-radius: var(
-        --lg-rounded-b,
-        var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-      );
-      border-bottom-left-radius: var(
-        --lg-rounded-b,
-        var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-      );
+      border-bottom-right-radius: var(--lg-rounded-b);
+      border-bottom-left-radius: var(--lg-rounded-b);
     }
     .lg\:rounded-l {
-      border-top-left-radius: var(
-        --lg-rounded-l,
-        var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-      );
-      border-bottom-left-radius: var(
-        --lg-rounded-l,
-        var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-      );
+      border-top-left-radius: var(--lg-rounded-l);
+      border-bottom-left-radius: var(--lg-rounded-l);
     }
     .lg\:rounded-ss {
-      border-start-start-radius: var(
-        --lg-rounded-ss,
-        var(--md-rounded-ss, var(--sm-rounded-ss, var(--rounded-ss)))
-      );
+      border-start-start-radius: var(--lg-rounded-ss);
     }
     .lg\:rounded-se {
-      border-start-end-radius: var(
-        --lg-rounded-se,
-        var(--md-rounded-se, var(--sm-rounded-se, var(--rounded-se)))
-      );
+      border-start-end-radius: var(--lg-rounded-se);
     }
     .lg\:rounded-ee {
-      border-end-end-radius: var(
-        --lg-rounded-ee,
-        var(--md-rounded-ee, var(--sm-rounded-ee, var(--rounded-ee)))
-      );
+      border-end-end-radius: var(--lg-rounded-ee);
     }
     .lg\:rounded-es {
-      border-end-start-radius: var(
-        --lg-rounded-es,
-        var(--md-rounded-es, var(--sm-rounded-es, var(--rounded-es)))
-      );
+      border-end-start-radius: var(--lg-rounded-es);
     }
     .lg\:rounded-tl {
-      border-top-left-radius: var(
-        --lg-rounded-tl,
-        var(--md-rounded-tl, var(--sm-rounded-tl, var(--rounded-tl)))
-      );
+      border-top-left-radius: var(--lg-rounded-tl);
     }
     .lg\:rounded-tr {
-      border-top-right-radius: var(
-        --lg-rounded-tr,
-        var(--md-rounded-tr, var(--sm-rounded-tr, var(--rounded-tr)))
-      );
+      border-top-right-radius: var(--lg-rounded-tr);
     }
     .lg\:rounded-br {
-      border-bottom-right-radius: var(
-        --lg-rounded-br,
-        var(--md-rounded-br, var(--sm-rounded-br, var(--rounded-br)))
-      );
+      border-bottom-right-radius: var(--lg-rounded-br);
     }
     .lg\:rounded-bl {
-      border-bottom-left-radius: var(
-        --lg-rounded-bl,
-        var(--md-rounded-bl, var(--sm-rounded-bl, var(--rounded-bl)))
-      );
+      border-bottom-left-radius: var(--lg-rounded-bl);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:rounded {
-      border-radius: var(
-        --xl-rounded,
-        var(--lg-rounded, var(--md-rounded, var(--sm-rounded, var(--rounded))))
-      );
+      border-radius: var(--xl-rounded);
     }
     .xl\:rounded-s {
-      border-start-start-radius: var(
-        --xl-rounded-s,
-        var(
-          --lg-rounded-s,
-          var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-        )
-      );
-      border-end-start-radius: var(
-        --xl-rounded-s,
-        var(
-          --lg-rounded-s,
-          var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-        )
-      );
+      border-start-start-radius: var(--xl-rounded-s);
+      border-end-start-radius: var(--xl-rounded-s);
     }
     .xl\:rounded-e {
-      border-start-end-radius: var(
-        --xl-rounded-e,
-        var(
-          --lg-rounded-e,
-          var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-        )
-      );
-      border-end-end-radius: var(
-        --xl-rounded-e,
-        var(
-          --lg-rounded-e,
-          var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-        )
-      );
+      border-start-end-radius: var(--xl-rounded-e);
+      border-end-end-radius: var(--xl-rounded-e);
     }
     .xl\:rounded-t {
-      border-top-left-radius: var(
-        --xl-rounded-t,
-        var(
-          --lg-rounded-t,
-          var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-        )
-      );
-      border-top-right-radius: var(
-        --xl-rounded-t,
-        var(
-          --lg-rounded-t,
-          var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-        )
-      );
+      border-top-left-radius: var(--xl-rounded-t);
+      border-top-right-radius: var(--xl-rounded-t);
     }
     .xl\:rounded-r {
-      border-top-right-radius: var(
-        --xl-rounded-r,
-        var(
-          --lg-rounded-r,
-          var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-        )
-      );
-      border-bottom-right-radius: var(
-        --xl-rounded-r,
-        var(
-          --lg-rounded-r,
-          var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-        )
-      );
+      border-top-right-radius: var(--xl-rounded-r);
+      border-bottom-right-radius: var(--xl-rounded-r);
     }
     .xl\:rounded-b {
-      border-bottom-right-radius: var(
-        --xl-rounded-b,
-        var(
-          --lg-rounded-b,
-          var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-        )
-      );
-      border-bottom-left-radius: var(
-        --xl-rounded-b,
-        var(
-          --lg-rounded-b,
-          var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-        )
-      );
+      border-bottom-right-radius: var(--xl-rounded-b);
+      border-bottom-left-radius: var(--xl-rounded-b);
     }
     .xl\:rounded-l {
-      border-top-left-radius: var(
-        --xl-rounded-l,
-        var(
-          --lg-rounded-l,
-          var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-        )
-      );
-      border-bottom-left-radius: var(
-        --xl-rounded-l,
-        var(
-          --lg-rounded-l,
-          var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-        )
-      );
+      border-top-left-radius: var(--xl-rounded-l);
+      border-bottom-left-radius: var(--xl-rounded-l);
     }
     .xl\:rounded-ss {
-      border-start-start-radius: var(
-        --xl-rounded-ss,
-        var(
-          --lg-rounded-ss,
-          var(--md-rounded-ss, var(--sm-rounded-ss, var(--rounded-ss)))
-        )
-      );
+      border-start-start-radius: var(--xl-rounded-ss);
     }
     .xl\:rounded-se {
-      border-start-end-radius: var(
-        --xl-rounded-se,
-        var(
-          --lg-rounded-se,
-          var(--md-rounded-se, var(--sm-rounded-se, var(--rounded-se)))
-        )
-      );
+      border-start-end-radius: var(--xl-rounded-se);
     }
     .xl\:rounded-ee {
-      border-end-end-radius: var(
-        --xl-rounded-ee,
-        var(
-          --lg-rounded-ee,
-          var(--md-rounded-ee, var(--sm-rounded-ee, var(--rounded-ee)))
-        )
-      );
+      border-end-end-radius: var(--xl-rounded-ee);
     }
     .xl\:rounded-es {
-      border-end-start-radius: var(
-        --xl-rounded-es,
-        var(
-          --lg-rounded-es,
-          var(--md-rounded-es, var(--sm-rounded-es, var(--rounded-es)))
-        )
-      );
+      border-end-start-radius: var(--xl-rounded-es);
     }
     .xl\:rounded-tl {
-      border-top-left-radius: var(
-        --xl-rounded-tl,
-        var(
-          --lg-rounded-tl,
-          var(--md-rounded-tl, var(--sm-rounded-tl, var(--rounded-tl)))
-        )
-      );
+      border-top-left-radius: var(--xl-rounded-tl);
     }
     .xl\:rounded-tr {
-      border-top-right-radius: var(
-        --xl-rounded-tr,
-        var(
-          --lg-rounded-tr,
-          var(--md-rounded-tr, var(--sm-rounded-tr, var(--rounded-tr)))
-        )
-      );
+      border-top-right-radius: var(--xl-rounded-tr);
     }
     .xl\:rounded-br {
-      border-bottom-right-radius: var(
-        --xl-rounded-br,
-        var(
-          --lg-rounded-br,
-          var(--md-rounded-br, var(--sm-rounded-br, var(--rounded-br)))
-        )
-      );
+      border-bottom-right-radius: var(--xl-rounded-br);
     }
     .xl\:rounded-bl {
-      border-bottom-left-radius: var(
-        --xl-rounded-bl,
-        var(
-          --lg-rounded-bl,
-          var(--md-rounded-bl, var(--sm-rounded-bl, var(--rounded-bl)))
-        )
-      );
+      border-bottom-left-radius: var(--xl-rounded-bl);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:rounded {
-      border-radius: var(
-        --\32xl-rounded,
-        var(
-          --xl-rounded,
-          var(
-            --lg-rounded,
-            var(--md-rounded, var(--sm-rounded, var(--rounded)))
-          )
-        )
-      );
+      border-radius: var(--\32xl-rounded);
     }
     .\32xl\:rounded-s {
-      border-start-start-radius: var(
-        --\32xl-rounded-s,
-        var(
-          --xl-rounded-s,
-          var(
-            --lg-rounded-s,
-            var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-          )
-        )
-      );
-      border-end-start-radius: var(
-        --\32xl-rounded-s,
-        var(
-          --xl-rounded-s,
-          var(
-            --lg-rounded-s,
-            var(--md-rounded-s, var(--sm-rounded-s, var(--rounded-s)))
-          )
-        )
-      );
+      border-start-start-radius: var(--\32xl-rounded-s);
+      border-end-start-radius: var(--\32xl-rounded-s);
     }
     .\32xl\:rounded-e {
-      border-start-end-radius: var(
-        --\32xl-rounded-e,
-        var(
-          --xl-rounded-e,
-          var(
-            --lg-rounded-e,
-            var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-          )
-        )
-      );
-      border-end-end-radius: var(
-        --\32xl-rounded-e,
-        var(
-          --xl-rounded-e,
-          var(
-            --lg-rounded-e,
-            var(--md-rounded-e, var(--sm-rounded-e, var(--rounded-e)))
-          )
-        )
-      );
+      border-start-end-radius: var(--\32xl-rounded-e);
+      border-end-end-radius: var(--\32xl-rounded-e);
     }
     .\32xl\:rounded-t {
-      border-top-left-radius: var(
-        --\32xl-rounded-t,
-        var(
-          --xl-rounded-t,
-          var(
-            --lg-rounded-t,
-            var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-          )
-        )
-      );
-      border-top-right-radius: var(
-        --\32xl-rounded-t,
-        var(
-          --xl-rounded-t,
-          var(
-            --lg-rounded-t,
-            var(--md-rounded-t, var(--sm-rounded-t, var(--rounded-t)))
-          )
-        )
-      );
+      border-top-left-radius: var(--\32xl-rounded-t);
+      border-top-right-radius: var(--\32xl-rounded-t);
     }
     .\32xl\:rounded-r {
-      border-top-right-radius: var(
-        --\32xl-rounded-r,
-        var(
-          --xl-rounded-r,
-          var(
-            --lg-rounded-r,
-            var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-          )
-        )
-      );
-      border-bottom-right-radius: var(
-        --\32xl-rounded-r,
-        var(
-          --xl-rounded-r,
-          var(
-            --lg-rounded-r,
-            var(--md-rounded-r, var(--sm-rounded-r, var(--rounded-r)))
-          )
-        )
-      );
+      border-top-right-radius: var(--\32xl-rounded-r);
+      border-bottom-right-radius: var(--\32xl-rounded-r);
     }
     .\32xl\:rounded-b {
-      border-bottom-right-radius: var(
-        --\32xl-rounded-b,
-        var(
-          --xl-rounded-b,
-          var(
-            --lg-rounded-b,
-            var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-          )
-        )
-      );
-      border-bottom-left-radius: var(
-        --\32xl-rounded-b,
-        var(
-          --xl-rounded-b,
-          var(
-            --lg-rounded-b,
-            var(--md-rounded-b, var(--sm-rounded-b, var(--rounded-b)))
-          )
-        )
-      );
+      border-bottom-right-radius: var(--\32xl-rounded-b);
+      border-bottom-left-radius: var(--\32xl-rounded-b);
     }
     .\32xl\:rounded-l {
-      border-top-left-radius: var(
-        --\32xl-rounded-l,
-        var(
-          --xl-rounded-l,
-          var(
-            --lg-rounded-l,
-            var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-          )
-        )
-      );
-      border-bottom-left-radius: var(
-        --\32xl-rounded-l,
-        var(
-          --xl-rounded-l,
-          var(
-            --lg-rounded-l,
-            var(--md-rounded-l, var(--sm-rounded-l, var(--rounded-l)))
-          )
-        )
-      );
+      border-top-left-radius: var(--\32xl-rounded-l);
+      border-bottom-left-radius: var(--\32xl-rounded-l);
     }
     .\32xl\:rounded-ss {
-      border-start-start-radius: var(
-        --\32xl-rounded-ss,
-        var(
-          --xl-rounded-ss,
-          var(
-            --lg-rounded-ss,
-            var(--md-rounded-ss, var(--sm-rounded-ss, var(--rounded-ss)))
-          )
-        )
-      );
+      border-start-start-radius: var(--\32xl-rounded-ss);
     }
     .\32xl\:rounded-se {
-      border-start-end-radius: var(
-        --\32xl-rounded-se,
-        var(
-          --xl-rounded-se,
-          var(
-            --lg-rounded-se,
-            var(--md-rounded-se, var(--sm-rounded-se, var(--rounded-se)))
-          )
-        )
-      );
+      border-start-end-radius: var(--\32xl-rounded-se);
     }
     .\32xl\:rounded-ee {
-      border-end-end-radius: var(
-        --\32xl-rounded-ee,
-        var(
-          --xl-rounded-ee,
-          var(
-            --lg-rounded-ee,
-            var(--md-rounded-ee, var(--sm-rounded-ee, var(--rounded-ee)))
-          )
-        )
-      );
+      border-end-end-radius: var(--\32xl-rounded-ee);
     }
     .\32xl\:rounded-es {
-      border-end-start-radius: var(
-        --\32xl-rounded-es,
-        var(
-          --xl-rounded-es,
-          var(
-            --lg-rounded-es,
-            var(--md-rounded-es, var(--sm-rounded-es, var(--rounded-es)))
-          )
-        )
-      );
+      border-end-start-radius: var(--\32xl-rounded-es);
     }
     .\32xl\:rounded-tl {
-      border-top-left-radius: var(
-        --\32xl-rounded-tl,
-        var(
-          --xl-rounded-tl,
-          var(
-            --lg-rounded-tl,
-            var(--md-rounded-tl, var(--sm-rounded-tl, var(--rounded-tl)))
-          )
-        )
-      );
+      border-top-left-radius: var(--\32xl-rounded-tl);
     }
     .\32xl\:rounded-tr {
-      border-top-right-radius: var(
-        --\32xl-rounded-tr,
-        var(
-          --xl-rounded-tr,
-          var(
-            --lg-rounded-tr,
-            var(--md-rounded-tr, var(--sm-rounded-tr, var(--rounded-tr)))
-          )
-        )
-      );
+      border-top-right-radius: var(--\32xl-rounded-tr);
     }
     .\32xl\:rounded-br {
-      border-bottom-right-radius: var(
-        --\32xl-rounded-br,
-        var(
-          --xl-rounded-br,
-          var(
-            --lg-rounded-br,
-            var(--md-rounded-br, var(--sm-rounded-br, var(--rounded-br)))
-          )
-        )
-      );
+      border-bottom-right-radius: var(--\32xl-rounded-br);
     }
     .\32xl\:rounded-bl {
-      border-bottom-left-radius: var(
-        --\32xl-rounded-bl,
-        var(
-          --xl-rounded-bl,
-          var(
-            --lg-rounded-bl,
-            var(--md-rounded-bl, var(--sm-rounded-bl, var(--rounded-bl)))
-          )
-        )
-      );
+      border-bottom-left-radius: var(--\32xl-rounded-bl);
     }
   }
 }

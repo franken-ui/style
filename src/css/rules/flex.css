@@ -1,50 +1,35 @@
 @layer styles {
-  /* Flex */
   .flex {
     flex: var(--flex);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:flex {
-      flex: var(--sm-flex, var(--flex));
+      flex: var(--sm-flex);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:flex {
-      flex: var(--md-flex, var(--sm-flex, var(--flex)));
+      flex: var(--md-flex);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:flex {
-      flex: var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))));
+      flex: var(--lg-flex);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:flex {
-      flex: var(
-        --xl-flex,
-        var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
-      );
+      flex: var(--xl-flex);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:flex {
-      flex: var(
-        --\32xl-flex,
-        var(
-          --xl-flex,
-          var(--lg-flex, var(--md-flex, var(--sm-flex, var(--flex))))
-        )
-      );
+      flex: var(--\32xl-flex);
     }
   }
 }

@@ -1,122 +1,35 @@
 @layer styles {
-  /* Flex-shrink */
-  .flex-shrink,
   .shrink {
-    flex-shrink: var(--flex-shrink, var(--shrink));
+    flex-shrink: var(--shrink);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
-    .sm\:flex-shrink,
     .sm\:shrink {
-      flex-shrink: var(
-        --sm-flex-shrink,
-        var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-      );
+      flex-shrink: var(--sm-shrink);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
-    .md\:flex-shrink,
     .md\:shrink {
-      flex-shrink: var(
-        --md-flex-shrink,
-        var(
-          --md-shrink,
-          var(
-            --sm-flex-shrink,
-            var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-          )
-        )
-      );
+      flex-shrink: var(--md-shrink);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
-    .lg\:flex-shrink,
     .lg\:shrink {
-      flex-shrink: var(
-        --lg-flex-shrink,
-        var(
-          --lg-shrink,
-          var(
-            --md-flex-shrink,
-            var(
-              --md-shrink,
-              var(
-                --sm-flex-shrink,
-                var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-              )
-            )
-          )
-        )
-      );
+      flex-shrink: var(--lg-shrink);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
-    .xl\:flex-shrink,
     .xl\:shrink {
-      flex-shrink: var(
-        --xl-flex-shrink,
-        var(
-          --xl-shrink,
-          var(
-            --lg-flex-shrink,
-            var(
-              --lg-shrink,
-              var(
-                --md-flex-shrink,
-                var(
-                  --md-shrink,
-                  var(
-                    --sm-flex-shrink,
-                    var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-shrink: var(--xl-shrink);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
-    .\32xl\:flex-shrink,
     .\32xl\:shrink {
-      flex-shrink: var(
-        --\32xl-flex-shrink,
-        var(
-          --\32xl-shrink,
-          var(
-            --xl-flex-shrink,
-            var(
-              --xl-shrink,
-              var(
-                --lg-flex-shrink,
-                var(
-                  --lg-shrink,
-                  var(
-                    --md-flex-shrink,
-                    var(
-                      --md-shrink,
-                      var(
-                        --sm-flex-shrink,
-                        var(--sm-shrink, var(--flex-shrink, var(--shrink)))
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-shrink: var(--\32xl-shrink);
     }
   }
 }

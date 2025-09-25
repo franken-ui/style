@@ -1,56 +1,35 @@
 @layer styles {
-  /* Columns */
   .columns {
     columns: var(--columns);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:columns {
-      columns: var(--sm-columns, var(--columns));
+      columns: var(--sm-columns);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:columns {
-      columns: var(--md-columns, var(--sm-columns, var(--columns)));
+      columns: var(--md-columns);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:columns {
-      columns: var(
-        --lg-columns,
-        var(--md-columns, var(--sm-columns, var(--columns)))
-      );
+      columns: var(--lg-columns);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:columns {
-      columns: var(
-        --xl-columns,
-        var(--lg-columns, var(--md-columns, var(--sm-columns, var(--columns))))
-      );
+      columns: var(--xl-columns);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:columns {
-      columns: var(
-        --\32xl-columns,
-        var(
-          --xl-columns,
-          var(
-            --lg-columns,
-            var(--md-columns, var(--sm-columns, var(--columns)))
-          )
-        )
-      );
+      columns: var(--\32xl-columns);
     }
   }
 }

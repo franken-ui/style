@@ -1,95 +1,53 @@
 @layer styles {
-  /* Right */
   .right {
     right: calc(var(--spacing) * var(--right));
   }
-
-  /* Arbitrary right with bracket selector */
   .\[right\] {
     right: var(--right);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:right {
-      right: calc(var(--spacing) * var(--sm-right, var(--right)));
+      right: calc(var(--spacing) * var(--sm-right));
     }
-
     .sm\:\[right\] {
-      right: var(--sm-right, var(--right));
+      right: var(--sm-right);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:right {
-      right: calc(
-        var(--spacing) * var(--md-right, var(--sm-right, var(--right)))
-      );
+      right: calc(var(--spacing) * var(--md-right));
     }
-
     .md\:\[right\] {
-      right: var(--md-right, var(--sm-right, var(--right)));
+      right: var(--md-right);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:right {
-      right: calc(
-        var(--spacing) *
-          var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-      );
+      right: calc(var(--spacing) * var(--lg-right));
     }
-
     .lg\:\[right\] {
-      right: var(--lg-right, var(--md-right, var(--sm-right, var(--right))));
+      right: var(--lg-right);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:right {
-      right: calc(
-        var(--spacing) *
-          var(
-            --xl-right,
-            var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-          )
-      );
+      right: calc(var(--spacing) * var(--xl-right));
     }
-
     .xl\:\[right\] {
-      right: var(
-        --xl-right,
-        var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-      );
+      right: var(--xl-right);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:right {
-      right: calc(
-        var(--spacing) *
-          var(
-            --\32xl-right,
-            var(
-              --xl-right,
-              var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-            )
-          )
-      );
+      right: calc(var(--spacing) * var(--\32xl-right));
     }
-
     .\32xl\:\[right\] {
-      right: var(
-        --\32xl-right,
-        var(
-          --xl-right,
-          var(--lg-right, var(--md-right, var(--sm-right, var(--right))))
-        )
-      );
+      right: var(--\32xl-right);
     }
   }
 }

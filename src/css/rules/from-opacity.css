@@ -1,0 +1,95 @@
+@layer styles {
+  .from\/o {
+    --tw-gradient-from: color-mix(
+      in oklab,
+      var(--from) var(--from-o, 100%),
+      transparent
+    );
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--sm-from) var(--sm-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--md-from) var(--md-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--lg-from) var(--lg-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--xl-from) var(--xl-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--\32xl-from) var(--\32xl-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+  }
+}

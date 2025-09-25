@@ -1,53 +1,35 @@
 @layer styles {
-  /* Aspect-ratio */
   .aspect {
     aspect-ratio: var(--aspect);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:aspect {
-      aspect-ratio: var(--sm-aspect, var(--aspect));
+      aspect-ratio: var(--sm-aspect);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:aspect {
-      aspect-ratio: var(--md-aspect, var(--sm-aspect, var(--aspect)));
+      aspect-ratio: var(--md-aspect);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:aspect {
-      aspect-ratio: var(
-        --lg-aspect,
-        var(--md-aspect, var(--sm-aspect, var(--aspect)))
-      );
+      aspect-ratio: var(--lg-aspect);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:aspect {
-      aspect-ratio: var(
-        --xl-aspect,
-        var(--lg-aspect, var(--md-aspect, var(--sm-aspect, var(--aspect))))
-      );
+      aspect-ratio: var(--xl-aspect);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:aspect {
-      aspect-ratio: var(
-        --\32xl-aspect,
-        var(
-          --xl-aspect,
-          var(--lg-aspect, var(--md-aspect, var(--sm-aspect, var(--aspect))))
-        )
-      );
+      aspect-ratio: var(--\32xl-aspect);
     }
   }
 }

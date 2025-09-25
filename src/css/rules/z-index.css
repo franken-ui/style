@@ -1,44 +1,35 @@
 @layer styles {
-  /* Z-index */
   .z {
     z-index: var(--z);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:z {
-      z-index: var(--sm-z, var(--z));
+      z-index: var(--sm-z);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:z {
-      z-index: var(--md-z, var(--sm-z, var(--z)));
+      z-index: var(--md-z);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:z {
-      z-index: var(--lg-z, var(--md-z, var(--sm-z, var(--z))));
+      z-index: var(--lg-z);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:z {
-      z-index: var(--xl-z, var(--lg-z, var(--md-z, var(--sm-z, var(--z)))));
+      z-index: var(--xl-z);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:z {
-      z-index: var(
-        --\32xl-z,
-        var(--xl-z, var(--lg-z, var(--md-z, var(--sm-z, var(--z)))))
-      );
+      z-index: var(--\32xl-z);
     }
   }
 }

@@ -1,6 +1,10 @@
 @layer styles {
-  .to {
-    --tw-gradient-to: var(--to);
+  .to\/o {
+    --tw-gradient-to: color-mix(
+      in oklab,
+      var(--to) var(--to-o, 100%),
+      transparent
+    );
     --tw-gradient-stops: var(
       --tw-gradient-to-stops,
       var(--tw-gradient-position),
@@ -10,8 +14,12 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:to {
-      --tw-gradient-to: var(--sm-to);
+    .sm\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--sm-to) var(--sm-to-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-to-stops,
         var(--tw-gradient-position),
@@ -22,8 +30,12 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:to {
-      --tw-gradient-to: var(--md-to);
+    .md\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--md-to) var(--md-to-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-to-stops,
         var(--tw-gradient-position),
@@ -34,8 +46,12 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:to {
-      --tw-gradient-to: var(--lg-to);
+    .lg\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--lg-to) var(--lg-to-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-to-stops,
         var(--tw-gradient-position),
@@ -46,8 +62,12 @@
   }
 
   @media (min-width: 80rem) {
-    .xl\:to {
-      --tw-gradient-to: var(--xl-to);
+    .xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--xl-to) var(--xl-to-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-to-stops,
         var(--tw-gradient-position),
@@ -58,8 +78,12 @@
   }
 
   @media (min-width: 96rem) {
-    .\32xl\:to {
-      --tw-gradient-to: var(--\32xl-to);
+    .\32xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--\32xl-to) var(--\32xl-to-o, 100%),
+        transparent
+      );
       --tw-gradient-stops: var(
         --tw-gradient-to-stops,
         var(--tw-gradient-position),

@@ -1,98 +1,53 @@
 @layer styles {
-  /* Max-width */
   .max-w {
     max-width: calc(var(--spacing) * var(--max-w));
   }
-
-  /* Arbitrary max-width with bracket selector */
   .\[max-w\] {
     max-width: var(--max-w);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
     .sm\:max-w {
-      max-width: calc(var(--spacing) * var(--sm-max-w, var(--max-w)));
+      max-width: calc(var(--spacing) * var(--sm-max-w));
     }
-
     .sm\:\[max-w\] {
-      max-width: var(--sm-max-w, var(--max-w));
+      max-width: var(--sm-max-w);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
     .md\:max-w {
-      max-width: calc(
-        var(--spacing) * var(--md-max-w, var(--sm-max-w, var(--max-w)))
-      );
+      max-width: calc(var(--spacing) * var(--md-max-w));
     }
-
     .md\:\[max-w\] {
-      max-width: var(--md-max-w, var(--sm-max-w, var(--max-w)));
+      max-width: var(--md-max-w);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
     .lg\:max-w {
-      max-width: calc(
-        var(--spacing) *
-          var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-      );
+      max-width: calc(var(--spacing) * var(--lg-max-w));
     }
-
     .lg\:\[max-w\] {
-      max-width: var(
-        --lg-max-w,
-        var(--md-max-w, var(--sm-max-w, var(--max-w)))
-      );
+      max-width: var(--lg-max-w);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
     .xl\:max-w {
-      max-width: calc(
-        var(--spacing) *
-          var(
-            --xl-max-w,
-            var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-          )
-      );
+      max-width: calc(var(--spacing) * var(--xl-max-w));
     }
-
     .xl\:\[max-w\] {
-      max-width: var(
-        --xl-max-w,
-        var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-      );
+      max-width: var(--xl-max-w);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
     .\32xl\:max-w {
-      max-width: calc(
-        var(--spacing) *
-          var(
-            --\32xl-max-w,
-            var(
-              --xl-max-w,
-              var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-            )
-          )
-      );
+      max-width: calc(var(--spacing) * var(--\32xl-max-w));
     }
-
     .\32xl\:\[max-w\] {
-      max-width: var(
-        --\32xl-max-w,
-        var(
-          --xl-max-w,
-          var(--lg-max-w, var(--md-max-w, var(--sm-max-w, var(--max-w))))
-        )
-      );
+      max-width: var(--\32xl-max-w);
     }
   }
 }

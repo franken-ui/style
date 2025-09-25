@@ -1,116 +1,35 @@
 @layer styles {
-  /* Flex-grow */
-  .flex-grow,
   .grow {
-    flex-grow: var(--flex-grow, var(--grow));
+    flex-grow: var(--grow);
   }
 
-  /* sm */
   @media (min-width: 40rem) {
-    .sm\:flex-grow,
     .sm\:grow {
-      flex-grow: var(
-        --sm-flex-grow,
-        var(--sm-grow, var(--flex-grow, var(--grow)))
-      );
+      flex-grow: var(--sm-grow);
     }
   }
 
-  /* md */
   @media (min-width: 48rem) {
-    .md\:flex-grow,
     .md\:grow {
-      flex-grow: var(
-        --md-flex-grow,
-        var(
-          --md-grow,
-          var(--sm-flex-grow, var(--sm-grow, var(--flex-grow, var(--grow))))
-        )
-      );
+      flex-grow: var(--md-grow);
     }
   }
 
-  /* lg */
   @media (min-width: 64rem) {
-    .lg\:flex-grow,
     .lg\:grow {
-      flex-grow: var(
-        --lg-flex-grow,
-        var(
-          --lg-grow,
-          var(
-            --md-flex-grow,
-            var(
-              --md-grow,
-              var(--sm-flex-grow, var(--sm-grow, var(--flex-grow, var(--grow))))
-            )
-          )
-        )
-      );
+      flex-grow: var(--lg-grow);
     }
   }
 
-  /* xl */
   @media (min-width: 80rem) {
-    .xl\:flex-grow,
     .xl\:grow {
-      flex-grow: var(
-        --xl-flex-grow,
-        var(
-          --xl-grow,
-          var(
-            --lg-flex-grow,
-            var(
-              --lg-grow,
-              var(
-                --md-flex-grow,
-                var(
-                  --md-grow,
-                  var(
-                    --sm-flex-grow,
-                    var(--sm-grow, var(--flex-grow, var(--grow)))
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-grow: var(--xl-grow);
     }
   }
 
-  /* 2xl */
   @media (min-width: 96rem) {
-    .\32xl\:flex-grow,
     .\32xl\:grow {
-      flex-grow: var(
-        --\32xl-flex-grow,
-        var(
-          --\32xl-grow,
-          var(
-            --xl-flex-grow,
-            var(
-              --xl-grow,
-              var(
-                --lg-flex-grow,
-                var(
-                  --lg-grow,
-                  var(
-                    --md-flex-grow,
-                    var(
-                      --md-grow,
-                      var(
-                        --sm-flex-grow,
-                        var(--sm-grow, var(--flex-grow, var(--grow)))
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
+      flex-grow: var(--\32xl-grow);
     }
   }
 }

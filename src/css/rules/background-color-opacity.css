@@ -11,7 +11,7 @@
     .sm\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--sm-bg, var(--bg)) var(--sm-bg-o, var(--bg-o, 100%)),
+        var(--sm-bg) var(--sm-bg-o, 100%),
         transparent
       );
     }
@@ -21,8 +21,7 @@
     .md\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--md-bg, var(--sm-bg, var(--bg)))
-          var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))),
+        var(--md-bg) var(--md-bg-o, 100%),
         transparent
       );
     }
@@ -32,8 +31,7 @@
     .lg\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg))))
-          var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%)))),
+        var(--lg-bg) var(--lg-bg-o, 100%),
         transparent
       );
     }
@@ -43,11 +41,7 @@
     .xl\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
-          var(
-            --xl-bg-o,
-            var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
-          ),
+        var(--xl-bg) var(--xl-bg-o, 100%),
         transparent
       );
     }
@@ -57,17 +51,7 @@
     .\32xl\:bg\/o {
       background-color: color-mix(
         in oklab,
-        var(
-            --\32xl-bg,
-            var(--xl-bg, var(--lg-bg, var(--md-bg, var(--sm-bg, var(--bg)))))
-          )
-          var(
-            --\32xl-bg-o,
-            var(
-              --xl-bg-o,
-              var(--lg-bg-o, var(--md-bg-o, var(--sm-bg-o, var(--bg-o, 100%))))
-            )
-          ),
+        var(--\32xl-bg) var(--\32xl-bg-o, 100%),
         transparent
       );
     }

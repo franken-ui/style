@@ -385,13 +385,13 @@
     --text-9xl: 8rem/1;
   }
 
-  @property --space-x-reverse {
+  @property --tw-space-x-reverse {
     syntax: "*";
     inherits: false;
     initial-value: 0;
   }
 
-  @property --space-y-reverse {
+  @property --tw-space-y-reverse {
     syntax: "*";
     inherits: false;
     initial-value: 0;
