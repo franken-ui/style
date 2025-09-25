@@ -2,10 +2,16 @@
   .color {
     color: var(--color);
   }
+  .dark .dark\:color {
+    color: var(--dark-color);
+  }
 
   @media (min-width: 40rem) {
     .sm\:color {
       color: var(--sm-color);
+    }
+    .dark .dark\:sm\:color {
+      color: var(--dark-sm-color);
     }
   }
 
@@ -13,11 +19,17 @@
     .md\:color {
       color: var(--md-color);
     }
+    .dark .dark\:md\:color {
+      color: var(--dark-md-color);
+    }
   }
 
   @media (min-width: 64rem) {
     .lg\:color {
       color: var(--lg-color);
+    }
+    .dark .dark\:lg\:color {
+      color: var(--dark-lg-color);
     }
   }
 
@@ -25,11 +37,17 @@
     .xl\:color {
       color: var(--xl-color);
     }
+    .dark .dark\:xl\:color {
+      color: var(--dark-xl-color);
+    }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:color {
       color: var(--\32xl-color);
+    }
+    .dark .dark\:2xl\:color {
+      color: var(--dark-2xl-color);
     }
   }
 }

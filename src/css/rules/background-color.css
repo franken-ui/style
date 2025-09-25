@@ -2,10 +2,16 @@
   .bg {
     background-color: var(--bg);
   }
+  .dark .dark\:bg {
+    background-color: var(--dark-bg);
+  }
 
   @media (min-width: 40rem) {
     .sm\:bg {
       background-color: var(--sm-bg);
+    }
+    .dark .dark\:sm\:bg {
+      background-color: var(--dark-sm-bg);
     }
   }
 
@@ -13,11 +19,17 @@
     .md\:bg {
       background-color: var(--md-bg);
     }
+    .dark .dark\:md\:bg {
+      background-color: var(--dark-md-bg);
+    }
   }
 
   @media (min-width: 64rem) {
     .lg\:bg {
       background-color: var(--lg-bg);
+    }
+    .dark .dark\:lg\:bg {
+      background-color: var(--dark-lg-bg);
     }
   }
 
@@ -25,11 +37,17 @@
     .xl\:bg {
       background-color: var(--xl-bg);
     }
+    .dark .dark\:xl\:bg {
+      background-color: var(--dark-xl-bg);
+    }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:bg {
       background-color: var(--\32xl-bg);
+    }
+    .dark .dark\:2xl\:bg {
+      background-color: var(--dark-2xl-bg);
     }
   }
 }

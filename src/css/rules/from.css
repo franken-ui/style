@@ -8,10 +8,28 @@
       var(--tw-gradient-from) var(--tw-gradient-from-position)
     );
   }
+  .dark .dark\:from {
+    --tw-gradient-from: var(--dark-from);
+    --tw-gradient-stops: var(
+      --tw-gradient-from-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position)
+    );
+  }
 
   @media (min-width: 40rem) {
     .sm\:from {
       --tw-gradient-from: var(--sm-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .dark .dark\:sm\:from {
+      --tw-gradient-from: var(--dark-sm-from);
       --tw-gradient-stops: var(
         --tw-gradient-from-stops,
         var(--tw-gradient-position),
@@ -31,11 +49,29 @@
         var(--tw-gradient-from) var(--tw-gradient-from-position)
       );
     }
+    .dark .dark\:md\:from {
+      --tw-gradient-from: var(--dark-md-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
   }
 
   @media (min-width: 64rem) {
     .lg\:from {
       --tw-gradient-from: var(--lg-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .dark .dark\:lg\:from {
+      --tw-gradient-from: var(--dark-lg-from);
       --tw-gradient-stops: var(
         --tw-gradient-from-stops,
         var(--tw-gradient-position),
@@ -55,11 +91,29 @@
         var(--tw-gradient-from) var(--tw-gradient-from-position)
       );
     }
+    .dark .dark\:xl\:from {
+      --tw-gradient-from: var(--dark-xl-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:from {
       --tw-gradient-from: var(--\32xl-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
+    .dark .dark\:2xl\:from {
+      --tw-gradient-from: var(--dark-2xl-from);
       --tw-gradient-stops: var(
         --tw-gradient-from-stops,
         var(--tw-gradient-position),

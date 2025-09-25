@@ -648,10 +648,20 @@
   .bg {
     background-color: var(--bg);
   }
+  .dark .dark\:bg {
+    background-color: var(--dark-bg);
+  }
   .bg\/o {
     background-color: color-mix(
       in oklab,
       var(--bg) var(--bg-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:bg\/o {
+    background-color: color-mix(
+      in oklab,
+      var(--dark-bg) var(--dark-bg-o, 100%),
       transparent
     );
   }
@@ -715,8 +725,18 @@
   .color {
     color: var(--color);
   }
+  .dark .dark\:color {
+    color: var(--dark-color);
+  }
   .color\/o {
     color: color-mix(in oklab, var(--color) var(--color-o, 100%), transparent);
+  }
+  .dark .dark\:color\/o {
+    color: color-mix(
+      in oklab,
+      var(--dark-color) var(--dark-color-o, 100%),
+      transparent
+    );
   }
   .columns {
     columns: var(--columns);
@@ -745,10 +765,32 @@
       var(--tw-gradient-from) var(--tw-gradient-from-position)
     );
   }
+  .dark .dark\:from {
+    --tw-gradient-from: var(--dark-from);
+    --tw-gradient-stops: var(
+      --tw-gradient-from-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position)
+    );
+  }
   .from\/o {
     --tw-gradient-from: color-mix(
       in oklab,
       var(--from) var(--from-o, 100%),
+      transparent
+    );
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .dark .dark\:from\/o {
+    --tw-gradient-from: color-mix(
+      in oklab,
+      var(--dark-from) var(--dark-from-o, 100%),
       transparent
     );
     --tw-gradient-stops: var(
@@ -1051,10 +1093,32 @@
       var(--tw-gradient-to) var(--tw-gradient-to-position)
     );
   }
+  .dark .dark\:to {
+    --tw-gradient-to: var(--dark-to);
+    --tw-gradient-stops: var(
+      --tw-gradient-to-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
   .to\/o {
     --tw-gradient-to: color-mix(
       in oklab,
       var(--to) var(--to-o, 100%),
+      transparent
+    );
+    --tw-gradient-stops: var(
+      --tw-gradient-to-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .dark .dark\:to\/o {
+    --tw-gradient-to: color-mix(
+      in oklab,
+      var(--dark-to) var(--dark-to-o, 100%),
       transparent
     );
     --tw-gradient-stops: var(
@@ -1082,10 +1146,32 @@
       var(--tw-gradient-to) var(--tw-gradient-to-position)
     );
   }
+  .dark .dark\:via {
+    --tw-gradient-via: var(--dark-via);
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-via) var(--tw-gradient-via-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
   .via\/o {
     --tw-gradient-via: color-mix(
       in oklab,
       var(--via) var(--via-o, 100%),
+      transparent
+    );
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-via) var(--tw-gradient-via-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .dark .dark\:via\/o {
+    --tw-gradient-via: color-mix(
+      in oklab,
+      var(--dark-via) var(--dark-via-o, 100%),
       transparent
     );
     --tw-gradient-stops: var(
@@ -1114,10 +1200,20 @@
     .sm\:bg {
       background-color: var(--sm-bg);
     }
+    .dark .dark\:sm\:bg {
+      background-color: var(--dark-sm-bg);
+    }
     .sm\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--sm-bg) var(--sm-bg-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--dark-sm-bg) var(--dark-sm-bg-o, 100%),
         transparent
       );
     }
@@ -1181,10 +1277,20 @@
     .sm\:color {
       color: var(--sm-color);
     }
+    .dark .dark\:sm\:color {
+      color: var(--dark-sm-color);
+    }
     .sm\:color\/o {
       color: color-mix(
         in oklab,
         var(--sm-color) var(--sm-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-sm-color) var(--dark-sm-color-o, 100%),
         transparent
       );
     }
@@ -1215,10 +1321,32 @@
         var(--tw-gradient-from) var(--tw-gradient-from-position)
       );
     }
+    .dark .dark\:sm\:from {
+      --tw-gradient-from: var(--dark-sm-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
     .sm\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
         var(--sm-from) var(--sm-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:sm\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--dark-sm-from) var(--dark-sm-from-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -1525,10 +1653,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:sm\:to {
+      --tw-gradient-to: var(--dark-sm-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .sm\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--sm-to) var(--sm-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:sm\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-sm-to) var(--dark-sm-to-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -1556,10 +1706,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:sm\:via {
+      --tw-gradient-via: var(--dark-sm-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .sm\:via\/o {
       --tw-gradient-via: color-mix(
         in oklab,
         var(--sm-via) var(--sm-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:sm\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-sm-via) var(--dark-sm-via-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -1589,10 +1761,20 @@
     .md\:bg {
       background-color: var(--md-bg);
     }
+    .dark .dark\:md\:bg {
+      background-color: var(--dark-md-bg);
+    }
     .md\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--md-bg) var(--md-bg-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--dark-md-bg) var(--dark-md-bg-o, 100%),
         transparent
       );
     }
@@ -1656,10 +1838,20 @@
     .md\:color {
       color: var(--md-color);
     }
+    .dark .dark\:md\:color {
+      color: var(--dark-md-color);
+    }
     .md\:color\/o {
       color: color-mix(
         in oklab,
         var(--md-color) var(--md-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-md-color) var(--dark-md-color-o, 100%),
         transparent
       );
     }
@@ -1690,10 +1882,32 @@
         var(--tw-gradient-from) var(--tw-gradient-from-position)
       );
     }
+    .dark .dark\:md\:from {
+      --tw-gradient-from: var(--dark-md-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
     .md\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
         var(--md-from) var(--md-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:md\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--dark-md-from) var(--dark-md-from-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2000,10 +2214,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:md\:to {
+      --tw-gradient-to: var(--dark-md-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .md\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--md-to) var(--md-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:md\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-md-to) var(--dark-md-to-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2031,10 +2267,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:md\:via {
+      --tw-gradient-via: var(--dark-md-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .md\:via\/o {
       --tw-gradient-via: color-mix(
         in oklab,
         var(--md-via) var(--md-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:md\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-md-via) var(--dark-md-via-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2064,10 +2322,20 @@
     .lg\:bg {
       background-color: var(--lg-bg);
     }
+    .dark .dark\:lg\:bg {
+      background-color: var(--dark-lg-bg);
+    }
     .lg\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--lg-bg) var(--lg-bg-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--dark-lg-bg) var(--dark-lg-bg-o, 100%),
         transparent
       );
     }
@@ -2131,10 +2399,20 @@
     .lg\:color {
       color: var(--lg-color);
     }
+    .dark .dark\:lg\:color {
+      color: var(--dark-lg-color);
+    }
     .lg\:color\/o {
       color: color-mix(
         in oklab,
         var(--lg-color) var(--lg-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-lg-color) var(--dark-lg-color-o, 100%),
         transparent
       );
     }
@@ -2165,10 +2443,32 @@
         var(--tw-gradient-from) var(--tw-gradient-from-position)
       );
     }
+    .dark .dark\:lg\:from {
+      --tw-gradient-from: var(--dark-lg-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
     .lg\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
         var(--lg-from) var(--lg-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:lg\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--dark-lg-from) var(--dark-lg-from-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2475,10 +2775,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:lg\:to {
+      --tw-gradient-to: var(--dark-lg-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .lg\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--lg-to) var(--lg-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:lg\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-lg-to) var(--dark-lg-to-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2506,10 +2828,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:lg\:via {
+      --tw-gradient-via: var(--dark-lg-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .lg\:via\/o {
       --tw-gradient-via: color-mix(
         in oklab,
         var(--lg-via) var(--lg-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:lg\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-lg-via) var(--dark-lg-via-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2539,10 +2883,20 @@
     .xl\:bg {
       background-color: var(--xl-bg);
     }
+    .dark .dark\:xl\:bg {
+      background-color: var(--dark-xl-bg);
+    }
     .xl\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--xl-bg) var(--xl-bg-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--dark-xl-bg) var(--dark-xl-bg-o, 100%),
         transparent
       );
     }
@@ -2606,10 +2960,20 @@
     .xl\:color {
       color: var(--xl-color);
     }
+    .dark .dark\:xl\:color {
+      color: var(--dark-xl-color);
+    }
     .xl\:color\/o {
       color: color-mix(
         in oklab,
         var(--xl-color) var(--xl-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-xl-color) var(--dark-xl-color-o, 100%),
         transparent
       );
     }
@@ -2640,10 +3004,32 @@
         var(--tw-gradient-from) var(--tw-gradient-from-position)
       );
     }
+    .dark .dark\:xl\:from {
+      --tw-gradient-from: var(--dark-xl-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
     .xl\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
         var(--xl-from) var(--xl-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:xl\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--dark-xl-from) var(--dark-xl-from-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2950,10 +3336,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:xl\:to {
+      --tw-gradient-to: var(--dark-xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .xl\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--xl-to) var(--xl-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-xl-to) var(--dark-xl-to-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -2981,10 +3389,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:xl\:via {
+      --tw-gradient-via: var(--dark-xl-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .xl\:via\/o {
       --tw-gradient-via: color-mix(
         in oklab,
         var(--xl-via) var(--xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-xl-via) var(--dark-xl-via-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -3014,10 +3444,20 @@
     .\32xl\:bg {
       background-color: var(--\32xl-bg);
     }
+    .dark .dark\:2xl\:bg {
+      background-color: var(--dark-2xl-bg);
+    }
     .\32xl\:bg\/o {
       background-color: color-mix(
         in oklab,
         var(--\32xl-bg) var(--\32xl-bg-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:bg\/o {
+      background-color: color-mix(
+        in oklab,
+        var(--dark-2xl-bg) var(--dark-2xl-bg-o, 100%),
         transparent
       );
     }
@@ -3081,10 +3521,20 @@
     .\32xl\:color {
       color: var(--\32xl-color);
     }
+    .dark .dark\:2xl\:color {
+      color: var(--dark-2xl-color);
+    }
     .\32xl\:color\/o {
       color: color-mix(
         in oklab,
         var(--\32xl-color) var(--\32xl-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-2xl-color) var(--dark-2xl-color-o, 100%),
         transparent
       );
     }
@@ -3115,10 +3565,32 @@
         var(--tw-gradient-from) var(--tw-gradient-from-position)
       );
     }
+    .dark .dark\:2xl\:from {
+      --tw-gradient-from: var(--dark-2xl-from);
+      --tw-gradient-stops: var(
+        --tw-gradient-from-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position)
+      );
+    }
     .\32xl\:from\/o {
       --tw-gradient-from: color-mix(
         in oklab,
         var(--\32xl-from) var(--\32xl-from-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:2xl\:from\/o {
+      --tw-gradient-from: color-mix(
+        in oklab,
+        var(--dark-2xl-from) var(--dark-2xl-from-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -3429,10 +3901,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:2xl\:to {
+      --tw-gradient-to: var(--dark-2xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .\32xl\:to\/o {
       --tw-gradient-to: color-mix(
         in oklab,
         var(--\32xl-to) var(--\32xl-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-to-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:2xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-2xl-to) var(--dark-2xl-to-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(
@@ -3460,10 +3954,32 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
+    .dark .dark\:2xl\:via {
+      --tw-gradient-via: var(--dark-2xl-via);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
     .\32xl\:via\/o {
       --tw-gradient-via: color-mix(
         in oklab,
         var(--\32xl-via) var(--\32xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:2xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-2xl-via) var(--dark-2xl-via-o, 100%),
         transparent
       );
       --tw-gradient-stops: var(

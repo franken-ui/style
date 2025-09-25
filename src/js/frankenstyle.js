@@ -1,20 +1,1033 @@
-/**
- * Interactive Styles Generator
- *
- * Usage:
- *  - Add `data-fs-interactive` to containers with stateful classes:
- *    <div class="bg:hover sm:p:focus md:color:active" data-fs-interactive>
- *  - Define CSS variables in inline styles or global CSS:
- *    style="--bg: red; --bg-hover: blue; --spacing: 0.25rem"
- *  - Place script at end of <body> or load with `defer`
- *
- * Behavior:
- *  - Generates CSS only for stateful classes (ending with :hover, :focus, etc.)
- *  - Applies whitelist transformations and variable suffixing
- *  - Creates dark variants for properties in `withDark` array
- *  - Builds graceful fallback chains for responsive breakpoints
- *  - Excludes certain variables from state suffixing (e.g., --spacing)
- */
+const rules = {
+  "aspect-ratio": [
+    {
+      selector: "aspect",
+      properties: ["aspect-ratio"],
+      arbitrary: true,
+    },
+  ],
+  "background-color": [
+    {
+      selector: "bg",
+      properties: ["background-color"],
+      arbitrary: true,
+      dark: true,
+    },
+  ],
+  "background-color-opacity": [
+    {
+      selector: "bg/o",
+      properties: ["background-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "bg",
+        "{var2}": "bg-o",
+      },
+      dark: true,
+    },
+  ],
+  "border-radius": [
+    {
+      selector: "rounded",
+      properties: ["border-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-s",
+      properties: ["border-start-start-radius", "border-end-start-radius"],
+      values: ["var({var})", "var({var2})"],
+      placeholders: {
+        "{var}": "rounded-s",
+        "{var2}": "rounded-s",
+      },
+    },
+    {
+      selector: "rounded-e",
+      properties: ["border-start-end-radius", "border-end-end-radius"],
+      values: ["var({var})", "var({var2})"],
+      placeholders: {
+        "{var}": "rounded-e",
+        "{var2}": "rounded-e",
+      },
+    },
+    {
+      selector: "rounded-t",
+      properties: ["border-top-left-radius", "border-top-right-radius"],
+      values: ["var({var})", "var({var2})"],
+      placeholders: {
+        "{var}": "rounded-t",
+        "{var2}": "rounded-t",
+      },
+    },
+    {
+      selector: "rounded-r",
+      properties: ["border-top-right-radius", "border-bottom-right-radius"],
+      values: ["var({var})", "var({var2})"],
+      placeholders: {
+        "{var}": "rounded-r",
+        "{var2}": "rounded-r",
+      },
+    },
+    {
+      selector: "rounded-b",
+      properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+      values: ["var({var})", "var({var2})"],
+      placeholders: {
+        "{var}": "rounded-b",
+        "{var2}": "rounded-b",
+      },
+    },
+    {
+      selector: "rounded-l",
+      properties: ["border-top-left-radius", "border-bottom-left-radius"],
+      values: ["var({var})", "var({var2})"],
+      placeholders: {
+        "{var}": "rounded-l",
+        "{var2}": "rounded-l",
+      },
+    },
+    {
+      selector: "rounded-ss",
+      properties: ["border-start-start-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-se",
+      properties: ["border-start-end-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-ee",
+      properties: ["border-end-end-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-es",
+      properties: ["border-end-start-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-tl",
+      properties: ["border-top-left-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-tr",
+      properties: ["border-top-right-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-br",
+      properties: ["border-bottom-right-radius"],
+      arbitrary: true,
+    },
+    {
+      selector: "rounded-bl",
+      properties: ["border-bottom-left-radius"],
+      arbitrary: true,
+    },
+  ],
+  bottom: [
+    {
+      selector: "bottom",
+      properties: ["bottom"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "bottom",
+      },
+    },
+    {
+      selector: "[bottom]",
+      properties: ["bottom"],
+      arbitrary: true,
+    },
+  ],
+  color: [
+    {
+      selector: "color",
+      properties: ["color"],
+      arbitrary: true,
+      dark: true,
+    },
+  ],
+  "color-opacity": [
+    {
+      selector: "color/o",
+      properties: ["color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "color",
+        "{var2}": "color-o",
+      },
+      dark: true,
+    },
+  ],
+  columns: [
+    {
+      selector: "columns",
+      properties: ["columns"],
+      arbitrary: true,
+    },
+  ],
+  "flex-basis": [
+    {
+      selector: "basis",
+      properties: ["flex-basis"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "basis",
+      },
+    },
+    {
+      selector: "[basis]",
+      properties: ["flex-basis"],
+      arbitrary: true,
+    },
+  ],
+  "flex-grow": [
+    {
+      selector: "grow",
+      properties: ["flex-grow"],
+      arbitrary: true,
+    },
+  ],
+  "flex-shrink": [
+    {
+      selector: "shrink",
+      properties: ["flex-shrink"],
+      arbitrary: true,
+    },
+  ],
+  flex: [
+    {
+      selector: "flex",
+      properties: ["flex"],
+      arbitrary: true,
+    },
+  ],
+  "from-position": [
+    {
+      selector: "from-position",
+      properties: ["--tw-gradient-from-position"],
+      arbitrary: true,
+    },
+  ],
+  from: [
+    {
+      selector: "from",
+      properties: ["--tw-gradient-from", "--tw-gradient-stops"],
+      values: [
+        "var({var})",
+        "var(--tw-gradient-from-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-from) var(--tw-gradient-from-position))",
+      ],
+      placeholders: {
+        "{var}": "from",
+      },
+      dark: true,
+    },
+  ],
+  "from-opacity": [
+    {
+      selector: "from/o",
+      properties: ["--tw-gradient-from", "--tw-gradient-stops"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+        "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      ],
+      placeholders: {
+        "{var}": "from",
+        "{var2}": "from-o",
+      },
+      dark: true,
+    },
+  ],
+  gap: [
+    {
+      selector: "gap",
+      properties: ["gap"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "gap",
+      },
+    },
+    {
+      selector: "gap-x",
+      properties: ["column-gap"],
+      values: ["calc(var(--spacing) * var({var}, var(--gap)))"],
+      placeholders: {
+        "{var}": "gap-x",
+      },
+    },
+    {
+      selector: "gap-y",
+      properties: ["row-gap"],
+      values: ["calc(var(--spacing) * var({var}, var(--gap)))"],
+      placeholders: {
+        "{var}": "gap-y",
+      },
+    },
+    {
+      selector: "[gap]",
+      properties: ["gap"],
+      arbitrary: true,
+    },
+    {
+      selector: "[gap-x]",
+      properties: ["column-gap"],
+      values: ["var({var}, var(--gap))"],
+      placeholders: {
+        "{var}": "gap-x",
+      },
+    },
+    {
+      selector: "[gap-y]",
+      properties: ["row-gap"],
+      values: ["var({var}, var(--gap))"],
+      placeholders: {
+        "{var}": "gap-y",
+      },
+    },
+  ],
+  "grid-column": [
+    {
+      selector: "col",
+      properties: ["grid-column"],
+      arbitrary: true,
+    },
+    {
+      selector: "col-span",
+      properties: ["grid-column"],
+      values: ["span var({var}) / span var({var2})"],
+      placeholders: {
+        "{var}": "col-span",
+        "{var2}": "col-span",
+      },
+    },
+    {
+      selector: "col-start",
+      properties: ["grid-column-start"],
+      arbitrary: true,
+    },
+    {
+      selector: "col-end",
+      properties: ["grid-column-end"],
+      arbitrary: true,
+    },
+  ],
+  "grid-row": [
+    {
+      selector: "row",
+      properties: ["grid-row"],
+      arbitrary: true,
+    },
+    {
+      selector: "row-span",
+      properties: ["grid-row"],
+      values: ["span var({var}) / span var({var2})"],
+      placeholders: {
+        "{var}": "row-span",
+        "{var2}": "row-span",
+      },
+    },
+    {
+      selector: "row-start",
+      properties: ["grid-row-start"],
+      arbitrary: true,
+    },
+    {
+      selector: "row-end",
+      properties: ["grid-row-end"],
+      arbitrary: true,
+    },
+  ],
+  "grid-template-columns": [
+    {
+      selector: "grid-cols",
+      properties: ["grid-template-columns"],
+      values: ["repeat(var({var}), minmax(0, 1fr))"],
+      placeholders: {
+        "{var}": "grid-cols",
+      },
+    },
+    {
+      selector: "[grid-cols]",
+      properties: ["grid-template-columns"],
+      arbitrary: true,
+    },
+  ],
+  "grid-template-rows": [
+    {
+      selector: "grid-rows",
+      properties: ["grid-template-rows"],
+      values: ["repeat(var({var}), minmax(0, 1fr))"],
+      placeholders: {
+        "{var}": "grid-rows",
+      },
+    },
+    {
+      selector: "[grid-rows]",
+      properties: ["grid-template-rows"],
+      arbitrary: true,
+    },
+  ],
+  height: [
+    {
+      selector: "h",
+      properties: ["height"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "h",
+      },
+    },
+    {
+      selector: "[h]",
+      properties: ["height"],
+      arbitrary: true,
+    },
+  ],
+  inset: [
+    {
+      selector: "inset",
+      properties: ["inset"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "inset",
+      },
+    },
+    {
+      selector: "start",
+      properties: ["inset-inline-start"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "start",
+      },
+    },
+    {
+      selector: "end",
+      properties: ["inset-inline-end"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "end",
+      },
+    },
+    {
+      selector: "inset-x",
+      properties: ["inset-inline"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "inset-x",
+      },
+    },
+    {
+      selector: "inset-y",
+      properties: ["inset-block"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "inset-y",
+      },
+    },
+    {
+      selector: "[inset]",
+      properties: ["inset"],
+      arbitrary: true,
+    },
+    {
+      selector: "[start]",
+      properties: ["inset-inline-start"],
+      arbitrary: true,
+    },
+    {
+      selector: "[end]",
+      properties: ["inset-inline-end"],
+      arbitrary: true,
+    },
+    {
+      selector: "[inset-x]",
+      properties: ["inset-inline"],
+      arbitrary: true,
+    },
+    {
+      selector: "[inset-y]",
+      properties: ["inset-block"],
+      arbitrary: true,
+    },
+  ],
+  left: [
+    {
+      selector: "left",
+      properties: ["left"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "left",
+      },
+    },
+    {
+      selector: "[left]",
+      properties: ["left"],
+      arbitrary: true,
+    },
+  ],
+  "letter-spacing": [
+    {
+      selector: "tracking",
+      properties: ["letter-spacing"],
+      arbitrary: true,
+    },
+  ],
+  "line-height": [
+    {
+      selector: "leading",
+      properties: ["line-height"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "leading",
+      },
+    },
+    {
+      selector: "[leading]",
+      properties: ["line-height"],
+      arbitrary: true,
+    },
+  ],
+  margin: [
+    {
+      selector: "m",
+      properties: ["margin"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "m",
+      },
+    },
+    {
+      selector: "[m]",
+      properties: ["margin"],
+      arbitrary: true,
+    },
+    {
+      selector: "mt",
+      properties: ["margin-top"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "mt",
+      },
+    },
+    {
+      selector: "[mt]",
+      properties: ["margin-top"],
+      arbitrary: true,
+    },
+    {
+      selector: "mb",
+      properties: ["margin-bottom"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "mb",
+      },
+    },
+    {
+      selector: "[mb]",
+      properties: ["margin-bottom"],
+      arbitrary: true,
+    },
+    {
+      selector: "ml",
+      properties: ["margin-left"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "ml",
+      },
+    },
+    {
+      selector: "[ml]",
+      properties: ["margin-left"],
+      arbitrary: true,
+    },
+    {
+      selector: "mr",
+      properties: ["margin-right"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "mr",
+      },
+    },
+    {
+      selector: "[mr]",
+      properties: ["margin-right"],
+      arbitrary: true,
+    },
+    {
+      selector: "ms",
+      properties: ["margin-inline-start"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "ms",
+      },
+    },
+    {
+      selector: "[ms]",
+      properties: ["margin-inline-start"],
+      arbitrary: true,
+    },
+    {
+      selector: "me",
+      properties: ["margin-inline-end"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "me",
+      },
+    },
+    {
+      selector: "[me]",
+      properties: ["margin-inline-end"],
+      arbitrary: true,
+    },
+    {
+      selector: "mx",
+      properties: ["margin-inline"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "mx",
+      },
+    },
+    {
+      selector: "[mx]",
+      properties: ["margin-inline"],
+      arbitrary: true,
+    },
+    {
+      selector: "my",
+      properties: ["margin-block"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "my",
+      },
+    },
+    {
+      selector: "[my]",
+      properties: ["margin-block"],
+      arbitrary: true,
+    },
+  ],
+  "max-height": [
+    {
+      selector: "max-h",
+      properties: ["max-height"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "max-h",
+      },
+    },
+    {
+      selector: "[max-h]",
+      properties: ["max-height"],
+      arbitrary: true,
+    },
+  ],
+  "max-width": [
+    {
+      selector: "max-w",
+      properties: ["max-width"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "max-w",
+      },
+    },
+    {
+      selector: "[max-w]",
+      properties: ["max-width"],
+      arbitrary: true,
+    },
+  ],
+  "min-height": [
+    {
+      selector: "min-h",
+      properties: ["min-height"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "min-h",
+      },
+    },
+    {
+      selector: "[min-h]",
+      properties: ["min-height"],
+      arbitrary: true,
+    },
+  ],
+  "min-width": [
+    {
+      selector: "min-w",
+      properties: ["min-width"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "min-w",
+      },
+    },
+    {
+      selector: "[min-w]",
+      properties: ["min-width"],
+      arbitrary: true,
+    },
+  ],
+  "object-position": [
+    {
+      selector: "object-position",
+      properties: ["object-position"],
+      arbitrary: true,
+    },
+  ],
+  order: [
+    {
+      selector: "order",
+      properties: ["order"],
+      arbitrary: true,
+    },
+  ],
+  padding: [
+    {
+      selector: "p",
+      properties: ["padding"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "p",
+      },
+    },
+    {
+      selector: "[p]",
+      properties: ["padding"],
+      arbitrary: true,
+    },
+    {
+      selector: "pt",
+      properties: ["padding-top"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "pt",
+      },
+    },
+    {
+      selector: "pb",
+      properties: ["padding-bottom"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "pb",
+      },
+    },
+    {
+      selector: "pl",
+      properties: ["padding-left"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "pl",
+      },
+    },
+    {
+      selector: "pr",
+      properties: ["padding-right"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "pr",
+      },
+    },
+    {
+      selector: "ps",
+      properties: ["padding-inline-start"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "ps",
+      },
+    },
+    {
+      selector: "pe",
+      properties: ["padding-inline-end"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "pe",
+      },
+    },
+    {
+      selector: "[pt]",
+      properties: ["padding-top"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "pt",
+      },
+    },
+    {
+      selector: "[pb]",
+      properties: ["padding-bottom"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "pb",
+      },
+    },
+    {
+      selector: "[pl]",
+      properties: ["padding-left"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "pl",
+      },
+    },
+    {
+      selector: "[pr]",
+      properties: ["padding-right"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "pr",
+      },
+    },
+    {
+      selector: "[ps]",
+      properties: ["padding-inline-start"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "ps",
+      },
+    },
+    {
+      selector: "[pe]",
+      properties: ["padding-inline-end"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "pe",
+      },
+    },
+    {
+      selector: "px",
+      properties: ["padding-inline"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "px",
+      },
+    },
+    {
+      selector: "py",
+      properties: ["padding-block"],
+      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+      placeholders: {
+        "{var}": "py",
+      },
+    },
+    {
+      selector: "[px]",
+      properties: ["padding-inline"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "px",
+      },
+    },
+    {
+      selector: "[py]",
+      properties: ["padding-block"],
+      values: ["var({var}, var(--p))"],
+      placeholders: {
+        "{var}": "py",
+      },
+    },
+  ],
+  right: [
+    {
+      selector: "right",
+      properties: ["right"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "right",
+      },
+    },
+    {
+      selector: "[right]",
+      properties: ["right"],
+      arbitrary: true,
+    },
+  ],
+  size: [
+    {
+      selector: "size",
+      properties: ["width", "height"],
+      values: [
+        "calc(var(--spacing) * var({var}))",
+        "calc(var(--spacing) * var({var2}))",
+      ],
+      placeholders: {
+        "{var}": "size",
+        "{var2}": "size",
+      },
+    },
+    {
+      selector: "[size]",
+      properties: ["width", "height"],
+      values: ["var({var})", "var({var2})"],
+      placeholders: {
+        "{var}": "size",
+        "{var2}": "size",
+      },
+    },
+  ],
+  space: [
+    {
+      selector: "space-x` > :not(:last-child)`",
+      properties: ["margin-inline-start", "margin-inline-end"],
+      values: [
+        "calc(var(--spacing) * var({var}) * var(--tw-space-x-reverse))",
+        "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-x-reverse)))",
+      ],
+      placeholders: {
+        "{var}": "space-x",
+        "{var2}": "space-x",
+      },
+    },
+    {
+      selector: "[space-x]` > :not(:last-child)`",
+      properties: ["margin-inline-start", "margin-inline-end"],
+      values: [
+        "calc(var({var}) * var(--tw-space-x-reverse))",
+        "calc(var({var2}) * (1 - var(--tw-space-x-reverse)))",
+      ],
+      placeholders: {
+        "{var}": "space-x",
+        "{var2}": "space-x",
+      },
+    },
+    {
+      selector: "space-y` > :not(:last-child)`",
+      properties: ["margin-block-start", "margin-block-end"],
+      values: [
+        "calc(var(--spacing) * var({var}) * var(--tw-space-y-reverse))",
+        "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-y-reverse)))",
+      ],
+      placeholders: {
+        "{var}": "space-y",
+        "{var2}": "space-y",
+      },
+    },
+    {
+      selector: "[space-y]` > :not(:last-child)`",
+      properties: ["margin-block-start", "margin-block-end"],
+      values: [
+        "calc(var({var}) * var(--tw-space-y-reverse))",
+        "calc(var({var2}) * (1 - var(--tw-space-y-reverse)))",
+      ],
+      placeholders: {
+        "{var}": "space-y",
+        "{var2}": "space-y",
+      },
+    },
+  ],
+  to: [
+    {
+      selector: "to",
+      properties: ["--tw-gradient-to", "--tw-gradient-stops"],
+      values: [
+        "var({var})",
+        "var(--tw-gradient-to-stops, var(--tw-gradient-position), var(--tw-gradient-to) var(--tw-gradient-to-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      ],
+      placeholders: {
+        "{var}": "to",
+      },
+      dark: true,
+    },
+  ],
+  "to-opacity": [
+    {
+      selector: "to/o",
+      properties: ["--tw-gradient-to", "--tw-gradient-stops"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+        "var(--tw-gradient-to-stops, var(--tw-gradient-position), var(--tw-gradient-to) var(--tw-gradient-to-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      ],
+      placeholders: {
+        "{var}": "to",
+        "{var2}": "to-o",
+      },
+      dark: true,
+    },
+  ],
+  "to-position": [
+    {
+      selector: "to-position",
+      properties: ["--tw-gradient-to-position"],
+      arbitrary: true,
+    },
+  ],
+  top: [
+    {
+      selector: "top",
+      properties: ["top"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "top",
+      },
+    },
+    {
+      selector: "[top]",
+      properties: ["top"],
+      arbitrary: true,
+    },
+  ],
+  via: [
+    {
+      selector: "via",
+      properties: ["--tw-gradient-via", "--tw-gradient-stops"],
+      values: [
+        "var({var})",
+        "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      ],
+      placeholders: {
+        "{var}": "via",
+        "{var2}": "via-o",
+      },
+      dark: true,
+    },
+  ],
+  "via-opacity": [
+    {
+      selector: "via/o",
+      properties: ["--tw-gradient-via", "--tw-gradient-stops"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+        "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      ],
+      placeholders: {
+        "{var}": "via",
+        "{var2}": "via-o",
+      },
+      dark: true,
+    },
+  ],
+  "via-position": [
+    {
+      selector: "via-position",
+      properties: ["--tw-gradient-via-position"],
+      arbitrary: true,
+    },
+  ],
+  width: [
+    {
+      selector: "w",
+      properties: ["width"],
+      values: ["calc(var(--spacing) * var({var}))"],
+      placeholders: {
+        "{var}": "w",
+      },
+    },
+    {
+      selector: "[w]",
+      properties: ["width"],
+      arbitrary: true,
+    },
+  ],
+  "z-index": [
+    {
+      selector: "z",
+      properties: ["z-index"],
+      arbitrary: true,
+    },
+  ],
+};
 
 (() => {
   const breakpoints = {
@@ -25,173 +1038,8 @@
     "2xl": "96rem",
   };
 
-  const aliases = {
-    w: "width",
-    h: "height",
-    m: "margin",
-    p: "padding",
-    "[p]": "padding",
-    bg: "background-color",
-    color: "color",
-  };
-
-  // Alias names that require calc(var(--spacing) * ...)
-  const withScaling = new Set(["m", "p"]);
-
-  // Which CSS properties should also get a dark variant
-  const withDark = new Set(["background-color", "color"]);
-
-  // CSS variables that should not be suffixed with state (e.g. --spacing)
-  const excludedVars = new Set(["spacing"]);
-
-  // Whitelist of base rules (these will be transformed when a state is requested)
-  const ruleTemplates = {
-    ".bg": {
-      "background-color":
-        "color-mix(in oklab,var(--bg-{s})var(--bg-opacity-{s},100%),transparent)",
-    },
-    ".color": {
-      color:
-        "color-mix(in oklab,var(--color-{s})var(--color-opacity-{s},100%),transparent)",
-    },
-  };
-
-  function extractCSSVariables(rules) {
-    const variables = new Set();
-
-    for (const ruleSet of Object.values(rules)) {
-      for (const value of Object.values(ruleSet)) {
-        // Match --variable-{s} patterns
-        const matches = value.match(/--([a-zA-Z][a-zA-Z0-9-]*)-\{s\}/g);
-
-        if (matches) {
-          matches.forEach((match) => {
-            const varName = match.replace("--", "").replace("-{s}", "");
-
-            if (!excludedVars.has(varName)) {
-              variables.add(varName);
-            }
-          });
-        }
-      }
-    }
-
-    return variables;
-  }
-
-  function buildVariableChain(bp, variable, order, i, dark = false) {
-    const darkPrefix = dark ? "dark-" : "";
-    const escapedBp = bp === "2xl" ? "\\32xl" : bp;
-
-    let chain = `var(--${darkPrefix}${escapedBp}-${variable}`;
-
-    // Add fallbacks for previous breakpoints
-    for (let j = i - 1; j >= 0; j--) {
-      const prev = order[j];
-      const escapedPrev = prev === "2xl" ? "\\32xl" : prev;
-
-      chain += `, var(--${darkPrefix}${escapedPrev}-${variable}`;
-    }
-
-    // Add base fallback
-    chain += `, var(--${variable})`;
-
-    // Close all the var() calls
-    chain += ")".repeat(i + 1);
-
-    return chain;
-  }
-
-  function expandRuleTemplates(base, breakpoints, withDark) {
-    const order = Object.keys(breakpoints);
-    const expanded = { ...base };
-    const cssVariables = extractCSSVariables(base);
-
-    for (const [selector, rules] of Object.entries(base)) {
-      // Generate breakpoint variants
-      for (let i = 0; i < order.length; i++) {
-        const bp = order[i];
-        const escapedBp = bp === "2xl" ? "\\32xl" : bp;
-        const bpSelector = `.${escapedBp}\\:${selector.slice(1)}`; // Remove leading dot and add colon
-
-        expanded[bpSelector] = {};
-
-        for (const [prop, value] of Object.entries(rules)) {
-          let expandedValue = value;
-
-          // Replace each CSS variable with its breakpoint chain
-          for (const variable of cssVariables) {
-            const pattern = new RegExp(`var\\(--${variable}-\\{s\\}\\)`, "g");
-
-            if (expandedValue.match(pattern)) {
-              const chain = buildVariableChain(bp, variable, order, i);
-
-              expandedValue = expandedValue.replace(pattern, chain);
-            }
-          }
-
-          expanded[bpSelector][prop] = expandedValue;
-
-          // Dark variant
-          if (withDark.has(prop)) {
-            const darkSelector = `.dark ${bpSelector}`;
-            let darkValue = value;
-
-            for (const variable of cssVariables) {
-              const pattern = new RegExp(`var\\(--${variable}-\\{s\\}\\)`, "g");
-
-              if (darkValue.match(pattern)) {
-                const darkChain = buildVariableChain(
-                  bp,
-                  variable,
-                  order,
-                  i,
-                  true
-                );
-                darkValue = darkValue.replace(pattern, darkChain);
-              }
-            }
-
-            if (!expanded[darkSelector]) {
-              expanded[darkSelector] = {};
-            }
-
-            expanded[darkSelector][prop] = darkValue;
-          }
-        }
-      }
-
-      // Base dark variants (no breakpoint)
-      for (const [prop, value] of Object.entries(rules)) {
-        if (withDark.has(prop)) {
-          let baseDarkValue = value;
-
-          for (const variable of cssVariables) {
-            const pattern = new RegExp(`var\\(--${variable}-\\{s\\}\\)`, "g");
-
-            if (baseDarkValue.match(pattern)) {
-              baseDarkValue = baseDarkValue.replace(
-                pattern,
-                `var(--dark-${variable}-{s}, var(--${variable}-{s}))`
-              );
-            }
-          }
-
-          const darkSelector = `.dark ${selector}`;
-
-          if (!expanded[darkSelector]) {
-            expanded[darkSelector] = {};
-          }
-
-          expanded[darkSelector][prop] = baseDarkValue;
-        }
-      }
-    }
-
-    return expanded;
-  }
-
-  const whitelist = expandRuleTemplates(ruleTemplates, breakpoints, withDark);
+  // Non-prefixable keys (similar to original)
+  const nonPrefixable = ["spacing", /^tw/];
 
   // Memoization cache for generated CSS rules
   const ruleCache = new Map();
@@ -200,357 +1048,308 @@
   let pendingMutations = new Set();
   let mutationBatchTimeout = null;
 
-  // --- helpers --------------------------------------------------------------
+  // Interactive states to look for
+  const interactiveStates = [
+    ":hover",
+    ":active",
+    ":focus",
+    ":focus-within",
+    ":target",
+    ":checked",
+    ":disabled",
+  ];
 
-  // Strip brackets from property alias for CSS variable names
-  function stripBrackets(propAlias) {
-    return propAlias.replace(/^\[|\]$/g, "");
+  // Check if a class has dark mode prefix
+  function isDarkModeClass(className) {
+    return className.startsWith("dark:");
   }
 
-  // Process a whitelist rule object (map of cssProp -> value string)
-  // Returns { updated, darkVariant } where darkVariant is null if no dark props present
-  function applyStateToWhitelist(ruleObj, state) {
-    const updated = {};
+  // Extract dark mode class name
+  function extractDarkModeClass(className) {
+    return className.replace(/^dark:/, "");
+  }
 
-    let needDark = false;
+  function escapeCssIdentifier(str) {
+    return str
+      .replace(/([ !"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g, "\\$1")
+      .replace(/^(\d)/, (_, d) => `\\3${d}`);
+  }
 
-    for (const [prop, val] of Object.entries(ruleObj)) {
-      // Simply replace {s} placeholder with actual state
-      updated[prop] = val.replace(/{s}/g, state);
+  function escapeSelectorWithBackticks(selector, prefix) {
+    const raw = prefix ? `${prefix}\\:${selector}` : selector;
 
-      if (withDark.has(prop)) {
-        needDark = true;
+    let out = "";
+    let inProtected = false;
+    let buffer = "";
+
+    for (let i = 0; i < raw.length; i++) {
+      const ch = raw[i];
+      if (ch === "`") {
+        if (inProtected) {
+          out += buffer;
+        } else {
+          out += escapeCssIdentifier(buffer);
+        }
+        inProtected = !inProtected;
+        buffer = "";
+      } else {
+        buffer += ch;
       }
     }
 
-    let darkVariant = null;
-
-    if (needDark) {
-      darkVariant = {};
-
-      for (const [prop, val] of Object.entries(ruleObj)) {
-        // Replace {s} and transform variables for dark mode
-        let darkVal = val.replace(/{s}/g, state);
-
-        // Transform var(--name) to var(--dark-name, var(--name))
-        darkVal = darkVal.replace(
-          /var\((--[a-z0-9-]+)([^)]*)\)/gi,
-          (match, varName, rest) => {
-            if (excludedVars.has(varName)) {
-              return match;
-            }
-
-            const darkName = `--dark-${varName.slice(2)}`;
-            return `var(${darkName}, var(${varName}${rest}))`;
-          }
-        );
-
-        darkVariant[prop] = darkVal;
-      }
-    }
-
-    return { updated, darkVariant };
+    out += inProtected ? buffer : escapeCssIdentifier(buffer);
+    return "." + out;
   }
 
-  // Build nested fallback chain for proper CSS variable cascading
-  function buildNestedFallback(varNames) {
-    if (varNames.length === 1) {
-      return `var(${varNames[0]})`;
-    }
+  function normalizeVarName(name, prefix) {
+    let base = name.replace(/[^a-zA-Z0-9_-]/g, "");
+    if (prefix) base = `${prefix}-${base}`;
+    return `--${escapeCssIdentifier(base)}`;
+  }
 
-    return varNames.reduceRight((acc, varName) =>
-      acc ? `var(${varName}, ${acc})` : `var(${varName})`
+  function shouldPrefix(key) {
+    return !nonPrefixable.some((rule) =>
+      typeof rule === "string" ? rule === key : rule.test(key)
     );
   }
 
-  // Build dark fallback chain with proper nesting
-  function buildDarkFallback(varNames, propAlias, state) {
-    const darkVars = varNames.map((varName) => {
-      const match = varName.match(/^--(.+?)(-\w+)?$/);
+  function generateArbitraryValue(selector, prefix) {
+    const varName = normalizeVarName(selector, prefix);
+    return `var(${varName})`;
+  }
 
-      if (!match) {
-        return varName;
+  /**
+   * Replace placeholders inside a value string with normalized var names
+   * (no `var()` wrapper — leave that to the value definition itself).
+   */
+  function resolvePlaceholders(
+    value,
+    placeholders,
+    baseClass,
+    state,
+    prefix,
+    isDark = false
+  ) {
+    let result = value;
+    for (const [ph, name] of Object.entries(placeholders || {})) {
+      const cleanState = state.replace(":", "");
+      const cleanName = name.replace(/[^a-zA-Z0-9-]/g, "");
+      const cleanPrefix = prefix ? prefix.replace(/[^a-zA-Z0-9-]/g, "") : "";
+
+      let varName;
+      if (prefix && isDark) {
+        varName = `--${cleanPrefix}-dark-${cleanName}-${cleanState}`;
+      } else if (prefix) {
+        varName = `--${cleanPrefix}-${cleanName}-${cleanState}`;
+      } else if (isDark) {
+        varName = `--dark-${cleanName}-${cleanState}`;
+      } else {
+        varName = `--${cleanName}-${cleanState}`;
       }
 
-      const [, base] = match;
+      result = result.replaceAll(ph, varName);
+    }
+    return result;
+  }
 
-      return `--dark-${base}-${state}`;
+  /**
+   * Generate CSS variable value for arbitrary rules
+   */
+  function generateArbitraryValue(baseClass, state, prefix, isDark = false) {
+    const cleanState = state.replace(":", "");
+    const cleanBaseClass = baseClass.replace(/[^a-zA-Z0-9-]/g, "");
+    const cleanPrefix = prefix ? prefix.replace(/[^a-zA-Z0-9-]/g, "") : "";
+
+    let varName;
+    if (prefix && isDark) {
+      varName = `--${cleanPrefix}-dark-${cleanBaseClass}-${cleanState}`;
+    } else if (prefix) {
+      varName = `--${cleanPrefix}-${cleanBaseClass}-${cleanState}`;
+    } else if (isDark) {
+      varName = `--dark-${cleanBaseClass}-${cleanState}`;
+    } else {
+      varName = `--${cleanBaseClass}-${cleanState}`;
+    }
+
+    return `var(${varName})`;
+  }
+
+  function findRuleConfig(baseClass) {
+    for (const [key, configs] of Object.entries(rules)) {
+      for (const config of configs) {
+        if (config.selector === baseClass) {
+          return config;
+        }
+      }
+    }
+    return null;
+  }
+
+  function buildRule(
+    baseClass,
+    fullClass,
+    state,
+    prefix = null,
+    isDark = false
+  ) {
+    // Find the rule configuration
+    const ruleConfig = findRuleConfig(baseClass);
+
+    // Create the CSS selector
+    let selector;
+    if (isDark) {
+      if (prefix) {
+        selector = `.dark .${escapeCssIdentifier(prefix)}\\:dark\\:${escapeCssIdentifier(fullClass)}${state}`;
+      } else {
+        selector = `.dark .dark\\:${escapeCssIdentifier(fullClass)}${state}`;
+      }
+    } else {
+      if (prefix) {
+        selector = `.${escapeCssIdentifier(prefix)}\\:${escapeCssIdentifier(fullClass)}${state}`;
+      } else {
+        selector = `.${escapeCssIdentifier(fullClass)}${state}`;
+      }
+    }
+
+    const declarations = {};
+
+    if (!ruleConfig) {
+      // Fallback: treat as arbitrary rule
+      const value = generateArbitraryValue(baseClass, state, prefix, isDark);
+      declarations[baseClass] = value;
+    } else {
+      const { properties, values, placeholders, arbitrary } = ruleConfig;
+      const props = Array.isArray(properties) ? properties : [properties];
+
+      props.forEach((prop, i) => {
+        let value;
+
+        if (arbitrary) {
+          // For arbitrary rules, generate CSS variable automatically
+          value = generateArbitraryValue(baseClass, state, prefix, isDark);
+        } else {
+          // Use existing logic for non-arbitrary rules
+          const rawValue = values[i] || values[0];
+          value = resolvePlaceholders(
+            rawValue,
+            placeholders,
+            baseClass,
+            state,
+            prefix,
+            isDark
+          );
+        }
+
+        declarations[prop] = value;
+      });
+    }
+
+    return { selector, declarations };
+  }
+
+  function extractInteractiveClasses(element) {
+    const classList = Array.from(element.classList);
+    const interactiveClasses = [];
+
+    classList.forEach((className) => {
+      interactiveStates.forEach((state) => {
+        if (className.endsWith(state)) {
+          const baseClass = className.slice(0, -state.length);
+
+          // Check if it's a dark mode class
+          const isDark = isDarkModeClass(baseClass);
+          const actualBaseClass = isDark
+            ? extractDarkModeClass(baseClass)
+            : baseClass;
+
+          interactiveClasses.push({
+            baseClass: actualBaseClass,
+            state,
+            fullClass: className,
+            isDark,
+          });
+        }
+      });
     });
 
-    const normalFallback = buildNestedFallback(varNames);
-
-    return darkVars.reduceRight((acc, darkVar) =>
-      acc ? `var(${darkVar}, ${acc})` : `var(${darkVar}, ${normalFallback})`
-    );
+    return interactiveClasses;
   }
 
-  // Escape class name to be safe in a CSS selector (uses CSS.escape when available)
-  function escapeClassName(name) {
-    if (typeof CSS !== "undefined" && typeof CSS.escape === "function") {
-      return CSS.escape(name);
-    }
+  function generateCssRules(interactiveClasses) {
+    const cssRules = [];
+    const processedRules = new Set();
 
-    // simple fallback: escape colons/spaces and handle leading digit
-    let s = name.replace(/[:\s]/g, "\\$&");
+    interactiveClasses.forEach(({ baseClass, state, fullClass, isDark }) => {
+      // Check if rule supports dark mode
+      const ruleConfig = findRuleConfig(baseClass);
+      if (isDark && (!ruleConfig || !ruleConfig.dark)) {
+        return; // Skip if rule doesn't support dark mode
+      }
 
-    if (/^\d/.test(s)) {
-      const hex = name.charCodeAt(0).toString(16);
+      const ruleKey = `${fullClass}${state}${isDark ? "-dark" : ""}`;
 
-      // format: \32 <rest>  (space is required after hex escape when the next char is hex)
-      s = `\\${hex} ${s.slice(1)}`;
-    }
+      if (ruleCache.has(ruleKey)) {
+        cssRules.push(ruleCache.get(ruleKey));
+        return;
+      }
 
-    return s;
+      if (processedRules.has(ruleKey)) return;
+      processedRules.add(ruleKey);
+
+      const rule = buildRule(baseClass, fullClass, state, null, isDark);
+      const css = `${rule.selector} { ${Object.entries(rule.declarations)
+        .map(([prop, val]) => `${prop}: ${val}`)
+        .join("; ")}; }`;
+
+      ruleCache.set(ruleKey, css);
+      cssRules.push(css);
+
+      // Generate responsive variants if applicable
+      if (shouldPrefix(baseClass)) {
+        Object.entries(breakpoints).forEach(([bp, size]) => {
+          const responsiveRuleKey = `${bp}:${ruleKey}`;
+          if (!ruleCache.has(responsiveRuleKey)) {
+            const responsiveRule = buildRule(
+              baseClass,
+              fullClass,
+              state,
+              bp,
+              isDark
+            );
+            const responsiveCss = `@media (min-width: ${size}) { ${responsiveRule.selector} { ${Object.entries(
+              responsiveRule.declarations
+            )
+              .map(([prop, val]) => `${prop}: ${val}`)
+              .join("; ")}; } }`;
+            ruleCache.set(responsiveRuleKey, responsiveCss);
+            cssRules.push(responsiveCss);
+          } else {
+            cssRules.push(ruleCache.get(responsiveRuleKey));
+          }
+        });
+      }
+    });
+
+    return cssRules;
   }
-
-  // Build CSS block from selector and rules with memoization
-  function buildCSSBlock(selector, ruleObj) {
-    const cacheKey = `${selector}:${JSON.stringify(ruleObj)}`;
-
-    if (ruleCache.has(cacheKey)) {
-      return ruleCache.get(cacheKey);
-    }
-
-    const block =
-      `${selector} {\n` +
-      Object.entries(ruleObj)
-        .map(([k, v]) => `  ${k}: ${v};`)
-        .join("\n") +
-      `\n}`;
-
-    // Limit cache size to prevent memory leaks
-    if (ruleCache.size > 1000) {
-      const firstKey = ruleCache.keys().next().value;
-      ruleCache.delete(firstKey);
-    }
-
-    ruleCache.set(cacheKey, block);
-    return block;
-  }
-
-  // Cached regex for better performance
-  const classPartsRegex = /\s+/;
-
-  // Generate unique key for class processing to enable memoization
-  function getClassProcessingKey(cls, breakpoint, propAlias, state) {
-    return `${cls}|${breakpoint || ""}|${propAlias}|${state}`;
-  }
-
-  // --- main generator ------------------------------------------------------
 
   function generateInteractiveStyles() {
     const nodes = document.querySelectorAll("[data-fs-interactive]");
+    const allInteractiveClasses = [];
 
     // Add CSS containment to interactive elements for better performance
     nodes.forEach((node) => {
       if (!node.style.contain) {
         node.style.contain = "style";
       }
+
+      const interactiveClasses = extractInteractiveClasses(node);
+      allInteractiveClasses.push(...interactiveClasses);
     });
 
-    // group blocks by breakpoint: 'base' (no media) or 'sm'|'md'|...
-    const blocksByBp = new Map();
-    const processedClasses = new Set(); // Track processed classes to avoid duplicates
-
-    const pushBlock = (bpKey, blockText) => {
-      if (!blocksByBp.has(bpKey)) blocksByBp.set(bpKey, []);
-
-      blocksByBp.get(bpKey).push(blockText);
-    };
-
-    nodes.forEach((node) => {
-      const classes = String(node.className || "")
-        .split(classPartsRegex)
-        .filter(Boolean);
-
-      classes.forEach((cls) => {
-        if (!cls.includes(":")) {
-          return;
-        }
-
-        const parts = cls.split(":").filter(Boolean);
-
-        if (parts.length < 2) {
-          return;
-        }
-
-        let state = null;
-        let breakpoint = null;
-        let propAlias = null;
-
-        if (parts.length === 2) {
-          // prop + state (e.g., bg:hover)
-          [propAlias, state] = parts;
-        } else if (parts.length === 3) {
-          // breakpoint + prop + state (e.g., sm:bg:hover)
-          [breakpoint, propAlias, state] = parts;
-        } else {
-          // more than 3 parts: take last as state, second last as prop, the rest as breakpoint join
-          state = parts.pop();
-          propAlias = parts.pop();
-          breakpoint = parts.length ? parts.join(":") : null;
-        }
-
-        // Only generate for classes that contain an actual state
-        if (!state || !propAlias) {
-          return;
-        }
-
-        // Skip if we've already processed this exact class configuration
-        const classKey = getClassProcessingKey(
-          cls,
-          breakpoint,
-          propAlias,
-          state
-        );
-
-        if (processedClasses.has(classKey)) {
-          return;
-        }
-
-        processedClasses.add(classKey);
-
-        const selectorKey = breakpoint
-          ? `.${breakpoint}.${propAlias}`
-          : `.${propAlias}`;
-        const whitelistRule = whitelist[selectorKey];
-        const darkWhitelistRule = whitelist[`.dark ${selectorKey}`];
-
-        if (whitelistRule) {
-          // Simply replace {s} placeholder with state
-          normalRuleObj = {};
-
-          for (const [prop, val] of Object.entries(whitelistRule)) {
-            normalRuleObj[prop] = val.replace(/{s}/g, state);
-          }
-
-          if (darkWhitelistRule) {
-            darkRuleObj = {};
-
-            for (const [prop, val] of Object.entries(darkWhitelistRule)) {
-              darkRuleObj[prop] = val.replace(/{s}/g, state);
-            }
-          }
-        } else {
-          // Build dynamic rule from aliases
-          const cssProp = aliases[propAlias];
-
-          if (!cssProp) {
-            console.warn(`Unknown property alias: ${propAlias} (from ${cls})`);
-            return;
-          }
-
-          // Check if this property should use scaling BEFORE cleaning brackets
-          // [p] = arbitrary/as-is, p = scaled with spacing
-          const shouldScale = withScaling.has(propAlias);
-
-          // Strip brackets from propAlias for CSS variable names
-          const cleanPropAlias = stripBrackets(propAlias);
-
-          // Build fallback chain - cascade from requested breakpoint down to base
-          let varNames;
-
-          if (breakpoint) {
-            const bpOrder = ["2xl", "xl", "lg", "md", "sm"];
-            const startIndex = bpOrder.indexOf(breakpoint);
-
-            if (startIndex === -1) {
-              // Unknown breakpoint, just use it as-is
-              varNames = [`--${breakpoint}-${cleanPropAlias}-${state}`];
-            } else {
-              // Build cascade from requested breakpoint down to base
-              varNames = [];
-
-              for (let i = startIndex; i < bpOrder.length; i++) {
-                varNames.push(`--${bpOrder[i]}-${cleanPropAlias}-${state}`);
-              }
-
-              // Add base variable as final fallback
-              varNames.push(`--${cleanPropAlias}-${state}`);
-            }
-          } else {
-            // No breakpoint - just use the base variable
-            varNames = [`--${cleanPropAlias}-${state}`];
-          }
-
-          const nestedFallback = buildNestedFallback(varNames);
-
-          if (shouldScale) {
-            normalRuleObj = {
-              [cssProp]: `calc(var(--spacing) * ${nestedFallback})`,
-            };
-          } else {
-            normalRuleObj = {
-              [cssProp]: nestedFallback,
-            };
-          }
-
-          if (withDark.has(cssProp)) {
-            const darkFallback = buildDarkFallback(
-              varNames,
-              cleanPropAlias,
-              state
-            );
-
-            darkRuleObj = {
-              [cssProp]: shouldScale
-                ? `calc(var(--spacing) * ${darkFallback})`
-                : darkFallback,
-            };
-          }
-        }
-
-        // Build selectors (use CSS.escape when available)
-        const esc = escapeClassName(cls);
-        const normalSelector = `.${esc}:${state}`;
-
-        // Compose CSS blocks
-        const normalBlock = buildCSSBlock(normalSelector, normalRuleObj);
-
-        if (darkRuleObj) {
-          const darkSelector = `.dark .${esc}:${state}`;
-          const darkBlock = buildCSSBlock(darkSelector, darkRuleObj);
-
-          if (breakpoint && breakpoints[breakpoint]) {
-            pushBlock(breakpoint, darkBlock);
-          } else {
-            pushBlock("base", darkBlock);
-          }
-        }
-
-        if (breakpoint && breakpoints[breakpoint]) {
-          pushBlock(breakpoint, normalBlock);
-        } else {
-          pushBlock("base", normalBlock);
-        }
-      });
-    });
-
-    // Assemble final CSS text with better memory management
-    const parts = [];
-    const baseBlocks = blocksByBp.get("base");
-
-    if (baseBlocks?.length) {
-      parts.push(...baseBlocks);
-    }
-
-    const orderedBps = ["sm", "md", "lg", "xl", "2xl"];
-
-    for (const bp of orderedBps) {
-      const arr = blocksByBp.get(bp);
-
-      if (!arr?.length) {
-        continue;
-      }
-
-      const joined = arr.join("\n\n");
-
-      parts.push(`@media (min-width: ${breakpoints[bp]}) {\n${joined}\n}`);
-    }
-
-    const finalCss = parts.length
-      ? "@layer styles {\n" + parts.join("\n\n") + "\n}"
-      : "";
+    // Generate CSS rules
+    const cssRules = generateCssRules(allInteractiveClasses);
+    const finalCss = cssRules.join("\n");
 
     // Use requestAnimationFrame for smoother DOM updates
     requestAnimationFrame(() => {
@@ -570,7 +1369,6 @@
   let scheduled = null;
 
   function handleMutations(mutationsList) {
-    // Batch mutations to avoid redundant processing
     let hasRelevantChanges = false;
 
     for (const mutation of mutationsList) {
@@ -585,12 +1383,10 @@
           hasRelevantChanges = true;
         }
       } else if (mutation.type === "childList") {
-        // Check if added/removed nodes have interactive attributes
         const checkNodes = [...mutation.addedNodes, ...mutation.removedNodes];
 
         for (const node of checkNodes) {
           if (node.nodeType === 1) {
-            // Element node
             if (
               node.hasAttribute?.("data-fs-interactive") ||
               node.querySelector?.("[data-fs-interactive]")
@@ -632,32 +1428,29 @@
       attributeFilter: ["data-fs-interactive", "class"],
     });
 
-    // Cleanup function for better memory management
     const cleanup = () => {
       observer.disconnect();
-
       if (scheduled) {
         clearTimeout(scheduled);
       }
-
       pendingMutations.clear();
       ruleCache.clear();
     };
 
-    // Handle page unload
     window.addEventListener("beforeunload", cleanup);
 
-    // expose for debugging with enhanced API
+    // Expose debugging API
     window.__fsInteractive = {
       regenerate: generateInteractiveStyles,
       stop: cleanup,
       clearCache: () => ruleCache.clear(),
       getCacheSize: () => ruleCache.size,
       getPendingMutations: () => Array.from(pendingMutations),
+      getRuleCache: () => ruleCache,
+      getBreakpoints: () => breakpoints,
     };
   }
 
-  // Run on DOM ready
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {

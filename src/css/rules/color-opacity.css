@@ -2,12 +2,26 @@
   .color\/o {
     color: color-mix(in oklab, var(--color) var(--color-o, 100%), transparent);
   }
+  .dark .dark\:color\/o {
+    color: color-mix(
+      in oklab,
+      var(--dark-color) var(--dark-color-o, 100%),
+      transparent
+    );
+  }
 
   @media (min-width: 40rem) {
     .sm\:color\/o {
       color: color-mix(
         in oklab,
         var(--sm-color) var(--sm-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-sm-color) var(--dark-sm-color-o, 100%),
         transparent
       );
     }
@@ -21,6 +35,13 @@
         transparent
       );
     }
+    .dark .dark\:md\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-md-color) var(--dark-md-color-o, 100%),
+        transparent
+      );
+    }
   }
 
   @media (min-width: 64rem) {
@@ -28,6 +49,13 @@
       color: color-mix(
         in oklab,
         var(--lg-color) var(--lg-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-lg-color) var(--dark-lg-color-o, 100%),
         transparent
       );
     }
@@ -41,6 +69,13 @@
         transparent
       );
     }
+    .dark .dark\:xl\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-xl-color) var(--dark-xl-color-o, 100%),
+        transparent
+      );
+    }
   }
 
   @media (min-width: 96rem) {
@@ -48,6 +83,13 @@
       color: color-mix(
         in oklab,
         var(--\32xl-color) var(--\32xl-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:color\/o {
+      color: color-mix(
+        in oklab,
+        var(--dark-2xl-color) var(--dark-2xl-color-o, 100%),
         transparent
       );
     }
