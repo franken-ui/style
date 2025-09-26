@@ -1,0 +1,101 @@
+@layer styles {
+  .outline\/o {
+    outline-color: color-mix(
+      in oklab,
+      var(--outline) var(--outline-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:outline\/o {
+    outline-color: color-mix(
+      in oklab,
+      var(--dark-outline) var(--dark-outline-o, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--sm-outline) var(--sm-outline-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--dark-sm-outline) var(--dark-sm-outline-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--md-outline) var(--md-outline-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--dark-md-outline) var(--dark-md-outline-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--lg-outline) var(--lg-outline-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--dark-lg-outline) var(--dark-lg-outline-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--xl-outline) var(--xl-outline-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--dark-xl-outline) var(--dark-xl-outline-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--\32xl-outline) var(--\32xl-outline-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:outline\/o {
+      outline-color: color-mix(
+        in oklab,
+        var(--dark-2xl-outline) var(--dark-2xl-outline-o, 100%),
+        transparent
+      );
+    }
+  }
+}

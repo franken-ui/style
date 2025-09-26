@@ -1027,6 +1027,255 @@ const rules = {
       arbitrary: true,
     },
   ],
+  "border-width": [
+    {
+      selector: "border-w",
+      properties: ["border-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-t-w",
+      properties: ["border-top-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-r-w",
+      properties: ["border-right-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-b-w",
+      properties: ["border-bottom-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-l-w",
+      properties: ["border-left-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-s-w",
+      properties: ["border-inline-start-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-e-w",
+      properties: ["border-inline-end-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-x-w",
+      properties: ["border-inline-width"],
+      arbitrary: true,
+    },
+    {
+      selector: "border-y-w",
+      properties: ["border-block-width"],
+      arbitrary: true,
+    },
+  ],
+  "border-color": [
+    {
+      selector: "border",
+      properties: ["border-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-t",
+      properties: ["border-top-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-r",
+      properties: ["border-right-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-b",
+      properties: ["border-bottom-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-l",
+      properties: ["border-left-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-s",
+      properties: ["border-inline-start-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-e",
+      properties: ["border-inline-end-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-x",
+      properties: ["border-inline-color"],
+      arbitrary: true,
+      dark: true,
+    },
+    {
+      selector: "border-y",
+      properties: ["border-block-color"],
+      arbitrary: true,
+      dark: true,
+    },
+  ],
+  "border-color-opacity": [
+    {
+      selector: "border/o",
+      properties: ["border-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border",
+        "{var2}": "border-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-t/o",
+      properties: ["border-top-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-t",
+        "{var2}": "border-t-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-r/o",
+      properties: ["border-right-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-r",
+        "{var2}": "border-r-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-b/o",
+      properties: ["border-bottom-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-b",
+        "{var2}": "border-b-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-l/o",
+      properties: ["border-left-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-l",
+        "{var2}": "border-l-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-s/o",
+      properties: ["border-inline-start-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-s",
+        "{var2}": "border-s-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-e/o",
+      properties: ["border-inline-end-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-e",
+        "{var2}": "border-e-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-x/o",
+      properties: ["border-inline-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-x",
+        "{var2}": "border-x-o",
+      },
+      dark: true,
+    },
+    {
+      selector: "border-y/o",
+      properties: ["border-block-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "border-y",
+        "{var2}": "border-y-o",
+      },
+      dark: true,
+    },
+  ],
+  "outline-width": [
+    {
+      selector: "outline-w",
+      properties: ["outline-width"],
+      arbitrary: true,
+    },
+  ],
+  "outline-offset": [
+    {
+      selector: "outline-offset",
+      properties: ["outline-offset"],
+      arbitrary: true,
+    },
+  ],
+  "outline-color": [
+    {
+      selector: "outline",
+      properties: ["outline-color"],
+      arbitrary: true,
+      dark: true,
+    },
+  ],
+  "outline-color-opacity": [
+    {
+      selector: "outline/o",
+      properties: ["outline-color"],
+      values: [
+        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      ],
+      placeholders: {
+        "{var}": "outline",
+        "{var2}": "outline-o",
+      },
+      dark: true,
+    },
+  ],
 };
 
 (() => {

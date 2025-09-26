@@ -1,0 +1,53 @@
+@layer styles {
+  .outline {
+    outline-color: var(--outline);
+  }
+  .dark .dark\:outline {
+    outline-color: var(--dark-outline);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:outline {
+      outline-color: var(--sm-outline);
+    }
+    .dark .dark\:sm\:outline {
+      outline-color: var(--dark-sm-outline);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:outline {
+      outline-color: var(--md-outline);
+    }
+    .dark .dark\:md\:outline {
+      outline-color: var(--dark-md-outline);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:outline {
+      outline-color: var(--lg-outline);
+    }
+    .dark .dark\:lg\:outline {
+      outline-color: var(--dark-lg-outline);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:outline {
+      outline-color: var(--xl-outline);
+    }
+    .dark .dark\:xl\:outline {
+      outline-color: var(--dark-xl-outline);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:outline {
+      outline-color: var(--\32xl-outline);
+    }
+    .dark .dark\:2xl\:outline {
+      outline-color: var(--dark-2xl-outline);
+    }
+  }
+}

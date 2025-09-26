@@ -1,0 +1,35 @@
+@layer styles {
+  .outline-w {
+    outline-width: var(--outline-w);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:outline-w {
+      outline-width: var(--sm-outline-w);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:outline-w {
+      outline-width: var(--md-outline-w);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:outline-w {
+      outline-width: var(--lg-outline-w);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:outline-w {
+      outline-width: var(--xl-outline-w);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:outline-w {
+      outline-width: var(--\32xl-outline-w);
+    }
+  }
+}

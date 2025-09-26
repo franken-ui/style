@@ -1,0 +1,773 @@
+@layer styles {
+  .border\/o {
+    border-color: color-mix(
+      in oklab,
+      var(--border) var(--border-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border\/o {
+    border-color: color-mix(
+      in oklab,
+      var(--dark-border) var(--dark-border-o, 100%),
+      transparent
+    );
+  }
+  .border-t\/o {
+    border-top-color: color-mix(
+      in oklab,
+      var(--border-t) var(--border-t-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-t\/o {
+    border-top-color: color-mix(
+      in oklab,
+      var(--dark-border-t) var(--dark-border-t-o, 100%),
+      transparent
+    );
+  }
+  .border-r\/o {
+    border-right-color: color-mix(
+      in oklab,
+      var(--border-r) var(--border-r-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-r\/o {
+    border-right-color: color-mix(
+      in oklab,
+      var(--dark-border-r) var(--dark-border-r-o, 100%),
+      transparent
+    );
+  }
+  .border-b\/o {
+    border-bottom-color: color-mix(
+      in oklab,
+      var(--border-b) var(--border-b-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-b\/o {
+    border-bottom-color: color-mix(
+      in oklab,
+      var(--dark-border-b) var(--dark-border-b-o, 100%),
+      transparent
+    );
+  }
+  .border-l\/o {
+    border-left-color: color-mix(
+      in oklab,
+      var(--border-l) var(--border-l-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-l\/o {
+    border-left-color: color-mix(
+      in oklab,
+      var(--dark-border-l) var(--dark-border-l-o, 100%),
+      transparent
+    );
+  }
+  .border-s\/o {
+    border-inline-start-color: color-mix(
+      in oklab,
+      var(--border-s) var(--border-s-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-s\/o {
+    border-inline-start-color: color-mix(
+      in oklab,
+      var(--dark-border-s) var(--dark-border-s-o, 100%),
+      transparent
+    );
+  }
+  .border-e\/o {
+    border-inline-end-color: color-mix(
+      in oklab,
+      var(--border-e) var(--border-e-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-e\/o {
+    border-inline-end-color: color-mix(
+      in oklab,
+      var(--dark-border-e) var(--dark-border-e-o, 100%),
+      transparent
+    );
+  }
+  .border-x\/o {
+    border-inline-color: color-mix(
+      in oklab,
+      var(--border-x) var(--border-x-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-x\/o {
+    border-inline-color: color-mix(
+      in oklab,
+      var(--dark-border-x) var(--dark-border-x-o, 100%),
+      transparent
+    );
+  }
+  .border-y\/o {
+    border-block-color: color-mix(
+      in oklab,
+      var(--border-y) var(--border-y-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:border-y\/o {
+    border-block-color: color-mix(
+      in oklab,
+      var(--dark-border-y) var(--dark-border-y-o, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--sm-border) var(--sm-border-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--dark-sm-border) var(--dark-sm-border-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--sm-border-t) var(--sm-border-t-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-t) var(--dark-sm-border-t-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--sm-border-r) var(--sm-border-r-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-r) var(--dark-sm-border-r-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--sm-border-b) var(--sm-border-b-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-b) var(--dark-sm-border-b-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--sm-border-l) var(--sm-border-l-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-l) var(--dark-sm-border-l-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--sm-border-s) var(--sm-border-s-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-s) var(--dark-sm-border-s-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--sm-border-e) var(--sm-border-e-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-e) var(--dark-sm-border-e-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--sm-border-x) var(--sm-border-x-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-x) var(--dark-sm-border-x-o, 100%),
+        transparent
+      );
+    }
+    .sm\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--sm-border-y) var(--sm-border-y-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--dark-sm-border-y) var(--dark-sm-border-y-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--md-border) var(--md-border-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--dark-md-border) var(--dark-md-border-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--md-border-t) var(--md-border-t-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--dark-md-border-t) var(--dark-md-border-t-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--md-border-r) var(--md-border-r-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--dark-md-border-r) var(--dark-md-border-r-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--md-border-b) var(--md-border-b-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--dark-md-border-b) var(--dark-md-border-b-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--md-border-l) var(--md-border-l-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--dark-md-border-l) var(--dark-md-border-l-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--md-border-s) var(--md-border-s-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--dark-md-border-s) var(--dark-md-border-s-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--md-border-e) var(--md-border-e-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--dark-md-border-e) var(--dark-md-border-e-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--md-border-x) var(--md-border-x-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--dark-md-border-x) var(--dark-md-border-x-o, 100%),
+        transparent
+      );
+    }
+    .md\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--md-border-y) var(--md-border-y-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--dark-md-border-y) var(--dark-md-border-y-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--lg-border) var(--lg-border-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--dark-lg-border) var(--dark-lg-border-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--lg-border-t) var(--lg-border-t-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-t) var(--dark-lg-border-t-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--lg-border-r) var(--lg-border-r-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-r) var(--dark-lg-border-r-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--lg-border-b) var(--lg-border-b-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-b) var(--dark-lg-border-b-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--lg-border-l) var(--lg-border-l-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-l) var(--dark-lg-border-l-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--lg-border-s) var(--lg-border-s-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-s) var(--dark-lg-border-s-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--lg-border-e) var(--lg-border-e-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-e) var(--dark-lg-border-e-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--lg-border-x) var(--lg-border-x-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-x) var(--dark-lg-border-x-o, 100%),
+        transparent
+      );
+    }
+    .lg\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--lg-border-y) var(--lg-border-y-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--dark-lg-border-y) var(--dark-lg-border-y-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--xl-border) var(--xl-border-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--dark-xl-border) var(--dark-xl-border-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--xl-border-t) var(--xl-border-t-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-t) var(--dark-xl-border-t-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--xl-border-r) var(--xl-border-r-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-r) var(--dark-xl-border-r-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--xl-border-b) var(--xl-border-b-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-b) var(--dark-xl-border-b-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--xl-border-l) var(--xl-border-l-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-l) var(--dark-xl-border-l-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--xl-border-s) var(--xl-border-s-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-s) var(--dark-xl-border-s-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--xl-border-e) var(--xl-border-e-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-e) var(--dark-xl-border-e-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--xl-border-x) var(--xl-border-x-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-x) var(--dark-xl-border-x-o, 100%),
+        transparent
+      );
+    }
+    .xl\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--xl-border-y) var(--xl-border-y-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--dark-xl-border-y) var(--dark-xl-border-y-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--\32xl-border) var(--\32xl-border-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border\/o {
+      border-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border) var(--dark-2xl-border-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--\32xl-border-t) var(--\32xl-border-t-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-t\/o {
+      border-top-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-t) var(--dark-2xl-border-t-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--\32xl-border-r) var(--\32xl-border-r-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-r\/o {
+      border-right-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-r) var(--dark-2xl-border-r-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--\32xl-border-b) var(--\32xl-border-b-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-b\/o {
+      border-bottom-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-b) var(--dark-2xl-border-b-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--\32xl-border-l) var(--\32xl-border-l-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-l\/o {
+      border-left-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-l) var(--dark-2xl-border-l-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--\32xl-border-s) var(--\32xl-border-s-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-s\/o {
+      border-inline-start-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-s) var(--dark-2xl-border-s-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--\32xl-border-e) var(--\32xl-border-e-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-e\/o {
+      border-inline-end-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-e) var(--dark-2xl-border-e-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--\32xl-border-x) var(--\32xl-border-x-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-x\/o {
+      border-inline-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-x) var(--dark-2xl-border-x-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--\32xl-border-y) var(--\32xl-border-y-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:border-y\/o {
+      border-block-color: color-mix(
+        in oklab,
+        var(--dark-2xl-border-y) var(--dark-2xl-border-y-o, 100%),
+        transparent
+      );
+    }
+  }
+}

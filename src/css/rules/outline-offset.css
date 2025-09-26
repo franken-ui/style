@@ -1,0 +1,35 @@
+@layer styles {
+  .outline-offset {
+    outline-offset: var(--outline-offset);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:outline-offset {
+      outline-offset: var(--sm-outline-offset);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:outline-offset {
+      outline-offset: var(--md-outline-offset);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:outline-offset {
+      outline-offset: var(--lg-outline-offset);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:outline-offset {
+      outline-offset: var(--xl-outline-offset);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:outline-offset {
+      outline-offset: var(--\32xl-outline-offset);
+    }
+  }
+}

@@ -1,0 +1,179 @@
+@layer styles {
+  .border-w {
+    border-width: var(--border-w);
+  }
+  .border-t-w {
+    border-top-width: var(--border-t-w);
+  }
+  .border-r-w {
+    border-right-width: var(--border-r-w);
+  }
+  .border-b-w {
+    border-bottom-width: var(--border-b-w);
+  }
+  .border-l-w {
+    border-left-width: var(--border-l-w);
+  }
+  .border-s-w {
+    border-inline-start-width: var(--border-s-w);
+  }
+  .border-e-w {
+    border-inline-end-width: var(--border-e-w);
+  }
+  .border-x-w {
+    border-inline-width: var(--border-x-w);
+  }
+  .border-y-w {
+    border-block-width: var(--border-y-w);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:border-w {
+      border-width: var(--sm-border-w);
+    }
+    .sm\:border-t-w {
+      border-top-width: var(--sm-border-t-w);
+    }
+    .sm\:border-r-w {
+      border-right-width: var(--sm-border-r-w);
+    }
+    .sm\:border-b-w {
+      border-bottom-width: var(--sm-border-b-w);
+    }
+    .sm\:border-l-w {
+      border-left-width: var(--sm-border-l-w);
+    }
+    .sm\:border-s-w {
+      border-inline-start-width: var(--sm-border-s-w);
+    }
+    .sm\:border-e-w {
+      border-inline-end-width: var(--sm-border-e-w);
+    }
+    .sm\:border-x-w {
+      border-inline-width: var(--sm-border-x-w);
+    }
+    .sm\:border-y-w {
+      border-block-width: var(--sm-border-y-w);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:border-w {
+      border-width: var(--md-border-w);
+    }
+    .md\:border-t-w {
+      border-top-width: var(--md-border-t-w);
+    }
+    .md\:border-r-w {
+      border-right-width: var(--md-border-r-w);
+    }
+    .md\:border-b-w {
+      border-bottom-width: var(--md-border-b-w);
+    }
+    .md\:border-l-w {
+      border-left-width: var(--md-border-l-w);
+    }
+    .md\:border-s-w {
+      border-inline-start-width: var(--md-border-s-w);
+    }
+    .md\:border-e-w {
+      border-inline-end-width: var(--md-border-e-w);
+    }
+    .md\:border-x-w {
+      border-inline-width: var(--md-border-x-w);
+    }
+    .md\:border-y-w {
+      border-block-width: var(--md-border-y-w);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border-w {
+      border-width: var(--lg-border-w);
+    }
+    .lg\:border-t-w {
+      border-top-width: var(--lg-border-t-w);
+    }
+    .lg\:border-r-w {
+      border-right-width: var(--lg-border-r-w);
+    }
+    .lg\:border-b-w {
+      border-bottom-width: var(--lg-border-b-w);
+    }
+    .lg\:border-l-w {
+      border-left-width: var(--lg-border-l-w);
+    }
+    .lg\:border-s-w {
+      border-inline-start-width: var(--lg-border-s-w);
+    }
+    .lg\:border-e-w {
+      border-inline-end-width: var(--lg-border-e-w);
+    }
+    .lg\:border-x-w {
+      border-inline-width: var(--lg-border-x-w);
+    }
+    .lg\:border-y-w {
+      border-block-width: var(--lg-border-y-w);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:border-w {
+      border-width: var(--xl-border-w);
+    }
+    .xl\:border-t-w {
+      border-top-width: var(--xl-border-t-w);
+    }
+    .xl\:border-r-w {
+      border-right-width: var(--xl-border-r-w);
+    }
+    .xl\:border-b-w {
+      border-bottom-width: var(--xl-border-b-w);
+    }
+    .xl\:border-l-w {
+      border-left-width: var(--xl-border-l-w);
+    }
+    .xl\:border-s-w {
+      border-inline-start-width: var(--xl-border-s-w);
+    }
+    .xl\:border-e-w {
+      border-inline-end-width: var(--xl-border-e-w);
+    }
+    .xl\:border-x-w {
+      border-inline-width: var(--xl-border-x-w);
+    }
+    .xl\:border-y-w {
+      border-block-width: var(--xl-border-y-w);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:border-w {
+      border-width: var(--\32xl-border-w);
+    }
+    .\32xl\:border-t-w {
+      border-top-width: var(--\32xl-border-t-w);
+    }
+    .\32xl\:border-r-w {
+      border-right-width: var(--\32xl-border-r-w);
+    }
+    .\32xl\:border-b-w {
+      border-bottom-width: var(--\32xl-border-b-w);
+    }
+    .\32xl\:border-l-w {
+      border-left-width: var(--\32xl-border-l-w);
+    }
+    .\32xl\:border-s-w {
+      border-inline-start-width: var(--\32xl-border-s-w);
+    }
+    .\32xl\:border-e-w {
+      border-inline-end-width: var(--\32xl-border-e-w);
+    }
+    .\32xl\:border-x-w {
+      border-inline-width: var(--\32xl-border-x-w);
+    }
+    .\32xl\:border-y-w {
+      border-block-width: var(--\32xl-border-y-w);
+    }
+  }
+}

@@ -1621,6 +1621,25 @@
   .order-none {
     order: 0;
   }
+  .outline-none {
+    outline: none;
+  }
+  .outline-hidden {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  .outline {
+    outline-style: solid;
+  }
+  .outline-dashed {
+    outline-style: dashed;
+  }
+  .outline-dotted {
+    outline-style: dotted;
+  }
+  .outline-double {
+    outline-style: double;
+  }
   .overflow-auto {
     overflow: auto;
   }
@@ -3573,6 +3592,25 @@
     }
     .sm\:order-none {
       order: 0;
+    }
+    .sm\:outline-none {
+      outline: none;
+    }
+    .sm\:outline-hidden {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .sm\:outline {
+      outline-style: solid;
+    }
+    .sm\:outline-dashed {
+      outline-style: dashed;
+    }
+    .sm\:outline-dotted {
+      outline-style: dotted;
+    }
+    .sm\:outline-double {
+      outline-style: double;
     }
     .sm\:overflow-auto {
       overflow: auto;
@@ -5528,6 +5566,25 @@
     .md\:order-none {
       order: 0;
     }
+    .md\:outline-none {
+      outline: none;
+    }
+    .md\:outline-hidden {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .md\:outline {
+      outline-style: solid;
+    }
+    .md\:outline-dashed {
+      outline-style: dashed;
+    }
+    .md\:outline-dotted {
+      outline-style: dotted;
+    }
+    .md\:outline-double {
+      outline-style: double;
+    }
     .md\:overflow-auto {
       overflow: auto;
     }
@@ -7481,6 +7538,25 @@
     }
     .lg\:order-none {
       order: 0;
+    }
+    .lg\:outline-none {
+      outline: none;
+    }
+    .lg\:outline-hidden {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .lg\:outline {
+      outline-style: solid;
+    }
+    .lg\:outline-dashed {
+      outline-style: dashed;
+    }
+    .lg\:outline-dotted {
+      outline-style: dotted;
+    }
+    .lg\:outline-double {
+      outline-style: double;
     }
     .lg\:overflow-auto {
       overflow: auto;
@@ -9436,6 +9512,25 @@
     .xl\:order-none {
       order: 0;
     }
+    .xl\:outline-none {
+      outline: none;
+    }
+    .xl\:outline-hidden {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .xl\:outline {
+      outline-style: solid;
+    }
+    .xl\:outline-dashed {
+      outline-style: dashed;
+    }
+    .xl\:outline-dotted {
+      outline-style: dotted;
+    }
+    .xl\:outline-double {
+      outline-style: double;
+    }
     .xl\:overflow-auto {
       overflow: auto;
     }
@@ -11389,6 +11484,25 @@
     }
     .\32xl\:order-none {
       order: 0;
+    }
+    .\32xl\:outline-none {
+      outline: none;
+    }
+    .\32xl\:outline-hidden {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    .\32xl\:outline {
+      outline-style: solid;
+    }
+    .\32xl\:outline-dashed {
+      outline-style: dashed;
+    }
+    .\32xl\:outline-dotted {
+      outline-style: dotted;
+    }
+    .\32xl\:outline-double {
+      outline-style: double;
     }
     .\32xl\:overflow-auto {
       overflow: auto;
