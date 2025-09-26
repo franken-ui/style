@@ -1,2103 +1,3007 @@
-const utilities = [
+const rules = [
   {
+    layer: "styles",
+    selector: "aspect",
+    properties: ["aspect-ratio"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "bg",
+    properties: ["background-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "bg/o",
+    properties: ["background-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "bg", "{var2}": "bg-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded",
+    properties: ["border-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-s",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: { "{var}": "rounded-s", "{var2}": "rounded-s" },
+  },
+  {
+    layer: "styles",
+    selector: "rounded-e",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: { "{var}": "rounded-e", "{var2}": "rounded-e" },
+  },
+  {
+    layer: "styles",
+    selector: "rounded-t",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: { "{var}": "rounded-t", "{var2}": "rounded-t" },
+  },
+  {
+    layer: "styles",
+    selector: "rounded-r",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: { "{var}": "rounded-r", "{var2}": "rounded-r" },
+  },
+  {
+    layer: "styles",
+    selector: "rounded-b",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: { "{var}": "rounded-b", "{var2}": "rounded-b" },
+  },
+  {
+    layer: "styles",
+    selector: "rounded-l",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: { "{var}": "rounded-l", "{var2}": "rounded-l" },
+  },
+  {
+    layer: "styles",
+    selector: "rounded-ss",
+    properties: ["border-start-start-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-se",
+    properties: ["border-start-end-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-ee",
+    properties: ["border-end-end-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-es",
+    properties: ["border-end-start-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-tl",
+    properties: ["border-top-left-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-tr",
+    properties: ["border-top-right-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-br",
+    properties: ["border-bottom-right-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rounded-bl",
+    properties: ["border-bottom-left-radius"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "bottom",
+    properties: ["bottom"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "bottom" },
+  },
+  {
+    layer: "styles",
+    selector: "[bottom]",
+    properties: ["bottom"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "color",
+    properties: ["color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "color/o",
+    properties: ["color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "color", "{var2}": "color-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "columns",
+    properties: ["columns"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "basis",
+    properties: ["flex-basis"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "basis" },
+  },
+  {
+    layer: "styles",
+    selector: "[basis]",
+    properties: ["flex-basis"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "grow",
+    properties: ["flex-grow"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "shrink",
+    properties: ["flex-shrink"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "flex",
+    properties: ["flex"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "from-position",
+    properties: ["--tw-gradient-from-position"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "from",
+    properties: ["--tw-gradient-from", "--tw-gradient-stops"],
+    values: [
+      "var({var})",
+      "var(--tw-gradient-from-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-from) var(--tw-gradient-from-position))",
+    ],
+    placeholders: { "{var}": "from" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "from/o",
+    properties: ["--tw-gradient-from", "--tw-gradient-stops"],
+    values: [
+      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    ],
+    placeholders: { "{var}": "from", "{var2}": "from-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "gap",
+    properties: ["gap"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "gap" },
+  },
+  {
+    layer: "styles",
+    selector: "gap-x",
+    properties: ["column-gap"],
+    values: ["calc(var(--spacing) * var({var}, var(--gap)))"],
+    placeholders: { "{var}": "gap-x" },
+  },
+  {
+    layer: "styles",
+    selector: "gap-y",
+    properties: ["row-gap"],
+    values: ["calc(var(--spacing) * var({var}, var(--gap)))"],
+    placeholders: { "{var}": "gap-y" },
+  },
+  {
+    layer: "styles",
+    selector: "[gap]",
+    properties: ["gap"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "[gap-x]",
+    properties: ["column-gap"],
+    values: ["var({var}, var(--gap))"],
+    placeholders: { "{var}": "gap-x" },
+  },
+  {
+    layer: "styles",
+    selector: "[gap-y]",
+    properties: ["row-gap"],
+    values: ["var({var}, var(--gap))"],
+    placeholders: { "{var}": "gap-y" },
+  },
+  {
+    layer: "styles",
+    selector: "col",
+    properties: ["grid-column"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "col-span",
+    properties: ["grid-column"],
+    values: ["span var({var}) / span var({var2})"],
+    placeholders: { "{var}": "col-span", "{var2}": "col-span" },
+  },
+  {
+    layer: "styles",
+    selector: "col-start",
+    properties: ["grid-column-start"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "col-end",
+    properties: ["grid-column-end"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "row",
+    properties: ["grid-row"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "row-span",
+    properties: ["grid-row"],
+    values: ["span var({var}) / span var({var2})"],
+    placeholders: { "{var}": "row-span", "{var2}": "row-span" },
+  },
+  {
+    layer: "styles",
+    selector: "row-start",
+    properties: ["grid-row-start"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "row-end",
+    properties: ["grid-row-end"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "grid-cols",
+    properties: ["grid-template-columns"],
+    values: ["repeat(var({var}), minmax(0, 1fr))"],
+    placeholders: { "{var}": "grid-cols" },
+  },
+  {
+    layer: "styles",
+    selector: "[grid-cols]",
+    properties: ["grid-template-columns"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "grid-rows",
+    properties: ["grid-template-rows"],
+    values: ["repeat(var({var}), minmax(0, 1fr))"],
+    placeholders: { "{var}": "grid-rows" },
+  },
+  {
+    layer: "styles",
+    selector: "[grid-rows]",
+    properties: ["grid-template-rows"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "h",
+    properties: ["height"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "h" },
+  },
+  {
+    layer: "styles",
+    selector: "[h]",
+    properties: ["height"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "inset",
+    properties: ["inset"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "inset" },
+  },
+  {
+    layer: "styles",
+    selector: "start",
+    properties: ["inset-inline-start"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "start" },
+  },
+  {
+    layer: "styles",
+    selector: "end",
+    properties: ["inset-inline-end"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "end" },
+  },
+  {
+    layer: "styles",
+    selector: "inset-x",
+    properties: ["inset-inline"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "inset-x" },
+  },
+  {
+    layer: "styles",
+    selector: "inset-y",
+    properties: ["inset-block"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "inset-y" },
+  },
+  {
+    layer: "styles",
+    selector: "[inset]",
+    properties: ["inset"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "[start]",
+    properties: ["inset-inline-start"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "[end]",
+    properties: ["inset-inline-end"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "[inset-x]",
+    properties: ["inset-inline"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "[inset-y]",
+    properties: ["inset-block"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "left",
+    properties: ["left"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "left" },
+  },
+  {
+    layer: "styles",
+    selector: "[left]",
+    properties: ["left"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "tracking",
+    properties: ["letter-spacing"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "leading",
+    properties: ["line-height"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "leading" },
+  },
+  {
+    layer: "styles",
+    selector: "[leading]",
+    properties: ["line-height"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "m",
+    properties: ["margin"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "m" },
+  },
+  {
+    layer: "styles",
+    selector: "[m]",
+    properties: ["margin"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "mt",
+    properties: ["margin-top"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "mt" },
+  },
+  {
+    layer: "styles",
+    selector: "[mt]",
+    properties: ["margin-top"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "mb",
+    properties: ["margin-bottom"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "mb" },
+  },
+  {
+    layer: "styles",
+    selector: "[mb]",
+    properties: ["margin-bottom"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "ml",
+    properties: ["margin-left"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "ml" },
+  },
+  {
+    layer: "styles",
+    selector: "[ml]",
+    properties: ["margin-left"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "mr",
+    properties: ["margin-right"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "mr" },
+  },
+  {
+    layer: "styles",
+    selector: "[mr]",
+    properties: ["margin-right"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "ms",
+    properties: ["margin-inline-start"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "ms" },
+  },
+  {
+    layer: "styles",
+    selector: "[ms]",
+    properties: ["margin-inline-start"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "me",
+    properties: ["margin-inline-end"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "me" },
+  },
+  {
+    layer: "styles",
+    selector: "[me]",
+    properties: ["margin-inline-end"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "mx",
+    properties: ["margin-inline"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "mx" },
+  },
+  {
+    layer: "styles",
+    selector: "[mx]",
+    properties: ["margin-inline"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "my",
+    properties: ["margin-block"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "my" },
+  },
+  {
+    layer: "styles",
+    selector: "[my]",
+    properties: ["margin-block"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "max-h",
+    properties: ["max-height"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "max-h" },
+  },
+  {
+    layer: "styles",
+    selector: "[max-h]",
+    properties: ["max-height"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "max-w",
+    properties: ["max-width"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "max-w" },
+  },
+  {
+    layer: "styles",
+    selector: "[max-w]",
+    properties: ["max-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "min-h",
+    properties: ["min-height"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "min-h" },
+  },
+  {
+    layer: "styles",
+    selector: "[min-h]",
+    properties: ["min-height"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "min-w",
+    properties: ["min-width"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "min-w" },
+  },
+  {
+    layer: "styles",
+    selector: "[min-w]",
+    properties: ["min-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "object-position",
+    properties: ["object-position"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "order",
+    properties: ["order"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "p",
+    properties: ["padding"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "p" },
+  },
+  {
+    layer: "styles",
+    selector: "[p]",
+    properties: ["padding"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "pt",
+    properties: ["padding-top"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "pt" },
+  },
+  {
+    layer: "styles",
+    selector: "pb",
+    properties: ["padding-bottom"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "pb" },
+  },
+  {
+    layer: "styles",
+    selector: "pl",
+    properties: ["padding-left"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "pl" },
+  },
+  {
+    layer: "styles",
+    selector: "pr",
+    properties: ["padding-right"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "pr" },
+  },
+  {
+    layer: "styles",
+    selector: "ps",
+    properties: ["padding-inline-start"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "ps" },
+  },
+  {
+    layer: "styles",
+    selector: "pe",
+    properties: ["padding-inline-end"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "pe" },
+  },
+  {
+    layer: "styles",
+    selector: "[pt]",
+    properties: ["padding-top"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "pt" },
+  },
+  {
+    layer: "styles",
+    selector: "[pb]",
+    properties: ["padding-bottom"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "pb" },
+  },
+  {
+    layer: "styles",
+    selector: "[pl]",
+    properties: ["padding-left"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "pl" },
+  },
+  {
+    layer: "styles",
+    selector: "[pr]",
+    properties: ["padding-right"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "pr" },
+  },
+  {
+    layer: "styles",
+    selector: "[ps]",
+    properties: ["padding-inline-start"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "ps" },
+  },
+  {
+    layer: "styles",
+    selector: "[pe]",
+    properties: ["padding-inline-end"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "pe" },
+  },
+  {
+    layer: "styles",
+    selector: "px",
+    properties: ["padding-inline"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "px" },
+  },
+  {
+    layer: "styles",
+    selector: "py",
+    properties: ["padding-block"],
+    values: ["calc(var(--spacing) * var({var}, var(--p)))"],
+    placeholders: { "{var}": "py" },
+  },
+  {
+    layer: "styles",
+    selector: "[px]",
+    properties: ["padding-inline"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "px" },
+  },
+  {
+    layer: "styles",
+    selector: "[py]",
+    properties: ["padding-block"],
+    values: ["var({var}, var(--p))"],
+    placeholders: { "{var}": "py" },
+  },
+  {
+    layer: "styles",
+    selector: "right",
+    properties: ["right"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "right" },
+  },
+  {
+    layer: "styles",
+    selector: "[right]",
+    properties: ["right"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "size",
+    properties: ["width", "height"],
+    values: [
+      "calc(var(--spacing) * var({var}))",
+      "calc(var(--spacing) * var({var2}))",
+    ],
+    placeholders: { "{var}": "size", "{var2}": "size" },
+  },
+  {
+    layer: "styles",
+    selector: "[size]",
+    properties: ["width", "height"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: { "{var}": "size", "{var2}": "size" },
+  },
+  {
+    layer: "styles",
+    selector: "space-x` > :not(:last-child)`",
+    properties: ["margin-inline-start", "margin-inline-end"],
+    values: [
+      "calc(var(--spacing) * var({var}) * var(--tw-space-x-reverse))",
+      "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-x-reverse)))",
+    ],
+    placeholders: { "{var}": "space-x", "{var2}": "space-x" },
+  },
+  {
+    layer: "styles",
+    selector: "[space-x]` > :not(:last-child)`",
+    properties: ["margin-inline-start", "margin-inline-end"],
+    values: [
+      "calc(var({var}) * var(--tw-space-x-reverse))",
+      "calc(var({var2}) * (1 - var(--tw-space-x-reverse)))",
+    ],
+    placeholders: { "{var}": "space-x", "{var2}": "space-x" },
+  },
+  {
+    layer: "styles",
+    selector: "space-y` > :not(:last-child)`",
+    properties: ["margin-block-start", "margin-block-end"],
+    values: [
+      "calc(var(--spacing) * var({var}) * var(--tw-space-y-reverse))",
+      "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-y-reverse)))",
+    ],
+    placeholders: { "{var}": "space-y", "{var2}": "space-y" },
+  },
+  {
+    layer: "styles",
+    selector: "[space-y]` > :not(:last-child)`",
+    properties: ["margin-block-start", "margin-block-end"],
+    values: [
+      "calc(var({var}) * var(--tw-space-y-reverse))",
+      "calc(var({var2}) * (1 - var(--tw-space-y-reverse)))",
+    ],
+    placeholders: { "{var}": "space-y", "{var2}": "space-y" },
+  },
+  {
+    layer: "styles",
+    selector: "to",
+    properties: ["--tw-gradient-to", "--tw-gradient-stops"],
+    values: [
+      "var({var})",
+      "var(--tw-gradient-to-stops, var(--tw-gradient-position), var(--tw-gradient-to) var(--tw-gradient-to-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    ],
+    placeholders: { "{var}": "to" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "to/o",
+    properties: ["--tw-gradient-to", "--tw-gradient-stops"],
+    values: [
+      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      "var(--tw-gradient-to-stops, var(--tw-gradient-position), var(--tw-gradient-to) var(--tw-gradient-to-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    ],
+    placeholders: { "{var}": "to", "{var2}": "to-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "to-position",
+    properties: ["--tw-gradient-to-position"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "top",
+    properties: ["top"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "top" },
+  },
+  {
+    layer: "styles",
+    selector: "[top]",
+    properties: ["top"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "via",
+    properties: ["--tw-gradient-via", "--tw-gradient-stops"],
+    values: [
+      "var({var})",
+      "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    ],
+    placeholders: { "{var}": "via", "{var2}": "via-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "via/o",
+    properties: ["--tw-gradient-via", "--tw-gradient-stops"],
+    values: [
+      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+    ],
+    placeholders: { "{var}": "via", "{var2}": "via-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "via-position",
+    properties: ["--tw-gradient-via-position"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "w",
+    properties: ["width"],
+    values: ["calc(var(--spacing) * var({var}))"],
+    placeholders: { "{var}": "w" },
+  },
+  {
+    layer: "styles",
+    selector: "[w]",
+    properties: ["width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "z",
+    properties: ["z-index"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-w",
+    properties: ["border-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-t-w",
+    properties: ["border-top-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-r-w",
+    properties: ["border-right-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-b-w",
+    properties: ["border-bottom-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-l-w",
+    properties: ["border-left-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-s-w",
+    properties: ["border-inline-start-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-e-w",
+    properties: ["border-inline-end-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-x-w",
+    properties: ["border-inline-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-y-w",
+    properties: ["border-block-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "border",
+    properties: ["border-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-t",
+    properties: ["border-top-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-r",
+    properties: ["border-right-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-b",
+    properties: ["border-bottom-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-l",
+    properties: ["border-left-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-s",
+    properties: ["border-inline-start-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-e",
+    properties: ["border-inline-end-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-x",
+    properties: ["border-inline-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-y",
+    properties: ["border-block-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border/o",
+    properties: ["border-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border", "{var2}": "border-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-t/o",
+    properties: ["border-top-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-t", "{var2}": "border-t-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-r/o",
+    properties: ["border-right-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-r", "{var2}": "border-r-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-b/o",
+    properties: ["border-bottom-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-b", "{var2}": "border-b-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-l/o",
+    properties: ["border-left-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-l", "{var2}": "border-l-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-s/o",
+    properties: ["border-inline-start-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-s", "{var2}": "border-s-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-e/o",
+    properties: ["border-inline-end-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-e", "{var2}": "border-e-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-x/o",
+    properties: ["border-inline-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-x", "{var2}": "border-x-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "border-y/o",
+    properties: ["border-block-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "border-y", "{var2}": "border-y-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "outline-w",
+    properties: ["outline-width"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "outline-offset",
+    properties: ["outline-offset"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "outline",
+    properties: ["outline-color"],
+    arbitrary: true,
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "outline/o",
+    properties: ["outline-color"],
+    values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
+    placeholders: { "{var}": "outline", "{var2}": "outline-o" },
+    dark: true,
+  },
+  {
+    layer: "utilities",
     selector: "content-normal",
     properties: ["align-content"],
     values: ["normal"],
   },
   {
+    layer: "utilities",
     selector: "content-center",
     properties: ["align-content"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "content-start",
     properties: ["align-content"],
     values: ["flex-start"],
   },
   {
+    layer: "utilities",
     selector: "content-end",
     properties: ["align-content"],
     values: ["flex-end"],
   },
   {
+    layer: "utilities",
     selector: "content-between",
     properties: ["align-content"],
     values: ["space-between"],
   },
   {
+    layer: "utilities",
     selector: "content-around",
     properties: ["align-content"],
     values: ["space-around"],
   },
   {
+    layer: "utilities",
     selector: "content-evenly",
     properties: ["align-content"],
     values: ["space-evenly"],
   },
   {
+    layer: "utilities",
     selector: "content-baseline",
     properties: ["align-content"],
     values: ["baseline"],
   },
   {
+    layer: "utilities",
     selector: "content-stretch",
     properties: ["align-content"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "items-start",
     properties: ["align-items"],
     values: ["flex-start"],
   },
   {
+    layer: "utilities",
     selector: "items-end",
     properties: ["align-items"],
     values: ["flex-end"],
   },
   {
+    layer: "utilities",
     selector: "items-center",
     properties: ["align-items"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "items-stretch",
     properties: ["align-items"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "items-baseline",
     properties: ["align-items"],
     values: ["baseline"],
   },
   {
+    layer: "utilities",
     selector: "items-end-safe",
     properties: ["align-items"],
     values: ["safe flex-end"],
   },
   {
+    layer: "utilities",
     selector: "items-center-safe",
     properties: ["align-items"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "items-baseline-last",
     properties: ["align-items"],
     values: ["last baseline"],
   },
   {
+    layer: "utilities",
     selector: "self-auto",
     properties: ["align-self"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "self-start",
     properties: ["align-self"],
     values: ["flex-start"],
   },
   {
+    layer: "utilities",
     selector: "self-end",
     properties: ["align-self"],
     values: ["flex-end"],
   },
   {
+    layer: "utilities",
     selector: "self-center",
     properties: ["align-self"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "self-stretch",
     properties: ["align-self"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "self-baseline",
     properties: ["align-self"],
     values: ["baseline"],
   },
   {
+    layer: "utilities",
     selector: "self-end-safe",
     properties: ["align-self"],
     values: ["safe flex-end"],
   },
   {
+    layer: "utilities",
     selector: "self-center-safe",
     properties: ["align-self"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "self-baseline-last",
     properties: ["align-self"],
     values: ["last baseline"],
   },
   {
+    layer: "utilities",
     selector: "aspect-square",
     properties: ["aspect-ratio"],
     values: ["1/1"],
   },
   {
+    layer: "utilities",
     selector: "aspect-video",
     properties: ["aspect-ratio"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "aspect-video",
-    },
   },
   {
+    layer: "utilities",
     selector: "aspect-auto",
     properties: ["aspect-ratio"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "rounded-xs",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-sm",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-md",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-lg",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-xl",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-2xl",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-3xl",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-4xl",
     properties: ["border-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-none",
     properties: ["border-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-full",
     properties: ["border-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-s-xs",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xs",
-      "{var2}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-sm",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-sm",
-      "{var2}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-md",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-md",
-      "{var2}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-lg",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-lg",
-      "{var2}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-xl",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xl",
-      "{var2}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-2xl",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-      "{var2}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-3xl",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-      "{var2}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-4xl",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-      "{var2}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-s-none",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["0", "0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-s-full",
     properties: ["border-start-start-radius", "border-end-start-radius"],
     values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-e-xs",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xs",
-      "{var2}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-sm",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-sm",
-      "{var2}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-md",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-md",
-      "{var2}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-lg",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-lg",
-      "{var2}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-xl",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xl",
-      "{var2}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-2xl",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-      "{var2}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-3xl",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-      "{var2}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-4xl",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-      "{var2}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-e-none",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["0", "0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-e-full",
     properties: ["border-start-end-radius", "border-end-end-radius"],
     values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-t-xs",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xs",
-      "{var2}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-sm",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-sm",
-      "{var2}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-md",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-md",
-      "{var2}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-lg",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-lg",
-      "{var2}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-xl",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xl",
-      "{var2}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-2xl",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-      "{var2}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-3xl",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-      "{var2}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-4xl",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-      "{var2}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-t-none",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["0", "0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-t-full",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-r-xs",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xs",
-      "{var2}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-sm",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-sm",
-      "{var2}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-md",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-md",
-      "{var2}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-lg",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-lg",
-      "{var2}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-xl",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xl",
-      "{var2}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-2xl",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-      "{var2}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-3xl",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-      "{var2}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-4xl",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-      "{var2}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-r-none",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["0", "0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-r-full",
     properties: ["border-top-right-radius", "border-bottom-right-radius"],
     values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-b-xs",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xs",
-      "{var2}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-sm",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-sm",
-      "{var2}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-md",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-md",
-      "{var2}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-lg",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-lg",
-      "{var2}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-xl",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xl",
-      "{var2}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-2xl",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-      "{var2}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-3xl",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-      "{var2}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-4xl",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-      "{var2}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-b-none",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["0", "0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-b-full",
     properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
     values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-l-xs",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xs",
-      "{var2}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-sm",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-sm",
-      "{var2}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-md",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-md",
-      "{var2}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-lg",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-lg",
-      "{var2}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-xl",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-xl",
-      "{var2}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-2xl",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-      "{var2}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-3xl",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-      "{var2}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-4xl",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["var({var})", "var({var2})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-      "{var2}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-l-none",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["0", "0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-l-full",
     properties: ["border-top-left-radius", "border-bottom-left-radius"],
     values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-xs",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-sm",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-md",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-lg",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-xl",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-2xl",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-3xl",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-4xl",
     properties: ["border-start-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-none",
     properties: ["border-start-start-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-ss-full",
     properties: ["border-start-start-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-se-xs",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-sm",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-md",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-lg",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-xl",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-2xl",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-3xl",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-4xl",
     properties: ["border-start-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-se-none",
     properties: ["border-start-end-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-se-full",
     properties: ["border-start-end-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-xs",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-sm",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-md",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-lg",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-xl",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-2xl",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-3xl",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-4xl",
     properties: ["border-end-end-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-none",
     properties: ["border-end-end-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-ee-full",
     properties: ["border-end-end-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-es-xs",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-sm",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-md",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-lg",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-xl",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-2xl",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-3xl",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-4xl",
     properties: ["border-end-start-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-es-none",
     properties: ["border-end-start-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-es-full",
     properties: ["border-end-start-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-xs",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-sm",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-md",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-lg",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-xl",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-2xl",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-3xl",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-4xl",
     properties: ["border-top-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-none",
     properties: ["border-top-left-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-tl-full",
     properties: ["border-top-left-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-xs",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-sm",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-md",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-lg",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-xl",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-2xl",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-3xl",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-4xl",
     properties: ["border-top-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-none",
     properties: ["border-top-right-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-tr-full",
     properties: ["border-top-right-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-br-xs",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-sm",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-md",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-lg",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-xl",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-2xl",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-3xl",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-4xl",
     properties: ["border-bottom-right-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-br-none",
     properties: ["border-bottom-right-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-br-full",
     properties: ["border-bottom-right-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-xs",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-sm",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-md",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-lg",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-xl",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-2xl",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-3xl",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-4xl",
     properties: ["border-bottom-left-radius"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "radius-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-none",
     properties: ["border-bottom-left-radius"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "rounded-bl-full",
     properties: ["border-bottom-left-radius"],
     values: ["calc(infinity * 1px)"],
   },
   {
+    layer: "utilities",
     selector: "border-solid",
     properties: ["--tw-border-style", "border-style"],
     values: ["solid", "solid"],
   },
   {
+    layer: "utilities",
     selector: "border-dashed",
     properties: ["--tw-border-style", "border-style"],
     values: ["dashed", "dashed"],
   },
   {
+    layer: "utilities",
     selector: "border-dotted",
     properties: ["--tw-border-style", "border-style"],
     values: ["dotted", "dotted"],
   },
   {
+    layer: "utilities",
     selector: "border-double",
     properties: ["--tw-border-style", "border-style"],
     values: ["double", "double"],
   },
   {
+    layer: "utilities",
     selector: "border-hidden",
     properties: ["--tw-border-style", "border-style"],
     values: ["hidden", "hidden"],
   },
   {
+    layer: "utilities",
     selector: "border-none",
     properties: ["--tw-border-style", "border-style"],
     values: ["none", "none"],
   },
   {
+    layer: "utilities",
     selector: "decoration-slice,\n.box-decoration-slice",
     properties: ["-webkit-box-decoration-break", "box-decoration-break"],
     values: ["slice", "slice"],
   },
   {
+    layer: "utilities",
     selector: "decoration-clone,\n.box-decoration-clone",
     properties: ["-webkit-box-decoration-break", "box-decoration-break"],
     values: ["clone", "clone"],
   },
   {
+    layer: "utilities",
     selector: "box-border",
     properties: ["box-sizing"],
     values: ["border-box"],
   },
   {
+    layer: "utilities",
     selector: "box-content",
     properties: ["box-sizing"],
     values: ["content-box"],
   },
   {
+    layer: "utilities",
     selector: "break-after-auto",
     properties: ["break-after"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "break-after-avoid",
     properties: ["break-after"],
     values: ["avoid"],
   },
   {
+    layer: "utilities",
     selector: "break-after-all",
     properties: ["break-after"],
     values: ["all"],
   },
   {
+    layer: "utilities",
     selector: "break-after-avoid-page",
     properties: ["break-after"],
     values: ["avoid-page"],
   },
   {
+    layer: "utilities",
     selector: "break-after-page",
     properties: ["break-after"],
     values: ["page"],
   },
   {
+    layer: "utilities",
     selector: "break-after-left",
     properties: ["break-after"],
     values: ["left"],
   },
   {
+    layer: "utilities",
     selector: "break-after-right",
     properties: ["break-after"],
     values: ["right"],
   },
   {
+    layer: "utilities",
     selector: "break-after-column",
     properties: ["break-after"],
     values: ["column"],
   },
   {
+    layer: "utilities",
     selector: "break-before-auto",
     properties: ["break-before"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "break-before-avoid",
     properties: ["break-before"],
     values: ["avoid"],
   },
   {
+    layer: "utilities",
     selector: "break-before-all",
     properties: ["break-before"],
     values: ["all"],
   },
   {
+    layer: "utilities",
     selector: "break-before-avoid-page",
     properties: ["break-before"],
     values: ["avoid-page"],
   },
   {
+    layer: "utilities",
     selector: "break-before-page",
     properties: ["break-before"],
     values: ["page"],
   },
   {
+    layer: "utilities",
     selector: "break-before-left",
     properties: ["break-before"],
     values: ["left"],
   },
   {
+    layer: "utilities",
     selector: "break-before-right",
     properties: ["break-before"],
     values: ["right"],
   },
   {
+    layer: "utilities",
     selector: "break-before-column",
     properties: ["break-before"],
     values: ["column"],
   },
   {
+    layer: "utilities",
     selector: "break-inside-auto",
     properties: ["break-inside"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "break-inside-avoid",
     properties: ["break-inside"],
     values: ["avoid"],
   },
   {
+    layer: "utilities",
     selector: "break-inside-avoid-page",
     properties: ["break-inside"],
     values: ["avoid-page"],
   },
   {
+    layer: "utilities",
     selector: "break-inside-avoid-column",
     properties: ["break-inside"],
     values: ["avoid-column"],
   },
   {
+    layer: "utilities",
     selector: "clear-start",
     properties: ["clear"],
     values: ["inline-start"],
   },
   {
+    layer: "utilities",
     selector: "clear-end",
     properties: ["clear"],
     values: ["inline-end"],
   },
   {
+    layer: "utilities",
     selector: "clear-left",
     properties: ["clear"],
     values: ["left"],
   },
   {
+    layer: "utilities",
     selector: "clear-right",
     properties: ["clear"],
     values: ["right"],
   },
   {
+    layer: "utilities",
     selector: "clear-both",
     properties: ["clear"],
     values: ["both"],
   },
   {
+    layer: "utilities",
     selector: "clear-none",
     properties: ["clear"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "columns-3xs",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-2xs",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-xs",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-sm",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-md",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-lg",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-xl",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-2xl",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-3xl",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-4xl",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-5xl",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-5xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-6xl",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-6xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-7xl",
     properties: ["columns"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-7xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "columns-auto",
     properties: ["columns"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "block",
     properties: ["display"],
     values: ["block"],
   },
   {
+    layer: "utilities",
     selector: "inline-block",
     properties: ["display"],
     values: ["inline-block"],
   },
   {
+    layer: "utilities",
     selector: "inline",
     properties: ["display"],
     values: ["inline"],
   },
   {
+    layer: "utilities",
     selector: "flex",
     properties: ["display"],
     values: ["flex"],
   },
   {
+    layer: "utilities",
     selector: "inline-flex",
     properties: ["display"],
     values: ["inline-flex"],
   },
   {
+    layer: "utilities",
     selector: "table",
     properties: ["display"],
     values: ["table"],
   },
   {
+    layer: "utilities",
     selector: "inline-table",
     properties: ["display"],
     values: ["inline-table"],
   },
   {
+    layer: "utilities",
     selector: "table-caption",
     properties: ["display"],
     values: ["table-caption"],
   },
   {
+    layer: "utilities",
     selector: "table-cell",
     properties: ["display"],
     values: ["table-cell"],
   },
   {
+    layer: "utilities",
     selector: "table-column",
     properties: ["display"],
     values: ["table-column"],
   },
   {
+    layer: "utilities",
     selector: "table-column-group",
     properties: ["display"],
     values: ["table-column-group"],
   },
   {
+    layer: "utilities",
     selector: "table-footer-group",
     properties: ["display"],
     values: ["table-footer-group"],
   },
   {
+    layer: "utilities",
     selector: "table-header-group",
     properties: ["display"],
     values: ["table-header-group"],
   },
   {
+    layer: "utilities",
     selector: "table-row-group",
     properties: ["display"],
     values: ["table-row-group"],
   },
   {
+    layer: "utilities",
     selector: "table-row",
     properties: ["display"],
     values: ["table-row"],
   },
   {
+    layer: "utilities",
     selector: "flow-root",
     properties: ["display"],
     values: ["flow-root"],
   },
   {
+    layer: "utilities",
     selector: "grid",
     properties: ["display"],
     values: ["grid"],
   },
   {
+    layer: "utilities",
     selector: "inline-grid",
     properties: ["display"],
     values: ["inline-grid"],
   },
   {
+    layer: "utilities",
     selector: "contents",
     properties: ["display"],
     values: ["contents"],
   },
   {
+    layer: "utilities",
     selector: "list-item",
     properties: ["display"],
     values: ["list-item"],
   },
   {
+    layer: "utilities",
     selector: "hidden",
     properties: ["display"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "basis-3xs",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-2xs",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-xs",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-sm",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-md",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-lg",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-xl",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-2xl",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-3xl",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-4xl",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-5xl",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-5xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-6xl",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-6xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-7xl",
     properties: ["flex-basis"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-7xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "basis-auto",
     properties: ["flex-basis"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "basis-full",
     properties: ["flex-basis"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "flex-1",
     properties: ["flex"],
     values: ["1 1 0%"],
   },
   {
+    layer: "utilities",
     selector: "flex-auto",
     properties: ["flex"],
     values: ["1 1 auto"],
   },
   {
+    layer: "utilities",
     selector: "flex-initial",
     properties: ["flex"],
     values: ["0 1 auto"],
   },
   {
+    layer: "utilities",
     selector: "flex-none",
     properties: ["flex"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "flex-row",
     properties: ["flex-direction"],
     values: ["row"],
   },
   {
+    layer: "utilities",
     selector: "flex-row-reverse",
     properties: ["flex-direction"],
     values: ["row-reverse"],
   },
   {
+    layer: "utilities",
     selector: "flex-col",
     properties: ["flex-direction"],
     values: ["column"],
   },
   {
+    layer: "utilities",
     selector: "flex-col-reverse",
     properties: ["flex-direction"],
     values: ["column-reverse"],
   },
   {
+    layer: "utilities",
     selector: "flex-grow",
     properties: ["flex-grow"],
     values: ["1"],
   },
   {
+    layer: "utilities",
     selector: "flex-grow-0",
     properties: ["flex-grow"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "grow",
     properties: ["flex-grow"],
     values: ["1"],
   },
   {
+    layer: "utilities",
     selector: "grow-0",
     properties: ["flex-grow"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "flex-shrink",
     properties: ["flex-shrink"],
     values: ["1"],
   },
   {
+    layer: "utilities",
     selector: "flex-shrink-0",
     properties: ["flex-shrink"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "shrink",
     properties: ["flex-shrink"],
     values: ["1"],
   },
   {
+    layer: "utilities",
     selector: "shrink-0",
     properties: ["flex-shrink"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "flex-wrap",
     properties: ["flex-wrap"],
     values: ["wrap"],
   },
   {
+    layer: "utilities",
     selector: "flex-wrap-reverse",
     properties: ["flex-wrap"],
     values: ["wrap-reverse"],
   },
   {
+    layer: "utilities",
     selector: "flex-nowrap",
     properties: ["flex-wrap"],
     values: ["nowrap"],
   },
   {
+    layer: "utilities",
     selector: "float-start",
     properties: ["float"],
     values: ["inline-start"],
   },
   {
+    layer: "utilities",
     selector: "float-end",
     properties: ["float"],
     values: ["inline-end"],
   },
   {
+    layer: "utilities",
     selector: "float-right",
     properties: ["float"],
     values: ["right"],
   },
   {
+    layer: "utilities",
     selector: "float-left",
     properties: ["float"],
     values: ["left"],
   },
   {
+    layer: "utilities",
     selector: "float-none",
     properties: ["float"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "text-xs",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-sm",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-base",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-base",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-lg",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-2xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-3xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-4xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-5xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-5xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-6xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-6xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-7xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-7xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-8xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-8xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "text-9xl",
     properties: ["font"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "text-9xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "italic",
     properties: ["font-style"],
     values: ["italic"],
   },
   {
+    layer: "utilities",
     selector: "not-italic",
     properties: ["font-style"],
     values: ["normal"],
   },
   {
+    layer: "utilities",
     selector: "font-black",
     properties: ["font-weight"],
     values: ["900"],
   },
   {
+    layer: "utilities",
     selector: "font-bold",
     properties: ["font-weight"],
     values: ["700"],
   },
   {
+    layer: "utilities",
     selector: "font-extrabold",
     properties: ["font-weight"],
     values: ["800"],
   },
   {
+    layer: "utilities",
     selector: "font-extralight",
     properties: ["font-weight"],
     values: ["200"],
   },
   {
+    layer: "utilities",
     selector: "font-light",
     properties: ["font-weight"],
     values: ["300"],
   },
   {
+    layer: "utilities",
     selector: "font-medium",
     properties: ["font-weight"],
     values: ["500"],
   },
   {
+    layer: "utilities",
     selector: "font-normal",
     properties: ["font-weight"],
     values: ["400"],
   },
   {
+    layer: "utilities",
     selector: "font-semibold",
     properties: ["font-weight"],
     values: ["600"],
   },
   {
+    layer: "utilities",
     selector: "font-thin",
     properties: ["font-weight"],
     values: ["100"],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-t",
     properties: ["--tw-gradient-position", "background-image"],
     values: ["to top in oklab", "linear-gradient(var(--tw-gradient-stops))"],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-tr",
     properties: ["--tw-gradient-position", "background-image"],
     values: [
@@ -2106,11 +3010,13 @@ const utilities = [
     ],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-r",
     properties: ["--tw-gradient-position", "background-image"],
     values: ["to right in oklab", "linear-gradient(var(--tw-gradient-stops))"],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-br",
     properties: ["--tw-gradient-position", "background-image"],
     values: [
@@ -2119,11 +3025,13 @@ const utilities = [
     ],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-b",
     properties: ["--tw-gradient-position", "background-image"],
     values: ["to bottom in oklab", "linear-gradient(var(--tw-gradient-stops))"],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-bl",
     properties: ["--tw-gradient-position", "background-image"],
     values: [
@@ -2132,11 +3040,13 @@ const utilities = [
     ],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-l",
     properties: ["--tw-gradient-position", "background-image"],
     values: ["to left in oklab", "linear-gradient(var(--tw-gradient-stops))"],
   },
   {
+    layer: "utilities",
     selector: "bg-gradient-to-tl",
     properties: ["--tw-gradient-position", "background-image"],
     values: [
@@ -2145,2928 +3055,1836 @@ const utilities = [
     ],
   },
   {
+    layer: "utilities",
     selector: "grid-flow-row",
     properties: ["grid-auto-flow"],
     values: ["row"],
   },
   {
+    layer: "utilities",
     selector: "grid-flow-col",
     properties: ["grid-auto-flow"],
     values: ["column"],
   },
   {
+    layer: "utilities",
     selector: "grid-flow-dense",
     properties: ["grid-auto-flow"],
     values: ["dense"],
   },
   {
+    layer: "utilities",
     selector: "grid-flow-row-dense",
     properties: ["grid-auto-flow"],
     values: ["row dense"],
   },
   {
+    layer: "utilities",
     selector: "grid-flow-col-dense",
     properties: ["grid-auto-flow"],
     values: ["column dense"],
   },
   {
+    layer: "utilities",
     selector: "col-auto",
     properties: ["grid-column"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "col-span-full",
     properties: ["grid-column"],
     values: ["1 / -1"],
   },
   {
+    layer: "utilities",
     selector: "col-start-auto",
     properties: ["grid-column-start"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "col-end-auto",
     properties: ["grid-column-end"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "row-auto",
     properties: ["grid-row"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "row-span-full",
     properties: ["grid-row"],
     values: ["1 / -1"],
   },
   {
+    layer: "utilities",
     selector: "row-start-auto",
     properties: ["grid-row-start"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "row-end-auto",
     properties: ["grid-row-end"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "grid-cols-none",
     properties: ["grid-template-columns"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "grid-cols-subgrid",
     properties: ["grid-template-columns"],
     values: ["subgrid"],
   },
   {
+    layer: "utilities",
     selector: "grid-rows-none",
     properties: ["grid-template-rows"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "grid-rows-subgrid",
     properties: ["grid-template-rows"],
     values: ["subgrid"],
   },
   {
+    layer: "utilities",
     selector: "h-auto",
     properties: ["height"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "h-full",
     properties: ["height"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "h-screen",
     properties: ["height"],
     values: ["100vh"],
   },
   {
+    layer: "utilities",
     selector: "h-dvh",
     properties: ["height"],
     values: ["100dvh"],
   },
   {
+    layer: "utilities",
     selector: "h-dvw",
     properties: ["height"],
     values: ["100dvw"],
   },
   {
+    layer: "utilities",
     selector: "h-lvh",
     properties: ["height"],
     values: ["100lvh"],
   },
   {
+    layer: "utilities",
     selector: "h-lvw",
     properties: ["height"],
     values: ["100lvw"],
   },
   {
+    layer: "utilities",
     selector: "h-svh",
     properties: ["height"],
     values: ["100svh"],
   },
   {
+    layer: "utilities",
     selector: "h-svw",
     properties: ["height"],
     values: ["100svw"],
   },
   {
+    layer: "utilities",
     selector: "h-min",
     properties: ["height"],
     values: ["min-content"],
   },
   {
+    layer: "utilities",
     selector: "h-max",
     properties: ["height"],
     values: ["max-content"],
   },
   {
+    layer: "utilities",
     selector: "h-fit",
     properties: ["height"],
     values: ["fit-content"],
   },
   {
+    layer: "utilities",
     selector: "h-lh",
     properties: ["height"],
     values: ["1lh"],
   },
   {
+    layer: "utilities",
     selector: "top-full",
     properties: ["top"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "top-auto",
     properties: ["top"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "right-full",
     properties: ["right"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "right-auto",
     properties: ["right"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "bottom-full",
     properties: ["bottom"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "bottom-auto",
     properties: ["bottom"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "left-full",
     properties: ["left"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "left-auto",
     properties: ["left"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "inset-full",
     properties: ["inset"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "inset-auto",
     properties: ["inset"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "inset-x-full",
     properties: ["inset-inline"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "inset-y-full",
     properties: ["inset-block"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "start-full",
     properties: ["inset-inline-start"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "end-full",
     properties: ["inset-inline-end"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "isolate",
     properties: ["isolation"],
     values: ["isolate"],
   },
   {
+    layer: "utilities",
     selector: "isolation-auto",
     properties: ["isolation"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "justify-normal",
     properties: ["justify-content"],
     values: ["normal"],
   },
   {
+    layer: "utilities",
     selector: "justify-start",
     properties: ["justify-content"],
     values: ["flex-start"],
   },
   {
+    layer: "utilities",
     selector: "justify-end",
     properties: ["justify-content"],
     values: ["flex-end"],
   },
   {
+    layer: "utilities",
     selector: "justify-center",
     properties: ["justify-content"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "justify-between",
     properties: ["justify-content"],
     values: ["space-between"],
   },
   {
+    layer: "utilities",
     selector: "justify-around",
     properties: ["justify-content"],
     values: ["space-around"],
   },
   {
+    layer: "utilities",
     selector: "justify-evenly",
     properties: ["justify-content"],
     values: ["space-evenly"],
   },
   {
+    layer: "utilities",
     selector: "justify-stretch",
     properties: ["justify-content"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "justify-end-safe",
     properties: ["justify-content"],
     values: ["safe flex-end"],
   },
   {
+    layer: "utilities",
     selector: "justify-center-safe",
     properties: ["justify-content"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "justify-items-start",
     properties: ["justify-items"],
     values: ["start"],
   },
   {
+    layer: "utilities",
     selector: "justify-items-end",
     properties: ["justify-items"],
     values: ["end"],
   },
   {
+    layer: "utilities",
     selector: "justify-items-center",
     properties: ["justify-items"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "justify-items-stretch",
     properties: ["justify-items"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "justify-items-end-safe",
     properties: ["justify-items"],
     values: ["safe end"],
   },
   {
+    layer: "utilities",
     selector: "justify-items-center-safe",
     properties: ["justify-items"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "justify-items-normal",
     properties: ["justify-items"],
     values: ["normal"],
   },
   {
+    layer: "utilities",
     selector: "justify-self-auto",
     properties: ["justify-self"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "justify-self-start",
     properties: ["justify-self"],
     values: ["start"],
   },
   {
+    layer: "utilities",
     selector: "justify-self-end",
     properties: ["justify-self"],
     values: ["end"],
   },
   {
+    layer: "utilities",
     selector: "justify-self-center",
     properties: ["justify-self"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "justify-self-stretch",
     properties: ["justify-self"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "justify-self-end-safe",
     properties: ["justify-self"],
     values: ["safe end"],
   },
   {
+    layer: "utilities",
     selector: "justify-self-center-safe",
     properties: ["justify-self"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "-tracking-normal",
     properties: ["letter-spacing"],
     values: ["-0em"],
   },
   {
+    layer: "utilities",
     selector: "-tracking-tight",
     properties: ["letter-spacing"],
     values: ["0.025em"],
   },
   {
+    layer: "utilities",
     selector: "-tracking-tighter",
     properties: ["letter-spacing"],
     values: ["0.05em"],
   },
   {
+    layer: "utilities",
     selector: "-tracking-wide",
     properties: ["letter-spacing"],
     values: ["-0.025em"],
   },
   {
+    layer: "utilities",
     selector: "-tracking-wider",
     properties: ["letter-spacing"],
     values: ["-0.05em"],
   },
   {
+    layer: "utilities",
     selector: "-tracking-widest",
     properties: ["letter-spacing"],
     values: ["-0.1em"],
   },
   {
+    layer: "utilities",
     selector: "tracking-normal",
     properties: ["letter-spacing"],
     values: ["0em"],
   },
   {
+    layer: "utilities",
     selector: "tracking-tight",
     properties: ["letter-spacing"],
     values: ["-0.025em"],
   },
   {
+    layer: "utilities",
     selector: "tracking-tighter",
     properties: ["letter-spacing"],
     values: ["-0.05em"],
   },
   {
+    layer: "utilities",
     selector: "tracking-wide",
     properties: ["letter-spacing"],
     values: ["0.025em"],
   },
   {
+    layer: "utilities",
     selector: "tracking-wider",
     properties: ["letter-spacing"],
     values: ["0.05em"],
   },
   {
+    layer: "utilities",
     selector: "tracking-widest",
     properties: ["letter-spacing"],
     values: ["0.1em"],
   },
   {
+    layer: "utilities",
     selector: "leading-loose",
     properties: ["line-height"],
     values: ["2"],
   },
   {
+    layer: "utilities",
     selector: "leading-none",
     properties: ["line-height"],
     values: ["1"],
   },
   {
+    layer: "utilities",
     selector: "leading-normal",
     properties: ["line-height"],
     values: ["1.5"],
   },
   {
+    layer: "utilities",
     selector: "leading-relaxed",
     properties: ["line-height"],
     values: ["1.625"],
   },
   {
+    layer: "utilities",
     selector: "leading-snug",
     properties: ["line-height"],
     values: ["1.375"],
   },
   {
+    layer: "utilities",
     selector: "leading-tight",
     properties: ["line-height"],
     values: ["1.25"],
   },
   {
+    layer: "utilities",
     selector: "m-auto",
     properties: ["margin"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "mt-auto",
     properties: ["margin-top"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "mb-auto",
     properties: ["margin-bottom"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "ml-auto",
     properties: ["margin-left"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "mr-auto",
     properties: ["margin-right"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "ms-auto",
     properties: ["margin-inline-start"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "me-auto",
     properties: ["margin-inline-end"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "mx-auto",
     properties: ["margin-left", "margin-right"],
     values: ["auto", "auto"],
   },
   {
+    layer: "utilities",
     selector: "my-auto",
     properties: ["margin-top", "margin-bottom"],
     values: ["auto", "auto"],
   },
   {
+    layer: "utilities",
     selector: "max-h-none",
     properties: ["max-height"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "max-h-full",
     properties: ["max-height"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "max-h-screen",
     properties: ["max-height"],
     values: ["100vh"],
   },
   {
+    layer: "utilities",
     selector: "max-h-dvh",
     properties: ["max-height"],
     values: ["100dvh"],
   },
   {
+    layer: "utilities",
     selector: "max-h-dvw",
     properties: ["max-height"],
     values: ["100dvw"],
   },
   {
+    layer: "utilities",
     selector: "max-h-lvh",
     properties: ["max-height"],
     values: ["100lvh"],
   },
   {
+    layer: "utilities",
     selector: "max-h-lvw",
     properties: ["max-height"],
     values: ["100lvw"],
   },
   {
+    layer: "utilities",
     selector: "max-h-svh",
     properties: ["max-height"],
     values: ["100svh"],
   },
   {
+    layer: "utilities",
     selector: "max-h-svw",
     properties: ["max-height"],
     values: ["100svw"],
   },
   {
+    layer: "utilities",
     selector: "max-h-min",
     properties: ["max-height"],
     values: ["min-content"],
   },
   {
+    layer: "utilities",
     selector: "max-h-max",
     properties: ["max-height"],
     values: ["max-content"],
   },
   {
+    layer: "utilities",
     selector: "max-h-fit",
     properties: ["max-height"],
     values: ["fit-content"],
   },
   {
+    layer: "utilities",
     selector: "max-h-lh",
     properties: ["max-height"],
     values: ["1lh"],
   },
   {
+    layer: "utilities",
     selector: "max-w-3xs",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-2xs",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-xs",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-sm",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-md",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-lg",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-xl",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-2xl",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-3xl",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-4xl",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-5xl",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-5xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-6xl",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-6xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-7xl",
     properties: ["max-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-7xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "max-w-full",
     properties: ["max-width"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "max-w-screen",
     properties: ["max-width"],
     values: ["100vw"],
   },
   {
+    layer: "utilities",
     selector: "max-w-dvw",
     properties: ["max-width"],
     values: ["100dvw"],
   },
   {
+    layer: "utilities",
     selector: "max-w-dvh",
     properties: ["max-width"],
     values: ["100dvh"],
   },
   {
+    layer: "utilities",
     selector: "max-w-lvw",
     properties: ["max-width"],
     values: ["100lvw"],
   },
   {
+    layer: "utilities",
     selector: "max-w-lvh",
     properties: ["max-width"],
     values: ["100lvh"],
   },
   {
+    layer: "utilities",
     selector: "max-w-svw",
     properties: ["max-width"],
     values: ["100svw"],
   },
   {
+    layer: "utilities",
     selector: "max-w-svh",
     properties: ["max-width"],
     values: ["100svh"],
   },
   {
+    layer: "utilities",
     selector: "max-w-min",
     properties: ["max-width"],
     values: ["min-content"],
   },
   {
+    layer: "utilities",
     selector: "max-w-max",
     properties: ["max-width"],
     values: ["max-content"],
   },
   {
+    layer: "utilities",
     selector: "max-w-fit",
     properties: ["max-width"],
     values: ["fit-content"],
   },
   {
+    layer: "utilities",
     selector: "max-w-none",
     properties: ["max-width"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "min-h-auto",
     properties: ["min-height"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "min-h-full",
     properties: ["min-height"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "min-h-screen",
     properties: ["min-height"],
     values: ["100vh"],
   },
   {
+    layer: "utilities",
     selector: "min-h-dvh",
     properties: ["min-height"],
     values: ["100dvh"],
   },
   {
+    layer: "utilities",
     selector: "min-h-dvw",
     properties: ["min-height"],
     values: ["100dvw"],
   },
   {
+    layer: "utilities",
     selector: "min-h-lvh",
     properties: ["min-height"],
     values: ["100lvh"],
   },
   {
+    layer: "utilities",
     selector: "min-h-lvw",
     properties: ["min-height"],
     values: ["100lvw"],
   },
   {
+    layer: "utilities",
     selector: "min-h-svh",
     properties: ["min-height"],
     values: ["100svh"],
   },
   {
+    layer: "utilities",
     selector: "min-h-svw",
     properties: ["min-height"],
     values: ["100svw"],
   },
   {
+    layer: "utilities",
     selector: "min-h-min",
     properties: ["min-height"],
     values: ["min-content"],
   },
   {
+    layer: "utilities",
     selector: "min-h-max",
     properties: ["min-height"],
     values: ["max-content"],
   },
   {
+    layer: "utilities",
     selector: "min-h-fit",
     properties: ["min-height"],
     values: ["fit-content"],
   },
   {
+    layer: "utilities",
     selector: "min-h-lh",
     properties: ["min-height"],
     values: ["1lh"],
   },
   {
+    layer: "utilities",
     selector: "min-w-3xs",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-2xs",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-xs",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-sm",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-md",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-lg",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-xl",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-2xl",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-3xl",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-4xl",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-5xl",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-5xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-6xl",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-6xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-7xl",
     properties: ["min-width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-7xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "min-w-auto",
     properties: ["min-width"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "min-w-full",
     properties: ["min-width"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "min-w-screen",
     properties: ["min-width"],
     values: ["100vw"],
   },
   {
+    layer: "utilities",
     selector: "min-w-dvw",
     properties: ["min-width"],
     values: ["100dvw"],
   },
   {
+    layer: "utilities",
     selector: "min-w-dvh",
     properties: ["min-width"],
     values: ["100dvh"],
   },
   {
+    layer: "utilities",
     selector: "min-w-lvw",
     properties: ["min-width"],
     values: ["100lvw"],
   },
   {
+    layer: "utilities",
     selector: "min-w-lvh",
     properties: ["min-width"],
     values: ["100lvh"],
   },
   {
+    layer: "utilities",
     selector: "min-w-svw",
     properties: ["min-width"],
     values: ["100svw"],
   },
   {
+    layer: "utilities",
     selector: "min-w-svh",
     properties: ["min-width"],
     values: ["100svh"],
   },
   {
+    layer: "utilities",
     selector: "min-w-min",
     properties: ["min-width"],
     values: ["min-content"],
   },
   {
+    layer: "utilities",
     selector: "min-w-max",
     properties: ["min-width"],
     values: ["max-content"],
   },
   {
+    layer: "utilities",
     selector: "min-w-fit",
     properties: ["min-width"],
     values: ["fit-content"],
   },
   {
+    layer: "utilities",
     selector: "object-contain",
     properties: ["object-fit"],
     values: ["contain"],
   },
   {
+    layer: "utilities",
     selector: "object-cover",
     properties: ["object-fit"],
     values: ["cover"],
   },
   {
+    layer: "utilities",
     selector: "object-fill",
     properties: ["object-fit"],
     values: ["fill"],
   },
   {
+    layer: "utilities",
     selector: "object-none",
     properties: ["object-fit"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "object-scale-down",
     properties: ["object-fit"],
     values: ["scale-down"],
   },
   {
+    layer: "utilities",
     selector: "object-bottom",
     properties: ["object-position"],
     values: ["bottom"],
   },
   {
+    layer: "utilities",
     selector: "object-center",
     properties: ["object-position"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "object-left",
     properties: ["object-position"],
     values: ["left"],
   },
   {
+    layer: "utilities",
     selector: "object-left-bottom",
     properties: ["object-position"],
     values: ["left bottom"],
   },
   {
+    layer: "utilities",
     selector: "object-left-top",
     properties: ["object-position"],
     values: ["left top"],
   },
   {
+    layer: "utilities",
     selector: "object-right",
     properties: ["object-position"],
     values: ["right"],
   },
   {
+    layer: "utilities",
     selector: "object-right-bottom",
     properties: ["object-position"],
     values: ["right bottom"],
   },
   {
+    layer: "utilities",
     selector: "object-right-top",
     properties: ["object-position"],
     values: ["right top"],
   },
   {
+    layer: "utilities",
     selector: "object-top",
     properties: ["object-position"],
     values: ["top"],
   },
   {
+    layer: "utilities",
     selector: "-order-first",
     properties: ["order"],
     values: ["9999"],
   },
   {
+    layer: "utilities",
     selector: "-order-last",
     properties: ["order"],
     values: ["-9999"],
   },
   {
+    layer: "utilities",
     selector: "-order-none",
     properties: ["order"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "order-first",
     properties: ["order"],
     values: ["-9999"],
   },
   {
+    layer: "utilities",
     selector: "order-last",
     properties: ["order"],
     values: ["9999"],
   },
   {
+    layer: "utilities",
     selector: "order-none",
     properties: ["order"],
     values: ["0"],
   },
   {
+    layer: "utilities",
     selector: "outline-none",
     properties: ["outline"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "outline-hidden",
     properties: ["outline", "outline-offset"],
     values: ["2px solid transparent", "2px"],
   },
   {
+    layer: "utilities",
     selector: "outline",
     properties: ["outline-style"],
     values: ["solid"],
   },
   {
+    layer: "utilities",
     selector: "outline-dashed",
     properties: ["outline-style"],
     values: ["dashed"],
   },
   {
+    layer: "utilities",
     selector: "outline-dotted",
     properties: ["outline-style"],
     values: ["dotted"],
   },
   {
+    layer: "utilities",
     selector: "outline-double",
     properties: ["outline-style"],
     values: ["double"],
   },
   {
+    layer: "utilities",
     selector: "overflow-auto",
     properties: ["overflow"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "overflow-hidden",
     properties: ["overflow"],
     values: ["hidden"],
   },
   {
+    layer: "utilities",
     selector: "overflow-clip",
     properties: ["overflow"],
     values: ["clip"],
   },
   {
+    layer: "utilities",
     selector: "overflow-visible",
     properties: ["overflow"],
     values: ["visible"],
   },
   {
+    layer: "utilities",
     selector: "overflow-scroll",
     properties: ["overflow"],
     values: ["scroll"],
   },
   {
+    layer: "utilities",
     selector: "overflow-x-auto",
     properties: ["overflow-x"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "overflow-y-auto",
     properties: ["overflow-y"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "overflow-x-hidden",
     properties: ["overflow-x"],
     values: ["hidden"],
   },
   {
+    layer: "utilities",
     selector: "overflow-y-hidden",
     properties: ["overflow-y"],
     values: ["hidden"],
   },
   {
+    layer: "utilities",
     selector: "overflow-x-clip",
     properties: ["overflow-x"],
     values: ["clip"],
   },
   {
+    layer: "utilities",
     selector: "overflow-y-clip",
     properties: ["overflow-y"],
     values: ["clip"],
   },
   {
+    layer: "utilities",
     selector: "overflow-x-visible",
     properties: ["overflow-x"],
     values: ["visible"],
   },
   {
+    layer: "utilities",
     selector: "overflow-y-visible",
     properties: ["overflow-y"],
     values: ["visible"],
   },
   {
+    layer: "utilities",
     selector: "overflow-x-scroll",
     properties: ["overflow-x"],
     values: ["scroll"],
   },
   {
+    layer: "utilities",
     selector: "overflow-y-scroll",
     properties: ["overflow-y"],
     values: ["scroll"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-auto",
     properties: ["overscroll-behavior"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-contain",
     properties: ["overscroll-behavior"],
     values: ["contain"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-none",
     properties: ["overscroll-behavior"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-y-auto",
     properties: ["overscroll-behavior-y"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-y-contain",
     properties: ["overscroll-behavior-y"],
     values: ["contain"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-y-none",
     properties: ["overscroll-behavior-y"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-x-auto",
     properties: ["overscroll-behavior-x"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-x-contain",
     properties: ["overscroll-behavior-x"],
     values: ["contain"],
   },
   {
+    layer: "utilities",
     selector: "overscroll-x-none",
     properties: ["overscroll-behavior-x"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "place-content-center",
     properties: ["place-content"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "place-content-start",
     properties: ["place-content"],
     values: ["start"],
   },
   {
+    layer: "utilities",
     selector: "place-content-end",
     properties: ["place-content"],
     values: ["end"],
   },
   {
+    layer: "utilities",
     selector: "place-content-between",
     properties: ["place-content"],
     values: ["space-between"],
   },
   {
+    layer: "utilities",
     selector: "place-content-around",
     properties: ["place-content"],
     values: ["space-around"],
   },
   {
+    layer: "utilities",
     selector: "place-content-evenly",
     properties: ["place-content"],
     values: ["space-evenly"],
   },
   {
+    layer: "utilities",
     selector: "place-content-baseline",
     properties: ["place-content"],
     values: ["baseline"],
   },
   {
+    layer: "utilities",
     selector: "place-content-stretch",
     properties: ["place-content"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "place-content-end-safe",
     properties: ["place-content"],
     values: ["safe end"],
   },
   {
+    layer: "utilities",
     selector: "place-content-center-safe",
     properties: ["place-content"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "place-items-start",
     properties: ["place-items"],
     values: ["start"],
   },
   {
+    layer: "utilities",
     selector: "place-items-end",
     properties: ["place-items"],
     values: ["end"],
   },
   {
+    layer: "utilities",
     selector: "place-items-center",
     properties: ["place-items"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "place-items-baseline",
     properties: ["place-items"],
     values: ["baseline"],
   },
   {
+    layer: "utilities",
     selector: "place-items-stretch",
     properties: ["place-items"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "place-items-end-safe",
     properties: ["place-items"],
     values: ["safe end"],
   },
   {
+    layer: "utilities",
     selector: "place-items-center-safe",
     properties: ["place-items"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "place-self-auto",
     properties: ["place-self"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "place-self-start",
     properties: ["place-self"],
     values: ["start"],
   },
   {
+    layer: "utilities",
     selector: "place-self-end",
     properties: ["place-self"],
     values: ["end"],
   },
   {
+    layer: "utilities",
     selector: "place-self-center",
     properties: ["place-self"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "place-self-stretch",
     properties: ["place-self"],
     values: ["stretch"],
   },
   {
+    layer: "utilities",
     selector: "place-self-end-safe",
     properties: ["place-self"],
     values: ["safe end"],
   },
   {
+    layer: "utilities",
     selector: "place-self-center-safe",
     properties: ["place-self"],
     values: ["safe center"],
   },
   {
+    layer: "utilities",
     selector: "static",
     properties: ["position"],
     values: ["static"],
   },
   {
+    layer: "utilities",
     selector: "fixed",
     properties: ["position"],
     values: ["fixed"],
   },
   {
+    layer: "utilities",
     selector: "absolute",
     properties: ["position"],
     values: ["absolute"],
   },
   {
+    layer: "utilities",
     selector: "relative",
     properties: ["position"],
     values: ["relative"],
   },
   {
+    layer: "utilities",
     selector: "sticky",
     properties: ["position"],
     values: ["sticky"],
   },
   {
+    layer: "utilities",
     selector: "bg-radial",
     properties: ["--tw-gradient-position", "background-image"],
     values: ["in oklab", "radial-gradient(var(--tw-gradient-stops))"],
   },
   {
+    layer: "utilities",
     selector: "size-auto",
     properties: ["width", "height"],
     values: ["auto", "auto"],
   },
   {
+    layer: "utilities",
     selector: "size-full",
     properties: ["width", "height"],
     values: ["100%", "100%"],
   },
   {
+    layer: "utilities",
     selector: "size-dvw",
     properties: ["width", "height"],
     values: ["100dvw", "100dvw"],
   },
   {
+    layer: "utilities",
     selector: "size-dvh",
     properties: ["width", "height"],
     values: ["100dvh", "100dvh"],
   },
   {
+    layer: "utilities",
     selector: "size-lvw",
     properties: ["width", "height"],
     values: ["100lvw", "100lvw"],
   },
   {
+    layer: "utilities",
     selector: "size-lvh",
     properties: ["width", "height"],
     values: ["100lvh", "100lvh"],
   },
   {
+    layer: "utilities",
     selector: "size-svw",
     properties: ["width", "height"],
     values: ["100svw", "100svw"],
   },
   {
+    layer: "utilities",
     selector: "size-svh",
     properties: ["width", "height"],
     values: ["100svh", "100svh"],
   },
   {
+    layer: "utilities",
     selector: "size-min",
     properties: ["width", "height"],
     values: ["min-content", "min-content"],
   },
   {
+    layer: "utilities",
     selector: "size-max",
     properties: ["width", "height"],
     values: ["max-content", "max-content"],
   },
   {
+    layer: "utilities",
     selector: "size-fit",
     properties: ["width", "height"],
     values: ["fit-content", "fit-content"],
   },
   {
+    layer: "utilities",
     selector: "space-x-reverse",
     properties: ["--tw-space-x-reverse"],
     values: ["1"],
   },
   {
+    layer: "utilities",
     selector: "space-y-reverse",
     properties: ["--tw-space-y-reverse"],
     values: ["1"],
   },
   {
+    layer: "utilities",
     selector: "text-left",
     properties: ["text-align"],
     values: ["left"],
   },
   {
+    layer: "utilities",
     selector: "text-center",
     properties: ["text-align"],
     values: ["center"],
   },
   {
+    layer: "utilities",
     selector: "text-right",
     properties: ["text-align"],
     values: ["right"],
   },
   {
+    layer: "utilities",
     selector: "text-justify",
     properties: ["text-align"],
     values: ["justify"],
   },
   {
+    layer: "utilities",
     selector: "text-start",
     properties: ["text-align"],
     values: ["start"],
   },
   {
+    layer: "utilities",
     selector: "text-end",
     properties: ["text-align"],
     values: ["end"],
   },
   {
+    layer: "utilities",
     selector: "uppercase",
     properties: ["text-transform"],
     values: ["uppercase"],
   },
   {
+    layer: "utilities",
     selector: "lowercase",
     properties: ["text-transform"],
     values: ["lowercase"],
   },
   {
+    layer: "utilities",
     selector: "capitalize",
     properties: ["text-transform"],
     values: ["capitalize"],
   },
   {
+    layer: "utilities",
     selector: "normal-case",
     properties: ["text-transform"],
     values: ["none"],
   },
   {
+    layer: "utilities",
     selector: "visible",
     properties: ["visibility"],
     values: ["visible"],
   },
   {
+    layer: "utilities",
     selector: "invisible",
     properties: ["visibility"],
     values: ["hidden"],
   },
   {
+    layer: "utilities",
     selector: "collapse",
     properties: ["visibility"],
     values: ["collapse"],
   },
   {
+    layer: "utilities",
     selector: "w-3xs",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-2xs",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-xs",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xs",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-sm",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-sm",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-md",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-md",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-lg",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-lg",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-xl",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-2xl",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-2xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-3xl",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-3xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-4xl",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-4xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-5xl",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-5xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-6xl",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-6xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-7xl",
     properties: ["width"],
     values: ["var({var})"],
-    placeholders: {
-      "{var}": "container-7xl",
-    },
   },
   {
+    layer: "utilities",
     selector: "w-auto",
     properties: ["width"],
     values: ["auto"],
   },
   {
+    layer: "utilities",
     selector: "w-full",
     properties: ["width"],
     values: ["100%"],
   },
   {
+    layer: "utilities",
     selector: "w-screen",
     properties: ["width"],
     values: ["100vw"],
   },
   {
+    layer: "utilities",
     selector: "w-dvw",
     properties: ["width"],
     values: ["100dvw"],
   },
   {
+    layer: "utilities",
     selector: "w-dvh",
     properties: ["width"],
     values: ["100dvh"],
   },
   {
+    layer: "utilities",
     selector: "w-lvw",
     properties: ["width"],
     values: ["100lvw"],
   },
   {
+    layer: "utilities",
     selector: "w-lvh",
     properties: ["width"],
     values: ["100lvh"],
   },
   {
+    layer: "utilities",
     selector: "w-svw",
     properties: ["width"],
     values: ["100svw"],
   },
   {
+    layer: "utilities",
     selector: "w-svh",
     properties: ["width"],
     values: ["100svh"],
   },
   {
+    layer: "utilities",
     selector: "w-min",
     properties: ["width"],
     values: ["min-content"],
   },
   {
+    layer: "utilities",
     selector: "w-max",
     properties: ["width"],
     values: ["max-content"],
   },
   {
+    layer: "utilities",
     selector: "w-fit",
     properties: ["width"],
     values: ["fit-content"],
   },
   {
+    layer: "utilities",
     selector: "z-auto",
     properties: ["z-index"],
     values: ["auto"],
   },
 ];
-
-const rules = {
-  "aspect-ratio": [
-    {
-      selector: "aspect",
-      properties: ["aspect-ratio"],
-      arbitrary: true,
-    },
-  ],
-  "background-color": [
-    {
-      selector: "bg",
-      properties: ["background-color"],
-      arbitrary: true,
-      dark: true,
-    },
-  ],
-  "background-color-opacity": [
-    {
-      selector: "bg/o",
-      properties: ["background-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "bg",
-        "{var2}": "bg-o",
-      },
-      dark: true,
-    },
-  ],
-  "border-radius": [
-    {
-      selector: "rounded",
-      properties: ["border-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-s",
-      properties: ["border-start-start-radius", "border-end-start-radius"],
-      values: ["var({var})", "var({var2})"],
-      placeholders: {
-        "{var}": "rounded-s",
-        "{var2}": "rounded-s",
-      },
-    },
-    {
-      selector: "rounded-e",
-      properties: ["border-start-end-radius", "border-end-end-radius"],
-      values: ["var({var})", "var({var2})"],
-      placeholders: {
-        "{var}": "rounded-e",
-        "{var2}": "rounded-e",
-      },
-    },
-    {
-      selector: "rounded-t",
-      properties: ["border-top-left-radius", "border-top-right-radius"],
-      values: ["var({var})", "var({var2})"],
-      placeholders: {
-        "{var}": "rounded-t",
-        "{var2}": "rounded-t",
-      },
-    },
-    {
-      selector: "rounded-r",
-      properties: ["border-top-right-radius", "border-bottom-right-radius"],
-      values: ["var({var})", "var({var2})"],
-      placeholders: {
-        "{var}": "rounded-r",
-        "{var2}": "rounded-r",
-      },
-    },
-    {
-      selector: "rounded-b",
-      properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
-      values: ["var({var})", "var({var2})"],
-      placeholders: {
-        "{var}": "rounded-b",
-        "{var2}": "rounded-b",
-      },
-    },
-    {
-      selector: "rounded-l",
-      properties: ["border-top-left-radius", "border-bottom-left-radius"],
-      values: ["var({var})", "var({var2})"],
-      placeholders: {
-        "{var}": "rounded-l",
-        "{var2}": "rounded-l",
-      },
-    },
-    {
-      selector: "rounded-ss",
-      properties: ["border-start-start-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-se",
-      properties: ["border-start-end-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-ee",
-      properties: ["border-end-end-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-es",
-      properties: ["border-end-start-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-tl",
-      properties: ["border-top-left-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-tr",
-      properties: ["border-top-right-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-br",
-      properties: ["border-bottom-right-radius"],
-      arbitrary: true,
-    },
-    {
-      selector: "rounded-bl",
-      properties: ["border-bottom-left-radius"],
-      arbitrary: true,
-    },
-  ],
-  bottom: [
-    {
-      selector: "bottom",
-      properties: ["bottom"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "bottom",
-      },
-    },
-    {
-      selector: "[bottom]",
-      properties: ["bottom"],
-      arbitrary: true,
-    },
-  ],
-  color: [
-    {
-      selector: "color",
-      properties: ["color"],
-      arbitrary: true,
-      dark: true,
-    },
-  ],
-  "color-opacity": [
-    {
-      selector: "color/o",
-      properties: ["color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "color",
-        "{var2}": "color-o",
-      },
-      dark: true,
-    },
-  ],
-  columns: [
-    {
-      selector: "columns",
-      properties: ["columns"],
-      arbitrary: true,
-    },
-  ],
-  "flex-basis": [
-    {
-      selector: "basis",
-      properties: ["flex-basis"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "basis",
-      },
-    },
-    {
-      selector: "[basis]",
-      properties: ["flex-basis"],
-      arbitrary: true,
-    },
-  ],
-  "flex-grow": [
-    {
-      selector: "grow",
-      properties: ["flex-grow"],
-      arbitrary: true,
-    },
-  ],
-  "flex-shrink": [
-    {
-      selector: "shrink",
-      properties: ["flex-shrink"],
-      arbitrary: true,
-    },
-  ],
-  flex: [
-    {
-      selector: "flex",
-      properties: ["flex"],
-      arbitrary: true,
-    },
-  ],
-  "from-position": [
-    {
-      selector: "from-position",
-      properties: ["--tw-gradient-from-position"],
-      arbitrary: true,
-    },
-  ],
-  from: [
-    {
-      selector: "from",
-      properties: ["--tw-gradient-from", "--tw-gradient-stops"],
-      values: [
-        "var({var})",
-        "var(--tw-gradient-from-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-from) var(--tw-gradient-from-position))",
-      ],
-      placeholders: {
-        "{var}": "from",
-      },
-      dark: true,
-    },
-  ],
-  "from-opacity": [
-    {
-      selector: "from/o",
-      properties: ["--tw-gradient-from", "--tw-gradient-stops"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-        "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
-      ],
-      placeholders: {
-        "{var}": "from",
-        "{var2}": "from-o",
-      },
-      dark: true,
-    },
-  ],
-  gap: [
-    {
-      selector: "gap",
-      properties: ["gap"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "gap",
-      },
-    },
-    {
-      selector: "gap-x",
-      properties: ["column-gap"],
-      values: ["calc(var(--spacing) * var({var}, var(--gap)))"],
-      placeholders: {
-        "{var}": "gap-x",
-      },
-    },
-    {
-      selector: "gap-y",
-      properties: ["row-gap"],
-      values: ["calc(var(--spacing) * var({var}, var(--gap)))"],
-      placeholders: {
-        "{var}": "gap-y",
-      },
-    },
-    {
-      selector: "[gap]",
-      properties: ["gap"],
-      arbitrary: true,
-    },
-    {
-      selector: "[gap-x]",
-      properties: ["column-gap"],
-      values: ["var({var}, var(--gap))"],
-      placeholders: {
-        "{var}": "gap-x",
-      },
-    },
-    {
-      selector: "[gap-y]",
-      properties: ["row-gap"],
-      values: ["var({var}, var(--gap))"],
-      placeholders: {
-        "{var}": "gap-y",
-      },
-    },
-  ],
-  "grid-column": [
-    {
-      selector: "col",
-      properties: ["grid-column"],
-      arbitrary: true,
-    },
-    {
-      selector: "col-span",
-      properties: ["grid-column"],
-      values: ["span var({var}) / span var({var2})"],
-      placeholders: {
-        "{var}": "col-span",
-        "{var2}": "col-span",
-      },
-    },
-    {
-      selector: "col-start",
-      properties: ["grid-column-start"],
-      arbitrary: true,
-    },
-    {
-      selector: "col-end",
-      properties: ["grid-column-end"],
-      arbitrary: true,
-    },
-  ],
-  "grid-row": [
-    {
-      selector: "row",
-      properties: ["grid-row"],
-      arbitrary: true,
-    },
-    {
-      selector: "row-span",
-      properties: ["grid-row"],
-      values: ["span var({var}) / span var({var2})"],
-      placeholders: {
-        "{var}": "row-span",
-        "{var2}": "row-span",
-      },
-    },
-    {
-      selector: "row-start",
-      properties: ["grid-row-start"],
-      arbitrary: true,
-    },
-    {
-      selector: "row-end",
-      properties: ["grid-row-end"],
-      arbitrary: true,
-    },
-  ],
-  "grid-template-columns": [
-    {
-      selector: "grid-cols",
-      properties: ["grid-template-columns"],
-      values: ["repeat(var({var}), minmax(0, 1fr))"],
-      placeholders: {
-        "{var}": "grid-cols",
-      },
-    },
-    {
-      selector: "[grid-cols]",
-      properties: ["grid-template-columns"],
-      arbitrary: true,
-    },
-  ],
-  "grid-template-rows": [
-    {
-      selector: "grid-rows",
-      properties: ["grid-template-rows"],
-      values: ["repeat(var({var}), minmax(0, 1fr))"],
-      placeholders: {
-        "{var}": "grid-rows",
-      },
-    },
-    {
-      selector: "[grid-rows]",
-      properties: ["grid-template-rows"],
-      arbitrary: true,
-    },
-  ],
-  height: [
-    {
-      selector: "h",
-      properties: ["height"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "h",
-      },
-    },
-    {
-      selector: "[h]",
-      properties: ["height"],
-      arbitrary: true,
-    },
-  ],
-  inset: [
-    {
-      selector: "inset",
-      properties: ["inset"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "inset",
-      },
-    },
-    {
-      selector: "start",
-      properties: ["inset-inline-start"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "start",
-      },
-    },
-    {
-      selector: "end",
-      properties: ["inset-inline-end"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "end",
-      },
-    },
-    {
-      selector: "inset-x",
-      properties: ["inset-inline"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "inset-x",
-      },
-    },
-    {
-      selector: "inset-y",
-      properties: ["inset-block"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "inset-y",
-      },
-    },
-    {
-      selector: "[inset]",
-      properties: ["inset"],
-      arbitrary: true,
-    },
-    {
-      selector: "[start]",
-      properties: ["inset-inline-start"],
-      arbitrary: true,
-    },
-    {
-      selector: "[end]",
-      properties: ["inset-inline-end"],
-      arbitrary: true,
-    },
-    {
-      selector: "[inset-x]",
-      properties: ["inset-inline"],
-      arbitrary: true,
-    },
-    {
-      selector: "[inset-y]",
-      properties: ["inset-block"],
-      arbitrary: true,
-    },
-  ],
-  left: [
-    {
-      selector: "left",
-      properties: ["left"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "left",
-      },
-    },
-    {
-      selector: "[left]",
-      properties: ["left"],
-      arbitrary: true,
-    },
-  ],
-  "letter-spacing": [
-    {
-      selector: "tracking",
-      properties: ["letter-spacing"],
-      arbitrary: true,
-    },
-  ],
-  "line-height": [
-    {
-      selector: "leading",
-      properties: ["line-height"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "leading",
-      },
-    },
-    {
-      selector: "[leading]",
-      properties: ["line-height"],
-      arbitrary: true,
-    },
-  ],
-  margin: [
-    {
-      selector: "m",
-      properties: ["margin"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "m",
-      },
-    },
-    {
-      selector: "[m]",
-      properties: ["margin"],
-      arbitrary: true,
-    },
-    {
-      selector: "mt",
-      properties: ["margin-top"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "mt",
-      },
-    },
-    {
-      selector: "[mt]",
-      properties: ["margin-top"],
-      arbitrary: true,
-    },
-    {
-      selector: "mb",
-      properties: ["margin-bottom"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "mb",
-      },
-    },
-    {
-      selector: "[mb]",
-      properties: ["margin-bottom"],
-      arbitrary: true,
-    },
-    {
-      selector: "ml",
-      properties: ["margin-left"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "ml",
-      },
-    },
-    {
-      selector: "[ml]",
-      properties: ["margin-left"],
-      arbitrary: true,
-    },
-    {
-      selector: "mr",
-      properties: ["margin-right"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "mr",
-      },
-    },
-    {
-      selector: "[mr]",
-      properties: ["margin-right"],
-      arbitrary: true,
-    },
-    {
-      selector: "ms",
-      properties: ["margin-inline-start"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "ms",
-      },
-    },
-    {
-      selector: "[ms]",
-      properties: ["margin-inline-start"],
-      arbitrary: true,
-    },
-    {
-      selector: "me",
-      properties: ["margin-inline-end"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "me",
-      },
-    },
-    {
-      selector: "[me]",
-      properties: ["margin-inline-end"],
-      arbitrary: true,
-    },
-    {
-      selector: "mx",
-      properties: ["margin-inline"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "mx",
-      },
-    },
-    {
-      selector: "[mx]",
-      properties: ["margin-inline"],
-      arbitrary: true,
-    },
-    {
-      selector: "my",
-      properties: ["margin-block"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "my",
-      },
-    },
-    {
-      selector: "[my]",
-      properties: ["margin-block"],
-      arbitrary: true,
-    },
-  ],
-  "max-height": [
-    {
-      selector: "max-h",
-      properties: ["max-height"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "max-h",
-      },
-    },
-    {
-      selector: "[max-h]",
-      properties: ["max-height"],
-      arbitrary: true,
-    },
-  ],
-  "max-width": [
-    {
-      selector: "max-w",
-      properties: ["max-width"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "max-w",
-      },
-    },
-    {
-      selector: "[max-w]",
-      properties: ["max-width"],
-      arbitrary: true,
-    },
-  ],
-  "min-height": [
-    {
-      selector: "min-h",
-      properties: ["min-height"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "min-h",
-      },
-    },
-    {
-      selector: "[min-h]",
-      properties: ["min-height"],
-      arbitrary: true,
-    },
-  ],
-  "min-width": [
-    {
-      selector: "min-w",
-      properties: ["min-width"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "min-w",
-      },
-    },
-    {
-      selector: "[min-w]",
-      properties: ["min-width"],
-      arbitrary: true,
-    },
-  ],
-  "object-position": [
-    {
-      selector: "object-position",
-      properties: ["object-position"],
-      arbitrary: true,
-    },
-  ],
-  order: [
-    {
-      selector: "order",
-      properties: ["order"],
-      arbitrary: true,
-    },
-  ],
-  padding: [
-    {
-      selector: "p",
-      properties: ["padding"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "p",
-      },
-    },
-    {
-      selector: "[p]",
-      properties: ["padding"],
-      arbitrary: true,
-    },
-    {
-      selector: "pt",
-      properties: ["padding-top"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "pt",
-      },
-    },
-    {
-      selector: "pb",
-      properties: ["padding-bottom"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "pb",
-      },
-    },
-    {
-      selector: "pl",
-      properties: ["padding-left"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "pl",
-      },
-    },
-    {
-      selector: "pr",
-      properties: ["padding-right"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "pr",
-      },
-    },
-    {
-      selector: "ps",
-      properties: ["padding-inline-start"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "ps",
-      },
-    },
-    {
-      selector: "pe",
-      properties: ["padding-inline-end"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "pe",
-      },
-    },
-    {
-      selector: "[pt]",
-      properties: ["padding-top"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "pt",
-      },
-    },
-    {
-      selector: "[pb]",
-      properties: ["padding-bottom"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "pb",
-      },
-    },
-    {
-      selector: "[pl]",
-      properties: ["padding-left"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "pl",
-      },
-    },
-    {
-      selector: "[pr]",
-      properties: ["padding-right"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "pr",
-      },
-    },
-    {
-      selector: "[ps]",
-      properties: ["padding-inline-start"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "ps",
-      },
-    },
-    {
-      selector: "[pe]",
-      properties: ["padding-inline-end"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "pe",
-      },
-    },
-    {
-      selector: "px",
-      properties: ["padding-inline"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "px",
-      },
-    },
-    {
-      selector: "py",
-      properties: ["padding-block"],
-      values: ["calc(var(--spacing) * var({var}, var(--p)))"],
-      placeholders: {
-        "{var}": "py",
-      },
-    },
-    {
-      selector: "[px]",
-      properties: ["padding-inline"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "px",
-      },
-    },
-    {
-      selector: "[py]",
-      properties: ["padding-block"],
-      values: ["var({var}, var(--p))"],
-      placeholders: {
-        "{var}": "py",
-      },
-    },
-  ],
-  right: [
-    {
-      selector: "right",
-      properties: ["right"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "right",
-      },
-    },
-    {
-      selector: "[right]",
-      properties: ["right"],
-      arbitrary: true,
-    },
-  ],
-  size: [
-    {
-      selector: "size",
-      properties: ["width", "height"],
-      values: [
-        "calc(var(--spacing) * var({var}))",
-        "calc(var(--spacing) * var({var2}))",
-      ],
-      placeholders: {
-        "{var}": "size",
-        "{var2}": "size",
-      },
-    },
-    {
-      selector: "[size]",
-      properties: ["width", "height"],
-      values: ["var({var})", "var({var2})"],
-      placeholders: {
-        "{var}": "size",
-        "{var2}": "size",
-      },
-    },
-  ],
-  space: [
-    {
-      selector: "space-x` > :not(:last-child)`",
-      properties: ["margin-inline-start", "margin-inline-end"],
-      values: [
-        "calc(var(--spacing) * var({var}) * var(--tw-space-x-reverse))",
-        "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-x-reverse)))",
-      ],
-      placeholders: {
-        "{var}": "space-x",
-        "{var2}": "space-x",
-      },
-    },
-    {
-      selector: "[space-x]` > :not(:last-child)`",
-      properties: ["margin-inline-start", "margin-inline-end"],
-      values: [
-        "calc(var({var}) * var(--tw-space-x-reverse))",
-        "calc(var({var2}) * (1 - var(--tw-space-x-reverse)))",
-      ],
-      placeholders: {
-        "{var}": "space-x",
-        "{var2}": "space-x",
-      },
-    },
-    {
-      selector: "space-y` > :not(:last-child)`",
-      properties: ["margin-block-start", "margin-block-end"],
-      values: [
-        "calc(var(--spacing) * var({var}) * var(--tw-space-y-reverse))",
-        "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-y-reverse)))",
-      ],
-      placeholders: {
-        "{var}": "space-y",
-        "{var2}": "space-y",
-      },
-    },
-    {
-      selector: "[space-y]` > :not(:last-child)`",
-      properties: ["margin-block-start", "margin-block-end"],
-      values: [
-        "calc(var({var}) * var(--tw-space-y-reverse))",
-        "calc(var({var2}) * (1 - var(--tw-space-y-reverse)))",
-      ],
-      placeholders: {
-        "{var}": "space-y",
-        "{var2}": "space-y",
-      },
-    },
-  ],
-  to: [
-    {
-      selector: "to",
-      properties: ["--tw-gradient-to", "--tw-gradient-stops"],
-      values: [
-        "var({var})",
-        "var(--tw-gradient-to-stops, var(--tw-gradient-position), var(--tw-gradient-to) var(--tw-gradient-to-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
-      ],
-      placeholders: {
-        "{var}": "to",
-      },
-      dark: true,
-    },
-  ],
-  "to-opacity": [
-    {
-      selector: "to/o",
-      properties: ["--tw-gradient-to", "--tw-gradient-stops"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-        "var(--tw-gradient-to-stops, var(--tw-gradient-position), var(--tw-gradient-to) var(--tw-gradient-to-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
-      ],
-      placeholders: {
-        "{var}": "to",
-        "{var2}": "to-o",
-      },
-      dark: true,
-    },
-  ],
-  "to-position": [
-    {
-      selector: "to-position",
-      properties: ["--tw-gradient-to-position"],
-      arbitrary: true,
-    },
-  ],
-  top: [
-    {
-      selector: "top",
-      properties: ["top"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "top",
-      },
-    },
-    {
-      selector: "[top]",
-      properties: ["top"],
-      arbitrary: true,
-    },
-  ],
-  via: [
-    {
-      selector: "via",
-      properties: ["--tw-gradient-via", "--tw-gradient-stops"],
-      values: [
-        "var({var})",
-        "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
-      ],
-      placeholders: {
-        "{var}": "via",
-        "{var2}": "via-o",
-      },
-      dark: true,
-    },
-  ],
-  "via-opacity": [
-    {
-      selector: "via/o",
-      properties: ["--tw-gradient-via", "--tw-gradient-stops"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-        "var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
-      ],
-      placeholders: {
-        "{var}": "via",
-        "{var2}": "via-o",
-      },
-      dark: true,
-    },
-  ],
-  "via-position": [
-    {
-      selector: "via-position",
-      properties: ["--tw-gradient-via-position"],
-      arbitrary: true,
-    },
-  ],
-  width: [
-    {
-      selector: "w",
-      properties: ["width"],
-      values: ["calc(var(--spacing) * var({var}))"],
-      placeholders: {
-        "{var}": "w",
-      },
-    },
-    {
-      selector: "[w]",
-      properties: ["width"],
-      arbitrary: true,
-    },
-  ],
-  "z-index": [
-    {
-      selector: "z",
-      properties: ["z-index"],
-      arbitrary: true,
-    },
-  ],
-  "border-width": [
-    {
-      selector: "border-w",
-      properties: ["border-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-t-w",
-      properties: ["border-top-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-r-w",
-      properties: ["border-right-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-b-w",
-      properties: ["border-bottom-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-l-w",
-      properties: ["border-left-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-s-w",
-      properties: ["border-inline-start-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-e-w",
-      properties: ["border-inline-end-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-x-w",
-      properties: ["border-inline-width"],
-      arbitrary: true,
-    },
-    {
-      selector: "border-y-w",
-      properties: ["border-block-width"],
-      arbitrary: true,
-    },
-  ],
-  "border-color": [
-    {
-      selector: "border",
-      properties: ["border-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-t",
-      properties: ["border-top-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-r",
-      properties: ["border-right-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-b",
-      properties: ["border-bottom-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-l",
-      properties: ["border-left-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-s",
-      properties: ["border-inline-start-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-e",
-      properties: ["border-inline-end-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-x",
-      properties: ["border-inline-color"],
-      arbitrary: true,
-      dark: true,
-    },
-    {
-      selector: "border-y",
-      properties: ["border-block-color"],
-      arbitrary: true,
-      dark: true,
-    },
-  ],
-  "border-color-opacity": [
-    {
-      selector: "border/o",
-      properties: ["border-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border",
-        "{var2}": "border-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-t/o",
-      properties: ["border-top-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-t",
-        "{var2}": "border-t-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-r/o",
-      properties: ["border-right-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-r",
-        "{var2}": "border-r-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-b/o",
-      properties: ["border-bottom-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-b",
-        "{var2}": "border-b-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-l/o",
-      properties: ["border-left-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-l",
-        "{var2}": "border-l-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-s/o",
-      properties: ["border-inline-start-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-s",
-        "{var2}": "border-s-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-e/o",
-      properties: ["border-inline-end-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-e",
-        "{var2}": "border-e-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-x/o",
-      properties: ["border-inline-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-x",
-        "{var2}": "border-x-o",
-      },
-      dark: true,
-    },
-    {
-      selector: "border-y/o",
-      properties: ["border-block-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "border-y",
-        "{var2}": "border-y-o",
-      },
-      dark: true,
-    },
-  ],
-  "outline-width": [
-    {
-      selector: "outline-w",
-      properties: ["outline-width"],
-      arbitrary: true,
-    },
-  ],
-  "outline-offset": [
-    {
-      selector: "outline-offset",
-      properties: ["outline-offset"],
-      arbitrary: true,
-    },
-  ],
-  "outline-color": [
-    {
-      selector: "outline",
-      properties: ["outline-color"],
-      arbitrary: true,
-      dark: true,
-    },
-  ],
-  "outline-color-opacity": [
-    {
-      selector: "outline/o",
-      properties: ["outline-color"],
-      values: [
-        "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      ],
-      placeholders: {
-        "{var}": "outline",
-        "{var2}": "outline-o",
-      },
-      dark: true,
-    },
-  ],
-};
 
 (() => {
   const breakpoints = {
@@ -5077,18 +4895,7 @@ const rules = {
     "2xl": "96rem",
   };
 
-  // Non-prefixable keys (similar to original)
-  const nonPrefixable = ["spacing", /^tw/];
-
-  // Memoization cache for generated CSS rules
-  const ruleCache = new Map();
-
-  // Batch mutation handling
-  let pendingMutations = new Set();
-  let mutationBatchTimeout = null;
-
-  // Interactive states to look for
-  const interactiveStates = [
+  const states = [
     ":hover",
     ":active",
     ":focus",
@@ -5098,382 +4905,195 @@ const rules = {
     ":disabled",
   ];
 
-  // Check if a class has dark mode prefix
-  function isDarkModeClass(className) {
-    return className.startsWith("dark:");
-  }
+  const classParser = new RegExp(
+    `^(dark:)?(?:(${Object.keys(breakpoints).join(
+      "|"
+    )}):)?(.+)(${states.join("|")})$`
+  );
 
-  // Extract dark mode class name
-  function extractDarkModeClass(className) {
-    return className.replace(/^dark:/, "");
-  }
+  const ruleCache = new Map();
+  let scheduled = null;
 
+  /**
+   * Escapes a string for use as a CSS identifier.
+   */
   function escapeCssIdentifier(str) {
-    return str
-      .replace(/([ !"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g, "\\$1")
-      .replace(/^(\d)/, (_, d) => `\\3${d}`);
-  }
-
-  function escapeSelectorWithBackticks(selector, prefix) {
-    const raw = prefix ? `${prefix}\\:${selector}` : selector;
-
-    let out = "";
-    let inProtected = false;
-    let buffer = "";
-
-    for (let i = 0; i < raw.length; i++) {
-      const ch = raw[i];
-      if (ch === "`") {
-        if (inProtected) {
-          out += buffer;
-        } else {
-          out += escapeCssIdentifier(buffer);
-        }
-        inProtected = !inProtected;
-        buffer = "";
-      } else {
-        buffer += ch;
-      }
-    }
-
-    out += inProtected ? buffer : escapeCssIdentifier(buffer);
-    return "." + out;
+    return str.replace(/([ !"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g, "\\$1");
   }
 
   /**
-   * Replace placeholders inside a value string with normalized var names
-   * (no `var()` wrapper — leave that to the value definition itself).
+   * Creates a CSS variable name from its constituent parts.
    */
-  function resolvePlaceholders(
-    value,
-    placeholders,
-    baseClass,
-    state,
-    prefix,
-    isDark = false
-  ) {
-    let result = value;
-    for (const [ph, name] of Object.entries(placeholders || {})) {
-      const cleanState = state.replace(":", "");
-      const cleanName = name.replace(/[^a-zA-Z0-9-]/g, "");
-      const cleanPrefix = prefix ? prefix.replace(/[^a-zA-Z0-9-]/g, "") : "";
+  function createCssVarName({ isDark, prefix, name, state }) {
+    const parts = [
+      isDark ? "dark" : "",
+      prefix,
+      name.replace(/[^a-zA-Z0-9-]/g, ""),
+      state.replace(":", ""),
+    ];
 
-      let varName;
-      if (prefix && isDark) {
-        varName = `--${cleanPrefix}-dark-${cleanName}-${cleanState}`;
-      } else if (prefix && isDark) {
-        // This is a responsive dark rule - should go in media query but with dark context
-        const breakpointSize = breakpoints[prefix];
-        cacheEntry = { css, isUtility: false, breakpoint: breakpointSize };
-
-        if (!mediaQueries[breakpointSize]) {
-          mediaQueries[breakpointSize] = [];
-        }
-        mediaQueries[breakpointSize].push(css);
-      } else if (prefix) {
-        varName = `--${cleanPrefix}-${cleanName}-${cleanState}`;
-      } else if (isDark) {
-        varName = `--dark-${cleanName}-${cleanState}`;
-      } else {
-        varName = `--${cleanName}-${cleanState}`;
-      }
-
-      result = result.replaceAll(ph, varName);
-    }
-    return result;
+    return `--${parts.filter(Boolean).join("-")}`;
   }
 
   /**
-   * Generate CSS variable value for arbitrary rules
+   * Finds a matching style rule configuration for a given selector.
    */
-  function generateArbitraryValue(baseClass, state, prefix, isDark = false) {
-    const cleanState = state.replace(":", "");
-    const cleanBaseClass = baseClass.replace(/[^a-zA-Z0-9-]/g, "");
-    const cleanPrefix = prefix ? prefix.replace(/[^a-zA-Z0-9-]/g, "") : "";
-
-    let varName;
-    if (isDark && prefix) {
-      varName = `--dark-${cleanPrefix}-${cleanBaseClass}-${cleanState}`;
-    } else if (isDark) {
-      varName = `--dark-${cleanBaseClass}-${cleanState}`;
-    } else if (prefix) {
-      varName = `--${cleanPrefix}-${cleanBaseClass}-${cleanState}`;
-    } else {
-      varName = `--${cleanBaseClass}-${cleanState}`;
-    }
-
-    return `var(${varName})`;
+  function findStyleRule(selector) {
+    return rules.find((rule) => rule.selector === selector) || null;
   }
 
-  function findRuleConfig(baseClass) {
-    for (const [key, configs] of Object.entries(rules)) {
-      for (const config of configs) {
-        if (config.selector === baseClass) {
-          return config;
-        }
-      }
-    }
-    return null;
-  }
+  /**
+   * Builds a complete CSS rule from a parsed class.
+   */
+  function buildCssRule({ baseClass, fullClass, state, prefix, isDark }) {
+    const config = findStyleRule(baseClass);
 
-  function findUtilityConfig(baseClass) {
-    return utilities.find((util) => util.selector === baseClass) || null;
-  }
+    if (!config) {
+      console.warn(`Unknown class: "${baseClass}"`);
 
-  function buildRule(
-    baseClass,
-    fullClass,
-    state,
-    prefix = null,
-    isDark = false
-  ) {
-    // First check if it exists in rules
-    const ruleConfig = findRuleConfig(baseClass);
-
-    // Then check if it exists in utilities
-    const utilityConfig = findUtilityConfig(baseClass);
-
-    // If neither exists, warn and return null
-    if (!ruleConfig && !utilityConfig) {
-      console.warn(
-        `Unknown class "${baseClass}" - not found in rules or utilities`
-      );
       return null;
     }
 
-    // --- IMPROVEMENT: Simplified and more accurate selector generation ---
-    const escapedFullClass = escapeCssIdentifier(fullClass);
-    const selector = isDark
-      ? `.dark .${escapedFullClass}${state}`
-      : `.${escapedFullClass}${state}`;
-
+    const escapedSelector = `.${escapeCssIdentifier(fullClass)}${state}`;
+    const selector = isDark ? `.dark ${escapedSelector}` : escapedSelector;
     const declarations = {};
-    let isUtility = false;
 
-    if (ruleConfig) {
-      // Handle rule configuration (no changes here)
-      isUtility = false;
-      const { properties, values, placeholders, arbitrary } = ruleConfig;
-      const props = Array.isArray(properties) ? properties : [properties];
+    const props = Array.isArray(config.properties)
+      ? config.properties
+      : [config.properties];
 
-      props.forEach((prop, i) => {
-        let value;
-        if (arbitrary) {
-          value = generateArbitraryValue(baseClass, state, prefix, isDark);
-        } else {
-          const rawValue = values[i] || values[0];
-          value = resolvePlaceholders(
-            rawValue,
-            placeholders,
-            baseClass,
-            state,
-            prefix,
-            isDark
-          );
+    props.forEach((prop, i) => {
+      if (config.arbitrary) {
+        const varName = createCssVarName({
+          isDark,
+          prefix,
+          name: baseClass,
+          state,
+        });
+
+        declarations[prop] = `var(${varName})`;
+      } else if (config.placeholders) {
+        let value = config.values[i] || config.values[0];
+
+        for (const [ph, name] of Object.entries(config.placeholders)) {
+          const varName = createCssVarName({ isDark, prefix, name, state });
+
+          value = value.replaceAll(ph, varName);
         }
-        declarations[prop] = value;
-      });
-    } else if (utilityConfig) {
-      // Handle utility configuration (no changes here)
-      isUtility = true;
-      const { properties, values } = utilityConfig;
-      const props = Array.isArray(properties) ? properties : [properties];
 
-      props.forEach((prop, i) => {
-        const value = values[i] || values[0];
         declarations[prop] = value;
-      });
-    }
+      } else {
+        declarations[prop] = config.values[i] || config.values[0];
+      }
+    });
 
-    return { selector, declarations, isUtility };
+    const declarationString = Object.entries(declarations)
+      .map(([prop, val]) => `${prop}: ${val};`)
+      .join(" ");
+
+    return {
+      css: `${selector} { ${declarationString} }`,
+      layer: config.layer || "styles",
+      breakpoint: prefix ? breakpoints[prefix] : null,
+    };
   }
 
+  /**
+   * Extracts and parses all interactive classes from an element.
+   */
   function extractInteractiveClasses(element) {
-    const classList = Array.from(element.classList);
     const interactiveClasses = [];
 
-    classList.forEach((className) => {
-      interactiveStates.forEach((state) => {
-        if (className.endsWith(state)) {
-          const baseClassWithPrefix = className.slice(0, -state.length);
+    for (const className of element.classList) {
+      const match = className.match(classParser);
 
-          // Check for dark mode first (can be dark:prefix:class or dark:class)
-          let isDark = false;
-          let remainingClass = baseClassWithPrefix;
+      if (match) {
+        const [, dark, prefix, baseClass, state] = match;
 
-          if (baseClassWithPrefix.startsWith("dark:")) {
-            isDark = true;
-            remainingClass = baseClassWithPrefix.replace("dark:", "");
-          }
-
-          // Check for responsive prefix
-          let prefix = null;
-          let actualBaseClass = remainingClass;
-
-          // Check for breakpoint prefixes
-          for (const bp of Object.keys(breakpoints)) {
-            if (remainingClass.startsWith(`${bp}:`)) {
-              prefix = bp;
-              actualBaseClass = remainingClass.replace(`${bp}:`, "");
-              break;
-            }
-          }
-
-          interactiveClasses.push({
-            baseClass: actualBaseClass,
-            state,
-            fullClass: className,
-            isDark,
-            prefix,
-          });
-        }
-      });
-    });
+        interactiveClasses.push({
+          baseClass,
+          state,
+          fullClass: className,
+          isDark: !!dark,
+          prefix: prefix || null,
+        });
+      }
+    }
 
     return interactiveClasses;
   }
 
-  function generateCssRules(interactiveClasses) {
-    const baseRules = [];
-    const utilityCssRules = [];
-    // --- FIX: Create separate objects for rule and utility media queries ---
-    const mediaQueriesRules = {};
-    const mediaQueriesUtilities = {};
-    const processedRules = new Set();
-
-    interactiveClasses.forEach(
-      ({ baseClass, state, fullClass, isDark, prefix }) => {
-        // ... (initial checks for dark mode support and caching remain the same) ...
-        const ruleConfig = findRuleConfig(baseClass);
-        if (isDark && ruleConfig && !ruleConfig.dark) {
-          return;
-        }
-
-        const ruleKey = `${fullClass}${state}${isDark ? "-dark" : ""}${prefix ? `-${prefix}` : ""}`;
-        if (ruleCache.has(ruleKey) || processedRules.has(ruleKey)) return;
-        processedRules.add(ruleKey);
-
-        const rule = buildRule(baseClass, fullClass, state, prefix, isDark);
-        if (!rule) return;
-
-        const css = `${rule.selector} { ${Object.entries(rule.declarations)
-          .map(([prop, val]) => `${prop}: ${val}`)
-          .join("; ")}; }`;
-
-        let cacheEntry;
-
-        // --- FIX: Reordered logic to prioritize responsive prefix ---
-        if (prefix) {
-          // This is a responsive rule or utility.
-          const breakpointSize = breakpoints[prefix];
-          cacheEntry = {
-            css,
-            isUtility: rule.isUtility,
-            breakpoint: breakpointSize,
-          };
-
-          // Sort into the correct media query object based on whether it's a utility.
-          if (rule.isUtility) {
-            if (!mediaQueriesUtilities[breakpointSize]) {
-              mediaQueriesUtilities[breakpointSize] = [];
-            }
-            mediaQueriesUtilities[breakpointSize].push(css);
-          } else {
-            if (!mediaQueriesRules[breakpointSize]) {
-              mediaQueriesRules[breakpointSize] = [];
-            }
-            mediaQueriesRules[breakpointSize].push(css);
-          }
-        } else if (rule.isUtility) {
-          // This is a non-responsive utility.
-          cacheEntry = { css, isUtility: true };
-          utilityCssRules.push(css);
-        } else {
-          // This is a non-responsive base rule.
-          cacheEntry = { css, isUtility: false };
-          baseRules.push(css);
-        }
-
-        ruleCache.set(ruleKey, cacheEntry);
-      }
-    );
-
-    // --- FIX: Merge both sets of media queries separately ---
-    const mergedMediaQueriesRules = Object.entries(mediaQueriesRules).map(
-      ([size, rules]) => `@media (min-width: ${size}) {\n${rules.join("\n")}\n}`
-    );
-    const mergedMediaQueriesUtilities = Object.entries(
-      mediaQueriesUtilities
-    ).map(
-      ([size, rules]) => `@media (min-width: ${size}) {\n${rules.join("\n")}\n}`
-    );
-
-    return {
-      baseRules,
-      utilityCssRules,
-      mergedMediaQueriesRules,
-      mergedMediaQueriesUtilities,
-    };
-  }
-
+  /**
+   * Generates the complete CSS stylesheet string from all interactive classes on the page.
+   */
   function generateInteractiveStyles() {
     const nodes = document.querySelectorAll("[data-fs-interactive]");
     const allInteractiveClasses = [];
 
     nodes.forEach((node) => {
-      if (!node.style.contain) {
-        node.style.contain = "style";
-      }
-      const interactiveClasses = extractInteractiveClasses(node);
-      allInteractiveClasses.push(...interactiveClasses);
+      allInteractiveClasses.push(...extractInteractiveClasses(node));
     });
 
-    // --- FIX: Destructure the new media query arrays ---
-    const {
-      baseRules,
-      utilityCssRules,
-      mergedMediaQueriesRules,
-      mergedMediaQueriesUtilities,
-    } = generateCssRules(allInteractiveClasses);
+    const generatedCss = {
+      styles: { base: [], media: {} },
+      utilities: { base: [], media: {} },
+    };
 
-    // Wrap base rules in @layer styles
-    const finalBaseRules =
-      baseRules.length > 0 ? `@layer styles {\n${baseRules.join("\n")}\n}` : "";
+    allInteractiveClasses.forEach((parsedClass) => {
+      const { fullClass, state, isDark, prefix } = parsedClass;
+      const ruleKey = `${fullClass}${state}${isDark ? "-dark" : ""}${
+        prefix || ""
+      }`;
 
-    // Wrap utility rules in @layer utilities
-    const finalUtilityCss =
-      utilityCssRules.length > 0
-        ? `@layer utilities {\n${utilityCssRules.join("\n")}\n}`
-        : "";
+      if (ruleCache.has(ruleKey)) {
+        return;
+      }
 
-    // --- FIX: Wrap each set of media queries in the correct layer ---
-    const finalMediaQueriesRules =
-      mergedMediaQueriesRules.length > 0
-        ? `@layer styles {\n${mergedMediaQueriesRules.join("\n")}\n}`
-        : "";
+      const rule = buildCssRule(parsedClass);
 
-    const finalMediaQueriesUtilities =
-      mergedMediaQueriesUtilities.length > 0
-        ? `@layer utilities {\n${mergedMediaQueriesUtilities.join("\n")}\n}`
-        : "";
+      if (!rule) {
+        return;
+      }
 
-    // Combine all generated CSS
+      ruleCache.set(ruleKey, rule);
+
+      if (rule.breakpoint) {
+        const mediaBucket = generatedCss[rule.layer].media;
+
+        mediaBucket[rule.breakpoint] = mediaBucket[rule.breakpoint] || [];
+        mediaBucket[rule.breakpoint].push(rule.css);
+      } else {
+        generatedCss[rule.layer].base.push(rule.css);
+      }
+    });
+
+    const buildLayer = (layerName, { base, media }) => {
+      const mediaQueries = Object.entries(media)
+        .map(
+          ([size, rules]) =>
+            `@media (min-width: ${size}) {\n  ${rules.join("\n  ")}\n}`
+        )
+        .join("\n");
+
+      const content = [...base, mediaQueries].filter(Boolean).join("\n");
+
+      return content ? `@layer ${layerName} {\n${content}\n}` : "";
+    };
+
     const finalCss = [
-      finalBaseRules,
-      finalMediaQueriesRules,
-      finalUtilityCss,
-      finalMediaQueriesUtilities, // Add the new utility media queries
+      buildLayer("styles", generatedCss.styles),
+      buildLayer("utilities", generatedCss.utilities),
     ]
       .filter(Boolean)
-      .join("\n");
+      .join("\n\n");
 
-    // Use requestAnimationFrame for smoother DOM updates
     requestAnimationFrame(() => {
       let styleTag = document.getElementById("fs-interactive-styles");
 
       if (!styleTag) {
         styleTag = document.createElement("style");
         styleTag.id = "fs-interactive-styles";
+
         document.head.appendChild(styleTag);
       }
 
@@ -5481,55 +5101,38 @@ const rules = {
     });
   }
 
-  // Enhanced debounced mutation handling with batching
-  let scheduled = null;
-
-  function handleMutations(mutationsList) {
-    let hasRelevantChanges = false;
-
-    for (const mutation of mutationsList) {
-      if (mutation.type === "attributes") {
-        const { attributeName, target } = mutation;
-
-        if (
-          attributeName === "class" ||
-          attributeName === "data-fs-interactive"
-        ) {
-          pendingMutations.add(target);
-          hasRelevantChanges = true;
-        }
-      } else if (mutation.type === "childList") {
-        const checkNodes = [...mutation.addedNodes, ...mutation.removedNodes];
-
-        for (const node of checkNodes) {
-          if (node.nodeType === 1) {
-            if (
-              node.hasAttribute?.("data-fs-interactive") ||
-              node.querySelector?.("[data-fs-interactive]")
-            ) {
-              hasRelevantChanges = true;
-              break;
-            }
-          }
-        }
-      }
-    }
-
-    if (hasRelevantChanges) {
-      scheduleGenerate();
-    }
-  }
-
   function scheduleGenerate() {
     if (scheduled) {
       clearTimeout(scheduled);
     }
 
-    scheduled = setTimeout(() => {
-      scheduled = null;
-      pendingMutations.clear();
-      generateInteractiveStyles();
-    }, 60);
+    scheduled = setTimeout(generateInteractiveStyles, 50); // Simplified debounce
+  }
+
+  function handleMutations(mutationsList) {
+    for (const mutation of mutationsList) {
+      if (
+        mutation.type === "attributes" &&
+        (mutation.attributeName === "class" ||
+          mutation.attributeName === "data-fs-interactive")
+      ) {
+        scheduleGenerate();
+        return;
+      }
+
+      if (mutation.type === "childList") {
+        for (const node of [...mutation.addedNodes, ...mutation.removedNodes]) {
+          if (
+            node.nodeType === 1 &&
+            (node.hasAttribute?.("data-fs-interactive") ||
+              node.querySelector?.("[data-fs-interactive]"))
+          ) {
+            scheduleGenerate();
+            return;
+          }
+        }
+      }
+    }
   }
 
   function init() {
@@ -5544,32 +5147,16 @@ const rules = {
       attributeFilter: ["data-fs-interactive", "class"],
     });
 
-    const cleanup = () => {
-      observer.disconnect();
-      if (scheduled) {
-        clearTimeout(scheduled);
-      }
-      pendingMutations.clear();
-      ruleCache.clear();
-    };
-
-    window.addEventListener("beforeunload", cleanup);
-
-    // Expose debugging API
     window.__fsInteractive = {
       regenerate: generateInteractiveStyles,
-      stop: cleanup,
-      clearCache: () => ruleCache.clear(),
-      getCacheSize: () => ruleCache.size,
-      getPendingMutations: () => Array.from(pendingMutations),
-      getRuleCache: () => ruleCache,
-      getBreakpoints: () => breakpoints,
+      stop: () => observer.disconnect(),
+      getCache: () => ruleCache,
     };
+
+    window.addEventListener("beforeunload", () => observer.disconnect());
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", init)
+    : init();
 })();
