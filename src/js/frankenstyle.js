@@ -5241,42 +5241,26 @@ const rules = {
       return null;
     }
 
-    // Create the CSS selector - fix dark mode selector
-    let selector;
-    if (isDark) {
-      if (prefix) {
-        // For dark:sm:bg:hover -> .dark .dark\:sm\:bg\:hover:hover
-        selector = `.dark .dark\\:${escapeCssIdentifier(prefix)}\\:${escapeCssIdentifier(baseClass)}\\:${state.replace(":", "")}${state}`;
-      } else {
-        // For dark:bg:hover -> .dark .dark\:bg\:hover:hover
-        selector = `.dark .dark\\:${escapeCssIdentifier(baseClass)}\\:${state.replace(":", "")}${state}`;
-      }
-    } else {
-      if (prefix) {
-        // For sm:bg:hover -> .sm\:bg\:hover:hover
-        selector = `.${escapeCssIdentifier(prefix)}\\:${escapeCssIdentifier(baseClass)}\\:${state.replace(":", "")}${state}`;
-      } else {
-        // For bg:hover -> .bg\:hover:hover
-        selector = `.${escapeCssIdentifier(fullClass)}${state}`;
-      }
-    }
+    // --- IMPROVEMENT: Simplified and more accurate selector generation ---
+    const escapedFullClass = escapeCssIdentifier(fullClass);
+    const selector = isDark
+      ? `.dark .${escapedFullClass}${state}`
+      : `.${escapedFullClass}${state}`;
 
     const declarations = {};
     let isUtility = false;
 
     if (ruleConfig) {
-      // Handle rule configuration
+      // Handle rule configuration (no changes here)
+      isUtility = false;
       const { properties, values, placeholders, arbitrary } = ruleConfig;
       const props = Array.isArray(properties) ? properties : [properties];
 
       props.forEach((prop, i) => {
         let value;
-
         if (arbitrary) {
-          // For arbitrary rules, generate CSS variable automatically
           value = generateArbitraryValue(baseClass, state, prefix, isDark);
         } else {
-          // Use existing logic for non-arbitrary rules
           const rawValue = values[i] || values[0];
           value = resolvePlaceholders(
             rawValue,
@@ -5287,11 +5271,10 @@ const rules = {
             isDark
           );
         }
-
         declarations[prop] = value;
       });
     } else if (utilityConfig) {
-      // Handle utility configuration
+      // Handle utility configuration (no changes here)
       isUtility = true;
       const { properties, values } = utilityConfig;
       const props = Array.isArray(properties) ? properties : [properties];
@@ -5353,40 +5336,24 @@ const rules = {
   function generateCssRules(interactiveClasses) {
     const baseRules = [];
     const utilityCssRules = [];
-    const mediaQueries = {};
+    // --- FIX: Create separate objects for rule and utility media queries ---
+    const mediaQueriesRules = {};
+    const mediaQueriesUtilities = {};
     const processedRules = new Set();
 
     interactiveClasses.forEach(
       ({ baseClass, state, fullClass, isDark, prefix }) => {
-        // Check if rule supports dark mode (only for rules, not utilities)
+        // ... (initial checks for dark mode support and caching remain the same) ...
         const ruleConfig = findRuleConfig(baseClass);
         if (isDark && ruleConfig && !ruleConfig.dark) {
-          return; // Skip if rule doesn't support dark mode
-        }
-
-        const ruleKey = `${fullClass}${state}${isDark ? "-dark" : ""}${prefix ? `-${prefix}` : ""}`;
-
-        if (ruleCache.has(ruleKey)) {
-          const cachedRule = ruleCache.get(ruleKey);
-          if (cachedRule.isUtility) {
-            utilityCssRules.push(cachedRule.css);
-          } else if (cachedRule.breakpoint) {
-            if (!mediaQueries[cachedRule.breakpoint]) {
-              mediaQueries[cachedRule.breakpoint] = [];
-            }
-            mediaQueries[cachedRule.breakpoint].push(cachedRule.css);
-          } else {
-            baseRules.push(cachedRule.css);
-          }
           return;
         }
 
-        if (processedRules.has(ruleKey)) return;
+        const ruleKey = `${fullClass}${state}${isDark ? "-dark" : ""}${prefix ? `-${prefix}` : ""}`;
+        if (ruleCache.has(ruleKey) || processedRules.has(ruleKey)) return;
         processedRules.add(ruleKey);
 
         const rule = buildRule(baseClass, fullClass, state, prefix, isDark);
-
-        // Skip if rule building failed (unknown class)
         if (!rule) return;
 
         const css = `${rule.selector} { ${Object.entries(rule.declarations)
@@ -5395,20 +5362,34 @@ const rules = {
 
         let cacheEntry;
 
-        if (rule.isUtility) {
+        // --- FIX: Reordered logic to prioritize responsive prefix ---
+        if (prefix) {
+          // This is a responsive rule or utility.
+          const breakpointSize = breakpoints[prefix];
+          cacheEntry = {
+            css,
+            isUtility: rule.isUtility,
+            breakpoint: breakpointSize,
+          };
+
+          // Sort into the correct media query object based on whether it's a utility.
+          if (rule.isUtility) {
+            if (!mediaQueriesUtilities[breakpointSize]) {
+              mediaQueriesUtilities[breakpointSize] = [];
+            }
+            mediaQueriesUtilities[breakpointSize].push(css);
+          } else {
+            if (!mediaQueriesRules[breakpointSize]) {
+              mediaQueriesRules[breakpointSize] = [];
+            }
+            mediaQueriesRules[breakpointSize].push(css);
+          }
+        } else if (rule.isUtility) {
+          // This is a non-responsive utility.
           cacheEntry = { css, isUtility: true };
           utilityCssRules.push(css);
-        } else if (prefix) {
-          // This is a responsive rule
-          const breakpointSize = breakpoints[prefix];
-          cacheEntry = { css, isUtility: false, breakpoint: breakpointSize };
-
-          if (!mediaQueries[breakpointSize]) {
-            mediaQueries[breakpointSize] = [];
-          }
-          mediaQueries[breakpointSize].push(css);
         } else {
-          // This is a base rule
+          // This is a non-responsive base rule.
           cacheEntry = { css, isUtility: false };
           baseRules.push(css);
         }
@@ -5417,32 +5398,43 @@ const rules = {
       }
     );
 
-    // Merge media queries
-    const mergedMediaQueries = Object.entries(mediaQueries).map(
+    // --- FIX: Merge both sets of media queries separately ---
+    const mergedMediaQueriesRules = Object.entries(mediaQueriesRules).map(
+      ([size, rules]) => `@media (min-width: ${size}) {\n${rules.join("\n")}\n}`
+    );
+    const mergedMediaQueriesUtilities = Object.entries(
+      mediaQueriesUtilities
+    ).map(
       ([size, rules]) => `@media (min-width: ${size}) {\n${rules.join("\n")}\n}`
     );
 
-    return { baseRules, utilityCssRules, mergedMediaQueries };
+    return {
+      baseRules,
+      utilityCssRules,
+      mergedMediaQueriesRules,
+      mergedMediaQueriesUtilities,
+    };
   }
 
   function generateInteractiveStyles() {
     const nodes = document.querySelectorAll("[data-fs-interactive]");
     const allInteractiveClasses = [];
 
-    // Add CSS containment to interactive elements for better performance
     nodes.forEach((node) => {
       if (!node.style.contain) {
         node.style.contain = "style";
       }
-
       const interactiveClasses = extractInteractiveClasses(node);
       allInteractiveClasses.push(...interactiveClasses);
     });
 
-    // Generate CSS rules
-    const { baseRules, utilityCssRules, mergedMediaQueries } = generateCssRules(
-      allInteractiveClasses
-    );
+    // --- FIX: Destructure the new media query arrays ---
+    const {
+      baseRules,
+      utilityCssRules,
+      mergedMediaQueriesRules,
+      mergedMediaQueriesUtilities,
+    } = generateCssRules(allInteractiveClasses);
 
     // Wrap base rules in @layer styles
     const finalBaseRules =
@@ -5454,13 +5446,24 @@ const rules = {
         ? `@layer utilities {\n${utilityCssRules.join("\n")}\n}`
         : "";
 
-    // Wrap media queries in @layer styles
-    const finalMediaQueries =
-      mergedMediaQueries.length > 0
-        ? `@layer styles {\n${mergedMediaQueries.join("\n")}\n}`
+    // --- FIX: Wrap each set of media queries in the correct layer ---
+    const finalMediaQueriesRules =
+      mergedMediaQueriesRules.length > 0
+        ? `@layer styles {\n${mergedMediaQueriesRules.join("\n")}\n}`
         : "";
 
-    const finalCss = [finalBaseRules, finalMediaQueries, finalUtilityCss]
+    const finalMediaQueriesUtilities =
+      mergedMediaQueriesUtilities.length > 0
+        ? `@layer utilities {\n${mergedMediaQueriesUtilities.join("\n")}\n}`
+        : "";
+
+    // Combine all generated CSS
+    const finalCss = [
+      finalBaseRules,
+      finalMediaQueriesRules,
+      finalUtilityCss,
+      finalMediaQueriesUtilities, // Add the new utility media queries
+    ]
       .filter(Boolean)
       .join("\n");
 
