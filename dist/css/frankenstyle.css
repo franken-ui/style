@@ -378,19 +378,6 @@
     --default-mono-font-family: var(--font-plex-mono);
     --default-mono-font-feature-settings: "ss02", "zero";
     --animate-flash-code: flash-code 2s forwards;
-    --text-xs: 0.75rem/1rem;
-    --text-sm: 0.875rem/1.25rem;
-    --text-base: 1rem/1.5rem;
-    --text-lg: 1.125rem/1.75rem;
-    --text-xl: 1.25rem/1.75rem;
-    --text-2xl: 1.5rem/2rem;
-    --text-3xl: 1.875rem/2.25rem;
-    --text-4xl: 2.25rem/2.5rem;
-    --text-5xl: 3rem/1;
-    --text-6xl: 3.75rem/1;
-    --text-7xl: 4.5rem/1;
-    --text-8xl: 6rem/1;
-    --text-9xl: 8rem/1;
   }
 
   @property --tw-space-x-reverse {
@@ -6206,43 +6193,56 @@
     font-family: var(--font-family-serif);
   }
   .text-xs {
-    font: var(--text-xs);
+    font-size: var(--font-size-xs);
+    line-height: var(--font-size-xs--line-height);
   }
   .text-sm {
-    font: var(--text-sm);
+    font-size: var(--font-size-sm);
+    line-height: var(--font-size-sm--line-height);
   }
   .text-base {
-    font: var(--text-base);
+    font-size: var(--font-size-base);
+    line-height: var(--font-size-base--line-height);
   }
   .text-lg {
-    font: var(--text-lg);
+    font-size: var(--font-size-lg);
+    line-height: var(--font-size-lg--line-height);
   }
   .text-xl {
-    font: var(--text-xl);
+    font-size: var(--font-size-xl);
+    line-height: var(--font-size-xl--line-height);
   }
   .text-2xl {
-    font: var(--text-2xl);
+    font-size: var(--font-size-2xl);
+    line-height: var(--font-size-2xl--line-height);
   }
   .text-3xl {
-    font: var(--text-3xl);
+    font-size: var(--font-size-3xl);
+    line-height: var(--font-size-3xl--line-height);
   }
   .text-4xl {
-    font: var(--text-4xl);
+    font-size: var(--font-size-4xl);
+    line-height: var(--font-size-4xl--line-height);
   }
   .text-5xl {
-    font: var(--text-5xl);
+    font-size: var(--font-size-5xl);
+    line-height: var(--font-size-5xl--line-height);
   }
   .text-6xl {
-    font: var(--text-6xl);
+    font-size: var(--font-size-6xl);
+    line-height: var(--font-size-6xl--line-height);
   }
   .text-7xl {
-    font: var(--text-7xl);
+    font-size: var(--font-size-7xl);
+    line-height: var(--font-size-7xl--line-height);
   }
   .text-8xl {
-    font: var(--text-8xl);
+    font-size: var(--font-size-8xl);
+    line-height: var(--font-size-8xl--line-height);
   }
   .text-9xl {
-    font: var(--text-9xl);
+    font-size: var(--font-size-9xl);
+    line-height: var(--font-size-9xl--line-height);
   }
   .antialiased {
     -webkit-font-smoothing: antialiased;
@@ -8286,43 +8286,56 @@
       font-family: var(--font-family-serif);
     }
     .sm\:text-xs {
-      font: var(--text-xs);
+      font-size: var(--font-size-xs);
+      line-height: var(--font-size-xs--line-height);
     }
     .sm\:text-sm {
-      font: var(--text-sm);
+      font-size: var(--font-size-sm);
+      line-height: var(--font-size-sm--line-height);
     }
     .sm\:text-base {
-      font: var(--text-base);
+      font-size: var(--font-size-base);
+      line-height: var(--font-size-base--line-height);
     }
     .sm\:text-lg {
-      font: var(--text-lg);
+      font-size: var(--font-size-lg);
+      line-height: var(--font-size-lg--line-height);
     }
     .sm\:text-xl {
-      font: var(--text-xl);
+      font-size: var(--font-size-xl);
+      line-height: var(--font-size-xl--line-height);
     }
     .sm\:text-2xl {
-      font: var(--text-2xl);
+      font-size: var(--font-size-2xl);
+      line-height: var(--font-size-2xl--line-height);
     }
     .sm\:text-3xl {
-      font: var(--text-3xl);
+      font-size: var(--font-size-3xl);
+      line-height: var(--font-size-3xl--line-height);
     }
     .sm\:text-4xl {
-      font: var(--text-4xl);
+      font-size: var(--font-size-4xl);
+      line-height: var(--font-size-4xl--line-height);
     }
     .sm\:text-5xl {
-      font: var(--text-5xl);
+      font-size: var(--font-size-5xl);
+      line-height: var(--font-size-5xl--line-height);
     }
     .sm\:text-6xl {
-      font: var(--text-6xl);
+      font-size: var(--font-size-6xl);
+      line-height: var(--font-size-6xl--line-height);
     }
     .sm\:text-7xl {
-      font: var(--text-7xl);
+      font-size: var(--font-size-7xl);
+      line-height: var(--font-size-7xl--line-height);
     }
     .sm\:text-8xl {
-      font: var(--text-8xl);
+      font-size: var(--font-size-8xl);
+      line-height: var(--font-size-8xl--line-height);
     }
     .sm\:text-9xl {
-      font: var(--text-9xl);
+      font-size: var(--font-size-9xl);
+      line-height: var(--font-size-9xl--line-height);
     }
     .sm\:antialiased {
       -webkit-font-smoothing: antialiased;
@@ -10367,43 +10380,56 @@
       font-family: var(--font-family-serif);
     }
     .md\:text-xs {
-      font: var(--text-xs);
+      font-size: var(--font-size-xs);
+      line-height: var(--font-size-xs--line-height);
     }
     .md\:text-sm {
-      font: var(--text-sm);
+      font-size: var(--font-size-sm);
+      line-height: var(--font-size-sm--line-height);
     }
     .md\:text-base {
-      font: var(--text-base);
+      font-size: var(--font-size-base);
+      line-height: var(--font-size-base--line-height);
     }
     .md\:text-lg {
-      font: var(--text-lg);
+      font-size: var(--font-size-lg);
+      line-height: var(--font-size-lg--line-height);
     }
     .md\:text-xl {
-      font: var(--text-xl);
+      font-size: var(--font-size-xl);
+      line-height: var(--font-size-xl--line-height);
     }
     .md\:text-2xl {
-      font: var(--text-2xl);
+      font-size: var(--font-size-2xl);
+      line-height: var(--font-size-2xl--line-height);
     }
     .md\:text-3xl {
-      font: var(--text-3xl);
+      font-size: var(--font-size-3xl);
+      line-height: var(--font-size-3xl--line-height);
     }
     .md\:text-4xl {
-      font: var(--text-4xl);
+      font-size: var(--font-size-4xl);
+      line-height: var(--font-size-4xl--line-height);
     }
     .md\:text-5xl {
-      font: var(--text-5xl);
+      font-size: var(--font-size-5xl);
+      line-height: var(--font-size-5xl--line-height);
     }
     .md\:text-6xl {
-      font: var(--text-6xl);
+      font-size: var(--font-size-6xl);
+      line-height: var(--font-size-6xl--line-height);
     }
     .md\:text-7xl {
-      font: var(--text-7xl);
+      font-size: var(--font-size-7xl);
+      line-height: var(--font-size-7xl--line-height);
     }
     .md\:text-8xl {
-      font: var(--text-8xl);
+      font-size: var(--font-size-8xl);
+      line-height: var(--font-size-8xl--line-height);
     }
     .md\:text-9xl {
-      font: var(--text-9xl);
+      font-size: var(--font-size-9xl);
+      line-height: var(--font-size-9xl--line-height);
     }
     .md\:antialiased {
       -webkit-font-smoothing: antialiased;
@@ -12448,43 +12474,56 @@
       font-family: var(--font-family-serif);
     }
     .lg\:text-xs {
-      font: var(--text-xs);
+      font-size: var(--font-size-xs);
+      line-height: var(--font-size-xs--line-height);
     }
     .lg\:text-sm {
-      font: var(--text-sm);
+      font-size: var(--font-size-sm);
+      line-height: var(--font-size-sm--line-height);
     }
     .lg\:text-base {
-      font: var(--text-base);
+      font-size: var(--font-size-base);
+      line-height: var(--font-size-base--line-height);
     }
     .lg\:text-lg {
-      font: var(--text-lg);
+      font-size: var(--font-size-lg);
+      line-height: var(--font-size-lg--line-height);
     }
     .lg\:text-xl {
-      font: var(--text-xl);
+      font-size: var(--font-size-xl);
+      line-height: var(--font-size-xl--line-height);
     }
     .lg\:text-2xl {
-      font: var(--text-2xl);
+      font-size: var(--font-size-2xl);
+      line-height: var(--font-size-2xl--line-height);
     }
     .lg\:text-3xl {
-      font: var(--text-3xl);
+      font-size: var(--font-size-3xl);
+      line-height: var(--font-size-3xl--line-height);
     }
     .lg\:text-4xl {
-      font: var(--text-4xl);
+      font-size: var(--font-size-4xl);
+      line-height: var(--font-size-4xl--line-height);
     }
     .lg\:text-5xl {
-      font: var(--text-5xl);
+      font-size: var(--font-size-5xl);
+      line-height: var(--font-size-5xl--line-height);
     }
     .lg\:text-6xl {
-      font: var(--text-6xl);
+      font-size: var(--font-size-6xl);
+      line-height: var(--font-size-6xl--line-height);
     }
     .lg\:text-7xl {
-      font: var(--text-7xl);
+      font-size: var(--font-size-7xl);
+      line-height: var(--font-size-7xl--line-height);
     }
     .lg\:text-8xl {
-      font: var(--text-8xl);
+      font-size: var(--font-size-8xl);
+      line-height: var(--font-size-8xl--line-height);
     }
     .lg\:text-9xl {
-      font: var(--text-9xl);
+      font-size: var(--font-size-9xl);
+      line-height: var(--font-size-9xl--line-height);
     }
     .lg\:antialiased {
       -webkit-font-smoothing: antialiased;
@@ -14529,43 +14568,56 @@
       font-family: var(--font-family-serif);
     }
     .xl\:text-xs {
-      font: var(--text-xs);
+      font-size: var(--font-size-xs);
+      line-height: var(--font-size-xs--line-height);
     }
     .xl\:text-sm {
-      font: var(--text-sm);
+      font-size: var(--font-size-sm);
+      line-height: var(--font-size-sm--line-height);
     }
     .xl\:text-base {
-      font: var(--text-base);
+      font-size: var(--font-size-base);
+      line-height: var(--font-size-base--line-height);
     }
     .xl\:text-lg {
-      font: var(--text-lg);
+      font-size: var(--font-size-lg);
+      line-height: var(--font-size-lg--line-height);
     }
     .xl\:text-xl {
-      font: var(--text-xl);
+      font-size: var(--font-size-xl);
+      line-height: var(--font-size-xl--line-height);
     }
     .xl\:text-2xl {
-      font: var(--text-2xl);
+      font-size: var(--font-size-2xl);
+      line-height: var(--font-size-2xl--line-height);
     }
     .xl\:text-3xl {
-      font: var(--text-3xl);
+      font-size: var(--font-size-3xl);
+      line-height: var(--font-size-3xl--line-height);
     }
     .xl\:text-4xl {
-      font: var(--text-4xl);
+      font-size: var(--font-size-4xl);
+      line-height: var(--font-size-4xl--line-height);
     }
     .xl\:text-5xl {
-      font: var(--text-5xl);
+      font-size: var(--font-size-5xl);
+      line-height: var(--font-size-5xl--line-height);
     }
     .xl\:text-6xl {
-      font: var(--text-6xl);
+      font-size: var(--font-size-6xl);
+      line-height: var(--font-size-6xl--line-height);
     }
     .xl\:text-7xl {
-      font: var(--text-7xl);
+      font-size: var(--font-size-7xl);
+      line-height: var(--font-size-7xl--line-height);
     }
     .xl\:text-8xl {
-      font: var(--text-8xl);
+      font-size: var(--font-size-8xl);
+      line-height: var(--font-size-8xl--line-height);
     }
     .xl\:text-9xl {
-      font: var(--text-9xl);
+      font-size: var(--font-size-9xl);
+      line-height: var(--font-size-9xl--line-height);
     }
     .xl\:antialiased {
       -webkit-font-smoothing: antialiased;
@@ -16610,43 +16662,56 @@
       font-family: var(--font-family-serif);
     }
     .\32xl\:text-xs {
-      font: var(--text-xs);
+      font-size: var(--font-size-xs);
+      line-height: var(--font-size-xs--line-height);
     }
     .\32xl\:text-sm {
-      font: var(--text-sm);
+      font-size: var(--font-size-sm);
+      line-height: var(--font-size-sm--line-height);
     }
     .\32xl\:text-base {
-      font: var(--text-base);
+      font-size: var(--font-size-base);
+      line-height: var(--font-size-base--line-height);
     }
     .\32xl\:text-lg {
-      font: var(--text-lg);
+      font-size: var(--font-size-lg);
+      line-height: var(--font-size-lg--line-height);
     }
     .\32xl\:text-xl {
-      font: var(--text-xl);
+      font-size: var(--font-size-xl);
+      line-height: var(--font-size-xl--line-height);
     }
     .\32xl\:text-2xl {
-      font: var(--text-2xl);
+      font-size: var(--font-size-2xl);
+      line-height: var(--font-size-2xl--line-height);
     }
     .\32xl\:text-3xl {
-      font: var(--text-3xl);
+      font-size: var(--font-size-3xl);
+      line-height: var(--font-size-3xl--line-height);
     }
     .\32xl\:text-4xl {
-      font: var(--text-4xl);
+      font-size: var(--font-size-4xl);
+      line-height: var(--font-size-4xl--line-height);
     }
     .\32xl\:text-5xl {
-      font: var(--text-5xl);
+      font-size: var(--font-size-5xl);
+      line-height: var(--font-size-5xl--line-height);
     }
     .\32xl\:text-6xl {
-      font: var(--text-6xl);
+      font-size: var(--font-size-6xl);
+      line-height: var(--font-size-6xl--line-height);
     }
     .\32xl\:text-7xl {
-      font: var(--text-7xl);
+      font-size: var(--font-size-7xl);
+      line-height: var(--font-size-7xl--line-height);
     }
     .\32xl\:text-8xl {
-      font: var(--text-8xl);
+      font-size: var(--font-size-8xl);
+      line-height: var(--font-size-8xl--line-height);
     }
     .\32xl\:text-9xl {
-      font: var(--text-9xl);
+      font-size: var(--font-size-9xl);
+      line-height: var(--font-size-9xl--line-height);
     }
     .\32xl\:antialiased {
       -webkit-font-smoothing: antialiased;
