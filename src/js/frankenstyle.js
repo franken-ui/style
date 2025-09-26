@@ -774,46 +774,6 @@ const rules = [
   },
   {
     layer: "styles",
-    selector: "space-x` > :not(:last-child)`",
-    properties: ["margin-inline-start", "margin-inline-end"],
-    values: [
-      "calc(var(--spacing) * var({var}) * var(--tw-space-x-reverse))",
-      "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-x-reverse)))",
-    ],
-    placeholders: { "{var}": "space-x", "{var2}": "space-x" },
-  },
-  {
-    layer: "styles",
-    selector: "[space-x]` > :not(:last-child)`",
-    properties: ["margin-inline-start", "margin-inline-end"],
-    values: [
-      "calc(var({var}) * var(--tw-space-x-reverse))",
-      "calc(var({var2}) * (1 - var(--tw-space-x-reverse)))",
-    ],
-    placeholders: { "{var}": "space-x", "{var2}": "space-x" },
-  },
-  {
-    layer: "styles",
-    selector: "space-y` > :not(:last-child)`",
-    properties: ["margin-block-start", "margin-block-end"],
-    values: [
-      "calc(var(--spacing) * var({var}) * var(--tw-space-y-reverse))",
-      "calc(var(--spacing) * var({var2}) * (1 - var(--tw-space-y-reverse)))",
-    ],
-    placeholders: { "{var}": "space-y", "{var2}": "space-y" },
-  },
-  {
-    layer: "styles",
-    selector: "[space-y]` > :not(:last-child)`",
-    properties: ["margin-block-start", "margin-block-end"],
-    values: [
-      "calc(var({var}) * var(--tw-space-y-reverse))",
-      "calc(var({var2}) * (1 - var(--tw-space-y-reverse)))",
-    ],
-    placeholders: { "{var}": "space-y", "{var2}": "space-y" },
-  },
-  {
-    layer: "styles",
     selector: "to",
     properties: ["--tw-gradient-to", "--tw-gradient-stops"],
     values: [
@@ -1115,6 +1075,12 @@ const rules = [
     values: ["color-mix(in oklab, var({var}) var({var2}, 100%), transparent)"],
     placeholders: { "{var}": "outline", "{var2}": "outline-o" },
     dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "font-family",
+    properties: ["font-family"],
+    arbitrary: true,
   },
   {
     layer: "utilities",
@@ -2228,13 +2194,13 @@ const rules = [
   },
   {
     layer: "utilities",
-    selector: "decoration-slice,\n.box-decoration-slice",
+    selector: "box-decoration-slice",
     properties: ["-webkit-box-decoration-break", "box-decoration-break"],
     values: ["slice", "slice"],
   },
   {
     layer: "utilities",
-    selector: "decoration-clone,\n.box-decoration-clone",
+    selector: "box-decoration-clone",
     properties: ["-webkit-box-decoration-break", "box-decoration-break"],
     values: ["clone", "clone"],
   },
@@ -4883,6 +4849,114 @@ const rules = [
     selector: "z-auto",
     properties: ["z-index"],
     values: ["auto"],
+  },
+  {
+    layer: "utilities",
+    selector: "font-mono",
+    properties: ["font-family"],
+    values: ["var(--font-mono)"],
+  },
+  {
+    layer: "utilities",
+    selector: "font-sans",
+    properties: ["font-family"],
+    values: ["var(--font-sans)"],
+  },
+  {
+    layer: "utilities",
+    selector: "font-serif",
+    properties: ["font-family"],
+    values: ["var(--font-serif)"],
+  },
+  {
+    layer: "utilities",
+    selector: "antialiased",
+    properties: ["-webkit-font-smoothing", "-moz-osx-font-smoothing"],
+    values: ["antialiased", "grayscale"],
+  },
+  {
+    layer: "utilities",
+    selector: "subpixel-antialiased",
+    properties: ["-webkit-font-smoothing", "-moz-osx-font-smoothing"],
+    values: ["auto", "auto"],
+  },
+  {
+    layer: "utilities",
+    selector: "normal-nums",
+    properties: ["font-variant-numeric"],
+    values: ["normal"],
+  },
+  {
+    layer: "utilities",
+    selector: "ordinal",
+    properties: ["--tw-ordinal", "font-variant-numeric"],
+    values: [
+      "ordinal",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "slashed-zero",
+    properties: ["--tw-slashed-zero", "font-variant-numeric"],
+    values: [
+      "slashed-zero",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "lining-nums",
+    properties: ["--tw-numeric-figure", "font-variant-numeric"],
+    values: [
+      "lining-nums",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "oldstyle-nums",
+    properties: ["--tw-numeric-figure", "font-variant-numeric"],
+    values: [
+      "oldstyle-nums",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "proportional-nums",
+    properties: ["--tw-numeric-spacing", "font-variant-numeric"],
+    values: [
+      "proportional-nums",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "tabular-nums",
+    properties: ["--tw-numeric-spacing", "font-variant-numeric"],
+    values: [
+      "tabular-nums",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "diagonal-fractions",
+    properties: ["--tw-numeric-fraction", "font-variant-numeric"],
+    values: [
+      "diagonal-fractions",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "stacked-fractions",
+    properties: ["--tw-numeric-fraction", "font-variant-numeric"],
+    values: [
+      "stacked-fractions",
+      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+    ],
   },
 ];
 

@@ -620,12 +620,10 @@
     --tw-border-style: none;
     border-style: none;
   }
-  .decoration-slice,
   .box-decoration-slice {
     -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
   }
-  .decoration-clone,
   .box-decoration-clone {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
@@ -936,6 +934,15 @@
   .float-none {
     float: none;
   }
+  .font-mono {
+    font-family: var(--font-family-mono);
+  }
+  .font-sans {
+    font-family: var(--font-family-sans);
+  }
+  .font-serif {
+    font-family: var(--font-family-serif);
+  }
   .text-xs {
     font: var(--text-xs);
   }
@@ -975,11 +982,70 @@
   .text-9xl {
     font: var(--text-9xl);
   }
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .subpixel-antialiased {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
   .italic {
     font-style: italic;
   }
   .not-italic {
     font-style: normal;
+  }
+  .normal-nums {
+    font-variant-numeric: normal;
+  }
+  .ordinal {
+    --tw-ordinal: ordinal;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
+  }
+  .slashed-zero {
+    --tw-slashed-zero: slashed-zero;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
+  }
+  .lining-nums {
+    --tw-numeric-figure: lining-nums;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
+  }
+  .oldstyle-nums {
+    --tw-numeric-figure: oldstyle-nums;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
+  }
+  .proportional-nums {
+    --tw-numeric-spacing: proportional-nums;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
+  }
+  .tabular-nums {
+    --tw-numeric-spacing: tabular-nums;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
+  }
+  .diagonal-fractions {
+    --tw-numeric-fraction: diagonal-fractions;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
+  }
+  .stacked-fractions {
+    --tw-numeric-fraction: stacked-fractions;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+      var(--tw-numeric-figure) var(--tw-numeric-spacing)
+      var(--tw-numeric-fraction);
   }
   .font-black {
     font-weight: 900;
@@ -1285,6 +1351,48 @@
   }
   .tracking-widest {
     letter-spacing: 0.1em;
+  }
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+  .line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+  .line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+  .line-clamp-none {
+    overflow: visible;
+    display: block;
+    -webkit-box-orient: horizontal;
+    -webkit-line-clamp: none;
   }
   .leading-loose {
     line-height: 2;
@@ -2592,12 +2700,10 @@
       --tw-border-style: none;
       border-style: none;
     }
-    .sm\:decoration-slice,
     .sm\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .sm\:decoration-clone,
     .sm\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -2908,6 +3014,15 @@
     .sm\:float-none {
       float: none;
     }
+    .sm\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .sm\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .sm\:font-serif {
+      font-family: var(--font-family-serif);
+    }
     .sm\:text-xs {
       font: var(--text-xs);
     }
@@ -2947,11 +3062,70 @@
     .sm\:text-9xl {
       font: var(--text-9xl);
     }
+    .sm\:antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .sm\:subpixel-antialiased {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
     .sm\:italic {
       font-style: italic;
     }
     .sm\:not-italic {
       font-style: normal;
+    }
+    .sm\:normal-nums {
+      font-variant-numeric: normal;
+    }
+    .sm\:ordinal {
+      --tw-ordinal: ordinal;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .sm\:slashed-zero {
+      --tw-slashed-zero: slashed-zero;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .sm\:lining-nums {
+      --tw-numeric-figure: lining-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .sm\:oldstyle-nums {
+      --tw-numeric-figure: oldstyle-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .sm\:proportional-nums {
+      --tw-numeric-spacing: proportional-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .sm\:tabular-nums {
+      --tw-numeric-spacing: tabular-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .sm\:diagonal-fractions {
+      --tw-numeric-fraction: diagonal-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .sm\:stacked-fractions {
+      --tw-numeric-fraction: stacked-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
     }
     .sm\:font-black {
       font-weight: 900;
@@ -3257,6 +3431,48 @@
     }
     .sm\:tracking-widest {
       letter-spacing: 0.1em;
+    }
+    .sm\:line-clamp-1 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+    .sm\:line-clamp-2 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .sm\:line-clamp-3 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+    .sm\:line-clamp-4 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
+    .sm\:line-clamp-5 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+    .sm\:line-clamp-6 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
+    .sm\:line-clamp-none {
+      overflow: visible;
+      display: block;
+      -webkit-box-orient: horizontal;
+      -webkit-line-clamp: none;
     }
     .sm\:leading-loose {
       line-height: 2;
@@ -4565,12 +4781,10 @@
       --tw-border-style: none;
       border-style: none;
     }
-    .md\:decoration-slice,
     .md\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .md\:decoration-clone,
     .md\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -4881,6 +5095,15 @@
     .md\:float-none {
       float: none;
     }
+    .md\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .md\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .md\:font-serif {
+      font-family: var(--font-family-serif);
+    }
     .md\:text-xs {
       font: var(--text-xs);
     }
@@ -4920,11 +5143,70 @@
     .md\:text-9xl {
       font: var(--text-9xl);
     }
+    .md\:antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .md\:subpixel-antialiased {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
     .md\:italic {
       font-style: italic;
     }
     .md\:not-italic {
       font-style: normal;
+    }
+    .md\:normal-nums {
+      font-variant-numeric: normal;
+    }
+    .md\:ordinal {
+      --tw-ordinal: ordinal;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .md\:slashed-zero {
+      --tw-slashed-zero: slashed-zero;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .md\:lining-nums {
+      --tw-numeric-figure: lining-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .md\:oldstyle-nums {
+      --tw-numeric-figure: oldstyle-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .md\:proportional-nums {
+      --tw-numeric-spacing: proportional-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .md\:tabular-nums {
+      --tw-numeric-spacing: tabular-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .md\:diagonal-fractions {
+      --tw-numeric-fraction: diagonal-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .md\:stacked-fractions {
+      --tw-numeric-fraction: stacked-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
     }
     .md\:font-black {
       font-weight: 900;
@@ -5230,6 +5512,48 @@
     }
     .md\:tracking-widest {
       letter-spacing: 0.1em;
+    }
+    .md\:line-clamp-1 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+    .md\:line-clamp-2 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .md\:line-clamp-3 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+    .md\:line-clamp-4 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
+    .md\:line-clamp-5 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+    .md\:line-clamp-6 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
+    .md\:line-clamp-none {
+      overflow: visible;
+      display: block;
+      -webkit-box-orient: horizontal;
+      -webkit-line-clamp: none;
     }
     .md\:leading-loose {
       line-height: 2;
@@ -6538,12 +6862,10 @@
       --tw-border-style: none;
       border-style: none;
     }
-    .lg\:decoration-slice,
     .lg\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .lg\:decoration-clone,
     .lg\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -6854,6 +7176,15 @@
     .lg\:float-none {
       float: none;
     }
+    .lg\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .lg\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .lg\:font-serif {
+      font-family: var(--font-family-serif);
+    }
     .lg\:text-xs {
       font: var(--text-xs);
     }
@@ -6893,11 +7224,70 @@
     .lg\:text-9xl {
       font: var(--text-9xl);
     }
+    .lg\:antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .lg\:subpixel-antialiased {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
     .lg\:italic {
       font-style: italic;
     }
     .lg\:not-italic {
       font-style: normal;
+    }
+    .lg\:normal-nums {
+      font-variant-numeric: normal;
+    }
+    .lg\:ordinal {
+      --tw-ordinal: ordinal;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .lg\:slashed-zero {
+      --tw-slashed-zero: slashed-zero;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .lg\:lining-nums {
+      --tw-numeric-figure: lining-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .lg\:oldstyle-nums {
+      --tw-numeric-figure: oldstyle-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .lg\:proportional-nums {
+      --tw-numeric-spacing: proportional-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .lg\:tabular-nums {
+      --tw-numeric-spacing: tabular-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .lg\:diagonal-fractions {
+      --tw-numeric-fraction: diagonal-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .lg\:stacked-fractions {
+      --tw-numeric-fraction: stacked-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
     }
     .lg\:font-black {
       font-weight: 900;
@@ -7203,6 +7593,48 @@
     }
     .lg\:tracking-widest {
       letter-spacing: 0.1em;
+    }
+    .lg\:line-clamp-1 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+    .lg\:line-clamp-2 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .lg\:line-clamp-3 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+    .lg\:line-clamp-4 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
+    .lg\:line-clamp-5 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+    .lg\:line-clamp-6 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
+    .lg\:line-clamp-none {
+      overflow: visible;
+      display: block;
+      -webkit-box-orient: horizontal;
+      -webkit-line-clamp: none;
     }
     .lg\:leading-loose {
       line-height: 2;
@@ -8511,12 +8943,10 @@
       --tw-border-style: none;
       border-style: none;
     }
-    .xl\:decoration-slice,
     .xl\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .xl\:decoration-clone,
     .xl\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -8827,6 +9257,15 @@
     .xl\:float-none {
       float: none;
     }
+    .xl\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .xl\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .xl\:font-serif {
+      font-family: var(--font-family-serif);
+    }
     .xl\:text-xs {
       font: var(--text-xs);
     }
@@ -8866,11 +9305,70 @@
     .xl\:text-9xl {
       font: var(--text-9xl);
     }
+    .xl\:antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .xl\:subpixel-antialiased {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
     .xl\:italic {
       font-style: italic;
     }
     .xl\:not-italic {
       font-style: normal;
+    }
+    .xl\:normal-nums {
+      font-variant-numeric: normal;
+    }
+    .xl\:ordinal {
+      --tw-ordinal: ordinal;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .xl\:slashed-zero {
+      --tw-slashed-zero: slashed-zero;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .xl\:lining-nums {
+      --tw-numeric-figure: lining-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .xl\:oldstyle-nums {
+      --tw-numeric-figure: oldstyle-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .xl\:proportional-nums {
+      --tw-numeric-spacing: proportional-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .xl\:tabular-nums {
+      --tw-numeric-spacing: tabular-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .xl\:diagonal-fractions {
+      --tw-numeric-fraction: diagonal-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .xl\:stacked-fractions {
+      --tw-numeric-fraction: stacked-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
     }
     .xl\:font-black {
       font-weight: 900;
@@ -9176,6 +9674,48 @@
     }
     .xl\:tracking-widest {
       letter-spacing: 0.1em;
+    }
+    .xl\:line-clamp-1 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+    .xl\:line-clamp-2 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .xl\:line-clamp-3 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+    .xl\:line-clamp-4 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
+    .xl\:line-clamp-5 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+    .xl\:line-clamp-6 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
+    .xl\:line-clamp-none {
+      overflow: visible;
+      display: block;
+      -webkit-box-orient: horizontal;
+      -webkit-line-clamp: none;
     }
     .xl\:leading-loose {
       line-height: 2;
@@ -10484,12 +11024,10 @@
       --tw-border-style: none;
       border-style: none;
     }
-    .\32xl\:decoration-slice,
     .\32xl\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .\32xl\:decoration-clone,
     .\32xl\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -10800,6 +11338,15 @@
     .\32xl\:float-none {
       float: none;
     }
+    .\32xl\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .\32xl\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .\32xl\:font-serif {
+      font-family: var(--font-family-serif);
+    }
     .\32xl\:text-xs {
       font: var(--text-xs);
     }
@@ -10839,11 +11386,70 @@
     .\32xl\:text-9xl {
       font: var(--text-9xl);
     }
+    .\32xl\:antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .\32xl\:subpixel-antialiased {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
     .\32xl\:italic {
       font-style: italic;
     }
     .\32xl\:not-italic {
       font-style: normal;
+    }
+    .\32xl\:normal-nums {
+      font-variant-numeric: normal;
+    }
+    .\32xl\:ordinal {
+      --tw-ordinal: ordinal;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .\32xl\:slashed-zero {
+      --tw-slashed-zero: slashed-zero;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .\32xl\:lining-nums {
+      --tw-numeric-figure: lining-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .\32xl\:oldstyle-nums {
+      --tw-numeric-figure: oldstyle-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .\32xl\:proportional-nums {
+      --tw-numeric-spacing: proportional-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .\32xl\:tabular-nums {
+      --tw-numeric-spacing: tabular-nums;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .\32xl\:diagonal-fractions {
+      --tw-numeric-fraction: diagonal-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
+    }
+    .\32xl\:stacked-fractions {
+      --tw-numeric-fraction: stacked-fractions;
+      font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero)
+        var(--tw-numeric-figure) var(--tw-numeric-spacing)
+        var(--tw-numeric-fraction);
     }
     .\32xl\:font-black {
       font-weight: 900;
@@ -11149,6 +11755,48 @@
     }
     .\32xl\:tracking-widest {
       letter-spacing: 0.1em;
+    }
+    .\32xl\:line-clamp-1 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+    .\32xl\:line-clamp-2 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .\32xl\:line-clamp-3 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+    .\32xl\:line-clamp-4 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
+    .\32xl\:line-clamp-5 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+    .\32xl\:line-clamp-6 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
+    .\32xl\:line-clamp-none {
+      overflow: visible;
+      display: block;
+      -webkit-box-orient: horizontal;
+      -webkit-line-clamp: none;
     }
     .\32xl\:leading-loose {
       line-height: 2;

@@ -1,22 +1,18 @@
 @layer utilities {
-  .decoration-slice,
   .box-decoration-slice {
     -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
   }
-  .decoration-clone,
   .box-decoration-clone {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
 
   @media (min-width: 40rem) {
-    .sm\:decoration-slice,
     .sm\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .sm\:decoration-clone,
     .sm\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -24,12 +20,10 @@
   }
 
   @media (min-width: 48rem) {
-    .md\:decoration-slice,
     .md\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .md\:decoration-clone,
     .md\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -37,12 +31,10 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:decoration-slice,
     .lg\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .lg\:decoration-clone,
     .lg\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -50,12 +42,10 @@
   }
 
   @media (min-width: 80rem) {
-    .xl\:decoration-slice,
     .xl\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .xl\:decoration-clone,
     .xl\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
@@ -63,12 +53,10 @@
   }
 
   @media (min-width: 96rem) {
-    .\32xl\:decoration-slice,
     .\32xl\:box-decoration-slice {
       -webkit-box-decoration-break: slice;
       box-decoration-break: slice;
     }
-    .\32xl\:decoration-clone,
     .\32xl\:box-decoration-clone {
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;

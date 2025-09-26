@@ -1,0 +1,35 @@
+@layer styles {
+  .font-family {
+    font-family: var(--font-family);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:font-family {
+      font-family: var(--sm-font-family);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:font-family {
+      font-family: var(--md-font-family);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:font-family {
+      font-family: var(--lg-font-family);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:font-family {
+      font-family: var(--xl-font-family);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:font-family {
+      font-family: var(--\32xl-font-family);
+    }
+  }
+}
