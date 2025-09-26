@@ -1,3 +1,3793 @@
+const utilities = [
+  {
+    selector: "content-normal",
+    properties: ["align-content"],
+    values: ["normal"],
+  },
+  {
+    selector: "content-center",
+    properties: ["align-content"],
+    values: ["center"],
+  },
+  {
+    selector: "content-start",
+    properties: ["align-content"],
+    values: ["flex-start"],
+  },
+  {
+    selector: "content-end",
+    properties: ["align-content"],
+    values: ["flex-end"],
+  },
+  {
+    selector: "content-between",
+    properties: ["align-content"],
+    values: ["space-between"],
+  },
+  {
+    selector: "content-around",
+    properties: ["align-content"],
+    values: ["space-around"],
+  },
+  {
+    selector: "content-evenly",
+    properties: ["align-content"],
+    values: ["space-evenly"],
+  },
+  {
+    selector: "content-baseline",
+    properties: ["align-content"],
+    values: ["baseline"],
+  },
+  {
+    selector: "content-stretch",
+    properties: ["align-content"],
+    values: ["stretch"],
+  },
+  {
+    selector: "items-start",
+    properties: ["align-items"],
+    values: ["flex-start"],
+  },
+  {
+    selector: "items-end",
+    properties: ["align-items"],
+    values: ["flex-end"],
+  },
+  {
+    selector: "items-center",
+    properties: ["align-items"],
+    values: ["center"],
+  },
+  {
+    selector: "items-stretch",
+    properties: ["align-items"],
+    values: ["stretch"],
+  },
+  {
+    selector: "items-baseline",
+    properties: ["align-items"],
+    values: ["baseline"],
+  },
+  {
+    selector: "items-end-safe",
+    properties: ["align-items"],
+    values: ["safe flex-end"],
+  },
+  {
+    selector: "items-center-safe",
+    properties: ["align-items"],
+    values: ["safe center"],
+  },
+  {
+    selector: "items-baseline-last",
+    properties: ["align-items"],
+    values: ["last baseline"],
+  },
+  {
+    selector: "self-auto",
+    properties: ["align-self"],
+    values: ["auto"],
+  },
+  {
+    selector: "self-start",
+    properties: ["align-self"],
+    values: ["flex-start"],
+  },
+  {
+    selector: "self-end",
+    properties: ["align-self"],
+    values: ["flex-end"],
+  },
+  {
+    selector: "self-center",
+    properties: ["align-self"],
+    values: ["center"],
+  },
+  {
+    selector: "self-stretch",
+    properties: ["align-self"],
+    values: ["stretch"],
+  },
+  {
+    selector: "self-baseline",
+    properties: ["align-self"],
+    values: ["baseline"],
+  },
+  {
+    selector: "self-end-safe",
+    properties: ["align-self"],
+    values: ["safe flex-end"],
+  },
+  {
+    selector: "self-center-safe",
+    properties: ["align-self"],
+    values: ["safe center"],
+  },
+  {
+    selector: "self-baseline-last",
+    properties: ["align-self"],
+    values: ["last baseline"],
+  },
+  {
+    selector: "aspect-square",
+    properties: ["aspect-ratio"],
+    values: ["1/1"],
+  },
+  {
+    selector: "aspect-video",
+    properties: ["aspect-ratio"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "aspect-video",
+    },
+  },
+  {
+    selector: "aspect-auto",
+    properties: ["aspect-ratio"],
+    values: ["auto"],
+  },
+  {
+    selector: "rounded-xs",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-sm",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-md",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-lg",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-xl",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-2xl",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-3xl",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-4xl",
+    properties: ["border-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-none",
+    properties: ["border-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-full",
+    properties: ["border-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-s-xs",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xs",
+      "{var2}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-s-sm",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-sm",
+      "{var2}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-s-md",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-md",
+      "{var2}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-s-lg",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-lg",
+      "{var2}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-s-xl",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xl",
+      "{var2}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-s-2xl",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+      "{var2}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-s-3xl",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+      "{var2}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-s-4xl",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+      "{var2}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-s-none",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["0", "0"],
+  },
+  {
+    selector: "rounded-s-full",
+    properties: ["border-start-start-radius", "border-end-start-radius"],
+    values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-e-xs",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xs",
+      "{var2}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-e-sm",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-sm",
+      "{var2}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-e-md",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-md",
+      "{var2}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-e-lg",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-lg",
+      "{var2}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-e-xl",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xl",
+      "{var2}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-e-2xl",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+      "{var2}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-e-3xl",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+      "{var2}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-e-4xl",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+      "{var2}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-e-none",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["0", "0"],
+  },
+  {
+    selector: "rounded-e-full",
+    properties: ["border-start-end-radius", "border-end-end-radius"],
+    values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-t-xs",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xs",
+      "{var2}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-t-sm",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-sm",
+      "{var2}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-t-md",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-md",
+      "{var2}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-t-lg",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-lg",
+      "{var2}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-t-xl",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xl",
+      "{var2}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-t-2xl",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+      "{var2}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-t-3xl",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+      "{var2}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-t-4xl",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+      "{var2}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-t-none",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["0", "0"],
+  },
+  {
+    selector: "rounded-t-full",
+    properties: ["border-top-left-radius", "border-top-right-radius"],
+    values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-r-xs",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xs",
+      "{var2}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-r-sm",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-sm",
+      "{var2}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-r-md",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-md",
+      "{var2}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-r-lg",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-lg",
+      "{var2}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-r-xl",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xl",
+      "{var2}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-r-2xl",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+      "{var2}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-r-3xl",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+      "{var2}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-r-4xl",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+      "{var2}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-r-none",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["0", "0"],
+  },
+  {
+    selector: "rounded-r-full",
+    properties: ["border-top-right-radius", "border-bottom-right-radius"],
+    values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-b-xs",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xs",
+      "{var2}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-b-sm",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-sm",
+      "{var2}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-b-md",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-md",
+      "{var2}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-b-lg",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-lg",
+      "{var2}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-b-xl",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xl",
+      "{var2}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-b-2xl",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+      "{var2}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-b-3xl",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+      "{var2}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-b-4xl",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+      "{var2}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-b-none",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["0", "0"],
+  },
+  {
+    selector: "rounded-b-full",
+    properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
+    values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-l-xs",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xs",
+      "{var2}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-l-sm",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-sm",
+      "{var2}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-l-md",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-md",
+      "{var2}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-l-lg",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-lg",
+      "{var2}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-l-xl",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-xl",
+      "{var2}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-l-2xl",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+      "{var2}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-l-3xl",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+      "{var2}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-l-4xl",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["var({var})", "var({var2})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+      "{var2}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-l-none",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["0", "0"],
+  },
+  {
+    selector: "rounded-l-full",
+    properties: ["border-top-left-radius", "border-bottom-left-radius"],
+    values: ["calc(infinity * 1px)", "calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-ss-xs",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-ss-sm",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-ss-md",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-ss-lg",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-ss-xl",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-ss-2xl",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-ss-3xl",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-ss-4xl",
+    properties: ["border-start-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-ss-none",
+    properties: ["border-start-start-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-ss-full",
+    properties: ["border-start-start-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-se-xs",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-se-sm",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-se-md",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-se-lg",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-se-xl",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-se-2xl",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-se-3xl",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-se-4xl",
+    properties: ["border-start-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-se-none",
+    properties: ["border-start-end-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-se-full",
+    properties: ["border-start-end-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-ee-xs",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-ee-sm",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-ee-md",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-ee-lg",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-ee-xl",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-ee-2xl",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-ee-3xl",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-ee-4xl",
+    properties: ["border-end-end-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-ee-none",
+    properties: ["border-end-end-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-ee-full",
+    properties: ["border-end-end-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-es-xs",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-es-sm",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-es-md",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-es-lg",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-es-xl",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-es-2xl",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-es-3xl",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-es-4xl",
+    properties: ["border-end-start-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-es-none",
+    properties: ["border-end-start-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-es-full",
+    properties: ["border-end-start-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-tl-xs",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-tl-sm",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-tl-md",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-tl-lg",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-tl-xl",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-tl-2xl",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-tl-3xl",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-tl-4xl",
+    properties: ["border-top-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-tl-none",
+    properties: ["border-top-left-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-tl-full",
+    properties: ["border-top-left-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-tr-xs",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-tr-sm",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-tr-md",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-tr-lg",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-tr-xl",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-tr-2xl",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-tr-3xl",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-tr-4xl",
+    properties: ["border-top-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-tr-none",
+    properties: ["border-top-right-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-tr-full",
+    properties: ["border-top-right-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-br-xs",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-br-sm",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-br-md",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-br-lg",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-br-xl",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-br-2xl",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-br-3xl",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-br-4xl",
+    properties: ["border-bottom-right-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-br-none",
+    properties: ["border-bottom-right-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-br-full",
+    properties: ["border-bottom-right-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "rounded-bl-xs",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xs",
+    },
+  },
+  {
+    selector: "rounded-bl-sm",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-sm",
+    },
+  },
+  {
+    selector: "rounded-bl-md",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-md",
+    },
+  },
+  {
+    selector: "rounded-bl-lg",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-lg",
+    },
+  },
+  {
+    selector: "rounded-bl-xl",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-xl",
+    },
+  },
+  {
+    selector: "rounded-bl-2xl",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-2xl",
+    },
+  },
+  {
+    selector: "rounded-bl-3xl",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-3xl",
+    },
+  },
+  {
+    selector: "rounded-bl-4xl",
+    properties: ["border-bottom-left-radius"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "radius-4xl",
+    },
+  },
+  {
+    selector: "rounded-bl-none",
+    properties: ["border-bottom-left-radius"],
+    values: ["0"],
+  },
+  {
+    selector: "rounded-bl-full",
+    properties: ["border-bottom-left-radius"],
+    values: ["calc(infinity * 1px)"],
+  },
+  {
+    selector: "border-solid",
+    properties: ["--tw-border-style", "border-style"],
+    values: ["solid", "solid"],
+  },
+  {
+    selector: "border-dashed",
+    properties: ["--tw-border-style", "border-style"],
+    values: ["dashed", "dashed"],
+  },
+  {
+    selector: "border-dotted",
+    properties: ["--tw-border-style", "border-style"],
+    values: ["dotted", "dotted"],
+  },
+  {
+    selector: "border-double",
+    properties: ["--tw-border-style", "border-style"],
+    values: ["double", "double"],
+  },
+  {
+    selector: "border-hidden",
+    properties: ["--tw-border-style", "border-style"],
+    values: ["hidden", "hidden"],
+  },
+  {
+    selector: "border-none",
+    properties: ["--tw-border-style", "border-style"],
+    values: ["none", "none"],
+  },
+  {
+    selector: "decoration-slice,\n.box-decoration-slice",
+    properties: ["-webkit-box-decoration-break", "box-decoration-break"],
+    values: ["slice", "slice"],
+  },
+  {
+    selector: "decoration-clone,\n.box-decoration-clone",
+    properties: ["-webkit-box-decoration-break", "box-decoration-break"],
+    values: ["clone", "clone"],
+  },
+  {
+    selector: "box-border",
+    properties: ["box-sizing"],
+    values: ["border-box"],
+  },
+  {
+    selector: "box-content",
+    properties: ["box-sizing"],
+    values: ["content-box"],
+  },
+  {
+    selector: "break-after-auto",
+    properties: ["break-after"],
+    values: ["auto"],
+  },
+  {
+    selector: "break-after-avoid",
+    properties: ["break-after"],
+    values: ["avoid"],
+  },
+  {
+    selector: "break-after-all",
+    properties: ["break-after"],
+    values: ["all"],
+  },
+  {
+    selector: "break-after-avoid-page",
+    properties: ["break-after"],
+    values: ["avoid-page"],
+  },
+  {
+    selector: "break-after-page",
+    properties: ["break-after"],
+    values: ["page"],
+  },
+  {
+    selector: "break-after-left",
+    properties: ["break-after"],
+    values: ["left"],
+  },
+  {
+    selector: "break-after-right",
+    properties: ["break-after"],
+    values: ["right"],
+  },
+  {
+    selector: "break-after-column",
+    properties: ["break-after"],
+    values: ["column"],
+  },
+  {
+    selector: "break-before-auto",
+    properties: ["break-before"],
+    values: ["auto"],
+  },
+  {
+    selector: "break-before-avoid",
+    properties: ["break-before"],
+    values: ["avoid"],
+  },
+  {
+    selector: "break-before-all",
+    properties: ["break-before"],
+    values: ["all"],
+  },
+  {
+    selector: "break-before-avoid-page",
+    properties: ["break-before"],
+    values: ["avoid-page"],
+  },
+  {
+    selector: "break-before-page",
+    properties: ["break-before"],
+    values: ["page"],
+  },
+  {
+    selector: "break-before-left",
+    properties: ["break-before"],
+    values: ["left"],
+  },
+  {
+    selector: "break-before-right",
+    properties: ["break-before"],
+    values: ["right"],
+  },
+  {
+    selector: "break-before-column",
+    properties: ["break-before"],
+    values: ["column"],
+  },
+  {
+    selector: "break-inside-auto",
+    properties: ["break-inside"],
+    values: ["auto"],
+  },
+  {
+    selector: "break-inside-avoid",
+    properties: ["break-inside"],
+    values: ["avoid"],
+  },
+  {
+    selector: "break-inside-avoid-page",
+    properties: ["break-inside"],
+    values: ["avoid-page"],
+  },
+  {
+    selector: "break-inside-avoid-column",
+    properties: ["break-inside"],
+    values: ["avoid-column"],
+  },
+  {
+    selector: "clear-start",
+    properties: ["clear"],
+    values: ["inline-start"],
+  },
+  {
+    selector: "clear-end",
+    properties: ["clear"],
+    values: ["inline-end"],
+  },
+  {
+    selector: "clear-left",
+    properties: ["clear"],
+    values: ["left"],
+  },
+  {
+    selector: "clear-right",
+    properties: ["clear"],
+    values: ["right"],
+  },
+  {
+    selector: "clear-both",
+    properties: ["clear"],
+    values: ["both"],
+  },
+  {
+    selector: "clear-none",
+    properties: ["clear"],
+    values: ["none"],
+  },
+  {
+    selector: "columns-3xs",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xs",
+    },
+  },
+  {
+    selector: "columns-2xs",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xs",
+    },
+  },
+  {
+    selector: "columns-xs",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xs",
+    },
+  },
+  {
+    selector: "columns-sm",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-sm",
+    },
+  },
+  {
+    selector: "columns-md",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-md",
+    },
+  },
+  {
+    selector: "columns-lg",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-lg",
+    },
+  },
+  {
+    selector: "columns-xl",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xl",
+    },
+  },
+  {
+    selector: "columns-2xl",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xl",
+    },
+  },
+  {
+    selector: "columns-3xl",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xl",
+    },
+  },
+  {
+    selector: "columns-4xl",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-4xl",
+    },
+  },
+  {
+    selector: "columns-5xl",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-5xl",
+    },
+  },
+  {
+    selector: "columns-6xl",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-6xl",
+    },
+  },
+  {
+    selector: "columns-7xl",
+    properties: ["columns"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-7xl",
+    },
+  },
+  {
+    selector: "columns-auto",
+    properties: ["columns"],
+    values: ["auto"],
+  },
+  {
+    selector: "block",
+    properties: ["display"],
+    values: ["block"],
+  },
+  {
+    selector: "inline-block",
+    properties: ["display"],
+    values: ["inline-block"],
+  },
+  {
+    selector: "inline",
+    properties: ["display"],
+    values: ["inline"],
+  },
+  {
+    selector: "flex",
+    properties: ["display"],
+    values: ["flex"],
+  },
+  {
+    selector: "inline-flex",
+    properties: ["display"],
+    values: ["inline-flex"],
+  },
+  {
+    selector: "table",
+    properties: ["display"],
+    values: ["table"],
+  },
+  {
+    selector: "inline-table",
+    properties: ["display"],
+    values: ["inline-table"],
+  },
+  {
+    selector: "table-caption",
+    properties: ["display"],
+    values: ["table-caption"],
+  },
+  {
+    selector: "table-cell",
+    properties: ["display"],
+    values: ["table-cell"],
+  },
+  {
+    selector: "table-column",
+    properties: ["display"],
+    values: ["table-column"],
+  },
+  {
+    selector: "table-column-group",
+    properties: ["display"],
+    values: ["table-column-group"],
+  },
+  {
+    selector: "table-footer-group",
+    properties: ["display"],
+    values: ["table-footer-group"],
+  },
+  {
+    selector: "table-header-group",
+    properties: ["display"],
+    values: ["table-header-group"],
+  },
+  {
+    selector: "table-row-group",
+    properties: ["display"],
+    values: ["table-row-group"],
+  },
+  {
+    selector: "table-row",
+    properties: ["display"],
+    values: ["table-row"],
+  },
+  {
+    selector: "flow-root",
+    properties: ["display"],
+    values: ["flow-root"],
+  },
+  {
+    selector: "grid",
+    properties: ["display"],
+    values: ["grid"],
+  },
+  {
+    selector: "inline-grid",
+    properties: ["display"],
+    values: ["inline-grid"],
+  },
+  {
+    selector: "contents",
+    properties: ["display"],
+    values: ["contents"],
+  },
+  {
+    selector: "list-item",
+    properties: ["display"],
+    values: ["list-item"],
+  },
+  {
+    selector: "hidden",
+    properties: ["display"],
+    values: ["none"],
+  },
+  {
+    selector: "basis-3xs",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xs",
+    },
+  },
+  {
+    selector: "basis-2xs",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xs",
+    },
+  },
+  {
+    selector: "basis-xs",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xs",
+    },
+  },
+  {
+    selector: "basis-sm",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-sm",
+    },
+  },
+  {
+    selector: "basis-md",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-md",
+    },
+  },
+  {
+    selector: "basis-lg",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-lg",
+    },
+  },
+  {
+    selector: "basis-xl",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xl",
+    },
+  },
+  {
+    selector: "basis-2xl",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xl",
+    },
+  },
+  {
+    selector: "basis-3xl",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xl",
+    },
+  },
+  {
+    selector: "basis-4xl",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-4xl",
+    },
+  },
+  {
+    selector: "basis-5xl",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-5xl",
+    },
+  },
+  {
+    selector: "basis-6xl",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-6xl",
+    },
+  },
+  {
+    selector: "basis-7xl",
+    properties: ["flex-basis"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-7xl",
+    },
+  },
+  {
+    selector: "basis-auto",
+    properties: ["flex-basis"],
+    values: ["auto"],
+  },
+  {
+    selector: "basis-full",
+    properties: ["flex-basis"],
+    values: ["100%"],
+  },
+  {
+    selector: "flex-1",
+    properties: ["flex"],
+    values: ["1 1 0%"],
+  },
+  {
+    selector: "flex-auto",
+    properties: ["flex"],
+    values: ["1 1 auto"],
+  },
+  {
+    selector: "flex-initial",
+    properties: ["flex"],
+    values: ["0 1 auto"],
+  },
+  {
+    selector: "flex-none",
+    properties: ["flex"],
+    values: ["none"],
+  },
+  {
+    selector: "flex-row",
+    properties: ["flex-direction"],
+    values: ["row"],
+  },
+  {
+    selector: "flex-row-reverse",
+    properties: ["flex-direction"],
+    values: ["row-reverse"],
+  },
+  {
+    selector: "flex-col",
+    properties: ["flex-direction"],
+    values: ["column"],
+  },
+  {
+    selector: "flex-col-reverse",
+    properties: ["flex-direction"],
+    values: ["column-reverse"],
+  },
+  {
+    selector: "flex-grow",
+    properties: ["flex-grow"],
+    values: ["1"],
+  },
+  {
+    selector: "flex-grow-0",
+    properties: ["flex-grow"],
+    values: ["0"],
+  },
+  {
+    selector: "grow",
+    properties: ["flex-grow"],
+    values: ["1"],
+  },
+  {
+    selector: "grow-0",
+    properties: ["flex-grow"],
+    values: ["0"],
+  },
+  {
+    selector: "flex-shrink",
+    properties: ["flex-shrink"],
+    values: ["1"],
+  },
+  {
+    selector: "flex-shrink-0",
+    properties: ["flex-shrink"],
+    values: ["0"],
+  },
+  {
+    selector: "shrink",
+    properties: ["flex-shrink"],
+    values: ["1"],
+  },
+  {
+    selector: "shrink-0",
+    properties: ["flex-shrink"],
+    values: ["0"],
+  },
+  {
+    selector: "flex-wrap",
+    properties: ["flex-wrap"],
+    values: ["wrap"],
+  },
+  {
+    selector: "flex-wrap-reverse",
+    properties: ["flex-wrap"],
+    values: ["wrap-reverse"],
+  },
+  {
+    selector: "flex-nowrap",
+    properties: ["flex-wrap"],
+    values: ["nowrap"],
+  },
+  {
+    selector: "float-start",
+    properties: ["float"],
+    values: ["inline-start"],
+  },
+  {
+    selector: "float-end",
+    properties: ["float"],
+    values: ["inline-end"],
+  },
+  {
+    selector: "float-right",
+    properties: ["float"],
+    values: ["right"],
+  },
+  {
+    selector: "float-left",
+    properties: ["float"],
+    values: ["left"],
+  },
+  {
+    selector: "float-none",
+    properties: ["float"],
+    values: ["none"],
+  },
+  {
+    selector: "text-xs",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-xs",
+    },
+  },
+  {
+    selector: "text-sm",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-sm",
+    },
+  },
+  {
+    selector: "text-base",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-base",
+    },
+  },
+  {
+    selector: "text-lg",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-lg",
+    },
+  },
+  {
+    selector: "text-xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-xl",
+    },
+  },
+  {
+    selector: "text-2xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-2xl",
+    },
+  },
+  {
+    selector: "text-3xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-3xl",
+    },
+  },
+  {
+    selector: "text-4xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-4xl",
+    },
+  },
+  {
+    selector: "text-5xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-5xl",
+    },
+  },
+  {
+    selector: "text-6xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-6xl",
+    },
+  },
+  {
+    selector: "text-7xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-7xl",
+    },
+  },
+  {
+    selector: "text-8xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-8xl",
+    },
+  },
+  {
+    selector: "text-9xl",
+    properties: ["font"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "text-9xl",
+    },
+  },
+  {
+    selector: "italic",
+    properties: ["font-style"],
+    values: ["italic"],
+  },
+  {
+    selector: "not-italic",
+    properties: ["font-style"],
+    values: ["normal"],
+  },
+  {
+    selector: "font-black",
+    properties: ["font-weight"],
+    values: ["900"],
+  },
+  {
+    selector: "font-bold",
+    properties: ["font-weight"],
+    values: ["700"],
+  },
+  {
+    selector: "font-extrabold",
+    properties: ["font-weight"],
+    values: ["800"],
+  },
+  {
+    selector: "font-extralight",
+    properties: ["font-weight"],
+    values: ["200"],
+  },
+  {
+    selector: "font-light",
+    properties: ["font-weight"],
+    values: ["300"],
+  },
+  {
+    selector: "font-medium",
+    properties: ["font-weight"],
+    values: ["500"],
+  },
+  {
+    selector: "font-normal",
+    properties: ["font-weight"],
+    values: ["400"],
+  },
+  {
+    selector: "font-semibold",
+    properties: ["font-weight"],
+    values: ["600"],
+  },
+  {
+    selector: "font-thin",
+    properties: ["font-weight"],
+    values: ["100"],
+  },
+  {
+    selector: "bg-gradient-to-t",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: ["to top in oklab", "linear-gradient(var(--tw-gradient-stops))"],
+  },
+  {
+    selector: "bg-gradient-to-tr",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: [
+      "to top right in oklab",
+      "linear-gradient(var(--tw-gradient-stops))",
+    ],
+  },
+  {
+    selector: "bg-gradient-to-r",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: ["to right in oklab", "linear-gradient(var(--tw-gradient-stops))"],
+  },
+  {
+    selector: "bg-gradient-to-br",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: [
+      "to bottom right in oklab",
+      "linear-gradient(var(--tw-gradient-stops))",
+    ],
+  },
+  {
+    selector: "bg-gradient-to-b",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: ["to bottom in oklab", "linear-gradient(var(--tw-gradient-stops))"],
+  },
+  {
+    selector: "bg-gradient-to-bl",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: [
+      "to bottom left in oklab",
+      "linear-gradient(var(--tw-gradient-stops))",
+    ],
+  },
+  {
+    selector: "bg-gradient-to-l",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: ["to left in oklab", "linear-gradient(var(--tw-gradient-stops))"],
+  },
+  {
+    selector: "bg-gradient-to-tl",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: [
+      "to top left in oklab",
+      "linear-gradient(var(--tw-gradient-stops))",
+    ],
+  },
+  {
+    selector: "grid-flow-row",
+    properties: ["grid-auto-flow"],
+    values: ["row"],
+  },
+  {
+    selector: "grid-flow-col",
+    properties: ["grid-auto-flow"],
+    values: ["column"],
+  },
+  {
+    selector: "grid-flow-dense",
+    properties: ["grid-auto-flow"],
+    values: ["dense"],
+  },
+  {
+    selector: "grid-flow-row-dense",
+    properties: ["grid-auto-flow"],
+    values: ["row dense"],
+  },
+  {
+    selector: "grid-flow-col-dense",
+    properties: ["grid-auto-flow"],
+    values: ["column dense"],
+  },
+  {
+    selector: "col-auto",
+    properties: ["grid-column"],
+    values: ["auto"],
+  },
+  {
+    selector: "col-span-full",
+    properties: ["grid-column"],
+    values: ["1 / -1"],
+  },
+  {
+    selector: "col-start-auto",
+    properties: ["grid-column-start"],
+    values: ["auto"],
+  },
+  {
+    selector: "col-end-auto",
+    properties: ["grid-column-end"],
+    values: ["auto"],
+  },
+  {
+    selector: "row-auto",
+    properties: ["grid-row"],
+    values: ["auto"],
+  },
+  {
+    selector: "row-span-full",
+    properties: ["grid-row"],
+    values: ["1 / -1"],
+  },
+  {
+    selector: "row-start-auto",
+    properties: ["grid-row-start"],
+    values: ["auto"],
+  },
+  {
+    selector: "row-end-auto",
+    properties: ["grid-row-end"],
+    values: ["auto"],
+  },
+  {
+    selector: "grid-cols-none",
+    properties: ["grid-template-columns"],
+    values: ["none"],
+  },
+  {
+    selector: "grid-cols-subgrid",
+    properties: ["grid-template-columns"],
+    values: ["subgrid"],
+  },
+  {
+    selector: "grid-rows-none",
+    properties: ["grid-template-rows"],
+    values: ["none"],
+  },
+  {
+    selector: "grid-rows-subgrid",
+    properties: ["grid-template-rows"],
+    values: ["subgrid"],
+  },
+  {
+    selector: "h-auto",
+    properties: ["height"],
+    values: ["auto"],
+  },
+  {
+    selector: "h-full",
+    properties: ["height"],
+    values: ["100%"],
+  },
+  {
+    selector: "h-screen",
+    properties: ["height"],
+    values: ["100vh"],
+  },
+  {
+    selector: "h-dvh",
+    properties: ["height"],
+    values: ["100dvh"],
+  },
+  {
+    selector: "h-dvw",
+    properties: ["height"],
+    values: ["100dvw"],
+  },
+  {
+    selector: "h-lvh",
+    properties: ["height"],
+    values: ["100lvh"],
+  },
+  {
+    selector: "h-lvw",
+    properties: ["height"],
+    values: ["100lvw"],
+  },
+  {
+    selector: "h-svh",
+    properties: ["height"],
+    values: ["100svh"],
+  },
+  {
+    selector: "h-svw",
+    properties: ["height"],
+    values: ["100svw"],
+  },
+  {
+    selector: "h-min",
+    properties: ["height"],
+    values: ["min-content"],
+  },
+  {
+    selector: "h-max",
+    properties: ["height"],
+    values: ["max-content"],
+  },
+  {
+    selector: "h-fit",
+    properties: ["height"],
+    values: ["fit-content"],
+  },
+  {
+    selector: "h-lh",
+    properties: ["height"],
+    values: ["1lh"],
+  },
+  {
+    selector: "top-full",
+    properties: ["top"],
+    values: ["100%"],
+  },
+  {
+    selector: "top-auto",
+    properties: ["top"],
+    values: ["auto"],
+  },
+  {
+    selector: "right-full",
+    properties: ["right"],
+    values: ["100%"],
+  },
+  {
+    selector: "right-auto",
+    properties: ["right"],
+    values: ["auto"],
+  },
+  {
+    selector: "bottom-full",
+    properties: ["bottom"],
+    values: ["100%"],
+  },
+  {
+    selector: "bottom-auto",
+    properties: ["bottom"],
+    values: ["auto"],
+  },
+  {
+    selector: "left-full",
+    properties: ["left"],
+    values: ["100%"],
+  },
+  {
+    selector: "left-auto",
+    properties: ["left"],
+    values: ["auto"],
+  },
+  {
+    selector: "inset-full",
+    properties: ["inset"],
+    values: ["100%"],
+  },
+  {
+    selector: "inset-auto",
+    properties: ["inset"],
+    values: ["auto"],
+  },
+  {
+    selector: "inset-x-full",
+    properties: ["inset-inline"],
+    values: ["100%"],
+  },
+  {
+    selector: "inset-y-full",
+    properties: ["inset-block"],
+    values: ["100%"],
+  },
+  {
+    selector: "start-full",
+    properties: ["inset-inline-start"],
+    values: ["100%"],
+  },
+  {
+    selector: "end-full",
+    properties: ["inset-inline-end"],
+    values: ["100%"],
+  },
+  {
+    selector: "isolate",
+    properties: ["isolation"],
+    values: ["isolate"],
+  },
+  {
+    selector: "isolation-auto",
+    properties: ["isolation"],
+    values: ["auto"],
+  },
+  {
+    selector: "justify-normal",
+    properties: ["justify-content"],
+    values: ["normal"],
+  },
+  {
+    selector: "justify-start",
+    properties: ["justify-content"],
+    values: ["flex-start"],
+  },
+  {
+    selector: "justify-end",
+    properties: ["justify-content"],
+    values: ["flex-end"],
+  },
+  {
+    selector: "justify-center",
+    properties: ["justify-content"],
+    values: ["center"],
+  },
+  {
+    selector: "justify-between",
+    properties: ["justify-content"],
+    values: ["space-between"],
+  },
+  {
+    selector: "justify-around",
+    properties: ["justify-content"],
+    values: ["space-around"],
+  },
+  {
+    selector: "justify-evenly",
+    properties: ["justify-content"],
+    values: ["space-evenly"],
+  },
+  {
+    selector: "justify-stretch",
+    properties: ["justify-content"],
+    values: ["stretch"],
+  },
+  {
+    selector: "justify-end-safe",
+    properties: ["justify-content"],
+    values: ["safe flex-end"],
+  },
+  {
+    selector: "justify-center-safe",
+    properties: ["justify-content"],
+    values: ["safe center"],
+  },
+  {
+    selector: "justify-items-start",
+    properties: ["justify-items"],
+    values: ["start"],
+  },
+  {
+    selector: "justify-items-end",
+    properties: ["justify-items"],
+    values: ["end"],
+  },
+  {
+    selector: "justify-items-center",
+    properties: ["justify-items"],
+    values: ["center"],
+  },
+  {
+    selector: "justify-items-stretch",
+    properties: ["justify-items"],
+    values: ["stretch"],
+  },
+  {
+    selector: "justify-items-end-safe",
+    properties: ["justify-items"],
+    values: ["safe end"],
+  },
+  {
+    selector: "justify-items-center-safe",
+    properties: ["justify-items"],
+    values: ["safe center"],
+  },
+  {
+    selector: "justify-items-normal",
+    properties: ["justify-items"],
+    values: ["normal"],
+  },
+  {
+    selector: "justify-self-auto",
+    properties: ["justify-self"],
+    values: ["auto"],
+  },
+  {
+    selector: "justify-self-start",
+    properties: ["justify-self"],
+    values: ["start"],
+  },
+  {
+    selector: "justify-self-end",
+    properties: ["justify-self"],
+    values: ["end"],
+  },
+  {
+    selector: "justify-self-center",
+    properties: ["justify-self"],
+    values: ["center"],
+  },
+  {
+    selector: "justify-self-stretch",
+    properties: ["justify-self"],
+    values: ["stretch"],
+  },
+  {
+    selector: "justify-self-end-safe",
+    properties: ["justify-self"],
+    values: ["safe end"],
+  },
+  {
+    selector: "justify-self-center-safe",
+    properties: ["justify-self"],
+    values: ["safe center"],
+  },
+  {
+    selector: "-tracking-normal",
+    properties: ["letter-spacing"],
+    values: ["-0em"],
+  },
+  {
+    selector: "-tracking-tight",
+    properties: ["letter-spacing"],
+    values: ["0.025em"],
+  },
+  {
+    selector: "-tracking-tighter",
+    properties: ["letter-spacing"],
+    values: ["0.05em"],
+  },
+  {
+    selector: "-tracking-wide",
+    properties: ["letter-spacing"],
+    values: ["-0.025em"],
+  },
+  {
+    selector: "-tracking-wider",
+    properties: ["letter-spacing"],
+    values: ["-0.05em"],
+  },
+  {
+    selector: "-tracking-widest",
+    properties: ["letter-spacing"],
+    values: ["-0.1em"],
+  },
+  {
+    selector: "tracking-normal",
+    properties: ["letter-spacing"],
+    values: ["0em"],
+  },
+  {
+    selector: "tracking-tight",
+    properties: ["letter-spacing"],
+    values: ["-0.025em"],
+  },
+  {
+    selector: "tracking-tighter",
+    properties: ["letter-spacing"],
+    values: ["-0.05em"],
+  },
+  {
+    selector: "tracking-wide",
+    properties: ["letter-spacing"],
+    values: ["0.025em"],
+  },
+  {
+    selector: "tracking-wider",
+    properties: ["letter-spacing"],
+    values: ["0.05em"],
+  },
+  {
+    selector: "tracking-widest",
+    properties: ["letter-spacing"],
+    values: ["0.1em"],
+  },
+  {
+    selector: "leading-loose",
+    properties: ["line-height"],
+    values: ["2"],
+  },
+  {
+    selector: "leading-none",
+    properties: ["line-height"],
+    values: ["1"],
+  },
+  {
+    selector: "leading-normal",
+    properties: ["line-height"],
+    values: ["1.5"],
+  },
+  {
+    selector: "leading-relaxed",
+    properties: ["line-height"],
+    values: ["1.625"],
+  },
+  {
+    selector: "leading-snug",
+    properties: ["line-height"],
+    values: ["1.375"],
+  },
+  {
+    selector: "leading-tight",
+    properties: ["line-height"],
+    values: ["1.25"],
+  },
+  {
+    selector: "m-auto",
+    properties: ["margin"],
+    values: ["auto"],
+  },
+  {
+    selector: "mt-auto",
+    properties: ["margin-top"],
+    values: ["auto"],
+  },
+  {
+    selector: "mb-auto",
+    properties: ["margin-bottom"],
+    values: ["auto"],
+  },
+  {
+    selector: "ml-auto",
+    properties: ["margin-left"],
+    values: ["auto"],
+  },
+  {
+    selector: "mr-auto",
+    properties: ["margin-right"],
+    values: ["auto"],
+  },
+  {
+    selector: "ms-auto",
+    properties: ["margin-inline-start"],
+    values: ["auto"],
+  },
+  {
+    selector: "me-auto",
+    properties: ["margin-inline-end"],
+    values: ["auto"],
+  },
+  {
+    selector: "mx-auto",
+    properties: ["margin-left", "margin-right"],
+    values: ["auto", "auto"],
+  },
+  {
+    selector: "my-auto",
+    properties: ["margin-top", "margin-bottom"],
+    values: ["auto", "auto"],
+  },
+  {
+    selector: "max-h-none",
+    properties: ["max-height"],
+    values: ["none"],
+  },
+  {
+    selector: "max-h-full",
+    properties: ["max-height"],
+    values: ["100%"],
+  },
+  {
+    selector: "max-h-screen",
+    properties: ["max-height"],
+    values: ["100vh"],
+  },
+  {
+    selector: "max-h-dvh",
+    properties: ["max-height"],
+    values: ["100dvh"],
+  },
+  {
+    selector: "max-h-dvw",
+    properties: ["max-height"],
+    values: ["100dvw"],
+  },
+  {
+    selector: "max-h-lvh",
+    properties: ["max-height"],
+    values: ["100lvh"],
+  },
+  {
+    selector: "max-h-lvw",
+    properties: ["max-height"],
+    values: ["100lvw"],
+  },
+  {
+    selector: "max-h-svh",
+    properties: ["max-height"],
+    values: ["100svh"],
+  },
+  {
+    selector: "max-h-svw",
+    properties: ["max-height"],
+    values: ["100svw"],
+  },
+  {
+    selector: "max-h-min",
+    properties: ["max-height"],
+    values: ["min-content"],
+  },
+  {
+    selector: "max-h-max",
+    properties: ["max-height"],
+    values: ["max-content"],
+  },
+  {
+    selector: "max-h-fit",
+    properties: ["max-height"],
+    values: ["fit-content"],
+  },
+  {
+    selector: "max-h-lh",
+    properties: ["max-height"],
+    values: ["1lh"],
+  },
+  {
+    selector: "max-w-3xs",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xs",
+    },
+  },
+  {
+    selector: "max-w-2xs",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xs",
+    },
+  },
+  {
+    selector: "max-w-xs",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xs",
+    },
+  },
+  {
+    selector: "max-w-sm",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-sm",
+    },
+  },
+  {
+    selector: "max-w-md",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-md",
+    },
+  },
+  {
+    selector: "max-w-lg",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-lg",
+    },
+  },
+  {
+    selector: "max-w-xl",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xl",
+    },
+  },
+  {
+    selector: "max-w-2xl",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xl",
+    },
+  },
+  {
+    selector: "max-w-3xl",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xl",
+    },
+  },
+  {
+    selector: "max-w-4xl",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-4xl",
+    },
+  },
+  {
+    selector: "max-w-5xl",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-5xl",
+    },
+  },
+  {
+    selector: "max-w-6xl",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-6xl",
+    },
+  },
+  {
+    selector: "max-w-7xl",
+    properties: ["max-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-7xl",
+    },
+  },
+  {
+    selector: "max-w-full",
+    properties: ["max-width"],
+    values: ["100%"],
+  },
+  {
+    selector: "max-w-screen",
+    properties: ["max-width"],
+    values: ["100vw"],
+  },
+  {
+    selector: "max-w-dvw",
+    properties: ["max-width"],
+    values: ["100dvw"],
+  },
+  {
+    selector: "max-w-dvh",
+    properties: ["max-width"],
+    values: ["100dvh"],
+  },
+  {
+    selector: "max-w-lvw",
+    properties: ["max-width"],
+    values: ["100lvw"],
+  },
+  {
+    selector: "max-w-lvh",
+    properties: ["max-width"],
+    values: ["100lvh"],
+  },
+  {
+    selector: "max-w-svw",
+    properties: ["max-width"],
+    values: ["100svw"],
+  },
+  {
+    selector: "max-w-svh",
+    properties: ["max-width"],
+    values: ["100svh"],
+  },
+  {
+    selector: "max-w-min",
+    properties: ["max-width"],
+    values: ["min-content"],
+  },
+  {
+    selector: "max-w-max",
+    properties: ["max-width"],
+    values: ["max-content"],
+  },
+  {
+    selector: "max-w-fit",
+    properties: ["max-width"],
+    values: ["fit-content"],
+  },
+  {
+    selector: "max-w-none",
+    properties: ["max-width"],
+    values: ["none"],
+  },
+  {
+    selector: "min-h-auto",
+    properties: ["min-height"],
+    values: ["auto"],
+  },
+  {
+    selector: "min-h-full",
+    properties: ["min-height"],
+    values: ["100%"],
+  },
+  {
+    selector: "min-h-screen",
+    properties: ["min-height"],
+    values: ["100vh"],
+  },
+  {
+    selector: "min-h-dvh",
+    properties: ["min-height"],
+    values: ["100dvh"],
+  },
+  {
+    selector: "min-h-dvw",
+    properties: ["min-height"],
+    values: ["100dvw"],
+  },
+  {
+    selector: "min-h-lvh",
+    properties: ["min-height"],
+    values: ["100lvh"],
+  },
+  {
+    selector: "min-h-lvw",
+    properties: ["min-height"],
+    values: ["100lvw"],
+  },
+  {
+    selector: "min-h-svh",
+    properties: ["min-height"],
+    values: ["100svh"],
+  },
+  {
+    selector: "min-h-svw",
+    properties: ["min-height"],
+    values: ["100svw"],
+  },
+  {
+    selector: "min-h-min",
+    properties: ["min-height"],
+    values: ["min-content"],
+  },
+  {
+    selector: "min-h-max",
+    properties: ["min-height"],
+    values: ["max-content"],
+  },
+  {
+    selector: "min-h-fit",
+    properties: ["min-height"],
+    values: ["fit-content"],
+  },
+  {
+    selector: "min-h-lh",
+    properties: ["min-height"],
+    values: ["1lh"],
+  },
+  {
+    selector: "min-w-3xs",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xs",
+    },
+  },
+  {
+    selector: "min-w-2xs",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xs",
+    },
+  },
+  {
+    selector: "min-w-xs",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xs",
+    },
+  },
+  {
+    selector: "min-w-sm",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-sm",
+    },
+  },
+  {
+    selector: "min-w-md",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-md",
+    },
+  },
+  {
+    selector: "min-w-lg",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-lg",
+    },
+  },
+  {
+    selector: "min-w-xl",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xl",
+    },
+  },
+  {
+    selector: "min-w-2xl",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xl",
+    },
+  },
+  {
+    selector: "min-w-3xl",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xl",
+    },
+  },
+  {
+    selector: "min-w-4xl",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-4xl",
+    },
+  },
+  {
+    selector: "min-w-5xl",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-5xl",
+    },
+  },
+  {
+    selector: "min-w-6xl",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-6xl",
+    },
+  },
+  {
+    selector: "min-w-7xl",
+    properties: ["min-width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-7xl",
+    },
+  },
+  {
+    selector: "min-w-auto",
+    properties: ["min-width"],
+    values: ["auto"],
+  },
+  {
+    selector: "min-w-full",
+    properties: ["min-width"],
+    values: ["100%"],
+  },
+  {
+    selector: "min-w-screen",
+    properties: ["min-width"],
+    values: ["100vw"],
+  },
+  {
+    selector: "min-w-dvw",
+    properties: ["min-width"],
+    values: ["100dvw"],
+  },
+  {
+    selector: "min-w-dvh",
+    properties: ["min-width"],
+    values: ["100dvh"],
+  },
+  {
+    selector: "min-w-lvw",
+    properties: ["min-width"],
+    values: ["100lvw"],
+  },
+  {
+    selector: "min-w-lvh",
+    properties: ["min-width"],
+    values: ["100lvh"],
+  },
+  {
+    selector: "min-w-svw",
+    properties: ["min-width"],
+    values: ["100svw"],
+  },
+  {
+    selector: "min-w-svh",
+    properties: ["min-width"],
+    values: ["100svh"],
+  },
+  {
+    selector: "min-w-min",
+    properties: ["min-width"],
+    values: ["min-content"],
+  },
+  {
+    selector: "min-w-max",
+    properties: ["min-width"],
+    values: ["max-content"],
+  },
+  {
+    selector: "min-w-fit",
+    properties: ["min-width"],
+    values: ["fit-content"],
+  },
+  {
+    selector: "object-contain",
+    properties: ["object-fit"],
+    values: ["contain"],
+  },
+  {
+    selector: "object-cover",
+    properties: ["object-fit"],
+    values: ["cover"],
+  },
+  {
+    selector: "object-fill",
+    properties: ["object-fit"],
+    values: ["fill"],
+  },
+  {
+    selector: "object-none",
+    properties: ["object-fit"],
+    values: ["none"],
+  },
+  {
+    selector: "object-scale-down",
+    properties: ["object-fit"],
+    values: ["scale-down"],
+  },
+  {
+    selector: "object-bottom",
+    properties: ["object-position"],
+    values: ["bottom"],
+  },
+  {
+    selector: "object-center",
+    properties: ["object-position"],
+    values: ["center"],
+  },
+  {
+    selector: "object-left",
+    properties: ["object-position"],
+    values: ["left"],
+  },
+  {
+    selector: "object-left-bottom",
+    properties: ["object-position"],
+    values: ["left bottom"],
+  },
+  {
+    selector: "object-left-top",
+    properties: ["object-position"],
+    values: ["left top"],
+  },
+  {
+    selector: "object-right",
+    properties: ["object-position"],
+    values: ["right"],
+  },
+  {
+    selector: "object-right-bottom",
+    properties: ["object-position"],
+    values: ["right bottom"],
+  },
+  {
+    selector: "object-right-top",
+    properties: ["object-position"],
+    values: ["right top"],
+  },
+  {
+    selector: "object-top",
+    properties: ["object-position"],
+    values: ["top"],
+  },
+  {
+    selector: "-order-first",
+    properties: ["order"],
+    values: ["9999"],
+  },
+  {
+    selector: "-order-last",
+    properties: ["order"],
+    values: ["-9999"],
+  },
+  {
+    selector: "-order-none",
+    properties: ["order"],
+    values: ["0"],
+  },
+  {
+    selector: "order-first",
+    properties: ["order"],
+    values: ["-9999"],
+  },
+  {
+    selector: "order-last",
+    properties: ["order"],
+    values: ["9999"],
+  },
+  {
+    selector: "order-none",
+    properties: ["order"],
+    values: ["0"],
+  },
+  {
+    selector: "outline-none",
+    properties: ["outline"],
+    values: ["none"],
+  },
+  {
+    selector: "outline-hidden",
+    properties: ["outline", "outline-offset"],
+    values: ["2px solid transparent", "2px"],
+  },
+  {
+    selector: "outline",
+    properties: ["outline-style"],
+    values: ["solid"],
+  },
+  {
+    selector: "outline-dashed",
+    properties: ["outline-style"],
+    values: ["dashed"],
+  },
+  {
+    selector: "outline-dotted",
+    properties: ["outline-style"],
+    values: ["dotted"],
+  },
+  {
+    selector: "outline-double",
+    properties: ["outline-style"],
+    values: ["double"],
+  },
+  {
+    selector: "overflow-auto",
+    properties: ["overflow"],
+    values: ["auto"],
+  },
+  {
+    selector: "overflow-hidden",
+    properties: ["overflow"],
+    values: ["hidden"],
+  },
+  {
+    selector: "overflow-clip",
+    properties: ["overflow"],
+    values: ["clip"],
+  },
+  {
+    selector: "overflow-visible",
+    properties: ["overflow"],
+    values: ["visible"],
+  },
+  {
+    selector: "overflow-scroll",
+    properties: ["overflow"],
+    values: ["scroll"],
+  },
+  {
+    selector: "overflow-x-auto",
+    properties: ["overflow-x"],
+    values: ["auto"],
+  },
+  {
+    selector: "overflow-y-auto",
+    properties: ["overflow-y"],
+    values: ["auto"],
+  },
+  {
+    selector: "overflow-x-hidden",
+    properties: ["overflow-x"],
+    values: ["hidden"],
+  },
+  {
+    selector: "overflow-y-hidden",
+    properties: ["overflow-y"],
+    values: ["hidden"],
+  },
+  {
+    selector: "overflow-x-clip",
+    properties: ["overflow-x"],
+    values: ["clip"],
+  },
+  {
+    selector: "overflow-y-clip",
+    properties: ["overflow-y"],
+    values: ["clip"],
+  },
+  {
+    selector: "overflow-x-visible",
+    properties: ["overflow-x"],
+    values: ["visible"],
+  },
+  {
+    selector: "overflow-y-visible",
+    properties: ["overflow-y"],
+    values: ["visible"],
+  },
+  {
+    selector: "overflow-x-scroll",
+    properties: ["overflow-x"],
+    values: ["scroll"],
+  },
+  {
+    selector: "overflow-y-scroll",
+    properties: ["overflow-y"],
+    values: ["scroll"],
+  },
+  {
+    selector: "overscroll-auto",
+    properties: ["overscroll-behavior"],
+    values: ["auto"],
+  },
+  {
+    selector: "overscroll-contain",
+    properties: ["overscroll-behavior"],
+    values: ["contain"],
+  },
+  {
+    selector: "overscroll-none",
+    properties: ["overscroll-behavior"],
+    values: ["none"],
+  },
+  {
+    selector: "overscroll-y-auto",
+    properties: ["overscroll-behavior-y"],
+    values: ["auto"],
+  },
+  {
+    selector: "overscroll-y-contain",
+    properties: ["overscroll-behavior-y"],
+    values: ["contain"],
+  },
+  {
+    selector: "overscroll-y-none",
+    properties: ["overscroll-behavior-y"],
+    values: ["none"],
+  },
+  {
+    selector: "overscroll-x-auto",
+    properties: ["overscroll-behavior-x"],
+    values: ["auto"],
+  },
+  {
+    selector: "overscroll-x-contain",
+    properties: ["overscroll-behavior-x"],
+    values: ["contain"],
+  },
+  {
+    selector: "overscroll-x-none",
+    properties: ["overscroll-behavior-x"],
+    values: ["none"],
+  },
+  {
+    selector: "place-content-center",
+    properties: ["place-content"],
+    values: ["center"],
+  },
+  {
+    selector: "place-content-start",
+    properties: ["place-content"],
+    values: ["start"],
+  },
+  {
+    selector: "place-content-end",
+    properties: ["place-content"],
+    values: ["end"],
+  },
+  {
+    selector: "place-content-between",
+    properties: ["place-content"],
+    values: ["space-between"],
+  },
+  {
+    selector: "place-content-around",
+    properties: ["place-content"],
+    values: ["space-around"],
+  },
+  {
+    selector: "place-content-evenly",
+    properties: ["place-content"],
+    values: ["space-evenly"],
+  },
+  {
+    selector: "place-content-baseline",
+    properties: ["place-content"],
+    values: ["baseline"],
+  },
+  {
+    selector: "place-content-stretch",
+    properties: ["place-content"],
+    values: ["stretch"],
+  },
+  {
+    selector: "place-content-end-safe",
+    properties: ["place-content"],
+    values: ["safe end"],
+  },
+  {
+    selector: "place-content-center-safe",
+    properties: ["place-content"],
+    values: ["safe center"],
+  },
+  {
+    selector: "place-items-start",
+    properties: ["place-items"],
+    values: ["start"],
+  },
+  {
+    selector: "place-items-end",
+    properties: ["place-items"],
+    values: ["end"],
+  },
+  {
+    selector: "place-items-center",
+    properties: ["place-items"],
+    values: ["center"],
+  },
+  {
+    selector: "place-items-baseline",
+    properties: ["place-items"],
+    values: ["baseline"],
+  },
+  {
+    selector: "place-items-stretch",
+    properties: ["place-items"],
+    values: ["stretch"],
+  },
+  {
+    selector: "place-items-end-safe",
+    properties: ["place-items"],
+    values: ["safe end"],
+  },
+  {
+    selector: "place-items-center-safe",
+    properties: ["place-items"],
+    values: ["safe center"],
+  },
+  {
+    selector: "place-self-auto",
+    properties: ["place-self"],
+    values: ["auto"],
+  },
+  {
+    selector: "place-self-start",
+    properties: ["place-self"],
+    values: ["start"],
+  },
+  {
+    selector: "place-self-end",
+    properties: ["place-self"],
+    values: ["end"],
+  },
+  {
+    selector: "place-self-center",
+    properties: ["place-self"],
+    values: ["center"],
+  },
+  {
+    selector: "place-self-stretch",
+    properties: ["place-self"],
+    values: ["stretch"],
+  },
+  {
+    selector: "place-self-end-safe",
+    properties: ["place-self"],
+    values: ["safe end"],
+  },
+  {
+    selector: "place-self-center-safe",
+    properties: ["place-self"],
+    values: ["safe center"],
+  },
+  {
+    selector: "static",
+    properties: ["position"],
+    values: ["static"],
+  },
+  {
+    selector: "fixed",
+    properties: ["position"],
+    values: ["fixed"],
+  },
+  {
+    selector: "absolute",
+    properties: ["position"],
+    values: ["absolute"],
+  },
+  {
+    selector: "relative",
+    properties: ["position"],
+    values: ["relative"],
+  },
+  {
+    selector: "sticky",
+    properties: ["position"],
+    values: ["sticky"],
+  },
+  {
+    selector: "bg-radial",
+    properties: ["--tw-gradient-position", "background-image"],
+    values: ["in oklab", "radial-gradient(var(--tw-gradient-stops))"],
+  },
+  {
+    selector: "size-auto",
+    properties: ["width", "height"],
+    values: ["auto", "auto"],
+  },
+  {
+    selector: "size-full",
+    properties: ["width", "height"],
+    values: ["100%", "100%"],
+  },
+  {
+    selector: "size-dvw",
+    properties: ["width", "height"],
+    values: ["100dvw", "100dvw"],
+  },
+  {
+    selector: "size-dvh",
+    properties: ["width", "height"],
+    values: ["100dvh", "100dvh"],
+  },
+  {
+    selector: "size-lvw",
+    properties: ["width", "height"],
+    values: ["100lvw", "100lvw"],
+  },
+  {
+    selector: "size-lvh",
+    properties: ["width", "height"],
+    values: ["100lvh", "100lvh"],
+  },
+  {
+    selector: "size-svw",
+    properties: ["width", "height"],
+    values: ["100svw", "100svw"],
+  },
+  {
+    selector: "size-svh",
+    properties: ["width", "height"],
+    values: ["100svh", "100svh"],
+  },
+  {
+    selector: "size-min",
+    properties: ["width", "height"],
+    values: ["min-content", "min-content"],
+  },
+  {
+    selector: "size-max",
+    properties: ["width", "height"],
+    values: ["max-content", "max-content"],
+  },
+  {
+    selector: "size-fit",
+    properties: ["width", "height"],
+    values: ["fit-content", "fit-content"],
+  },
+  {
+    selector: "space-x-reverse",
+    properties: ["--tw-space-x-reverse"],
+    values: ["1"],
+  },
+  {
+    selector: "space-y-reverse",
+    properties: ["--tw-space-y-reverse"],
+    values: ["1"],
+  },
+  {
+    selector: "text-left",
+    properties: ["text-align"],
+    values: ["left"],
+  },
+  {
+    selector: "text-center",
+    properties: ["text-align"],
+    values: ["center"],
+  },
+  {
+    selector: "text-right",
+    properties: ["text-align"],
+    values: ["right"],
+  },
+  {
+    selector: "text-justify",
+    properties: ["text-align"],
+    values: ["justify"],
+  },
+  {
+    selector: "text-start",
+    properties: ["text-align"],
+    values: ["start"],
+  },
+  {
+    selector: "text-end",
+    properties: ["text-align"],
+    values: ["end"],
+  },
+  {
+    selector: "uppercase",
+    properties: ["text-transform"],
+    values: ["uppercase"],
+  },
+  {
+    selector: "lowercase",
+    properties: ["text-transform"],
+    values: ["lowercase"],
+  },
+  {
+    selector: "capitalize",
+    properties: ["text-transform"],
+    values: ["capitalize"],
+  },
+  {
+    selector: "normal-case",
+    properties: ["text-transform"],
+    values: ["none"],
+  },
+  {
+    selector: "visible",
+    properties: ["visibility"],
+    values: ["visible"],
+  },
+  {
+    selector: "invisible",
+    properties: ["visibility"],
+    values: ["hidden"],
+  },
+  {
+    selector: "collapse",
+    properties: ["visibility"],
+    values: ["collapse"],
+  },
+  {
+    selector: "w-3xs",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xs",
+    },
+  },
+  {
+    selector: "w-2xs",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xs",
+    },
+  },
+  {
+    selector: "w-xs",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xs",
+    },
+  },
+  {
+    selector: "w-sm",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-sm",
+    },
+  },
+  {
+    selector: "w-md",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-md",
+    },
+  },
+  {
+    selector: "w-lg",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-lg",
+    },
+  },
+  {
+    selector: "w-xl",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-xl",
+    },
+  },
+  {
+    selector: "w-2xl",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-2xl",
+    },
+  },
+  {
+    selector: "w-3xl",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-3xl",
+    },
+  },
+  {
+    selector: "w-4xl",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-4xl",
+    },
+  },
+  {
+    selector: "w-5xl",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-5xl",
+    },
+  },
+  {
+    selector: "w-6xl",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-6xl",
+    },
+  },
+  {
+    selector: "w-7xl",
+    properties: ["width"],
+    values: ["var({var})"],
+    placeholders: {
+      "{var}": "container-7xl",
+    },
+  },
+  {
+    selector: "w-auto",
+    properties: ["width"],
+    values: ["auto"],
+  },
+  {
+    selector: "w-full",
+    properties: ["width"],
+    values: ["100%"],
+  },
+  {
+    selector: "w-screen",
+    properties: ["width"],
+    values: ["100vw"],
+  },
+  {
+    selector: "w-dvw",
+    properties: ["width"],
+    values: ["100dvw"],
+  },
+  {
+    selector: "w-dvh",
+    properties: ["width"],
+    values: ["100dvh"],
+  },
+  {
+    selector: "w-lvw",
+    properties: ["width"],
+    values: ["100lvw"],
+  },
+  {
+    selector: "w-lvh",
+    properties: ["width"],
+    values: ["100lvh"],
+  },
+  {
+    selector: "w-svw",
+    properties: ["width"],
+    values: ["100svw"],
+  },
+  {
+    selector: "w-svh",
+    properties: ["width"],
+    values: ["100svh"],
+  },
+  {
+    selector: "w-min",
+    properties: ["width"],
+    values: ["min-content"],
+  },
+  {
+    selector: "w-max",
+    properties: ["width"],
+    values: ["max-content"],
+  },
+  {
+    selector: "w-fit",
+    properties: ["width"],
+    values: ["fit-content"],
+  },
+  {
+    selector: "z-auto",
+    properties: ["z-index"],
+    values: ["auto"],
+  },
+];
+
 const rules = {
   "aspect-ratio": [
     {
@@ -1350,23 +5140,6 @@ const rules = {
     return "." + out;
   }
 
-  function normalizeVarName(name, prefix) {
-    let base = name.replace(/[^a-zA-Z0-9_-]/g, "");
-    if (prefix) base = `${prefix}-${base}`;
-    return `--${escapeCssIdentifier(base)}`;
-  }
-
-  function shouldPrefix(key) {
-    return !nonPrefixable.some((rule) =>
-      typeof rule === "string" ? rule === key : rule.test(key)
-    );
-  }
-
-  function generateArbitraryValue(selector, prefix) {
-    const varName = normalizeVarName(selector, prefix);
-    return `var(${varName})`;
-  }
-
   /**
    * Replace placeholders inside a value string with normalized var names
    * (no `var()` wrapper — leave that to the value definition itself).
@@ -1388,6 +5161,15 @@ const rules = {
       let varName;
       if (prefix && isDark) {
         varName = `--${cleanPrefix}-dark-${cleanName}-${cleanState}`;
+      } else if (prefix && isDark) {
+        // This is a responsive dark rule - should go in media query but with dark context
+        const breakpointSize = breakpoints[prefix];
+        cacheEntry = { css, isUtility: false, breakpoint: breakpointSize };
+
+        if (!mediaQueries[breakpointSize]) {
+          mediaQueries[breakpointSize] = [];
+        }
+        mediaQueries[breakpointSize].push(css);
       } else if (prefix) {
         varName = `--${cleanPrefix}-${cleanName}-${cleanState}`;
       } else if (isDark) {
@@ -1410,12 +5192,12 @@ const rules = {
     const cleanPrefix = prefix ? prefix.replace(/[^a-zA-Z0-9-]/g, "") : "";
 
     let varName;
-    if (prefix && isDark) {
-      varName = `--${cleanPrefix}-dark-${cleanBaseClass}-${cleanState}`;
-    } else if (prefix) {
-      varName = `--${cleanPrefix}-${cleanBaseClass}-${cleanState}`;
+    if (isDark && prefix) {
+      varName = `--dark-${cleanPrefix}-${cleanBaseClass}-${cleanState}`;
     } else if (isDark) {
       varName = `--dark-${cleanBaseClass}-${cleanState}`;
+    } else if (prefix) {
+      varName = `--${cleanPrefix}-${cleanBaseClass}-${cleanState}`;
     } else {
       varName = `--${cleanBaseClass}-${cleanState}`;
     }
@@ -1434,6 +5216,10 @@ const rules = {
     return null;
   }
 
+  function findUtilityConfig(baseClass) {
+    return utilities.find((util) => util.selector === baseClass) || null;
+  }
+
   function buildRule(
     baseClass,
     fullClass,
@@ -1441,32 +5227,45 @@ const rules = {
     prefix = null,
     isDark = false
   ) {
-    // Find the rule configuration
+    // First check if it exists in rules
     const ruleConfig = findRuleConfig(baseClass);
 
-    // Create the CSS selector
+    // Then check if it exists in utilities
+    const utilityConfig = findUtilityConfig(baseClass);
+
+    // If neither exists, warn and return null
+    if (!ruleConfig && !utilityConfig) {
+      console.warn(
+        `Unknown class "${baseClass}" - not found in rules or utilities`
+      );
+      return null;
+    }
+
+    // Create the CSS selector - fix dark mode selector
     let selector;
     if (isDark) {
       if (prefix) {
-        selector = `.dark .${escapeCssIdentifier(prefix)}\\:dark\\:${escapeCssIdentifier(fullClass)}${state}`;
+        // For dark:sm:bg:hover -> .dark .dark\:sm\:bg\:hover:hover
+        selector = `.dark .dark\\:${escapeCssIdentifier(prefix)}\\:${escapeCssIdentifier(baseClass)}\\:${state.replace(":", "")}${state}`;
       } else {
-        selector = `.dark .dark\\:${escapeCssIdentifier(fullClass)}${state}`;
+        // For dark:bg:hover -> .dark .dark\:bg\:hover:hover
+        selector = `.dark .dark\\:${escapeCssIdentifier(baseClass)}\\:${state.replace(":", "")}${state}`;
       }
     } else {
       if (prefix) {
-        selector = `.${escapeCssIdentifier(prefix)}\\:${escapeCssIdentifier(fullClass)}${state}`;
+        // For sm:bg:hover -> .sm\:bg\:hover:hover
+        selector = `.${escapeCssIdentifier(prefix)}\\:${escapeCssIdentifier(baseClass)}\\:${state.replace(":", "")}${state}`;
       } else {
+        // For bg:hover -> .bg\:hover:hover
         selector = `.${escapeCssIdentifier(fullClass)}${state}`;
       }
     }
 
     const declarations = {};
+    let isUtility = false;
 
-    if (!ruleConfig) {
-      // Fallback: treat as arbitrary rule
-      const value = generateArbitraryValue(baseClass, state, prefix, isDark);
-      declarations[baseClass] = value;
-    } else {
+    if (ruleConfig) {
+      // Handle rule configuration
       const { properties, values, placeholders, arbitrary } = ruleConfig;
       const props = Array.isArray(properties) ? properties : [properties];
 
@@ -1491,9 +5290,19 @@ const rules = {
 
         declarations[prop] = value;
       });
+    } else if (utilityConfig) {
+      // Handle utility configuration
+      isUtility = true;
+      const { properties, values } = utilityConfig;
+      const props = Array.isArray(properties) ? properties : [properties];
+
+      props.forEach((prop, i) => {
+        const value = values[i] || values[0];
+        declarations[prop] = value;
+      });
     }
 
-    return { selector, declarations };
+    return { selector, declarations, isUtility };
   }
 
   function extractInteractiveClasses(element) {
@@ -1503,19 +5312,36 @@ const rules = {
     classList.forEach((className) => {
       interactiveStates.forEach((state) => {
         if (className.endsWith(state)) {
-          const baseClass = className.slice(0, -state.length);
+          const baseClassWithPrefix = className.slice(0, -state.length);
 
-          // Check if it's a dark mode class
-          const isDark = isDarkModeClass(baseClass);
-          const actualBaseClass = isDark
-            ? extractDarkModeClass(baseClass)
-            : baseClass;
+          // Check for dark mode first (can be dark:prefix:class or dark:class)
+          let isDark = false;
+          let remainingClass = baseClassWithPrefix;
+
+          if (baseClassWithPrefix.startsWith("dark:")) {
+            isDark = true;
+            remainingClass = baseClassWithPrefix.replace("dark:", "");
+          }
+
+          // Check for responsive prefix
+          let prefix = null;
+          let actualBaseClass = remainingClass;
+
+          // Check for breakpoint prefixes
+          for (const bp of Object.keys(breakpoints)) {
+            if (remainingClass.startsWith(`${bp}:`)) {
+              prefix = bp;
+              actualBaseClass = remainingClass.replace(`${bp}:`, "");
+              break;
+            }
+          }
 
           interactiveClasses.push({
             baseClass: actualBaseClass,
             state,
             fullClass: className,
             isDark,
+            prefix,
           });
         }
       });
@@ -1525,61 +5351,78 @@ const rules = {
   }
 
   function generateCssRules(interactiveClasses) {
-    const cssRules = [];
+    const baseRules = [];
+    const utilityCssRules = [];
+    const mediaQueries = {};
     const processedRules = new Set();
 
-    interactiveClasses.forEach(({ baseClass, state, fullClass, isDark }) => {
-      // Check if rule supports dark mode
-      const ruleConfig = findRuleConfig(baseClass);
-      if (isDark && (!ruleConfig || !ruleConfig.dark)) {
-        return; // Skip if rule doesn't support dark mode
-      }
+    interactiveClasses.forEach(
+      ({ baseClass, state, fullClass, isDark, prefix }) => {
+        // Check if rule supports dark mode (only for rules, not utilities)
+        const ruleConfig = findRuleConfig(baseClass);
+        if (isDark && ruleConfig && !ruleConfig.dark) {
+          return; // Skip if rule doesn't support dark mode
+        }
 
-      const ruleKey = `${fullClass}${state}${isDark ? "-dark" : ""}`;
+        const ruleKey = `${fullClass}${state}${isDark ? "-dark" : ""}${prefix ? `-${prefix}` : ""}`;
 
-      if (ruleCache.has(ruleKey)) {
-        cssRules.push(ruleCache.get(ruleKey));
-        return;
-      }
-
-      if (processedRules.has(ruleKey)) return;
-      processedRules.add(ruleKey);
-
-      const rule = buildRule(baseClass, fullClass, state, null, isDark);
-      const css = `${rule.selector} { ${Object.entries(rule.declarations)
-        .map(([prop, val]) => `${prop}: ${val}`)
-        .join("; ")}; }`;
-
-      ruleCache.set(ruleKey, css);
-      cssRules.push(css);
-
-      // Generate responsive variants if applicable
-      if (shouldPrefix(baseClass)) {
-        Object.entries(breakpoints).forEach(([bp, size]) => {
-          const responsiveRuleKey = `${bp}:${ruleKey}`;
-          if (!ruleCache.has(responsiveRuleKey)) {
-            const responsiveRule = buildRule(
-              baseClass,
-              fullClass,
-              state,
-              bp,
-              isDark
-            );
-            const responsiveCss = `@media (min-width: ${size}) { ${responsiveRule.selector} { ${Object.entries(
-              responsiveRule.declarations
-            )
-              .map(([prop, val]) => `${prop}: ${val}`)
-              .join("; ")}; } }`;
-            ruleCache.set(responsiveRuleKey, responsiveCss);
-            cssRules.push(responsiveCss);
+        if (ruleCache.has(ruleKey)) {
+          const cachedRule = ruleCache.get(ruleKey);
+          if (cachedRule.isUtility) {
+            utilityCssRules.push(cachedRule.css);
+          } else if (cachedRule.breakpoint) {
+            if (!mediaQueries[cachedRule.breakpoint]) {
+              mediaQueries[cachedRule.breakpoint] = [];
+            }
+            mediaQueries[cachedRule.breakpoint].push(cachedRule.css);
           } else {
-            cssRules.push(ruleCache.get(responsiveRuleKey));
+            baseRules.push(cachedRule.css);
           }
-        });
-      }
-    });
+          return;
+        }
 
-    return cssRules;
+        if (processedRules.has(ruleKey)) return;
+        processedRules.add(ruleKey);
+
+        const rule = buildRule(baseClass, fullClass, state, prefix, isDark);
+
+        // Skip if rule building failed (unknown class)
+        if (!rule) return;
+
+        const css = `${rule.selector} { ${Object.entries(rule.declarations)
+          .map(([prop, val]) => `${prop}: ${val}`)
+          .join("; ")}; }`;
+
+        let cacheEntry;
+
+        if (rule.isUtility) {
+          cacheEntry = { css, isUtility: true };
+          utilityCssRules.push(css);
+        } else if (prefix) {
+          // This is a responsive rule
+          const breakpointSize = breakpoints[prefix];
+          cacheEntry = { css, isUtility: false, breakpoint: breakpointSize };
+
+          if (!mediaQueries[breakpointSize]) {
+            mediaQueries[breakpointSize] = [];
+          }
+          mediaQueries[breakpointSize].push(css);
+        } else {
+          // This is a base rule
+          cacheEntry = { css, isUtility: false };
+          baseRules.push(css);
+        }
+
+        ruleCache.set(ruleKey, cacheEntry);
+      }
+    );
+
+    // Merge media queries
+    const mergedMediaQueries = Object.entries(mediaQueries).map(
+      ([size, rules]) => `@media (min-width: ${size}) {\n${rules.join("\n")}\n}`
+    );
+
+    return { baseRules, utilityCssRules, mergedMediaQueries };
   }
 
   function generateInteractiveStyles() {
@@ -1597,8 +5440,29 @@ const rules = {
     });
 
     // Generate CSS rules
-    const cssRules = generateCssRules(allInteractiveClasses);
-    const finalCss = cssRules.join("\n");
+    const { baseRules, utilityCssRules, mergedMediaQueries } = generateCssRules(
+      allInteractiveClasses
+    );
+
+    // Wrap base rules in @layer styles
+    const finalBaseRules =
+      baseRules.length > 0 ? `@layer styles {\n${baseRules.join("\n")}\n}` : "";
+
+    // Wrap utility rules in @layer utilities
+    const finalUtilityCss =
+      utilityCssRules.length > 0
+        ? `@layer utilities {\n${utilityCssRules.join("\n")}\n}`
+        : "";
+
+    // Wrap media queries in @layer styles
+    const finalMediaQueries =
+      mergedMediaQueries.length > 0
+        ? `@layer styles {\n${mergedMediaQueries.join("\n")}\n}`
+        : "";
+
+    const finalCss = [finalBaseRules, finalMediaQueries, finalUtilityCss]
+      .filter(Boolean)
+      .join("\n");
 
     // Use requestAnimationFrame for smoother DOM updates
     requestAnimationFrame(() => {
