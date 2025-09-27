@@ -1,0 +1,107 @@
+@layer utilities {
+  .decoration-solid {
+    text-decoration-style: solid;
+  }
+  .decoration-double {
+    text-decoration-style: double;
+  }
+  .decoration-dotted {
+    text-decoration-style: dotted;
+  }
+  .decoration-dashed {
+    text-decoration-style: dashed;
+  }
+  .decoration-wavy {
+    text-decoration-style: wavy;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .sm\:decoration-double {
+      text-decoration-style: double;
+    }
+    .sm\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .sm\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .sm\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .md\:decoration-double {
+      text-decoration-style: double;
+    }
+    .md\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .md\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .md\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .lg\:decoration-double {
+      text-decoration-style: double;
+    }
+    .lg\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .lg\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .lg\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .xl\:decoration-double {
+      text-decoration-style: double;
+    }
+    .xl\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .xl\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .xl\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .\32xl\:decoration-double {
+      text-decoration-style: double;
+    }
+    .\32xl\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .\32xl\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .\32xl\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+  }
+}

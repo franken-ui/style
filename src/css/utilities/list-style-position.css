@@ -1,0 +1,53 @@
+@layer utilities {
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-outside {
+    list-style-position: outside;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:list-inside {
+      list-style-position: inside;
+    }
+    .sm\:list-outside {
+      list-style-position: outside;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:list-inside {
+      list-style-position: inside;
+    }
+    .md\:list-outside {
+      list-style-position: outside;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:list-inside {
+      list-style-position: inside;
+    }
+    .lg\:list-outside {
+      list-style-position: outside;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:list-inside {
+      list-style-position: inside;
+    }
+    .xl\:list-outside {
+      list-style-position: outside;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:list-inside {
+      list-style-position: inside;
+    }
+    .\32xl\:list-outside {
+      list-style-position: outside;
+    }
+  }
+}

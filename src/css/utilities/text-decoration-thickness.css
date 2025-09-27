@@ -1,0 +1,53 @@
+@layer utilities {
+  .decoration-from-font {
+    text-decoration-thickness: from-font;
+  }
+  .decoration-auto {
+    text-decoration-thickness: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .sm\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .md\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .lg\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .xl\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .\32xl\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
+  }
+}

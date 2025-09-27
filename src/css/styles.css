@@ -475,6 +475,12 @@
   .\[leading\] {
     line-height: var(--leading);
   }
+  .list-image {
+    list-style-image: var(--list-image);
+  }
+  .list {
+    list-style-type: var(--list);
+  }
   .m {
     margin: calc(var(--spacing) * var(--m));
   }
@@ -652,6 +658,32 @@
   .\[size\] {
     width: var(--size);
     height: var(--size);
+  }
+  .decoration {
+    text-decoration-color: var(--decoration);
+  }
+  .dark .dark\:decoration {
+    text-decoration-color: var(--dark-decoration);
+  }
+  .decoration\/o {
+    text-decoration-color: color-mix(
+      in oklab,
+      var(--color) var(--color-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:decoration\/o {
+    text-decoration-color: color-mix(
+      in oklab,
+      var(--dark-color) var(--dark-color-o, 100%),
+      transparent
+    );
+  }
+  .decoration-thickness {
+    text-decoration-thickness: var(--decoration-thickness);
+  }
+  .underline-offset {
+    text-underline-offset: var(--underline-offset);
   }
   .to {
     --tw-gradient-to: var(--to);
@@ -1243,6 +1275,12 @@
     .sm\:\[leading\] {
       line-height: var(--sm-leading);
     }
+    .sm\:list-image {
+      list-style-image: var(--sm-list-image);
+    }
+    .sm\:list {
+      list-style-type: var(--sm-list);
+    }
     .sm\:m {
       margin: calc(var(--spacing) * var(--sm-m));
     }
@@ -1420,6 +1458,32 @@
     .sm\:\[size\] {
       width: var(--sm-size);
       height: var(--sm-size);
+    }
+    .sm\:decoration {
+      text-decoration-color: var(--sm-decoration);
+    }
+    .dark .dark\:sm\:decoration {
+      text-decoration-color: var(--dark-sm-decoration);
+    }
+    .sm\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--sm-color) var(--sm-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-sm-color) var(--dark-sm-color-o, 100%),
+        transparent
+      );
+    }
+    .sm\:decoration-thickness {
+      text-decoration-thickness: var(--sm-decoration-thickness);
+    }
+    .sm\:underline-offset {
+      text-underline-offset: var(--sm-underline-offset);
     }
     .sm\:to {
       --tw-gradient-to: var(--sm-to);
@@ -2012,6 +2076,12 @@
     .md\:\[leading\] {
       line-height: var(--md-leading);
     }
+    .md\:list-image {
+      list-style-image: var(--md-list-image);
+    }
+    .md\:list {
+      list-style-type: var(--md-list);
+    }
     .md\:m {
       margin: calc(var(--spacing) * var(--md-m));
     }
@@ -2189,6 +2259,32 @@
     .md\:\[size\] {
       width: var(--md-size);
       height: var(--md-size);
+    }
+    .md\:decoration {
+      text-decoration-color: var(--md-decoration);
+    }
+    .dark .dark\:md\:decoration {
+      text-decoration-color: var(--dark-md-decoration);
+    }
+    .md\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--md-color) var(--md-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-md-color) var(--dark-md-color-o, 100%),
+        transparent
+      );
+    }
+    .md\:decoration-thickness {
+      text-decoration-thickness: var(--md-decoration-thickness);
+    }
+    .md\:underline-offset {
+      text-underline-offset: var(--md-underline-offset);
     }
     .md\:to {
       --tw-gradient-to: var(--md-to);
@@ -2781,6 +2877,12 @@
     .lg\:\[leading\] {
       line-height: var(--lg-leading);
     }
+    .lg\:list-image {
+      list-style-image: var(--lg-list-image);
+    }
+    .lg\:list {
+      list-style-type: var(--lg-list);
+    }
     .lg\:m {
       margin: calc(var(--spacing) * var(--lg-m));
     }
@@ -2958,6 +3060,32 @@
     .lg\:\[size\] {
       width: var(--lg-size);
       height: var(--lg-size);
+    }
+    .lg\:decoration {
+      text-decoration-color: var(--lg-decoration);
+    }
+    .dark .dark\:lg\:decoration {
+      text-decoration-color: var(--dark-lg-decoration);
+    }
+    .lg\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--lg-color) var(--lg-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-lg-color) var(--dark-lg-color-o, 100%),
+        transparent
+      );
+    }
+    .lg\:decoration-thickness {
+      text-decoration-thickness: var(--lg-decoration-thickness);
+    }
+    .lg\:underline-offset {
+      text-underline-offset: var(--lg-underline-offset);
     }
     .lg\:to {
       --tw-gradient-to: var(--lg-to);
@@ -3550,6 +3678,12 @@
     .xl\:\[leading\] {
       line-height: var(--xl-leading);
     }
+    .xl\:list-image {
+      list-style-image: var(--xl-list-image);
+    }
+    .xl\:list {
+      list-style-type: var(--xl-list);
+    }
     .xl\:m {
       margin: calc(var(--spacing) * var(--xl-m));
     }
@@ -3727,6 +3861,32 @@
     .xl\:\[size\] {
       width: var(--xl-size);
       height: var(--xl-size);
+    }
+    .xl\:decoration {
+      text-decoration-color: var(--xl-decoration);
+    }
+    .dark .dark\:xl\:decoration {
+      text-decoration-color: var(--dark-xl-decoration);
+    }
+    .xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--xl-color) var(--xl-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-xl-color) var(--dark-xl-color-o, 100%),
+        transparent
+      );
+    }
+    .xl\:decoration-thickness {
+      text-decoration-thickness: var(--xl-decoration-thickness);
+    }
+    .xl\:underline-offset {
+      text-underline-offset: var(--xl-underline-offset);
     }
     .xl\:to {
       --tw-gradient-to: var(--xl-to);
@@ -4319,6 +4479,12 @@
     .\32xl\:\[leading\] {
       line-height: var(--\32xl-leading);
     }
+    .\32xl\:list-image {
+      list-style-image: var(--\32xl-list-image);
+    }
+    .\32xl\:list {
+      list-style-type: var(--\32xl-list);
+    }
     .\32xl\:m {
       margin: calc(var(--spacing) * var(--\32xl-m));
     }
@@ -4496,6 +4662,32 @@
     .\32xl\:\[size\] {
       width: var(--\32xl-size);
       height: var(--\32xl-size);
+    }
+    .\32xl\:decoration {
+      text-decoration-color: var(--\32xl-decoration);
+    }
+    .dark .dark\:2xl\:decoration {
+      text-decoration-color: var(--dark-2xl-decoration);
+    }
+    .\32xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--\32xl-color) var(--\32xl-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-2xl-color) var(--dark-2xl-color-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:decoration-thickness {
+      text-decoration-thickness: var(--\32xl-decoration-thickness);
+    }
+    .\32xl\:underline-offset {
+      text-underline-offset: var(--\32xl-underline-offset);
     }
     .\32xl\:to {
       --tw-gradient-to: var(--\32xl-to);

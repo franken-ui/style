@@ -1113,6 +1113,12 @@
   .\[leading\] {
     line-height: var(--leading);
   }
+  .list-image {
+    list-style-image: var(--list-image);
+  }
+  .list {
+    list-style-type: var(--list);
+  }
   .m {
     margin: calc(var(--spacing) * var(--m));
   }
@@ -1290,6 +1296,32 @@
   .\[size\] {
     width: var(--size);
     height: var(--size);
+  }
+  .decoration {
+    text-decoration-color: var(--decoration);
+  }
+  .dark .dark\:decoration {
+    text-decoration-color: var(--dark-decoration);
+  }
+  .decoration\/o {
+    text-decoration-color: color-mix(
+      in oklab,
+      var(--color) var(--color-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:decoration\/o {
+    text-decoration-color: color-mix(
+      in oklab,
+      var(--dark-color) var(--dark-color-o, 100%),
+      transparent
+    );
+  }
+  .decoration-thickness {
+    text-decoration-thickness: var(--decoration-thickness);
+  }
+  .underline-offset {
+    text-underline-offset: var(--underline-offset);
   }
   .to {
     --tw-gradient-to: var(--to);
@@ -1881,6 +1913,12 @@
     .sm\:\[leading\] {
       line-height: var(--sm-leading);
     }
+    .sm\:list-image {
+      list-style-image: var(--sm-list-image);
+    }
+    .sm\:list {
+      list-style-type: var(--sm-list);
+    }
     .sm\:m {
       margin: calc(var(--spacing) * var(--sm-m));
     }
@@ -2058,6 +2096,32 @@
     .sm\:\[size\] {
       width: var(--sm-size);
       height: var(--sm-size);
+    }
+    .sm\:decoration {
+      text-decoration-color: var(--sm-decoration);
+    }
+    .dark .dark\:sm\:decoration {
+      text-decoration-color: var(--dark-sm-decoration);
+    }
+    .sm\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--sm-color) var(--sm-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-sm-color) var(--dark-sm-color-o, 100%),
+        transparent
+      );
+    }
+    .sm\:decoration-thickness {
+      text-decoration-thickness: var(--sm-decoration-thickness);
+    }
+    .sm\:underline-offset {
+      text-underline-offset: var(--sm-underline-offset);
     }
     .sm\:to {
       --tw-gradient-to: var(--sm-to);
@@ -2650,6 +2714,12 @@
     .md\:\[leading\] {
       line-height: var(--md-leading);
     }
+    .md\:list-image {
+      list-style-image: var(--md-list-image);
+    }
+    .md\:list {
+      list-style-type: var(--md-list);
+    }
     .md\:m {
       margin: calc(var(--spacing) * var(--md-m));
     }
@@ -2827,6 +2897,32 @@
     .md\:\[size\] {
       width: var(--md-size);
       height: var(--md-size);
+    }
+    .md\:decoration {
+      text-decoration-color: var(--md-decoration);
+    }
+    .dark .dark\:md\:decoration {
+      text-decoration-color: var(--dark-md-decoration);
+    }
+    .md\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--md-color) var(--md-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-md-color) var(--dark-md-color-o, 100%),
+        transparent
+      );
+    }
+    .md\:decoration-thickness {
+      text-decoration-thickness: var(--md-decoration-thickness);
+    }
+    .md\:underline-offset {
+      text-underline-offset: var(--md-underline-offset);
     }
     .md\:to {
       --tw-gradient-to: var(--md-to);
@@ -3419,6 +3515,12 @@
     .lg\:\[leading\] {
       line-height: var(--lg-leading);
     }
+    .lg\:list-image {
+      list-style-image: var(--lg-list-image);
+    }
+    .lg\:list {
+      list-style-type: var(--lg-list);
+    }
     .lg\:m {
       margin: calc(var(--spacing) * var(--lg-m));
     }
@@ -3596,6 +3698,32 @@
     .lg\:\[size\] {
       width: var(--lg-size);
       height: var(--lg-size);
+    }
+    .lg\:decoration {
+      text-decoration-color: var(--lg-decoration);
+    }
+    .dark .dark\:lg\:decoration {
+      text-decoration-color: var(--dark-lg-decoration);
+    }
+    .lg\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--lg-color) var(--lg-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-lg-color) var(--dark-lg-color-o, 100%),
+        transparent
+      );
+    }
+    .lg\:decoration-thickness {
+      text-decoration-thickness: var(--lg-decoration-thickness);
+    }
+    .lg\:underline-offset {
+      text-underline-offset: var(--lg-underline-offset);
     }
     .lg\:to {
       --tw-gradient-to: var(--lg-to);
@@ -4188,6 +4316,12 @@
     .xl\:\[leading\] {
       line-height: var(--xl-leading);
     }
+    .xl\:list-image {
+      list-style-image: var(--xl-list-image);
+    }
+    .xl\:list {
+      list-style-type: var(--xl-list);
+    }
     .xl\:m {
       margin: calc(var(--spacing) * var(--xl-m));
     }
@@ -4365,6 +4499,32 @@
     .xl\:\[size\] {
       width: var(--xl-size);
       height: var(--xl-size);
+    }
+    .xl\:decoration {
+      text-decoration-color: var(--xl-decoration);
+    }
+    .dark .dark\:xl\:decoration {
+      text-decoration-color: var(--dark-xl-decoration);
+    }
+    .xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--xl-color) var(--xl-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-xl-color) var(--dark-xl-color-o, 100%),
+        transparent
+      );
+    }
+    .xl\:decoration-thickness {
+      text-decoration-thickness: var(--xl-decoration-thickness);
+    }
+    .xl\:underline-offset {
+      text-underline-offset: var(--xl-underline-offset);
     }
     .xl\:to {
       --tw-gradient-to: var(--xl-to);
@@ -4957,6 +5117,12 @@
     .\32xl\:\[leading\] {
       line-height: var(--\32xl-leading);
     }
+    .\32xl\:list-image {
+      list-style-image: var(--\32xl-list-image);
+    }
+    .\32xl\:list {
+      list-style-type: var(--\32xl-list);
+    }
     .\32xl\:m {
       margin: calc(var(--spacing) * var(--\32xl-m));
     }
@@ -5134,6 +5300,32 @@
     .\32xl\:\[size\] {
       width: var(--\32xl-size);
       height: var(--\32xl-size);
+    }
+    .\32xl\:decoration {
+      text-decoration-color: var(--\32xl-decoration);
+    }
+    .dark .dark\:2xl\:decoration {
+      text-decoration-color: var(--dark-2xl-decoration);
+    }
+    .\32xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--\32xl-color) var(--\32xl-color-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:decoration\/o {
+      text-decoration-color: color-mix(
+        in oklab,
+        var(--dark-2xl-color) var(--dark-2xl-color-o, 100%),
+        transparent
+      );
+    }
+    .\32xl\:decoration-thickness {
+      text-decoration-thickness: var(--\32xl-decoration-thickness);
+    }
+    .\32xl\:underline-offset {
+      text-underline-offset: var(--\32xl-underline-offset);
     }
     .\32xl\:to {
       --tw-gradient-to: var(--\32xl-to);
@@ -6674,6 +6866,24 @@
   .leading-tight {
     line-height: 1.25;
   }
+  .list-image-none {
+    list-style-image: none;
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-outside {
+    list-style-position: outside;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .list-none {
+    list-style-type: none;
+  }
   .m-auto {
     margin: auto;
   }
@@ -7241,6 +7451,48 @@
   .text-end {
     text-align: end;
   }
+  .decoration-inherit {
+    text-decoration-color: inherit;
+  }
+  .decoration-current {
+    text-decoration-color: currentColor;
+  }
+  .decoration-transparent {
+    text-decoration-color: transparent;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .overline {
+    text-decoration-line: overline;
+  }
+  .line-through {
+    text-decoration-line: line-through;
+  }
+  .no-underline {
+    text-decoration-line: none;
+  }
+  .decoration-solid {
+    text-decoration-style: solid;
+  }
+  .decoration-double {
+    text-decoration-style: double;
+  }
+  .decoration-dotted {
+    text-decoration-style: dotted;
+  }
+  .decoration-dashed {
+    text-decoration-style: dashed;
+  }
+  .decoration-wavy {
+    text-decoration-style: wavy;
+  }
+  .decoration-from-font {
+    text-decoration-thickness: from-font;
+  }
+  .decoration-auto {
+    text-decoration-thickness: auto;
+  }
   .uppercase {
     text-transform: uppercase;
   }
@@ -7252,6 +7504,9 @@
   }
   .normal-case {
     text-transform: none;
+  }
+  .underline-offset-auto {
+    text-underline-offset: auto;
   }
   .visible {
     visibility: visible;
@@ -8767,6 +9022,24 @@
     .sm\:leading-tight {
       line-height: 1.25;
     }
+    .sm\:list-image-none {
+      list-style-image: none;
+    }
+    .sm\:list-inside {
+      list-style-position: inside;
+    }
+    .sm\:list-outside {
+      list-style-position: outside;
+    }
+    .sm\:list-decimal {
+      list-style-type: decimal;
+    }
+    .sm\:list-disc {
+      list-style-type: disc;
+    }
+    .sm\:list-none {
+      list-style-type: none;
+    }
     .sm\:m-auto {
       margin: auto;
     }
@@ -9334,6 +9607,48 @@
     .sm\:text-end {
       text-align: end;
     }
+    .sm\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .sm\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .sm\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .sm\:underline {
+      text-decoration-line: underline;
+    }
+    .sm\:overline {
+      text-decoration-line: overline;
+    }
+    .sm\:line-through {
+      text-decoration-line: line-through;
+    }
+    .sm\:no-underline {
+      text-decoration-line: none;
+    }
+    .sm\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .sm\:decoration-double {
+      text-decoration-style: double;
+    }
+    .sm\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .sm\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .sm\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .sm\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .sm\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .sm\:uppercase {
       text-transform: uppercase;
     }
@@ -9345,6 +9660,9 @@
     }
     .sm\:normal-case {
       text-transform: none;
+    }
+    .sm\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .sm\:visible {
       visibility: visible;
@@ -10861,6 +11179,24 @@
     .md\:leading-tight {
       line-height: 1.25;
     }
+    .md\:list-image-none {
+      list-style-image: none;
+    }
+    .md\:list-inside {
+      list-style-position: inside;
+    }
+    .md\:list-outside {
+      list-style-position: outside;
+    }
+    .md\:list-decimal {
+      list-style-type: decimal;
+    }
+    .md\:list-disc {
+      list-style-type: disc;
+    }
+    .md\:list-none {
+      list-style-type: none;
+    }
     .md\:m-auto {
       margin: auto;
     }
@@ -11428,6 +11764,48 @@
     .md\:text-end {
       text-align: end;
     }
+    .md\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .md\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .md\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .md\:underline {
+      text-decoration-line: underline;
+    }
+    .md\:overline {
+      text-decoration-line: overline;
+    }
+    .md\:line-through {
+      text-decoration-line: line-through;
+    }
+    .md\:no-underline {
+      text-decoration-line: none;
+    }
+    .md\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .md\:decoration-double {
+      text-decoration-style: double;
+    }
+    .md\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .md\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .md\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .md\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .md\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .md\:uppercase {
       text-transform: uppercase;
     }
@@ -11439,6 +11817,9 @@
     }
     .md\:normal-case {
       text-transform: none;
+    }
+    .md\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .md\:visible {
       visibility: visible;
@@ -12955,6 +13336,24 @@
     .lg\:leading-tight {
       line-height: 1.25;
     }
+    .lg\:list-image-none {
+      list-style-image: none;
+    }
+    .lg\:list-inside {
+      list-style-position: inside;
+    }
+    .lg\:list-outside {
+      list-style-position: outside;
+    }
+    .lg\:list-decimal {
+      list-style-type: decimal;
+    }
+    .lg\:list-disc {
+      list-style-type: disc;
+    }
+    .lg\:list-none {
+      list-style-type: none;
+    }
     .lg\:m-auto {
       margin: auto;
     }
@@ -13522,6 +13921,48 @@
     .lg\:text-end {
       text-align: end;
     }
+    .lg\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .lg\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .lg\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .lg\:underline {
+      text-decoration-line: underline;
+    }
+    .lg\:overline {
+      text-decoration-line: overline;
+    }
+    .lg\:line-through {
+      text-decoration-line: line-through;
+    }
+    .lg\:no-underline {
+      text-decoration-line: none;
+    }
+    .lg\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .lg\:decoration-double {
+      text-decoration-style: double;
+    }
+    .lg\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .lg\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .lg\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .lg\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .lg\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .lg\:uppercase {
       text-transform: uppercase;
     }
@@ -13533,6 +13974,9 @@
     }
     .lg\:normal-case {
       text-transform: none;
+    }
+    .lg\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .lg\:visible {
       visibility: visible;
@@ -15049,6 +15493,24 @@
     .xl\:leading-tight {
       line-height: 1.25;
     }
+    .xl\:list-image-none {
+      list-style-image: none;
+    }
+    .xl\:list-inside {
+      list-style-position: inside;
+    }
+    .xl\:list-outside {
+      list-style-position: outside;
+    }
+    .xl\:list-decimal {
+      list-style-type: decimal;
+    }
+    .xl\:list-disc {
+      list-style-type: disc;
+    }
+    .xl\:list-none {
+      list-style-type: none;
+    }
     .xl\:m-auto {
       margin: auto;
     }
@@ -15616,6 +16078,48 @@
     .xl\:text-end {
       text-align: end;
     }
+    .xl\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .xl\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .xl\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .xl\:underline {
+      text-decoration-line: underline;
+    }
+    .xl\:overline {
+      text-decoration-line: overline;
+    }
+    .xl\:line-through {
+      text-decoration-line: line-through;
+    }
+    .xl\:no-underline {
+      text-decoration-line: none;
+    }
+    .xl\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .xl\:decoration-double {
+      text-decoration-style: double;
+    }
+    .xl\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .xl\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .xl\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .xl\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .xl\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .xl\:uppercase {
       text-transform: uppercase;
     }
@@ -15627,6 +16131,9 @@
     }
     .xl\:normal-case {
       text-transform: none;
+    }
+    .xl\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .xl\:visible {
       visibility: visible;
@@ -17143,6 +17650,24 @@
     .\32xl\:leading-tight {
       line-height: 1.25;
     }
+    .\32xl\:list-image-none {
+      list-style-image: none;
+    }
+    .\32xl\:list-inside {
+      list-style-position: inside;
+    }
+    .\32xl\:list-outside {
+      list-style-position: outside;
+    }
+    .\32xl\:list-decimal {
+      list-style-type: decimal;
+    }
+    .\32xl\:list-disc {
+      list-style-type: disc;
+    }
+    .\32xl\:list-none {
+      list-style-type: none;
+    }
     .\32xl\:m-auto {
       margin: auto;
     }
@@ -17710,6 +18235,48 @@
     .\32xl\:text-end {
       text-align: end;
     }
+    .\32xl\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .\32xl\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .\32xl\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .\32xl\:underline {
+      text-decoration-line: underline;
+    }
+    .\32xl\:overline {
+      text-decoration-line: overline;
+    }
+    .\32xl\:line-through {
+      text-decoration-line: line-through;
+    }
+    .\32xl\:no-underline {
+      text-decoration-line: none;
+    }
+    .\32xl\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .\32xl\:decoration-double {
+      text-decoration-style: double;
+    }
+    .\32xl\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .\32xl\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .\32xl\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .\32xl\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .\32xl\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .\32xl\:uppercase {
       text-transform: uppercase;
     }
@@ -17721,6 +18288,9 @@
     }
     .\32xl\:normal-case {
       text-transform: none;
+    }
+    .\32xl\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .\32xl\:visible {
       visibility: visible;

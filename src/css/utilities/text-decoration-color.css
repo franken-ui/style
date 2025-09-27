@@ -1,0 +1,71 @@
+@layer utilities {
+  .decoration-inherit {
+    text-decoration-color: inherit;
+  }
+  .decoration-current {
+    text-decoration-color: currentColor;
+  }
+  .decoration-transparent {
+    text-decoration-color: transparent;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .sm\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .sm\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .md\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .md\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .lg\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .lg\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .xl\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .xl\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .\32xl\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .\32xl\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+  }
+}

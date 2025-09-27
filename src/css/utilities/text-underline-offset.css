@@ -1,0 +1,35 @@
+@layer utilities {
+  .underline-offset-auto {
+    text-underline-offset: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:underline-offset-auto {
+      text-underline-offset: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:underline-offset-auto {
+      text-underline-offset: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:underline-offset-auto {
+      text-underline-offset: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:underline-offset-auto {
+      text-underline-offset: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:underline-offset-auto {
+      text-underline-offset: auto;
+    }
+  }
+}

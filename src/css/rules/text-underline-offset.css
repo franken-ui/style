@@ -1,0 +1,35 @@
+@layer styles {
+  .underline-offset {
+    text-underline-offset: var(--underline-offset);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:underline-offset {
+      text-underline-offset: var(--sm-underline-offset);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:underline-offset {
+      text-underline-offset: var(--md-underline-offset);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:underline-offset {
+      text-underline-offset: var(--lg-underline-offset);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:underline-offset {
+      text-underline-offset: var(--xl-underline-offset);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:underline-offset {
+      text-underline-offset: var(--\32xl-underline-offset);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer styles {
+  .list {
+    list-style-type: var(--list);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:list {
+      list-style-type: var(--sm-list);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:list {
+      list-style-type: var(--md-list);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:list {
+      list-style-type: var(--lg-list);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:list {
+      list-style-type: var(--xl-list);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:list {
+      list-style-type: var(--\32xl-list);
+    }
+  }
+}

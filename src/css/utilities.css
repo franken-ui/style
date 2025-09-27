@@ -1425,6 +1425,24 @@
   .leading-tight {
     line-height: 1.25;
   }
+  .list-image-none {
+    list-style-image: none;
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-outside {
+    list-style-position: outside;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .list-none {
+    list-style-type: none;
+  }
   .m-auto {
     margin: auto;
   }
@@ -1992,6 +2010,48 @@
   .text-end {
     text-align: end;
   }
+  .decoration-inherit {
+    text-decoration-color: inherit;
+  }
+  .decoration-current {
+    text-decoration-color: currentColor;
+  }
+  .decoration-transparent {
+    text-decoration-color: transparent;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .overline {
+    text-decoration-line: overline;
+  }
+  .line-through {
+    text-decoration-line: line-through;
+  }
+  .no-underline {
+    text-decoration-line: none;
+  }
+  .decoration-solid {
+    text-decoration-style: solid;
+  }
+  .decoration-double {
+    text-decoration-style: double;
+  }
+  .decoration-dotted {
+    text-decoration-style: dotted;
+  }
+  .decoration-dashed {
+    text-decoration-style: dashed;
+  }
+  .decoration-wavy {
+    text-decoration-style: wavy;
+  }
+  .decoration-from-font {
+    text-decoration-thickness: from-font;
+  }
+  .decoration-auto {
+    text-decoration-thickness: auto;
+  }
   .uppercase {
     text-transform: uppercase;
   }
@@ -2003,6 +2063,9 @@
   }
   .normal-case {
     text-transform: none;
+  }
+  .underline-offset-auto {
+    text-underline-offset: auto;
   }
   .visible {
     visibility: visible;
@@ -3518,6 +3581,24 @@
     .sm\:leading-tight {
       line-height: 1.25;
     }
+    .sm\:list-image-none {
+      list-style-image: none;
+    }
+    .sm\:list-inside {
+      list-style-position: inside;
+    }
+    .sm\:list-outside {
+      list-style-position: outside;
+    }
+    .sm\:list-decimal {
+      list-style-type: decimal;
+    }
+    .sm\:list-disc {
+      list-style-type: disc;
+    }
+    .sm\:list-none {
+      list-style-type: none;
+    }
     .sm\:m-auto {
       margin: auto;
     }
@@ -4085,6 +4166,48 @@
     .sm\:text-end {
       text-align: end;
     }
+    .sm\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .sm\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .sm\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .sm\:underline {
+      text-decoration-line: underline;
+    }
+    .sm\:overline {
+      text-decoration-line: overline;
+    }
+    .sm\:line-through {
+      text-decoration-line: line-through;
+    }
+    .sm\:no-underline {
+      text-decoration-line: none;
+    }
+    .sm\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .sm\:decoration-double {
+      text-decoration-style: double;
+    }
+    .sm\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .sm\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .sm\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .sm\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .sm\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .sm\:uppercase {
       text-transform: uppercase;
     }
@@ -4096,6 +4219,9 @@
     }
     .sm\:normal-case {
       text-transform: none;
+    }
+    .sm\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .sm\:visible {
       visibility: visible;
@@ -5612,6 +5738,24 @@
     .md\:leading-tight {
       line-height: 1.25;
     }
+    .md\:list-image-none {
+      list-style-image: none;
+    }
+    .md\:list-inside {
+      list-style-position: inside;
+    }
+    .md\:list-outside {
+      list-style-position: outside;
+    }
+    .md\:list-decimal {
+      list-style-type: decimal;
+    }
+    .md\:list-disc {
+      list-style-type: disc;
+    }
+    .md\:list-none {
+      list-style-type: none;
+    }
     .md\:m-auto {
       margin: auto;
     }
@@ -6179,6 +6323,48 @@
     .md\:text-end {
       text-align: end;
     }
+    .md\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .md\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .md\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .md\:underline {
+      text-decoration-line: underline;
+    }
+    .md\:overline {
+      text-decoration-line: overline;
+    }
+    .md\:line-through {
+      text-decoration-line: line-through;
+    }
+    .md\:no-underline {
+      text-decoration-line: none;
+    }
+    .md\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .md\:decoration-double {
+      text-decoration-style: double;
+    }
+    .md\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .md\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .md\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .md\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .md\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .md\:uppercase {
       text-transform: uppercase;
     }
@@ -6190,6 +6376,9 @@
     }
     .md\:normal-case {
       text-transform: none;
+    }
+    .md\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .md\:visible {
       visibility: visible;
@@ -7706,6 +7895,24 @@
     .lg\:leading-tight {
       line-height: 1.25;
     }
+    .lg\:list-image-none {
+      list-style-image: none;
+    }
+    .lg\:list-inside {
+      list-style-position: inside;
+    }
+    .lg\:list-outside {
+      list-style-position: outside;
+    }
+    .lg\:list-decimal {
+      list-style-type: decimal;
+    }
+    .lg\:list-disc {
+      list-style-type: disc;
+    }
+    .lg\:list-none {
+      list-style-type: none;
+    }
     .lg\:m-auto {
       margin: auto;
     }
@@ -8273,6 +8480,48 @@
     .lg\:text-end {
       text-align: end;
     }
+    .lg\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .lg\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .lg\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .lg\:underline {
+      text-decoration-line: underline;
+    }
+    .lg\:overline {
+      text-decoration-line: overline;
+    }
+    .lg\:line-through {
+      text-decoration-line: line-through;
+    }
+    .lg\:no-underline {
+      text-decoration-line: none;
+    }
+    .lg\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .lg\:decoration-double {
+      text-decoration-style: double;
+    }
+    .lg\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .lg\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .lg\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .lg\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .lg\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .lg\:uppercase {
       text-transform: uppercase;
     }
@@ -8284,6 +8533,9 @@
     }
     .lg\:normal-case {
       text-transform: none;
+    }
+    .lg\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .lg\:visible {
       visibility: visible;
@@ -9800,6 +10052,24 @@
     .xl\:leading-tight {
       line-height: 1.25;
     }
+    .xl\:list-image-none {
+      list-style-image: none;
+    }
+    .xl\:list-inside {
+      list-style-position: inside;
+    }
+    .xl\:list-outside {
+      list-style-position: outside;
+    }
+    .xl\:list-decimal {
+      list-style-type: decimal;
+    }
+    .xl\:list-disc {
+      list-style-type: disc;
+    }
+    .xl\:list-none {
+      list-style-type: none;
+    }
     .xl\:m-auto {
       margin: auto;
     }
@@ -10367,6 +10637,48 @@
     .xl\:text-end {
       text-align: end;
     }
+    .xl\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .xl\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .xl\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .xl\:underline {
+      text-decoration-line: underline;
+    }
+    .xl\:overline {
+      text-decoration-line: overline;
+    }
+    .xl\:line-through {
+      text-decoration-line: line-through;
+    }
+    .xl\:no-underline {
+      text-decoration-line: none;
+    }
+    .xl\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .xl\:decoration-double {
+      text-decoration-style: double;
+    }
+    .xl\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .xl\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .xl\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .xl\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .xl\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .xl\:uppercase {
       text-transform: uppercase;
     }
@@ -10378,6 +10690,9 @@
     }
     .xl\:normal-case {
       text-transform: none;
+    }
+    .xl\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .xl\:visible {
       visibility: visible;
@@ -11894,6 +12209,24 @@
     .\32xl\:leading-tight {
       line-height: 1.25;
     }
+    .\32xl\:list-image-none {
+      list-style-image: none;
+    }
+    .\32xl\:list-inside {
+      list-style-position: inside;
+    }
+    .\32xl\:list-outside {
+      list-style-position: outside;
+    }
+    .\32xl\:list-decimal {
+      list-style-type: decimal;
+    }
+    .\32xl\:list-disc {
+      list-style-type: disc;
+    }
+    .\32xl\:list-none {
+      list-style-type: none;
+    }
     .\32xl\:m-auto {
       margin: auto;
     }
@@ -12461,6 +12794,48 @@
     .\32xl\:text-end {
       text-align: end;
     }
+    .\32xl\:decoration-inherit {
+      text-decoration-color: inherit;
+    }
+    .\32xl\:decoration-current {
+      text-decoration-color: currentColor;
+    }
+    .\32xl\:decoration-transparent {
+      text-decoration-color: transparent;
+    }
+    .\32xl\:underline {
+      text-decoration-line: underline;
+    }
+    .\32xl\:overline {
+      text-decoration-line: overline;
+    }
+    .\32xl\:line-through {
+      text-decoration-line: line-through;
+    }
+    .\32xl\:no-underline {
+      text-decoration-line: none;
+    }
+    .\32xl\:decoration-solid {
+      text-decoration-style: solid;
+    }
+    .\32xl\:decoration-double {
+      text-decoration-style: double;
+    }
+    .\32xl\:decoration-dotted {
+      text-decoration-style: dotted;
+    }
+    .\32xl\:decoration-dashed {
+      text-decoration-style: dashed;
+    }
+    .\32xl\:decoration-wavy {
+      text-decoration-style: wavy;
+    }
+    .\32xl\:decoration-from-font {
+      text-decoration-thickness: from-font;
+    }
+    .\32xl\:decoration-auto {
+      text-decoration-thickness: auto;
+    }
     .\32xl\:uppercase {
       text-transform: uppercase;
     }
@@ -12472,6 +12847,9 @@
     }
     .\32xl\:normal-case {
       text-transform: none;
+    }
+    .\32xl\:underline-offset-auto {
+      text-underline-offset: auto;
     }
     .\32xl\:visible {
       visibility: visible;

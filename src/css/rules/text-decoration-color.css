@@ -1,0 +1,53 @@
+@layer styles {
+  .decoration {
+    text-decoration-color: var(--decoration);
+  }
+  .dark .dark\:decoration {
+    text-decoration-color: var(--dark-decoration);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:decoration {
+      text-decoration-color: var(--sm-decoration);
+    }
+    .dark .dark\:sm\:decoration {
+      text-decoration-color: var(--dark-sm-decoration);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:decoration {
+      text-decoration-color: var(--md-decoration);
+    }
+    .dark .dark\:md\:decoration {
+      text-decoration-color: var(--dark-md-decoration);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:decoration {
+      text-decoration-color: var(--lg-decoration);
+    }
+    .dark .dark\:lg\:decoration {
+      text-decoration-color: var(--dark-lg-decoration);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:decoration {
+      text-decoration-color: var(--xl-decoration);
+    }
+    .dark .dark\:xl\:decoration {
+      text-decoration-color: var(--dark-xl-decoration);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:decoration {
+      text-decoration-color: var(--\32xl-decoration);
+    }
+    .dark .dark\:2xl\:decoration {
+      text-decoration-color: var(--dark-2xl-decoration);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer utilities {
+  .list-image-none {
+    list-style-image: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:list-image-none {
+      list-style-image: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:list-image-none {
+      list-style-image: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:list-image-none {
+      list-style-image: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:list-image-none {
+      list-style-image: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:list-image-none {
+      list-style-image: none;
+    }
+  }
+}

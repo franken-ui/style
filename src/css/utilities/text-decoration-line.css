@@ -1,0 +1,89 @@
+@layer utilities {
+  .underline {
+    text-decoration-line: underline;
+  }
+  .overline {
+    text-decoration-line: overline;
+  }
+  .line-through {
+    text-decoration-line: line-through;
+  }
+  .no-underline {
+    text-decoration-line: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:underline {
+      text-decoration-line: underline;
+    }
+    .sm\:overline {
+      text-decoration-line: overline;
+    }
+    .sm\:line-through {
+      text-decoration-line: line-through;
+    }
+    .sm\:no-underline {
+      text-decoration-line: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:underline {
+      text-decoration-line: underline;
+    }
+    .md\:overline {
+      text-decoration-line: overline;
+    }
+    .md\:line-through {
+      text-decoration-line: line-through;
+    }
+    .md\:no-underline {
+      text-decoration-line: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:underline {
+      text-decoration-line: underline;
+    }
+    .lg\:overline {
+      text-decoration-line: overline;
+    }
+    .lg\:line-through {
+      text-decoration-line: line-through;
+    }
+    .lg\:no-underline {
+      text-decoration-line: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:underline {
+      text-decoration-line: underline;
+    }
+    .xl\:overline {
+      text-decoration-line: overline;
+    }
+    .xl\:line-through {
+      text-decoration-line: line-through;
+    }
+    .xl\:no-underline {
+      text-decoration-line: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:underline {
+      text-decoration-line: underline;
+    }
+    .\32xl\:overline {
+      text-decoration-line: overline;
+    }
+    .\32xl\:line-through {
+      text-decoration-line: line-through;
+    }
+    .\32xl\:no-underline {
+      text-decoration-line: none;
+    }
+  }
+}

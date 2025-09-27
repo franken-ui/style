@@ -1,0 +1,35 @@
+@layer styles {
+  .decoration-thickness {
+    text-decoration-thickness: var(--decoration-thickness);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:decoration-thickness {
+      text-decoration-thickness: var(--sm-decoration-thickness);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:decoration-thickness {
+      text-decoration-thickness: var(--md-decoration-thickness);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:decoration-thickness {
+      text-decoration-thickness: var(--lg-decoration-thickness);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:decoration-thickness {
+      text-decoration-thickness: var(--xl-decoration-thickness);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:decoration-thickness {
+      text-decoration-thickness: var(--\32xl-decoration-thickness);
+    }
+  }
+}

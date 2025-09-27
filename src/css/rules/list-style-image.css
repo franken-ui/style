@@ -1,0 +1,35 @@
+@layer styles {
+  .list-image {
+    list-style-image: var(--list-image);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:list-image {
+      list-style-image: var(--sm-list-image);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:list-image {
+      list-style-image: var(--md-list-image);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:list-image {
+      list-style-image: var(--lg-list-image);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:list-image {
+      list-style-image: var(--xl-list-image);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:list-image {
+      list-style-image: var(--\32xl-list-image);
+    }
+  }
+}
