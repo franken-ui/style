@@ -1,0 +1,35 @@
+@layer styles {
+  .align {
+    vertical-align: var(--align);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:align {
+      vertical-align: var(--sm-align);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:align {
+      vertical-align: var(--md-align);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:align {
+      vertical-align: var(--lg-align);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:align {
+      vertical-align: var(--xl-align);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:align {
+      vertical-align: var(--\32xl-align);
+    }
+  }
+}

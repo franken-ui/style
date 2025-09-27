@@ -1,0 +1,89 @@
+@layer utilities {
+  .hyphens-none {
+    -webkit-hyphens: none;
+    hyphens: none;
+  }
+  .hyphens-manual {
+    -webkit-hyphens: manual;
+    hyphens: manual;
+  }
+  .hyphens-auto {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .sm\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .sm\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .md\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .md\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .lg\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .lg\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .xl\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .xl\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .\32xl\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .\32xl\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  }
+}

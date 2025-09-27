@@ -668,19 +668,25 @@
   .decoration\/o {
     text-decoration-color: color-mix(
       in oklab,
-      var(--color) var(--color-o, 100%),
+      var(--decoration) var(--decoration-o, 100%),
       transparent
     );
   }
   .dark .dark\:decoration\/o {
     text-decoration-color: color-mix(
       in oklab,
-      var(--dark-color) var(--dark-color-o, 100%),
+      var(--dark-decoration) var(--dark-decoration-o, 100%),
       transparent
     );
   }
   .decoration-thickness {
     text-decoration-thickness: var(--decoration-thickness);
+  }
+  .indent {
+    text-indent: calc(var(--spacing) * var(--indent));
+  }
+  .\[indent\] {
+    text-indent: var(--indent);
   }
   .underline-offset {
     text-underline-offset: var(--underline-offset);
@@ -737,6 +743,9 @@
   }
   .\[top\] {
     top: var(--top);
+  }
+  .align {
+    vertical-align: var(--align);
   }
   .via {
     --tw-gradient-via: var(--via);
@@ -1468,19 +1477,25 @@
     .sm\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--sm-color) var(--sm-color-o, 100%),
+        var(--sm-decoration) var(--sm-decoration-o, 100%),
         transparent
       );
     }
     .dark .dark\:sm\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--dark-sm-color) var(--dark-sm-color-o, 100%),
+        var(--dark-sm-decoration) var(--dark-sm-decoration-o, 100%),
         transparent
       );
     }
     .sm\:decoration-thickness {
       text-decoration-thickness: var(--sm-decoration-thickness);
+    }
+    .sm\:indent {
+      text-indent: calc(var(--spacing) * var(--sm-indent));
+    }
+    .sm\:\[indent\] {
+      text-indent: var(--sm-indent);
     }
     .sm\:underline-offset {
       text-underline-offset: var(--sm-underline-offset);
@@ -1537,6 +1552,9 @@
     }
     .sm\:\[top\] {
       top: var(--sm-top);
+    }
+    .sm\:align {
+      vertical-align: var(--sm-align);
     }
     .sm\:via {
       --tw-gradient-via: var(--sm-via);
@@ -2269,19 +2287,25 @@
     .md\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--md-color) var(--md-color-o, 100%),
+        var(--md-decoration) var(--md-decoration-o, 100%),
         transparent
       );
     }
     .dark .dark\:md\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--dark-md-color) var(--dark-md-color-o, 100%),
+        var(--dark-md-decoration) var(--dark-md-decoration-o, 100%),
         transparent
       );
     }
     .md\:decoration-thickness {
       text-decoration-thickness: var(--md-decoration-thickness);
+    }
+    .md\:indent {
+      text-indent: calc(var(--spacing) * var(--md-indent));
+    }
+    .md\:\[indent\] {
+      text-indent: var(--md-indent);
     }
     .md\:underline-offset {
       text-underline-offset: var(--md-underline-offset);
@@ -2338,6 +2362,9 @@
     }
     .md\:\[top\] {
       top: var(--md-top);
+    }
+    .md\:align {
+      vertical-align: var(--md-align);
     }
     .md\:via {
       --tw-gradient-via: var(--md-via);
@@ -3070,19 +3097,25 @@
     .lg\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--lg-color) var(--lg-color-o, 100%),
+        var(--lg-decoration) var(--lg-decoration-o, 100%),
         transparent
       );
     }
     .dark .dark\:lg\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--dark-lg-color) var(--dark-lg-color-o, 100%),
+        var(--dark-lg-decoration) var(--dark-lg-decoration-o, 100%),
         transparent
       );
     }
     .lg\:decoration-thickness {
       text-decoration-thickness: var(--lg-decoration-thickness);
+    }
+    .lg\:indent {
+      text-indent: calc(var(--spacing) * var(--lg-indent));
+    }
+    .lg\:\[indent\] {
+      text-indent: var(--lg-indent);
     }
     .lg\:underline-offset {
       text-underline-offset: var(--lg-underline-offset);
@@ -3139,6 +3172,9 @@
     }
     .lg\:\[top\] {
       top: var(--lg-top);
+    }
+    .lg\:align {
+      vertical-align: var(--lg-align);
     }
     .lg\:via {
       --tw-gradient-via: var(--lg-via);
@@ -3871,19 +3907,25 @@
     .xl\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--xl-color) var(--xl-color-o, 100%),
+        var(--xl-decoration) var(--xl-decoration-o, 100%),
         transparent
       );
     }
     .dark .dark\:xl\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--dark-xl-color) var(--dark-xl-color-o, 100%),
+        var(--dark-xl-decoration) var(--dark-xl-decoration-o, 100%),
         transparent
       );
     }
     .xl\:decoration-thickness {
       text-decoration-thickness: var(--xl-decoration-thickness);
+    }
+    .xl\:indent {
+      text-indent: calc(var(--spacing) * var(--xl-indent));
+    }
+    .xl\:\[indent\] {
+      text-indent: var(--xl-indent);
     }
     .xl\:underline-offset {
       text-underline-offset: var(--xl-underline-offset);
@@ -3940,6 +3982,9 @@
     }
     .xl\:\[top\] {
       top: var(--xl-top);
+    }
+    .xl\:align {
+      vertical-align: var(--xl-align);
     }
     .xl\:via {
       --tw-gradient-via: var(--xl-via);
@@ -4672,19 +4717,25 @@
     .\32xl\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--\32xl-color) var(--\32xl-color-o, 100%),
+        var(--\32xl-decoration) var(--\32xl-decoration-o, 100%),
         transparent
       );
     }
     .dark .dark\:2xl\:decoration\/o {
       text-decoration-color: color-mix(
         in oklab,
-        var(--dark-2xl-color) var(--dark-2xl-color-o, 100%),
+        var(--dark-2xl-decoration) var(--dark-2xl-decoration-o, 100%),
         transparent
       );
     }
     .\32xl\:decoration-thickness {
       text-decoration-thickness: var(--\32xl-decoration-thickness);
+    }
+    .\32xl\:indent {
+      text-indent: calc(var(--spacing) * var(--\32xl-indent));
+    }
+    .\32xl\:\[indent\] {
+      text-indent: var(--\32xl-indent);
     }
     .\32xl\:underline-offset {
       text-underline-offset: var(--\32xl-underline-offset);
@@ -4741,6 +4792,9 @@
     }
     .\32xl\:\[top\] {
       top: var(--\32xl-top);
+    }
+    .\32xl\:align {
+      vertical-align: var(--\32xl-align);
     }
     .\32xl\:via {
       --tw-gradient-via: var(--\32xl-via);

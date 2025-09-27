@@ -1,0 +1,71 @@
+@layer utilities {
+  .wrap-break-word {
+    overflow-wrap: break-word;
+  }
+  .wrap-anywhere {
+    overflow-wrap: anywhere;
+  }
+  .wrap-normal {
+    overflow-wrap: normal;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .sm\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .sm\:wrap-normal {
+      overflow-wrap: normal;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .md\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .md\:wrap-normal {
+      overflow-wrap: normal;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .lg\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .lg\:wrap-normal {
+      overflow-wrap: normal;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .xl\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .xl\:wrap-normal {
+      overflow-wrap: normal;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .\32xl\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .\32xl\:wrap-normal {
+      overflow-wrap: normal;
+    }
+  }
+}

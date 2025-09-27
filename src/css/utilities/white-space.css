@@ -1,0 +1,125 @@
+@layer utilities {
+  .whitespace-normal {
+    white-space: normal;
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .whitespace-pre {
+    white-space: pre;
+  }
+  .whitespace-pre-line {
+    white-space: pre-line;
+  }
+  .whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+  .whitespace-break-spaces {
+    white-space: break-spaces;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:whitespace-normal {
+      white-space: normal;
+    }
+    .sm\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .sm\:whitespace-pre {
+      white-space: pre;
+    }
+    .sm\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .sm\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .sm\:whitespace-break-spaces {
+      white-space: break-spaces;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:whitespace-normal {
+      white-space: normal;
+    }
+    .md\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .md\:whitespace-pre {
+      white-space: pre;
+    }
+    .md\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .md\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .md\:whitespace-break-spaces {
+      white-space: break-spaces;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:whitespace-normal {
+      white-space: normal;
+    }
+    .lg\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .lg\:whitespace-pre {
+      white-space: pre;
+    }
+    .lg\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .lg\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .lg\:whitespace-break-spaces {
+      white-space: break-spaces;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:whitespace-normal {
+      white-space: normal;
+    }
+    .xl\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .xl\:whitespace-pre {
+      white-space: pre;
+    }
+    .xl\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .xl\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .xl\:whitespace-break-spaces {
+      white-space: break-spaces;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:whitespace-normal {
+      white-space: normal;
+    }
+    .\32xl\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .\32xl\:whitespace-pre {
+      white-space: pre;
+    }
+    .\32xl\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .\32xl\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .\32xl\:whitespace-break-spaces {
+      white-space: break-spaces;
+    }
+  }
+}

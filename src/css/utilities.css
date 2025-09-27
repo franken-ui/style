@@ -754,6 +754,9 @@
   .columns-auto {
     columns: auto;
   }
+  .content-none {
+    content: none;
+  }
   .block {
     display: block;
   }
@@ -1208,6 +1211,18 @@
   }
   .h-lh {
     height: 1lh;
+  }
+  .hyphens-none {
+    -webkit-hyphens: none;
+    hyphens: none;
+  }
+  .hyphens-manual {
+    -webkit-hyphens: manual;
+    hyphens: manual;
+  }
+  .hyphens-auto {
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
   .top-full {
     top: 100%;
@@ -1779,6 +1794,15 @@
   .outline-double {
     outline-style: double;
   }
+  .wrap-break-word {
+    overflow-wrap: break-word;
+  }
+  .wrap-anywhere {
+    overflow-wrap: anywhere;
+  }
+  .wrap-normal {
+    overflow-wrap: normal;
+  }
   .overflow-auto {
     overflow: auto;
   }
@@ -2052,6 +2076,17 @@
   .decoration-auto {
     text-decoration-thickness: auto;
   }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .text-ellipsis {
+    text-overflow: ellipsis;
+  }
+  .text-clip {
+    text-overflow: clip;
+  }
   .uppercase {
     text-transform: uppercase;
   }
@@ -2067,6 +2102,42 @@
   .underline-offset-auto {
     text-underline-offset: auto;
   }
+  .text-wrap {
+    text-wrap: wrap;
+  }
+  .text-nowrap {
+    text-wrap: nowrap;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .align-baseline {
+    vertical-align: baseline;
+  }
+  .align-top {
+    vertical-align: top;
+  }
+  .align-middle {
+    vertical-align: middle;
+  }
+  .align-bottom {
+    vertical-align: bottom;
+  }
+  .align-text-top {
+    vertical-align: text-top;
+  }
+  .align-text-bottom {
+    vertical-align: text-bottom;
+  }
+  .align-sub {
+    vertical-align: sub;
+  }
+  .align-super {
+    vertical-align: super;
+  }
   .visible {
     visibility: visible;
   }
@@ -2075,6 +2146,24 @@
   }
   .collapse {
     visibility: collapse;
+  }
+  .whitespace-normal {
+    white-space: normal;
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .whitespace-pre {
+    white-space: pre;
+  }
+  .whitespace-pre-line {
+    white-space: pre-line;
+  }
+  .whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+  .whitespace-break-spaces {
+    white-space: break-spaces;
   }
   .w-3xs {
     width: var(--container-3xs);
@@ -2150,6 +2239,19 @@
   }
   .w-fit {
     width: fit-content;
+  }
+  .break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .break-words {
+    overflow-wrap: break-word;
+  }
+  .break-all {
+    word-break: break-all;
+  }
+  .break-keep {
+    word-break: keep-all;
   }
   .z-auto {
     z-index: auto;
@@ -2910,6 +3012,9 @@
     .sm\:columns-auto {
       columns: auto;
     }
+    .sm\:content-none {
+      content: none;
+    }
     .sm\:block {
       display: block;
     }
@@ -3364,6 +3469,18 @@
     }
     .sm\:h-lh {
       height: 1lh;
+    }
+    .sm\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .sm\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .sm\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
     }
     .sm\:top-full {
       top: 100%;
@@ -3935,6 +4052,15 @@
     .sm\:outline-double {
       outline-style: double;
     }
+    .sm\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .sm\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .sm\:wrap-normal {
+      overflow-wrap: normal;
+    }
     .sm\:overflow-auto {
       overflow: auto;
     }
@@ -4208,6 +4334,17 @@
     .sm\:decoration-auto {
       text-decoration-thickness: auto;
     }
+    .sm\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .sm\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .sm\:text-clip {
+      text-overflow: clip;
+    }
     .sm\:uppercase {
       text-transform: uppercase;
     }
@@ -4223,6 +4360,42 @@
     .sm\:underline-offset-auto {
       text-underline-offset: auto;
     }
+    .sm\:text-wrap {
+      text-wrap: wrap;
+    }
+    .sm\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .sm\:text-balance {
+      text-wrap: balance;
+    }
+    .sm\:text-pretty {
+      text-wrap: pretty;
+    }
+    .sm\:align-baseline {
+      vertical-align: baseline;
+    }
+    .sm\:align-top {
+      vertical-align: top;
+    }
+    .sm\:align-middle {
+      vertical-align: middle;
+    }
+    .sm\:align-bottom {
+      vertical-align: bottom;
+    }
+    .sm\:align-text-top {
+      vertical-align: text-top;
+    }
+    .sm\:align-text-bottom {
+      vertical-align: text-bottom;
+    }
+    .sm\:align-sub {
+      vertical-align: sub;
+    }
+    .sm\:align-super {
+      vertical-align: super;
+    }
     .sm\:visible {
       visibility: visible;
     }
@@ -4231,6 +4404,24 @@
     }
     .sm\:collapse {
       visibility: collapse;
+    }
+    .sm\:whitespace-normal {
+      white-space: normal;
+    }
+    .sm\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .sm\:whitespace-pre {
+      white-space: pre;
+    }
+    .sm\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .sm\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .sm\:whitespace-break-spaces {
+      white-space: break-spaces;
     }
     .sm\:w-3xs {
       width: var(--container-3xs);
@@ -4306,6 +4497,19 @@
     }
     .sm\:w-fit {
       width: fit-content;
+    }
+    .sm\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .sm\:break-words {
+      overflow-wrap: break-word;
+    }
+    .sm\:break-all {
+      word-break: break-all;
+    }
+    .sm\:break-keep {
+      word-break: keep-all;
     }
     .sm\:z-auto {
       z-index: auto;
@@ -5067,6 +5271,9 @@
     .md\:columns-auto {
       columns: auto;
     }
+    .md\:content-none {
+      content: none;
+    }
     .md\:block {
       display: block;
     }
@@ -5521,6 +5728,18 @@
     }
     .md\:h-lh {
       height: 1lh;
+    }
+    .md\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .md\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .md\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
     }
     .md\:top-full {
       top: 100%;
@@ -6092,6 +6311,15 @@
     .md\:outline-double {
       outline-style: double;
     }
+    .md\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .md\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .md\:wrap-normal {
+      overflow-wrap: normal;
+    }
     .md\:overflow-auto {
       overflow: auto;
     }
@@ -6365,6 +6593,17 @@
     .md\:decoration-auto {
       text-decoration-thickness: auto;
     }
+    .md\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .md\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .md\:text-clip {
+      text-overflow: clip;
+    }
     .md\:uppercase {
       text-transform: uppercase;
     }
@@ -6380,6 +6619,42 @@
     .md\:underline-offset-auto {
       text-underline-offset: auto;
     }
+    .md\:text-wrap {
+      text-wrap: wrap;
+    }
+    .md\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .md\:text-balance {
+      text-wrap: balance;
+    }
+    .md\:text-pretty {
+      text-wrap: pretty;
+    }
+    .md\:align-baseline {
+      vertical-align: baseline;
+    }
+    .md\:align-top {
+      vertical-align: top;
+    }
+    .md\:align-middle {
+      vertical-align: middle;
+    }
+    .md\:align-bottom {
+      vertical-align: bottom;
+    }
+    .md\:align-text-top {
+      vertical-align: text-top;
+    }
+    .md\:align-text-bottom {
+      vertical-align: text-bottom;
+    }
+    .md\:align-sub {
+      vertical-align: sub;
+    }
+    .md\:align-super {
+      vertical-align: super;
+    }
     .md\:visible {
       visibility: visible;
     }
@@ -6388,6 +6663,24 @@
     }
     .md\:collapse {
       visibility: collapse;
+    }
+    .md\:whitespace-normal {
+      white-space: normal;
+    }
+    .md\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .md\:whitespace-pre {
+      white-space: pre;
+    }
+    .md\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .md\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .md\:whitespace-break-spaces {
+      white-space: break-spaces;
     }
     .md\:w-3xs {
       width: var(--container-3xs);
@@ -6463,6 +6756,19 @@
     }
     .md\:w-fit {
       width: fit-content;
+    }
+    .md\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .md\:break-words {
+      overflow-wrap: break-word;
+    }
+    .md\:break-all {
+      word-break: break-all;
+    }
+    .md\:break-keep {
+      word-break: keep-all;
     }
     .md\:z-auto {
       z-index: auto;
@@ -7224,6 +7530,9 @@
     .lg\:columns-auto {
       columns: auto;
     }
+    .lg\:content-none {
+      content: none;
+    }
     .lg\:block {
       display: block;
     }
@@ -7678,6 +7987,18 @@
     }
     .lg\:h-lh {
       height: 1lh;
+    }
+    .lg\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .lg\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .lg\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
     }
     .lg\:top-full {
       top: 100%;
@@ -8249,6 +8570,15 @@
     .lg\:outline-double {
       outline-style: double;
     }
+    .lg\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .lg\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .lg\:wrap-normal {
+      overflow-wrap: normal;
+    }
     .lg\:overflow-auto {
       overflow: auto;
     }
@@ -8522,6 +8852,17 @@
     .lg\:decoration-auto {
       text-decoration-thickness: auto;
     }
+    .lg\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lg\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .lg\:text-clip {
+      text-overflow: clip;
+    }
     .lg\:uppercase {
       text-transform: uppercase;
     }
@@ -8537,6 +8878,42 @@
     .lg\:underline-offset-auto {
       text-underline-offset: auto;
     }
+    .lg\:text-wrap {
+      text-wrap: wrap;
+    }
+    .lg\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .lg\:text-balance {
+      text-wrap: balance;
+    }
+    .lg\:text-pretty {
+      text-wrap: pretty;
+    }
+    .lg\:align-baseline {
+      vertical-align: baseline;
+    }
+    .lg\:align-top {
+      vertical-align: top;
+    }
+    .lg\:align-middle {
+      vertical-align: middle;
+    }
+    .lg\:align-bottom {
+      vertical-align: bottom;
+    }
+    .lg\:align-text-top {
+      vertical-align: text-top;
+    }
+    .lg\:align-text-bottom {
+      vertical-align: text-bottom;
+    }
+    .lg\:align-sub {
+      vertical-align: sub;
+    }
+    .lg\:align-super {
+      vertical-align: super;
+    }
     .lg\:visible {
       visibility: visible;
     }
@@ -8545,6 +8922,24 @@
     }
     .lg\:collapse {
       visibility: collapse;
+    }
+    .lg\:whitespace-normal {
+      white-space: normal;
+    }
+    .lg\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .lg\:whitespace-pre {
+      white-space: pre;
+    }
+    .lg\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .lg\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .lg\:whitespace-break-spaces {
+      white-space: break-spaces;
     }
     .lg\:w-3xs {
       width: var(--container-3xs);
@@ -8620,6 +9015,19 @@
     }
     .lg\:w-fit {
       width: fit-content;
+    }
+    .lg\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .lg\:break-words {
+      overflow-wrap: break-word;
+    }
+    .lg\:break-all {
+      word-break: break-all;
+    }
+    .lg\:break-keep {
+      word-break: keep-all;
     }
     .lg\:z-auto {
       z-index: auto;
@@ -9381,6 +9789,9 @@
     .xl\:columns-auto {
       columns: auto;
     }
+    .xl\:content-none {
+      content: none;
+    }
     .xl\:block {
       display: block;
     }
@@ -9835,6 +10246,18 @@
     }
     .xl\:h-lh {
       height: 1lh;
+    }
+    .xl\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .xl\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .xl\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
     }
     .xl\:top-full {
       top: 100%;
@@ -10406,6 +10829,15 @@
     .xl\:outline-double {
       outline-style: double;
     }
+    .xl\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .xl\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .xl\:wrap-normal {
+      overflow-wrap: normal;
+    }
     .xl\:overflow-auto {
       overflow: auto;
     }
@@ -10679,6 +11111,17 @@
     .xl\:decoration-auto {
       text-decoration-thickness: auto;
     }
+    .xl\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .xl\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .xl\:text-clip {
+      text-overflow: clip;
+    }
     .xl\:uppercase {
       text-transform: uppercase;
     }
@@ -10694,6 +11137,42 @@
     .xl\:underline-offset-auto {
       text-underline-offset: auto;
     }
+    .xl\:text-wrap {
+      text-wrap: wrap;
+    }
+    .xl\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .xl\:text-balance {
+      text-wrap: balance;
+    }
+    .xl\:text-pretty {
+      text-wrap: pretty;
+    }
+    .xl\:align-baseline {
+      vertical-align: baseline;
+    }
+    .xl\:align-top {
+      vertical-align: top;
+    }
+    .xl\:align-middle {
+      vertical-align: middle;
+    }
+    .xl\:align-bottom {
+      vertical-align: bottom;
+    }
+    .xl\:align-text-top {
+      vertical-align: text-top;
+    }
+    .xl\:align-text-bottom {
+      vertical-align: text-bottom;
+    }
+    .xl\:align-sub {
+      vertical-align: sub;
+    }
+    .xl\:align-super {
+      vertical-align: super;
+    }
     .xl\:visible {
       visibility: visible;
     }
@@ -10702,6 +11181,24 @@
     }
     .xl\:collapse {
       visibility: collapse;
+    }
+    .xl\:whitespace-normal {
+      white-space: normal;
+    }
+    .xl\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .xl\:whitespace-pre {
+      white-space: pre;
+    }
+    .xl\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .xl\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .xl\:whitespace-break-spaces {
+      white-space: break-spaces;
     }
     .xl\:w-3xs {
       width: var(--container-3xs);
@@ -10777,6 +11274,19 @@
     }
     .xl\:w-fit {
       width: fit-content;
+    }
+    .xl\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .xl\:break-words {
+      overflow-wrap: break-word;
+    }
+    .xl\:break-all {
+      word-break: break-all;
+    }
+    .xl\:break-keep {
+      word-break: keep-all;
     }
     .xl\:z-auto {
       z-index: auto;
@@ -11538,6 +12048,9 @@
     .\32xl\:columns-auto {
       columns: auto;
     }
+    .\32xl\:content-none {
+      content: none;
+    }
     .\32xl\:block {
       display: block;
     }
@@ -11992,6 +12505,18 @@
     }
     .\32xl\:h-lh {
       height: 1lh;
+    }
+    .\32xl\:hyphens-none {
+      -webkit-hyphens: none;
+      hyphens: none;
+    }
+    .\32xl\:hyphens-manual {
+      -webkit-hyphens: manual;
+      hyphens: manual;
+    }
+    .\32xl\:hyphens-auto {
+      -webkit-hyphens: auto;
+      hyphens: auto;
     }
     .\32xl\:top-full {
       top: 100%;
@@ -12563,6 +13088,15 @@
     .\32xl\:outline-double {
       outline-style: double;
     }
+    .\32xl\:wrap-break-word {
+      overflow-wrap: break-word;
+    }
+    .\32xl\:wrap-anywhere {
+      overflow-wrap: anywhere;
+    }
+    .\32xl\:wrap-normal {
+      overflow-wrap: normal;
+    }
     .\32xl\:overflow-auto {
       overflow: auto;
     }
@@ -12836,6 +13370,17 @@
     .\32xl\:decoration-auto {
       text-decoration-thickness: auto;
     }
+    .\32xl\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .\32xl\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .\32xl\:text-clip {
+      text-overflow: clip;
+    }
     .\32xl\:uppercase {
       text-transform: uppercase;
     }
@@ -12851,6 +13396,42 @@
     .\32xl\:underline-offset-auto {
       text-underline-offset: auto;
     }
+    .\32xl\:text-wrap {
+      text-wrap: wrap;
+    }
+    .\32xl\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .\32xl\:text-balance {
+      text-wrap: balance;
+    }
+    .\32xl\:text-pretty {
+      text-wrap: pretty;
+    }
+    .\32xl\:align-baseline {
+      vertical-align: baseline;
+    }
+    .\32xl\:align-top {
+      vertical-align: top;
+    }
+    .\32xl\:align-middle {
+      vertical-align: middle;
+    }
+    .\32xl\:align-bottom {
+      vertical-align: bottom;
+    }
+    .\32xl\:align-text-top {
+      vertical-align: text-top;
+    }
+    .\32xl\:align-text-bottom {
+      vertical-align: text-bottom;
+    }
+    .\32xl\:align-sub {
+      vertical-align: sub;
+    }
+    .\32xl\:align-super {
+      vertical-align: super;
+    }
     .\32xl\:visible {
       visibility: visible;
     }
@@ -12859,6 +13440,24 @@
     }
     .\32xl\:collapse {
       visibility: collapse;
+    }
+    .\32xl\:whitespace-normal {
+      white-space: normal;
+    }
+    .\32xl\:whitespace-nowrap {
+      white-space: nowrap;
+    }
+    .\32xl\:whitespace-pre {
+      white-space: pre;
+    }
+    .\32xl\:whitespace-pre-line {
+      white-space: pre-line;
+    }
+    .\32xl\:whitespace-pre-wrap {
+      white-space: pre-wrap;
+    }
+    .\32xl\:whitespace-break-spaces {
+      white-space: break-spaces;
     }
     .\32xl\:w-3xs {
       width: var(--container-3xs);
@@ -12934,6 +13533,19 @@
     }
     .\32xl\:w-fit {
       width: fit-content;
+    }
+    .\32xl\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .\32xl\:break-words {
+      overflow-wrap: break-word;
+    }
+    .\32xl\:break-all {
+      word-break: break-all;
+    }
+    .\32xl\:break-keep {
+      word-break: keep-all;
     }
     .\32xl\:z-auto {
       z-index: auto;

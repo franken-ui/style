@@ -1,0 +1,95 @@
+@layer utilities {
+  .break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .break-words {
+    overflow-wrap: break-word;
+  }
+  .break-all {
+    word-break: break-all;
+  }
+  .break-keep {
+    word-break: keep-all;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .sm\:break-words {
+      overflow-wrap: break-word;
+    }
+    .sm\:break-all {
+      word-break: break-all;
+    }
+    .sm\:break-keep {
+      word-break: keep-all;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .md\:break-words {
+      overflow-wrap: break-word;
+    }
+    .md\:break-all {
+      word-break: break-all;
+    }
+    .md\:break-keep {
+      word-break: keep-all;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .lg\:break-words {
+      overflow-wrap: break-word;
+    }
+    .lg\:break-all {
+      word-break: break-all;
+    }
+    .lg\:break-keep {
+      word-break: keep-all;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .xl\:break-words {
+      overflow-wrap: break-word;
+    }
+    .xl\:break-all {
+      word-break: break-all;
+    }
+    .xl\:break-keep {
+      word-break: keep-all;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:break-normal {
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .\32xl\:break-words {
+      overflow-wrap: break-word;
+    }
+    .\32xl\:break-all {
+      word-break: break-all;
+    }
+    .\32xl\:break-keep {
+      word-break: keep-all;
+    }
+  }
+}

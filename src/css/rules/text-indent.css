@@ -1,0 +1,53 @@
+@layer styles {
+  .indent {
+    text-indent: calc(var(--spacing) * var(--indent));
+  }
+  .\[indent\] {
+    text-indent: var(--indent);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:indent {
+      text-indent: calc(var(--spacing) * var(--sm-indent));
+    }
+    .sm\:\[indent\] {
+      text-indent: var(--sm-indent);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:indent {
+      text-indent: calc(var(--spacing) * var(--md-indent));
+    }
+    .md\:\[indent\] {
+      text-indent: var(--md-indent);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:indent {
+      text-indent: calc(var(--spacing) * var(--lg-indent));
+    }
+    .lg\:\[indent\] {
+      text-indent: var(--lg-indent);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:indent {
+      text-indent: calc(var(--spacing) * var(--xl-indent));
+    }
+    .xl\:\[indent\] {
+      text-indent: var(--xl-indent);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:indent {
+      text-indent: calc(var(--spacing) * var(--\32xl-indent));
+    }
+    .\32xl\:\[indent\] {
+      text-indent: var(--\32xl-indent);
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@layer utilities {
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .text-ellipsis {
+    text-overflow: ellipsis;
+  }
+  .text-clip {
+    text-overflow: clip;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .sm\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .sm\:text-clip {
+      text-overflow: clip;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .md\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .md\:text-clip {
+      text-overflow: clip;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lg\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .lg\:text-clip {
+      text-overflow: clip;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .xl\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .xl\:text-clip {
+      text-overflow: clip;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .\32xl\:text-ellipsis {
+      text-overflow: ellipsis;
+    }
+    .\32xl\:text-clip {
+      text-overflow: clip;
+    }
+  }
+}

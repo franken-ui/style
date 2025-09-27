@@ -1,0 +1,89 @@
+@layer utilities {
+  .text-wrap {
+    text-wrap: wrap;
+  }
+  .text-nowrap {
+    text-wrap: nowrap;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-wrap {
+      text-wrap: wrap;
+    }
+    .sm\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .sm\:text-balance {
+      text-wrap: balance;
+    }
+    .sm\:text-pretty {
+      text-wrap: pretty;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:text-wrap {
+      text-wrap: wrap;
+    }
+    .md\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .md\:text-balance {
+      text-wrap: balance;
+    }
+    .md\:text-pretty {
+      text-wrap: pretty;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:text-wrap {
+      text-wrap: wrap;
+    }
+    .lg\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .lg\:text-balance {
+      text-wrap: balance;
+    }
+    .lg\:text-pretty {
+      text-wrap: pretty;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:text-wrap {
+      text-wrap: wrap;
+    }
+    .xl\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .xl\:text-balance {
+      text-wrap: balance;
+    }
+    .xl\:text-pretty {
+      text-wrap: pretty;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:text-wrap {
+      text-wrap: wrap;
+    }
+    .\32xl\:text-nowrap {
+      text-wrap: nowrap;
+    }
+    .\32xl\:text-balance {
+      text-wrap: balance;
+    }
+    .\32xl\:text-pretty {
+      text-wrap: pretty;
+    }
+  }
+}
