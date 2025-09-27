@@ -1,0 +1,83 @@
+@layer utilities {
+  .mask-alpha {
+    mask-mode: alpha;
+  }
+
+  .mask-luminance {
+    mask-mode: luminance;
+  }
+
+  .mask-match {
+    mask-mode: match-source;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-alpha {
+      mask-mode: alpha;
+    }
+
+    .sm\:mask-luminance {
+      mask-mode: luminance;
+    }
+
+    .sm\:mask-match {
+      mask-mode: match-source;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-alpha {
+      mask-mode: alpha;
+    }
+
+    .md\:mask-luminance {
+      mask-mode: luminance;
+    }
+
+    .md\:mask-match {
+      mask-mode: match-source;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-alpha {
+      mask-mode: alpha;
+    }
+
+    .lg\:mask-luminance {
+      mask-mode: luminance;
+    }
+
+    .lg\:mask-match {
+      mask-mode: match-source;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-alpha {
+      mask-mode: alpha;
+    }
+
+    .xl\:mask-luminance {
+      mask-mode: luminance;
+    }
+
+    .xl\:mask-match {
+      mask-mode: match-source;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-alpha {
+      mask-mode: alpha;
+    }
+
+    .\32xl\:mask-luminance {
+      mask-mode: luminance;
+    }
+
+    .\32xl\:mask-match {
+      mask-mode: match-source;
+    }
+  }
+}

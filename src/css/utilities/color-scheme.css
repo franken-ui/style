@@ -1,0 +1,155 @@
+@layer utilities {
+  .scheme-normal {
+    color-scheme: normal;
+  }
+
+  .scheme-dark {
+    color-scheme: dark;
+  }
+
+  .scheme-light {
+    color-scheme: light;
+  }
+
+  .scheme-light-dark {
+    color-scheme: light dark;
+  }
+
+  .scheme-only-dark {
+    color-scheme: only dark;
+  }
+
+  .scheme-only-light {
+    color-scheme: only light;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:scheme-normal {
+      color-scheme: normal;
+    }
+
+    .sm\:scheme-dark {
+      color-scheme: dark;
+    }
+
+    .sm\:scheme-light {
+      color-scheme: light;
+    }
+
+    .sm\:scheme-light-dark {
+      color-scheme: light dark;
+    }
+
+    .sm\:scheme-only-dark {
+      color-scheme: only dark;
+    }
+
+    .sm\:scheme-only-light {
+      color-scheme: only light;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:scheme-normal {
+      color-scheme: normal;
+    }
+
+    .md\:scheme-dark {
+      color-scheme: dark;
+    }
+
+    .md\:scheme-light {
+      color-scheme: light;
+    }
+
+    .md\:scheme-light-dark {
+      color-scheme: light dark;
+    }
+
+    .md\:scheme-only-dark {
+      color-scheme: only dark;
+    }
+
+    .md\:scheme-only-light {
+      color-scheme: only light;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:scheme-normal {
+      color-scheme: normal;
+    }
+
+    .lg\:scheme-dark {
+      color-scheme: dark;
+    }
+
+    .lg\:scheme-light {
+      color-scheme: light;
+    }
+
+    .lg\:scheme-light-dark {
+      color-scheme: light dark;
+    }
+
+    .lg\:scheme-only-dark {
+      color-scheme: only dark;
+    }
+
+    .lg\:scheme-only-light {
+      color-scheme: only light;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:scheme-normal {
+      color-scheme: normal;
+    }
+
+    .xl\:scheme-dark {
+      color-scheme: dark;
+    }
+
+    .xl\:scheme-light {
+      color-scheme: light;
+    }
+
+    .xl\:scheme-light-dark {
+      color-scheme: light dark;
+    }
+
+    .xl\:scheme-only-dark {
+      color-scheme: only dark;
+    }
+
+    .xl\:scheme-only-light {
+      color-scheme: only light;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:scheme-normal {
+      color-scheme: normal;
+    }
+
+    .\32xl\:scheme-dark {
+      color-scheme: dark;
+    }
+
+    .\32xl\:scheme-light {
+      color-scheme: light;
+    }
+
+    .\32xl\:scheme-light-dark {
+      color-scheme: light dark;
+    }
+
+    .\32xl\:scheme-only-dark {
+      color-scheme: only dark;
+    }
+
+    .\32xl\:scheme-only-light {
+      color-scheme: only light;
+    }
+  }
+}

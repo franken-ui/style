@@ -1,0 +1,59 @@
+@layer utilities {
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+
+  .transform-flat {
+    transform-style: flat;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:transform-3d {
+      transform-style: preserve-3d;
+    }
+
+    .sm\:transform-flat {
+      transform-style: flat;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:transform-3d {
+      transform-style: preserve-3d;
+    }
+
+    .md\:transform-flat {
+      transform-style: flat;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:transform-3d {
+      transform-style: preserve-3d;
+    }
+
+    .lg\:transform-flat {
+      transform-style: flat;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:transform-3d {
+      transform-style: preserve-3d;
+    }
+
+    .xl\:transform-flat {
+      transform-style: flat;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:transform-3d {
+      transform-style: preserve-3d;
+    }
+
+    .\32xl\:transform-flat {
+      transform-style: flat;
+    }
+  }
+}

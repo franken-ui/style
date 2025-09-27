@@ -1,0 +1,59 @@
+@layer utilities {
+  .appearance-none {
+    appearance: none;
+  }
+
+  .appearance-auto {
+    appearance: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:appearance-none {
+      appearance: none;
+    }
+
+    .sm\:appearance-auto {
+      appearance: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:appearance-none {
+      appearance: none;
+    }
+
+    .md\:appearance-auto {
+      appearance: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:appearance-none {
+      appearance: none;
+    }
+
+    .lg\:appearance-auto {
+      appearance: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:appearance-none {
+      appearance: none;
+    }
+
+    .xl\:appearance-auto {
+      appearance: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:appearance-none {
+      appearance: none;
+    }
+
+    .\32xl\:appearance-auto {
+      appearance: auto;
+    }
+  }
+}

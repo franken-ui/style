@@ -1,0 +1,59 @@
+@layer utilities {
+  .mask-type-alpha {
+    mask-type: alpha;
+  }
+
+  .mask-type-luminance {
+    mask-type: luminance;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-type-alpha {
+      mask-type: alpha;
+    }
+
+    .sm\:mask-type-luminance {
+      mask-type: luminance;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-type-alpha {
+      mask-type: alpha;
+    }
+
+    .md\:mask-type-luminance {
+      mask-type: luminance;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-type-alpha {
+      mask-type: alpha;
+    }
+
+    .lg\:mask-type-luminance {
+      mask-type: luminance;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-type-alpha {
+      mask-type: alpha;
+    }
+
+    .xl\:mask-type-luminance {
+      mask-type: luminance;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-type-alpha {
+      mask-type: alpha;
+    }
+
+    .\32xl\:mask-type-luminance {
+      mask-type: luminance;
+    }
+  }
+}

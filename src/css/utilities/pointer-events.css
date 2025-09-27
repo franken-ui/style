@@ -1,0 +1,59 @@
+@layer utilities {
+  .pointer-events-auto {
+    pointer-events: auto;
+  }
+
+  .pointer-events-none {
+    pointer-events: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:pointer-events-auto {
+      pointer-events: auto;
+    }
+
+    .sm\:pointer-events-none {
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:pointer-events-auto {
+      pointer-events: auto;
+    }
+
+    .md\:pointer-events-none {
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:pointer-events-auto {
+      pointer-events: auto;
+    }
+
+    .lg\:pointer-events-none {
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:pointer-events-auto {
+      pointer-events: auto;
+    }
+
+    .xl\:pointer-events-none {
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:pointer-events-auto {
+      pointer-events: auto;
+    }
+
+    .\32xl\:pointer-events-none {
+      pointer-events: none;
+    }
+  }
+}

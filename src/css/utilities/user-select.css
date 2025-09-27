@@ -1,0 +1,107 @@
+@layer utilities {
+  .select-none {
+    user-select: none;
+  }
+
+  .select-text {
+    user-select: text;
+  }
+
+  .select-all {
+    user-select: all;
+  }
+
+  .select-auto {
+    user-select: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:select-none {
+      user-select: none;
+    }
+
+    .sm\:select-text {
+      user-select: text;
+    }
+
+    .sm\:select-all {
+      user-select: all;
+    }
+
+    .sm\:select-auto {
+      user-select: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:select-none {
+      user-select: none;
+    }
+
+    .md\:select-text {
+      user-select: text;
+    }
+
+    .md\:select-all {
+      user-select: all;
+    }
+
+    .md\:select-auto {
+      user-select: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:select-none {
+      user-select: none;
+    }
+
+    .lg\:select-text {
+      user-select: text;
+    }
+
+    .lg\:select-all {
+      user-select: all;
+    }
+
+    .lg\:select-auto {
+      user-select: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:select-none {
+      user-select: none;
+    }
+
+    .xl\:select-text {
+      user-select: text;
+    }
+
+    .xl\:select-all {
+      user-select: all;
+    }
+
+    .xl\:select-auto {
+      user-select: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:select-none {
+      user-select: none;
+    }
+
+    .\32xl\:select-text {
+      user-select: text;
+    }
+
+    .\32xl\:select-all {
+      user-select: all;
+    }
+
+    .\32xl\:select-auto {
+      user-select: auto;
+    }
+  }
+}

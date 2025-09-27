@@ -1,0 +1,59 @@
+@layer utilities {
+  .transition-normal {
+    transition-behavior: normal;
+  }
+
+  .transition-discrete {
+    transition-behavior: allow-discrete;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:transition-normal {
+      transition-behavior: normal;
+    }
+
+    .sm\:transition-discrete {
+      transition-behavior: allow-discrete;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:transition-normal {
+      transition-behavior: normal;
+    }
+
+    .md\:transition-discrete {
+      transition-behavior: allow-discrete;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:transition-normal {
+      transition-behavior: normal;
+    }
+
+    .lg\:transition-discrete {
+      transition-behavior: allow-discrete;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:transition-normal {
+      transition-behavior: normal;
+    }
+
+    .xl\:transition-discrete {
+      transition-behavior: allow-discrete;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:transition-normal {
+      transition-behavior: normal;
+    }
+
+    .\32xl\:transition-discrete {
+      transition-behavior: allow-discrete;
+    }
+  }
+}

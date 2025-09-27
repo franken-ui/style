@@ -1,0 +1,155 @@
+@layer utilities {
+  .mask-repeat {
+    mask-repeat: repeat;
+  }
+
+  .mask-no-repeat {
+    mask-repeat: no-repeat;
+  }
+
+  .mask-repeat-x {
+    mask-repeat: repeat-x;
+  }
+
+  .mask-repeat-y {
+    mask-repeat: repeat-y;
+  }
+
+  .mask-repeat-space {
+    mask-repeat: space;
+  }
+
+  .mask-repeat-round {
+    mask-repeat: round;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-repeat {
+      mask-repeat: repeat;
+    }
+
+    .sm\:mask-no-repeat {
+      mask-repeat: no-repeat;
+    }
+
+    .sm\:mask-repeat-x {
+      mask-repeat: repeat-x;
+    }
+
+    .sm\:mask-repeat-y {
+      mask-repeat: repeat-y;
+    }
+
+    .sm\:mask-repeat-space {
+      mask-repeat: space;
+    }
+
+    .sm\:mask-repeat-round {
+      mask-repeat: round;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-repeat {
+      mask-repeat: repeat;
+    }
+
+    .md\:mask-no-repeat {
+      mask-repeat: no-repeat;
+    }
+
+    .md\:mask-repeat-x {
+      mask-repeat: repeat-x;
+    }
+
+    .md\:mask-repeat-y {
+      mask-repeat: repeat-y;
+    }
+
+    .md\:mask-repeat-space {
+      mask-repeat: space;
+    }
+
+    .md\:mask-repeat-round {
+      mask-repeat: round;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-repeat {
+      mask-repeat: repeat;
+    }
+
+    .lg\:mask-no-repeat {
+      mask-repeat: no-repeat;
+    }
+
+    .lg\:mask-repeat-x {
+      mask-repeat: repeat-x;
+    }
+
+    .lg\:mask-repeat-y {
+      mask-repeat: repeat-y;
+    }
+
+    .lg\:mask-repeat-space {
+      mask-repeat: space;
+    }
+
+    .lg\:mask-repeat-round {
+      mask-repeat: round;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-repeat {
+      mask-repeat: repeat;
+    }
+
+    .xl\:mask-no-repeat {
+      mask-repeat: no-repeat;
+    }
+
+    .xl\:mask-repeat-x {
+      mask-repeat: repeat-x;
+    }
+
+    .xl\:mask-repeat-y {
+      mask-repeat: repeat-y;
+    }
+
+    .xl\:mask-repeat-space {
+      mask-repeat: space;
+    }
+
+    .xl\:mask-repeat-round {
+      mask-repeat: round;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-repeat {
+      mask-repeat: repeat;
+    }
+
+    .\32xl\:mask-no-repeat {
+      mask-repeat: no-repeat;
+    }
+
+    .\32xl\:mask-repeat-x {
+      mask-repeat: repeat-x;
+    }
+
+    .\32xl\:mask-repeat-y {
+      mask-repeat: repeat-y;
+    }
+
+    .\32xl\:mask-repeat-space {
+      mask-repeat: space;
+    }
+
+    .\32xl\:mask-repeat-round {
+      mask-repeat: round;
+    }
+  }
+}

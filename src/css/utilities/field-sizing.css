@@ -1,0 +1,59 @@
+@layer utilities {
+  .field-sizing-fixed {
+    field-sizing: fixed;
+  }
+
+  .field-sizing-content {
+    field-sizing: content;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:field-sizing-fixed {
+      field-sizing: fixed;
+    }
+
+    .sm\:field-sizing-content {
+      field-sizing: content;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:field-sizing-fixed {
+      field-sizing: fixed;
+    }
+
+    .md\:field-sizing-content {
+      field-sizing: content;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:field-sizing-fixed {
+      field-sizing: fixed;
+    }
+
+    .lg\:field-sizing-content {
+      field-sizing: content;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:field-sizing-fixed {
+      field-sizing: fixed;
+    }
+
+    .xl\:field-sizing-content {
+      field-sizing: content;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:field-sizing-fixed {
+      field-sizing: fixed;
+    }
+
+    .\32xl\:field-sizing-content {
+      field-sizing: content;
+    }
+  }
+}

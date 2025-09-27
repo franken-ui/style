@@ -1,0 +1,179 @@
+@layer utilities {
+  .mask-clip-border {
+    mask-clip: border-box;
+  }
+
+  .mask-clip-padding {
+    mask-clip: padding-box;
+  }
+
+  .mask-clip-content {
+    mask-clip: content-box;
+  }
+
+  .mask-clip-fill {
+    mask-clip: fill-box;
+  }
+
+  .mask-clip-stroke {
+    mask-clip: stroke-box;
+  }
+
+  .mask-clip-view {
+    mask-clip: view-box;
+  }
+
+  .mask-no-clip {
+    mask-clip: no-clip;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-clip-border {
+      mask-clip: border-box;
+    }
+
+    .sm\:mask-clip-padding {
+      mask-clip: padding-box;
+    }
+
+    .sm\:mask-clip-content {
+      mask-clip: content-box;
+    }
+
+    .sm\:mask-clip-fill {
+      mask-clip: fill-box;
+    }
+
+    .sm\:mask-clip-stroke {
+      mask-clip: stroke-box;
+    }
+
+    .sm\:mask-clip-view {
+      mask-clip: view-box;
+    }
+
+    .sm\:mask-no-clip {
+      mask-clip: no-clip;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-clip-border {
+      mask-clip: border-box;
+    }
+
+    .md\:mask-clip-padding {
+      mask-clip: padding-box;
+    }
+
+    .md\:mask-clip-content {
+      mask-clip: content-box;
+    }
+
+    .md\:mask-clip-fill {
+      mask-clip: fill-box;
+    }
+
+    .md\:mask-clip-stroke {
+      mask-clip: stroke-box;
+    }
+
+    .md\:mask-clip-view {
+      mask-clip: view-box;
+    }
+
+    .md\:mask-no-clip {
+      mask-clip: no-clip;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-clip-border {
+      mask-clip: border-box;
+    }
+
+    .lg\:mask-clip-padding {
+      mask-clip: padding-box;
+    }
+
+    .lg\:mask-clip-content {
+      mask-clip: content-box;
+    }
+
+    .lg\:mask-clip-fill {
+      mask-clip: fill-box;
+    }
+
+    .lg\:mask-clip-stroke {
+      mask-clip: stroke-box;
+    }
+
+    .lg\:mask-clip-view {
+      mask-clip: view-box;
+    }
+
+    .lg\:mask-no-clip {
+      mask-clip: no-clip;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-clip-border {
+      mask-clip: border-box;
+    }
+
+    .xl\:mask-clip-padding {
+      mask-clip: padding-box;
+    }
+
+    .xl\:mask-clip-content {
+      mask-clip: content-box;
+    }
+
+    .xl\:mask-clip-fill {
+      mask-clip: fill-box;
+    }
+
+    .xl\:mask-clip-stroke {
+      mask-clip: stroke-box;
+    }
+
+    .xl\:mask-clip-view {
+      mask-clip: view-box;
+    }
+
+    .xl\:mask-no-clip {
+      mask-clip: no-clip;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-clip-border {
+      mask-clip: border-box;
+    }
+
+    .\32xl\:mask-clip-padding {
+      mask-clip: padding-box;
+    }
+
+    .\32xl\:mask-clip-content {
+      mask-clip: content-box;
+    }
+
+    .\32xl\:mask-clip-fill {
+      mask-clip: fill-box;
+    }
+
+    .\32xl\:mask-clip-stroke {
+      mask-clip: stroke-box;
+    }
+
+    .\32xl\:mask-clip-view {
+      mask-clip: view-box;
+    }
+
+    .\32xl\:mask-no-clip {
+      mask-clip: no-clip;
+    }
+  }
+}

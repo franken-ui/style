@@ -1,0 +1,251 @@
+@layer utilities {
+  .touch-auto {
+    touch-action: auto;
+  }
+
+  .touch-none {
+    touch-action: none;
+  }
+
+  .touch-pan-x {
+    touch-action: pan-x;
+  }
+
+  .touch-pan-left {
+    touch-action: pan-left;
+  }
+
+  .touch-pan-right {
+    touch-action: pan-right;
+  }
+
+  .touch-pan-y {
+    touch-action: pan-y;
+  }
+
+  .touch-pan-up {
+    touch-action: pan-up;
+  }
+
+  .touch-pan-down {
+    touch-action: pan-down;
+  }
+
+  .touch-pinch-zoom {
+    touch-action: pinch-zoom;
+  }
+
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:touch-auto {
+      touch-action: auto;
+    }
+
+    .sm\:touch-none {
+      touch-action: none;
+    }
+
+    .sm\:touch-pan-x {
+      touch-action: pan-x;
+    }
+
+    .sm\:touch-pan-left {
+      touch-action: pan-left;
+    }
+
+    .sm\:touch-pan-right {
+      touch-action: pan-right;
+    }
+
+    .sm\:touch-pan-y {
+      touch-action: pan-y;
+    }
+
+    .sm\:touch-pan-up {
+      touch-action: pan-up;
+    }
+
+    .sm\:touch-pan-down {
+      touch-action: pan-down;
+    }
+
+    .sm\:touch-pinch-zoom {
+      touch-action: pinch-zoom;
+    }
+
+    .sm\:touch-manipulation {
+      touch-action: manipulation;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:touch-auto {
+      touch-action: auto;
+    }
+
+    .md\:touch-none {
+      touch-action: none;
+    }
+
+    .md\:touch-pan-x {
+      touch-action: pan-x;
+    }
+
+    .md\:touch-pan-left {
+      touch-action: pan-left;
+    }
+
+    .md\:touch-pan-right {
+      touch-action: pan-right;
+    }
+
+    .md\:touch-pan-y {
+      touch-action: pan-y;
+    }
+
+    .md\:touch-pan-up {
+      touch-action: pan-up;
+    }
+
+    .md\:touch-pan-down {
+      touch-action: pan-down;
+    }
+
+    .md\:touch-pinch-zoom {
+      touch-action: pinch-zoom;
+    }
+
+    .md\:touch-manipulation {
+      touch-action: manipulation;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:touch-auto {
+      touch-action: auto;
+    }
+
+    .lg\:touch-none {
+      touch-action: none;
+    }
+
+    .lg\:touch-pan-x {
+      touch-action: pan-x;
+    }
+
+    .lg\:touch-pan-left {
+      touch-action: pan-left;
+    }
+
+    .lg\:touch-pan-right {
+      touch-action: pan-right;
+    }
+
+    .lg\:touch-pan-y {
+      touch-action: pan-y;
+    }
+
+    .lg\:touch-pan-up {
+      touch-action: pan-up;
+    }
+
+    .lg\:touch-pan-down {
+      touch-action: pan-down;
+    }
+
+    .lg\:touch-pinch-zoom {
+      touch-action: pinch-zoom;
+    }
+
+    .lg\:touch-manipulation {
+      touch-action: manipulation;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:touch-auto {
+      touch-action: auto;
+    }
+
+    .xl\:touch-none {
+      touch-action: none;
+    }
+
+    .xl\:touch-pan-x {
+      touch-action: pan-x;
+    }
+
+    .xl\:touch-pan-left {
+      touch-action: pan-left;
+    }
+
+    .xl\:touch-pan-right {
+      touch-action: pan-right;
+    }
+
+    .xl\:touch-pan-y {
+      touch-action: pan-y;
+    }
+
+    .xl\:touch-pan-up {
+      touch-action: pan-up;
+    }
+
+    .xl\:touch-pan-down {
+      touch-action: pan-down;
+    }
+
+    .xl\:touch-pinch-zoom {
+      touch-action: pinch-zoom;
+    }
+
+    .xl\:touch-manipulation {
+      touch-action: manipulation;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:touch-auto {
+      touch-action: auto;
+    }
+
+    .\32xl\:touch-none {
+      touch-action: none;
+    }
+
+    .\32xl\:touch-pan-x {
+      touch-action: pan-x;
+    }
+
+    .\32xl\:touch-pan-left {
+      touch-action: pan-left;
+    }
+
+    .\32xl\:touch-pan-right {
+      touch-action: pan-right;
+    }
+
+    .\32xl\:touch-pan-y {
+      touch-action: pan-y;
+    }
+
+    .\32xl\:touch-pan-up {
+      touch-action: pan-up;
+    }
+
+    .\32xl\:touch-pan-down {
+      touch-action: pan-down;
+    }
+
+    .\32xl\:touch-pinch-zoom {
+      touch-action: pinch-zoom;
+    }
+
+    .\32xl\:touch-manipulation {
+      touch-action: manipulation;
+    }
+  }
+}

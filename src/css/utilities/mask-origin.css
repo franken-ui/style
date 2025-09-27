@@ -1,0 +1,155 @@
+@layer utilities {
+  .mask-origin-border {
+    mask-origin: border-box;
+  }
+
+  .mask-origin-padding {
+    mask-origin: padding-box;
+  }
+
+  .mask-origin-content {
+    mask-origin: content-box;
+  }
+
+  .mask-origin-fill {
+    mask-origin: fill-box;
+  }
+
+  .mask-origin-stroke {
+    mask-origin: stroke-box;
+  }
+
+  .mask-origin-view {
+    mask-origin: view-box;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-origin-border {
+      mask-origin: border-box;
+    }
+
+    .sm\:mask-origin-padding {
+      mask-origin: padding-box;
+    }
+
+    .sm\:mask-origin-content {
+      mask-origin: content-box;
+    }
+
+    .sm\:mask-origin-fill {
+      mask-origin: fill-box;
+    }
+
+    .sm\:mask-origin-stroke {
+      mask-origin: stroke-box;
+    }
+
+    .sm\:mask-origin-view {
+      mask-origin: view-box;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-origin-border {
+      mask-origin: border-box;
+    }
+
+    .md\:mask-origin-padding {
+      mask-origin: padding-box;
+    }
+
+    .md\:mask-origin-content {
+      mask-origin: content-box;
+    }
+
+    .md\:mask-origin-fill {
+      mask-origin: fill-box;
+    }
+
+    .md\:mask-origin-stroke {
+      mask-origin: stroke-box;
+    }
+
+    .md\:mask-origin-view {
+      mask-origin: view-box;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-origin-border {
+      mask-origin: border-box;
+    }
+
+    .lg\:mask-origin-padding {
+      mask-origin: padding-box;
+    }
+
+    .lg\:mask-origin-content {
+      mask-origin: content-box;
+    }
+
+    .lg\:mask-origin-fill {
+      mask-origin: fill-box;
+    }
+
+    .lg\:mask-origin-stroke {
+      mask-origin: stroke-box;
+    }
+
+    .lg\:mask-origin-view {
+      mask-origin: view-box;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-origin-border {
+      mask-origin: border-box;
+    }
+
+    .xl\:mask-origin-padding {
+      mask-origin: padding-box;
+    }
+
+    .xl\:mask-origin-content {
+      mask-origin: content-box;
+    }
+
+    .xl\:mask-origin-fill {
+      mask-origin: fill-box;
+    }
+
+    .xl\:mask-origin-stroke {
+      mask-origin: stroke-box;
+    }
+
+    .xl\:mask-origin-view {
+      mask-origin: view-box;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-origin-border {
+      mask-origin: border-box;
+    }
+
+    .\32xl\:mask-origin-padding {
+      mask-origin: padding-box;
+    }
+
+    .\32xl\:mask-origin-content {
+      mask-origin: content-box;
+    }
+
+    .\32xl\:mask-origin-fill {
+      mask-origin: fill-box;
+    }
+
+    .\32xl\:mask-origin-stroke {
+      mask-origin: stroke-box;
+    }
+
+    .\32xl\:mask-origin-view {
+      mask-origin: view-box;
+    }
+  }
+}

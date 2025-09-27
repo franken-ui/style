@@ -1,0 +1,59 @@
+@layer utilities {
+  .table-auto {
+    table-layout: auto;
+  }
+
+  .table-fixed {
+    table-layout: fixed;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:table-auto {
+      table-layout: auto;
+    }
+
+    .sm\:table-fixed {
+      table-layout: fixed;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:table-auto {
+      table-layout: auto;
+    }
+
+    .md\:table-fixed {
+      table-layout: fixed;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:table-auto {
+      table-layout: auto;
+    }
+
+    .lg\:table-fixed {
+      table-layout: fixed;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:table-auto {
+      table-layout: auto;
+    }
+
+    .xl\:table-fixed {
+      table-layout: fixed;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:table-auto {
+      table-layout: auto;
+    }
+
+    .\32xl\:table-fixed {
+      table-layout: fixed;
+    }
+  }
+}

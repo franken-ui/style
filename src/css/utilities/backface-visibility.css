@@ -1,0 +1,59 @@
+@layer utilities {
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .backface-visible {
+    backface-visibility: visible;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backface-hidden {
+      backface-visibility: hidden;
+    }
+
+    .sm\:backface-visible {
+      backface-visibility: visible;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backface-hidden {
+      backface-visibility: hidden;
+    }
+
+    .md\:backface-visible {
+      backface-visibility: visible;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backface-hidden {
+      backface-visibility: hidden;
+    }
+
+    .lg\:backface-visible {
+      backface-visibility: visible;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backface-hidden {
+      backface-visibility: hidden;
+    }
+
+    .xl\:backface-visible {
+      backface-visibility: visible;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backface-hidden {
+      backface-visibility: hidden;
+    }
+
+    .\32xl\:backface-visible {
+      backface-visibility: visible;
+    }
+  }
+}

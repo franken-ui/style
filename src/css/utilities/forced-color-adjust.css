@@ -1,0 +1,118 @@
+@layer utilities {
+  .forced-color-adjust-auto {
+    forced-color-adjust: auto;
+  }
+
+  .forced-color-adjust-none {
+    forced-color-adjust: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .sm\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .md\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .lg\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .xl\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .\32xl\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+}
+@layer utilities {
+  .forced-color-adjust-auto {
+    forced-color-adjust: auto;
+  }
+
+  .forced-color-adjust-none {
+    forced-color-adjust: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .sm\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .md\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .lg\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .xl\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:forced-color-adjust-auto {
+      forced-color-adjust: auto;
+    }
+
+    .\32xl\:forced-color-adjust-none {
+      forced-color-adjust: none;
+    }
+  }
+}

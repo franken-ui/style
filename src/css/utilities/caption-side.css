@@ -1,0 +1,59 @@
+@layer utilities {
+  .caption-top {
+    caption-side: top;
+  }
+
+  .caption-bottom {
+    caption-side: bottom;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:caption-top {
+      caption-side: top;
+    }
+
+    .sm\:caption-bottom {
+      caption-side: bottom;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:caption-top {
+      caption-side: top;
+    }
+
+    .md\:caption-bottom {
+      caption-side: bottom;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:caption-top {
+      caption-side: top;
+    }
+
+    .lg\:caption-bottom {
+      caption-side: bottom;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:caption-top {
+      caption-side: top;
+    }
+
+    .xl\:caption-bottom {
+      caption-side: bottom;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:caption-top {
+      caption-side: top;
+    }
+
+    .\32xl\:caption-bottom {
+      caption-side: bottom;
+    }
+  }
+}

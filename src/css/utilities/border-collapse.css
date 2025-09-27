@@ -1,0 +1,59 @@
+@layer utilities {
+  .border-collapse {
+    border-collapse: collapse;
+  }
+
+  .border-separate {
+    border-collapse: separate;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:border-collapse {
+      border-collapse: collapse;
+    }
+
+    .sm\:border-separate {
+      border-collapse: separate;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:border-collapse {
+      border-collapse: collapse;
+    }
+
+    .md\:border-separate {
+      border-collapse: separate;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border-collapse {
+      border-collapse: collapse;
+    }
+
+    .lg\:border-separate {
+      border-collapse: separate;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:border-collapse {
+      border-collapse: collapse;
+    }
+
+    .xl\:border-separate {
+      border-collapse: separate;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:border-collapse {
+      border-collapse: collapse;
+    }
+
+    .\32xl\:border-separate {
+      border-collapse: separate;
+    }
+  }
+}

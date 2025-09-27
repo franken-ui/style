@@ -1,0 +1,59 @@
+@layer utilities {
+  .snap-normal {
+    scroll-snap-stop: normal;
+  }
+
+  .snap-always {
+    scroll-snap-stop: always;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:snap-normal {
+      scroll-snap-stop: normal;
+    }
+
+    .sm\:snap-always {
+      scroll-snap-stop: always;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:snap-normal {
+      scroll-snap-stop: normal;
+    }
+
+    .md\:snap-always {
+      scroll-snap-stop: always;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:snap-normal {
+      scroll-snap-stop: normal;
+    }
+
+    .lg\:snap-always {
+      scroll-snap-stop: always;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:snap-normal {
+      scroll-snap-stop: normal;
+    }
+
+    .xl\:snap-always {
+      scroll-snap-stop: always;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:snap-normal {
+      scroll-snap-stop: normal;
+    }
+
+    .\32xl\:snap-always {
+      scroll-snap-stop: always;
+    }
+  }
+}

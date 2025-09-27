@@ -1,0 +1,107 @@
+@layer utilities {
+  .resize-none {
+    resize: none;
+  }
+
+  .resize {
+    resize: both;
+  }
+
+  .resize-y {
+    resize: vertical;
+  }
+
+  .resize-x {
+    resize: horizontal;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:resize-none {
+      resize: none;
+    }
+
+    .sm\:resize {
+      resize: both;
+    }
+
+    .sm\:resize-y {
+      resize: vertical;
+    }
+
+    .sm\:resize-x {
+      resize: horizontal;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:resize-none {
+      resize: none;
+    }
+
+    .md\:resize {
+      resize: both;
+    }
+
+    .md\:resize-y {
+      resize: vertical;
+    }
+
+    .md\:resize-x {
+      resize: horizontal;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:resize-none {
+      resize: none;
+    }
+
+    .lg\:resize {
+      resize: both;
+    }
+
+    .lg\:resize-y {
+      resize: vertical;
+    }
+
+    .lg\:resize-x {
+      resize: horizontal;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:resize-none {
+      resize: none;
+    }
+
+    .xl\:resize {
+      resize: both;
+    }
+
+    .xl\:resize-y {
+      resize: vertical;
+    }
+
+    .xl\:resize-x {
+      resize: horizontal;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:resize-none {
+      resize: none;
+    }
+
+    .\32xl\:resize {
+      resize: both;
+    }
+
+    .\32xl\:resize-y {
+      resize: vertical;
+    }
+
+    .\32xl\:resize-x {
+      resize: horizontal;
+    }
+  }
+}

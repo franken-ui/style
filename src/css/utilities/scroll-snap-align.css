@@ -1,0 +1,107 @@
+@layer utilities {
+  .snap-start {
+    scroll-snap-align: start;
+  }
+
+  .snap-end {
+    scroll-snap-align: end;
+  }
+
+  .snap-center {
+    scroll-snap-align: center;
+  }
+
+  .snap-align-none {
+    scroll-snap-align: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:snap-start {
+      scroll-snap-align: start;
+    }
+
+    .sm\:snap-end {
+      scroll-snap-align: end;
+    }
+
+    .sm\:snap-center {
+      scroll-snap-align: center;
+    }
+
+    .sm\:snap-align-none {
+      scroll-snap-align: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:snap-start {
+      scroll-snap-align: start;
+    }
+
+    .md\:snap-end {
+      scroll-snap-align: end;
+    }
+
+    .md\:snap-center {
+      scroll-snap-align: center;
+    }
+
+    .md\:snap-align-none {
+      scroll-snap-align: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:snap-start {
+      scroll-snap-align: start;
+    }
+
+    .lg\:snap-end {
+      scroll-snap-align: end;
+    }
+
+    .lg\:snap-center {
+      scroll-snap-align: center;
+    }
+
+    .lg\:snap-align-none {
+      scroll-snap-align: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:snap-start {
+      scroll-snap-align: start;
+    }
+
+    .xl\:snap-end {
+      scroll-snap-align: end;
+    }
+
+    .xl\:snap-center {
+      scroll-snap-align: center;
+    }
+
+    .xl\:snap-align-none {
+      scroll-snap-align: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:snap-start {
+      scroll-snap-align: start;
+    }
+
+    .\32xl\:snap-end {
+      scroll-snap-align: end;
+    }
+
+    .\32xl\:snap-center {
+      scroll-snap-align: center;
+    }
+
+    .\32xl\:snap-align-none {
+      scroll-snap-align: none;
+    }
+  }
+}

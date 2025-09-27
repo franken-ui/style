@@ -1,0 +1,107 @@
+@layer utilities {
+  .mask-add {
+    mask-composite: add;
+  }
+
+  .mask-subtract {
+    mask-composite: subtract;
+  }
+
+  .mask-intersect {
+    mask-composite: intersect;
+  }
+
+  .mask-exclude {
+    mask-composite: exclude;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-add {
+      mask-composite: add;
+    }
+
+    .sm\:mask-subtract {
+      mask-composite: subtract;
+    }
+
+    .sm\:mask-intersect {
+      mask-composite: intersect;
+    }
+
+    .sm\:mask-exclude {
+      mask-composite: exclude;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-add {
+      mask-composite: add;
+    }
+
+    .md\:mask-subtract {
+      mask-composite: subtract;
+    }
+
+    .md\:mask-intersect {
+      mask-composite: intersect;
+    }
+
+    .md\:mask-exclude {
+      mask-composite: exclude;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-add {
+      mask-composite: add;
+    }
+
+    .lg\:mask-subtract {
+      mask-composite: subtract;
+    }
+
+    .lg\:mask-intersect {
+      mask-composite: intersect;
+    }
+
+    .lg\:mask-exclude {
+      mask-composite: exclude;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-add {
+      mask-composite: add;
+    }
+
+    .xl\:mask-subtract {
+      mask-composite: subtract;
+    }
+
+    .xl\:mask-intersect {
+      mask-composite: intersect;
+    }
+
+    .xl\:mask-exclude {
+      mask-composite: exclude;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-add {
+      mask-composite: add;
+    }
+
+    .\32xl\:mask-subtract {
+      mask-composite: subtract;
+    }
+
+    .\32xl\:mask-intersect {
+      mask-composite: intersect;
+    }
+
+    .\32xl\:mask-exclude {
+      mask-composite: exclude;
+    }
+  }
+}
