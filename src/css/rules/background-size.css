@@ -1,0 +1,35 @@
+@layer styles {
+  .bg-size {
+    background-size: var(--bg-size);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg-size {
+      background-size: var(--sm-bg-size);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg-size {
+      background-size: var(--md-bg-size);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg-size {
+      background-size: var(--lg-bg-size);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg-size {
+      background-size: var(--xl-bg-size);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg-size {
+      background-size: var(--\32xl-bg-size);
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@layer utilities {
+  .bg-auto {
+    background-size: auto;
+  }
+
+  .bg-cover {
+    background-size: cover;
+  }
+
+  .bg-contain {
+    background-size: contain;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg-auto {
+      background-size: auto;
+    }
+
+    .sm\:bg-cover {
+      background-size: cover;
+    }
+
+    .sm\:bg-contain {
+      background-size: contain;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg-auto {
+      background-size: auto;
+    }
+
+    .md\:bg-cover {
+      background-size: cover;
+    }
+
+    .md\:bg-contain {
+      background-size: contain;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg-auto {
+      background-size: auto;
+    }
+
+    .lg\:bg-cover {
+      background-size: cover;
+    }
+
+    .lg\:bg-contain {
+      background-size: contain;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg-auto {
+      background-size: auto;
+    }
+
+    .xl\:bg-cover {
+      background-size: cover;
+    }
+
+    .xl\:bg-contain {
+      background-size: contain;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg-auto {
+      background-size: auto;
+    }
+
+    .\32xl\:bg-cover {
+      background-size: cover;
+    }
+
+    .\32xl\:bg-contain {
+      background-size: contain;
+    }
+  }
+}

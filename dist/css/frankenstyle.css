@@ -714,6 +714,12 @@
   .dark .dark\:border-y {
     border-block-color: var(--dark-border-y);
   }
+  .bg-position {
+    background-position: var(--bg-position);
+  }
+  .bg-size {
+    background-size: var(--bg-size);
+  }
   .border\/o {
     border-color: color-mix(
       in oklab,
@@ -1518,6 +1524,12 @@
     }
     .dark .dark\:sm\:border-y {
       border-block-color: var(--dark-sm-border-y);
+    }
+    .sm\:bg-position {
+      background-position: var(--sm-bg-position);
+    }
+    .sm\:bg-size {
+      background-size: var(--sm-bg-size);
     }
     .sm\:border\/o {
       border-color: color-mix(
@@ -2329,6 +2341,12 @@
     .dark .dark\:md\:border-y {
       border-block-color: var(--dark-md-border-y);
     }
+    .md\:bg-position {
+      background-position: var(--md-bg-position);
+    }
+    .md\:bg-size {
+      background-size: var(--md-bg-size);
+    }
     .md\:border\/o {
       border-color: color-mix(
         in oklab,
@@ -3138,6 +3156,12 @@
     }
     .dark .dark\:lg\:border-y {
       border-block-color: var(--dark-lg-border-y);
+    }
+    .lg\:bg-position {
+      background-position: var(--lg-bg-position);
+    }
+    .lg\:bg-size {
+      background-size: var(--lg-bg-size);
     }
     .lg\:border\/o {
       border-color: color-mix(
@@ -3949,6 +3973,12 @@
     .dark .dark\:xl\:border-y {
       border-block-color: var(--dark-xl-border-y);
     }
+    .xl\:bg-position {
+      background-position: var(--xl-bg-position);
+    }
+    .xl\:bg-size {
+      background-size: var(--xl-bg-size);
+    }
     .xl\:border\/o {
       border-color: color-mix(
         in oklab,
@@ -4758,6 +4788,12 @@
     }
     .dark .dark\:2xl\:border-y {
       border-block-color: var(--dark-2xl-border-y);
+    }
+    .\32xl\:bg-position {
+      background-position: var(--\32xl-bg-position);
+    }
+    .\32xl\:bg-size {
+      background-size: var(--\32xl-bg-size);
     }
     .\32xl\:border\/o {
       border-color: color-mix(
@@ -5580,6 +5616,90 @@
   }
   .aspect-auto {
     aspect-ratio: auto;
+  }
+  .bg-fixed {
+    background-attachment: fixed;
+  }
+  .bg-local {
+    background-attachment: local;
+  }
+  .bg-scroll {
+    background-attachment: scroll;
+  }
+  .bg-clip-border {
+    background-clip: border-box;
+  }
+  .bg-clip-padding {
+    background-clip: padding-box;
+  }
+  .bg-clip-content {
+    background-clip: content-box;
+  }
+  .bg-clip-text {
+    background-clip: text;
+  }
+  .bg-origin-border {
+    background-origin: border-box;
+  }
+  .bg-origin-padding {
+    background-origin: padding-box;
+  }
+  .bg-origin-content {
+    background-origin: content-box;
+  }
+  .bg-top-left {
+    background-position: top left;
+  }
+  .bg-top {
+    background-position: top;
+  }
+  .bg-top-right {
+    background-position: top right;
+  }
+  .bg-left {
+    background-position: left;
+  }
+  .bg-center {
+    background-position: center;
+  }
+  .bg-right {
+    background-position: right;
+  }
+  .bg-bottom-left {
+    background-position: bottom left;
+  }
+  .bg-bottom {
+    background-position: bottom;
+  }
+  .bg-bottom-right {
+    background-position: bottom right;
+  }
+  .bg-repeat {
+    background-repeat: repeat;
+  }
+  .bg-repeat-x {
+    background-repeat: repeat-x;
+  }
+  .bg-repeat-y {
+    background-repeat: repeat-y;
+  }
+  .bg-repeat-space {
+    background-repeat: space;
+  }
+  .bg-repeat-round {
+    background-repeat: round;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+  .bg-auto {
+    background-size: auto;
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-contain {
+    background-size: contain;
   }
   .rounded-xs {
     border-radius: var(--radius-xs);
@@ -7838,6 +7958,90 @@
     }
     .sm\:aspect-auto {
       aspect-ratio: auto;
+    }
+    .sm\:bg-fixed {
+      background-attachment: fixed;
+    }
+    .sm\:bg-local {
+      background-attachment: local;
+    }
+    .sm\:bg-scroll {
+      background-attachment: scroll;
+    }
+    .sm\:bg-clip-border {
+      background-clip: border-box;
+    }
+    .sm\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+    .sm\:bg-clip-content {
+      background-clip: content-box;
+    }
+    .sm\:bg-clip-text {
+      background-clip: text;
+    }
+    .sm\:bg-origin-border {
+      background-origin: border-box;
+    }
+    .sm\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+    .sm\:bg-origin-content {
+      background-origin: content-box;
+    }
+    .sm\:bg-top-left {
+      background-position: top left;
+    }
+    .sm\:bg-top {
+      background-position: top;
+    }
+    .sm\:bg-top-right {
+      background-position: top right;
+    }
+    .sm\:bg-left {
+      background-position: left;
+    }
+    .sm\:bg-center {
+      background-position: center;
+    }
+    .sm\:bg-right {
+      background-position: right;
+    }
+    .sm\:bg-bottom-left {
+      background-position: bottom left;
+    }
+    .sm\:bg-bottom {
+      background-position: bottom;
+    }
+    .sm\:bg-bottom-right {
+      background-position: bottom right;
+    }
+    .sm\:bg-repeat {
+      background-repeat: repeat;
+    }
+    .sm\:bg-repeat-x {
+      background-repeat: repeat-x;
+    }
+    .sm\:bg-repeat-y {
+      background-repeat: repeat-y;
+    }
+    .sm\:bg-repeat-space {
+      background-repeat: space;
+    }
+    .sm\:bg-repeat-round {
+      background-repeat: round;
+    }
+    .sm\:bg-no-repeat {
+      background-repeat: no-repeat;
+    }
+    .sm\:bg-auto {
+      background-size: auto;
+    }
+    .sm\:bg-cover {
+      background-size: cover;
+    }
+    .sm\:bg-contain {
+      background-size: contain;
     }
     .sm\:rounded-xs {
       border-radius: var(--radius-xs);
@@ -10098,6 +10302,90 @@
     .md\:aspect-auto {
       aspect-ratio: auto;
     }
+    .md\:bg-fixed {
+      background-attachment: fixed;
+    }
+    .md\:bg-local {
+      background-attachment: local;
+    }
+    .md\:bg-scroll {
+      background-attachment: scroll;
+    }
+    .md\:bg-clip-border {
+      background-clip: border-box;
+    }
+    .md\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+    .md\:bg-clip-content {
+      background-clip: content-box;
+    }
+    .md\:bg-clip-text {
+      background-clip: text;
+    }
+    .md\:bg-origin-border {
+      background-origin: border-box;
+    }
+    .md\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+    .md\:bg-origin-content {
+      background-origin: content-box;
+    }
+    .md\:bg-top-left {
+      background-position: top left;
+    }
+    .md\:bg-top {
+      background-position: top;
+    }
+    .md\:bg-top-right {
+      background-position: top right;
+    }
+    .md\:bg-left {
+      background-position: left;
+    }
+    .md\:bg-center {
+      background-position: center;
+    }
+    .md\:bg-right {
+      background-position: right;
+    }
+    .md\:bg-bottom-left {
+      background-position: bottom left;
+    }
+    .md\:bg-bottom {
+      background-position: bottom;
+    }
+    .md\:bg-bottom-right {
+      background-position: bottom right;
+    }
+    .md\:bg-repeat {
+      background-repeat: repeat;
+    }
+    .md\:bg-repeat-x {
+      background-repeat: repeat-x;
+    }
+    .md\:bg-repeat-y {
+      background-repeat: repeat-y;
+    }
+    .md\:bg-repeat-space {
+      background-repeat: space;
+    }
+    .md\:bg-repeat-round {
+      background-repeat: round;
+    }
+    .md\:bg-no-repeat {
+      background-repeat: no-repeat;
+    }
+    .md\:bg-auto {
+      background-size: auto;
+    }
+    .md\:bg-cover {
+      background-size: cover;
+    }
+    .md\:bg-contain {
+      background-size: contain;
+    }
     .md\:rounded-xs {
       border-radius: var(--radius-xs);
     }
@@ -12356,6 +12644,90 @@
     }
     .lg\:aspect-auto {
       aspect-ratio: auto;
+    }
+    .lg\:bg-fixed {
+      background-attachment: fixed;
+    }
+    .lg\:bg-local {
+      background-attachment: local;
+    }
+    .lg\:bg-scroll {
+      background-attachment: scroll;
+    }
+    .lg\:bg-clip-border {
+      background-clip: border-box;
+    }
+    .lg\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+    .lg\:bg-clip-content {
+      background-clip: content-box;
+    }
+    .lg\:bg-clip-text {
+      background-clip: text;
+    }
+    .lg\:bg-origin-border {
+      background-origin: border-box;
+    }
+    .lg\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+    .lg\:bg-origin-content {
+      background-origin: content-box;
+    }
+    .lg\:bg-top-left {
+      background-position: top left;
+    }
+    .lg\:bg-top {
+      background-position: top;
+    }
+    .lg\:bg-top-right {
+      background-position: top right;
+    }
+    .lg\:bg-left {
+      background-position: left;
+    }
+    .lg\:bg-center {
+      background-position: center;
+    }
+    .lg\:bg-right {
+      background-position: right;
+    }
+    .lg\:bg-bottom-left {
+      background-position: bottom left;
+    }
+    .lg\:bg-bottom {
+      background-position: bottom;
+    }
+    .lg\:bg-bottom-right {
+      background-position: bottom right;
+    }
+    .lg\:bg-repeat {
+      background-repeat: repeat;
+    }
+    .lg\:bg-repeat-x {
+      background-repeat: repeat-x;
+    }
+    .lg\:bg-repeat-y {
+      background-repeat: repeat-y;
+    }
+    .lg\:bg-repeat-space {
+      background-repeat: space;
+    }
+    .lg\:bg-repeat-round {
+      background-repeat: round;
+    }
+    .lg\:bg-no-repeat {
+      background-repeat: no-repeat;
+    }
+    .lg\:bg-auto {
+      background-size: auto;
+    }
+    .lg\:bg-cover {
+      background-size: cover;
+    }
+    .lg\:bg-contain {
+      background-size: contain;
     }
     .lg\:rounded-xs {
       border-radius: var(--radius-xs);
@@ -14616,6 +14988,90 @@
     .xl\:aspect-auto {
       aspect-ratio: auto;
     }
+    .xl\:bg-fixed {
+      background-attachment: fixed;
+    }
+    .xl\:bg-local {
+      background-attachment: local;
+    }
+    .xl\:bg-scroll {
+      background-attachment: scroll;
+    }
+    .xl\:bg-clip-border {
+      background-clip: border-box;
+    }
+    .xl\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+    .xl\:bg-clip-content {
+      background-clip: content-box;
+    }
+    .xl\:bg-clip-text {
+      background-clip: text;
+    }
+    .xl\:bg-origin-border {
+      background-origin: border-box;
+    }
+    .xl\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+    .xl\:bg-origin-content {
+      background-origin: content-box;
+    }
+    .xl\:bg-top-left {
+      background-position: top left;
+    }
+    .xl\:bg-top {
+      background-position: top;
+    }
+    .xl\:bg-top-right {
+      background-position: top right;
+    }
+    .xl\:bg-left {
+      background-position: left;
+    }
+    .xl\:bg-center {
+      background-position: center;
+    }
+    .xl\:bg-right {
+      background-position: right;
+    }
+    .xl\:bg-bottom-left {
+      background-position: bottom left;
+    }
+    .xl\:bg-bottom {
+      background-position: bottom;
+    }
+    .xl\:bg-bottom-right {
+      background-position: bottom right;
+    }
+    .xl\:bg-repeat {
+      background-repeat: repeat;
+    }
+    .xl\:bg-repeat-x {
+      background-repeat: repeat-x;
+    }
+    .xl\:bg-repeat-y {
+      background-repeat: repeat-y;
+    }
+    .xl\:bg-repeat-space {
+      background-repeat: space;
+    }
+    .xl\:bg-repeat-round {
+      background-repeat: round;
+    }
+    .xl\:bg-no-repeat {
+      background-repeat: no-repeat;
+    }
+    .xl\:bg-auto {
+      background-size: auto;
+    }
+    .xl\:bg-cover {
+      background-size: cover;
+    }
+    .xl\:bg-contain {
+      background-size: contain;
+    }
     .xl\:rounded-xs {
       border-radius: var(--radius-xs);
     }
@@ -16874,6 +17330,90 @@
     }
     .\32xl\:aspect-auto {
       aspect-ratio: auto;
+    }
+    .\32xl\:bg-fixed {
+      background-attachment: fixed;
+    }
+    .\32xl\:bg-local {
+      background-attachment: local;
+    }
+    .\32xl\:bg-scroll {
+      background-attachment: scroll;
+    }
+    .\32xl\:bg-clip-border {
+      background-clip: border-box;
+    }
+    .\32xl\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+    .\32xl\:bg-clip-content {
+      background-clip: content-box;
+    }
+    .\32xl\:bg-clip-text {
+      background-clip: text;
+    }
+    .\32xl\:bg-origin-border {
+      background-origin: border-box;
+    }
+    .\32xl\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+    .\32xl\:bg-origin-content {
+      background-origin: content-box;
+    }
+    .\32xl\:bg-top-left {
+      background-position: top left;
+    }
+    .\32xl\:bg-top {
+      background-position: top;
+    }
+    .\32xl\:bg-top-right {
+      background-position: top right;
+    }
+    .\32xl\:bg-left {
+      background-position: left;
+    }
+    .\32xl\:bg-center {
+      background-position: center;
+    }
+    .\32xl\:bg-right {
+      background-position: right;
+    }
+    .\32xl\:bg-bottom-left {
+      background-position: bottom left;
+    }
+    .\32xl\:bg-bottom {
+      background-position: bottom;
+    }
+    .\32xl\:bg-bottom-right {
+      background-position: bottom right;
+    }
+    .\32xl\:bg-repeat {
+      background-repeat: repeat;
+    }
+    .\32xl\:bg-repeat-x {
+      background-repeat: repeat-x;
+    }
+    .\32xl\:bg-repeat-y {
+      background-repeat: repeat-y;
+    }
+    .\32xl\:bg-repeat-space {
+      background-repeat: space;
+    }
+    .\32xl\:bg-repeat-round {
+      background-repeat: round;
+    }
+    .\32xl\:bg-no-repeat {
+      background-repeat: no-repeat;
+    }
+    .\32xl\:bg-auto {
+      background-size: auto;
+    }
+    .\32xl\:bg-cover {
+      background-size: cover;
+    }
+    .\32xl\:bg-contain {
+      background-size: contain;
     }
     .\32xl\:rounded-xs {
       border-radius: var(--radius-xs);

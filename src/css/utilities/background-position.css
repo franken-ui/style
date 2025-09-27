@@ -1,0 +1,227 @@
+@layer utilities {
+  .bg-top-left {
+    background-position: top left;
+  }
+
+  .bg-top {
+    background-position: top;
+  }
+
+  .bg-top-right {
+    background-position: top right;
+  }
+
+  .bg-left {
+    background-position: left;
+  }
+
+  .bg-center {
+    background-position: center;
+  }
+
+  .bg-right {
+    background-position: right;
+  }
+
+  .bg-bottom-left {
+    background-position: bottom left;
+  }
+
+  .bg-bottom {
+    background-position: bottom;
+  }
+
+  .bg-bottom-right {
+    background-position: bottom right;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg-top-left {
+      background-position: top left;
+    }
+
+    .sm\:bg-top {
+      background-position: top;
+    }
+
+    .sm\:bg-top-right {
+      background-position: top right;
+    }
+
+    .sm\:bg-left {
+      background-position: left;
+    }
+
+    .sm\:bg-center {
+      background-position: center;
+    }
+
+    .sm\:bg-right {
+      background-position: right;
+    }
+
+    .sm\:bg-bottom-left {
+      background-position: bottom left;
+    }
+
+    .sm\:bg-bottom {
+      background-position: bottom;
+    }
+
+    .sm\:bg-bottom-right {
+      background-position: bottom right;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg-top-left {
+      background-position: top left;
+    }
+
+    .md\:bg-top {
+      background-position: top;
+    }
+
+    .md\:bg-top-right {
+      background-position: top right;
+    }
+
+    .md\:bg-left {
+      background-position: left;
+    }
+
+    .md\:bg-center {
+      background-position: center;
+    }
+
+    .md\:bg-right {
+      background-position: right;
+    }
+
+    .md\:bg-bottom-left {
+      background-position: bottom left;
+    }
+
+    .md\:bg-bottom {
+      background-position: bottom;
+    }
+
+    .md\:bg-bottom-right {
+      background-position: bottom right;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg-top-left {
+      background-position: top left;
+    }
+
+    .lg\:bg-top {
+      background-position: top;
+    }
+
+    .lg\:bg-top-right {
+      background-position: top right;
+    }
+
+    .lg\:bg-left {
+      background-position: left;
+    }
+
+    .lg\:bg-center {
+      background-position: center;
+    }
+
+    .lg\:bg-right {
+      background-position: right;
+    }
+
+    .lg\:bg-bottom-left {
+      background-position: bottom left;
+    }
+
+    .lg\:bg-bottom {
+      background-position: bottom;
+    }
+
+    .lg\:bg-bottom-right {
+      background-position: bottom right;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg-top-left {
+      background-position: top left;
+    }
+
+    .xl\:bg-top {
+      background-position: top;
+    }
+
+    .xl\:bg-top-right {
+      background-position: top right;
+    }
+
+    .xl\:bg-left {
+      background-position: left;
+    }
+
+    .xl\:bg-center {
+      background-position: center;
+    }
+
+    .xl\:bg-right {
+      background-position: right;
+    }
+
+    .xl\:bg-bottom-left {
+      background-position: bottom left;
+    }
+
+    .xl\:bg-bottom {
+      background-position: bottom;
+    }
+
+    .xl\:bg-bottom-right {
+      background-position: bottom right;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg-top-left {
+      background-position: top left;
+    }
+
+    .\32xl\:bg-top {
+      background-position: top;
+    }
+
+    .\32xl\:bg-top-right {
+      background-position: top right;
+    }
+
+    .\32xl\:bg-left {
+      background-position: left;
+    }
+
+    .\32xl\:bg-center {
+      background-position: center;
+    }
+
+    .\32xl\:bg-right {
+      background-position: right;
+    }
+
+    .\32xl\:bg-bottom-left {
+      background-position: bottom left;
+    }
+
+    .\32xl\:bg-bottom {
+      background-position: bottom;
+    }
+
+    .\32xl\:bg-bottom-right {
+      background-position: bottom right;
+    }
+  }
+}

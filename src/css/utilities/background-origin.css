@@ -1,0 +1,83 @@
+@layer utilities {
+  .bg-origin-border {
+    background-origin: border-box;
+  }
+
+  .bg-origin-padding {
+    background-origin: padding-box;
+  }
+
+  .bg-origin-content {
+    background-origin: content-box;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg-origin-border {
+      background-origin: border-box;
+    }
+
+    .sm\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+
+    .sm\:bg-origin-content {
+      background-origin: content-box;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg-origin-border {
+      background-origin: border-box;
+    }
+
+    .md\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+
+    .md\:bg-origin-content {
+      background-origin: content-box;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg-origin-border {
+      background-origin: border-box;
+    }
+
+    .lg\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+
+    .lg\:bg-origin-content {
+      background-origin: content-box;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg-origin-border {
+      background-origin: border-box;
+    }
+
+    .xl\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+
+    .xl\:bg-origin-content {
+      background-origin: content-box;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg-origin-border {
+      background-origin: border-box;
+    }
+
+    .\32xl\:bg-origin-padding {
+      background-origin: padding-box;
+    }
+
+    .\32xl\:bg-origin-content {
+      background-origin: content-box;
+    }
+  }
+}

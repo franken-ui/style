@@ -1,0 +1,107 @@
+@layer utilities {
+  .bg-clip-border {
+    background-clip: border-box;
+  }
+
+  .bg-clip-padding {
+    background-clip: padding-box;
+  }
+
+  .bg-clip-content {
+    background-clip: content-box;
+  }
+
+  .bg-clip-text {
+    background-clip: text;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg-clip-border {
+      background-clip: border-box;
+    }
+
+    .sm\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+
+    .sm\:bg-clip-content {
+      background-clip: content-box;
+    }
+
+    .sm\:bg-clip-text {
+      background-clip: text;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg-clip-border {
+      background-clip: border-box;
+    }
+
+    .md\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+
+    .md\:bg-clip-content {
+      background-clip: content-box;
+    }
+
+    .md\:bg-clip-text {
+      background-clip: text;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg-clip-border {
+      background-clip: border-box;
+    }
+
+    .lg\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+
+    .lg\:bg-clip-content {
+      background-clip: content-box;
+    }
+
+    .lg\:bg-clip-text {
+      background-clip: text;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg-clip-border {
+      background-clip: border-box;
+    }
+
+    .xl\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+
+    .xl\:bg-clip-content {
+      background-clip: content-box;
+    }
+
+    .xl\:bg-clip-text {
+      background-clip: text;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg-clip-border {
+      background-clip: border-box;
+    }
+
+    .\32xl\:bg-clip-padding {
+      background-clip: padding-box;
+    }
+
+    .\32xl\:bg-clip-content {
+      background-clip: content-box;
+    }
+
+    .\32xl\:bg-clip-text {
+      background-clip: text;
+    }
+  }
+}

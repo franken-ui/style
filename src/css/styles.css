@@ -76,6 +76,12 @@
   .dark .dark\:border-y {
     border-block-color: var(--dark-border-y);
   }
+  .bg-position {
+    background-position: var(--bg-position);
+  }
+  .bg-size {
+    background-size: var(--bg-size);
+  }
   .border\/o {
     border-color: color-mix(
       in oklab,
@@ -880,6 +886,12 @@
     }
     .dark .dark\:sm\:border-y {
       border-block-color: var(--dark-sm-border-y);
+    }
+    .sm\:bg-position {
+      background-position: var(--sm-bg-position);
+    }
+    .sm\:bg-size {
+      background-size: var(--sm-bg-size);
     }
     .sm\:border\/o {
       border-color: color-mix(
@@ -1691,6 +1703,12 @@
     .dark .dark\:md\:border-y {
       border-block-color: var(--dark-md-border-y);
     }
+    .md\:bg-position {
+      background-position: var(--md-bg-position);
+    }
+    .md\:bg-size {
+      background-size: var(--md-bg-size);
+    }
     .md\:border\/o {
       border-color: color-mix(
         in oklab,
@@ -2500,6 +2518,12 @@
     }
     .dark .dark\:lg\:border-y {
       border-block-color: var(--dark-lg-border-y);
+    }
+    .lg\:bg-position {
+      background-position: var(--lg-bg-position);
+    }
+    .lg\:bg-size {
+      background-size: var(--lg-bg-size);
     }
     .lg\:border\/o {
       border-color: color-mix(
@@ -3311,6 +3335,12 @@
     .dark .dark\:xl\:border-y {
       border-block-color: var(--dark-xl-border-y);
     }
+    .xl\:bg-position {
+      background-position: var(--xl-bg-position);
+    }
+    .xl\:bg-size {
+      background-size: var(--xl-bg-size);
+    }
     .xl\:border\/o {
       border-color: color-mix(
         in oklab,
@@ -4120,6 +4150,12 @@
     }
     .dark .dark\:2xl\:border-y {
       border-block-color: var(--dark-2xl-border-y);
+    }
+    .\32xl\:bg-position {
+      background-position: var(--\32xl-bg-position);
+    }
+    .\32xl\:bg-size {
+      background-size: var(--\32xl-bg-size);
     }
     .\32xl\:border\/o {
       border-color: color-mix(
