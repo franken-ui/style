@@ -1,0 +1,35 @@
+@layer styles {
+  .perspective {
+    perspective: var(--perspective);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:perspective {
+      perspective: var(--sm-perspective);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:perspective {
+      perspective: var(--md-perspective);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:perspective {
+      perspective: var(--lg-perspective);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:perspective {
+      perspective: var(--xl-perspective);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:perspective {
+      perspective: var(--\32xl-perspective);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer styles {
+  .transform {
+    transform: var(--transform);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:transform {
+      transform: var(--sm-transform);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:transform {
+      transform: var(--md-transform);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:transform {
+      transform: var(--lg-transform);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:transform {
+      transform: var(--xl-transform);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:transform {
+      transform: var(--\32xl-transform);
+    }
+  }
+}

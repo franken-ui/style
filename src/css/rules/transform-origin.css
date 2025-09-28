@@ -1,0 +1,35 @@
+@layer styles {
+  .origin {
+    transform-origin: var(--origin);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:origin {
+      transform-origin: var(--sm-origin);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:origin {
+      transform-origin: var(--md-origin);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:origin {
+      transform-origin: var(--lg-origin);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:origin {
+      transform-origin: var(--xl-origin);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:origin {
+      transform-origin: var(--\32xl-origin);
+    }
+  }
+}

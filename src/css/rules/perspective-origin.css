@@ -1,0 +1,35 @@
+@layer styles {
+  .perspective-origin {
+    perspective-origin: var(--perspective-origin);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:perspective-origin {
+      perspective-origin: var(--sm-perspective-origin);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:perspective-origin {
+      perspective-origin: var(--md-perspective-origin);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:perspective-origin {
+      perspective-origin: var(--lg-perspective-origin);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:perspective-origin {
+      perspective-origin: var(--xl-perspective-origin);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:perspective-origin {
+      perspective-origin: var(--\32xl-perspective-origin);
+    }
+  }
+}

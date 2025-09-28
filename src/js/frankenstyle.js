@@ -1340,7 +1340,7 @@ const rules = [
     properties: ["--tw-border-spacing-y", "border-spacing"],
     values: [
       "calc(var(--spacing) * var({var}))",
-      "var(--tw-border-spacing-y) var(--tw-border-spacing-y)",
+      "var(--tw-border-spacing-x) var(--tw-border-spacing-y)",
     ],
     placeholders: { "{var}": "border-spacing-y" },
   },
@@ -1350,7 +1350,7 @@ const rules = [
     properties: ["--tw-border-spacing-y", "border-spacing"],
     values: [
       "var({var})",
-      "var(--tw-border-spacing-y) var(--tw-border-spacing-y)",
+      "var(--tw-border-spacing-x) var(--tw-border-spacing-y)",
     ],
     placeholders: { "{var}": "border-spacing-y" },
   },
@@ -1391,6 +1391,30 @@ const rules = [
     layer: "styles",
     selector: "animate",
     properties: ["animation"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "perspective",
+    properties: ["perspective"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "perspective-origin",
+    properties: ["perspective-origin"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "transform",
+    properties: ["transform"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "origin",
+    properties: ["transform-origin"],
     arbitrary: true,
   },
   {
@@ -6810,6 +6834,76 @@ const rules = [
     selector: "ease-initial",
     properties: ["transition-timing-function"],
     values: ["initial"],
+  },
+  {
+    layer: "utilities",
+    selector: "perspective-dramatic",
+    properties: ["perspective"],
+    values: ["var(--perspective-dramatic)"],
+  },
+  {
+    layer: "utilities",
+    selector: "perspective-near",
+    properties: ["perspective"],
+    values: ["var(--perspective-near)"],
+  },
+  {
+    layer: "utilities",
+    selector: "perspective-normal",
+    properties: ["perspective"],
+    values: ["var(--perspective-normal)"],
+  },
+  {
+    layer: "utilities",
+    selector: "perspective-midrange",
+    properties: ["perspective"],
+    values: ["var(--perspective-midrange)"],
+  },
+  {
+    layer: "utilities",
+    selector: "perspective-distant",
+    properties: ["perspective"],
+    values: ["var(--perspective-distant)"],
+  },
+  {
+    layer: "utilities",
+    selector: "perspective-none",
+    properties: ["perspective"],
+    values: ["none"],
+  },
+  {
+    layer: "utilities",
+    selector: "rotate-none",
+    properties: ["transform"],
+    values: ["none"],
+  },
+  {
+    layer: "utilities",
+    selector: "scale-none",
+    properties: ["transform"],
+    values: ["none"],
+  },
+  {
+    layer: "utilities",
+    selector: "transform-none",
+    properties: ["transform"],
+    values: ["none"],
+  },
+  {
+    layer: "utilities",
+    selector: "transform-gpu",
+    properties: ["transform"],
+    values: [
+      "translateZ(0) var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "transform-cpu",
+    properties: ["transform"],
+    values: [
+      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
   },
 ];
 

@@ -338,11 +338,11 @@
   }
   .border-spacing-y {
     --tw-border-spacing-y: calc(var(--spacing) * var(--border-spacing-y));
-    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
   }
   .\[border-spacing-y\] {
     --tw-border-spacing-y: var(--border-spacing-y);
-    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
   }
   .bottom {
     bottom: calc(var(--spacing) * var(--bottom));
@@ -736,6 +736,12 @@
   .\[py\] {
     padding-block: var(--py, var(--p));
   }
+  .perspective-origin {
+    perspective-origin: var(--perspective-origin);
+  }
+  .perspective {
+    perspective: var(--perspective);
+  }
   .right {
     right: calc(var(--spacing) * var(--right));
   }
@@ -840,6 +846,12 @@
   }
   .\[top\] {
     top: var(--top);
+  }
+  .origin {
+    transform-origin: var(--origin);
+  }
+  .transform {
+    transform: var(--transform);
   }
   .delay {
     transition-delay: var(--delay);
@@ -1254,11 +1266,11 @@
     }
     .sm\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--sm-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .sm\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--sm-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .sm\:bottom {
       bottom: calc(var(--spacing) * var(--sm-bottom));
@@ -1656,6 +1668,12 @@
     .sm\:\[py\] {
       padding-block: var(--sm-py, var(--p));
     }
+    .sm\:perspective-origin {
+      perspective-origin: var(--sm-perspective-origin);
+    }
+    .sm\:perspective {
+      perspective: var(--sm-perspective);
+    }
     .sm\:right {
       right: calc(var(--spacing) * var(--sm-right));
     }
@@ -1760,6 +1778,12 @@
     }
     .sm\:\[top\] {
       top: var(--sm-top);
+    }
+    .sm\:origin {
+      transform-origin: var(--sm-origin);
+    }
+    .sm\:transform {
+      transform: var(--sm-transform);
     }
     .sm\:delay {
       transition-delay: var(--sm-delay);
@@ -2175,11 +2199,11 @@
     }
     .md\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--md-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .md\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--md-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .md\:bottom {
       bottom: calc(var(--spacing) * var(--md-bottom));
@@ -2577,6 +2601,12 @@
     .md\:\[py\] {
       padding-block: var(--md-py, var(--p));
     }
+    .md\:perspective-origin {
+      perspective-origin: var(--md-perspective-origin);
+    }
+    .md\:perspective {
+      perspective: var(--md-perspective);
+    }
     .md\:right {
       right: calc(var(--spacing) * var(--md-right));
     }
@@ -2681,6 +2711,12 @@
     }
     .md\:\[top\] {
       top: var(--md-top);
+    }
+    .md\:origin {
+      transform-origin: var(--md-origin);
+    }
+    .md\:transform {
+      transform: var(--md-transform);
     }
     .md\:delay {
       transition-delay: var(--md-delay);
@@ -3096,11 +3132,11 @@
     }
     .lg\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--lg-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .lg\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--lg-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .lg\:bottom {
       bottom: calc(var(--spacing) * var(--lg-bottom));
@@ -3498,6 +3534,12 @@
     .lg\:\[py\] {
       padding-block: var(--lg-py, var(--p));
     }
+    .lg\:perspective-origin {
+      perspective-origin: var(--lg-perspective-origin);
+    }
+    .lg\:perspective {
+      perspective: var(--lg-perspective);
+    }
     .lg\:right {
       right: calc(var(--spacing) * var(--lg-right));
     }
@@ -3602,6 +3644,12 @@
     }
     .lg\:\[top\] {
       top: var(--lg-top);
+    }
+    .lg\:origin {
+      transform-origin: var(--lg-origin);
+    }
+    .lg\:transform {
+      transform: var(--lg-transform);
     }
     .lg\:delay {
       transition-delay: var(--lg-delay);
@@ -4017,11 +4065,11 @@
     }
     .xl\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--xl-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .xl\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--xl-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .xl\:bottom {
       bottom: calc(var(--spacing) * var(--xl-bottom));
@@ -4419,6 +4467,12 @@
     .xl\:\[py\] {
       padding-block: var(--xl-py, var(--p));
     }
+    .xl\:perspective-origin {
+      perspective-origin: var(--xl-perspective-origin);
+    }
+    .xl\:perspective {
+      perspective: var(--xl-perspective);
+    }
     .xl\:right {
       right: calc(var(--spacing) * var(--xl-right));
     }
@@ -4523,6 +4577,12 @@
     }
     .xl\:\[top\] {
       top: var(--xl-top);
+    }
+    .xl\:origin {
+      transform-origin: var(--xl-origin);
+    }
+    .xl\:transform {
+      transform: var(--xl-transform);
     }
     .xl\:delay {
       transition-delay: var(--xl-delay);
@@ -4942,11 +5002,11 @@
       --tw-border-spacing-y: calc(
         var(--spacing) * var(--\32xl-border-spacing-y)
       );
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .\32xl\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--\32xl-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .\32xl\:bottom {
       bottom: calc(var(--spacing) * var(--\32xl-bottom));
@@ -5344,6 +5404,12 @@
     .\32xl\:\[py\] {
       padding-block: var(--\32xl-py, var(--p));
     }
+    .\32xl\:perspective-origin {
+      perspective-origin: var(--\32xl-perspective-origin);
+    }
+    .\32xl\:perspective {
+      perspective: var(--\32xl-perspective);
+    }
     .\32xl\:right {
       right: calc(var(--spacing) * var(--\32xl-right));
     }
@@ -5448,6 +5514,12 @@
     }
     .\32xl\:\[top\] {
       top: var(--\32xl-top);
+    }
+    .\32xl\:origin {
+      transform-origin: var(--\32xl-origin);
+    }
+    .\32xl\:transform {
+      transform: var(--\32xl-transform);
     }
     .\32xl\:delay {
       transition-delay: var(--\32xl-delay);

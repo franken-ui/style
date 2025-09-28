@@ -1005,11 +1005,11 @@
   }
   .border-spacing-y {
     --tw-border-spacing-y: calc(var(--spacing) * var(--border-spacing-y));
-    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
   }
   .\[border-spacing-y\] {
     --tw-border-spacing-y: var(--border-spacing-y);
-    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
   }
   .bottom {
     bottom: calc(var(--spacing) * var(--bottom));
@@ -1403,6 +1403,12 @@
   .\[py\] {
     padding-block: var(--py, var(--p));
   }
+  .perspective-origin {
+    perspective-origin: var(--perspective-origin);
+  }
+  .perspective {
+    perspective: var(--perspective);
+  }
   .right {
     right: calc(var(--spacing) * var(--right));
   }
@@ -1507,6 +1513,12 @@
   }
   .\[top\] {
     top: var(--top);
+  }
+  .origin {
+    transform-origin: var(--origin);
+  }
+  .transform {
+    transform: var(--transform);
   }
   .delay {
     transition-delay: var(--delay);
@@ -1921,11 +1933,11 @@
     }
     .sm\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--sm-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .sm\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--sm-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .sm\:bottom {
       bottom: calc(var(--spacing) * var(--sm-bottom));
@@ -2323,6 +2335,12 @@
     .sm\:\[py\] {
       padding-block: var(--sm-py, var(--p));
     }
+    .sm\:perspective-origin {
+      perspective-origin: var(--sm-perspective-origin);
+    }
+    .sm\:perspective {
+      perspective: var(--sm-perspective);
+    }
     .sm\:right {
       right: calc(var(--spacing) * var(--sm-right));
     }
@@ -2427,6 +2445,12 @@
     }
     .sm\:\[top\] {
       top: var(--sm-top);
+    }
+    .sm\:origin {
+      transform-origin: var(--sm-origin);
+    }
+    .sm\:transform {
+      transform: var(--sm-transform);
     }
     .sm\:delay {
       transition-delay: var(--sm-delay);
@@ -2842,11 +2866,11 @@
     }
     .md\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--md-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .md\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--md-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .md\:bottom {
       bottom: calc(var(--spacing) * var(--md-bottom));
@@ -3244,6 +3268,12 @@
     .md\:\[py\] {
       padding-block: var(--md-py, var(--p));
     }
+    .md\:perspective-origin {
+      perspective-origin: var(--md-perspective-origin);
+    }
+    .md\:perspective {
+      perspective: var(--md-perspective);
+    }
     .md\:right {
       right: calc(var(--spacing) * var(--md-right));
     }
@@ -3348,6 +3378,12 @@
     }
     .md\:\[top\] {
       top: var(--md-top);
+    }
+    .md\:origin {
+      transform-origin: var(--md-origin);
+    }
+    .md\:transform {
+      transform: var(--md-transform);
     }
     .md\:delay {
       transition-delay: var(--md-delay);
@@ -3763,11 +3799,11 @@
     }
     .lg\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--lg-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .lg\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--lg-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .lg\:bottom {
       bottom: calc(var(--spacing) * var(--lg-bottom));
@@ -4165,6 +4201,12 @@
     .lg\:\[py\] {
       padding-block: var(--lg-py, var(--p));
     }
+    .lg\:perspective-origin {
+      perspective-origin: var(--lg-perspective-origin);
+    }
+    .lg\:perspective {
+      perspective: var(--lg-perspective);
+    }
     .lg\:right {
       right: calc(var(--spacing) * var(--lg-right));
     }
@@ -4269,6 +4311,12 @@
     }
     .lg\:\[top\] {
       top: var(--lg-top);
+    }
+    .lg\:origin {
+      transform-origin: var(--lg-origin);
+    }
+    .lg\:transform {
+      transform: var(--lg-transform);
     }
     .lg\:delay {
       transition-delay: var(--lg-delay);
@@ -4684,11 +4732,11 @@
     }
     .xl\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--xl-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .xl\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--xl-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .xl\:bottom {
       bottom: calc(var(--spacing) * var(--xl-bottom));
@@ -5086,6 +5134,12 @@
     .xl\:\[py\] {
       padding-block: var(--xl-py, var(--p));
     }
+    .xl\:perspective-origin {
+      perspective-origin: var(--xl-perspective-origin);
+    }
+    .xl\:perspective {
+      perspective: var(--xl-perspective);
+    }
     .xl\:right {
       right: calc(var(--spacing) * var(--xl-right));
     }
@@ -5190,6 +5244,12 @@
     }
     .xl\:\[top\] {
       top: var(--xl-top);
+    }
+    .xl\:origin {
+      transform-origin: var(--xl-origin);
+    }
+    .xl\:transform {
+      transform: var(--xl-transform);
     }
     .xl\:delay {
       transition-delay: var(--xl-delay);
@@ -5609,11 +5669,11 @@
       --tw-border-spacing-y: calc(
         var(--spacing) * var(--\32xl-border-spacing-y)
       );
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .\32xl\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--\32xl-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .\32xl\:bottom {
       bottom: calc(var(--spacing) * var(--\32xl-bottom));
@@ -6011,6 +6071,12 @@
     .\32xl\:\[py\] {
       padding-block: var(--\32xl-py, var(--p));
     }
+    .\32xl\:perspective-origin {
+      perspective-origin: var(--\32xl-perspective-origin);
+    }
+    .\32xl\:perspective {
+      perspective: var(--\32xl-perspective);
+    }
     .\32xl\:right {
       right: calc(var(--spacing) * var(--\32xl-right));
     }
@@ -6115,6 +6181,12 @@
     }
     .\32xl\:\[top\] {
       top: var(--\32xl-top);
+    }
+    .\32xl\:origin {
+      transform-origin: var(--\32xl-origin);
+    }
+    .\32xl\:transform {
+      transform: var(--\32xl-transform);
     }
     .\32xl\:delay {
       transition-delay: var(--\32xl-delay);
@@ -8498,6 +8570,24 @@
   .overscroll-x-none {
     overscroll-behavior-x: none;
   }
+  .perspective-dramatic {
+    perspective: var(--perspective-dramatic);
+  }
+  .perspective-near {
+    perspective: var(--perspective-near);
+  }
+  .perspective-normal {
+    perspective: var(--perspective-normal);
+  }
+  .perspective-midrange {
+    perspective: var(--perspective-midrange);
+  }
+  .perspective-distant {
+    perspective: var(--perspective-distant);
+  }
+  .perspective-none {
+    perspective: none;
+  }
   .place-content-center {
     place-content: center;
   }
@@ -8606,6 +8696,12 @@
   }
   .resize-x {
     resize: horizontal;
+  }
+  .rotate-none {
+    transform: none;
+  }
+  .scale-none {
+    transform: none;
   }
   .scroll-auto {
     scroll-behavior: auto;
@@ -8838,6 +8934,17 @@
   }
   .transform-flat {
     transform-style: flat;
+  }
+  .transform-none {
+    transform: none;
+  }
+  .transform-gpu {
+    transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+      var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .transform-cpu {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+      var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .transition-normal {
     transition-behavior: normal;
@@ -11382,6 +11489,24 @@
     .sm\:overscroll-x-none {
       overscroll-behavior-x: none;
     }
+    .sm\:perspective-dramatic {
+      perspective: var(--perspective-dramatic);
+    }
+    .sm\:perspective-near {
+      perspective: var(--perspective-near);
+    }
+    .sm\:perspective-normal {
+      perspective: var(--perspective-normal);
+    }
+    .sm\:perspective-midrange {
+      perspective: var(--perspective-midrange);
+    }
+    .sm\:perspective-distant {
+      perspective: var(--perspective-distant);
+    }
+    .sm\:perspective-none {
+      perspective: none;
+    }
     .sm\:place-content-center {
       place-content: center;
     }
@@ -11490,6 +11615,12 @@
     }
     .sm\:resize-x {
       resize: horizontal;
+    }
+    .sm\:rotate-none {
+      transform: none;
+    }
+    .sm\:scale-none {
+      transform: none;
     }
     .sm\:scroll-auto {
       scroll-behavior: auto;
@@ -11722,6 +11853,17 @@
     }
     .sm\:transform-flat {
       transform-style: flat;
+    }
+    .sm\:transform-none {
+      transform: none;
+    }
+    .sm\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+    .sm\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .sm\:transition-normal {
       transition-behavior: normal;
@@ -14267,6 +14409,24 @@
     .md\:overscroll-x-none {
       overscroll-behavior-x: none;
     }
+    .md\:perspective-dramatic {
+      perspective: var(--perspective-dramatic);
+    }
+    .md\:perspective-near {
+      perspective: var(--perspective-near);
+    }
+    .md\:perspective-normal {
+      perspective: var(--perspective-normal);
+    }
+    .md\:perspective-midrange {
+      perspective: var(--perspective-midrange);
+    }
+    .md\:perspective-distant {
+      perspective: var(--perspective-distant);
+    }
+    .md\:perspective-none {
+      perspective: none;
+    }
     .md\:place-content-center {
       place-content: center;
     }
@@ -14375,6 +14535,12 @@
     }
     .md\:resize-x {
       resize: horizontal;
+    }
+    .md\:rotate-none {
+      transform: none;
+    }
+    .md\:scale-none {
+      transform: none;
     }
     .md\:scroll-auto {
       scroll-behavior: auto;
@@ -14607,6 +14773,17 @@
     }
     .md\:transform-flat {
       transform-style: flat;
+    }
+    .md\:transform-none {
+      transform: none;
+    }
+    .md\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+    .md\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .md\:transition-normal {
       transition-behavior: normal;
@@ -17152,6 +17329,24 @@
     .lg\:overscroll-x-none {
       overscroll-behavior-x: none;
     }
+    .lg\:perspective-dramatic {
+      perspective: var(--perspective-dramatic);
+    }
+    .lg\:perspective-near {
+      perspective: var(--perspective-near);
+    }
+    .lg\:perspective-normal {
+      perspective: var(--perspective-normal);
+    }
+    .lg\:perspective-midrange {
+      perspective: var(--perspective-midrange);
+    }
+    .lg\:perspective-distant {
+      perspective: var(--perspective-distant);
+    }
+    .lg\:perspective-none {
+      perspective: none;
+    }
     .lg\:place-content-center {
       place-content: center;
     }
@@ -17260,6 +17455,12 @@
     }
     .lg\:resize-x {
       resize: horizontal;
+    }
+    .lg\:rotate-none {
+      transform: none;
+    }
+    .lg\:scale-none {
+      transform: none;
     }
     .lg\:scroll-auto {
       scroll-behavior: auto;
@@ -17492,6 +17693,17 @@
     }
     .lg\:transform-flat {
       transform-style: flat;
+    }
+    .lg\:transform-none {
+      transform: none;
+    }
+    .lg\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+    .lg\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .lg\:transition-normal {
       transition-behavior: normal;
@@ -20037,6 +20249,24 @@
     .xl\:overscroll-x-none {
       overscroll-behavior-x: none;
     }
+    .xl\:perspective-dramatic {
+      perspective: var(--perspective-dramatic);
+    }
+    .xl\:perspective-near {
+      perspective: var(--perspective-near);
+    }
+    .xl\:perspective-normal {
+      perspective: var(--perspective-normal);
+    }
+    .xl\:perspective-midrange {
+      perspective: var(--perspective-midrange);
+    }
+    .xl\:perspective-distant {
+      perspective: var(--perspective-distant);
+    }
+    .xl\:perspective-none {
+      perspective: none;
+    }
     .xl\:place-content-center {
       place-content: center;
     }
@@ -20145,6 +20375,12 @@
     }
     .xl\:resize-x {
       resize: horizontal;
+    }
+    .xl\:rotate-none {
+      transform: none;
+    }
+    .xl\:scale-none {
+      transform: none;
     }
     .xl\:scroll-auto {
       scroll-behavior: auto;
@@ -20377,6 +20613,17 @@
     }
     .xl\:transform-flat {
       transform-style: flat;
+    }
+    .xl\:transform-none {
+      transform: none;
+    }
+    .xl\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+    .xl\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .xl\:transition-normal {
       transition-behavior: normal;
@@ -22922,6 +23169,24 @@
     .\32xl\:overscroll-x-none {
       overscroll-behavior-x: none;
     }
+    .\32xl\:perspective-dramatic {
+      perspective: var(--perspective-dramatic);
+    }
+    .\32xl\:perspective-near {
+      perspective: var(--perspective-near);
+    }
+    .\32xl\:perspective-normal {
+      perspective: var(--perspective-normal);
+    }
+    .\32xl\:perspective-midrange {
+      perspective: var(--perspective-midrange);
+    }
+    .\32xl\:perspective-distant {
+      perspective: var(--perspective-distant);
+    }
+    .\32xl\:perspective-none {
+      perspective: none;
+    }
     .\32xl\:place-content-center {
       place-content: center;
     }
@@ -23030,6 +23295,12 @@
     }
     .\32xl\:resize-x {
       resize: horizontal;
+    }
+    .\32xl\:rotate-none {
+      transform: none;
+    }
+    .\32xl\:scale-none {
+      transform: none;
     }
     .\32xl\:scroll-auto {
       scroll-behavior: auto;
@@ -23262,6 +23533,17 @@
     }
     .\32xl\:transform-flat {
       transform-style: flat;
+    }
+    .\32xl\:transform-none {
+      transform: none;
+    }
+    .\32xl\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+    .\32xl\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .\32xl\:transition-normal {
       transition-behavior: normal;

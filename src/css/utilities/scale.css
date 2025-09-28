@@ -1,0 +1,35 @@
+@layer utilities {
+  .scale-none {
+    transform: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:scale-none {
+      transform: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:scale-none {
+      transform: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:scale-none {
+      transform: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:scale-none {
+      transform: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:scale-none {
+      transform: none;
+    }
+  }
+}

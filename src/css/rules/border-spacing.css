@@ -15,11 +15,11 @@
   }
   .border-spacing-y {
     --tw-border-spacing-y: calc(var(--spacing) * var(--border-spacing-y));
-    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
   }
   .\[border-spacing-y\] {
     --tw-border-spacing-y: var(--border-spacing-y);
-    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
   }
 
   @media (min-width: 40rem) {
@@ -39,11 +39,11 @@
     }
     .sm\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--sm-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .sm\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--sm-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
   }
 
@@ -64,11 +64,11 @@
     }
     .md\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--md-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .md\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--md-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
   }
 
@@ -89,11 +89,11 @@
     }
     .lg\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--lg-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .lg\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--lg-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
   }
 
@@ -114,11 +114,11 @@
     }
     .xl\:border-spacing-y {
       --tw-border-spacing-y: calc(var(--spacing) * var(--xl-border-spacing-y));
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .xl\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--xl-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
   }
 
@@ -143,11 +143,11 @@
       --tw-border-spacing-y: calc(
         var(--spacing) * var(--\32xl-border-spacing-y)
       );
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
     .\32xl\:\[border-spacing-y\] {
       --tw-border-spacing-y: var(--\32xl-border-spacing-y);
-      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
     }
   }
 }
