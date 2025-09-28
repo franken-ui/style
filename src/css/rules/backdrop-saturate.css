@@ -1,0 +1,35 @@
+@layer styles {
+  .backdrop-saturate {
+    backdrop-filter: saturate(--backdrop-saturate);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-saturate {
+      backdrop-filter: saturate(--sm-backdrop-saturate);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-saturate {
+      backdrop-filter: saturate(--md-backdrop-saturate);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-saturate {
+      backdrop-filter: saturate(--lg-backdrop-saturate);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-saturate {
+      backdrop-filter: saturate(--xl-backdrop-saturate);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-saturate {
+      backdrop-filter: saturate(--\32xl-backdrop-saturate);
+    }
+  }
+}

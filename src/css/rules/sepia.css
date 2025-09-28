@@ -1,0 +1,35 @@
+@layer styles {
+  .sepia {
+    filter: sepia(--sepia);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:sepia {
+      filter: sepia(--sm-sepia);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:sepia {
+      filter: sepia(--md-sepia);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:sepia {
+      filter: sepia(--lg-sepia);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:sepia {
+      filter: sepia(--xl-sepia);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:sepia {
+      filter: sepia(--\32xl-sepia);
+    }
+  }
+}

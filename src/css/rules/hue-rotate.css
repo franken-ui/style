@@ -1,0 +1,35 @@
+@layer styles {
+  .hue-rotate {
+    filter: hue-rotate(--hue-rotate);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:hue-rotate {
+      filter: hue-rotate(--sm-hue-rotate);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:hue-rotate {
+      filter: hue-rotate(--md-hue-rotate);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:hue-rotate {
+      filter: hue-rotate(--lg-hue-rotate);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:hue-rotate {
+      filter: hue-rotate(--xl-hue-rotate);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:hue-rotate {
+      filter: hue-rotate(--\32xl-hue-rotate);
+    }
+  }
+}

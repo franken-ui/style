@@ -1,0 +1,203 @@
+@layer utilities {
+  .backdrop-blur-xs {
+    filter: blur(var(--blur-xs));
+  }
+
+  .backdrop-blur-sm {
+    filter: blur(var(--blur-sm));
+  }
+
+  .backdrop-blur-md {
+    filter: blur(var(--blur-md));
+  }
+
+  .backdrop-blur-lg {
+    filter: blur(var(--blur-lg));
+  }
+
+  .backdrop-blur-xl {
+    filter: blur(var(--blur-xl));
+  }
+
+  .backdrop-blur-2xl {
+    filter: blur(var(--blur-2xl));
+  }
+
+  .backdrop-blur-3xl {
+    filter: blur(var(--blur-3xl));
+  }
+
+  .backdrop-blur-none {
+    filter: blur(0);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .sm\:backdrop-blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .sm\:backdrop-blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .sm\:backdrop-blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .sm\:backdrop-blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .sm\:backdrop-blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .sm\:backdrop-blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .sm\:backdrop-blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .md\:backdrop-blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .md\:backdrop-blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .md\:backdrop-blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .md\:backdrop-blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .md\:backdrop-blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .md\:backdrop-blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .md\:backdrop-blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .lg\:backdrop-blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .lg\:backdrop-blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .lg\:backdrop-blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .lg\:backdrop-blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .lg\:backdrop-blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .lg\:backdrop-blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .lg\:backdrop-blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .xl\:backdrop-blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .xl\:backdrop-blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .xl\:backdrop-blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .xl\:backdrop-blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .xl\:backdrop-blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .xl\:backdrop-blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .xl\:backdrop-blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .\32xl\:backdrop-blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .\32xl\:backdrop-blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .\32xl\:backdrop-blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .\32xl\:backdrop-blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .\32xl\:backdrop-blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .\32xl\:backdrop-blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .\32xl\:backdrop-blur-none {
+      filter: blur(0);
+    }
+  }
+}

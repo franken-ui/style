@@ -1,0 +1,35 @@
+@layer styles {
+  .backdrop-sepia {
+    backdrop-filter: sepia(--backdrop-sepia);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-sepia {
+      backdrop-filter: sepia(--sm-backdrop-sepia);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-sepia {
+      backdrop-filter: sepia(--md-backdrop-sepia);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-sepia {
+      backdrop-filter: sepia(--lg-backdrop-sepia);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-sepia {
+      backdrop-filter: sepia(--xl-backdrop-sepia);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-sepia {
+      backdrop-filter: sepia(--\32xl-backdrop-sepia);
+    }
+  }
+}

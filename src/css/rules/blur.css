@@ -1,0 +1,35 @@
+@layer styles {
+  .blur {
+    filter: blur(--blur);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:blur {
+      filter: blur(--sm-blur);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:blur {
+      filter: blur(--md-blur);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:blur {
+      filter: blur(--lg-blur);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:blur {
+      filter: blur(--xl-blur);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:blur {
+      filter: blur(--\32xl-blur);
+    }
+  }
+}

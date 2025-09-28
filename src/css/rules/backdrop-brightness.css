@@ -1,0 +1,35 @@
+@layer styles {
+  .backdrop-brightness {
+    backdrop-filter: brightness(--backdrop-brightness);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-brightness {
+      backdrop-filter: brightness(--sm-backdrop-brightness);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-brightness {
+      backdrop-filter: brightness(--md-backdrop-brightness);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-brightness {
+      backdrop-filter: brightness(--lg-backdrop-brightness);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-brightness {
+      backdrop-filter: brightness(--xl-backdrop-brightness);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-brightness {
+      backdrop-filter: brightness(--\32xl-backdrop-brightness);
+    }
+  }
+}

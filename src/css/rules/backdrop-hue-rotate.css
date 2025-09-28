@@ -1,0 +1,35 @@
+@layer styles {
+  .backdrop-hue-rotate {
+    backdrop-filter: hue-rotate(--backdrop-hue-rotate);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-hue-rotate {
+      backdrop-filter: hue-rotate(--sm-backdrop-hue-rotate);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-hue-rotate {
+      backdrop-filter: hue-rotate(--md-backdrop-hue-rotate);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-hue-rotate {
+      backdrop-filter: hue-rotate(--lg-backdrop-hue-rotate);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-hue-rotate {
+      backdrop-filter: hue-rotate(--xl-backdrop-hue-rotate);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-hue-rotate {
+      backdrop-filter: hue-rotate(--\32xl-backdrop-hue-rotate);
+    }
+  }
+}

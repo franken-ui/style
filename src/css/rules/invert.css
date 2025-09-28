@@ -1,0 +1,35 @@
+@layer styles {
+  .invert {
+    filter: invert(--invert);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:invert {
+      filter: invert(--sm-invert);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:invert {
+      filter: invert(--md-invert);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:invert {
+      filter: invert(--lg-invert);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:invert {
+      filter: invert(--xl-invert);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:invert {
+      filter: invert(--\32xl-invert);
+    }
+  }
+}

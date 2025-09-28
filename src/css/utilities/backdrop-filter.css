@@ -1,0 +1,35 @@
+@layer utilities {
+  .backdrop-filter-none {
+    backdrop-filter: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-filter-none {
+      backdrop-filter: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-filter-none {
+      backdrop-filter: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-filter-none {
+      backdrop-filter: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-filter-none {
+      backdrop-filter: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-filter-none {
+      backdrop-filter: none;
+    }
+  }
+}

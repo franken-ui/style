@@ -1,0 +1,35 @@
+@layer styles {
+  .backdrop-blur {
+    backdrop-filter: blur(--backdrop-blur);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-blur {
+      backdrop-filter: blur(--sm-backdrop-blur);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-blur {
+      backdrop-filter: blur(--md-backdrop-blur);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-blur {
+      backdrop-filter: blur(--lg-backdrop-blur);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-blur {
+      backdrop-filter: blur(--xl-backdrop-blur);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-blur {
+      backdrop-filter: blur(--\32xl-backdrop-blur);
+    }
+  }
+}

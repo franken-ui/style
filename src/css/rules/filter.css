@@ -1,0 +1,35 @@
+@layer styles {
+  .filter {
+    filter: var(--filter);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:filter {
+      filter: var(--sm-filter);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:filter {
+      filter: var(--md-filter);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:filter {
+      filter: var(--lg-filter);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:filter {
+      filter: var(--xl-filter);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:filter {
+      filter: var(--\32xl-filter);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer styles {
+  .contrast {
+    filter: contrast(--contrast);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:contrast {
+      filter: contrast(--sm-contrast);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:contrast {
+      filter: contrast(--md-contrast);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:contrast {
+      filter: contrast(--lg-contrast);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:contrast {
+      filter: contrast(--xl-contrast);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:contrast {
+      filter: contrast(--\32xl-contrast);
+    }
+  }
+}

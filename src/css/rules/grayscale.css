@@ -1,0 +1,35 @@
+@layer styles {
+  .grayscale {
+    filter: grayscale(--grayscale);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:grayscale {
+      filter: grayscale(--sm-grayscale);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:grayscale {
+      filter: grayscale(--md-grayscale);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:grayscale {
+      filter: grayscale(--lg-grayscale);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:grayscale {
+      filter: grayscale(--xl-grayscale);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:grayscale {
+      filter: grayscale(--\32xl-grayscale);
+    }
+  }
+}

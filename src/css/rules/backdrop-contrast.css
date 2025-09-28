@@ -1,0 +1,35 @@
+@layer styles {
+  .backdrop-contrast {
+    backdrop-filter: contrast(--backdrop-contrast);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:backdrop-contrast {
+      backdrop-filter: contrast(--sm-backdrop-contrast);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:backdrop-contrast {
+      backdrop-filter: contrast(--md-backdrop-contrast);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:backdrop-contrast {
+      backdrop-filter: contrast(--lg-backdrop-contrast);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:backdrop-contrast {
+      backdrop-filter: contrast(--xl-backdrop-contrast);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:backdrop-contrast {
+      backdrop-filter: contrast(--\32xl-backdrop-contrast);
+    }
+  }
+}
