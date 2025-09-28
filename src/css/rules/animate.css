@@ -1,0 +1,35 @@
+@layer styles {
+  .animate {
+    animation: var(--animate);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:animate {
+      animation: var(--sm-animate);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:animate {
+      animation: var(--md-animate);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:animate {
+      animation: var(--lg-animate);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:animate {
+      animation: var(--xl-animate);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:animate {
+      animation: var(--\32xl-animate);
+    }
+  }
+}

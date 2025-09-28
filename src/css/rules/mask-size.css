@@ -1,0 +1,35 @@
+@layer styles {
+  .mask-size {
+    mask-size: var(--mask-size);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-size {
+      mask-size: var(--sm-mask-size);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-size {
+      mask-size: var(--md-mask-size);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-size {
+      mask-size: var(--lg-mask-size);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-size {
+      mask-size: var(--xl-mask-size);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-size {
+      mask-size: var(--\32xl-mask-size);
+    }
+  }
+}

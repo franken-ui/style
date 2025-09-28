@@ -1,0 +1,83 @@
+@layer utilities {
+  .mask-auto {
+    mask-size: auto;
+  }
+
+  .mask-cover {
+    mask-size: cover;
+  }
+
+  .mask-contain {
+    mask-size: contain;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-auto {
+      mask-size: auto;
+    }
+
+    .sm\:mask-cover {
+      mask-size: cover;
+    }
+
+    .sm\:mask-contain {
+      mask-size: contain;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-auto {
+      mask-size: auto;
+    }
+
+    .md\:mask-cover {
+      mask-size: cover;
+    }
+
+    .md\:mask-contain {
+      mask-size: contain;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-auto {
+      mask-size: auto;
+    }
+
+    .lg\:mask-cover {
+      mask-size: cover;
+    }
+
+    .lg\:mask-contain {
+      mask-size: contain;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-auto {
+      mask-size: auto;
+    }
+
+    .xl\:mask-cover {
+      mask-size: cover;
+    }
+
+    .xl\:mask-contain {
+      mask-size: contain;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-auto {
+      mask-size: auto;
+    }
+
+    .\32xl\:mask-cover {
+      mask-size: cover;
+    }
+
+    .\32xl\:mask-contain {
+      mask-size: contain;
+    }
+  }
+}

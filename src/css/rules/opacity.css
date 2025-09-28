@@ -1,0 +1,35 @@
+@layer styles {
+  .opacity {
+    opacity: var(--opacity);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:opacity {
+      opacity: var(--sm-opacity);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:opacity {
+      opacity: var(--md-opacity);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:opacity {
+      opacity: var(--lg-opacity);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:opacity {
+      opacity: var(--xl-opacity);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:opacity {
+      opacity: var(--\32xl-opacity);
+    }
+  }
+}

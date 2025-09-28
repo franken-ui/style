@@ -1,0 +1,35 @@
+@layer utilities {
+  .duration-initial {
+    transition-duration: initial;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:duration-initial {
+      transition-duration: initial;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:duration-initial {
+      transition-duration: initial;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:duration-initial {
+      transition-duration: initial;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:duration-initial {
+      transition-duration: initial;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:duration-initial {
+      transition-duration: initial;
+    }
+  }
+}

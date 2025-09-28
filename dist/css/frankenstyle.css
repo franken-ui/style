@@ -448,6 +448,35 @@
     inherits: false;
     initial-value: solid;
   }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes ping {
+    75%,
+    to {
+      opacity: 0;
+      transform: scale(2);
+    }
+  }
+  @keyframes pulse {
+    50% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes bounce {
+    0%,
+    to {
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      transform: translateY(-25%);
+    }
+    50% {
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      transform: none;
+    }
+  }
 }
 @layer base {
   progress,
@@ -637,6 +666,9 @@
 }
 
 @layer styles {
+  .animate {
+    animation: var(--animate);
+  }
   .aspect {
     aspect-ratio: var(--aspect);
   }
@@ -957,6 +989,28 @@
   .rounded-bl {
     border-bottom-left-radius: var(--rounded-bl);
   }
+  .border-spacing {
+    border-spacing: calc(var(--spacing) * var(--border-spacing));
+  }
+  .\[border-spacing\] {
+    border-spacing: var(--border-spacing);
+  }
+  .border-spacing-x {
+    --tw-border-spacing-x: calc(var(--spacing) * var(--border-spacing-x));
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+  }
+  .\[border-spacing-x\] {
+    --tw-border-spacing-x: var(--border-spacing-x);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+  }
+  .border-spacing-y {
+    --tw-border-spacing-y: calc(var(--spacing) * var(--border-spacing-y));
+    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+  }
+  .\[border-spacing-y\] {
+    --tw-border-spacing-y: var(--border-spacing-y);
+    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+  }
   .bottom {
     bottom: calc(var(--spacing) * var(--bottom));
   }
@@ -1230,6 +1284,12 @@
   .\[my\] {
     margin-block: var(--my);
   }
+  .mask-position {
+    mask-position: var(--mask-position);
+  }
+  .mask-size {
+    mask-size: var(--mask-size);
+  }
   .max-h {
     max-height: calc(var(--spacing) * var(--max-h));
   }
@@ -1256,6 +1316,9 @@
   }
   .object-position {
     object-position: var(--object-position);
+  }
+  .opacity {
+    opacity: var(--opacity);
   }
   .order {
     order: var(--order);
@@ -1445,6 +1508,20 @@
   .\[top\] {
     top: var(--top);
   }
+  .delay {
+    transition-delay: var(--delay);
+  }
+  .duration {
+    transition-duration: var(--duration);
+  }
+  .\[transition\] {
+    transition-property: var(--transition);
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  .ease {
+    transition-timing-function: var(--ease);
+  }
   .align {
     vertical-align: var(--align);
   }
@@ -1505,6 +1582,9 @@
     z-index: var(--z);
   }
   @media (min-width: 40rem) {
+    .sm\:animate {
+      animation: var(--sm-animate);
+    }
     .sm\:aspect {
       aspect-ratio: var(--sm-aspect);
     }
@@ -1825,6 +1905,28 @@
     .sm\:rounded-bl {
       border-bottom-left-radius: var(--sm-rounded-bl);
     }
+    .sm\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--sm-border-spacing));
+    }
+    .sm\:\[border-spacing\] {
+      border-spacing: var(--sm-border-spacing);
+    }
+    .sm\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--sm-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .sm\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--sm-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .sm\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--sm-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .sm\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--sm-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
     .sm\:bottom {
       bottom: calc(var(--spacing) * var(--sm-bottom));
     }
@@ -2102,6 +2204,12 @@
     .sm\:\[my\] {
       margin-block: var(--sm-my);
     }
+    .sm\:mask-position {
+      mask-position: var(--sm-mask-position);
+    }
+    .sm\:mask-size {
+      mask-size: var(--sm-mask-size);
+    }
     .sm\:max-h {
       max-height: calc(var(--spacing) * var(--sm-max-h));
     }
@@ -2128,6 +2236,9 @@
     }
     .sm\:object-position {
       object-position: var(--sm-object-position);
+    }
+    .sm\:opacity {
+      opacity: var(--sm-opacity);
     }
     .sm\:order {
       order: var(--sm-order);
@@ -2317,6 +2428,20 @@
     .sm\:\[top\] {
       top: var(--sm-top);
     }
+    .sm\:delay {
+      transition-delay: var(--sm-delay);
+    }
+    .sm\:duration {
+      transition-duration: var(--sm-duration);
+    }
+    .sm\:\[transition\] {
+      transition-property: var(--sm-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .sm\:ease {
+      transition-timing-function: var(--sm-ease);
+    }
     .sm\:align {
       vertical-align: var(--sm-align);
     }
@@ -2378,6 +2503,9 @@
     }
   }
   @media (min-width: 48rem) {
+    .md\:animate {
+      animation: var(--md-animate);
+    }
     .md\:aspect {
       aspect-ratio: var(--md-aspect);
     }
@@ -2698,6 +2826,28 @@
     .md\:rounded-bl {
       border-bottom-left-radius: var(--md-rounded-bl);
     }
+    .md\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--md-border-spacing));
+    }
+    .md\:\[border-spacing\] {
+      border-spacing: var(--md-border-spacing);
+    }
+    .md\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--md-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .md\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--md-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .md\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--md-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .md\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--md-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
     .md\:bottom {
       bottom: calc(var(--spacing) * var(--md-bottom));
     }
@@ -2975,6 +3125,12 @@
     .md\:\[my\] {
       margin-block: var(--md-my);
     }
+    .md\:mask-position {
+      mask-position: var(--md-mask-position);
+    }
+    .md\:mask-size {
+      mask-size: var(--md-mask-size);
+    }
     .md\:max-h {
       max-height: calc(var(--spacing) * var(--md-max-h));
     }
@@ -3001,6 +3157,9 @@
     }
     .md\:object-position {
       object-position: var(--md-object-position);
+    }
+    .md\:opacity {
+      opacity: var(--md-opacity);
     }
     .md\:order {
       order: var(--md-order);
@@ -3190,6 +3349,20 @@
     .md\:\[top\] {
       top: var(--md-top);
     }
+    .md\:delay {
+      transition-delay: var(--md-delay);
+    }
+    .md\:duration {
+      transition-duration: var(--md-duration);
+    }
+    .md\:\[transition\] {
+      transition-property: var(--md-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .md\:ease {
+      transition-timing-function: var(--md-ease);
+    }
     .md\:align {
       vertical-align: var(--md-align);
     }
@@ -3251,6 +3424,9 @@
     }
   }
   @media (min-width: 64rem) {
+    .lg\:animate {
+      animation: var(--lg-animate);
+    }
     .lg\:aspect {
       aspect-ratio: var(--lg-aspect);
     }
@@ -3571,6 +3747,28 @@
     .lg\:rounded-bl {
       border-bottom-left-radius: var(--lg-rounded-bl);
     }
+    .lg\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--lg-border-spacing));
+    }
+    .lg\:\[border-spacing\] {
+      border-spacing: var(--lg-border-spacing);
+    }
+    .lg\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--lg-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .lg\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--lg-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .lg\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--lg-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .lg\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--lg-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
     .lg\:bottom {
       bottom: calc(var(--spacing) * var(--lg-bottom));
     }
@@ -3848,6 +4046,12 @@
     .lg\:\[my\] {
       margin-block: var(--lg-my);
     }
+    .lg\:mask-position {
+      mask-position: var(--lg-mask-position);
+    }
+    .lg\:mask-size {
+      mask-size: var(--lg-mask-size);
+    }
     .lg\:max-h {
       max-height: calc(var(--spacing) * var(--lg-max-h));
     }
@@ -3874,6 +4078,9 @@
     }
     .lg\:object-position {
       object-position: var(--lg-object-position);
+    }
+    .lg\:opacity {
+      opacity: var(--lg-opacity);
     }
     .lg\:order {
       order: var(--lg-order);
@@ -4063,6 +4270,20 @@
     .lg\:\[top\] {
       top: var(--lg-top);
     }
+    .lg\:delay {
+      transition-delay: var(--lg-delay);
+    }
+    .lg\:duration {
+      transition-duration: var(--lg-duration);
+    }
+    .lg\:\[transition\] {
+      transition-property: var(--lg-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .lg\:ease {
+      transition-timing-function: var(--lg-ease);
+    }
     .lg\:align {
       vertical-align: var(--lg-align);
     }
@@ -4124,6 +4345,9 @@
     }
   }
   @media (min-width: 80rem) {
+    .xl\:animate {
+      animation: var(--xl-animate);
+    }
     .xl\:aspect {
       aspect-ratio: var(--xl-aspect);
     }
@@ -4444,6 +4668,28 @@
     .xl\:rounded-bl {
       border-bottom-left-radius: var(--xl-rounded-bl);
     }
+    .xl\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--xl-border-spacing));
+    }
+    .xl\:\[border-spacing\] {
+      border-spacing: var(--xl-border-spacing);
+    }
+    .xl\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--xl-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .xl\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--xl-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .xl\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--xl-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .xl\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--xl-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
     .xl\:bottom {
       bottom: calc(var(--spacing) * var(--xl-bottom));
     }
@@ -4721,6 +4967,12 @@
     .xl\:\[my\] {
       margin-block: var(--xl-my);
     }
+    .xl\:mask-position {
+      mask-position: var(--xl-mask-position);
+    }
+    .xl\:mask-size {
+      mask-size: var(--xl-mask-size);
+    }
     .xl\:max-h {
       max-height: calc(var(--spacing) * var(--xl-max-h));
     }
@@ -4747,6 +4999,9 @@
     }
     .xl\:object-position {
       object-position: var(--xl-object-position);
+    }
+    .xl\:opacity {
+      opacity: var(--xl-opacity);
     }
     .xl\:order {
       order: var(--xl-order);
@@ -4936,6 +5191,20 @@
     .xl\:\[top\] {
       top: var(--xl-top);
     }
+    .xl\:delay {
+      transition-delay: var(--xl-delay);
+    }
+    .xl\:duration {
+      transition-duration: var(--xl-duration);
+    }
+    .xl\:\[transition\] {
+      transition-property: var(--xl-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .xl\:ease {
+      transition-timing-function: var(--xl-ease);
+    }
     .xl\:align {
       vertical-align: var(--xl-align);
     }
@@ -4997,6 +5266,9 @@
     }
   }
   @media (min-width: 96rem) {
+    .\32xl\:animate {
+      animation: var(--\32xl-animate);
+    }
     .\32xl\:aspect {
       aspect-ratio: var(--\32xl-aspect);
     }
@@ -5317,6 +5589,32 @@
     .\32xl\:rounded-bl {
       border-bottom-left-radius: var(--\32xl-rounded-bl);
     }
+    .\32xl\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--\32xl-border-spacing));
+    }
+    .\32xl\:\[border-spacing\] {
+      border-spacing: var(--\32xl-border-spacing);
+    }
+    .\32xl\:border-spacing-x {
+      --tw-border-spacing-x: calc(
+        var(--spacing) * var(--\32xl-border-spacing-x)
+      );
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .\32xl\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--\32xl-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .\32xl\:border-spacing-y {
+      --tw-border-spacing-y: calc(
+        var(--spacing) * var(--\32xl-border-spacing-y)
+      );
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .\32xl\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--\32xl-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
     .\32xl\:bottom {
       bottom: calc(var(--spacing) * var(--\32xl-bottom));
     }
@@ -5594,6 +5892,12 @@
     .\32xl\:\[my\] {
       margin-block: var(--\32xl-my);
     }
+    .\32xl\:mask-position {
+      mask-position: var(--\32xl-mask-position);
+    }
+    .\32xl\:mask-size {
+      mask-size: var(--\32xl-mask-size);
+    }
     .\32xl\:max-h {
       max-height: calc(var(--spacing) * var(--\32xl-max-h));
     }
@@ -5620,6 +5924,9 @@
     }
     .\32xl\:object-position {
       object-position: var(--\32xl-object-position);
+    }
+    .\32xl\:opacity {
+      opacity: var(--\32xl-opacity);
     }
     .\32xl\:order {
       order: var(--\32xl-order);
@@ -5809,6 +6116,20 @@
     .\32xl\:\[top\] {
       top: var(--\32xl-top);
     }
+    .\32xl\:delay {
+      transition-delay: var(--\32xl-delay);
+    }
+    .\32xl\:duration {
+      transition-duration: var(--\32xl-duration);
+    }
+    .\32xl\:\[transition\] {
+      transition-property: var(--\32xl-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:ease {
+      transition-timing-function: var(--\32xl-ease);
+    }
     .\32xl\:align {
       vertical-align: var(--\32xl-align);
     }
@@ -5949,6 +6270,21 @@
   }
   .self-baseline-last {
     align-self: last baseline;
+  }
+  .animate-spin {
+    animation: var(--animate-spin);
+  }
+  .animate-ping {
+    animation: var(--animate-ping);
+  }
+  .animate-pulse {
+    animation: var(--animate-pulse);
+  }
+  .animate-bounce {
+    animation: var(--animate-bounce);
+  }
+  .animate-none {
+    animation: none;
   }
   .appearance-none {
     appearance: none;
@@ -7660,6 +7996,33 @@
   .mask-origin-view {
     mask-origin: view-box;
   }
+  .mask-top-left {
+    mask-position: top left;
+  }
+  .mask-top {
+    mask-position: top;
+  }
+  .mask-top-right {
+    mask-position: top right;
+  }
+  .mask-left {
+    mask-position: left;
+  }
+  .mask-center {
+    mask-position: center;
+  }
+  .mask-right {
+    mask-position: right;
+  }
+  .mask-bottom-left {
+    mask-position: bottom left;
+  }
+  .mask-bottom {
+    mask-position: bottom;
+  }
+  .mask-bottom-right {
+    mask-position: bottom right;
+  }
   .mask-repeat {
     mask-repeat: repeat;
   }
@@ -7677,6 +8040,15 @@
   }
   .mask-repeat-round {
     mask-repeat: round;
+  }
+  .mask-auto {
+    mask-size: auto;
+  }
+  .mask-cover {
+    mask-size: cover;
+  }
+  .mask-contain {
+    mask-size: contain;
   }
   .mask-type-alpha {
     mask-type: alpha;
@@ -8473,6 +8845,83 @@
   .transition-discrete {
     transition-behavior: allow-discrete;
   }
+  .duration-initial {
+    transition-duration: initial;
+  }
+  .transition {
+    transition-property:
+      color,
+      background-color,
+      border-color,
+      outline-color,
+      text-decoration-color,
+      fill,
+      stroke,
+      --tw-gradient-from,
+      --tw-gradient-via,
+      --tw-gradient-to,
+      opacity,
+      box-shadow,
+      transform,
+      translate,
+      scale,
+      rotate,
+      filter,
+      -webkit-backdrop-filter,
+      backdrop-filter,
+      display,
+      content-visibility,
+      overlay,
+      pointer-events;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  .transition-colors {
+    transition-property:
+      color, background-color, border-color, outline-color,
+      text-decoration-color, fill, stroke, --tw-gradient-from,
+      --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  .transition-shadow {
+    transition-property: box-shadow;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  .transition-none {
+    transition-property: none;
+  }
+  .ease-linear {
+    transition-timing-function: linear;
+  }
+  .ease-in {
+    transition-timing-function: var(--ease-in);
+  }
+  .ease-out {
+    transition-timing-function: var(--ease-out);
+  }
+  .ease-in-out {
+    transition-timing-function: var(--ease-in-out);
+  }
+  .ease-initial {
+    transition-timing-function: initial;
+  }
   .select-none {
     user-select: none;
   }
@@ -8705,6 +9154,21 @@
     }
     .sm\:self-baseline-last {
       align-self: last baseline;
+    }
+    .sm\:animate-spin {
+      animation: var(--animate-spin);
+    }
+    .sm\:animate-ping {
+      animation: var(--animate-ping);
+    }
+    .sm\:animate-pulse {
+      animation: var(--animate-pulse);
+    }
+    .sm\:animate-bounce {
+      animation: var(--animate-bounce);
+    }
+    .sm\:animate-none {
+      animation: none;
     }
     .sm\:appearance-none {
       appearance: none;
@@ -10416,6 +10880,33 @@
     .sm\:mask-origin-view {
       mask-origin: view-box;
     }
+    .sm\:mask-top-left {
+      mask-position: top left;
+    }
+    .sm\:mask-top {
+      mask-position: top;
+    }
+    .sm\:mask-top-right {
+      mask-position: top right;
+    }
+    .sm\:mask-left {
+      mask-position: left;
+    }
+    .sm\:mask-center {
+      mask-position: center;
+    }
+    .sm\:mask-right {
+      mask-position: right;
+    }
+    .sm\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+    .sm\:mask-bottom {
+      mask-position: bottom;
+    }
+    .sm\:mask-bottom-right {
+      mask-position: bottom right;
+    }
     .sm\:mask-repeat {
       mask-repeat: repeat;
     }
@@ -10433,6 +10924,15 @@
     }
     .sm\:mask-repeat-round {
       mask-repeat: round;
+    }
+    .sm\:mask-auto {
+      mask-size: auto;
+    }
+    .sm\:mask-cover {
+      mask-size: cover;
+    }
+    .sm\:mask-contain {
+      mask-size: contain;
     }
     .sm\:mask-type-alpha {
       mask-type: alpha;
@@ -11229,6 +11729,83 @@
     .sm\:transition-discrete {
       transition-behavior: allow-discrete;
     }
+    .sm\:duration-initial {
+      transition-duration: initial;
+    }
+    .sm\:transition {
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        --tw-gradient-from,
+        --tw-gradient-via,
+        --tw-gradient-to,
+        opacity,
+        box-shadow,
+        transform,
+        translate,
+        scale,
+        rotate,
+        filter,
+        -webkit-backdrop-filter,
+        backdrop-filter,
+        display,
+        content-visibility,
+        overlay,
+        pointer-events;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .sm\:transition-all {
+      transition-property: all;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .sm\:transition-colors {
+      transition-property:
+        color, background-color, border-color, outline-color,
+        text-decoration-color, fill, stroke, --tw-gradient-from,
+        --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .sm\:transition-opacity {
+      transition-property: opacity;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .sm\:transition-shadow {
+      transition-property: box-shadow;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .sm\:transition-transform {
+      transition-property: transform, translate, scale, rotate;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .sm\:transition-none {
+      transition-property: none;
+    }
+    .sm\:ease-linear {
+      transition-timing-function: linear;
+    }
+    .sm\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+    .sm\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+    .sm\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+    .sm\:ease-initial {
+      transition-timing-function: initial;
+    }
     .sm\:select-none {
       user-select: none;
     }
@@ -11462,6 +12039,21 @@
     }
     .md\:self-baseline-last {
       align-self: last baseline;
+    }
+    .md\:animate-spin {
+      animation: var(--animate-spin);
+    }
+    .md\:animate-ping {
+      animation: var(--animate-ping);
+    }
+    .md\:animate-pulse {
+      animation: var(--animate-pulse);
+    }
+    .md\:animate-bounce {
+      animation: var(--animate-bounce);
+    }
+    .md\:animate-none {
+      animation: none;
     }
     .md\:appearance-none {
       appearance: none;
@@ -13173,6 +13765,33 @@
     .md\:mask-origin-view {
       mask-origin: view-box;
     }
+    .md\:mask-top-left {
+      mask-position: top left;
+    }
+    .md\:mask-top {
+      mask-position: top;
+    }
+    .md\:mask-top-right {
+      mask-position: top right;
+    }
+    .md\:mask-left {
+      mask-position: left;
+    }
+    .md\:mask-center {
+      mask-position: center;
+    }
+    .md\:mask-right {
+      mask-position: right;
+    }
+    .md\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+    .md\:mask-bottom {
+      mask-position: bottom;
+    }
+    .md\:mask-bottom-right {
+      mask-position: bottom right;
+    }
     .md\:mask-repeat {
       mask-repeat: repeat;
     }
@@ -13190,6 +13809,15 @@
     }
     .md\:mask-repeat-round {
       mask-repeat: round;
+    }
+    .md\:mask-auto {
+      mask-size: auto;
+    }
+    .md\:mask-cover {
+      mask-size: cover;
+    }
+    .md\:mask-contain {
+      mask-size: contain;
     }
     .md\:mask-type-alpha {
       mask-type: alpha;
@@ -13986,6 +14614,83 @@
     .md\:transition-discrete {
       transition-behavior: allow-discrete;
     }
+    .md\:duration-initial {
+      transition-duration: initial;
+    }
+    .md\:transition {
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        --tw-gradient-from,
+        --tw-gradient-via,
+        --tw-gradient-to,
+        opacity,
+        box-shadow,
+        transform,
+        translate,
+        scale,
+        rotate,
+        filter,
+        -webkit-backdrop-filter,
+        backdrop-filter,
+        display,
+        content-visibility,
+        overlay,
+        pointer-events;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .md\:transition-all {
+      transition-property: all;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .md\:transition-colors {
+      transition-property:
+        color, background-color, border-color, outline-color,
+        text-decoration-color, fill, stroke, --tw-gradient-from,
+        --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .md\:transition-opacity {
+      transition-property: opacity;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .md\:transition-shadow {
+      transition-property: box-shadow;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .md\:transition-transform {
+      transition-property: transform, translate, scale, rotate;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .md\:transition-none {
+      transition-property: none;
+    }
+    .md\:ease-linear {
+      transition-timing-function: linear;
+    }
+    .md\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+    .md\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+    .md\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+    .md\:ease-initial {
+      transition-timing-function: initial;
+    }
     .md\:select-none {
       user-select: none;
     }
@@ -14219,6 +14924,21 @@
     }
     .lg\:self-baseline-last {
       align-self: last baseline;
+    }
+    .lg\:animate-spin {
+      animation: var(--animate-spin);
+    }
+    .lg\:animate-ping {
+      animation: var(--animate-ping);
+    }
+    .lg\:animate-pulse {
+      animation: var(--animate-pulse);
+    }
+    .lg\:animate-bounce {
+      animation: var(--animate-bounce);
+    }
+    .lg\:animate-none {
+      animation: none;
     }
     .lg\:appearance-none {
       appearance: none;
@@ -15930,6 +16650,33 @@
     .lg\:mask-origin-view {
       mask-origin: view-box;
     }
+    .lg\:mask-top-left {
+      mask-position: top left;
+    }
+    .lg\:mask-top {
+      mask-position: top;
+    }
+    .lg\:mask-top-right {
+      mask-position: top right;
+    }
+    .lg\:mask-left {
+      mask-position: left;
+    }
+    .lg\:mask-center {
+      mask-position: center;
+    }
+    .lg\:mask-right {
+      mask-position: right;
+    }
+    .lg\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+    .lg\:mask-bottom {
+      mask-position: bottom;
+    }
+    .lg\:mask-bottom-right {
+      mask-position: bottom right;
+    }
     .lg\:mask-repeat {
       mask-repeat: repeat;
     }
@@ -15947,6 +16694,15 @@
     }
     .lg\:mask-repeat-round {
       mask-repeat: round;
+    }
+    .lg\:mask-auto {
+      mask-size: auto;
+    }
+    .lg\:mask-cover {
+      mask-size: cover;
+    }
+    .lg\:mask-contain {
+      mask-size: contain;
     }
     .lg\:mask-type-alpha {
       mask-type: alpha;
@@ -16743,6 +17499,83 @@
     .lg\:transition-discrete {
       transition-behavior: allow-discrete;
     }
+    .lg\:duration-initial {
+      transition-duration: initial;
+    }
+    .lg\:transition {
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        --tw-gradient-from,
+        --tw-gradient-via,
+        --tw-gradient-to,
+        opacity,
+        box-shadow,
+        transform,
+        translate,
+        scale,
+        rotate,
+        filter,
+        -webkit-backdrop-filter,
+        backdrop-filter,
+        display,
+        content-visibility,
+        overlay,
+        pointer-events;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .lg\:transition-all {
+      transition-property: all;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .lg\:transition-colors {
+      transition-property:
+        color, background-color, border-color, outline-color,
+        text-decoration-color, fill, stroke, --tw-gradient-from,
+        --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .lg\:transition-opacity {
+      transition-property: opacity;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .lg\:transition-shadow {
+      transition-property: box-shadow;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .lg\:transition-transform {
+      transition-property: transform, translate, scale, rotate;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .lg\:transition-none {
+      transition-property: none;
+    }
+    .lg\:ease-linear {
+      transition-timing-function: linear;
+    }
+    .lg\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+    .lg\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+    .lg\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+    .lg\:ease-initial {
+      transition-timing-function: initial;
+    }
     .lg\:select-none {
       user-select: none;
     }
@@ -16976,6 +17809,21 @@
     }
     .xl\:self-baseline-last {
       align-self: last baseline;
+    }
+    .xl\:animate-spin {
+      animation: var(--animate-spin);
+    }
+    .xl\:animate-ping {
+      animation: var(--animate-ping);
+    }
+    .xl\:animate-pulse {
+      animation: var(--animate-pulse);
+    }
+    .xl\:animate-bounce {
+      animation: var(--animate-bounce);
+    }
+    .xl\:animate-none {
+      animation: none;
     }
     .xl\:appearance-none {
       appearance: none;
@@ -18687,6 +19535,33 @@
     .xl\:mask-origin-view {
       mask-origin: view-box;
     }
+    .xl\:mask-top-left {
+      mask-position: top left;
+    }
+    .xl\:mask-top {
+      mask-position: top;
+    }
+    .xl\:mask-top-right {
+      mask-position: top right;
+    }
+    .xl\:mask-left {
+      mask-position: left;
+    }
+    .xl\:mask-center {
+      mask-position: center;
+    }
+    .xl\:mask-right {
+      mask-position: right;
+    }
+    .xl\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+    .xl\:mask-bottom {
+      mask-position: bottom;
+    }
+    .xl\:mask-bottom-right {
+      mask-position: bottom right;
+    }
     .xl\:mask-repeat {
       mask-repeat: repeat;
     }
@@ -18704,6 +19579,15 @@
     }
     .xl\:mask-repeat-round {
       mask-repeat: round;
+    }
+    .xl\:mask-auto {
+      mask-size: auto;
+    }
+    .xl\:mask-cover {
+      mask-size: cover;
+    }
+    .xl\:mask-contain {
+      mask-size: contain;
     }
     .xl\:mask-type-alpha {
       mask-type: alpha;
@@ -19500,6 +20384,83 @@
     .xl\:transition-discrete {
       transition-behavior: allow-discrete;
     }
+    .xl\:duration-initial {
+      transition-duration: initial;
+    }
+    .xl\:transition {
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        --tw-gradient-from,
+        --tw-gradient-via,
+        --tw-gradient-to,
+        opacity,
+        box-shadow,
+        transform,
+        translate,
+        scale,
+        rotate,
+        filter,
+        -webkit-backdrop-filter,
+        backdrop-filter,
+        display,
+        content-visibility,
+        overlay,
+        pointer-events;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .xl\:transition-all {
+      transition-property: all;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .xl\:transition-colors {
+      transition-property:
+        color, background-color, border-color, outline-color,
+        text-decoration-color, fill, stroke, --tw-gradient-from,
+        --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .xl\:transition-opacity {
+      transition-property: opacity;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .xl\:transition-shadow {
+      transition-property: box-shadow;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .xl\:transition-transform {
+      transition-property: transform, translate, scale, rotate;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .xl\:transition-none {
+      transition-property: none;
+    }
+    .xl\:ease-linear {
+      transition-timing-function: linear;
+    }
+    .xl\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+    .xl\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+    .xl\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+    .xl\:ease-initial {
+      transition-timing-function: initial;
+    }
     .xl\:select-none {
       user-select: none;
     }
@@ -19733,6 +20694,21 @@
     }
     .\32xl\:self-baseline-last {
       align-self: last baseline;
+    }
+    .\32xl\:animate-spin {
+      animation: var(--animate-spin);
+    }
+    .\32xl\:animate-ping {
+      animation: var(--animate-ping);
+    }
+    .\32xl\:animate-pulse {
+      animation: var(--animate-pulse);
+    }
+    .\32xl\:animate-bounce {
+      animation: var(--animate-bounce);
+    }
+    .\32xl\:animate-none {
+      animation: none;
     }
     .\32xl\:appearance-none {
       appearance: none;
@@ -21444,6 +22420,33 @@
     .\32xl\:mask-origin-view {
       mask-origin: view-box;
     }
+    .\32xl\:mask-top-left {
+      mask-position: top left;
+    }
+    .\32xl\:mask-top {
+      mask-position: top;
+    }
+    .\32xl\:mask-top-right {
+      mask-position: top right;
+    }
+    .\32xl\:mask-left {
+      mask-position: left;
+    }
+    .\32xl\:mask-center {
+      mask-position: center;
+    }
+    .\32xl\:mask-right {
+      mask-position: right;
+    }
+    .\32xl\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+    .\32xl\:mask-bottom {
+      mask-position: bottom;
+    }
+    .\32xl\:mask-bottom-right {
+      mask-position: bottom right;
+    }
     .\32xl\:mask-repeat {
       mask-repeat: repeat;
     }
@@ -21461,6 +22464,15 @@
     }
     .\32xl\:mask-repeat-round {
       mask-repeat: round;
+    }
+    .\32xl\:mask-auto {
+      mask-size: auto;
+    }
+    .\32xl\:mask-cover {
+      mask-size: cover;
+    }
+    .\32xl\:mask-contain {
+      mask-size: contain;
     }
     .\32xl\:mask-type-alpha {
       mask-type: alpha;
@@ -22256,6 +23268,83 @@
     }
     .\32xl\:transition-discrete {
       transition-behavior: allow-discrete;
+    }
+    .\32xl\:duration-initial {
+      transition-duration: initial;
+    }
+    .\32xl\:transition {
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        --tw-gradient-from,
+        --tw-gradient-via,
+        --tw-gradient-to,
+        opacity,
+        box-shadow,
+        transform,
+        translate,
+        scale,
+        rotate,
+        filter,
+        -webkit-backdrop-filter,
+        backdrop-filter,
+        display,
+        content-visibility,
+        overlay,
+        pointer-events;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:transition-all {
+      transition-property: all;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:transition-colors {
+      transition-property:
+        color, background-color, border-color, outline-color,
+        text-decoration-color, fill, stroke, --tw-gradient-from,
+        --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:transition-opacity {
+      transition-property: opacity;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:transition-shadow {
+      transition-property: box-shadow;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:transition-transform {
+      transition-property: transform, translate, scale, rotate;
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:transition-none {
+      transition-property: none;
+    }
+    .\32xl\:ease-linear {
+      transition-timing-function: linear;
+    }
+    .\32xl\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+    .\32xl\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+    .\32xl\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+    .\32xl\:ease-initial {
+      transition-timing-function: initial;
     }
     .\32xl\:select-none {
       user-select: none;

@@ -1,0 +1,47 @@
+@layer styles {
+  .\[transition\] {
+    transition-property: var(--transition);
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:\[transition\] {
+      transition-property: var(--sm-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:\[transition\] {
+      transition-property: var(--md-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:\[transition\] {
+      transition-property: var(--lg-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:\[transition\] {
+      transition-property: var(--xl-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:\[transition\] {
+      transition-property: var(--\32xl-transition);
+      transition-timing-function: var(--default-transition-timing-function);
+      transition-duration: var(--default-transition-duration);
+    }
+  }
+}

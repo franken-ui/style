@@ -1,0 +1,153 @@
+@layer styles {
+  .border-spacing {
+    border-spacing: calc(var(--spacing) * var(--border-spacing));
+  }
+  .\[border-spacing\] {
+    border-spacing: var(--border-spacing);
+  }
+  .border-spacing-x {
+    --tw-border-spacing-x: calc(var(--spacing) * var(--border-spacing-x));
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+  }
+  .\[border-spacing-x\] {
+    --tw-border-spacing-x: var(--border-spacing-x);
+    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+  }
+  .border-spacing-y {
+    --tw-border-spacing-y: calc(var(--spacing) * var(--border-spacing-y));
+    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+  }
+  .\[border-spacing-y\] {
+    --tw-border-spacing-y: var(--border-spacing-y);
+    border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--sm-border-spacing));
+    }
+    .sm\:\[border-spacing\] {
+      border-spacing: var(--sm-border-spacing);
+    }
+    .sm\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--sm-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .sm\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--sm-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .sm\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--sm-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .sm\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--sm-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--md-border-spacing));
+    }
+    .md\:\[border-spacing\] {
+      border-spacing: var(--md-border-spacing);
+    }
+    .md\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--md-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .md\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--md-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .md\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--md-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .md\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--md-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--lg-border-spacing));
+    }
+    .lg\:\[border-spacing\] {
+      border-spacing: var(--lg-border-spacing);
+    }
+    .lg\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--lg-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .lg\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--lg-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .lg\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--lg-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .lg\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--lg-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--xl-border-spacing));
+    }
+    .xl\:\[border-spacing\] {
+      border-spacing: var(--xl-border-spacing);
+    }
+    .xl\:border-spacing-x {
+      --tw-border-spacing-x: calc(var(--spacing) * var(--xl-border-spacing-x));
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .xl\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--xl-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .xl\:border-spacing-y {
+      --tw-border-spacing-y: calc(var(--spacing) * var(--xl-border-spacing-y));
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .xl\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--xl-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:border-spacing {
+      border-spacing: calc(var(--spacing) * var(--\32xl-border-spacing));
+    }
+    .\32xl\:\[border-spacing\] {
+      border-spacing: var(--\32xl-border-spacing);
+    }
+    .\32xl\:border-spacing-x {
+      --tw-border-spacing-x: calc(
+        var(--spacing) * var(--\32xl-border-spacing-x)
+      );
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .\32xl\:\[border-spacing-x\] {
+      --tw-border-spacing-x: var(--\32xl-border-spacing-x);
+      border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+    }
+    .\32xl\:border-spacing-y {
+      --tw-border-spacing-y: calc(
+        var(--spacing) * var(--\32xl-border-spacing-y)
+      );
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+    .\32xl\:\[border-spacing-y\] {
+      --tw-border-spacing-y: var(--\32xl-border-spacing-y);
+      border-spacing: var(--tw-border-spacing-y) var(--tw-border-spacing-y);
+    }
+  }
+}

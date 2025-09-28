@@ -1,0 +1,35 @@
+@layer styles {
+  .mask-position {
+    mask-position: var(--mask-position);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-position {
+      mask-position: var(--sm-mask-position);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-position {
+      mask-position: var(--md-mask-position);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-position {
+      mask-position: var(--lg-mask-position);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-position {
+      mask-position: var(--xl-mask-position);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-position {
+      mask-position: var(--\32xl-mask-position);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer styles {
+  .duration {
+    transition-duration: var(--duration);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:duration {
+      transition-duration: var(--sm-duration);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:duration {
+      transition-duration: var(--md-duration);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:duration {
+      transition-duration: var(--lg-duration);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:duration {
+      transition-duration: var(--xl-duration);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:duration {
+      transition-duration: var(--\32xl-duration);
+    }
+  }
+}

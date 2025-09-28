@@ -1,0 +1,131 @@
+@layer utilities {
+  .ease-linear {
+    transition-timing-function: linear;
+  }
+
+  .ease-in {
+    transition-timing-function: var(--ease-in);
+  }
+
+  .ease-out {
+    transition-timing-function: var(--ease-out);
+  }
+
+  .ease-in-out {
+    transition-timing-function: var(--ease-in-out);
+  }
+
+  .ease-initial {
+    transition-timing-function: initial;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .sm\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+
+    .sm\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+
+    .sm\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+
+    .sm\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .md\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+
+    .md\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+
+    .md\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+
+    .md\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .lg\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+
+    .lg\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+
+    .lg\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+
+    .lg\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .xl\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+
+    .xl\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+
+    .xl\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+
+    .xl\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .\32xl\:ease-in {
+      transition-timing-function: var(--ease-in);
+    }
+
+    .\32xl\:ease-out {
+      transition-timing-function: var(--ease-out);
+    }
+
+    .\32xl\:ease-in-out {
+      transition-timing-function: var(--ease-in-out);
+    }
+
+    .\32xl\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+}

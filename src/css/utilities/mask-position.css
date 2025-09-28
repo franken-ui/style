@@ -1,0 +1,227 @@
+@layer utilities {
+  .mask-top-left {
+    mask-position: top left;
+  }
+
+  .mask-top {
+    mask-position: top;
+  }
+
+  .mask-top-right {
+    mask-position: top right;
+  }
+
+  .mask-left {
+    mask-position: left;
+  }
+
+  .mask-center {
+    mask-position: center;
+  }
+
+  .mask-right {
+    mask-position: right;
+  }
+
+  .mask-bottom-left {
+    mask-position: bottom left;
+  }
+
+  .mask-bottom {
+    mask-position: bottom;
+  }
+
+  .mask-bottom-right {
+    mask-position: bottom right;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:mask-top-left {
+      mask-position: top left;
+    }
+
+    .sm\:mask-top {
+      mask-position: top;
+    }
+
+    .sm\:mask-top-right {
+      mask-position: top right;
+    }
+
+    .sm\:mask-left {
+      mask-position: left;
+    }
+
+    .sm\:mask-center {
+      mask-position: center;
+    }
+
+    .sm\:mask-right {
+      mask-position: right;
+    }
+
+    .sm\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+
+    .sm\:mask-bottom {
+      mask-position: bottom;
+    }
+
+    .sm\:mask-bottom-right {
+      mask-position: bottom right;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:mask-top-left {
+      mask-position: top left;
+    }
+
+    .md\:mask-top {
+      mask-position: top;
+    }
+
+    .md\:mask-top-right {
+      mask-position: top right;
+    }
+
+    .md\:mask-left {
+      mask-position: left;
+    }
+
+    .md\:mask-center {
+      mask-position: center;
+    }
+
+    .md\:mask-right {
+      mask-position: right;
+    }
+
+    .md\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+
+    .md\:mask-bottom {
+      mask-position: bottom;
+    }
+
+    .md\:mask-bottom-right {
+      mask-position: bottom right;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:mask-top-left {
+      mask-position: top left;
+    }
+
+    .lg\:mask-top {
+      mask-position: top;
+    }
+
+    .lg\:mask-top-right {
+      mask-position: top right;
+    }
+
+    .lg\:mask-left {
+      mask-position: left;
+    }
+
+    .lg\:mask-center {
+      mask-position: center;
+    }
+
+    .lg\:mask-right {
+      mask-position: right;
+    }
+
+    .lg\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+
+    .lg\:mask-bottom {
+      mask-position: bottom;
+    }
+
+    .lg\:mask-bottom-right {
+      mask-position: bottom right;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:mask-top-left {
+      mask-position: top left;
+    }
+
+    .xl\:mask-top {
+      mask-position: top;
+    }
+
+    .xl\:mask-top-right {
+      mask-position: top right;
+    }
+
+    .xl\:mask-left {
+      mask-position: left;
+    }
+
+    .xl\:mask-center {
+      mask-position: center;
+    }
+
+    .xl\:mask-right {
+      mask-position: right;
+    }
+
+    .xl\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+
+    .xl\:mask-bottom {
+      mask-position: bottom;
+    }
+
+    .xl\:mask-bottom-right {
+      mask-position: bottom right;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:mask-top-left {
+      mask-position: top left;
+    }
+
+    .\32xl\:mask-top {
+      mask-position: top;
+    }
+
+    .\32xl\:mask-top-right {
+      mask-position: top right;
+    }
+
+    .\32xl\:mask-left {
+      mask-position: left;
+    }
+
+    .\32xl\:mask-center {
+      mask-position: center;
+    }
+
+    .\32xl\:mask-right {
+      mask-position: right;
+    }
+
+    .\32xl\:mask-bottom-left {
+      mask-position: bottom left;
+    }
+
+    .\32xl\:mask-bottom {
+      mask-position: bottom;
+    }
+
+    .\32xl\:mask-bottom-right {
+      mask-position: bottom right;
+    }
+  }
+}

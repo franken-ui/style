@@ -1,0 +1,35 @@
+@layer styles {
+  .delay {
+    transition-delay: var(--delay);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:delay {
+      transition-delay: var(--sm-delay);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:delay {
+      transition-delay: var(--md-delay);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:delay {
+      transition-delay: var(--lg-delay);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:delay {
+      transition-delay: var(--xl-delay);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:delay {
+      transition-delay: var(--\32xl-delay);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer styles {
+  .ease {
+    transition-timing-function: var(--ease);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:ease {
+      transition-timing-function: var(--sm-ease);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:ease {
+      transition-timing-function: var(--md-ease);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:ease {
+      transition-timing-function: var(--lg-ease);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:ease {
+      transition-timing-function: var(--xl-ease);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:ease {
+      transition-timing-function: var(--\32xl-ease);
+    }
+  }
+}
