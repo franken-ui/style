@@ -1,0 +1,35 @@
+@layer styles {
+  .cursor {
+    cursor: var(--cursor);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:cursor {
+      cursor: var(--sm-cursor);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:cursor {
+      cursor: var(--md-cursor);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:cursor {
+      cursor: var(--lg-cursor);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:cursor {
+      cursor: var(--xl-cursor);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:cursor {
+      cursor: var(--\32xl-cursor);
+    }
+  }
+}

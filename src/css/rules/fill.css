@@ -1,0 +1,53 @@
+@layer styles {
+  .fill {
+    fill: var(--fill);
+  }
+  .dark .dark\:fill {
+    fill: var(--dark-fill);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:fill {
+      fill: var(--sm-fill);
+    }
+    .dark .dark\:sm\:fill {
+      fill: var(--dark-sm-fill);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:fill {
+      fill: var(--md-fill);
+    }
+    .dark .dark\:md\:fill {
+      fill: var(--dark-md-fill);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:fill {
+      fill: var(--lg-fill);
+    }
+    .dark .dark\:lg\:fill {
+      fill: var(--dark-lg-fill);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:fill {
+      fill: var(--xl-fill);
+    }
+    .dark .dark\:xl\:fill {
+      fill: var(--dark-xl-fill);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:fill {
+      fill: var(--\32xl-fill);
+    }
+    .dark .dark\:2xl\:fill {
+      fill: var(--dark-2xl-fill);
+    }
+  }
+}

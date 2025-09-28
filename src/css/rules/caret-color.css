@@ -1,0 +1,53 @@
+@layer styles {
+  .caret {
+    caret-color: var(--caret);
+  }
+  .dark .dark\:caret {
+    caret-color: var(--dark-caret);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:caret {
+      caret-color: var(--sm-caret);
+    }
+    .dark .dark\:sm\:caret {
+      caret-color: var(--dark-sm-caret);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:caret {
+      caret-color: var(--md-caret);
+    }
+    .dark .dark\:md\:caret {
+      caret-color: var(--dark-md-caret);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:caret {
+      caret-color: var(--lg-caret);
+    }
+    .dark .dark\:lg\:caret {
+      caret-color: var(--dark-lg-caret);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:caret {
+      caret-color: var(--xl-caret);
+    }
+    .dark .dark\:xl\:caret {
+      caret-color: var(--dark-xl-caret);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:caret {
+      caret-color: var(--\32xl-caret);
+    }
+    .dark .dark\:2xl\:caret {
+      caret-color: var(--dark-2xl-caret);
+    }
+  }
+}

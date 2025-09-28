@@ -1,0 +1,101 @@
+@layer styles {
+  .accent\/o {
+    accent-color: color-mix(
+      in oklab,
+      var(--accent) var(--accent-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:accent\/o {
+    accent-color: color-mix(
+      in oklab,
+      var(--dark-accent) var(--dark-accent-o, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--sm-accent) var(--sm-accent-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--dark-sm-accent) var(--dark-sm-accent-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--md-accent) var(--md-accent-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--dark-md-accent) var(--dark-md-accent-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--lg-accent) var(--lg-accent-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--dark-lg-accent) var(--dark-lg-accent-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--xl-accent) var(--xl-accent-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--dark-xl-accent) var(--dark-xl-accent-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--\32xl-accent) var(--\32xl-accent-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:accent\/o {
+      accent-color: color-mix(
+        in oklab,
+        var(--dark-2xl-accent) var(--dark-2xl-accent-o, 100%),
+        transparent
+      );
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer styles {
+  .stroke-width {
+    stroke-width: var(--stroke-width);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:stroke-width {
+      stroke-width: var(--sm-stroke-width);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:stroke-width {
+      stroke-width: var(--md-stroke-width);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:stroke-width {
+      stroke-width: var(--lg-stroke-width);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:stroke-width {
+      stroke-width: var(--xl-stroke-width);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:stroke-width {
+      stroke-width: var(--\32xl-stroke-width);
+    }
+  }
+}

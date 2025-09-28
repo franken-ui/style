@@ -1,0 +1,107 @@
+@layer utilities {
+  .will-change-auto {
+    will-change: auto;
+  }
+
+  .will-change-scroll {
+    will-change: scroll-position;
+  }
+
+  .will-change-contents {
+    will-change: contents;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:will-change-auto {
+      will-change: auto;
+    }
+
+    .sm\:will-change-scroll {
+      will-change: scroll-position;
+    }
+
+    .sm\:will-change-contents {
+      will-change: contents;
+    }
+
+    .sm\:will-change-transform {
+      will-change: transform;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:will-change-auto {
+      will-change: auto;
+    }
+
+    .md\:will-change-scroll {
+      will-change: scroll-position;
+    }
+
+    .md\:will-change-contents {
+      will-change: contents;
+    }
+
+    .md\:will-change-transform {
+      will-change: transform;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:will-change-auto {
+      will-change: auto;
+    }
+
+    .lg\:will-change-scroll {
+      will-change: scroll-position;
+    }
+
+    .lg\:will-change-contents {
+      will-change: contents;
+    }
+
+    .lg\:will-change-transform {
+      will-change: transform;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:will-change-auto {
+      will-change: auto;
+    }
+
+    .xl\:will-change-scroll {
+      will-change: scroll-position;
+    }
+
+    .xl\:will-change-contents {
+      will-change: contents;
+    }
+
+    .xl\:will-change-transform {
+      will-change: transform;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:will-change-auto {
+      will-change: auto;
+    }
+
+    .\32xl\:will-change-scroll {
+      will-change: scroll-position;
+    }
+
+    .\32xl\:will-change-contents {
+      will-change: contents;
+    }
+
+    .\32xl\:will-change-transform {
+      will-change: transform;
+    }
+  }
+}

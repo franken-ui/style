@@ -1,0 +1,53 @@
+@layer styles {
+  .stroke {
+    stroke: var(--stroke);
+  }
+  .dark .dark\:stroke {
+    stroke: var(--dark-stroke);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:stroke {
+      stroke: var(--sm-stroke);
+    }
+    .dark .dark\:sm\:stroke {
+      stroke: var(--dark-sm-stroke);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:stroke {
+      stroke: var(--md-stroke);
+    }
+    .dark .dark\:md\:stroke {
+      stroke: var(--dark-md-stroke);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:stroke {
+      stroke: var(--lg-stroke);
+    }
+    .dark .dark\:lg\:stroke {
+      stroke: var(--dark-lg-stroke);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:stroke {
+      stroke: var(--xl-stroke);
+    }
+    .dark .dark\:xl\:stroke {
+      stroke: var(--dark-xl-stroke);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:stroke {
+      stroke: var(--\32xl-stroke);
+    }
+    .dark .dark\:2xl\:stroke {
+      stroke: var(--dark-2xl-stroke);
+    }
+  }
+}

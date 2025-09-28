@@ -1,0 +1,97 @@
+@layer styles {
+  .fill\/o {
+    fill: color-mix(in oklab, var(--fill) var(--fill-o, 100%), transparent);
+  }
+  .dark .dark\:fill\/o {
+    fill: color-mix(
+      in oklab,
+      var(--dark-fill) var(--dark-fill-o, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--sm-fill) var(--sm-fill-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--dark-sm-fill) var(--dark-sm-fill-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--md-fill) var(--md-fill-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--dark-md-fill) var(--dark-md-fill-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--lg-fill) var(--lg-fill-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--dark-lg-fill) var(--dark-lg-fill-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--xl-fill) var(--xl-fill-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--dark-xl-fill) var(--dark-xl-fill-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--\32xl-fill) var(--\32xl-fill-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:fill\/o {
+      fill: color-mix(
+        in oklab,
+        var(--dark-2xl-fill) var(--dark-2xl-fill-o, 100%),
+        transparent
+      );
+    }
+  }
+}

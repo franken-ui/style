@@ -1,0 +1,53 @@
+@layer styles {
+  .accent {
+    accent-color: var(--accent);
+  }
+  .dark .dark\:accent {
+    accent-color: var(--dark-accent);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:accent {
+      accent-color: var(--sm-accent);
+    }
+    .dark .dark\:sm\:accent {
+      accent-color: var(--dark-sm-accent);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:accent {
+      accent-color: var(--md-accent);
+    }
+    .dark .dark\:md\:accent {
+      accent-color: var(--dark-md-accent);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:accent {
+      accent-color: var(--lg-accent);
+    }
+    .dark .dark\:lg\:accent {
+      accent-color: var(--dark-lg-accent);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:accent {
+      accent-color: var(--xl-accent);
+    }
+    .dark .dark\:xl\:accent {
+      accent-color: var(--dark-xl-accent);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:accent {
+      accent-color: var(--\32xl-accent);
+    }
+    .dark .dark\:2xl\:accent {
+      accent-color: var(--dark-2xl-accent);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer styles {
+  .will-change {
+    will-change: var(--will-change);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:will-change {
+      will-change: var(--sm-will-change);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:will-change {
+      will-change: var(--md-will-change);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:will-change {
+      will-change: var(--lg-will-change);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:will-change {
+      will-change: var(--xl-will-change);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:will-change {
+      will-change: var(--\32xl-will-change);
+    }
+  }
+}

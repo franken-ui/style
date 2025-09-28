@@ -1,0 +1,409 @@
+@layer styles {
+  .scroll-p {
+    scroll-padding: calc(var(--spacing) * var(--scroll-p));
+  }
+  .\[scroll-p\] {
+    scroll-padding: var(--scroll-p);
+  }
+  .scroll-pt {
+    scroll-padding-top: calc(var(--spacing) * var(--scroll-pt, var(--p)));
+  }
+  .scroll-pb {
+    scroll-padding-bottom: calc(var(--spacing) * var(--scroll-pb, var(--p)));
+  }
+  .scroll-pl {
+    scroll-padding-left: calc(var(--spacing) * var(--scroll-pl, var(--p)));
+  }
+  .scroll-pr {
+    scroll-padding-right: calc(var(--spacing) * var(--scroll-pr, var(--p)));
+  }
+  .scroll-ps {
+    scroll-padding-inline-start: calc(
+      var(--spacing) * var(--scroll-ps, var(--p))
+    );
+  }
+  .scroll-pe {
+    scroll-padding-inline-end: calc(
+      var(--spacing) * var(--scroll-pe, var(--p))
+    );
+  }
+  .\[scroll-pt\] {
+    scroll-padding-top: var(--scroll-pt, var(--p));
+  }
+  .\[scroll-pb\] {
+    scroll-padding-bottom: var(--scroll-pb, var(--p));
+  }
+  .\[scroll-pl\] {
+    scroll-padding-left: var(--scroll-pl, var(--p));
+  }
+  .\[scroll-pr\] {
+    scroll-padding-right: var(--scroll-pr, var(--p));
+  }
+  .\[scroll-ps\] {
+    scroll-padding-inline-start: var(--scroll-ps, var(--p));
+  }
+  .\[scroll-pe\] {
+    scroll-padding-inline-end: var(--scroll-pe, var(--p));
+  }
+  .scroll-px {
+    scroll-padding-inline: calc(var(--spacing) * var(--scroll-px, var(--p)));
+  }
+  .scroll-py {
+    scroll-padding-block: calc(var(--spacing) * var(--scroll-py, var(--p)));
+  }
+  .\[scroll-px\] {
+    scroll-padding-inline: var(--scroll-px, var(--p));
+  }
+  .\[scroll-py\] {
+    scroll-padding-block: var(--scroll-py, var(--p));
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:scroll-p {
+      scroll-padding: calc(var(--spacing) * var(--sm-scroll-p));
+    }
+    .sm\:\[scroll-p\] {
+      scroll-padding: var(--sm-scroll-p);
+    }
+    .sm\:scroll-pt {
+      scroll-padding-top: calc(var(--spacing) * var(--sm-scroll-pt, var(--p)));
+    }
+    .sm\:scroll-pb {
+      scroll-padding-bottom: calc(
+        var(--spacing) * var(--sm-scroll-pb, var(--p))
+      );
+    }
+    .sm\:scroll-pl {
+      scroll-padding-left: calc(var(--spacing) * var(--sm-scroll-pl, var(--p)));
+    }
+    .sm\:scroll-pr {
+      scroll-padding-right: calc(
+        var(--spacing) * var(--sm-scroll-pr, var(--p))
+      );
+    }
+    .sm\:scroll-ps {
+      scroll-padding-inline-start: calc(
+        var(--spacing) * var(--sm-scroll-ps, var(--p))
+      );
+    }
+    .sm\:scroll-pe {
+      scroll-padding-inline-end: calc(
+        var(--spacing) * var(--sm-scroll-pe, var(--p))
+      );
+    }
+    .sm\:\[scroll-pt\] {
+      scroll-padding-top: var(--sm-scroll-pt, var(--p));
+    }
+    .sm\:\[scroll-pb\] {
+      scroll-padding-bottom: var(--sm-scroll-pb, var(--p));
+    }
+    .sm\:\[scroll-pl\] {
+      scroll-padding-left: var(--sm-scroll-pl, var(--p));
+    }
+    .sm\:\[scroll-pr\] {
+      scroll-padding-right: var(--sm-scroll-pr, var(--p));
+    }
+    .sm\:\[scroll-ps\] {
+      scroll-padding-inline-start: var(--sm-scroll-ps, var(--p));
+    }
+    .sm\:\[scroll-pe\] {
+      scroll-padding-inline-end: var(--sm-scroll-pe, var(--p));
+    }
+    .sm\:scroll-px {
+      scroll-padding-inline: calc(
+        var(--spacing) * var(--sm-scroll-px, var(--p))
+      );
+    }
+    .sm\:scroll-py {
+      scroll-padding-block: calc(
+        var(--spacing) * var(--sm-scroll-py, var(--p))
+      );
+    }
+    .sm\:\[scroll-px\] {
+      scroll-padding-inline: var(--sm-scroll-px, var(--p));
+    }
+    .sm\:\[scroll-py\] {
+      scroll-padding-block: var(--sm-scroll-py, var(--p));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:scroll-p {
+      scroll-padding: calc(var(--spacing) * var(--md-scroll-p));
+    }
+    .md\:\[scroll-p\] {
+      scroll-padding: var(--md-scroll-p);
+    }
+    .md\:scroll-pt {
+      scroll-padding-top: calc(var(--spacing) * var(--md-scroll-pt, var(--p)));
+    }
+    .md\:scroll-pb {
+      scroll-padding-bottom: calc(
+        var(--spacing) * var(--md-scroll-pb, var(--p))
+      );
+    }
+    .md\:scroll-pl {
+      scroll-padding-left: calc(var(--spacing) * var(--md-scroll-pl, var(--p)));
+    }
+    .md\:scroll-pr {
+      scroll-padding-right: calc(
+        var(--spacing) * var(--md-scroll-pr, var(--p))
+      );
+    }
+    .md\:scroll-ps {
+      scroll-padding-inline-start: calc(
+        var(--spacing) * var(--md-scroll-ps, var(--p))
+      );
+    }
+    .md\:scroll-pe {
+      scroll-padding-inline-end: calc(
+        var(--spacing) * var(--md-scroll-pe, var(--p))
+      );
+    }
+    .md\:\[scroll-pt\] {
+      scroll-padding-top: var(--md-scroll-pt, var(--p));
+    }
+    .md\:\[scroll-pb\] {
+      scroll-padding-bottom: var(--md-scroll-pb, var(--p));
+    }
+    .md\:\[scroll-pl\] {
+      scroll-padding-left: var(--md-scroll-pl, var(--p));
+    }
+    .md\:\[scroll-pr\] {
+      scroll-padding-right: var(--md-scroll-pr, var(--p));
+    }
+    .md\:\[scroll-ps\] {
+      scroll-padding-inline-start: var(--md-scroll-ps, var(--p));
+    }
+    .md\:\[scroll-pe\] {
+      scroll-padding-inline-end: var(--md-scroll-pe, var(--p));
+    }
+    .md\:scroll-px {
+      scroll-padding-inline: calc(
+        var(--spacing) * var(--md-scroll-px, var(--p))
+      );
+    }
+    .md\:scroll-py {
+      scroll-padding-block: calc(
+        var(--spacing) * var(--md-scroll-py, var(--p))
+      );
+    }
+    .md\:\[scroll-px\] {
+      scroll-padding-inline: var(--md-scroll-px, var(--p));
+    }
+    .md\:\[scroll-py\] {
+      scroll-padding-block: var(--md-scroll-py, var(--p));
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:scroll-p {
+      scroll-padding: calc(var(--spacing) * var(--lg-scroll-p));
+    }
+    .lg\:\[scroll-p\] {
+      scroll-padding: var(--lg-scroll-p);
+    }
+    .lg\:scroll-pt {
+      scroll-padding-top: calc(var(--spacing) * var(--lg-scroll-pt, var(--p)));
+    }
+    .lg\:scroll-pb {
+      scroll-padding-bottom: calc(
+        var(--spacing) * var(--lg-scroll-pb, var(--p))
+      );
+    }
+    .lg\:scroll-pl {
+      scroll-padding-left: calc(var(--spacing) * var(--lg-scroll-pl, var(--p)));
+    }
+    .lg\:scroll-pr {
+      scroll-padding-right: calc(
+        var(--spacing) * var(--lg-scroll-pr, var(--p))
+      );
+    }
+    .lg\:scroll-ps {
+      scroll-padding-inline-start: calc(
+        var(--spacing) * var(--lg-scroll-ps, var(--p))
+      );
+    }
+    .lg\:scroll-pe {
+      scroll-padding-inline-end: calc(
+        var(--spacing) * var(--lg-scroll-pe, var(--p))
+      );
+    }
+    .lg\:\[scroll-pt\] {
+      scroll-padding-top: var(--lg-scroll-pt, var(--p));
+    }
+    .lg\:\[scroll-pb\] {
+      scroll-padding-bottom: var(--lg-scroll-pb, var(--p));
+    }
+    .lg\:\[scroll-pl\] {
+      scroll-padding-left: var(--lg-scroll-pl, var(--p));
+    }
+    .lg\:\[scroll-pr\] {
+      scroll-padding-right: var(--lg-scroll-pr, var(--p));
+    }
+    .lg\:\[scroll-ps\] {
+      scroll-padding-inline-start: var(--lg-scroll-ps, var(--p));
+    }
+    .lg\:\[scroll-pe\] {
+      scroll-padding-inline-end: var(--lg-scroll-pe, var(--p));
+    }
+    .lg\:scroll-px {
+      scroll-padding-inline: calc(
+        var(--spacing) * var(--lg-scroll-px, var(--p))
+      );
+    }
+    .lg\:scroll-py {
+      scroll-padding-block: calc(
+        var(--spacing) * var(--lg-scroll-py, var(--p))
+      );
+    }
+    .lg\:\[scroll-px\] {
+      scroll-padding-inline: var(--lg-scroll-px, var(--p));
+    }
+    .lg\:\[scroll-py\] {
+      scroll-padding-block: var(--lg-scroll-py, var(--p));
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:scroll-p {
+      scroll-padding: calc(var(--spacing) * var(--xl-scroll-p));
+    }
+    .xl\:\[scroll-p\] {
+      scroll-padding: var(--xl-scroll-p);
+    }
+    .xl\:scroll-pt {
+      scroll-padding-top: calc(var(--spacing) * var(--xl-scroll-pt, var(--p)));
+    }
+    .xl\:scroll-pb {
+      scroll-padding-bottom: calc(
+        var(--spacing) * var(--xl-scroll-pb, var(--p))
+      );
+    }
+    .xl\:scroll-pl {
+      scroll-padding-left: calc(var(--spacing) * var(--xl-scroll-pl, var(--p)));
+    }
+    .xl\:scroll-pr {
+      scroll-padding-right: calc(
+        var(--spacing) * var(--xl-scroll-pr, var(--p))
+      );
+    }
+    .xl\:scroll-ps {
+      scroll-padding-inline-start: calc(
+        var(--spacing) * var(--xl-scroll-ps, var(--p))
+      );
+    }
+    .xl\:scroll-pe {
+      scroll-padding-inline-end: calc(
+        var(--spacing) * var(--xl-scroll-pe, var(--p))
+      );
+    }
+    .xl\:\[scroll-pt\] {
+      scroll-padding-top: var(--xl-scroll-pt, var(--p));
+    }
+    .xl\:\[scroll-pb\] {
+      scroll-padding-bottom: var(--xl-scroll-pb, var(--p));
+    }
+    .xl\:\[scroll-pl\] {
+      scroll-padding-left: var(--xl-scroll-pl, var(--p));
+    }
+    .xl\:\[scroll-pr\] {
+      scroll-padding-right: var(--xl-scroll-pr, var(--p));
+    }
+    .xl\:\[scroll-ps\] {
+      scroll-padding-inline-start: var(--xl-scroll-ps, var(--p));
+    }
+    .xl\:\[scroll-pe\] {
+      scroll-padding-inline-end: var(--xl-scroll-pe, var(--p));
+    }
+    .xl\:scroll-px {
+      scroll-padding-inline: calc(
+        var(--spacing) * var(--xl-scroll-px, var(--p))
+      );
+    }
+    .xl\:scroll-py {
+      scroll-padding-block: calc(
+        var(--spacing) * var(--xl-scroll-py, var(--p))
+      );
+    }
+    .xl\:\[scroll-px\] {
+      scroll-padding-inline: var(--xl-scroll-px, var(--p));
+    }
+    .xl\:\[scroll-py\] {
+      scroll-padding-block: var(--xl-scroll-py, var(--p));
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:scroll-p {
+      scroll-padding: calc(var(--spacing) * var(--\32xl-scroll-p));
+    }
+    .\32xl\:\[scroll-p\] {
+      scroll-padding: var(--\32xl-scroll-p);
+    }
+    .\32xl\:scroll-pt {
+      scroll-padding-top: calc(
+        var(--spacing) * var(--\32xl-scroll-pt, var(--p))
+      );
+    }
+    .\32xl\:scroll-pb {
+      scroll-padding-bottom: calc(
+        var(--spacing) * var(--\32xl-scroll-pb, var(--p))
+      );
+    }
+    .\32xl\:scroll-pl {
+      scroll-padding-left: calc(
+        var(--spacing) * var(--\32xl-scroll-pl, var(--p))
+      );
+    }
+    .\32xl\:scroll-pr {
+      scroll-padding-right: calc(
+        var(--spacing) * var(--\32xl-scroll-pr, var(--p))
+      );
+    }
+    .\32xl\:scroll-ps {
+      scroll-padding-inline-start: calc(
+        var(--spacing) * var(--\32xl-scroll-ps, var(--p))
+      );
+    }
+    .\32xl\:scroll-pe {
+      scroll-padding-inline-end: calc(
+        var(--spacing) * var(--\32xl-scroll-pe, var(--p))
+      );
+    }
+    .\32xl\:\[scroll-pt\] {
+      scroll-padding-top: var(--\32xl-scroll-pt, var(--p));
+    }
+    .\32xl\:\[scroll-pb\] {
+      scroll-padding-bottom: var(--\32xl-scroll-pb, var(--p));
+    }
+    .\32xl\:\[scroll-pl\] {
+      scroll-padding-left: var(--\32xl-scroll-pl, var(--p));
+    }
+    .\32xl\:\[scroll-pr\] {
+      scroll-padding-right: var(--\32xl-scroll-pr, var(--p));
+    }
+    .\32xl\:\[scroll-ps\] {
+      scroll-padding-inline-start: var(--\32xl-scroll-ps, var(--p));
+    }
+    .\32xl\:\[scroll-pe\] {
+      scroll-padding-inline-end: var(--\32xl-scroll-pe, var(--p));
+    }
+    .\32xl\:scroll-px {
+      scroll-padding-inline: calc(
+        var(--spacing) * var(--\32xl-scroll-px, var(--p))
+      );
+    }
+    .\32xl\:scroll-py {
+      scroll-padding-block: calc(
+        var(--spacing) * var(--\32xl-scroll-py, var(--p))
+      );
+    }
+    .\32xl\:\[scroll-px\] {
+      scroll-padding-inline: var(--\32xl-scroll-px, var(--p));
+    }
+    .\32xl\:\[scroll-py\] {
+      scroll-padding-block: var(--\32xl-scroll-py, var(--p));
+    }
+  }
+}

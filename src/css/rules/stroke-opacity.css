@@ -1,0 +1,101 @@
+@layer styles {
+  .stroke\/o {
+    stroke: color-mix(
+      in oklab,
+      var(--stroke) var(--stroke-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:stroke\/o {
+    stroke: color-mix(
+      in oklab,
+      var(--dark-stroke) var(--dark-stroke-o, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--sm-stroke) var(--sm-stroke-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--dark-sm-stroke) var(--dark-sm-stroke-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--md-stroke) var(--md-stroke-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--dark-md-stroke) var(--dark-md-stroke-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--lg-stroke) var(--lg-stroke-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--dark-lg-stroke) var(--dark-lg-stroke-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--xl-stroke) var(--xl-stroke-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--dark-xl-stroke) var(--dark-xl-stroke-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--\32xl-stroke) var(--\32xl-stroke-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:stroke\/o {
+      stroke: color-mix(
+        in oklab,
+        var(--dark-2xl-stroke) var(--dark-2xl-stroke-o, 100%),
+        transparent
+      );
+    }
+  }
+}

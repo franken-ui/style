@@ -1,0 +1,101 @@
+@layer styles {
+  .caret\/o {
+    caret-color: color-mix(
+      in oklab,
+      var(--caret) var(--caret-o, 100%),
+      transparent
+    );
+  }
+  .dark .dark\:caret\/o {
+    caret-color: color-mix(
+      in oklab,
+      var(--dark-caret) var(--dark-caret-o, 100%),
+      transparent
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--sm-caret) var(--sm-caret-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:sm\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--dark-sm-caret) var(--dark-sm-caret-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--md-caret) var(--md-caret-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:md\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--dark-md-caret) var(--dark-md-caret-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--lg-caret) var(--lg-caret-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:lg\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--dark-lg-caret) var(--dark-lg-caret-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--xl-caret) var(--xl-caret-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:xl\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--dark-xl-caret) var(--dark-xl-caret-o, 100%),
+        transparent
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--\32xl-caret) var(--\32xl-caret-o, 100%),
+        transparent
+      );
+    }
+    .dark .dark\:2xl\:caret\/o {
+      caret-color: color-mix(
+        in oklab,
+        var(--dark-2xl-caret) var(--dark-2xl-caret-o, 100%),
+        transparent
+      );
+    }
+  }
+}
