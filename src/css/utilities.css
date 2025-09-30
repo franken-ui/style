@@ -2545,6 +2545,9 @@
   .scale-none {
     transform: none;
   }
+  .scale-3d {
+    scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+  }
   .scroll-auto {
     scroll-behavior: auto;
   }
@@ -5583,6 +5586,9 @@
     }
     .sm\:scale-none {
       transform: none;
+    }
+    .sm\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
     }
     .sm\:scroll-auto {
       scroll-behavior: auto;
@@ -8624,6 +8630,9 @@
     .md\:scale-none {
       transform: none;
     }
+    .md\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
     .md\:scroll-auto {
       scroll-behavior: auto;
     }
@@ -11663,6 +11672,9 @@
     }
     .lg\:scale-none {
       transform: none;
+    }
+    .lg\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
     }
     .lg\:scroll-auto {
       scroll-behavior: auto;
@@ -14704,6 +14716,9 @@
     .xl\:scale-none {
       transform: none;
     }
+    .xl\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
     .xl\:scroll-auto {
       scroll-behavior: auto;
     }
@@ -17743,6 +17758,9 @@
     }
     .\32xl\:scale-none {
       transform: none;
+    }
+    .\32xl\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
     }
     .\32xl\:scroll-auto {
       scroll-behavior: auto;

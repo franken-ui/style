@@ -1738,6 +1738,109 @@ const rules = [
     placeholders: { "{var}": "scroll-py" },
   },
   {
+    layer: "styles",
+    selector: "rotate",
+    properties: ["rotate"],
+    arbitrary: true,
+  },
+  {
+    layer: "styles",
+    selector: "rotate-x",
+    properties: ["--tw-rotate-x", "transform"],
+    values: [
+      "rotateX({var})",
+      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
+    placeholders: { "{var}": "rotate-x" },
+  },
+  {
+    layer: "styles",
+    selector: "rotate-y",
+    properties: ["--tw-rotate-y", "transform"],
+    values: [
+      "rotateY({var})",
+      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
+    placeholders: { "{var}": "rotate-y" },
+  },
+  {
+    layer: "styles",
+    selector: "rotate-z",
+    properties: ["--tw-rotate-z", "transform"],
+    values: [
+      "rotateZ({var})",
+      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
+    placeholders: { "{var}": "rotate-z" },
+  },
+  {
+    layer: "styles",
+    selector: "scale",
+    properties: ["--tw-scale-x", "--tw-scale-y", "--tw-scale-z", "scale"],
+    values: [
+      "var({var})",
+      "var({var})",
+      "var({var})",
+      "var(--tw-scale-x) var(--tw-scale-y)",
+    ],
+    placeholders: { "{var}": "scale" },
+  },
+  {
+    layer: "styles",
+    selector: "scale-x",
+    properties: ["--tw-scale-x", "scale"],
+    values: ["var({var})", "var(--tw-scale-x) var(--tw-scale-y)"],
+    placeholders: { "{var}": "scale-x" },
+  },
+  {
+    layer: "styles",
+    selector: "scale-y",
+    properties: ["--tw-scale-y", "scale"],
+    values: ["var({var})", "var(--tw-scale-x) var(--tw-scale-y)"],
+    placeholders: { "{var}": "scale-y" },
+  },
+  {
+    layer: "styles",
+    selector: "scale-z",
+    properties: ["--tw-scale-z", "scale"],
+    values: [
+      "var({var})",
+      "var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z)",
+    ],
+    placeholders: { "{var}": "scale-z" },
+  },
+  {
+    layer: "styles",
+    selector: "skew",
+    properties: ["--tw-skew-x", "--tw-skew-y", "transform"],
+    values: [
+      "skewX(var({var}))",
+      "skewY(var({var}))",
+      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
+    placeholders: { "{var}": "skew" },
+  },
+  {
+    layer: "styles",
+    selector: "skew-x",
+    properties: ["--tw-skew-x", "transform"],
+    values: [
+      "skewX(var({var}))",
+      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
+    placeholders: { "{var}": "skew-x" },
+  },
+  {
+    layer: "styles",
+    selector: "skew-y",
+    properties: ["--tw-skew-y", "transform"],
+    values: [
+      "skewY(var({var}))",
+      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+    ],
+    placeholders: { "{var}": "skew-y" },
+  },
+  {
     layer: "utilities",
     selector: "content-normal",
     properties: ["align-content"],
@@ -7202,6 +7305,12 @@ const rules = [
     selector: "scale-none",
     properties: ["transform"],
     values: ["none"],
+  },
+  {
+    layer: "utilities",
+    selector: "scale-3d",
+    properties: ["scale"],
+    values: ["var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z)"],
   },
   {
     layer: "utilities",

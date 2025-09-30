@@ -3,9 +3,17 @@
     transform: none;
   }
 
+  .scale-3d {
+    scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+  }
+
   @media (min-width: 40rem) {
     .sm\:scale-none {
       transform: none;
+    }
+
+    .sm\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
     }
   }
 
@@ -13,11 +21,19 @@
     .md\:scale-none {
       transform: none;
     }
+
+    .md\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
   }
 
   @media (min-width: 64rem) {
     .lg\:scale-none {
       transform: none;
+    }
+
+    .lg\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
     }
   }
 
@@ -25,11 +41,19 @@
     .xl\:scale-none {
       transform: none;
     }
+
+    .xl\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:scale-none {
       transform: none;
+    }
+
+    .\32xl\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
     }
   }
 }

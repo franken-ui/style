@@ -1,0 +1,125 @@
+@layer styles {
+  .scale {
+    --tw-scale-x: var(--scale);
+    --tw-scale-y: var(--scale);
+    --tw-scale-z: var(--scale);
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-x {
+    --tw-scale-x: var(--scale-x);
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-y {
+    --tw-scale-y: var(--scale-y);
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-z {
+    --tw-scale-z: var(--scale-z);
+    scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:scale {
+      --tw-scale-x: var(--sm-scale);
+      --tw-scale-y: var(--sm-scale);
+      --tw-scale-z: var(--sm-scale);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .sm\:scale-x {
+      --tw-scale-x: var(--sm-scale-x);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .sm\:scale-y {
+      --tw-scale-y: var(--sm-scale-y);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .sm\:scale-z {
+      --tw-scale-z: var(--sm-scale-z);
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:scale {
+      --tw-scale-x: var(--md-scale);
+      --tw-scale-y: var(--md-scale);
+      --tw-scale-z: var(--md-scale);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .md\:scale-x {
+      --tw-scale-x: var(--md-scale-x);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .md\:scale-y {
+      --tw-scale-y: var(--md-scale-y);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .md\:scale-z {
+      --tw-scale-z: var(--md-scale-z);
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:scale {
+      --tw-scale-x: var(--lg-scale);
+      --tw-scale-y: var(--lg-scale);
+      --tw-scale-z: var(--lg-scale);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .lg\:scale-x {
+      --tw-scale-x: var(--lg-scale-x);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .lg\:scale-y {
+      --tw-scale-y: var(--lg-scale-y);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .lg\:scale-z {
+      --tw-scale-z: var(--lg-scale-z);
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:scale {
+      --tw-scale-x: var(--xl-scale);
+      --tw-scale-y: var(--xl-scale);
+      --tw-scale-z: var(--xl-scale);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .xl\:scale-x {
+      --tw-scale-x: var(--xl-scale-x);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .xl\:scale-y {
+      --tw-scale-y: var(--xl-scale-y);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .xl\:scale-z {
+      --tw-scale-z: var(--xl-scale-z);
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:scale {
+      --tw-scale-x: var(--\32xl-scale);
+      --tw-scale-y: var(--\32xl-scale);
+      --tw-scale-z: var(--\32xl-scale);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .\32xl\:scale-x {
+      --tw-scale-x: var(--\32xl-scale-x);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .\32xl\:scale-y {
+      --tw-scale-y: var(--\32xl-scale-y);
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .\32xl\:scale-z {
+      --tw-scale-z: var(--\32xl-scale-z);
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+}
