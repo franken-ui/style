@@ -1,0 +1,35 @@
+@layer styles {
+  .inset-ring-w {
+    --tw-inset-ring-width: var(--inset-ring-w);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:inset-ring-w {
+      --tw-inset-ring-width: var(--sm-inset-ring-w);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:inset-ring-w {
+      --tw-inset-ring-width: var(--md-inset-ring-w);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:inset-ring-w {
+      --tw-inset-ring-width: var(--lg-inset-ring-w);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:inset-ring-w {
+      --tw-inset-ring-width: var(--xl-inset-ring-w);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:inset-ring-w {
+      --tw-inset-ring-width: var(--\32xl-inset-ring-w);
+    }
+  }
+}

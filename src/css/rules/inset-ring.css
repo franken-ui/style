@@ -1,0 +1,125 @@
+@layer styles {
+  .inset-ring {
+    --tw-inset-ring-width: 1px;
+    --tw-inset-ring-color: var(--inset-ring, currentColor);
+    --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+      var(--tw-inset-ring-color);
+    box-shadow:
+      var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+      var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .dark .dark\:inset-ring {
+    --tw-inset-ring-width: 1px;
+    --tw-inset-ring-color: var(--dark-inset-ring, currentColor);
+    --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+      var(--tw-inset-ring-color);
+    box-shadow:
+      var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+      var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--sm-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .dark .dark\:sm\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--dark-sm-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--md-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .dark .dark\:md\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--dark-md-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--lg-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .dark .dark\:lg\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--dark-lg-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--xl-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .dark .dark\:xl\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--dark-xl-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--\32xl-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+    .dark .dark\:2xl\:inset-ring {
+      --tw-inset-ring-width: 1px;
+      --tw-inset-ring-color: var(--dark-2xl-inset-ring, currentColor);
+      --tw-inset-ring-shadow: inset 0 0 0 var(--tw-inset-ring-width)
+        var(--tw-inset-ring-color);
+      box-shadow:
+        var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+        var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+}

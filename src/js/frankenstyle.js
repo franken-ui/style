@@ -1749,7 +1749,7 @@ const rules = [
     properties: ["--tw-rotate-x", "transform"],
     values: [
       "rotateX({var})",
-      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+      "var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)",
     ],
     placeholders: { "{var}": "rotate-x" },
   },
@@ -1759,7 +1759,7 @@ const rules = [
     properties: ["--tw-rotate-y", "transform"],
     values: [
       "rotateY({var})",
-      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+      "var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)",
     ],
     placeholders: { "{var}": "rotate-y" },
   },
@@ -1769,7 +1769,7 @@ const rules = [
     properties: ["--tw-rotate-z", "transform"],
     values: [
       "rotateZ({var})",
-      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+      "var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)",
     ],
     placeholders: { "{var}": "rotate-z" },
   },
@@ -1816,7 +1816,7 @@ const rules = [
     values: [
       "skewX(var({var}))",
       "skewY(var({var}))",
-      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+      "var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)",
     ],
     placeholders: { "{var}": "skew" },
   },
@@ -1826,7 +1826,7 @@ const rules = [
     properties: ["--tw-skew-x", "transform"],
     values: [
       "skewX(var({var}))",
-      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+      "var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)",
     ],
     placeholders: { "{var}": "skew-x" },
   },
@@ -1836,7 +1836,7 @@ const rules = [
     properties: ["--tw-skew-y", "transform"],
     values: [
       "skewY(var({var}))",
-      "var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)",
+      "var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)",
     ],
     placeholders: { "{var}": "skew-y" },
   },
@@ -1938,6 +1938,18 @@ const rules = [
   },
   {
     layer: "styles",
+    selector: "shadow/o",
+    properties: ["--tw-shadow-color", "--tw-shadow", "box-shadow"],
+    values: [
+      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)",
+      "var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
+    ],
+    placeholders: { "{var}": "shadow", "{var2}": "shadow-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
     selector: "ring",
     properties: [
       "--tw-ring-width",
@@ -1948,11 +1960,36 @@ const rules = [
     values: [
       "1px",
       "var({var}, currentColor)",
-      "var(--tw-ring-inset) 0 0 0 calc(var(--tw-ring-width) + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+      "var(--tw-ring-inset,) 0 0 0 calc(var(--tw-ring-width) + var(--tw-ring-offset-width)) var(--tw-ring-color)",
       "var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
     ],
     placeholders: { "{var}": "ring" },
     dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "ring/o",
+    properties: [
+      "--tw-ring-width",
+      "--tw-ring-color",
+      "--tw-ring-shadow",
+      "box-shadow",
+    ],
+    values: [
+      "1px",
+      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      "var(--tw-ring-inset,) 0 0 0 calc(var(--tw-ring-width) + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+      "var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
+    ],
+    placeholders: { "{var}": "ring", "{var2}": "ring-o" },
+    dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "ring-w",
+    properties: ["--tw-ring-width"],
+    values: ["var({var})"],
+    placeholders: { "{var}": "ring-w" },
   },
   {
     layer: "styles",
@@ -1974,50 +2011,6 @@ const rules = [
   },
   {
     layer: "styles",
-    selector: "ring-w",
-    properties: ["--tw-ring-width"],
-    values: ["var({var})"],
-    placeholders: { "{var}": "ring-w" },
-  },
-  {
-    layer: "styles",
-    selector: "inset-ring-w",
-    properties: ["--tw-inset-ring-width"],
-    values: ["var({var})"],
-    placeholders: { "{var}": "inset-ring-w" },
-  },
-  {
-    layer: "styles",
-    selector: "shadow/o",
-    properties: ["--tw-shadow-color", "--tw-shadow", "box-shadow"],
-    values: [
-      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)",
-      "var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
-    ],
-    placeholders: { "{var}": "shadow", "{var2}": "shadow-o" },
-    dark: true,
-  },
-  {
-    layer: "styles",
-    selector: "ring/o",
-    properties: [
-      "--tw-ring-width",
-      "--tw-ring-color",
-      "--tw-ring-shadow",
-      "box-shadow",
-    ],
-    values: [
-      "1px",
-      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
-      "var(--tw-ring-inset) 0 0 0 calc(var(--tw-ring-width) + var(--tw-ring-offset-width)) var(--tw-ring-color)",
-      "var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
-    ],
-    placeholders: { "{var}": "ring", "{var2}": "ring-o" },
-    dark: true,
-  },
-  {
-    layer: "styles",
     selector: "inset-ring/o",
     properties: [
       "--tw-inset-ring-width",
@@ -2033,6 +2026,13 @@ const rules = [
     ],
     placeholders: { "{var}": "inset-ring", "{var2}": "inset-ring-o" },
     dark: true,
+  },
+  {
+    layer: "styles",
+    selector: "inset-ring-w",
+    properties: ["--tw-inset-ring-width"],
+    values: ["var({var})"],
+    placeholders: { "{var}": "inset-ring-w" },
   },
   {
     layer: "utilities",
