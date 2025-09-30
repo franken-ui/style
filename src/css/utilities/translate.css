@@ -1,0 +1,35 @@
+@layer utilities {
+  .translate-none {
+    translate: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:translate-none {
+      translate: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:translate-none {
+      translate: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:translate-none {
+      translate: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:translate-none {
+      translate: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:translate-none {
+      translate: none;
+    }
+  }
+}

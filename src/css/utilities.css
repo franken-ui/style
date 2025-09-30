@@ -2874,6 +2874,9 @@
   .ease-initial {
     transition-timing-function: initial;
   }
+  .translate-none {
+    translate: none;
+  }
   .select-none {
     user-select: none;
   }
@@ -5915,6 +5918,9 @@
     }
     .sm\:ease-initial {
       transition-timing-function: initial;
+    }
+    .sm\:translate-none {
+      translate: none;
     }
     .sm\:select-none {
       user-select: none;
@@ -8959,6 +8965,9 @@
     .md\:ease-initial {
       transition-timing-function: initial;
     }
+    .md\:translate-none {
+      translate: none;
+    }
     .md\:select-none {
       user-select: none;
     }
@@ -12001,6 +12010,9 @@
     }
     .lg\:ease-initial {
       transition-timing-function: initial;
+    }
+    .lg\:translate-none {
+      translate: none;
     }
     .lg\:select-none {
       user-select: none;
@@ -15045,6 +15057,9 @@
     .xl\:ease-initial {
       transition-timing-function: initial;
     }
+    .xl\:translate-none {
+      translate: none;
+    }
     .xl\:select-none {
       user-select: none;
     }
@@ -18087,6 +18102,9 @@
     }
     .\32xl\:ease-initial {
       transition-timing-function: initial;
+    }
+    .\32xl\:translate-none {
+      translate: none;
     }
     .\32xl\:select-none {
       user-select: none;

@@ -1841,6 +1841,82 @@ const rules = [
     placeholders: { "{var}": "skew-y" },
   },
   {
+    layer: "styles",
+    selector: "translate",
+    properties: ["--tw-translate-x", "--tw-translate-y", "translate"],
+    values: [
+      "calc(var(--spacing) * var({var}))",
+      "calc(var(--spacing) * var({var}))",
+      "var(--tw-translate-x) var(--tw-translate-y)",
+    ],
+    placeholders: { "{var}": "translate" },
+  },
+  {
+    layer: "styles",
+    selector: "[translate]",
+    properties: ["--tw-translate-x", "--tw-translate-y", "translate"],
+    values: [
+      "var({var})",
+      "var({var})",
+      "var(--tw-translate-x) var(--tw-translate-y)",
+    ],
+    placeholders: { "{var}": "translate" },
+  },
+  {
+    layer: "styles",
+    selector: "translate-x",
+    properties: ["--tw-translate-x", "translate"],
+    values: [
+      "calc(var(--spacing) * var({var}))",
+      "var(--tw-translate-x) var(--tw-translate-y)",
+    ],
+    placeholders: { "{var}": "translate-x" },
+  },
+  {
+    layer: "styles",
+    selector: "[translate-x]",
+    properties: ["--tw-translate-x", "translate"],
+    values: ["var({var})", "var(--tw-translate-x) var(--tw-translate-y)"],
+    placeholders: { "{var}": "translate-x" },
+  },
+  {
+    layer: "styles",
+    selector: "translate-y",
+    properties: ["--tw-translate-y", "translate"],
+    values: [
+      "calc(var(--spacing) * var({var}))",
+      "var(--tw-translate-x) var(--tw-translate-y)",
+    ],
+    placeholders: { "{var}": "translate-y" },
+  },
+  {
+    layer: "styles",
+    selector: "[translate-y]",
+    properties: ["--tw-translate-y", "translate"],
+    values: ["var({var})", "var(--tw-translate-x) var(--tw-translate-y)"],
+    placeholders: { "{var}": "translate-y" },
+  },
+  {
+    layer: "styles",
+    selector: "translate-z",
+    properties: ["--tw-translate-z", "translate"],
+    values: [
+      "calc(var(--spacing) * var({var}))",
+      "var(--tw-translate-x) var(--tw-translate-y) var(--tw-translate-z)",
+    ],
+    placeholders: { "{var}": "translate-z" },
+  },
+  {
+    layer: "styles",
+    selector: "[translate-z]",
+    properties: ["--tw-translate-z", "translate"],
+    values: [
+      "var({var})",
+      "var(--tw-translate-x) var(--tw-translate-y) var(--tw-translate-z)",
+    ],
+    placeholders: { "{var}": "translate-z" },
+  },
+  {
     layer: "utilities",
     selector: "content-normal",
     properties: ["align-content"],
@@ -7573,6 +7649,12 @@ const rules = [
     selector: "cursor-zoom-out",
     properties: ["cursor"],
     values: ["zoom-out"],
+  },
+  {
+    layer: "utilities",
+    selector: "translate-none",
+    properties: ["translate"],
+    values: ["none"],
   },
 ];
 

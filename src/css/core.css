@@ -487,6 +487,24 @@
     inherits: false;
   }
 
+  @property --tw-translate-x {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+  }
+
+  @property --tw-translate-y {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+  }
+
+  @property --tw-translate-z {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+  }
+
   @keyframes spin {
     to {
       transform: rotate(360deg);
