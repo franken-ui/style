@@ -1917,6 +1917,35 @@ const rules = [
     placeholders: { "{var}": "translate-z" },
   },
   {
+    layer: "styles",
+    selector: "shadow",
+    properties: ["--tw-shadow-color", "--tw-shadow", "box-shadow"],
+    values: [
+      "var({var}, rgb(0 0 0 / 0.1))",
+      "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)",
+      "var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
+    ],
+    placeholders: { "{var}": "shadow" },
+  },
+  {
+    layer: "styles",
+    selector: "shadow/o",
+    properties: ["--tw-shadow-color", "--tw-shadow", "box-shadow"],
+    values: [
+      "color-mix(in oklab, var({var}) var({var2}, 100%), transparent)",
+      "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)",
+      "var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)",
+    ],
+    placeholders: { "{var}": "shadow", "{var2}": "shadow-o" },
+  },
+  {
+    layer: "styles",
+    selector: "[shadow]",
+    properties: ["box-shadow"],
+    values: ["var({var})"],
+    placeholders: { "{var}": "shadow" },
+  },
+  {
     layer: "utilities",
     selector: "content-normal",
     properties: ["align-content"],
@@ -7655,6 +7684,56 @@ const rules = [
     selector: "translate-none",
     properties: ["translate"],
     values: ["none"],
+  },
+  {
+    layer: "utilities",
+    selector: "shadow-2xs",
+    properties: ["--tw-shadow"],
+    values: ["0 1px var(--tw-shadow-color)"],
+  },
+  {
+    layer: "utilities",
+    selector: "shadow-xs",
+    properties: ["--tw-shadow"],
+    values: ["0 1px 2px 0 var(--tw-shadow-color)"],
+  },
+  {
+    layer: "utilities",
+    selector: "shadow-sm",
+    properties: ["--tw-shadow"],
+    values: [
+      "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "shadow-md",
+    properties: ["--tw-shadow"],
+    values: [
+      "0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "shadow-lg",
+    properties: ["--tw-shadow"],
+    values: [
+      "0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "shadow-xl",
+    properties: ["--tw-shadow"],
+    values: [
+      "0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)",
+    ],
+  },
+  {
+    layer: "utilities",
+    selector: "shadow-none",
+    properties: ["box-shadow"],
+    values: ["0 0 #0000"],
   },
 ];
 
