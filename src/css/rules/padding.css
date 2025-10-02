@@ -6,52 +6,52 @@
     padding: var(--p);
   }
   .pt {
-    padding-top: calc(var(--spacing) * var(--pt, var(--p)));
+    padding-top: calc(var(--spacing) * var(--pt));
   }
   .pb {
-    padding-bottom: calc(var(--spacing) * var(--pb, var(--p)));
+    padding-bottom: calc(var(--spacing) * var(--pb));
   }
   .pl {
-    padding-left: calc(var(--spacing) * var(--pl, var(--p)));
+    padding-left: calc(var(--spacing) * var(--pl));
   }
   .pr {
-    padding-right: calc(var(--spacing) * var(--pr, var(--p)));
+    padding-right: calc(var(--spacing) * var(--pr));
   }
   .ps {
-    padding-inline-start: calc(var(--spacing) * var(--ps, var(--p)));
+    padding-inline-start: calc(var(--spacing) * var(--ps));
   }
   .pe {
-    padding-inline-end: calc(var(--spacing) * var(--pe, var(--p)));
+    padding-inline-end: calc(var(--spacing) * var(--pe));
   }
   .\[pt\] {
-    padding-top: var(--pt, var(--p));
+    padding-top: var(--pt);
   }
   .\[pb\] {
-    padding-bottom: var(--pb, var(--p));
+    padding-bottom: var(--pb);
   }
   .\[pl\] {
-    padding-left: var(--pl, var(--p));
+    padding-left: var(--pl);
   }
   .\[pr\] {
-    padding-right: var(--pr, var(--p));
+    padding-right: var(--pr);
   }
   .\[ps\] {
-    padding-inline-start: var(--ps, var(--p));
+    padding-inline-start: var(--ps);
   }
   .\[pe\] {
-    padding-inline-end: var(--pe, var(--p));
+    padding-inline-end: var(--pe);
   }
   .px {
-    padding-inline: calc(var(--spacing) * var(--px, var(--p)));
+    padding-inline: calc(var(--spacing) * var(--px));
   }
   .py {
-    padding-block: calc(var(--spacing) * var(--py, var(--p)));
+    padding-block: calc(var(--spacing) * var(--py));
   }
   .\[px\] {
-    padding-inline: var(--px, var(--p));
+    padding-inline: var(--px);
   }
   .\[py\] {
-    padding-block: var(--py, var(--p));
+    padding-block: var(--py);
   }
 
   @media (min-width: 40rem) {
@@ -62,52 +62,52 @@
       padding: var(--sm-p);
     }
     .sm\:pt {
-      padding-top: calc(var(--spacing) * var(--sm-pt, var(--p)));
+      padding-top: calc(var(--spacing) * var(--sm-pt));
     }
     .sm\:pb {
-      padding-bottom: calc(var(--spacing) * var(--sm-pb, var(--p)));
+      padding-bottom: calc(var(--spacing) * var(--sm-pb));
     }
     .sm\:pl {
-      padding-left: calc(var(--spacing) * var(--sm-pl, var(--p)));
+      padding-left: calc(var(--spacing) * var(--sm-pl));
     }
     .sm\:pr {
-      padding-right: calc(var(--spacing) * var(--sm-pr, var(--p)));
+      padding-right: calc(var(--spacing) * var(--sm-pr));
     }
     .sm\:ps {
-      padding-inline-start: calc(var(--spacing) * var(--sm-ps, var(--p)));
+      padding-inline-start: calc(var(--spacing) * var(--sm-ps));
     }
     .sm\:pe {
-      padding-inline-end: calc(var(--spacing) * var(--sm-pe, var(--p)));
+      padding-inline-end: calc(var(--spacing) * var(--sm-pe));
     }
     .sm\:\[pt\] {
-      padding-top: var(--sm-pt, var(--p));
+      padding-top: var(--sm-pt);
     }
     .sm\:\[pb\] {
-      padding-bottom: var(--sm-pb, var(--p));
+      padding-bottom: var(--sm-pb);
     }
     .sm\:\[pl\] {
-      padding-left: var(--sm-pl, var(--p));
+      padding-left: var(--sm-pl);
     }
     .sm\:\[pr\] {
-      padding-right: var(--sm-pr, var(--p));
+      padding-right: var(--sm-pr);
     }
     .sm\:\[ps\] {
-      padding-inline-start: var(--sm-ps, var(--p));
+      padding-inline-start: var(--sm-ps);
     }
     .sm\:\[pe\] {
-      padding-inline-end: var(--sm-pe, var(--p));
+      padding-inline-end: var(--sm-pe);
     }
     .sm\:px {
-      padding-inline: calc(var(--spacing) * var(--sm-px, var(--p)));
+      padding-inline: calc(var(--spacing) * var(--sm-px));
     }
     .sm\:py {
-      padding-block: calc(var(--spacing) * var(--sm-py, var(--p)));
+      padding-block: calc(var(--spacing) * var(--sm-py));
     }
     .sm\:\[px\] {
-      padding-inline: var(--sm-px, var(--p));
+      padding-inline: var(--sm-px);
     }
     .sm\:\[py\] {
-      padding-block: var(--sm-py, var(--p));
+      padding-block: var(--sm-py);
     }
   }
 
@@ -119,52 +119,52 @@
       padding: var(--md-p);
     }
     .md\:pt {
-      padding-top: calc(var(--spacing) * var(--md-pt, var(--p)));
+      padding-top: calc(var(--spacing) * var(--md-pt));
     }
     .md\:pb {
-      padding-bottom: calc(var(--spacing) * var(--md-pb, var(--p)));
+      padding-bottom: calc(var(--spacing) * var(--md-pb));
     }
     .md\:pl {
-      padding-left: calc(var(--spacing) * var(--md-pl, var(--p)));
+      padding-left: calc(var(--spacing) * var(--md-pl));
     }
     .md\:pr {
-      padding-right: calc(var(--spacing) * var(--md-pr, var(--p)));
+      padding-right: calc(var(--spacing) * var(--md-pr));
     }
     .md\:ps {
-      padding-inline-start: calc(var(--spacing) * var(--md-ps, var(--p)));
+      padding-inline-start: calc(var(--spacing) * var(--md-ps));
     }
     .md\:pe {
-      padding-inline-end: calc(var(--spacing) * var(--md-pe, var(--p)));
+      padding-inline-end: calc(var(--spacing) * var(--md-pe));
     }
     .md\:\[pt\] {
-      padding-top: var(--md-pt, var(--p));
+      padding-top: var(--md-pt);
     }
     .md\:\[pb\] {
-      padding-bottom: var(--md-pb, var(--p));
+      padding-bottom: var(--md-pb);
     }
     .md\:\[pl\] {
-      padding-left: var(--md-pl, var(--p));
+      padding-left: var(--md-pl);
     }
     .md\:\[pr\] {
-      padding-right: var(--md-pr, var(--p));
+      padding-right: var(--md-pr);
     }
     .md\:\[ps\] {
-      padding-inline-start: var(--md-ps, var(--p));
+      padding-inline-start: var(--md-ps);
     }
     .md\:\[pe\] {
-      padding-inline-end: var(--md-pe, var(--p));
+      padding-inline-end: var(--md-pe);
     }
     .md\:px {
-      padding-inline: calc(var(--spacing) * var(--md-px, var(--p)));
+      padding-inline: calc(var(--spacing) * var(--md-px));
     }
     .md\:py {
-      padding-block: calc(var(--spacing) * var(--md-py, var(--p)));
+      padding-block: calc(var(--spacing) * var(--md-py));
     }
     .md\:\[px\] {
-      padding-inline: var(--md-px, var(--p));
+      padding-inline: var(--md-px);
     }
     .md\:\[py\] {
-      padding-block: var(--md-py, var(--p));
+      padding-block: var(--md-py);
     }
   }
 
@@ -176,52 +176,52 @@
       padding: var(--lg-p);
     }
     .lg\:pt {
-      padding-top: calc(var(--spacing) * var(--lg-pt, var(--p)));
+      padding-top: calc(var(--spacing) * var(--lg-pt));
     }
     .lg\:pb {
-      padding-bottom: calc(var(--spacing) * var(--lg-pb, var(--p)));
+      padding-bottom: calc(var(--spacing) * var(--lg-pb));
     }
     .lg\:pl {
-      padding-left: calc(var(--spacing) * var(--lg-pl, var(--p)));
+      padding-left: calc(var(--spacing) * var(--lg-pl));
     }
     .lg\:pr {
-      padding-right: calc(var(--spacing) * var(--lg-pr, var(--p)));
+      padding-right: calc(var(--spacing) * var(--lg-pr));
     }
     .lg\:ps {
-      padding-inline-start: calc(var(--spacing) * var(--lg-ps, var(--p)));
+      padding-inline-start: calc(var(--spacing) * var(--lg-ps));
     }
     .lg\:pe {
-      padding-inline-end: calc(var(--spacing) * var(--lg-pe, var(--p)));
+      padding-inline-end: calc(var(--spacing) * var(--lg-pe));
     }
     .lg\:\[pt\] {
-      padding-top: var(--lg-pt, var(--p));
+      padding-top: var(--lg-pt);
     }
     .lg\:\[pb\] {
-      padding-bottom: var(--lg-pb, var(--p));
+      padding-bottom: var(--lg-pb);
     }
     .lg\:\[pl\] {
-      padding-left: var(--lg-pl, var(--p));
+      padding-left: var(--lg-pl);
     }
     .lg\:\[pr\] {
-      padding-right: var(--lg-pr, var(--p));
+      padding-right: var(--lg-pr);
     }
     .lg\:\[ps\] {
-      padding-inline-start: var(--lg-ps, var(--p));
+      padding-inline-start: var(--lg-ps);
     }
     .lg\:\[pe\] {
-      padding-inline-end: var(--lg-pe, var(--p));
+      padding-inline-end: var(--lg-pe);
     }
     .lg\:px {
-      padding-inline: calc(var(--spacing) * var(--lg-px, var(--p)));
+      padding-inline: calc(var(--spacing) * var(--lg-px));
     }
     .lg\:py {
-      padding-block: calc(var(--spacing) * var(--lg-py, var(--p)));
+      padding-block: calc(var(--spacing) * var(--lg-py));
     }
     .lg\:\[px\] {
-      padding-inline: var(--lg-px, var(--p));
+      padding-inline: var(--lg-px);
     }
     .lg\:\[py\] {
-      padding-block: var(--lg-py, var(--p));
+      padding-block: var(--lg-py);
     }
   }
 
@@ -233,52 +233,52 @@
       padding: var(--xl-p);
     }
     .xl\:pt {
-      padding-top: calc(var(--spacing) * var(--xl-pt, var(--p)));
+      padding-top: calc(var(--spacing) * var(--xl-pt));
     }
     .xl\:pb {
-      padding-bottom: calc(var(--spacing) * var(--xl-pb, var(--p)));
+      padding-bottom: calc(var(--spacing) * var(--xl-pb));
     }
     .xl\:pl {
-      padding-left: calc(var(--spacing) * var(--xl-pl, var(--p)));
+      padding-left: calc(var(--spacing) * var(--xl-pl));
     }
     .xl\:pr {
-      padding-right: calc(var(--spacing) * var(--xl-pr, var(--p)));
+      padding-right: calc(var(--spacing) * var(--xl-pr));
     }
     .xl\:ps {
-      padding-inline-start: calc(var(--spacing) * var(--xl-ps, var(--p)));
+      padding-inline-start: calc(var(--spacing) * var(--xl-ps));
     }
     .xl\:pe {
-      padding-inline-end: calc(var(--spacing) * var(--xl-pe, var(--p)));
+      padding-inline-end: calc(var(--spacing) * var(--xl-pe));
     }
     .xl\:\[pt\] {
-      padding-top: var(--xl-pt, var(--p));
+      padding-top: var(--xl-pt);
     }
     .xl\:\[pb\] {
-      padding-bottom: var(--xl-pb, var(--p));
+      padding-bottom: var(--xl-pb);
     }
     .xl\:\[pl\] {
-      padding-left: var(--xl-pl, var(--p));
+      padding-left: var(--xl-pl);
     }
     .xl\:\[pr\] {
-      padding-right: var(--xl-pr, var(--p));
+      padding-right: var(--xl-pr);
     }
     .xl\:\[ps\] {
-      padding-inline-start: var(--xl-ps, var(--p));
+      padding-inline-start: var(--xl-ps);
     }
     .xl\:\[pe\] {
-      padding-inline-end: var(--xl-pe, var(--p));
+      padding-inline-end: var(--xl-pe);
     }
     .xl\:px {
-      padding-inline: calc(var(--spacing) * var(--xl-px, var(--p)));
+      padding-inline: calc(var(--spacing) * var(--xl-px));
     }
     .xl\:py {
-      padding-block: calc(var(--spacing) * var(--xl-py, var(--p)));
+      padding-block: calc(var(--spacing) * var(--xl-py));
     }
     .xl\:\[px\] {
-      padding-inline: var(--xl-px, var(--p));
+      padding-inline: var(--xl-px);
     }
     .xl\:\[py\] {
-      padding-block: var(--xl-py, var(--p));
+      padding-block: var(--xl-py);
     }
   }
 
@@ -290,52 +290,52 @@
       padding: var(--\32xl-p);
     }
     .\32xl\:pt {
-      padding-top: calc(var(--spacing) * var(--\32xl-pt, var(--p)));
+      padding-top: calc(var(--spacing) * var(--\32xl-pt));
     }
     .\32xl\:pb {
-      padding-bottom: calc(var(--spacing) * var(--\32xl-pb, var(--p)));
+      padding-bottom: calc(var(--spacing) * var(--\32xl-pb));
     }
     .\32xl\:pl {
-      padding-left: calc(var(--spacing) * var(--\32xl-pl, var(--p)));
+      padding-left: calc(var(--spacing) * var(--\32xl-pl));
     }
     .\32xl\:pr {
-      padding-right: calc(var(--spacing) * var(--\32xl-pr, var(--p)));
+      padding-right: calc(var(--spacing) * var(--\32xl-pr));
     }
     .\32xl\:ps {
-      padding-inline-start: calc(var(--spacing) * var(--\32xl-ps, var(--p)));
+      padding-inline-start: calc(var(--spacing) * var(--\32xl-ps));
     }
     .\32xl\:pe {
-      padding-inline-end: calc(var(--spacing) * var(--\32xl-pe, var(--p)));
+      padding-inline-end: calc(var(--spacing) * var(--\32xl-pe));
     }
     .\32xl\:\[pt\] {
-      padding-top: var(--\32xl-pt, var(--p));
+      padding-top: var(--\32xl-pt);
     }
     .\32xl\:\[pb\] {
-      padding-bottom: var(--\32xl-pb, var(--p));
+      padding-bottom: var(--\32xl-pb);
     }
     .\32xl\:\[pl\] {
-      padding-left: var(--\32xl-pl, var(--p));
+      padding-left: var(--\32xl-pl);
     }
     .\32xl\:\[pr\] {
-      padding-right: var(--\32xl-pr, var(--p));
+      padding-right: var(--\32xl-pr);
     }
     .\32xl\:\[ps\] {
-      padding-inline-start: var(--\32xl-ps, var(--p));
+      padding-inline-start: var(--\32xl-ps);
     }
     .\32xl\:\[pe\] {
-      padding-inline-end: var(--\32xl-pe, var(--p));
+      padding-inline-end: var(--\32xl-pe);
     }
     .\32xl\:px {
-      padding-inline: calc(var(--spacing) * var(--\32xl-px, var(--p)));
+      padding-inline: calc(var(--spacing) * var(--\32xl-px));
     }
     .\32xl\:py {
-      padding-block: calc(var(--spacing) * var(--\32xl-py, var(--p)));
+      padding-block: calc(var(--spacing) * var(--\32xl-py));
     }
     .\32xl\:\[px\] {
-      padding-inline: var(--\32xl-px, var(--p));
+      padding-inline: var(--\32xl-px);
     }
     .\32xl\:\[py\] {
-      padding-block: var(--\32xl-py, var(--p));
+      padding-block: var(--\32xl-py);
     }
   }
 }

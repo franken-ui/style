@@ -3,19 +3,19 @@
     gap: calc(var(--spacing) * var(--gap));
   }
   .gap-x {
-    column-gap: calc(var(--spacing) * var(--gap-x, var(--gap)));
+    column-gap: calc(var(--spacing) * var(--gap-x));
   }
   .gap-y {
-    row-gap: calc(var(--spacing) * var(--gap-y, var(--gap)));
+    row-gap: calc(var(--spacing) * var(--gap-y));
   }
   .\[gap\] {
     gap: var(--gap);
   }
   .\[gap-x\] {
-    column-gap: var(--gap-x, var(--gap));
+    column-gap: var(--gap-x);
   }
   .\[gap-y\] {
-    row-gap: var(--gap-y, var(--gap));
+    row-gap: var(--gap-y);
   }
 
   @media (min-width: 40rem) {
@@ -23,19 +23,19 @@
       gap: calc(var(--spacing) * var(--sm-gap));
     }
     .sm\:gap-x {
-      column-gap: calc(var(--spacing) * var(--sm-gap-x, var(--gap)));
+      column-gap: calc(var(--spacing) * var(--sm-gap-x));
     }
     .sm\:gap-y {
-      row-gap: calc(var(--spacing) * var(--sm-gap-y, var(--gap)));
+      row-gap: calc(var(--spacing) * var(--sm-gap-y));
     }
     .sm\:\[gap\] {
       gap: var(--sm-gap);
     }
     .sm\:\[gap-x\] {
-      column-gap: var(--sm-gap-x, var(--gap));
+      column-gap: var(--sm-gap-x);
     }
     .sm\:\[gap-y\] {
-      row-gap: var(--sm-gap-y, var(--gap));
+      row-gap: var(--sm-gap-y);
     }
   }
 
@@ -44,19 +44,19 @@
       gap: calc(var(--spacing) * var(--md-gap));
     }
     .md\:gap-x {
-      column-gap: calc(var(--spacing) * var(--md-gap-x, var(--gap)));
+      column-gap: calc(var(--spacing) * var(--md-gap-x));
     }
     .md\:gap-y {
-      row-gap: calc(var(--spacing) * var(--md-gap-y, var(--gap)));
+      row-gap: calc(var(--spacing) * var(--md-gap-y));
     }
     .md\:\[gap\] {
       gap: var(--md-gap);
     }
     .md\:\[gap-x\] {
-      column-gap: var(--md-gap-x, var(--gap));
+      column-gap: var(--md-gap-x);
     }
     .md\:\[gap-y\] {
-      row-gap: var(--md-gap-y, var(--gap));
+      row-gap: var(--md-gap-y);
     }
   }
 
@@ -65,19 +65,19 @@
       gap: calc(var(--spacing) * var(--lg-gap));
     }
     .lg\:gap-x {
-      column-gap: calc(var(--spacing) * var(--lg-gap-x, var(--gap)));
+      column-gap: calc(var(--spacing) * var(--lg-gap-x));
     }
     .lg\:gap-y {
-      row-gap: calc(var(--spacing) * var(--lg-gap-y, var(--gap)));
+      row-gap: calc(var(--spacing) * var(--lg-gap-y));
     }
     .lg\:\[gap\] {
       gap: var(--lg-gap);
     }
     .lg\:\[gap-x\] {
-      column-gap: var(--lg-gap-x, var(--gap));
+      column-gap: var(--lg-gap-x);
     }
     .lg\:\[gap-y\] {
-      row-gap: var(--lg-gap-y, var(--gap));
+      row-gap: var(--lg-gap-y);
     }
   }
 
@@ -86,19 +86,19 @@
       gap: calc(var(--spacing) * var(--xl-gap));
     }
     .xl\:gap-x {
-      column-gap: calc(var(--spacing) * var(--xl-gap-x, var(--gap)));
+      column-gap: calc(var(--spacing) * var(--xl-gap-x));
     }
     .xl\:gap-y {
-      row-gap: calc(var(--spacing) * var(--xl-gap-y, var(--gap)));
+      row-gap: calc(var(--spacing) * var(--xl-gap-y));
     }
     .xl\:\[gap\] {
       gap: var(--xl-gap);
     }
     .xl\:\[gap-x\] {
-      column-gap: var(--xl-gap-x, var(--gap));
+      column-gap: var(--xl-gap-x);
     }
     .xl\:\[gap-y\] {
-      row-gap: var(--xl-gap-y, var(--gap));
+      row-gap: var(--xl-gap-y);
     }
   }
 
@@ -107,19 +107,19 @@
       gap: calc(var(--spacing) * var(--\32xl-gap));
     }
     .\32xl\:gap-x {
-      column-gap: calc(var(--spacing) * var(--\32xl-gap-x, var(--gap)));
+      column-gap: calc(var(--spacing) * var(--\32xl-gap-x));
     }
     .\32xl\:gap-y {
-      row-gap: calc(var(--spacing) * var(--\32xl-gap-y, var(--gap)));
+      row-gap: calc(var(--spacing) * var(--\32xl-gap-y));
     }
     .\32xl\:\[gap\] {
       gap: var(--\32xl-gap);
     }
     .\32xl\:\[gap-x\] {
-      column-gap: var(--\32xl-gap-x, var(--gap));
+      column-gap: var(--\32xl-gap-x);
     }
     .\32xl\:\[gap-y\] {
-      row-gap: var(--\32xl-gap-y, var(--gap));
+      row-gap: var(--\32xl-gap-y);
     }
   }
 }
