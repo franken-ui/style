@@ -1479,7 +1479,7 @@ const rules = [
   },
   {
     layer: "styles",
-    selector: "stroke-width",
+    selector: "stroke-w",
     properties: ["stroke-width"],
     arbitrary: true,
   },

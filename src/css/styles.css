@@ -1125,8 +1125,8 @@
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
       var(--tw-skew-x,) var(--tw-skew-y,);
   }
-  .stroke-width {
-    stroke-width: var(--stroke-width);
+  .stroke-w {
+    stroke-width: var(--stroke-w);
   }
   .stroke {
     stroke: var(--stroke);
@@ -2474,8 +2474,8 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
-    .sm\:stroke-width {
-      stroke-width: var(--sm-stroke-width);
+    .sm\:stroke-w {
+      stroke-width: var(--sm-stroke-w);
     }
     .sm\:stroke {
       stroke: var(--sm-stroke);
@@ -3826,8 +3826,8 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
-    .md\:stroke-width {
-      stroke-width: var(--md-stroke-width);
+    .md\:stroke-w {
+      stroke-width: var(--md-stroke-w);
     }
     .md\:stroke {
       stroke: var(--md-stroke);
@@ -5178,8 +5178,8 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
-    .lg\:stroke-width {
-      stroke-width: var(--lg-stroke-width);
+    .lg\:stroke-w {
+      stroke-width: var(--lg-stroke-w);
     }
     .lg\:stroke {
       stroke: var(--lg-stroke);
@@ -6530,8 +6530,8 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
-    .xl\:stroke-width {
-      stroke-width: var(--xl-stroke-width);
+    .xl\:stroke-w {
+      stroke-width: var(--xl-stroke-w);
     }
     .xl\:stroke {
       stroke: var(--xl-stroke);
@@ -7888,8 +7888,8 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
-    .\32xl\:stroke-width {
-      stroke-width: var(--\32xl-stroke-width);
+    .\32xl\:stroke-w {
+      stroke-width: var(--\32xl-stroke-w);
     }
     .\32xl\:stroke {
       stroke: var(--\32xl-stroke);
