@@ -584,6 +584,31 @@
     initial-value: 0 0 #0000;
   }
 
+  @property --tw-ordinal {
+    syntax: "*";
+    inherits: false;
+  }
+
+  @property --tw-slashed-zero {
+    syntax: "*";
+    inherits: false;
+  }
+
+  @property --tw-numeric-figure {
+    syntax: "*";
+    inherits: false;
+  }
+
+  @property --tw-numeric-spacing {
+    syntax: "*";
+    inherits: false;
+  }
+
+  @property --tw-numeric-fraction {
+    syntax: "*";
+    inherits: false;
+  }
+
   @keyframes spin {
     to {
       transform: rotate(360deg);

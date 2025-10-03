@@ -3674,19 +3674,7 @@ const rules = [
   },
   {
     layer: "utilities",
-    selector: "flex-grow",
-    properties: ["flex-grow"],
-    values: ["1"],
-  },
-  {
-    layer: "utilities",
-    selector: "flex-grow-0",
-    properties: ["flex-grow"],
-    values: ["0"],
-  },
-  {
-    layer: "utilities",
-    selector: "grow",
+    selector: "grow-1",
     properties: ["flex-grow"],
     values: ["1"],
   },
@@ -3698,19 +3686,7 @@ const rules = [
   },
   {
     layer: "utilities",
-    selector: "flex-shrink",
-    properties: ["flex-shrink"],
-    values: ["1"],
-  },
-  {
-    layer: "utilities",
-    selector: "flex-shrink-0",
-    properties: ["flex-shrink"],
-    values: ["0"],
-  },
-  {
-    layer: "utilities",
-    selector: "shrink",
+    selector: "shrink-1",
     properties: ["flex-shrink"],
     values: ["1"],
   },
@@ -5844,7 +5820,7 @@ const rules = [
     properties: ["--tw-ordinal", "font-variant-numeric"],
     values: [
       "ordinal",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
@@ -5853,7 +5829,7 @@ const rules = [
     properties: ["--tw-slashed-zero", "font-variant-numeric"],
     values: [
       "slashed-zero",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
@@ -5862,7 +5838,7 @@ const rules = [
     properties: ["--tw-numeric-figure", "font-variant-numeric"],
     values: [
       "lining-nums",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
@@ -5871,7 +5847,7 @@ const rules = [
     properties: ["--tw-numeric-figure", "font-variant-numeric"],
     values: [
       "oldstyle-nums",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
@@ -5880,7 +5856,7 @@ const rules = [
     properties: ["--tw-numeric-spacing", "font-variant-numeric"],
     values: [
       "proportional-nums",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
@@ -5889,7 +5865,7 @@ const rules = [
     properties: ["--tw-numeric-spacing", "font-variant-numeric"],
     values: [
       "tabular-nums",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
@@ -5898,7 +5874,7 @@ const rules = [
     properties: ["--tw-numeric-fraction", "font-variant-numeric"],
     values: [
       "diagonal-fractions",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
@@ -5907,7 +5883,7 @@ const rules = [
     properties: ["--tw-numeric-fraction", "font-variant-numeric"],
     values: [
       "stacked-fractions",
-      "var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)",
+      "var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)",
     ],
   },
   {
