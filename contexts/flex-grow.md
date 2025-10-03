@@ -8,9 +8,7 @@
 
 ## Utilities
 
-| Selector       | Style                          |
-| -------------- | ------------------------------ |
-| `.flex-grow`   | `flex-grow: 1`, `flex-grow: 1` |
-| `.flex-grow-0` | `flex-grow: 0`, `flex-grow: 0` |
-| `.grow`        | `flex-grow: 1`, `flex-grow: 1` |
-| `.grow-0`      | `flex-grow: 0`, `flex-grow: 0` |
+| Selector  | Style          |
+| --------- | -------------- |
+| `.grow-1` | `flex-grow: 1` |
+| `.grow-0` | `flex-grow: 0` |
