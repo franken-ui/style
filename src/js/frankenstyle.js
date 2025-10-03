@@ -2035,6 +2035,12 @@ const rules = [
     placeholders: { "{var}": "inset-ring-w" },
   },
   {
+    layer: "styles",
+    selector: "font-size",
+    properties: ["font-size"],
+    arbitrary: true,
+  },
+  {
     layer: "utilities",
     selector: "content-normal",
     properties: ["align-content"],

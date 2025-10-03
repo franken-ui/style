@@ -1,5 +1,11 @@
 # Font Size Documentation
 
+## Value-driven Utilities
+
+| Selector     | Style                         | Variables Required |
+| ------------ | ----------------------------- | ------------------ |
+| `.font-size` | `font-size: var(--font-size)` | `--font-size`      |
+
 ## Utilities
 
 | Selector     | Style                                                                                 |

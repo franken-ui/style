@@ -501,6 +501,9 @@
   .font-family {
     font-family: var(--font-family);
   }
+  .font-size {
+    font-size: var(--font-size);
+  }
   .from {
     --tw-gradient-from: var(--from);
     --tw-gradient-stops: var(
@@ -1849,6 +1852,9 @@
     }
     .sm\:font-family {
       font-family: var(--sm-font-family);
+    }
+    .sm\:font-size {
+      font-size: var(--sm-font-size);
     }
     .sm\:from {
       --tw-gradient-from: var(--sm-from);
@@ -3202,6 +3208,9 @@
     .md\:font-family {
       font-family: var(--md-font-family);
     }
+    .md\:font-size {
+      font-size: var(--md-font-size);
+    }
     .md\:from {
       --tw-gradient-from: var(--md-from);
       --tw-gradient-stops: var(
@@ -4554,6 +4563,9 @@
     .lg\:font-family {
       font-family: var(--lg-font-family);
     }
+    .lg\:font-size {
+      font-size: var(--lg-font-size);
+    }
     .lg\:from {
       --tw-gradient-from: var(--lg-from);
       --tw-gradient-stops: var(
@@ -5905,6 +5917,9 @@
     }
     .xl\:font-family {
       font-family: var(--xl-font-family);
+    }
+    .xl\:font-size {
+      font-size: var(--xl-font-size);
     }
     .xl\:from {
       --tw-gradient-from: var(--xl-from);
@@ -7261,6 +7276,9 @@
     }
     .\32xl\:font-family {
       font-family: var(--\32xl-font-family);
+    }
+    .\32xl\:font-size {
+      font-size: var(--\32xl-font-size);
     }
     .\32xl\:from {
       --tw-gradient-from: var(--\32xl-from);

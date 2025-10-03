@@ -1,0 +1,35 @@
+@layer styles {
+  .font-size {
+    font-size: var(--font-size);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:font-size {
+      font-size: var(--sm-font-size);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:font-size {
+      font-size: var(--md-font-size);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:font-size {
+      font-size: var(--lg-font-size);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:font-size {
+      font-size: var(--xl-font-size);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:font-size {
+      font-size: var(--\32xl-font-size);
+    }
+  }
+}
