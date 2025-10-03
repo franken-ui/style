@@ -4,13 +4,11 @@
 
 Frankenstyle is a no-build, value-driven, fully responsive, utility-first CSS framework. It’s designed to be lightweight, production-ready, and to strike a balance between developer ergonomics and build size.
 
-⚠️ **Early development project** — expect changes and rough edges. Feedback and testing are welcome!
-
-📖 **Documentation is coming soon** — for now, explore the examples and notes below.
+For full documentation, visit [franken.style](https://franken.style).
 
 ## Installation
 
-Frankenstyle can be used via CDN or installed locally.
+Frankenstyle can be used via CDN or downloaded and referenced locally.
 
 ### CDN
 
