@@ -371,6 +371,12 @@
     --perspective-midrange: 800px;
     --perspective-distant: 1200px;
     --aspect-video: 16/9;
+    --default-transition-property:
+      color, background-color, border-color, outline-color,
+      text-decoration-color, fill, stroke, --tw-gradient-from,
+      --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform,
+      translate, scale, rotate, filter, -webkit-backdrop-filter,
+      backdrop-filter, display, content-visibility, overlay, pointer-events;
     --default-transition-duration: 0.15s;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-inter), system-ui;

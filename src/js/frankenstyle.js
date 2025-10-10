@@ -1356,14 +1356,14 @@ const rules = [
   },
   {
     layer: "styles",
-    selector: "[transition]",
+    selector: "transition",
     properties: [
       "transition-property",
       "transition-timing-function",
       "transition-duration",
     ],
     values: [
-      "var({var})",
+      "var({var}, var(--default-transition-property))",
       "var(--default-transition-timing-function)",
       "var(--default-transition-duration)",
     ],
@@ -7316,87 +7316,35 @@ const rules = [
   },
   {
     layer: "utilities",
-    selector: "transition",
-    properties: [
-      "transition-property",
-      "transition-timing-function",
-      "transition-duration",
-    ],
-    values: [
-      "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
-      "var(--default-transition-timing-function)",
-      "var(--default-transition-duration)",
-    ],
-  },
-  {
-    layer: "utilities",
     selector: "transition-all",
-    properties: [
-      "transition-property",
-      "transition-timing-function",
-      "transition-duration",
-    ],
-    values: [
-      "all",
-      "var(--default-transition-timing-function)",
-      "var(--default-transition-duration)",
-    ],
+    properties: ["--default-transition-property"],
+    values: ["all"],
   },
   {
     layer: "utilities",
     selector: "transition-colors",
-    properties: [
-      "transition-property",
-      "transition-timing-function",
-      "transition-duration",
-    ],
+    properties: ["--default-transition-property"],
     values: [
       "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
-      "var(--default-transition-timing-function)",
-      "var(--default-transition-duration)",
     ],
   },
   {
     layer: "utilities",
     selector: "transition-opacity",
-    properties: [
-      "transition-property",
-      "transition-timing-function",
-      "transition-duration",
-    ],
-    values: [
-      "opacity",
-      "var(--default-transition-timing-function)",
-      "var(--default-transition-duration)",
-    ],
+    properties: ["--default-transition-property"],
+    values: ["opacity"],
   },
   {
     layer: "utilities",
     selector: "transition-shadow",
-    properties: [
-      "transition-property",
-      "transition-timing-function",
-      "transition-duration",
-    ],
-    values: [
-      "box-shadow",
-      "var(--default-transition-timing-function)",
-      "var(--default-transition-duration)",
-    ],
+    properties: ["--default-transition-property"],
+    values: ["box-shadow"],
   },
   {
     layer: "utilities",
     selector: "transition-transform",
-    properties: [
-      "transition-property",
-      "transition-timing-function",
-      "transition-duration",
-    ],
-    values: [
-      "transform, translate, scale, rotate",
-      "var(--default-transition-timing-function)",
-      "var(--default-transition-duration)",
-    ],
+    properties: ["--default-transition-property"],
+    values: ["transform, translate, scale, rotate"],
   },
   {
     layer: "utilities",
@@ -7949,7 +7897,7 @@ const rules = [
    * Generates the complete CSS stylesheet string from all interactive classes on the page.
    */
   function generateInteractiveStyles() {
-    const nodes = document.querySelectorAll("[data-fs-interactive]");
+    const nodes = document.querySelectorAll("[data-fr]");
     const allInteractiveClasses = [];
 
     nodes.forEach((node) => {
@@ -8036,7 +7984,7 @@ const rules = [
       if (
         mutation.type === "attributes" &&
         (mutation.attributeName === "class" ||
-          mutation.attributeName === "data-fs-interactive")
+          mutation.attributeName === "data-fr")
       ) {
         scheduleGenerate();
         return;
@@ -8046,8 +7994,8 @@ const rules = [
         for (const node of [...mutation.addedNodes, ...mutation.removedNodes]) {
           if (
             node.nodeType === 1 &&
-            (node.hasAttribute?.("data-fs-interactive") ||
-              node.querySelector?.("[data-fs-interactive]"))
+            (node.hasAttribute?.("data-fr") ||
+              node.querySelector?.("[data-fr]"))
           ) {
             scheduleGenerate();
             return;
@@ -8066,7 +8014,7 @@ const rules = [
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ["data-fs-interactive", "class"],
+      attributeFilter: ["data-fr", "class"],
     });
 
     window.__fsInteractive = {

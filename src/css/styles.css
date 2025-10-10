@@ -1231,13 +1231,13 @@
   .delay {
     transition-delay: var(--delay);
   }
-  .duration {
-    transition-duration: var(--duration);
-  }
-  .\[transition\] {
-    transition-property: var(--transition);
+  .transition {
+    transition-property: var(--transition, var(--default-transition-property));
     transition-timing-function: var(--default-transition-timing-function);
     transition-duration: var(--default-transition-duration);
+  }
+  .duration {
+    transition-duration: var(--duration);
   }
   .ease {
     transition-timing-function: var(--ease);
@@ -2583,13 +2583,16 @@
     .sm\:delay {
       transition-delay: var(--sm-delay);
     }
-    .sm\:duration {
-      transition-duration: var(--sm-duration);
-    }
-    .sm\:\[transition\] {
-      transition-property: var(--sm-transition);
+    .sm\:transition {
+      transition-property: var(
+        --sm-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
+    }
+    .sm\:duration {
+      transition-duration: var(--sm-duration);
     }
     .sm\:ease {
       transition-timing-function: var(--sm-ease);
@@ -3938,13 +3941,16 @@
     .md\:delay {
       transition-delay: var(--md-delay);
     }
-    .md\:duration {
-      transition-duration: var(--md-duration);
-    }
-    .md\:\[transition\] {
-      transition-property: var(--md-transition);
+    .md\:transition {
+      transition-property: var(
+        --md-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
+    }
+    .md\:duration {
+      transition-duration: var(--md-duration);
     }
     .md\:ease {
       transition-timing-function: var(--md-ease);
@@ -5293,13 +5299,16 @@
     .lg\:delay {
       transition-delay: var(--lg-delay);
     }
-    .lg\:duration {
-      transition-duration: var(--lg-duration);
-    }
-    .lg\:\[transition\] {
-      transition-property: var(--lg-transition);
+    .lg\:transition {
+      transition-property: var(
+        --lg-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
+    }
+    .lg\:duration {
+      transition-duration: var(--lg-duration);
     }
     .lg\:ease {
       transition-timing-function: var(--lg-ease);
@@ -6648,13 +6657,16 @@
     .xl\:delay {
       transition-delay: var(--xl-delay);
     }
-    .xl\:duration {
-      transition-duration: var(--xl-duration);
-    }
-    .xl\:\[transition\] {
-      transition-property: var(--xl-transition);
+    .xl\:transition {
+      transition-property: var(
+        --xl-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
+    }
+    .xl\:duration {
+      transition-duration: var(--xl-duration);
     }
     .xl\:ease {
       transition-timing-function: var(--xl-ease);
@@ -8009,13 +8021,16 @@
     .\32xl\:delay {
       transition-delay: var(--\32xl-delay);
     }
-    .\32xl\:duration {
-      transition-duration: var(--\32xl-duration);
-    }
-    .\32xl\:\[transition\] {
-      transition-property: var(--\32xl-transition);
+    .\32xl\:transition {
+      transition-property: var(
+        --\32xl-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
+    }
+    .\32xl\:duration {
+      transition-duration: var(--\32xl-duration);
     }
     .\32xl\:ease {
       transition-timing-function: var(--\32xl-ease);

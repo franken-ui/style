@@ -1,45 +1,60 @@
 @layer styles {
-  .\[transition\] {
-    transition-property: var(--transition);
+  .transition {
+    transition-property: var(--transition, var(--default-transition-property));
     transition-timing-function: var(--default-transition-timing-function);
     transition-duration: var(--default-transition-duration);
   }
 
   @media (min-width: 40rem) {
-    .sm\:\[transition\] {
-      transition-property: var(--sm-transition);
+    .sm\:transition {
+      transition-property: var(
+        --sm-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
     }
   }
 
   @media (min-width: 48rem) {
-    .md\:\[transition\] {
-      transition-property: var(--md-transition);
+    .md\:transition {
+      transition-property: var(
+        --md-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
     }
   }
 
   @media (min-width: 64rem) {
-    .lg\:\[transition\] {
-      transition-property: var(--lg-transition);
+    .lg\:transition {
+      transition-property: var(
+        --lg-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
     }
   }
 
   @media (min-width: 80rem) {
-    .xl\:\[transition\] {
-      transition-property: var(--xl-transition);
+    .xl\:transition {
+      transition-property: var(
+        --xl-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
     }
   }
 
   @media (min-width: 96rem) {
-    .\32xl\:\[transition\] {
-      transition-property: var(--\32xl-transition);
+    .\32xl\:transition {
+      transition-property: var(
+        --\32xl-transition,
+        var(--default-transition-property)
+      );
       transition-timing-function: var(--default-transition-timing-function);
       transition-duration: var(--default-transition-duration);
     }

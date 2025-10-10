@@ -2816,61 +2816,23 @@
   .duration-initial {
     transition-duration: initial;
   }
-  .transition {
-    transition-property:
-      color,
-      background-color,
-      border-color,
-      outline-color,
-      text-decoration-color,
-      fill,
-      stroke,
-      --tw-gradient-from,
-      --tw-gradient-via,
-      --tw-gradient-to,
-      opacity,
-      box-shadow,
-      transform,
-      translate,
-      scale,
-      rotate,
-      filter,
-      -webkit-backdrop-filter,
-      backdrop-filter,
-      display,
-      content-visibility,
-      overlay,
-      pointer-events;
-    transition-timing-function: var(--default-transition-timing-function);
-    transition-duration: var(--default-transition-duration);
-  }
   .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--default-transition-timing-function);
-    transition-duration: var(--default-transition-duration);
+    --default-transition-property: all;
   }
   .transition-colors {
-    transition-property:
+    --default-transition-property:
       color, background-color, border-color, outline-color,
       text-decoration-color, fill, stroke, --tw-gradient-from,
       --tw-gradient-via, --tw-gradient-to;
-    transition-timing-function: var(--default-transition-timing-function);
-    transition-duration: var(--default-transition-duration);
   }
   .transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: var(--default-transition-timing-function);
-    transition-duration: var(--default-transition-duration);
+    --default-transition-property: opacity;
   }
   .transition-shadow {
-    transition-property: box-shadow;
-    transition-timing-function: var(--default-transition-timing-function);
-    transition-duration: var(--default-transition-duration);
+    --default-transition-property: box-shadow;
   }
   .transition-transform {
-    transition-property: transform, translate, scale, rotate;
-    transition-timing-function: var(--default-transition-timing-function);
-    transition-duration: var(--default-transition-duration);
+    --default-transition-property: transform, translate, scale, rotate;
   }
   .transition-none {
     transition-property: none;
@@ -5878,61 +5840,23 @@
     .sm\:duration-initial {
       transition-duration: initial;
     }
-    .sm\:transition {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
-    }
     .sm\:transition-all {
-      transition-property: all;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: all;
     }
     .sm\:transition-colors {
-      transition-property:
+      --default-transition-property:
         color, background-color, border-color, outline-color,
         text-decoration-color, fill, stroke, --tw-gradient-from,
         --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
     }
     .sm\:transition-opacity {
-      transition-property: opacity;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: opacity;
     }
     .sm\:transition-shadow {
-      transition-property: box-shadow;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: box-shadow;
     }
     .sm\:transition-transform {
-      transition-property: transform, translate, scale, rotate;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: transform, translate, scale, rotate;
     }
     .sm\:transition-none {
       transition-property: none;
@@ -8941,61 +8865,23 @@
     .md\:duration-initial {
       transition-duration: initial;
     }
-    .md\:transition {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
-    }
     .md\:transition-all {
-      transition-property: all;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: all;
     }
     .md\:transition-colors {
-      transition-property:
+      --default-transition-property:
         color, background-color, border-color, outline-color,
         text-decoration-color, fill, stroke, --tw-gradient-from,
         --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
     }
     .md\:transition-opacity {
-      transition-property: opacity;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: opacity;
     }
     .md\:transition-shadow {
-      transition-property: box-shadow;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: box-shadow;
     }
     .md\:transition-transform {
-      transition-property: transform, translate, scale, rotate;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: transform, translate, scale, rotate;
     }
     .md\:transition-none {
       transition-property: none;
@@ -12004,61 +11890,23 @@
     .lg\:duration-initial {
       transition-duration: initial;
     }
-    .lg\:transition {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
-    }
     .lg\:transition-all {
-      transition-property: all;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: all;
     }
     .lg\:transition-colors {
-      transition-property:
+      --default-transition-property:
         color, background-color, border-color, outline-color,
         text-decoration-color, fill, stroke, --tw-gradient-from,
         --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
     }
     .lg\:transition-opacity {
-      transition-property: opacity;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: opacity;
     }
     .lg\:transition-shadow {
-      transition-property: box-shadow;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: box-shadow;
     }
     .lg\:transition-transform {
-      transition-property: transform, translate, scale, rotate;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: transform, translate, scale, rotate;
     }
     .lg\:transition-none {
       transition-property: none;
@@ -15067,61 +14915,23 @@
     .xl\:duration-initial {
       transition-duration: initial;
     }
-    .xl\:transition {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
-    }
     .xl\:transition-all {
-      transition-property: all;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: all;
     }
     .xl\:transition-colors {
-      transition-property:
+      --default-transition-property:
         color, background-color, border-color, outline-color,
         text-decoration-color, fill, stroke, --tw-gradient-from,
         --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
     }
     .xl\:transition-opacity {
-      transition-property: opacity;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: opacity;
     }
     .xl\:transition-shadow {
-      transition-property: box-shadow;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: box-shadow;
     }
     .xl\:transition-transform {
-      transition-property: transform, translate, scale, rotate;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: transform, translate, scale, rotate;
     }
     .xl\:transition-none {
       transition-property: none;
@@ -18130,61 +17940,23 @@
     .\32xl\:duration-initial {
       transition-duration: initial;
     }
-    .\32xl\:transition {
-      transition-property:
-        color,
-        background-color,
-        border-color,
-        outline-color,
-        text-decoration-color,
-        fill,
-        stroke,
-        --tw-gradient-from,
-        --tw-gradient-via,
-        --tw-gradient-to,
-        opacity,
-        box-shadow,
-        transform,
-        translate,
-        scale,
-        rotate,
-        filter,
-        -webkit-backdrop-filter,
-        backdrop-filter,
-        display,
-        content-visibility,
-        overlay,
-        pointer-events;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
-    }
     .\32xl\:transition-all {
-      transition-property: all;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: all;
     }
     .\32xl\:transition-colors {
-      transition-property:
+      --default-transition-property:
         color, background-color, border-color, outline-color,
         text-decoration-color, fill, stroke, --tw-gradient-from,
         --tw-gradient-via, --tw-gradient-to;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
     }
     .\32xl\:transition-opacity {
-      transition-property: opacity;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: opacity;
     }
     .\32xl\:transition-shadow {
-      transition-property: box-shadow;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: box-shadow;
     }
     .\32xl\:transition-transform {
-      transition-property: transform, translate, scale, rotate;
-      transition-timing-function: var(--default-transition-timing-function);
-      transition-duration: var(--default-transition-duration);
+      --default-transition-property: transform, translate, scale, rotate;
     }
     .\32xl\:transition-none {
       transition-property: none;
