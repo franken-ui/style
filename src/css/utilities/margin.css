@@ -31,13 +31,11 @@
 
   /* Axis shorthands */
   .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
   }
 
   .my-auto {
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-block: auto;
   }
 
   /* === Breakpoints === */
@@ -75,13 +73,11 @@
 
     /* Axis shorthands */
     .sm\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
 
     .sm\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
   }
 
@@ -118,13 +114,11 @@
 
     /* Axis shorthands */
     .md\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
 
     .md\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
   }
 
@@ -161,13 +155,11 @@
 
     /* Axis shorthands */
     .lg\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
 
     .lg\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
   }
 
@@ -204,13 +196,11 @@
 
     /* Axis shorthands */
     .xl\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
 
     .xl\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
   }
 
@@ -247,13 +237,11 @@
 
     /* Axis shorthands */
     .\32xl\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
 
     .\32xl\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
   }
 }

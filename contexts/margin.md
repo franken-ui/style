@@ -25,14 +25,14 @@
 
 ## Utilities
 
-| Selector   | Style                                     |
-| ---------- | ----------------------------------------- |
-| `.m-auto`  | `margin: auto`                            |
-| `.mt-auto` | `margin-top: auto`                        |
-| `.mb-auto` | `margin-bottom: auto`                     |
-| `.ml-auto` | `margin-left: auto`                       |
-| `.mr-auto` | `margin-right: auto`                      |
-| `.ms-auto` | `margin-inline-start: auto`               |
-| `.me-auto` | `margin-inline-end: auto`                 |
-| `.mx-auto` | `margin-left: auto`, `margin-right: auto` |
-| `.my-auto` | `margin-top: auto`, `margin-bottom: auto` |
+| Selector   | Style                       |
+| ---------- | --------------------------- |
+| `.m-auto`  | `margin: auto`              |
+| `.mt-auto` | `margin-top: auto`          |
+| `.mb-auto` | `margin-bottom: auto`       |
+| `.ml-auto` | `margin-left: auto`         |
+| `.mr-auto` | `margin-right: auto`        |
+| `.ms-auto` | `margin-inline-start: auto` |
+| `.me-auto` | `margin-inline-end: auto`   |
+| `.mx-auto` | `margin-inline: auto`       |
+| `.my-auto` | `margin-block: auto`        |

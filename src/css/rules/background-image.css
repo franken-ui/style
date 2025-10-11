@@ -1,0 +1,35 @@
+@layer styles {
+  .bg-image {
+    background-image: var(--bg-image);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg-image {
+      background-image: var(--sm-bg-image);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg-image {
+      background-image: var(--md-bg-image);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg-image {
+      background-image: var(--lg-bg-image);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg-image {
+      background-image: var(--xl-bg-image);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg-image {
+      background-image: var(--\32xl-bg-image);
+    }
+  }
+}

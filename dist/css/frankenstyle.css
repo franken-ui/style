@@ -1337,6 +1337,27 @@
   .font-size {
     font-size: var(--font-size);
   }
+  .gap {
+    gap: calc(var(--spacing) * var(--gap));
+  }
+  .gap-x {
+    column-gap: calc(var(--spacing) * var(--gap-x));
+  }
+  .gap-y {
+    row-gap: calc(var(--spacing) * var(--gap-y));
+  }
+  .\[gap\] {
+    gap: var(--gap);
+  }
+  .\[gap-x\] {
+    column-gap: var(--gap-x);
+  }
+  .\[gap-y\] {
+    row-gap: var(--gap-y);
+  }
+  .from-position {
+    --tw-gradient-from-position: var(--from-position);
+  }
   .from {
     --tw-gradient-from: var(--from);
     --tw-gradient-stops: var(
@@ -1381,26 +1402,102 @@
       var(--tw-gradient-to) var(--tw-gradient-to-position)
     );
   }
-  .from-position {
-    --tw-gradient-from-position: var(--from-position);
+  .via {
+    --tw-gradient-via: var(--via);
+    --tw-gradient-via-stops:
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-via) var(--tw-gradient-via-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
-  .gap {
-    gap: calc(var(--spacing) * var(--gap));
+  .dark .dark\:via {
+    --tw-gradient-via: var(--dark-via);
+    --tw-gradient-via-stops:
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-via) var(--tw-gradient-via-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
-  .gap-x {
-    column-gap: calc(var(--spacing) * var(--gap-x));
+  .via\/o {
+    --tw-gradient-via: color-mix(
+      in oklab,
+      var(--via) var(--via-o, 100%),
+      transparent
+    );
+    --tw-gradient-via-stops:
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-via) var(--tw-gradient-via-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
-  .gap-y {
-    row-gap: calc(var(--spacing) * var(--gap-y));
+  .dark .dark\:via\/o {
+    --tw-gradient-via: color-mix(
+      in oklab,
+      var(--dark-via) var(--dark-via-o, 100%),
+      transparent
+    );
+    --tw-gradient-via-stops:
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-via) var(--tw-gradient-via-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
-  .\[gap\] {
-    gap: var(--gap);
+  .via-position {
+    --tw-gradient-via-position: var(--via-position);
   }
-  .\[gap-x\] {
-    column-gap: var(--gap-x);
+  .to {
+    --tw-gradient-to: var(--to);
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
   }
-  .\[gap-y\] {
-    row-gap: var(--gap-y);
+  .dark .dark\:to {
+    --tw-gradient-to: var(--dark-to);
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .to\/o {
+    --tw-gradient-to: color-mix(
+      in oklab,
+      var(--to) var(--to-o, 100%),
+      transparent
+    );
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .dark .dark\:to\/o {
+    --tw-gradient-to: color-mix(
+      in oklab,
+      var(--dark-to) var(--dark-to-o, 100%),
+      transparent
+    );
+    --tw-gradient-stops: var(
+      --tw-gradient-via-stops,
+      var(--tw-gradient-position),
+      var(--tw-gradient-from) var(--tw-gradient-from-position),
+      var(--tw-gradient-to) var(--tw-gradient-to-position)
+    );
+  }
+  .to-position {
+    --tw-gradient-to-position: var(--to-position);
+  }
+  .gradient-position {
+    --tw-gradient-position: var(--gradient-position, in oklab);
   }
   .grayscale {
     filter: grayscale(--grayscale);
@@ -2002,53 +2099,6 @@
   .underline-offset {
     text-underline-offset: var(--underline-offset);
   }
-  .to {
-    --tw-gradient-to: var(--to);
-    --tw-gradient-stops: var(
-      --tw-gradient-to-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .dark .dark\:to {
-    --tw-gradient-to: var(--dark-to);
-    --tw-gradient-stops: var(
-      --tw-gradient-to-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .to\/o {
-    --tw-gradient-to: color-mix(
-      in oklab,
-      var(--to) var(--to-o, 100%),
-      transparent
-    );
-    --tw-gradient-stops: var(
-      --tw-gradient-to-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .dark .dark\:to\/o {
-    --tw-gradient-to: color-mix(
-      in oklab,
-      var(--dark-to) var(--dark-to-o, 100%),
-      transparent
-    );
-    --tw-gradient-stops: var(
-      --tw-gradient-to-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .to-position {
-    --tw-gradient-to-position: var(--to-position);
-  }
   .top {
     top: calc(var(--spacing) * var(--top));
   }
@@ -2111,53 +2161,6 @@
   }
   .align {
     vertical-align: var(--align);
-  }
-  .via {
-    --tw-gradient-via: var(--via);
-    --tw-gradient-stops: var(
-      --tw-gradient-via-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-via) var(--tw-gradient-via-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .dark .dark\:via {
-    --tw-gradient-via: var(--dark-via);
-    --tw-gradient-stops: var(
-      --tw-gradient-via-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-via) var(--tw-gradient-via-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .via\/o {
-    --tw-gradient-via: color-mix(
-      in oklab,
-      var(--via) var(--via-o, 100%),
-      transparent
-    );
-    --tw-gradient-stops: var(
-      --tw-gradient-via-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-via) var(--tw-gradient-via-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .dark .dark\:via\/o {
-    --tw-gradient-via: color-mix(
-      in oklab,
-      var(--dark-via) var(--dark-via-o, 100%),
-      transparent
-    );
-    --tw-gradient-stops: var(
-      --tw-gradient-via-stops,
-      var(--tw-gradient-position),
-      var(--tw-gradient-via) var(--tw-gradient-via-position),
-      var(--tw-gradient-to) var(--tw-gradient-to-position)
-    );
-  }
-  .via-position {
-    --tw-gradient-via-position: var(--via-position);
   }
   .w {
     width: calc(var(--spacing) * var(--w));
@@ -2689,6 +2692,27 @@
     .sm\:font-size {
       font-size: var(--sm-font-size);
     }
+    .sm\:gap {
+      gap: calc(var(--spacing) * var(--sm-gap));
+    }
+    .sm\:gap-x {
+      column-gap: calc(var(--spacing) * var(--sm-gap-x));
+    }
+    .sm\:gap-y {
+      row-gap: calc(var(--spacing) * var(--sm-gap-y));
+    }
+    .sm\:\[gap\] {
+      gap: var(--sm-gap);
+    }
+    .sm\:\[gap-x\] {
+      column-gap: var(--sm-gap-x);
+    }
+    .sm\:\[gap-y\] {
+      row-gap: var(--sm-gap-y);
+    }
+    .sm\:from-position {
+      --tw-gradient-from-position: var(--sm-from-position);
+    }
     .sm\:from {
       --tw-gradient-from: var(--sm-from);
       --tw-gradient-stops: var(
@@ -2733,26 +2757,102 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
-    .sm\:from-position {
-      --tw-gradient-from-position: var(--sm-from-position);
+    .sm\:via {
+      --tw-gradient-via: var(--sm-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .sm\:gap {
-      gap: calc(var(--spacing) * var(--sm-gap));
+    .dark .dark\:sm\:via {
+      --tw-gradient-via: var(--dark-sm-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .sm\:gap-x {
-      column-gap: calc(var(--spacing) * var(--sm-gap-x));
+    .sm\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--sm-via) var(--sm-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .sm\:gap-y {
-      row-gap: calc(var(--spacing) * var(--sm-gap-y));
+    .dark .dark\:sm\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-sm-via) var(--dark-sm-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .sm\:\[gap\] {
-      gap: var(--sm-gap);
+    .sm\:via-position {
+      --tw-gradient-via-position: var(--sm-via-position);
     }
-    .sm\:\[gap-x\] {
-      column-gap: var(--sm-gap-x);
+    .sm\:to {
+      --tw-gradient-to: var(--sm-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
-    .sm\:\[gap-y\] {
-      row-gap: var(--sm-gap-y);
+    .dark .dark\:sm\:to {
+      --tw-gradient-to: var(--dark-sm-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .sm\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--sm-to) var(--sm-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:sm\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-sm-to) var(--dark-sm-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .sm\:to-position {
+      --tw-gradient-to-position: var(--sm-to-position);
+    }
+    .sm\:gradient-position {
+      --tw-gradient-position: var(--sm-gradient-position, in oklab);
     }
     .sm\:grayscale {
       filter: grayscale(--sm-grayscale);
@@ -3354,53 +3454,6 @@
     .sm\:underline-offset {
       text-underline-offset: var(--sm-underline-offset);
     }
-    .sm\:to {
-      --tw-gradient-to: var(--sm-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:sm\:to {
-      --tw-gradient-to: var(--dark-sm-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .sm\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--sm-to) var(--sm-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:sm\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--dark-sm-to) var(--dark-sm-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .sm\:to-position {
-      --tw-gradient-to-position: var(--sm-to-position);
-    }
     .sm\:top {
       top: calc(var(--spacing) * var(--sm-top));
     }
@@ -3468,53 +3521,6 @@
     }
     .sm\:align {
       vertical-align: var(--sm-align);
-    }
-    .sm\:via {
-      --tw-gradient-via: var(--sm-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:sm\:via {
-      --tw-gradient-via: var(--dark-sm-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .sm\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--sm-via) var(--sm-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:sm\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--dark-sm-via) var(--dark-sm-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .sm\:via-position {
-      --tw-gradient-via-position: var(--sm-via-position);
     }
     .sm\:w {
       width: calc(var(--spacing) * var(--sm-w));
@@ -4047,6 +4053,27 @@
     .md\:font-size {
       font-size: var(--md-font-size);
     }
+    .md\:gap {
+      gap: calc(var(--spacing) * var(--md-gap));
+    }
+    .md\:gap-x {
+      column-gap: calc(var(--spacing) * var(--md-gap-x));
+    }
+    .md\:gap-y {
+      row-gap: calc(var(--spacing) * var(--md-gap-y));
+    }
+    .md\:\[gap\] {
+      gap: var(--md-gap);
+    }
+    .md\:\[gap-x\] {
+      column-gap: var(--md-gap-x);
+    }
+    .md\:\[gap-y\] {
+      row-gap: var(--md-gap-y);
+    }
+    .md\:from-position {
+      --tw-gradient-from-position: var(--md-from-position);
+    }
     .md\:from {
       --tw-gradient-from: var(--md-from);
       --tw-gradient-stops: var(
@@ -4091,26 +4118,102 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
-    .md\:from-position {
-      --tw-gradient-from-position: var(--md-from-position);
+    .md\:via {
+      --tw-gradient-via: var(--md-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .md\:gap {
-      gap: calc(var(--spacing) * var(--md-gap));
+    .dark .dark\:md\:via {
+      --tw-gradient-via: var(--dark-md-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .md\:gap-x {
-      column-gap: calc(var(--spacing) * var(--md-gap-x));
+    .md\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--md-via) var(--md-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .md\:gap-y {
-      row-gap: calc(var(--spacing) * var(--md-gap-y));
+    .dark .dark\:md\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-md-via) var(--dark-md-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .md\:\[gap\] {
-      gap: var(--md-gap);
+    .md\:via-position {
+      --tw-gradient-via-position: var(--md-via-position);
     }
-    .md\:\[gap-x\] {
-      column-gap: var(--md-gap-x);
+    .md\:to {
+      --tw-gradient-to: var(--md-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
-    .md\:\[gap-y\] {
-      row-gap: var(--md-gap-y);
+    .dark .dark\:md\:to {
+      --tw-gradient-to: var(--dark-md-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .md\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--md-to) var(--md-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:md\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-md-to) var(--dark-md-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .md\:to-position {
+      --tw-gradient-to-position: var(--md-to-position);
+    }
+    .md\:gradient-position {
+      --tw-gradient-position: var(--md-gradient-position, in oklab);
     }
     .md\:grayscale {
       filter: grayscale(--md-grayscale);
@@ -4712,53 +4815,6 @@
     .md\:underline-offset {
       text-underline-offset: var(--md-underline-offset);
     }
-    .md\:to {
-      --tw-gradient-to: var(--md-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:md\:to {
-      --tw-gradient-to: var(--dark-md-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .md\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--md-to) var(--md-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:md\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--dark-md-to) var(--dark-md-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .md\:to-position {
-      --tw-gradient-to-position: var(--md-to-position);
-    }
     .md\:top {
       top: calc(var(--spacing) * var(--md-top));
     }
@@ -4826,53 +4882,6 @@
     }
     .md\:align {
       vertical-align: var(--md-align);
-    }
-    .md\:via {
-      --tw-gradient-via: var(--md-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:md\:via {
-      --tw-gradient-via: var(--dark-md-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .md\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--md-via) var(--md-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:md\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--dark-md-via) var(--dark-md-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .md\:via-position {
-      --tw-gradient-via-position: var(--md-via-position);
     }
     .md\:w {
       width: calc(var(--spacing) * var(--md-w));
@@ -5405,6 +5414,27 @@
     .lg\:font-size {
       font-size: var(--lg-font-size);
     }
+    .lg\:gap {
+      gap: calc(var(--spacing) * var(--lg-gap));
+    }
+    .lg\:gap-x {
+      column-gap: calc(var(--spacing) * var(--lg-gap-x));
+    }
+    .lg\:gap-y {
+      row-gap: calc(var(--spacing) * var(--lg-gap-y));
+    }
+    .lg\:\[gap\] {
+      gap: var(--lg-gap);
+    }
+    .lg\:\[gap-x\] {
+      column-gap: var(--lg-gap-x);
+    }
+    .lg\:\[gap-y\] {
+      row-gap: var(--lg-gap-y);
+    }
+    .lg\:from-position {
+      --tw-gradient-from-position: var(--lg-from-position);
+    }
     .lg\:from {
       --tw-gradient-from: var(--lg-from);
       --tw-gradient-stops: var(
@@ -5449,26 +5479,102 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
-    .lg\:from-position {
-      --tw-gradient-from-position: var(--lg-from-position);
+    .lg\:via {
+      --tw-gradient-via: var(--lg-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .lg\:gap {
-      gap: calc(var(--spacing) * var(--lg-gap));
+    .dark .dark\:lg\:via {
+      --tw-gradient-via: var(--dark-lg-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .lg\:gap-x {
-      column-gap: calc(var(--spacing) * var(--lg-gap-x));
+    .lg\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--lg-via) var(--lg-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .lg\:gap-y {
-      row-gap: calc(var(--spacing) * var(--lg-gap-y));
+    .dark .dark\:lg\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-lg-via) var(--dark-lg-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .lg\:\[gap\] {
-      gap: var(--lg-gap);
+    .lg\:via-position {
+      --tw-gradient-via-position: var(--lg-via-position);
     }
-    .lg\:\[gap-x\] {
-      column-gap: var(--lg-gap-x);
+    .lg\:to {
+      --tw-gradient-to: var(--lg-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
-    .lg\:\[gap-y\] {
-      row-gap: var(--lg-gap-y);
+    .dark .dark\:lg\:to {
+      --tw-gradient-to: var(--dark-lg-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .lg\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--lg-to) var(--lg-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:lg\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-lg-to) var(--dark-lg-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .lg\:to-position {
+      --tw-gradient-to-position: var(--lg-to-position);
+    }
+    .lg\:gradient-position {
+      --tw-gradient-position: var(--lg-gradient-position, in oklab);
     }
     .lg\:grayscale {
       filter: grayscale(--lg-grayscale);
@@ -6070,53 +6176,6 @@
     .lg\:underline-offset {
       text-underline-offset: var(--lg-underline-offset);
     }
-    .lg\:to {
-      --tw-gradient-to: var(--lg-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:lg\:to {
-      --tw-gradient-to: var(--dark-lg-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .lg\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--lg-to) var(--lg-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:lg\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--dark-lg-to) var(--dark-lg-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .lg\:to-position {
-      --tw-gradient-to-position: var(--lg-to-position);
-    }
     .lg\:top {
       top: calc(var(--spacing) * var(--lg-top));
     }
@@ -6184,53 +6243,6 @@
     }
     .lg\:align {
       vertical-align: var(--lg-align);
-    }
-    .lg\:via {
-      --tw-gradient-via: var(--lg-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:lg\:via {
-      --tw-gradient-via: var(--dark-lg-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .lg\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--lg-via) var(--lg-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:lg\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--dark-lg-via) var(--dark-lg-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .lg\:via-position {
-      --tw-gradient-via-position: var(--lg-via-position);
     }
     .lg\:w {
       width: calc(var(--spacing) * var(--lg-w));
@@ -6763,6 +6775,27 @@
     .xl\:font-size {
       font-size: var(--xl-font-size);
     }
+    .xl\:gap {
+      gap: calc(var(--spacing) * var(--xl-gap));
+    }
+    .xl\:gap-x {
+      column-gap: calc(var(--spacing) * var(--xl-gap-x));
+    }
+    .xl\:gap-y {
+      row-gap: calc(var(--spacing) * var(--xl-gap-y));
+    }
+    .xl\:\[gap\] {
+      gap: var(--xl-gap);
+    }
+    .xl\:\[gap-x\] {
+      column-gap: var(--xl-gap-x);
+    }
+    .xl\:\[gap-y\] {
+      row-gap: var(--xl-gap-y);
+    }
+    .xl\:from-position {
+      --tw-gradient-from-position: var(--xl-from-position);
+    }
     .xl\:from {
       --tw-gradient-from: var(--xl-from);
       --tw-gradient-stops: var(
@@ -6807,26 +6840,102 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
-    .xl\:from-position {
-      --tw-gradient-from-position: var(--xl-from-position);
+    .xl\:via {
+      --tw-gradient-via: var(--xl-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .xl\:gap {
-      gap: calc(var(--spacing) * var(--xl-gap));
+    .dark .dark\:xl\:via {
+      --tw-gradient-via: var(--dark-xl-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .xl\:gap-x {
-      column-gap: calc(var(--spacing) * var(--xl-gap-x));
+    .xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--xl-via) var(--xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .xl\:gap-y {
-      row-gap: calc(var(--spacing) * var(--xl-gap-y));
+    .dark .dark\:xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-xl-via) var(--dark-xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .xl\:\[gap\] {
-      gap: var(--xl-gap);
+    .xl\:via-position {
+      --tw-gradient-via-position: var(--xl-via-position);
     }
-    .xl\:\[gap-x\] {
-      column-gap: var(--xl-gap-x);
+    .xl\:to {
+      --tw-gradient-to: var(--xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
-    .xl\:\[gap-y\] {
-      row-gap: var(--xl-gap-y);
+    .dark .dark\:xl\:to {
+      --tw-gradient-to: var(--dark-xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--xl-to) var(--xl-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-xl-to) var(--dark-xl-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .xl\:to-position {
+      --tw-gradient-to-position: var(--xl-to-position);
+    }
+    .xl\:gradient-position {
+      --tw-gradient-position: var(--xl-gradient-position, in oklab);
     }
     .xl\:grayscale {
       filter: grayscale(--xl-grayscale);
@@ -7428,53 +7537,6 @@
     .xl\:underline-offset {
       text-underline-offset: var(--xl-underline-offset);
     }
-    .xl\:to {
-      --tw-gradient-to: var(--xl-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:xl\:to {
-      --tw-gradient-to: var(--dark-xl-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .xl\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--xl-to) var(--xl-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:xl\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--dark-xl-to) var(--dark-xl-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .xl\:to-position {
-      --tw-gradient-to-position: var(--xl-to-position);
-    }
     .xl\:top {
       top: calc(var(--spacing) * var(--xl-top));
     }
@@ -7542,53 +7604,6 @@
     }
     .xl\:align {
       vertical-align: var(--xl-align);
-    }
-    .xl\:via {
-      --tw-gradient-via: var(--xl-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:xl\:via {
-      --tw-gradient-via: var(--dark-xl-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .xl\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--xl-via) var(--xl-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:xl\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--dark-xl-via) var(--dark-xl-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .xl\:via-position {
-      --tw-gradient-via-position: var(--xl-via-position);
     }
     .xl\:w {
       width: calc(var(--spacing) * var(--xl-w));
@@ -8125,6 +8140,27 @@
     .\32xl\:font-size {
       font-size: var(--\32xl-font-size);
     }
+    .\32xl\:gap {
+      gap: calc(var(--spacing) * var(--\32xl-gap));
+    }
+    .\32xl\:gap-x {
+      column-gap: calc(var(--spacing) * var(--\32xl-gap-x));
+    }
+    .\32xl\:gap-y {
+      row-gap: calc(var(--spacing) * var(--\32xl-gap-y));
+    }
+    .\32xl\:\[gap\] {
+      gap: var(--\32xl-gap);
+    }
+    .\32xl\:\[gap-x\] {
+      column-gap: var(--\32xl-gap-x);
+    }
+    .\32xl\:\[gap-y\] {
+      row-gap: var(--\32xl-gap-y);
+    }
+    .\32xl\:from-position {
+      --tw-gradient-from-position: var(--\32xl-from-position);
+    }
     .\32xl\:from {
       --tw-gradient-from: var(--\32xl-from);
       --tw-gradient-stops: var(
@@ -8169,26 +8205,102 @@
         var(--tw-gradient-to) var(--tw-gradient-to-position)
       );
     }
-    .\32xl\:from-position {
-      --tw-gradient-from-position: var(--\32xl-from-position);
+    .\32xl\:via {
+      --tw-gradient-via: var(--\32xl-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .\32xl\:gap {
-      gap: calc(var(--spacing) * var(--\32xl-gap));
+    .dark .dark\:2xl\:via {
+      --tw-gradient-via: var(--dark-2xl-via);
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .\32xl\:gap-x {
-      column-gap: calc(var(--spacing) * var(--\32xl-gap-x));
+    .\32xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--\32xl-via) var(--\32xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .\32xl\:gap-y {
-      row-gap: calc(var(--spacing) * var(--\32xl-gap-y));
+    .dark .dark\:2xl\:via\/o {
+      --tw-gradient-via: color-mix(
+        in oklab,
+        var(--dark-2xl-via) var(--dark-2xl-via-o, 100%),
+        transparent
+      );
+      --tw-gradient-via-stops:
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-via) var(--tw-gradient-via-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops);
     }
-    .\32xl\:\[gap\] {
-      gap: var(--\32xl-gap);
+    .\32xl\:via-position {
+      --tw-gradient-via-position: var(--\32xl-via-position);
     }
-    .\32xl\:\[gap-x\] {
-      column-gap: var(--\32xl-gap-x);
+    .\32xl\:to {
+      --tw-gradient-to: var(--\32xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
     }
-    .\32xl\:\[gap-y\] {
-      row-gap: var(--\32xl-gap-y);
+    .dark .dark\:2xl\:to {
+      --tw-gradient-to: var(--dark-2xl-to);
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .\32xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--\32xl-to) var(--\32xl-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .dark .dark\:2xl\:to\/o {
+      --tw-gradient-to: color-mix(
+        in oklab,
+        var(--dark-2xl-to) var(--dark-2xl-to-o, 100%),
+        transparent
+      );
+      --tw-gradient-stops: var(
+        --tw-gradient-via-stops,
+        var(--tw-gradient-position),
+        var(--tw-gradient-from) var(--tw-gradient-from-position),
+        var(--tw-gradient-to) var(--tw-gradient-to-position)
+      );
+    }
+    .\32xl\:to-position {
+      --tw-gradient-to-position: var(--\32xl-to-position);
+    }
+    .\32xl\:gradient-position {
+      --tw-gradient-position: var(--\32xl-gradient-position, in oklab);
     }
     .\32xl\:grayscale {
       filter: grayscale(--\32xl-grayscale);
@@ -8792,53 +8904,6 @@
     .\32xl\:underline-offset {
       text-underline-offset: var(--\32xl-underline-offset);
     }
-    .\32xl\:to {
-      --tw-gradient-to: var(--\32xl-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:2xl\:to {
-      --tw-gradient-to: var(--dark-2xl-to);
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .\32xl\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--\32xl-to) var(--\32xl-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:2xl\:to\/o {
-      --tw-gradient-to: color-mix(
-        in oklab,
-        var(--dark-2xl-to) var(--dark-2xl-to-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-to-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .\32xl\:to-position {
-      --tw-gradient-to-position: var(--\32xl-to-position);
-    }
     .\32xl\:top {
       top: calc(var(--spacing) * var(--\32xl-top));
     }
@@ -8906,53 +8971,6 @@
     }
     .\32xl\:align {
       vertical-align: var(--\32xl-align);
-    }
-    .\32xl\:via {
-      --tw-gradient-via: var(--\32xl-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:2xl\:via {
-      --tw-gradient-via: var(--dark-2xl-via);
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .\32xl\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--\32xl-via) var(--\32xl-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .dark .dark\:2xl\:via\/o {
-      --tw-gradient-via: color-mix(
-        in oklab,
-        var(--dark-2xl-via) var(--dark-2xl-via-o, 100%),
-        transparent
-      );
-      --tw-gradient-stops: var(
-        --tw-gradient-via-stops,
-        var(--tw-gradient-position),
-        var(--tw-gradient-via) var(--tw-gradient-via-position),
-        var(--tw-gradient-to) var(--tw-gradient-to-position)
-      );
-    }
-    .\32xl\:via-position {
-      --tw-gradient-via-position: var(--\32xl-via-position);
     }
     .\32xl\:w {
       width: calc(var(--spacing) * var(--\32xl-w));
@@ -9179,6 +9197,9 @@
   }
   .bg-clip-text {
     background-clip: text;
+  }
+  .bg-image-none {
+    background-image: none;
   }
   .bg-origin-border {
     background-origin: border-box;
@@ -10440,37 +10461,38 @@
   .forced-color-adjust-none {
     forced-color-adjust: none;
   }
-  .bg-gradient-to-t {
+  .linear {
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+  .conic {
+    background-image: conic-gradient(var(--tw-gradient-stops));
+  }
+  .linear-to-t {
     --tw-gradient-position: to top in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-gradient-to-tr {
+  .linear-to-tr {
     --tw-gradient-position: to top right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-gradient-to-r {
+  .linear-to-r {
     --tw-gradient-position: to right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-gradient-to-br {
+  .linear-to-br {
     --tw-gradient-position: to bottom right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-gradient-to-b {
+  .linear-to-b {
     --tw-gradient-position: to bottom in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-gradient-to-bl {
+  .linear-to-bl {
     --tw-gradient-position: to bottom left in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-gradient-to-l {
+  .linear-to-l {
     --tw-gradient-position: to left in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-gradient-to-tl {
+  .linear-to-tl {
     --tw-gradient-position: to top left in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
   .grid-flow-row {
     grid-auto-flow: row;
@@ -10830,12 +10852,10 @@
     margin-inline-end: auto;
   }
   .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
   }
   .my-auto {
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-block: auto;
   }
   .mask-clip-border {
     mask-clip: border-box;
@@ -11509,10 +11529,6 @@
   }
   .sticky {
     position: sticky;
-  }
-  .bg-radial {
-    --tw-gradient-position: in oklab;
-    background-image: radial-gradient(var(--tw-gradient-stops));
   }
   .resize-none {
     resize: none;
@@ -12202,6 +12218,9 @@
     }
     .sm\:bg-clip-text {
       background-clip: text;
+    }
+    .sm\:bg-image-none {
+      background-image: none;
     }
     .sm\:bg-origin-border {
       background-origin: border-box;
@@ -13464,37 +13483,38 @@
     .sm\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
-    .sm\:bg-gradient-to-t {
+    .sm\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+    .sm\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+    .sm\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+    .sm\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .sm\:bg-gradient-to-tr {
+    .sm\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .sm\:bg-gradient-to-r {
+    .sm\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .sm\:bg-gradient-to-br {
+    .sm\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .sm\:bg-gradient-to-b {
+    .sm\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .sm\:bg-gradient-to-bl {
+    .sm\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .sm\:bg-gradient-to-l {
+    .sm\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .sm\:bg-gradient-to-tl {
+    .sm\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
     .sm\:grid-flow-row {
       grid-auto-flow: row;
@@ -13854,12 +13874,10 @@
       margin-inline-end: auto;
     }
     .sm\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
     .sm\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
     .sm\:mask-clip-border {
       mask-clip: border-box;
@@ -14533,10 +14551,6 @@
     }
     .sm\:sticky {
       position: sticky;
-    }
-    .sm\:bg-radial {
-      --tw-gradient-position: in oklab;
-      background-image: radial-gradient(var(--tw-gradient-stops));
     }
     .sm\:resize-none {
       resize: none;
@@ -15227,6 +15241,9 @@
     }
     .md\:bg-clip-text {
       background-clip: text;
+    }
+    .md\:bg-image-none {
+      background-image: none;
     }
     .md\:bg-origin-border {
       background-origin: border-box;
@@ -16489,37 +16506,38 @@
     .md\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
-    .md\:bg-gradient-to-t {
+    .md\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+    .md\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+    .md\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+    .md\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .md\:bg-gradient-to-tr {
+    .md\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .md\:bg-gradient-to-r {
+    .md\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .md\:bg-gradient-to-br {
+    .md\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .md\:bg-gradient-to-b {
+    .md\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .md\:bg-gradient-to-bl {
+    .md\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .md\:bg-gradient-to-l {
+    .md\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .md\:bg-gradient-to-tl {
+    .md\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
     .md\:grid-flow-row {
       grid-auto-flow: row;
@@ -16879,12 +16897,10 @@
       margin-inline-end: auto;
     }
     .md\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
     .md\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
     .md\:mask-clip-border {
       mask-clip: border-box;
@@ -17558,10 +17574,6 @@
     }
     .md\:sticky {
       position: sticky;
-    }
-    .md\:bg-radial {
-      --tw-gradient-position: in oklab;
-      background-image: radial-gradient(var(--tw-gradient-stops));
     }
     .md\:resize-none {
       resize: none;
@@ -18252,6 +18264,9 @@
     }
     .lg\:bg-clip-text {
       background-clip: text;
+    }
+    .lg\:bg-image-none {
+      background-image: none;
     }
     .lg\:bg-origin-border {
       background-origin: border-box;
@@ -19514,37 +19529,38 @@
     .lg\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
-    .lg\:bg-gradient-to-t {
+    .lg\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+    .lg\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+    .lg\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+    .lg\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .lg\:bg-gradient-to-tr {
+    .lg\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .lg\:bg-gradient-to-r {
+    .lg\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .lg\:bg-gradient-to-br {
+    .lg\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .lg\:bg-gradient-to-b {
+    .lg\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .lg\:bg-gradient-to-bl {
+    .lg\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .lg\:bg-gradient-to-l {
+    .lg\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .lg\:bg-gradient-to-tl {
+    .lg\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
     .lg\:grid-flow-row {
       grid-auto-flow: row;
@@ -19904,12 +19920,10 @@
       margin-inline-end: auto;
     }
     .lg\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
     .lg\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
     .lg\:mask-clip-border {
       mask-clip: border-box;
@@ -20583,10 +20597,6 @@
     }
     .lg\:sticky {
       position: sticky;
-    }
-    .lg\:bg-radial {
-      --tw-gradient-position: in oklab;
-      background-image: radial-gradient(var(--tw-gradient-stops));
     }
     .lg\:resize-none {
       resize: none;
@@ -21277,6 +21287,9 @@
     }
     .xl\:bg-clip-text {
       background-clip: text;
+    }
+    .xl\:bg-image-none {
+      background-image: none;
     }
     .xl\:bg-origin-border {
       background-origin: border-box;
@@ -22539,37 +22552,38 @@
     .xl\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
-    .xl\:bg-gradient-to-t {
+    .xl\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+    .xl\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+    .xl\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+    .xl\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .xl\:bg-gradient-to-tr {
+    .xl\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .xl\:bg-gradient-to-r {
+    .xl\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .xl\:bg-gradient-to-br {
+    .xl\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .xl\:bg-gradient-to-b {
+    .xl\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .xl\:bg-gradient-to-bl {
+    .xl\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .xl\:bg-gradient-to-l {
+    .xl\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .xl\:bg-gradient-to-tl {
+    .xl\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
     .xl\:grid-flow-row {
       grid-auto-flow: row;
@@ -22929,12 +22943,10 @@
       margin-inline-end: auto;
     }
     .xl\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
     .xl\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
     .xl\:mask-clip-border {
       mask-clip: border-box;
@@ -23608,10 +23620,6 @@
     }
     .xl\:sticky {
       position: sticky;
-    }
-    .xl\:bg-radial {
-      --tw-gradient-position: in oklab;
-      background-image: radial-gradient(var(--tw-gradient-stops));
     }
     .xl\:resize-none {
       resize: none;
@@ -24302,6 +24310,9 @@
     }
     .\32xl\:bg-clip-text {
       background-clip: text;
+    }
+    .\32xl\:bg-image-none {
+      background-image: none;
     }
     .\32xl\:bg-origin-border {
       background-origin: border-box;
@@ -25564,37 +25575,38 @@
     .\32xl\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
-    .\32xl\:bg-gradient-to-t {
+    .\32xl\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+    .\32xl\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+    .\32xl\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+    .\32xl\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .\32xl\:bg-gradient-to-tr {
+    .\32xl\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .\32xl\:bg-gradient-to-r {
+    .\32xl\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .\32xl\:bg-gradient-to-br {
+    .\32xl\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .\32xl\:bg-gradient-to-b {
+    .\32xl\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .\32xl\:bg-gradient-to-bl {
+    .\32xl\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .\32xl\:bg-gradient-to-l {
+    .\32xl\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
-    .\32xl\:bg-gradient-to-tl {
+    .\32xl\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
     .\32xl\:grid-flow-row {
       grid-auto-flow: row;
@@ -25954,12 +25966,10 @@
       margin-inline-end: auto;
     }
     .\32xl\:mx-auto {
-      margin-left: auto;
-      margin-right: auto;
+      margin-inline: auto;
     }
     .\32xl\:my-auto {
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-block: auto;
     }
     .\32xl\:mask-clip-border {
       mask-clip: border-box;
@@ -26633,10 +26643,6 @@
     }
     .\32xl\:sticky {
       position: sticky;
-    }
-    .\32xl\:bg-radial {
-      --tw-gradient-position: in oklab;
-      background-image: radial-gradient(var(--tw-gradient-stops));
     }
     .\32xl\:resize-none {
       resize: none;

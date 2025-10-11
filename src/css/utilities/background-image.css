@@ -1,0 +1,35 @@
+@layer utilities {
+  .bg-image-none {
+    background-image: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:bg-image-none {
+      background-image: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:bg-image-none {
+      background-image: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:bg-image-none {
+      background-image: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:bg-image-none {
+      background-image: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:bg-image-none {
+      background-image: none;
+    }
+  }
+}

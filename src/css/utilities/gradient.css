@@ -1,264 +1,275 @@
 @layer utilities {
-  /* Top */
-  .bg-gradient-to-t {
+  .linear {
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+
+  .radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .conic {
+    background-image: conic-gradient(var(--tw-gradient-stops));
+  }
+
+  .linear-to-t {
     --tw-gradient-position: to top in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Top Right */
-  .bg-gradient-to-tr {
+  .linear-to-tr {
     --tw-gradient-position: to top right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Right */
-  .bg-gradient-to-r {
+  .linear-to-r {
     --tw-gradient-position: to right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Bottom Right */
-  .bg-gradient-to-br {
+  .linear-to-br {
     --tw-gradient-position: to bottom right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Bottom */
-  .bg-gradient-to-b {
+  .linear-to-b {
     --tw-gradient-position: to bottom in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Bottom Left */
-  .bg-gradient-to-bl {
+  .linear-to-bl {
     --tw-gradient-position: to bottom left in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Left */
-  .bg-gradient-to-l {
+  .linear-to-l {
     --tw-gradient-position: to left in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Top Left */
-  .bg-gradient-to-tl {
+  .linear-to-tl {
     --tw-gradient-position: to top left in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  /* Responsive variants for sm (min-width: 40rem) */
   @media (min-width: 40rem) {
-    .sm\:bg-gradient-to-t {
+    .sm\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+
+    .sm\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+
+    .sm\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+
+    .sm\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .sm\:bg-gradient-to-tr {
+    .sm\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .sm\:bg-gradient-to-r {
+    .sm\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .sm\:bg-gradient-to-br {
+    .sm\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .sm\:bg-gradient-to-b {
+    .sm\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .sm\:bg-gradient-to-bl {
+    .sm\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .sm\:bg-gradient-to-l {
+    .sm\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .sm\:bg-gradient-to-tl {
+    .sm\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
   }
 
-  /* Responsive variants for md (min-width: 48rem) */
   @media (min-width: 48rem) {
-    .md\:bg-gradient-to-t {
+    .md\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+
+    .md\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+
+    .md\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+
+    .md\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .md\:bg-gradient-to-tr {
+    .md\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .md\:bg-gradient-to-r {
+    .md\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .md\:bg-gradient-to-br {
+    .md\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .md\:bg-gradient-to-b {
+    .md\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .md\:bg-gradient-to-bl {
+    .md\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .md\:bg-gradient-to-l {
+    .md\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .md\:bg-gradient-to-tl {
+    .md\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
   }
 
-  /* Responsive variants for lg (min-width: 64rem) */
   @media (min-width: 64rem) {
-    .lg\:bg-gradient-to-t {
+    .lg\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+
+    .lg\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+
+    .lg\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+
+    .lg\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .lg\:bg-gradient-to-tr {
+    .lg\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .lg\:bg-gradient-to-r {
+    .lg\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .lg\:bg-gradient-to-br {
+    .lg\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .lg\:bg-gradient-to-b {
+    .lg\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .lg\:bg-gradient-to-bl {
+    .lg\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .lg\:bg-gradient-to-l {
+    .lg\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .lg\:bg-gradient-to-tl {
+    .lg\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
   }
 
-  /* Responsive variants for xl (min-width: 80rem) */
   @media (min-width: 80rem) {
-    .xl\:bg-gradient-to-t {
+    .xl\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+
+    .xl\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+
+    .xl\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+
+    .xl\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .xl\:bg-gradient-to-tr {
+    .xl\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .xl\:bg-gradient-to-r {
+    .xl\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .xl\:bg-gradient-to-br {
+    .xl\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .xl\:bg-gradient-to-b {
+    .xl\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .xl\:bg-gradient-to-bl {
+    .xl\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .xl\:bg-gradient-to-l {
+    .xl\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .xl\:bg-gradient-to-tl {
+    .xl\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
   }
 
-  /* Responsive variants for 2xl (min-width: 96rem) */
   @media (min-width: 96rem) {
-    .\32xl\:bg-gradient-to-t {
+    .\32xl\:linear {
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+
+    .\32xl\:radial {
+      background-image: radial-gradient(var(--tw-gradient-stops));
+    }
+
+    .\32xl\:conic {
+      background-image: conic-gradient(var(--tw-gradient-stops));
+    }
+
+    .\32xl\:linear-to-t {
       --tw-gradient-position: to top in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .\32xl\:bg-gradient-to-tr {
+    .\32xl\:linear-to-tr {
       --tw-gradient-position: to top right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .\32xl\:bg-gradient-to-r {
+    .\32xl\:linear-to-r {
       --tw-gradient-position: to right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .\32xl\:bg-gradient-to-br {
+    .\32xl\:linear-to-br {
       --tw-gradient-position: to bottom right in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .\32xl\:bg-gradient-to-b {
+    .\32xl\:linear-to-b {
       --tw-gradient-position: to bottom in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .\32xl\:bg-gradient-to-bl {
+    .\32xl\:linear-to-bl {
       --tw-gradient-position: to bottom left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .\32xl\:bg-gradient-to-l {
+    .\32xl\:linear-to-l {
       --tw-gradient-position: to left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
 
-    .\32xl\:bg-gradient-to-tl {
+    .\32xl\:linear-to-tl {
       --tw-gradient-position: to top left in oklab;
-      background-image: linear-gradient(var(--tw-gradient-stops));
     }
   }
 }

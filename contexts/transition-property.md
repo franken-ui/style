@@ -2,9 +2,9 @@
 
 ## Value-driven Utilities
 
-| Selector      | Style                                                                                                                                                                                                       | Variables Required |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `.transition` | `transition-property: var(--transition, --default-transition-property)`, `transition-timing-function: var(--default-transition-timing-function)`, `transition-duration: var(--default-transition-duration)` | `--transition`     |
+| Selector      | Style                                                                                                                                                                                                            | Variables Required                              |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `.transition` | `transition-property: var(--transition, var(--default-transition-property))`, `transition-timing-function: var(--default-transition-timing-function)`, `transition-duration: var(--default-transition-duration)` | `--default-transition-property`, `--transition` |
 
 ## Utilities
 
