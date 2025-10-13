@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab</title>
+
+    <link rel="stylesheet" href="../src/css/core.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/utilities.css" />
+
+    <script type="module" src="../src/js/core.ts"></script>
+    <script type="module" src="../src/js/icon.ts"></script>
+
+    <style>
+      fr-tab {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      fr-tab-item {
+        display: contents;
+      }
+
+      fr-tab-title {
+        order: 1;
+      }
+
+      fr-tab-panel {
+        order: 2;
+        flex-basis: 100%;
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="my mx-auto max-w-7xl" style="--my: 10">
+      <fr-tab>
+        <fr-tab-item>
+          <fr-tab-title>
+            <template data-fn="template"> Tab 1 </template>
+          </fr-tab-title>
+
+          <fr-tab-panel>
+            <template data-fn="template">
+              <p>Panel content for Tab 1</p>
+            </template>
+          </fr-tab-panel>
+        </fr-tab-item>
+
+        <fr-tab-item active>
+          <fr-tab-title>
+            <template data-fn="template"> Tab 2 </template>
+          </fr-tab-title>
+
+          <fr-tab-panel>
+            <template data-fn="template">
+              <p>Panel content for Tab 2</p>
+            </template>
+          </fr-tab-panel>
+        </fr-tab-item>
+      </fr-tab>
+    </div>
+  </body>
+</html>
