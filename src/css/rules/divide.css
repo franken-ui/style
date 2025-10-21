@@ -1,0 +1,276 @@
+@layer styles {
+  .divide-x :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 0;
+    border-inline-style: var(--tw-border-style);
+    border-inline-start-width: calc(
+      var(--spacing) * var(--border-w) * var(--tw-divide-x-reverse)
+    );
+    border-inline-end-width: calc(
+      var(--spacing) * var(--border-w) * (1 - var(--tw-divide-x-reverse))
+    );
+  }
+
+  .\[divide-x\] :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 0;
+    border-inline-style: var(--tw-border-style);
+    border-inline-start-width: calc(
+      var(--border-w) * var(--tw-divide-x-reverse)
+    );
+    border-inline-end-width: calc(
+      var(--border-w) * (1 - var(--tw-divide-x-reverse))
+    );
+  }
+
+  .divide-y :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-block-style: var(--tw-border-style);
+    border-block-start-width: calc(
+      var(--spacing) * var(--border-w) * var(--tw-divide-y-reverse)
+    );
+    border-block-end-width: calc(
+      var(--spacing) * var(--border-w) * (1 - var(--tw-divide-y-reverse))
+    );
+  }
+
+  .\[divide-y\] :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-block-style: var(--tw-border-style);
+    border-block-start-width: calc(
+      var(--border-w) * var(--tw-divide-y-reverse)
+    );
+    border-block-end-width: calc(
+      var(--border-w) * (1 - var(--tw-divide-y-reverse))
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--sm-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--sm-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .sm\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--sm-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--sm-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .sm\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--sm-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--sm-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+
+    .sm\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--sm-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--sm-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--md-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--md-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .md\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--md-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--md-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .md\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--md-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--md-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+
+    .md\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--md-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--md-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--lg-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--lg-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .lg\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--lg-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--lg-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .lg\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--lg-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--lg-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+
+    .lg\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--lg-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--lg-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .xl\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .xl\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+
+    .xl\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--\32xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--\32xl-border-w) *
+          (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .\32xl\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--\32xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--\32xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+
+    .\32xl\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--\32xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--\32xl-border-w) *
+          (1 - var(--tw-divide-y-reverse))
+      );
+    }
+
+    .\32xl\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--\32xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--\32xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+  }
+}
