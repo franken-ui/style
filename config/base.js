@@ -13,7 +13,7 @@ export default {
         'lit/directives/repeat.js': 'LitRepeat',
         'lit/directives/unsafe-html.js': 'LitUnsafeHTML',
         lucide: 'Lucide',
-        ApexCharts: 'ApexCharts',
+        apexcharts: 'ApexCharts',
       },
     },
   },
