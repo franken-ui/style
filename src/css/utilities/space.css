@@ -8,15 +8,6 @@
     --tw-space-y-reverse: 1;
   }
 
-  /* Divide Reverse variants */
-  .divide-x-reverse :where(& > :not(:last-child)) {
-    --tw-divide-x-reverse: 1;
-  }
-
-  .divide-y-reverse :where(& > :not(:last-child)) {
-    --tw-divide-y-reverse: 1;
-  }
-
   /* sm */
   @media (min-width: 40rem) {
     .sm\:space-x-reverse :where(& > :not(:last-child)) {
@@ -25,14 +16,6 @@
 
     .sm\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
-    }
-
-    .sm\:divide-x-reverse :where(& > :not(:last-child)) {
-      --tw-divide-x-reverse: 1;
-    }
-
-    .sm\:divide-y-reverse :where(& > :not(:last-child)) {
-      --tw-divide-y-reverse: 1;
     }
   }
 
@@ -45,14 +28,6 @@
     .md\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
     }
-
-    .md\:divide-x-reverse :where(& > :not(:last-child)) {
-      --tw-divide-x-reverse: 1;
-    }
-
-    .md\:divide-y-reverse :where(& > :not(:last-child)) {
-      --tw-divide-y-reverse: 1;
-    }
   }
 
   /* lg */
@@ -63,14 +38,6 @@
 
     .lg\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
-    }
-
-    .lg\:divide-x-reverse :where(& > :not(:last-child)) {
-      --tw-divide-x-reverse: 1;
-    }
-
-    .lg\:divide-y-reverse :where(& > :not(:last-child)) {
-      --tw-divide-y-reverse: 1;
     }
   }
 
@@ -83,14 +50,6 @@
     .xl\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
     }
-
-    .xl\:divide-x-reverse :where(& > :not(:last-child)) {
-      --tw-divide-x-reverse: 1;
-    }
-
-    .xl\:divide-y-reverse :where(& > :not(:last-child)) {
-      --tw-divide-y-reverse: 1;
-    }
   }
 
   /* 2xl */
@@ -101,14 +60,6 @@
 
     .\32xl\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
-    }
-
-    .\32xl\:divide-x-reverse :where(& > :not(:last-child)) {
-      --tw-divide-x-reverse: 1;
-    }
-
-    .\32xl\:divide-y-reverse :where(& > :not(:last-child)) {
-      --tw-divide-y-reverse: 1;
     }
   }
 }

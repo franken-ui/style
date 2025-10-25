@@ -1,0 +1,59 @@
+@layer utilities {
+  .divide-x-reverse :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 1;
+  }
+
+  .divide-y-reverse :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 1;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+
+    .sm\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+
+    .md\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+
+    .lg\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+
+    .xl\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+
+    .\32xl\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
+  }
+}

@@ -464,6 +464,46 @@
   .cursor {
     cursor: var(--cursor);
   }
+  .divide-x :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 0;
+    border-inline-style: var(--tw-border-style);
+    border-inline-start-width: calc(
+      var(--spacing) * var(--border-w) * var(--tw-divide-x-reverse)
+    );
+    border-inline-end-width: calc(
+      var(--spacing) * var(--border-w) * (1 - var(--tw-divide-x-reverse))
+    );
+  }
+  .\[divide-x\] :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 0;
+    border-inline-style: var(--tw-border-style);
+    border-inline-start-width: calc(
+      var(--border-w) * var(--tw-divide-x-reverse)
+    );
+    border-inline-end-width: calc(
+      var(--border-w) * (1 - var(--tw-divide-x-reverse))
+    );
+  }
+  .divide-y :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-block-style: var(--tw-border-style);
+    border-block-start-width: calc(
+      var(--spacing) * var(--border-w) * var(--tw-divide-y-reverse)
+    );
+    border-block-end-width: calc(
+      var(--spacing) * var(--border-w) * (1 - var(--tw-divide-y-reverse))
+    );
+  }
+  .\[divide-y\] :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-block-style: var(--tw-border-style);
+    border-block-start-width: calc(
+      var(--border-w) * var(--tw-divide-y-reverse)
+    );
+    border-block-end-width: calc(
+      var(--border-w) * (1 - var(--tw-divide-y-reverse))
+    );
+  }
   .fill\/o {
     fill: color-mix(in oklab, var(--fill) var(--fill-o, 100%), transparent);
   }
@@ -1225,6 +1265,30 @@
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
       var(--tw-skew-x,) var(--tw-skew-y,);
   }
+  .space-x > :not(:last-child) {
+    margin-inline-start: calc(
+      var(--spacing) * var(--space-x) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      var(--spacing) * var(--space-x) * (1 - var(--tw-space-x-reverse))
+    );
+  }
+  .\[space-x\] > :not(:last-child) {
+    margin-inline-start: calc(var(--space-x) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(var(--space-x) * (1 - var(--tw-space-x-reverse)));
+  }
+  .space-y > :not(:last-child) {
+    margin-block-start: calc(
+      var(--spacing) * var(--space-y) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      var(--spacing) * var(--space-y) * (1 - var(--tw-space-y-reverse))
+    );
+  }
+  .\[space-y\] > :not(:last-child) {
+    margin-block-start: calc(var(--space-y) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--space-y) * (1 - var(--tw-space-y-reverse)));
+  }
   .stroke-w {
     stroke-width: var(--stroke-w);
   }
@@ -1814,6 +1878,46 @@
     }
     .sm\:cursor {
       cursor: var(--sm-cursor);
+    }
+    .sm\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--sm-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--sm-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .sm\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--sm-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--sm-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .sm\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--sm-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--sm-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .sm\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--sm-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--sm-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .sm\:fill\/o {
       fill: color-mix(
@@ -2580,6 +2684,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .sm\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--sm-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--sm-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .sm\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--sm-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--sm-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .sm\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--sm-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--sm-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .sm\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--sm-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--sm-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .sm\:stroke-w {
       stroke-width: var(--sm-stroke-w);
     }
@@ -3175,6 +3307,46 @@
     }
     .md\:cursor {
       cursor: var(--md-cursor);
+    }
+    .md\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--md-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--md-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .md\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--md-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--md-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .md\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--md-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--md-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .md\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--md-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--md-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .md\:fill\/o {
       fill: color-mix(
@@ -3941,6 +4113,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .md\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--md-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--md-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .md\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--md-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--md-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .md\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--md-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--md-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .md\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--md-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--md-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .md\:stroke-w {
       stroke-width: var(--md-stroke-w);
     }
@@ -4536,6 +4736,46 @@
     }
     .lg\:cursor {
       cursor: var(--lg-cursor);
+    }
+    .lg\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--lg-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--lg-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .lg\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--lg-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--lg-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .lg\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--lg-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--lg-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .lg\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--lg-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--lg-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .lg\:fill\/o {
       fill: color-mix(
@@ -5302,6 +5542,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .lg\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--lg-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--lg-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .lg\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--lg-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--lg-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .lg\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--lg-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--lg-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .lg\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--lg-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--lg-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .lg\:stroke-w {
       stroke-width: var(--lg-stroke-w);
     }
@@ -5897,6 +6165,46 @@
     }
     .xl\:cursor {
       cursor: var(--xl-cursor);
+    }
+    .xl\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .xl\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .xl\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .xl\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .xl\:fill\/o {
       fill: color-mix(
@@ -6663,6 +6971,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .xl\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--xl-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .xl\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--xl-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .xl\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--xl-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .xl\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--xl-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .xl\:stroke-w {
       stroke-width: var(--xl-stroke-w);
     }
@@ -7262,6 +7598,48 @@
     }
     .\32xl\:cursor {
       cursor: var(--\32xl-cursor);
+    }
+    .\32xl\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--\32xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--\32xl-border-w) *
+          (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .\32xl\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--\32xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--\32xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .\32xl\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--\32xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--\32xl-border-w) *
+          (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .\32xl\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--\32xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--\32xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .\32xl\:fill\/o {
       fill: color-mix(
@@ -8029,6 +8407,38 @@
       --tw-skew-y: skewY(var(--\32xl-skew-y));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+    .\32xl\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--\32xl-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--\32xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .\32xl\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--\32xl-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--\32xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .\32xl\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--\32xl-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--\32xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .\32xl\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(
+        var(--\32xl-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--\32xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
     }
     .\32xl\:stroke-w {
       stroke-width: var(--\32xl-stroke-w);

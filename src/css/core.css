@@ -1,4 +1,137 @@
-@layer theme, base, components, styles, utilities;
+@layer properties, theme, base, components, styles, utilities;
+
+@layer properties {
+  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    *,
+    :before,
+    :after,
+    ::backdrop {
+      --tw-content: '';
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-pan-x: initial;
+      --tw-pan-y: initial;
+      --tw-pinch-zoom: initial;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-divide-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-divide-y-reverse: 0;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-mask-linear: linear-gradient(#fff, #fff);
+      --tw-mask-radial: linear-gradient(#fff, #fff);
+      --tw-mask-conic: linear-gradient(#fff, #fff);
+      --tw-mask-left: linear-gradient(#fff, #fff);
+      --tw-mask-right: linear-gradient(#fff, #fff);
+      --tw-mask-bottom: linear-gradient(#fff, #fff);
+      --tw-mask-top: linear-gradient(#fff, #fff);
+      --tw-mask-top-from-position: 0%;
+      --tw-mask-top-to-position: 100%;
+      --tw-mask-top-from-color: black;
+      --tw-mask-top-to-color: transparent;
+      --tw-mask-bottom-from-position: 0%;
+      --tw-mask-bottom-to-position: 100%;
+      --tw-mask-bottom-from-color: black;
+      --tw-mask-bottom-to-color: transparent;
+      --tw-mask-right-from-position: 0%;
+      --tw-mask-right-to-position: 100%;
+      --tw-mask-right-from-color: black;
+      --tw-mask-right-to-color: transparent;
+      --tw-mask-left-from-position: 0%;
+      --tw-mask-left-to-position: 100%;
+      --tw-mask-left-from-color: black;
+      --tw-mask-left-to-color: transparent;
+      --tw-mask-linear-position: 0deg;
+      --tw-mask-linear-from-position: 0%;
+      --tw-mask-linear-to-position: 100%;
+      --tw-mask-linear-from-color: black;
+      --tw-mask-linear-to-color: transparent;
+      --tw-mask-radial-from-position: 0%;
+      --tw-mask-radial-to-position: 100%;
+      --tw-mask-radial-from-color: black;
+      --tw-mask-radial-to-color: transparent;
+      --tw-mask-radial-shape: ellipse;
+      --tw-mask-radial-size: farthest-corner;
+      --tw-mask-radial-position: center;
+      --tw-mask-conic-position: 0deg;
+      --tw-mask-conic-from-position: 0%;
+      --tw-mask-conic-to-position: 100%;
+      --tw-mask-conic-from-color: black;
+      --tw-mask-conic-to-color: transparent;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-ordinal: initial;
+      --tw-slashed-zero: initial;
+      --tw-numeric-figure: initial;
+      --tw-numeric-spacing: initial;
+      --tw-numeric-fraction: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-ease: initial;
+      --tw-text-shadow-color: initial;
+      --tw-text-shadow-alpha: 100%;
+    }
+  }
+}
+
 @layer theme {
   :root,
   :host {
@@ -269,8 +402,8 @@
       ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
       Courier New, monospace;
     --font-family-sans:
-      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+      ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
     --font-family-serif:
       ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
     --font-size-xs: 0.75rem;
@@ -380,282 +513,13 @@
     --default-transition-duration: 0.15s;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-inter), system-ui;
-    --default-font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    --default-font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     --default-mono-font-family: var(--font-plex-mono);
-    --default-mono-font-feature-settings: "ss02", "zero";
+    --default-mono-font-feature-settings: 'ss02', 'zero';
     --animate-flash-code: flash-code 2s forwards;
   }
-
-  @property --tw-space-x-reverse {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-space-y-reverse {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-gradient-position {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-gradient-from {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #0000;
-  }
-
-  @property --tw-gradient-via {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #0000;
-  }
-
-  @property --tw-gradient-to {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #0000;
-  }
-
-  @property --tw-gradient-stops {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-gradient-via-stops {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-gradient-from-position {
-    syntax: "<length-percentage>";
-    inherits: false;
-    initial-value: 0%;
-  }
-
-  @property --tw-gradient-via-position {
-    syntax: "<length-percentage>";
-    inherits: false;
-    initial-value: 50%;
-  }
-
-  @property --tw-gradient-to-position {
-    syntax: "<length-percentage>";
-    inherits: false;
-    initial-value: 100%;
-  }
-
-  @property --tw-divide-x-reverse {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-divide-y-reverse {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-border-style {
-    syntax: "*";
-    inherits: false;
-    initial-value: solid;
-  }
-
-  @property --tw-rotate-x {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-rotate-y {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-scale-x {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
-
-  @property --tw-scale-y {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
-
-  @property --tw-scale-z {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
-
-  @property --tw-skew-x {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-skew-y {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-translate-x {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-translate-y {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-translate-z {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-shadow-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-shadow-alpha {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 100%;
-  }
-
-  @property --tw-inset-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-inset-shadow-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-inset-shadow-alpha {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 100%;
-  }
-
-  @property --tw-ring-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-ring-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-inset-ring-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-inset-ring-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-ring-inset {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-ring-offset-width {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 0px;
-  }
-
-  @property --tw-ring-offset-color {
-    syntax: "*";
-    inherits: false;
-    initial-value: #fff;
-  }
-
-  @property --tw-ring-offset-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-ordinal {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-slashed-zero {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-numeric-figure {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-numeric-spacing {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-numeric-fraction {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes ping {
-    75%,
-    to {
-      opacity: 0;
-      transform: scale(2);
-    }
-  }
-  @keyframes pulse {
-    50% {
-      opacity: 0.5;
-    }
-  }
-  @keyframes bounce {
-    0%,
-    to {
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-      transform: translateY(-25%);
-    }
-    50% {
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      transform: none;
-    }
-  }
 }
+
 @layer base {
   progress,
   sub,
@@ -682,8 +546,8 @@
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     font-family:
-      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-feature-settings: normal;
     font-variation-settings: normal;
     -webkit-tap-highlight-color: transparent;
@@ -718,8 +582,8 @@
   pre,
   samp {
     font-family:
-      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New', monospace;
     font-feature-settings: normal;
     font-variation-settings: normal;
     font-size: 1em;
@@ -831,14 +695,284 @@
   }
   ::file-selector-button,
   button,
-  input:where([type="button"], [type="reset"], [type="submit"]) {
+  input:where([type='button'], [type='reset'], [type='submit']) {
     appearance: button;
   }
   ::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
     height: auto;
   }
-  [hidden]:where(:not([hidden="until-found"])) {
+  [hidden]:where(:not([hidden='until-found'])) {
     display: none !important;
+  }
+}
+
+@property --tw-space-x-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-space-y-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-gradient-position {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-gradient-from {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-via {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-to {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-stops {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-gradient-via-stops {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-gradient-from-position {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --tw-gradient-via-position {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --tw-gradient-to-position {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-divide-x-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-divide-y-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-border-style {
+  syntax: '*';
+  inherits: false;
+  initial-value: solid;
+}
+
+@property --tw-rotate-x {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-rotate-y {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-scale-x {
+  syntax: '*';
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-y {
+  syntax: '*';
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-z {
+  syntax: '*';
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-skew-x {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-skew-y {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-translate-x {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-y {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-z {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-shadow-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-shadow-alpha {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-inset-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-shadow-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-inset-shadow-alpha {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-ring-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-ring-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-ring-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-inset-ring-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-ring-inset {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-ring-offset-width {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --tw-ring-offset-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --tw-ring-offset-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-ordinal {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-slashed-zero {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-numeric-figure {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-numeric-spacing {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-numeric-fraction {
+  syntax: '*';
+  inherits: false;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ping {
+  75%,
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes bounce {
+  0%,
+  to {
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    transform: translateY(-25%);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transform: none;
   }
 }

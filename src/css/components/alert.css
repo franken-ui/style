@@ -1,0 +1,78 @@
+@layer components {
+  .fr-alert {
+    --alert-bg: var(--muted);
+    --alert-bg-a: 4%;
+    --alert-color: var(--muted-f);
+    --alert-color-a: 100%;
+    --alert-border: var(--border);
+    --alert-border-a: 10%;
+
+    --alert-bg-computed: color-mix(
+      in srgb,
+      var(--alert-bg) var(--alert-bg-a, 100%),
+      transparent
+    );
+    --alert-color-computed: color-mix(
+      in srgb,
+      var(--alert-color) var(--alert-color-a, 100%),
+      transparent
+    );
+    --alert-border-computed: color-mix(
+      in srgb,
+      var(--alert-border) var(--alert-border-a),
+      transparent
+    );
+
+    position: relative;
+    padding: 1rem 2rem 1rem 1rem;
+    background-color: var(--alert-bg-computed);
+    color: var(--alert-color-computed);
+    border-radius: var(--radii);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--alert-border-computed);
+  }
+
+  .fr-alert-close {
+    position: absolute;
+    inset: 1rem 1rem auto auto;
+  }
+
+  .fr-alert-danger {
+    --alert-bg: var(--danger);
+    --alert-bg-a: 4%;
+    --alert-border: var(--danger);
+    --alert-border-a: 32%;
+  }
+
+  .fr-alert-warning {
+    --alert-bg: var(--warning);
+    --alert-bg-a: 4%;
+    --alert-border: var(--warning);
+    --alert-border-a: 32%;
+  }
+
+  .fr-alert-info {
+    --alert-bg: var(--info);
+    --alert-bg-a: 4%;
+    --alert-border: var(--info);
+    --alert-border-a: 32%;
+  }
+
+  .fr-alert-success {
+    --alert-bg: var(--success);
+    --alert-bg-a: 4%;
+    --alert-border: var(--success);
+    --alert-border-a: 32%;
+  }
+
+  .fr-alert a:not([class]) {
+    font-weight: 500;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+  }
+
+  .fr-alert a:not([class]):focus-visible {
+    outline: 2px dotted var(--focus);
+  }
+}

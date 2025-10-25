@@ -1,4 +1,137 @@
-@layer theme, base, components, styles, utilities;
+@layer properties, theme, base, components, styles, utilities;
+
+@layer properties {
+  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    *,
+    :before,
+    :after,
+    ::backdrop {
+      --tw-content: '';
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-pan-x: initial;
+      --tw-pan-y: initial;
+      --tw-pinch-zoom: initial;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-divide-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-divide-y-reverse: 0;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-mask-linear: linear-gradient(#fff, #fff);
+      --tw-mask-radial: linear-gradient(#fff, #fff);
+      --tw-mask-conic: linear-gradient(#fff, #fff);
+      --tw-mask-left: linear-gradient(#fff, #fff);
+      --tw-mask-right: linear-gradient(#fff, #fff);
+      --tw-mask-bottom: linear-gradient(#fff, #fff);
+      --tw-mask-top: linear-gradient(#fff, #fff);
+      --tw-mask-top-from-position: 0%;
+      --tw-mask-top-to-position: 100%;
+      --tw-mask-top-from-color: black;
+      --tw-mask-top-to-color: transparent;
+      --tw-mask-bottom-from-position: 0%;
+      --tw-mask-bottom-to-position: 100%;
+      --tw-mask-bottom-from-color: black;
+      --tw-mask-bottom-to-color: transparent;
+      --tw-mask-right-from-position: 0%;
+      --tw-mask-right-to-position: 100%;
+      --tw-mask-right-from-color: black;
+      --tw-mask-right-to-color: transparent;
+      --tw-mask-left-from-position: 0%;
+      --tw-mask-left-to-position: 100%;
+      --tw-mask-left-from-color: black;
+      --tw-mask-left-to-color: transparent;
+      --tw-mask-linear-position: 0deg;
+      --tw-mask-linear-from-position: 0%;
+      --tw-mask-linear-to-position: 100%;
+      --tw-mask-linear-from-color: black;
+      --tw-mask-linear-to-color: transparent;
+      --tw-mask-radial-from-position: 0%;
+      --tw-mask-radial-to-position: 100%;
+      --tw-mask-radial-from-color: black;
+      --tw-mask-radial-to-color: transparent;
+      --tw-mask-radial-shape: ellipse;
+      --tw-mask-radial-size: farthest-corner;
+      --tw-mask-radial-position: center;
+      --tw-mask-conic-position: 0deg;
+      --tw-mask-conic-from-position: 0%;
+      --tw-mask-conic-to-position: 100%;
+      --tw-mask-conic-from-color: black;
+      --tw-mask-conic-to-color: transparent;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-ordinal: initial;
+      --tw-slashed-zero: initial;
+      --tw-numeric-figure: initial;
+      --tw-numeric-spacing: initial;
+      --tw-numeric-fraction: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-ease: initial;
+      --tw-text-shadow-color: initial;
+      --tw-text-shadow-alpha: 100%;
+    }
+  }
+}
+
 @layer theme {
   :root,
   :host {
@@ -269,8 +402,8 @@
       ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
       Courier New, monospace;
     --font-family-sans:
-      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+      ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
     --font-family-serif:
       ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
     --font-size-xs: 0.75rem;
@@ -380,270 +513,13 @@
     --default-transition-duration: 0.15s;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-inter), system-ui;
-    --default-font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    --default-font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     --default-mono-font-family: var(--font-plex-mono);
-    --default-mono-font-feature-settings: "ss02", "zero";
+    --default-mono-font-feature-settings: 'ss02', 'zero';
     --animate-flash-code: flash-code 2s forwards;
   }
-
-  @property --tw-space-x-reverse {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-space-y-reverse {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-gradient-position {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-gradient-from {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #0000;
-  }
-
-  @property --tw-gradient-via {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #0000;
-  }
-
-  @property --tw-gradient-to {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #0000;
-  }
-
-  @property --tw-gradient-stops {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-gradient-via-stops {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-gradient-from-position {
-    syntax: "<length-percentage>";
-    inherits: false;
-    initial-value: 0%;
-  }
-
-  @property --tw-gradient-via-position {
-    syntax: "<length-percentage>";
-    inherits: false;
-    initial-value: 50%;
-  }
-
-  @property --tw-gradient-to-position {
-    syntax: "<length-percentage>";
-    inherits: false;
-    initial-value: 100%;
-  }
-
-  @property --tw-border-style {
-    syntax: "*";
-    inherits: false;
-    initial-value: solid;
-  }
-
-  @property --tw-rotate-x {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-rotate-y {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-scale-x {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
-
-  @property --tw-scale-y {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
-
-  @property --tw-scale-z {
-    syntax: "*";
-    inherits: false;
-    initial-value: 1;
-  }
-
-  @property --tw-skew-x {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-skew-y {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-translate-x {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-translate-y {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-translate-z {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0;
-  }
-
-  @property --tw-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-shadow-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-shadow-alpha {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 100%;
-  }
-
-  @property --tw-inset-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-inset-shadow-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-inset-shadow-alpha {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 100%;
-  }
-
-  @property --tw-ring-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-ring-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-inset-ring-color {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-inset-ring-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-ring-inset {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-ring-offset-width {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 0px;
-  }
-
-  @property --tw-ring-offset-color {
-    syntax: "*";
-    inherits: false;
-    initial-value: #fff;
-  }
-
-  @property --tw-ring-offset-shadow {
-    syntax: "*";
-    inherits: false;
-    initial-value: 0 0 #0000;
-  }
-
-  @property --tw-ordinal {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-slashed-zero {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-numeric-figure {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-numeric-spacing {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @property --tw-numeric-fraction {
-    syntax: "*";
-    inherits: false;
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes ping {
-    75%,
-    to {
-      opacity: 0;
-      transform: scale(2);
-    }
-  }
-  @keyframes pulse {
-    50% {
-      opacity: 0.5;
-    }
-  }
-  @keyframes bounce {
-    0%,
-    to {
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-      transform: translateY(-25%);
-    }
-    50% {
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      transform: none;
-    }
-  }
 }
+
 @layer base {
   progress,
   sub,
@@ -670,8 +546,8 @@
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     font-family:
-      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-feature-settings: normal;
     font-variation-settings: normal;
     -webkit-tap-highlight-color: transparent;
@@ -706,8 +582,8 @@
   pre,
   samp {
     font-family:
-      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New', monospace;
     font-feature-settings: normal;
     font-variation-settings: normal;
     font-size: 1em;
@@ -819,15 +695,285 @@
   }
   ::file-selector-button,
   button,
-  input:where([type="button"], [type="reset"], [type="submit"]) {
+  input:where([type='button'], [type='reset'], [type='submit']) {
     appearance: button;
   }
   ::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
     height: auto;
   }
-  [hidden]:where(:not([hidden="until-found"])) {
+  [hidden]:where(:not([hidden='until-found'])) {
     display: none !important;
+  }
+}
+
+@property --tw-space-x-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-space-y-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-gradient-position {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-gradient-from {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-via {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-to {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-stops {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-gradient-via-stops {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-gradient-from-position {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --tw-gradient-via-position {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --tw-gradient-to-position {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-divide-x-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-divide-y-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-border-style {
+  syntax: '*';
+  inherits: false;
+  initial-value: solid;
+}
+
+@property --tw-rotate-x {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-rotate-y {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-scale-x {
+  syntax: '*';
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-y {
+  syntax: '*';
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-z {
+  syntax: '*';
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-skew-x {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-skew-y {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-translate-x {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-y {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-z {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-shadow-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-shadow-alpha {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-inset-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-shadow-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-inset-shadow-alpha {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-ring-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-ring-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-ring-color {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-inset-ring-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-ring-inset {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-ring-offset-width {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --tw-ring-offset-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --tw-ring-offset-shadow {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-ordinal {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-slashed-zero {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-numeric-figure {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-numeric-spacing {
+  syntax: '*';
+  inherits: false;
+}
+
+@property --tw-numeric-fraction {
+  syntax: '*';
+  inherits: false;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ping {
+  75%,
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes bounce {
+  0%,
+  to {
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    transform: translateY(-25%);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transform: none;
   }
 }
 
@@ -1296,6 +1442,46 @@
   }
   .cursor {
     cursor: var(--cursor);
+  }
+  .divide-x :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 0;
+    border-inline-style: var(--tw-border-style);
+    border-inline-start-width: calc(
+      var(--spacing) * var(--border-w) * var(--tw-divide-x-reverse)
+    );
+    border-inline-end-width: calc(
+      var(--spacing) * var(--border-w) * (1 - var(--tw-divide-x-reverse))
+    );
+  }
+  .\[divide-x\] :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 0;
+    border-inline-style: var(--tw-border-style);
+    border-inline-start-width: calc(
+      var(--border-w) * var(--tw-divide-x-reverse)
+    );
+    border-inline-end-width: calc(
+      var(--border-w) * (1 - var(--tw-divide-x-reverse))
+    );
+  }
+  .divide-y :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-block-style: var(--tw-border-style);
+    border-block-start-width: calc(
+      var(--spacing) * var(--border-w) * var(--tw-divide-y-reverse)
+    );
+    border-block-end-width: calc(
+      var(--spacing) * var(--border-w) * (1 - var(--tw-divide-y-reverse))
+    );
+  }
+  .\[divide-y\] :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-block-style: var(--tw-border-style);
+    border-block-start-width: calc(
+      var(--border-w) * var(--tw-divide-y-reverse)
+    );
+    border-block-end-width: calc(
+      var(--border-w) * (1 - var(--tw-divide-y-reverse))
+    );
   }
   .fill\/o {
     fill: color-mix(in oklab, var(--fill) var(--fill-o, 100%), transparent);
@@ -2058,6 +2244,30 @@
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
       var(--tw-skew-x,) var(--tw-skew-y,);
   }
+  .space-x > :not(:last-child) {
+    margin-inline-start: calc(
+      var(--spacing) * var(--space-x) * var(--tw-space-x-reverse)
+    );
+    margin-inline-end: calc(
+      var(--spacing) * var(--space-x) * (1 - var(--tw-space-x-reverse))
+    );
+  }
+  .\[space-x\] > :not(:last-child) {
+    margin-inline-start: calc(var(--space-x) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(var(--space-x) * (1 - var(--tw-space-x-reverse)));
+  }
+  .space-y > :not(:last-child) {
+    margin-block-start: calc(
+      var(--spacing) * var(--space-y) * var(--tw-space-y-reverse)
+    );
+    margin-block-end: calc(
+      var(--spacing) * var(--space-y) * (1 - var(--tw-space-y-reverse))
+    );
+  }
+  .\[space-y\] > :not(:last-child) {
+    margin-block-start: calc(var(--space-y) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--space-y) * (1 - var(--tw-space-y-reverse)));
+  }
   .stroke-w {
     stroke-width: var(--stroke-w);
   }
@@ -2647,6 +2857,46 @@
     }
     .sm\:cursor {
       cursor: var(--sm-cursor);
+    }
+    .sm\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--sm-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--sm-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .sm\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--sm-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--sm-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .sm\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--sm-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--sm-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .sm\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--sm-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--sm-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .sm\:fill\/o {
       fill: color-mix(
@@ -3413,6 +3663,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .sm\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--sm-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--sm-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .sm\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--sm-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--sm-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .sm\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--sm-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--sm-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .sm\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--sm-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--sm-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .sm\:stroke-w {
       stroke-width: var(--sm-stroke-w);
     }
@@ -4008,6 +4286,46 @@
     }
     .md\:cursor {
       cursor: var(--md-cursor);
+    }
+    .md\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--md-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--md-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .md\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--md-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--md-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .md\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--md-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--md-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .md\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--md-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--md-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .md\:fill\/o {
       fill: color-mix(
@@ -4774,6 +5092,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .md\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--md-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--md-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .md\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--md-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--md-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .md\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--md-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--md-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .md\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--md-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--md-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .md\:stroke-w {
       stroke-width: var(--md-stroke-w);
     }
@@ -5369,6 +5715,46 @@
     }
     .lg\:cursor {
       cursor: var(--lg-cursor);
+    }
+    .lg\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--lg-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--lg-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .lg\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--lg-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--lg-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .lg\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--lg-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--lg-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .lg\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--lg-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--lg-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .lg\:fill\/o {
       fill: color-mix(
@@ -6135,6 +6521,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .lg\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--lg-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--lg-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .lg\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--lg-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--lg-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .lg\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--lg-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--lg-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .lg\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--lg-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--lg-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .lg\:stroke-w {
       stroke-width: var(--lg-stroke-w);
     }
@@ -6730,6 +7144,46 @@
     }
     .xl\:cursor {
       cursor: var(--xl-cursor);
+    }
+    .xl\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .xl\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .xl\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .xl\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .xl\:fill\/o {
       fill: color-mix(
@@ -7496,6 +7950,34 @@
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
+    .xl\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--xl-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .xl\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(var(--xl-space-x) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(
+        var(--xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .xl\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--xl-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .xl\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(var(--xl-space-y) * var(--tw-space-y-reverse));
+      margin-block-end: calc(
+        var(--xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
     .xl\:stroke-w {
       stroke-width: var(--xl-stroke-w);
     }
@@ -8095,6 +8577,48 @@
     }
     .\32xl\:cursor {
       cursor: var(--\32xl-cursor);
+    }
+    .\32xl\:divide-x :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--spacing) * var(--\32xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--spacing) * var(--\32xl-border-w) *
+          (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .\32xl\:\[divide-x\] :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 0;
+      border-inline-style: var(--tw-border-style);
+      border-inline-start-width: calc(
+        var(--\32xl-border-w) * var(--tw-divide-x-reverse)
+      );
+      border-inline-end-width: calc(
+        var(--\32xl-border-w) * (1 - var(--tw-divide-x-reverse))
+      );
+    }
+    .\32xl\:divide-y :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--spacing) * var(--\32xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--spacing) * var(--\32xl-border-w) *
+          (1 - var(--tw-divide-y-reverse))
+      );
+    }
+    .\32xl\:\[divide-y\] :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-block-style: var(--tw-border-style);
+      border-block-start-width: calc(
+        var(--\32xl-border-w) * var(--tw-divide-y-reverse)
+      );
+      border-block-end-width: calc(
+        var(--\32xl-border-w) * (1 - var(--tw-divide-y-reverse))
+      );
     }
     .\32xl\:fill\/o {
       fill: color-mix(
@@ -8862,6 +9386,38 @@
       --tw-skew-y: skewY(var(--\32xl-skew-y));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+    .\32xl\:space-x > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--spacing) * var(--\32xl-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--spacing) * var(--\32xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .\32xl\:\[space-x\] > :not(:last-child) {
+      margin-inline-start: calc(
+        var(--\32xl-space-x) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        var(--\32xl-space-x) * (1 - var(--tw-space-x-reverse))
+      );
+    }
+    .\32xl\:space-y > :not(:last-child) {
+      margin-block-start: calc(
+        var(--spacing) * var(--\32xl-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--spacing) * var(--\32xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
+    }
+    .\32xl\:\[space-y\] > :not(:last-child) {
+      margin-block-start: calc(
+        var(--\32xl-space-y) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        var(--\32xl-space-y) * (1 - var(--tw-space-y-reverse))
+      );
     }
     .\32xl\:stroke-w {
       stroke-width: var(--\32xl-stroke-w);
@@ -10187,6 +10743,12 @@
   }
   .hidden {
     display: none;
+  }
+  .divide-x-reverse :where(& > :not(:last-child)) {
+    --tw-divide-x-reverse: 1;
+  }
+  .divide-y-reverse :where(& > :not(:last-child)) {
+    --tw-divide-y-reverse: 1;
   }
   .field-sizing-fixed {
     field-sizing: fixed;
@@ -11637,10 +12199,10 @@
     width: fit-content;
     height: fit-content;
   }
-  .space-x-reverse {
+  .space-x-reverse :where(& > :not(:last-child)) {
     --tw-space-x-reverse: 1;
   }
-  .space-y-reverse {
+  .space-y-reverse :where(& > :not(:last-child)) {
     --tw-space-y-reverse: 1;
   }
   .table-auto {
@@ -13210,6 +13772,12 @@
     .sm\:hidden {
       display: none;
     }
+    .sm\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+    .sm\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
     .sm\:field-sizing-fixed {
       field-sizing: fixed;
     }
@@ -14659,10 +15227,10 @@
       width: fit-content;
       height: fit-content;
     }
-    .sm\:space-x-reverse {
+    .sm\:space-x-reverse :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 1;
     }
-    .sm\:space-y-reverse {
+    .sm\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
     }
     .sm\:table-auto {
@@ -16233,6 +16801,12 @@
     .md\:hidden {
       display: none;
     }
+    .md\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+    .md\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
     .md\:field-sizing-fixed {
       field-sizing: fixed;
     }
@@ -17682,10 +18256,10 @@
       width: fit-content;
       height: fit-content;
     }
-    .md\:space-x-reverse {
+    .md\:space-x-reverse :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 1;
     }
-    .md\:space-y-reverse {
+    .md\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
     }
     .md\:table-auto {
@@ -19256,6 +19830,12 @@
     .lg\:hidden {
       display: none;
     }
+    .lg\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+    .lg\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
     .lg\:field-sizing-fixed {
       field-sizing: fixed;
     }
@@ -20705,10 +21285,10 @@
       width: fit-content;
       height: fit-content;
     }
-    .lg\:space-x-reverse {
+    .lg\:space-x-reverse :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 1;
     }
-    .lg\:space-y-reverse {
+    .lg\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
     }
     .lg\:table-auto {
@@ -22279,6 +22859,12 @@
     .xl\:hidden {
       display: none;
     }
+    .xl\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+    .xl\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
     .xl\:field-sizing-fixed {
       field-sizing: fixed;
     }
@@ -23728,10 +24314,10 @@
       width: fit-content;
       height: fit-content;
     }
-    .xl\:space-x-reverse {
+    .xl\:space-x-reverse :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 1;
     }
-    .xl\:space-y-reverse {
+    .xl\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
     }
     .xl\:table-auto {
@@ -25302,6 +25888,12 @@
     .\32xl\:hidden {
       display: none;
     }
+    .\32xl\:divide-x-reverse :where(& > :not(:last-child)) {
+      --tw-divide-x-reverse: 1;
+    }
+    .\32xl\:divide-y-reverse :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 1;
+    }
     .\32xl\:field-sizing-fixed {
       field-sizing: fixed;
     }
@@ -26751,10 +27343,10 @@
       width: fit-content;
       height: fit-content;
     }
-    .\32xl\:space-x-reverse {
+    .\32xl\:space-x-reverse :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 1;
     }
-    .\32xl\:space-y-reverse {
+    .\32xl\:space-y-reverse :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
     }
     .\32xl\:table-auto {
