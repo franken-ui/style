@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+
+    <link rel="stylesheet" href="../src/css/core.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/utilities.css" />
+
+    <script type="module" src="../src/js/core.ts"></script>
+    <script type="module" src="../src/js/icon.ts"></script>
+  </head>
+  <body class="">
+    <div class="my mx-auto max-w-7xl" style="--my: 10">
+      <fr-accordion id="test">
+        <fr-accordion-item>
+          <fr-accordion-item-title
+            cls="flex justify-between items-center w-full p text-left text-lg font-medium color bg\:focus"
+            style="--p: 4; --color: var(--color-gray-700); --bg-focus: green"
+            data-fr
+          >
+            <template data-fn="template">
+              <div class="flex w-full items-center justify-between">
+                <span>What is a headless component?</span>
+                <fr-icon icon="chevron-down"></fr-icon>
+              </div>
+            </template>
+          </fr-accordion-item-title>
+
+          <fr-accordion-item-content
+            cls="transition ease-in-out duration"
+            style="--transition: all; --duration: 300ms"
+          >
+            <template data-fn="template">
+              <div
+                class="p color"
+                style="--p: 4; --color: var(--color-gray-600)"
+              >
+                <p>
+                  A headless component is a component that provides logic and
+                  functionality without dictating the final visual output.
+                </p>
+              </div>
+            </template>
+          </fr-accordion-item-content>
+        </fr-accordion-item>
+
+        <fr-accordion-item open>
+          <fr-accordion-item-title
+            cls="flex justify-between items-center w-full p text-left text-lg font-medium color"
+            stl="--p: 4; --color: var(--color-gray-700)"
+          >
+            <template data-fn="template">
+              <div class="flex w-full items-center justify-between">
+                <span>Why use Lit?</span>
+                <fr-icon icon="chevron-down"></fr-icon>
+              </div>
+            </template>
+          </fr-accordion-item-title>
+
+          <fr-accordion-item-content
+            cls="transition ease-in-out duration"
+            style="--transition: all; --duration: 300ms"
+          >
+            <template data-fn="template">
+              <div
+                class="p color"
+                style="--p: 4; --color: var(--color-gray-600)"
+              >
+                <p>
+                  Lit is a simple library for building fast, lightweight web
+                  components.
+                </p>
+              </div>
+            </template>
+          </fr-accordion-item-content>
+        </fr-accordion-item>
+      </fr-accordion>
+    </div>
+
+    <script type="module" src="../src/js/runtime.ts"></script>
+  </body>
+</html>

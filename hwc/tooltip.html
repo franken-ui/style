@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip</title>
+
+    <link rel="stylesheet" href="../src/css/core.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/utilities.css" />
+
+    <script type="module" src="../src/js/core.ts"></script>
+    <script type="module" src="../src/js/icon.ts"></script>
+  </head>
+  <body class="">
+    <div class="my mx-auto max-w-7xl" style="--my: 10">
+      <!-- Basic tooltip -->
+      <div class="relative">
+        <button>Hover me</button>
+        <fr-tooltip>
+          <template data-fn="template">
+            <div class="tooltip-content">Helpful information</div>
+          </template>
+        </fr-tooltip>
+      </div>
+
+      <!-- With arrow and custom placement -->
+      <button>Info</button>
+      <fr-tooltip placement="right" arrow>
+        <template data-fn="template">
+          <div>This appears on the right with an arrow</div>
+        </template>
+      </fr-tooltip>
+
+      <!-- With custom styling via cls -->
+      <button>Custom</button>
+      <fr-tooltip
+        cls='{"tooltip": "my-tooltip-class", "arrow": "my-arrow-class"}'
+      >
+        <template data-fn="template">
+          <div>Styled tooltip</div>
+        </template>
+      </fr-tooltip>
+    </div>
+  </body>
+</html>
