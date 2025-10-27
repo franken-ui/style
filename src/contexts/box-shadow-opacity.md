@@ -1,0 +1,8 @@
+## Box Shadow Opacity
+
+### Utilities (value-driven)
+
+| Selector         | Style                                                                                                                                                                                                                                                                                                                                      | Variables Required                 |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
+| `.shadow/o`      | `--tw-shadow-color: color-mix( in oklab, var(--shadow) var(--shadow-o, 100%), transparent )`, `--tw-shadow: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)`, `box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)`           | `--shadow`, `--shadow-o`           |
+| `.dark:shadow/o` | `--tw-shadow-color: color-mix( in oklab, var(--dark-shadow) var(--dark-shadow-o, 100%), transparent )`, `--tw-shadow: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)`, `box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)` | `--dark-shadow`, `--dark-shadow-o` |
