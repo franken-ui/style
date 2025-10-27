@@ -1,137 +1,38 @@
-> If you’re already happy with Tailwind CSS, there’s no reason for you to be here.
-
 # Frankenstyle
 
-Frankenstyle is a no-build, value-driven, fully responsive, utility-first CSS framework. It’s designed to be lightweight, production-ready, and to strike a balance between developer ergonomics and build size.
+Frankenstyle is the spiritual successor to **Franken UI** — our first project that fused UIkit with Tailwind CSS. This time, we’re rebuilding from the ground up with a sharper focus on simplicity, flexibility, and long-term maintainability.
 
-For full documentation, visit [franken.style](https://franken.style).
+## Documentation
 
-## Installation
+The documentation website is still being updated, but you can refer to the **context files** for the most accurate and up-to-date information.
 
-Frankenstyle can be used via CDN or downloaded and referenced locally.
+## Roadmap
 
-### CDN
+Here’s the current state of the project and where we’re headed next.
 
-```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/frankenstyle@latest/dist/css/frankenstyle.min.css"
-/>
-```
+While **Franken UI** relied on mature libraries like Tailwind CSS and UIkit, the goal now is to build a more **granular**, **robust**, and **future-proof** foundation — essentially, our own ecosystem. The project is split into three parts:
 
-### NPM
+* **Frankenstyle** – A no-build, value-driven, fully responsive, utility-first CSS framework.
+* **Headless Web Components (HWC)** – A collection of unstyled, fully accessible, commonly used web components.
+* **FrankenstyleKit** – The fusion of the two, featuring its own opinionated design system inspired by `coss ui`.
 
-```bash
-npm i frankenstyle@latest
-```
+Both Frankenstyle and HWC are fully detached and can be used independently — hence the creation of FrankenstyleKit.
 
-Then import it in your `main.css`:
+## Current Status
 
-```css
-@import "frankenstyle/css/frankenstyle.css";
-```
+* **Frankenstyle** – Development is very active and open to the community.
+* **Franken UI** – Now in Long-Term Support (LTS). No new features will be added, but bug fixes and dependency updates are guaranteed.
 
-### JavaScript
+## Support
 
-JavaScript is optional, but important for interactive states:
+Right now, the project is **unsustainable** — it has no commercial backing or paid projects and relies solely on donors, a few sponsors from Franken UI, and, of course, my own boredom and availability.
 
-```html
-<script src="https://unpkg.com/frankenstyle@latest/dist/js/frankenstyle.min.js"></script>
-```
+There’s a lot to do, and I’d love to see this project thrive.
+If you’d like to support the work, you can do so here:
 
-## Core Concepts & Usage
-
-Think of Frankenstyle as _Tailwind CSS, but de-valued_. Frankenstyle provides the class, you provide the value.
-
-```html
-<div class="m sm:m md:m" style="--m: 4; --sm-m: 8; --md-m: 16"></div>
-```
-
-Behind the scenes, values are multiplied by a base spacing variable (e.g., `var(--spacing)`).
-
-Need arbitrary values? Wrap in brackets:
-
-```html
-<div class="[m]" style="--m: 4px;"></div>
-```
-
-You don’t need to memorize odd variable names — just drop special characters from the class.
-
-- `sm:m` → `--sm-m`
-- `dark:sm:bg:hover` → `--dark-sm-bg-hover`
-
-### States
-
-Interactive states (e.g., hover) are generated on demand. Mark an element with `data-fs-interactive`, and the runtime will generate the necessary pseudo-state CSS.
-
-```html
-<button
-    type="button"
-    class="color bg dark:bg bg:hover dark:bg:hover font-medium rounded-lg text-sm px py"
-    style="
-        --color: var(--color-white);
-        --bg: var(--color-blue-700);
-        --dark-bg: var(--color-pink-600);
-        --bg-hover: var(--color-blue-800);
-        --dark-bg-hover: var(--color-pink-700);
-        --px: 5;
-        --py: 2.5;
-    "
-    data-fs-interactive
->
-    Default
-</button>
-```
-
-This avoids shipping huge CSS files for states up front — everything is generated at runtime when needed.
-
-### Dark Mode
-
-Prefix color utilities with `dark:`:
-
-- `bg` → `dark:bg`
-- `color` → `dark:color`
-- `border` → `dark:border`
-- `fill` → `dark:fill`
-
-### Opacity
-
-Suffix color utilities with `/o`. These require two variables (base + opacity) to avoid inheritance issues:
-
-```html
-<div
-  class="bg/o dark:bg/o"
-  style="
-    --bg: var(--color-blue-800);
-    --bg-o: 80%;
-    --dark-bg: var(--color-green-800);
-    --dark-bg-o: 80%;
-  "
-></div>
-```
-
-### Responsiveness
-
-Prefix classes with breakpoints:
-
-- `sm:`
-- `md:`
-- `lg:`
-- `xl:`
-- `2xl:`
-
-```html
-<div class="p sm:p md:p" style="--p: 4; --sm-p: 8; --md-p: 16"></div>
-```
-
-## Key Differences from Tailwind
-
-- **No config, no file watchers** → everything is statically pre-built.
-- **Value-driven utilities** → use `m` + `--m: 8` or `[m]` for arbitrary values, not `m-8` or `m-[8px]`.
-- **State syntax is reversed** → `bg:hover` instead of `hover:bg-blue-600`.
-- **Runtime state generation** → hover/active CSS is created on the fly, keeping static builds small.
-- **Familiar patterns** → utilities, responsive prefixes, and naming feel similar to Tailwind.
+* **GitHub Sponsors:** [https://github.com/sponsors/sveltecult](https://github.com/sponsors/sveltecult)
+* **Ko-fi:** [https://ko-fi.com/sveltecult](https://ko-fi.com/sveltecult)
 
 ## License
 
-Licensed under the [MIT license](https://github.com/franken-ui/ui/blob/master/LICENSE.md).
+Licensed under the [MIT License](https://github.com/franken-ui/ui/blob/master/LICENSE.md).
