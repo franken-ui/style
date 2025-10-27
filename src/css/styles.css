@@ -129,6 +129,9 @@
   .dark .dark\:border-y {
     border-block-color: var(--dark-border-y);
   }
+  .bg-image {
+    background-image: var(--bg-image);
+  }
   .bg-position {
     background-position: var(--bg-position);
   }
@@ -1535,6 +1538,9 @@
     }
     .dark .dark\:sm\:border-y {
       border-block-color: var(--dark-sm-border-y);
+    }
+    .sm\:bg-image {
+      background-image: var(--sm-bg-image);
     }
     .sm\:bg-position {
       background-position: var(--sm-bg-position);
@@ -2965,6 +2971,9 @@
     .dark .dark\:md\:border-y {
       border-block-color: var(--dark-md-border-y);
     }
+    .md\:bg-image {
+      background-image: var(--md-bg-image);
+    }
     .md\:bg-position {
       background-position: var(--md-bg-position);
     }
@@ -4393,6 +4402,9 @@
     }
     .dark .dark\:lg\:border-y {
       border-block-color: var(--dark-lg-border-y);
+    }
+    .lg\:bg-image {
+      background-image: var(--lg-bg-image);
     }
     .lg\:bg-position {
       background-position: var(--lg-bg-position);
@@ -5823,6 +5835,9 @@
     .dark .dark\:xl\:border-y {
       border-block-color: var(--dark-xl-border-y);
     }
+    .xl\:bg-image {
+      background-image: var(--xl-bg-image);
+    }
     .xl\:bg-position {
       background-position: var(--xl-bg-position);
     }
@@ -7251,6 +7266,9 @@
     }
     .dark .dark\:2xl\:border-y {
       border-block-color: var(--dark-2xl-border-y);
+    }
+    .\32xl\:bg-image {
+      background-image: var(--\32xl-bg-image);
     }
     .\32xl\:bg-position {
       background-position: var(--\32xl-bg-position);
