@@ -55,7 +55,8 @@
     "./js/*": {
       "default": "./dist/js/*.js"
     },
-    "./css/frankenstyle.css": "./dist/css/frankenstyle.css"
+    "./css/frankenstyle.css": "./dist/css/frankenstyle.css",
+    "./css/frankenstyle-kit.css": "./dist/css/frankenstyle-kit.css"
   },
   "files": [
     "dist"
