@@ -1,0 +1,82 @@
+@layer components {
+  .fr-badge {
+    --badge-bg: var(--fr-bg);
+    --badge-bg-o: 100%;
+    --badge-color: var(--fr-bg-f);
+    --badge-color-o: 100%;
+    --badge-border: var(--fr-border);
+    --badge-border-o: 10%;
+
+    --badge-bg-computed: color-mix(
+      in srgb,
+      var(--badge-bg) var(--badge-bg-o, 100%),
+      transparent
+    );
+    --badge-color-computed: color-mix(
+      in srgb,
+      var(--badge-color) var(--badge-color-o, 100%),
+      transparent
+    );
+    --badge-border-computed: color-mix(
+      in srgb,
+      var(--badge-border) var(--badge-border-o),
+      transparent
+    );
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.25rem;
+    min-width: 1.25rem;
+    padding: 0 0.375rem;
+    font-size: var(--font-size-sm);
+    line-height: var(--font-size-sm--line-height);
+    font-weight: 600;
+    border-radius: 9999px;
+    box-shadow: var(--fr-badge-shadow, --shadow-sm);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--badge-border-computed);
+    background-color: var(--badge-bg-computed);
+    color: var(--badge-color-computed);
+  }
+
+  .fr-badge:hover {
+    transition-property: background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    opacity: 80%;
+  }
+
+  .fr-badge-danger {
+    --badge-bg: var(--fr-danger);
+    --badge-bg-o: 4%;
+    --badge-color: var(--fr-danger);
+    --badge-border: var(--fr-danger);
+    --badge-border-o: 32%;
+  }
+
+  .fr-badge-warning {
+    --badge-bg: var(--fr-warning);
+    --badge-bg-o: 4%;
+    --badge-color: var(--fr-warning);
+    --badge-border: var(--fr-warning);
+    --badge-border-o: 32%;
+  }
+
+  .fr-badge-info {
+    --badge-bg: var(--fr-info);
+    --badge-bg-o: 4%;
+    --badge-color: var(--fr-info);
+    --badge-border: var(--fr-info);
+    --badge-border-o: 32%;
+  }
+
+  .fr-badge-success {
+    --badge-bg: var(--fr-success);
+    --badge-bg-o: 4%;
+    --badge-color: var(--fr-success);
+    --badge-border: var(--fr-success);
+    --badge-border-o: 32%;
+  }
+}
