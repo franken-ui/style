@@ -1,0 +1,331 @@
+@layer components {
+  .fr-btn {
+    --btn-bg: var(--fr-bg);
+    --btn-bg-o: 100%;
+    --btn-color: var(--fr-bg-f);
+    --btn-border: var(--fr-border);
+    --btn-border-o: 10%;
+    --btn-radius: var(--fr-radii);
+    --btn-font-weight: 500;
+    --btn-shadow: none;
+
+    --btn-hover-bg: var(--fr-accent);
+    --btn-hover-bg-o: 4%;
+    --btn-hover-color: var(--fr-accent-f);
+
+    --btn-disabled-o: 50%;
+
+    --btn-icon-size: 1rem;
+
+    /* Computed values */
+    --btn-bg-computed: color-mix(
+      in srgb,
+      var(--btn-bg) var(--btn-bg-o),
+      transparent
+    );
+    --btn-color-computed: color-mix(
+      in srgb,
+      var(--btn-color) 100%,
+      transparent
+    );
+    --btn-border-computed: color-mix(
+      in srgb,
+      var(--btn-border) var(--btn-border-o),
+      transparent
+    );
+    --btn-hover-bg-computed: color-mix(
+      in srgb,
+      var(--btn-hover-bg) var(--btn-hover-bg-o),
+      transparent
+    );
+    --btn-hover-color-computed: color-mix(
+      in srgb,
+      var(--btn-hover-color) 100%,
+      transparent
+    );
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-weight: var(--btn-font-weight);
+    text-align: center;
+    white-space: nowrap;
+    border-radius: var(--btn-radius);
+    box-shadow: var(--btn-shadow);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--btn-border-computed);
+    background-color: var(--btn-bg-computed);
+    color: var(--btn-color-computed);
+    cursor: pointer;
+    transition:
+      background-color 150ms ease-in-out,
+      color 150ms ease-in-out,
+      border-color 150ms ease-in-out;
+  }
+
+  .fr-btn:focus-visible {
+    outline: 2px dotted var(--fr-focus);
+  }
+
+  .fr-btn::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  .fr-btn:hover {
+    background-color: var(--btn-hover-bg-computed);
+    color: var(--btn-hover-color-computed);
+  }
+
+  .fr-btn:disabled {
+    opacity: var(--btn-disabled-o);
+    pointer-events: none;
+  }
+
+  .fr-btn svg,
+  .fr-btn fr-icon {
+    pointer-events: none;
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
+    flex-shrink: 0;
+  }
+
+  /* Button Variants */
+  .fr-btn-primary {
+    --btn-bg: var(--fr-primary);
+    --btn-bg-o: 100%;
+    --btn-color: var(--fr-primary-f);
+    --btn-border: var(--fr-primary);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-primary);
+    --btn-hover-bg-o: 90%;
+    --btn-hover-color: var(--fr-primary-f);
+  }
+
+  .fr-btn-secondary {
+    --btn-bg: var(--fr-secondary);
+    --btn-bg-o: 100%;
+    --btn-color: var(--fr-secondary-f);
+    --btn-border: var(--fr-secondary);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-secondary);
+    --btn-hover-bg-o: 80%;
+    --btn-hover-color: var(--fr-secondary-f);
+  }
+
+  .fr-btn-danger {
+    --btn-bg: var(--fr-danger);
+    --btn-bg-o: 100%;
+    --btn-color: var(--fr-danger-f);
+    --btn-border: var(--fr-danger);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-danger);
+    --btn-hover-bg-o: 90%;
+    --btn-hover-color: var(--fr-danger-f);
+  }
+
+  .fr-btn-success {
+    --btn-bg: var(--fr-success);
+    --btn-bg-o: 100%;
+    --btn-color: var(--fr-success-f);
+    --btn-border: var(--fr-success);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-success);
+    --btn-hover-bg-o: 90%;
+    --btn-hover-color: var(--fr-success-f);
+  }
+
+  .fr-btn-warning {
+    --btn-bg: var(--fr-warning);
+    --btn-bg-o: 100%;
+    --btn-color: var(--fr-warning-f);
+    --btn-border: var(--fr-warning);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-warning);
+    --btn-hover-bg-o: 90%;
+    --btn-hover-color: var(--fr-warning-f);
+  }
+
+  .fr-btn-info {
+    --btn-bg: var(--fr-info);
+    --btn-bg-o: 100%;
+    --btn-color: var(--fr-info-f);
+    --btn-border: var(--fr-info);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-info);
+    --btn-hover-bg-o: 90%;
+    --btn-hover-color: var(--fr-info-f);
+  }
+
+  /* Outline Buttons (like alerts - with opacity) */
+  .fr-btn-outline {
+    --btn-bg: var(--fr-primary);
+    --btn-bg-o: 0%;
+    --btn-color: var(--fr-primary);
+    --btn-border: var(--fr-primary);
+    --btn-border-o: 10%;
+    --btn-hover-bg: var(--fr-primary);
+    --btn-hover-bg-o: 8%;
+    --btn-hover-color: var(--fr-primary);
+  }
+
+  .fr-btn-outline.fr-btn-primary {
+    --btn-bg: var(--fr-primary);
+    --btn-bg-o: 0%;
+    --btn-color: var(--fr-primary);
+    --btn-border: var(--fr-primary);
+    --btn-border-o: 10%;
+    --btn-hover-bg: var(--fr-primary);
+    --btn-hover-bg-o: 8%;
+    --btn-hover-color: var(--fr-primary);
+  }
+
+  .fr-btn-outline.fr-btn-secondary {
+    --btn-bg: var(--fr-secondary);
+    --btn-bg-o: 0%;
+    --btn-color: var(--fr-secondary-f);
+    --btn-border: var(--fr-secondary);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-secondary);
+    --btn-hover-bg-o: 8%;
+    --btn-hover-color: var(--fr-secondary-f);
+  }
+
+  .fr-btn-outline.fr-btn-danger {
+    --btn-bg: var(--fr-danger);
+    --btn-bg-o: 0%;
+    --btn-color: var(--fr-danger);
+    --btn-border: var(--fr-danger);
+    --btn-border-o: 32%;
+    --btn-hover-bg: var(--fr-danger);
+    --btn-hover-bg-o: 8%;
+    --btn-hover-color: var(--fr-danger);
+  }
+
+  .fr-btn-outline.fr-btn-success {
+    --btn-bg: var(--fr-success);
+    --btn-bg-o: 0%;
+    --btn-color: var(--fr-success);
+    --btn-border: var(--fr-success);
+    --btn-border-o: 32%;
+    --btn-hover-bg: var(--fr-success);
+    --btn-hover-bg-o: 8%;
+    --btn-hover-color: var(--fr-success);
+  }
+
+  .fr-btn-outline.fr-btn-warning {
+    --btn-bg: var(--fr-warning);
+    --btn-bg-o: 0%;
+    --btn-color: var(--fr-warning);
+    --btn-border: var(--fr-warning);
+    --btn-border-o: 32%;
+    --btn-hover-bg: var(--fr-warning);
+    --btn-hover-bg-o: 8%;
+    --btn-hover-color: var(--fr-warning);
+  }
+
+  .fr-btn-outline.fr-btn-info {
+    --btn-bg: var(--fr-info);
+    --btn-bg-o: 0%;
+    --btn-color: var(--fr-info);
+    --btn-border: var(--fr-info);
+    --btn-border-o: 100%;
+    --btn-hover-bg: var(--fr-info);
+    --btn-hover-bg-o: 8%;
+    --btn-hover-color: var(--fr-info);
+  }
+
+  /* Ghost Button */
+  .fr-btn-ghost {
+    --btn-bg: transparent;
+    --btn-bg-o: 0%;
+    --btn-border: transparent;
+    --btn-border-o: 0%;
+    --btn-shadow: none;
+  }
+
+  .fr-btn-ghost:hover {
+    --btn-hover-bg: var(--fr-accent);
+    --btn-hover-bg-o: 100%;
+    --btn-hover-color: var(--fr-accent-f);
+  }
+
+  /* Text Button with underline animation - NO background on hover */
+  .fr-btn-text {
+    --btn-bg: transparent;
+    --btn-bg-o: 0%;
+    --btn-border: transparent;
+    --btn-border-o: 0%;
+    --btn-radius: 0;
+    --btn-shadow: none;
+
+    position: relative;
+    padding: 0;
+  }
+
+  .fr-btn-text:hover {
+    --btn-hover-bg: transparent;
+    --btn-hover-bg-o: 0%;
+  }
+
+  .fr-btn-text::before {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 100%;
+    border-block-end: 1px solid currentColor;
+    transition: inset-inline-end 0.3s ease-out;
+  }
+
+  .fr-btn-text:hover::before {
+    inset-inline-end: 0;
+  }
+
+  .fr-btn-text:disabled::before {
+    display: none;
+  }
+
+  /* Icon Button */
+  .fr-btn-icon {
+    aspect-ratio: 1;
+    padding: 0.5rem;
+  }
+
+  /* Button Group */
+  .fr-btn-group {
+    display: inline-flex;
+    position: relative;
+    box-shadow: var(--btn-shadow);
+    border-radius: var(--btn-radius);
+  }
+
+  .fr-btn-group .fr-btn {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .fr-btn-group > .fr-btn:first-child {
+    border-start-start-radius: var(--btn-radius);
+    border-end-start-radius: var(--btn-radius);
+  }
+
+  .fr-btn-group > .fr-btn:last-child {
+    border-start-end-radius: var(--btn-radius);
+    border-end-end-radius: var(--btn-radius);
+  }
+
+  .fr-btn-group > .fr-btn:nth-child(n + 2) {
+    margin-inline-start: -1px;
+  }
+
+  .fr-btn-group .fr-btn:hover,
+  .fr-btn-group .fr-btn:focus,
+  .fr-btn-group .fr-btn:active,
+  .fr-btn-group .fr-btn.fr-active {
+    position: relative;
+    z-index: 1;
+  }
+}

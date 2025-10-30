@@ -5,6 +5,8 @@ export default {
       'lit/decorators.js',
       'lit/directives/repeat.js',
       'lit/directives/unsafe-html.js',
+      'animejs',
+      '@floating-ui/dom',
     ],
     output: {
       globals: {
@@ -14,6 +16,8 @@ export default {
         'lit/directives/unsafe-html.js': 'LitUnsafeHTML',
         lucide: 'Lucide',
         apexcharts: 'ApexCharts',
+        animejs: 'AnimeJS',
+        '@floating-ui/dom': 'FloatingUI',
       },
     },
   },

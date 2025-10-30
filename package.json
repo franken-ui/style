@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "vite",
     "build:core": "tsc && vite -c config/core.js build",
+    "build:components": "tsc && vite -c config/components.js build",
     "build:icon": "tsc && vite -c config/icon.js build",
     "build:chart": "tsc && vite -c config/chart.js build",
     "build:runtime": "tsc && vite -c config/runtime.js build"
@@ -29,6 +30,7 @@
     "@tiptap/extension-text-align": "^3.6.6",
     "@tiptap/extension-underline": "^3.6.6",
     "@tiptap/starter-kit": "^3.6.6",
+    "animejs": "^4.2.2",
     "apexcharts": "^5.3.5",
     "frankenstyle": "^0.0.12",
     "lit": "^3.3.1",

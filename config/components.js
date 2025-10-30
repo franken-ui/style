@@ -4,12 +4,13 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
-      entry: 'src/js/core.ts',
-      name: '__CORE__',
-      fileName: 'js/hwc-core',
+      entry: 'src/js/components.ts',
+      name: '__COMPONENTS__',
+      fileName: 'js/hwc-components',
       formats: ['iife'],
     },
     rollupOptions: {
+      external: ['lit', 'animejs', 'lucide', 'apexcharts', '@floating-ui/dom'],
       output: {
         globals: {
           lit: 'Lit',

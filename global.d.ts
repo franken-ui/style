@@ -8,5 +8,7 @@ declare global {
     LitUnsafeHTML: any;
     Lucide: any;
     ApexCharts: any;
+    AnimeJS: any;
+    FloatingUI: any;
   }
 }
