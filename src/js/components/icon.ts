@@ -16,32 +16,32 @@ import { Base } from './shared/base';
  * - Customizable size, stroke, and styling
  * - Configuration via attributes or script tags
  *
- * @element fr-icon
+ * @element uk-icon
  * @extends {Base}
  *
  * @example
  * Basic usage:
  * ```html
- * <fr-icon icon="home" size="24"></fr-icon>
- * <fr-icon icon="arrow-right" label="Next page"></fr-icon>
+ * <uk-icon icon="home" size="24"></uk-icon>
+ * <uk-icon icon="arrow-right" label="Next page"></uk-icon>
  * ```
  *
  * @example
  * Accessible semantic icon:
  * ```html
- * <fr-icon icon="alert-circle" label="Warning" role="img"></fr-icon>
+ * <uk-icon icon="alert-circle" label="Warning" role="img"></uk-icon>
  * ```
  *
  * @example
  * Decorative icon (hidden from screen readers):
  * ```html
- * <fr-icon icon="sparkles" decorative></fr-icon>
+ * <uk-icon icon="sparkles" decorative></uk-icon>
  * ```
  *
  * @example
  * With i18n configuration:
  * ```html
- * <fr-icon icon="home">
+ * <uk-icon icon="home">
  *   <script type="application/json">
  *   {
  *     "i18n": {
@@ -52,10 +52,10 @@ import { Base } from './shared/base';
  *     }
  *   }
  *   </script>
- * </fr-icon>
+ * </uk-icon>
  * ```
  */
-@customElement('fr-icon')
+@customElement('uk-icon')
 export class Icon extends Base {
   /**
    * The default element key used for applying simple string CSS classes via `cls`.
@@ -75,8 +75,8 @@ export class Icon extends Base {
    *
    * @example
    * ```html
-   * <fr-icon icon="arrow-right"></fr-icon>
-   * <fr-icon icon="user-circle"></fr-icon>
+   * <uk-icon icon="arrow-right"></uk-icon>
+   * <uk-icon icon="user-circle"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -89,7 +89,7 @@ export class Icon extends Base {
    *
    * @example
    * ```html
-   * <fr-icon icon="home" label="Home page"></fr-icon>
+   * <uk-icon icon="home" label="Home page"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -103,8 +103,8 @@ export class Icon extends Base {
    * @default false
    * @example
    * ```html
-   * <fr-icon icon="sparkles" decorative></fr-icon>
-   * <button><fr-icon icon="trash" decorative></fr-icon> Delete</button>
+   * <uk-icon icon="sparkles" decorative></uk-icon>
+   * <button><uk-icon icon="trash" decorative></uk-icon> Delete</button>
    * ```
    */
   @property({ type: Boolean })
@@ -116,7 +116,7 @@ export class Icon extends Base {
    *
    * @example
    * ```html
-   * <fr-icon icon="alert" role="img" label="Alert"></fr-icon>
+   * <uk-icon icon="alert" role="img" label="Alert"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -129,7 +129,7 @@ export class Icon extends Base {
    * @default "2"
    * @example
    * ```html
-   * <fr-icon icon="home" stroke-width="1.5"></fr-icon>
+   * <uk-icon icon="home" stroke-width="1.5"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -141,7 +141,7 @@ export class Icon extends Base {
    * @default "16"
    * @example
    * ```html
-   * <fr-icon icon="home" height="32"></fr-icon>
+   * <uk-icon icon="home" height="32"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -153,7 +153,7 @@ export class Icon extends Base {
    * @default "16"
    * @example
    * ```html
-   * <fr-icon icon="home" width="32"></fr-icon>
+   * <uk-icon icon="home" width="32"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -164,7 +164,7 @@ export class Icon extends Base {
    *
    * @example
    * ```html
-   * <fr-icon icon="home" size="24"></fr-icon>
+   * <uk-icon icon="home" size="24"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -176,8 +176,8 @@ export class Icon extends Base {
    *
    * @example
    * ```html
-   * <fr-icon icon="heart" color="red"></fr-icon>
-   * <fr-icon icon="star" color="#FFD700"></fr-icon>
+   * <uk-icon icon="heart" color="red"></uk-icon>
+   * <uk-icon icon="star" color="#FFD700"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -189,7 +189,7 @@ export class Icon extends Base {
    *
    * @example
    * ```html
-   * <fr-icon icon="heart" fill="red" stroke-width="0"></fr-icon>
+   * <uk-icon icon="heart" fill="red" stroke-width="0"></uk-icon>
    * ```
    */
   @property({ type: String })
@@ -234,6 +234,7 @@ export class Icon extends Base {
    */
   private getEffectiveLabel(): string {
     const i18nLabel = this.getI18nText('label', this.defaultI18n);
+
     return i18nLabel || this.label;
   }
 
@@ -329,15 +330,22 @@ export class Icon extends Base {
       const iconData = icons[icon];
 
       if (!iconData) {
-        console.warn(`fr-icon: Icon "${this.icon}" not found in Lucide icons.`);
+        console.warn(`uk-icon: Icon "${this.icon}" not found in Lucide icons.`);
+
         return undefined;
       }
 
       const svgElement = createElement(iconData);
 
       // Apply basic attributes
-      if (cls) svgElement.setAttribute('class', cls);
-      if (stl) svgElement.setAttribute('style', stl);
+      if (cls) {
+        svgElement.setAttribute('class', cls);
+      }
+
+      if (stl) {
+        svgElement.setAttribute('style', stl);
+      }
+
       svgElement.setAttribute('height', height);
       svgElement.setAttribute('width', width);
       svgElement.setAttribute('stroke-width', strokeWidth);
@@ -350,6 +358,7 @@ export class Icon extends Base {
       // Apply color
       if (color) {
         const currentStyle = svgElement.getAttribute('style') || '';
+
         svgElement.setAttribute('style', `${currentStyle}; color: ${color};`);
       }
 
@@ -376,7 +385,8 @@ export class Icon extends Base {
 
       return svgElement;
     } catch (error) {
-      console.warn(`fr-icon: Failed to create icon "${this.icon}":`, error);
+      console.warn(`uk-icon: Failed to create icon "${this.icon}":`, error);
+
       return undefined;
     }
   }
@@ -388,6 +398,6 @@ export class Icon extends Base {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fr-icon': Icon;
+    'uk-icon': Icon;
   }
 }

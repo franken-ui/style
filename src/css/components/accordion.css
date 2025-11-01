@@ -1,42 +1,43 @@
 @layer components {
-  .fr-accordion {
-    --accordion-title-padding: 1rem 0;
-    --accordion-title-font-weight: 500;
-    --accordion-title-color: var(--fr-background-f);
-    --accordion-title-hover-decoration: underline;
+  .uk-accordion {
+    --uk-accordion-border: var(--uk-border);
+    --uk-accordion-border-o: 10%;
 
-    --accordion-icon-transition-duration: 300ms;
-
-    --accordion-content-color: var(--fr-muted-f);
+    --uk-accordion-border-computed: color-mix(
+      in srgb,
+      var(--uk-accordion-border) var(--uk-accordion-border-o),
+      transparent
+    );
   }
-
-  .fr-accordion-item-title {
+  .uk-accordion-title {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    width: 100%;
-    padding: var(--accordion-title-padding);
-    color: var(--accordion-title-color);
-    font-weight: var(--accordion-title-font-weight);
-    text-align: start;
-    transition: color 150ms ease-in-out;
-    cursor: pointer;
+    overflow: hidden;
+    padding: 1rem 0 1rem 0;
+    font-weight: 500;
   }
-
-  .fr-accordion-item-title:hover {
-    text-decoration: var(--accordion-title-hover-decoration);
+  .uk-accordion-title:hover {
+    text-decoration: underline;
   }
-
-  .fr-accordion-item-title fr-icon {
-    flex-shrink: 0;
-    transition: transform var(--accordion-icon-transition-duration) ease-in-out;
+  .uk-accordion-icon {
+    flex: none;
+    transition: 300ms transform;
+    color: var(--uk-muted-f);
   }
-
-  fr-accordion-item[open] .fr-accordion-item-title fr-icon {
+  .uk-open > .uk-accordion-title > .uk-accordion-icon {
     transform: rotate(180deg);
   }
-
-  .fr-accordion-item-content {
-    color: var(--accordion-content-color);
+  .uk-accordion-content {
+    display: flow-root;
+    padding: 0 0 1rem 0;
+  }
+  .uk-accordion-content[hidden] {
+    display: none;
+  }
+  .uk-accordion > li {
+    border-width: var(--uk-accordion-border-w, 0 0 1px 0);
+    border-style: var(--uk-accordion-border-style, solid);
+    border-color: var(--uk-accordion-border-computed);
   }
 }

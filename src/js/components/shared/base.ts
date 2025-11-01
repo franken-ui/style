@@ -11,7 +11,7 @@ import { selectToObject, type OptionGrouped } from '../../helpers/select';
 
 /**
  * A cached, private store for global internationalization data.
- * Loaded once from a <script id="fr-i18n"> tag in the document.
+ * Loaded once from a <script id="uk-i18n"> tag in the document.
  */
 let __GI18N__: { [key: string]: string } | null = null;
 
@@ -234,7 +234,7 @@ export abstract class Base extends LitElement {
    *
    * Resolution order (highest to lowest priority):
    * 1. Component-level i18n (from script tag or i18n attribute)
-   * 2. Global component-specific namespace (fr-i18n > component-name)
+   * 2. Global component-specific namespace (uk-i18n > component-name)
    * 3. Provided defaults object
    * 4. Empty string fallback
    *
@@ -265,7 +265,7 @@ export abstract class Base extends LitElement {
    * // Returns: 'Hello John, you have 3 messages'
    *
    * // Using component namespace in global i18n
-   * // <script id="fr-i18n">{ "my-component": { "title": "My Title" } }</script>
+   * // <script id="uk-i18n">{ "my-component": { "title": "My Title" } }</script>
    * this.getI18nText('title', { title: 'Default' });
    * // Returns: 'My Title' (from global component namespace)
    * ```
@@ -366,14 +366,14 @@ export abstract class Base extends LitElement {
 
     __IS_GI18N_INITIALIZED__ = true; // Mark as initialized to prevent re-running
 
-    const scriptEl = document.getElementById('fr-i18n');
+    const scriptEl = document.getElementById('uk-i18n');
 
     if (scriptEl && scriptEl.textContent) {
       try {
         __GI18N__ = JSON.parse(scriptEl.textContent);
       } catch (e) {
         console.error(
-          'Failed to parse global i18n from <script id="fr-i18n">.',
+          'Failed to parse global i18n from <script id="uk-i18n">.',
           e,
         );
         __GI18N__ = {}; // Set to empty to prevent future errors

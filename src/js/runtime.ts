@@ -188,7 +188,7 @@ import { rules } from './runtime-rules';
   }
 
   function generateInteractiveStyles(): void {
-    const nodes = document.querySelectorAll('[data-fr]');
+    const nodes = document.querySelectorAll('[data-uk]');
     const allInteractiveClasses: ParsedClass[] = [];
 
     nodes.forEach(node => {
@@ -245,12 +245,12 @@ import { rules } from './runtime-rules';
 
     requestAnimationFrame(() => {
       let styleTag = document.getElementById(
-        'fr-interactive-styles',
+        'uk-interactive-styles',
       ) as HTMLStyleElement | null;
 
       if (!styleTag) {
         styleTag = document.createElement('style');
-        styleTag.id = 'fr-interactive-styles';
+        styleTag.id = 'uk-interactive-styles';
         document.head.appendChild(styleTag);
       }
 
@@ -272,7 +272,7 @@ import { rules } from './runtime-rules';
         mutation.type === 'attributes' &&
         (mutation.attributeName === 'class' ||
           mutation.attributeName === 'cls' ||
-          mutation.attributeName === 'data-fr')
+          mutation.attributeName === 'data-uk')
       ) {
         scheduleGenerate();
         return;
@@ -282,8 +282,8 @@ import { rules } from './runtime-rules';
         for (const node of [...mutation.addedNodes, ...mutation.removedNodes]) {
           if (
             node.nodeType === 1 &&
-            ((node as Element).hasAttribute?.('data-fr') ||
-              (node as Element).querySelector?.('[data-fr]'))
+            ((node as Element).hasAttribute?.('data-uk') ||
+              (node as Element).querySelector?.('[data-uk]'))
           ) {
             scheduleGenerate();
             return;
@@ -294,14 +294,14 @@ import { rules } from './runtime-rules';
   }
 
   function init(): void {
-    // Step 1: Always generate styles once (for all [data-fr] elements)
+    // Step 1: Always generate styles once (for all [data-uk] elements)
     generateInteractiveStyles();
 
-    // Step 2: Only activate MutationObserver if [data-fr-reactive] exists
-    const hasReactive = document.querySelector('[data-fr-reactive]');
+    // Step 2: Only activate MutationObserver if [data-uk-reactive] exists
+    const hasReactive = document.querySelector('[data-uk-reactive]');
     if (!hasReactive) {
       console.info(
-        '[fs] No [data-fr-reactive] found — reactive mode disabled.',
+        '[fs] No [data-uk-reactive] found — reactive mode disabled.',
       );
       return;
     }
@@ -311,7 +311,7 @@ import { rules } from './runtime-rules';
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ['data-fr', 'class', 'cls'],
+      attributeFilter: ['data-uk', 'class', 'cls'],
     });
 
     (window as any).__fsInteractive = {

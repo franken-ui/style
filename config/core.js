@@ -18,8 +18,6 @@ export default defineConfig({
           'lit/directives/unsafe-html.js': 'LitUnsafeHTML',
           lucide: 'Lucide',
           apexcharts: 'ApexCharts',
-          animejs: 'AnimeJS',
-          '@floating-ui/dom': 'FloatingUI',
         },
       },
     },
