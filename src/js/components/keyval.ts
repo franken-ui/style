@@ -7,7 +7,7 @@ import { randomString } from '../helpers/common';
  * A headless dynamic key-value table component with advanced features.
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
  *
- * @element fr-keyval
+ * @element uk-keyval
  * @extends {Base}
  *
  * Features:
@@ -24,29 +24,29 @@ import { randomString } from '../helpers/common';
  * @example
  * Basic usage:
  * ```html
- * <fr-keyval></fr-keyval>
+ * <uk-keyval></uk-keyval>
  * ```
  *
  * @example
  * With password masking and max rows:
  * ```html
- * <fr-keyval sensitive max="5"></fr-keyval>
+ * <uk-keyval sensitive max="5"></uk-keyval>
  * ```
  *
  * @example
  * With form integration and reactive updates:
  * ```html
- * <fr-keyval>
+ * <uk-keyval>
  *   <select data-fn="data-source" data-reactive>
  *     <option value="value1" data-key="key1">Display Text</option>
  *   </select>
- * </fr-keyval>
+ * </uk-keyval>
  * ```
  *
  * @example
  * With styling via cls attribute:
  * ```html
- * <fr-keyval
+ * <uk-keyval
  *   cls='{
  *     "container": "keyval-wrapper",
  *     "table": "data-table",
@@ -59,13 +59,13 @@ import { randomString } from '../helpers/common';
  *     "toggleButton": "btn-toggle",
  *     "randomButton": "btn-random"
  *   }'
- * ></fr-keyval>
+ * ></uk-keyval>
  * ```
  *
  * @example
  * With i18n configuration:
  * ```html
- * <fr-keyval>
+ * <uk-keyval>
  *   <script data-fn="config" type="application/json">
  *   {
  *     "i18n": {
@@ -84,10 +84,10 @@ import { randomString } from '../helpers/common';
  *     }
  *   }
  *   </script>
- * </fr-keyval>
+ * </uk-keyval>
  * ```
  */
-@customElement('fr-keyval')
+@customElement('uk-keyval')
 export class Keyval extends Base {
   /**
    * The default element key for applying simple string CSS classes via `cls`.
@@ -106,7 +106,7 @@ export class Keyval extends Base {
    *
    * @example
    * ```html
-   * <fr-keyval keys="api_key,secret_key,token"></fr-keyval>
+   * <uk-keyval keys="api_key,secret_key,token"></uk-keyval>
    * ```
    */
   @property({ type: String })
@@ -117,7 +117,7 @@ export class Keyval extends Base {
    *
    * @example
    * ```html
-   * <fr-keyval values="abc123,def456,ghi789"></fr-keyval>
+   * <uk-keyval values="abc123,def456,ghi789"></uk-keyval>
    * ```
    */
   @property({ type: String })
@@ -164,7 +164,7 @@ export class Keyval extends Base {
    *
    * @example
    * ```html
-   * <fr-keyval aria-label="API Configuration"></fr-keyval>
+   * <uk-keyval aria-label="API Configuration"></uk-keyval>
    * ```
    */
   @property({ type: String })
@@ -807,6 +807,6 @@ export class Keyval extends Base {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fr-keyval': Keyval;
+    'uk-keyval': Keyval;
   }
 }

@@ -18,7 +18,7 @@ type SlugOptions = {
  * A headless tag input component that allows users to add, edit, and remove tags.
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
  *
- * @element fr-input-tag
+ * @element uk-input-tag
  * @extends {Input}
  *
  * Features:
@@ -32,24 +32,24 @@ type SlugOptions = {
  * - Headless design with flexible styling
  * - ARIA accessibility
  *
- * @fires fr-input-tag:input - Emitted when tags are added or removed
+ * @fires uk-input-tag:input - Emitted when tags are added or removed
  *
  * @example
  * Basic usage:
  * ```html
- * <fr-input-tag
+ * <uk-input-tag
  *   name="tags"
  *   placeholder="Add tags..."
  *   slugify
  *   minlength="2"
  *   maxlength="15">
- * </fr-input-tag>
+ * </uk-input-tag>
  * ```
  *
  * @example
  * With styling via cls attribute:
  * ```html
- * <fr-input-tag
+ * <uk-input-tag
  *   cls='{
  *     "container": "tag-input-wrapper",
  *     "tagList": "tags-list",
@@ -58,13 +58,13 @@ type SlugOptions = {
  *     "tagRemove": "tag-remove-btn",
  *     "input": "tag-input-field"
  *   }'
- * ></fr-input-tag>
+ * ></uk-input-tag>
  * ```
  *
  * @example
  * With i18n and configuration via script:
  * ```html
- * <fr-input-tag>
+ * <uk-input-tag>
  *   <script type="application/json">
  *   {
  *     "i18n": {
@@ -82,10 +82,10 @@ type SlugOptions = {
  *     }
  *   }
  *   </script>
- * </fr-input-tag>
+ * </uk-input-tag>
  * ```
  */
-@customElement('fr-input-tag')
+@customElement('uk-input-tag')
 export class InputTag extends InputMixin(Base) {
   /**
    * The default element key used for applying simple string CSS classes via `cls`.
@@ -103,7 +103,7 @@ export class InputTag extends InputMixin(Base) {
    * Custom event name emitted when the value changes.
    * Used for dispatching input events from this component.
    */
-  protected readonly 'input-event' = 'fr-input-tag:input';
+  protected readonly 'input-event' = 'uk-input-tag:input';
 
   /**
    * Maximum character length allowed for each tag.
@@ -112,7 +112,7 @@ export class InputTag extends InputMixin(Base) {
    * @default 20
    * @example
    * ```html
-   * <fr-input-tag maxlength="10"></fr-input-tag>
+   * <uk-input-tag maxlength="10"></uk-input-tag>
    * ```
    */
   @property({ type: Number })
@@ -125,7 +125,7 @@ export class InputTag extends InputMixin(Base) {
    * @default 1
    * @example
    * ```html
-   * <fr-input-tag minlength="3"></fr-input-tag>
+   * <uk-input-tag minlength="3"></uk-input-tag>
    * ```
    */
   @property({ type: Number })
@@ -138,7 +138,7 @@ export class InputTag extends InputMixin(Base) {
    * @default false
    * @example
    * ```html
-   * <fr-input-tag slugify></fr-input-tag>
+   * <uk-input-tag slugify></uk-input-tag>
    * ```
    */
   @property({ type: Boolean })
@@ -150,7 +150,7 @@ export class InputTag extends InputMixin(Base) {
    *
    * @example
    * ```html
-   * <fr-input-tag slugify slugify-options='{"lower": true, "replacement": "-", "strict": true}'></fr-input-tag>
+   * <uk-input-tag slugify slugify-options='{"lower": true, "replacement": "-", "strict": true}'></uk-input-tag>
    * ```
    */
   @property({ type: String })
@@ -163,7 +163,7 @@ export class InputTag extends InputMixin(Base) {
    * @default ','
    * @example
    * ```html
-   * <fr-input-tag delimiters=",;"></fr-input-tag>
+   * <uk-input-tag delimiters=",;"></uk-input-tag>
    * ```
    */
   @property({ type: String })
@@ -175,7 +175,7 @@ export class InputTag extends InputMixin(Base) {
    * @default false
    * @example
    * ```html
-   * <fr-input-tag allow-duplicates></fr-input-tag>
+   * <uk-input-tag allow-duplicates></uk-input-tag>
    * ```
    */
   @property({ type: Boolean })
@@ -188,7 +188,7 @@ export class InputTag extends InputMixin(Base) {
    * @default 0
    * @example
    * ```html
-   * <fr-input-tag max-tags="10"></fr-input-tag>
+   * <uk-input-tag max-tags="10"></uk-input-tag>
    * ```
    */
   @property({ type: Number })
@@ -649,6 +649,6 @@ export class InputTag extends InputMixin(Base) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fr-input-tag': InputTag;
+    'uk-input-tag': InputTag;
   }
 }

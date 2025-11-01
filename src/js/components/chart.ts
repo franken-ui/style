@@ -7,7 +7,7 @@ import ApexCharts from 'apexcharts';
  * A headless Lit-based web component that wraps ApexCharts for declarative chart rendering.
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
  *
- * @element fr-chart
+ * @element uk-chart
  * @extends {Base}
  *
  * Features:
@@ -22,7 +22,7 @@ import ApexCharts from 'apexcharts';
  * @example
  * Basic usage:
  * ```html
- * <fr-chart>
+ * <uk-chart>
  *   <script type="application/json">
  *   {
  *     "apexCharts": {
@@ -31,13 +31,13 @@ import ApexCharts from 'apexcharts';
  *     }
  *   }
  *   </script>
- * </fr-chart>
+ * </uk-chart>
  * ```
  *
  * @example
  * With reactive updates:
  * ```html
- * <fr-chart>
+ * <uk-chart>
  *   <script type="application/json" data-reactive>
  *   {
  *     "apexCharts": {
@@ -46,13 +46,13 @@ import ApexCharts from 'apexcharts';
  *     }
  *   }
  *   </script>
- * </fr-chart>
+ * </uk-chart>
  * ```
  *
  * @example
  * With i18n and styling:
  * ```html
- * <fr-chart>
+ * <uk-chart>
  *   <script type="application/json">
  *   {
  *     "apexCharts": {
@@ -70,22 +70,22 @@ import ApexCharts from 'apexcharts';
  *     }
  *   }
  *   </script>
- * </fr-chart>
+ * </uk-chart>
  * ```
  *
  * @example
  * With loading state:
  * ```html
- * <fr-chart loading>
+ * <uk-chart loading>
  *   <script type="application/json">
  *   {
  *     "apexCharts": { "chart": { "type": "pie" } }
  *   }
  *   </script>
- * </fr-chart>
+ * </uk-chart>
  * ```
  */
-@customElement('fr-chart')
+@customElement('uk-chart')
 export class Chart extends Base {
   /**
    * The default element key used for applying simple string CSS classes via `cls`.
@@ -106,7 +106,7 @@ export class Chart extends Base {
    * @default false
    * @example
    * ```html
-   * <fr-chart loading></fr-chart>
+   * <uk-chart loading></uk-chart>
    * ```
    */
   @property({ type: Boolean })
@@ -118,8 +118,8 @@ export class Chart extends Base {
    *
    * @example
    * ```html
-   * <fr-chart width="500"></fr-chart>
-   * <fr-chart width="100%"></fr-chart>
+   * <uk-chart width="500"></uk-chart>
+   * <uk-chart width="100%"></uk-chart>
    * ```
    */
   @property({ type: String })
@@ -131,8 +131,8 @@ export class Chart extends Base {
    *
    * @example
    * ```html
-   * <fr-chart height="400"></fr-chart>
-   * <fr-chart height="50vh"></fr-chart>
+   * <uk-chart height="400"></uk-chart>
+   * <uk-chart height="50vh"></uk-chart>
    * ```
    */
   @property({ type: String })
@@ -144,7 +144,7 @@ export class Chart extends Base {
    *
    * @example
    * ```html
-   * <fr-chart aria-label="Sales performance chart"></fr-chart>
+   * <uk-chart aria-label="Sales performance chart"></uk-chart>
    * ```
    */
   @property({ type: String })
@@ -265,7 +265,7 @@ export class Chart extends Base {
         this.hasError = false;
         this.errorMessage = '';
       } catch (error) {
-        console.error('fr-chart: Failed to update chart:', error);
+        console.error('uk-chart: Failed to update chart:', error);
 
         this.hasError = true;
         this.errorMessage =
@@ -288,13 +288,13 @@ export class Chart extends Base {
     );
 
     if (!chartContainer) {
-      console.warn('fr-chart: Chart container not found');
+      console.warn('uk-chart: Chart container not found');
 
       return;
     }
 
     if (!this.hasValidConfig()) {
-      console.warn('fr-chart: No valid chart configuration found');
+      console.warn('uk-chart: No valid chart configuration found');
 
       this.hasError = true;
       this.errorMessage = this.getI18nText('noDataMessage', this.defaultI18n);
@@ -322,7 +322,7 @@ export class Chart extends Base {
         this.hasError = false;
         this.errorMessage = '';
       } catch (error) {
-        console.error('fr-chart: Failed to initialize chart:', error);
+        console.error('uk-chart: Failed to initialize chart:', error);
 
         this.hasError = true;
         this.errorMessage =
@@ -425,7 +425,7 @@ export class Chart extends Base {
    *
    * @example
    * ```javascript
-   * const chart = document.querySelector('fr-chart');
+   * const chart = document.querySelector('uk-chart');
    * await chart.updateChart({
    *   series: [{ data: [5, 10, 15] }]
    * });
@@ -443,7 +443,7 @@ export class Chart extends Base {
         this.hasError = false;
         this.errorMessage = '';
       } catch (error) {
-        console.error('fr-chart: Failed to update chart:', error);
+        console.error('uk-chart: Failed to update chart:', error);
 
         this.hasError = true;
         this.errorMessage =
@@ -466,7 +466,7 @@ export class Chart extends Base {
    *
    * @example
    * ```javascript
-   * const chart = document.querySelector('fr-chart');
+   * const chart = document.querySelector('uk-chart');
    * await chart.updateSeries([{ data: [20, 30, 40] }]);
    * ```
    */
@@ -481,7 +481,7 @@ export class Chart extends Base {
         this.hasError = false;
         this.errorMessage = '';
       } catch (error) {
-        console.error('fr-chart: Failed to update series:', error);
+        console.error('uk-chart: Failed to update series:', error);
 
         this.hasError = true;
         this.errorMessage =
@@ -502,7 +502,7 @@ export class Chart extends Base {
    *
    * @example
    * ```javascript
-   * const chart = document.querySelector('fr-chart');
+   * const chart = document.querySelector('uk-chart');
    * const apexInstance = chart.getChartInstance();
    * if (apexInstance) {
    *   apexInstance.toggleSeries('Series 1');
@@ -516,6 +516,6 @@ export class Chart extends Base {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fr-chart': Chart;
+    'uk-chart': Chart;
   }
 }

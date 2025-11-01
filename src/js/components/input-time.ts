@@ -8,7 +8,7 @@ import { Base } from './shared/base';
  * A headless time input component with separate hour/minute fields and AM/PM selector (for 12h clock).
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
  *
- * @element fr-input-time
+ * @element uk-input-time
  * @extends {Input}
  *
  * Features:
@@ -22,24 +22,24 @@ import { Base } from './shared/base';
  * - Headless design with flexible styling
  * - Comprehensive ARIA accessibility
  *
- * @fires fr-input-time:input - Emitted when the time value changes
+ * @fires uk-input-time:input - Emitted when the time value changes
  *
  * @example
  * Basic usage:
  * ```html
- * <fr-input-time
+ * <uk-input-time
  *   name="appointment-time"
  *   now
  *   required
  *   clock="12h"
  *   autofocus>
- * </fr-input-time>
+ * </uk-input-time>
  * ```
  *
  * @example
  * With styling via cls attribute:
  * ```html
- * <fr-input-time
+ * <uk-input-time
  *   cls='{
  *     "container": "time-input-wrapper",
  *     "hourInput": "hour-field",
@@ -47,13 +47,13 @@ import { Base } from './shared/base';
  *     "separator": "time-separator",
  *     "meridiemButton": "am-pm-toggle"
  *   }'
- * ></fr-input-time>
+ * ></uk-input-time>
  * ```
  *
  * @example
  * With i18n and configuration via script:
  * ```html
- * <fr-input-time>
+ * <uk-input-time>
  *   <script type="application/json">
  *   {
  *     "i18n": {
@@ -70,10 +70,10 @@ import { Base } from './shared/base';
  *     }
  *   }
  *   </script>
- * </fr-input-time>
+ * </uk-input-time>
  * ```
  */
-@customElement('fr-input-time')
+@customElement('uk-input-time')
 export class InputTime extends InputMixin(Base) {
   /**
    * The default element key for applying simple string CSS classes via `cls`.
@@ -91,7 +91,7 @@ export class InputTime extends InputMixin(Base) {
    * Name of the custom event emitted when the time value changes.
    * Used for dispatching input events from this component.
    */
-  protected readonly 'input-event' = 'fr-input-time:input';
+  protected readonly 'input-event' = 'uk-input-time:input';
 
   /**
    * Automatically focuses the hour input when the component is rendered.
@@ -99,7 +99,7 @@ export class InputTime extends InputMixin(Base) {
    * @default false
    * @example
    * ```html
-   * <fr-input-time autofocus></fr-input-time>
+   * <uk-input-time autofocus></uk-input-time>
    * ```
    */
   @property({ type: Boolean })
@@ -111,7 +111,7 @@ export class InputTime extends InputMixin(Base) {
    * @default false
    * @example
    * ```html
-   * <fr-input-time now></fr-input-time>
+   * <uk-input-time now></uk-input-time>
    * ```
    */
   @property({ type: Boolean })
@@ -123,7 +123,7 @@ export class InputTime extends InputMixin(Base) {
    * @default '12h'
    * @example
    * ```html
-   * <fr-input-time clock="24h"></fr-input-time>
+   * <uk-input-time clock="24h"></uk-input-time>
    * ```
    */
   @property({ type: String })
@@ -133,7 +133,7 @@ export class InputTime extends InputMixin(Base) {
    * Minimum allowed time in HH:MM format.
    * @example
    * ```html
-   * <fr-input-time min="09:00"></fr-input-time>
+   * <uk-input-time min="09:00"></uk-input-time>
    * ```
    */
   @property({ type: String })
@@ -143,7 +143,7 @@ export class InputTime extends InputMixin(Base) {
    * Maximum allowed time in HH:MM format.
    * @example
    * ```html
-   * <fr-input-time max="17:00"></fr-input-time>
+   * <uk-input-time max="17:00"></uk-input-time>
    * ```
    */
   @property({ type: String })
@@ -637,6 +637,6 @@ export class InputTime extends InputMixin(Base) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fr-input-time': InputTime;
+    'uk-input-time': InputTime;
   }
 }

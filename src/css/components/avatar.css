@@ -1,14 +1,14 @@
 @layer components {
   .fr-avatar {
-    --avatar-bg: var(--fr-bg);
-    --avatar-size: 2.5rem;
-    --avatar-radius: var(--fr-radii);
-    --avatar-border: var(--fr-border);
-    --avatar-border-o: 4%;
+    --uk-avatar-bg: var(--uk-bg);
+    --uk-avatar-size: 2.5rem;
+    --uk-avatar-radius: var(--radius-md);
+    --uk-avatar-border: var(--uk-border);
+    --uk-avatar-border-o: 4%;
 
-    --avatar-border-computed: color-mix(
+    --uk-avatar-border-computed: color-mix(
       in srgb,
-      var(--avatar-border) var(--avatar-border-o),
+      var(--uk-avatar-border) var(--uk-avatar-border-o),
       transparent
     );
 
@@ -16,17 +16,17 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: var(--avatar-size);
-    width: var(--avatar-size);
-    background-color: var(--avatar-bg);
-    border-radius: var(--avatar-radius);
+    height: var(--uk-avatar-size);
+    width: var(--uk-avatar-size);
+    background-color: var(--uk-avatar-bg);
+    border-radius: var(--uk-avatar-radius);
   }
 
   .fr-avatar img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: var(--fr-radii-sm);
+    border-radius: var(--radius-sm);
   }
 
   .fr-avatar-text {
@@ -35,7 +35,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    border-radius: var(--fr-radii-sm);
+    border-radius: var(--radius-sm);
   }
 
   /* Rounded variant */
@@ -52,7 +52,7 @@
   .fr-avatar-bordered {
     border-width: 0.125rem;
     border-style: solid;
-    border-color: var(--avatar-border-computed);
+    border-color: var(--uk-avatar-border-computed);
     padding: 0.25rem;
   }
 
@@ -73,8 +73,8 @@
     border-radius: 9999px;
     border-width: 0.125rem;
     border-style: solid;
-    border-color: var(--dot-border, var(--fr-bg));
-    background-color: var(--dot-bg, var(--fr-primary));
+    border-color: var(--dot-border, var(--uk-bg));
+    background-color: var(--dot-bg, var(--uk-primary));
     z-index: 10;
   }
 
@@ -130,22 +130,22 @@
 
   /* Dot color variants */
   .fr-avatar-dot-danger::after {
-    --dot-bg: var(--fr-danger);
+    --dot-bg: var(--uk-danger);
   }
 
   .fr-avatar-dot-warning::after {
-    --dot-bg: var(--fr-warning);
+    --dot-bg: var(--uk-warning);
   }
 
   .fr-avatar-dot-success::after {
-    --dot-bg: var(--fr-success);
+    --dot-bg: var(--uk-success);
   }
 
   .fr-avatar-dot-info::after {
-    --dot-bg: var(--fr-info);
+    --dot-bg: var(--uk-info);
   }
 
   .fr-avatar-dot-muted::after {
-    --dot-bg: var(--fr-muted-f);
+    --dot-bg: var(--uk-muted-f);
   }
 }

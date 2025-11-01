@@ -58,7 +58,7 @@ You don’t need to memorize odd variable names — just drop special characters
 
 ### States
 
-Interactive states (e.g., hover) are generated on demand. Mark an element with `data-fr`, and the runtime will generate the necessary pseudo-state CSS.
+Interactive states (e.g., hover) are generated on demand. Mark an element with `data-uk`, and the runtime will generate the necessary pseudo-state CSS.
 
 ```html
 <button
@@ -73,7 +73,7 @@ Interactive states (e.g., hover) are generated on demand. Mark an element with `
         --px: 5;
         --py: 2.5;
     "
-  data-fr
+  data-uk
 >
   Default
 </button>
@@ -1845,7 +1845,7 @@ You don’t need to memorize odd variable names — just drop special characters
 
 ### States
 
-Interactive states (e.g., hover) are generated on demand. Mark an element with `data-fr`, and the runtime will generate the necessary pseudo-state CSS.
+Interactive states (e.g., hover) are generated on demand. Mark an element with `data-uk`, and the runtime will generate the necessary pseudo-state CSS.
 
 ```html
 <button
@@ -1860,7 +1860,7 @@ Interactive states (e.g., hover) are generated on demand. Mark an element with `
         --px: 5;
         --py: 2.5;
     "
-  data-fr
+  data-uk
 >
   Default
 </button>

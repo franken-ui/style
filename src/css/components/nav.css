@@ -1,243 +1,311 @@
 @layer components {
-  /* Base Nav */
-  .fr-nav {
-    --nav-item-color: var(--fr-muted-f);
-    --nav-item-bg: transparent;
-    --nav-item-bg-o: 0%;
-    --nav-item-padding: 0.5rem 1rem;
-    --nav-item-margin: 0.25rem 0;
-    --nav-item-radius: var(--fr-radii);
-    --nav-item-height: auto;
-    --nav-item-font-weight: 400;
+  /* ============================================
+     Nav Component
+     ============================================ */
+  .uk-nav {
+    /* Base Variables */
+    --uk-nav-item-padding: 0.25rem 0.5rem;
+    --uk-nav-item-margin: 0;
+    --uk-nav-sub-item-padding: 0.25rem 0.5rem;
+    --uk-nav-sub-item-margin: 0;
+    --uk-nav-sub-border-w: 1px;
 
-    --nav-item-hover-color: var(--fr-primary);
-    --nav-item-hover-bg: var(--fr-accent);
-    --nav-item-hover-bg-o: 4%;
-    --nav-item-hover-decoration: none;
-
-    --nav-item-active-color: var(--fr-primary);
-    --nav-item-active-bg: var(--fr-primary);
-    --nav-item-active-bg-o: 8%;
-    --nav-item-active-font-weight: 500;
-
-    --nav-header-color: var(--fr-background-f);
-    --nav-header-font-weight: 600;
-    --nav-header-padding: 0.5rem 1rem;
-    --nav-header-margin: 0.25rem 0;
-
-    --nav-divider-color: var(--fr-border);
-    --nav-divider-o: 10%;
-    --nav-divider-width: 1px;
-    --nav-divider-margin: 0.5rem 0;
-
-    --nav-sub-margin-inline-start: 1.25rem;
-    --nav-sub-margin-top: 0.25rem;
-    --nav-sub-padding: 0.5rem 1rem;
-    --nav-sub-margin-block-start: 0.25rem;
-    --nav-sub-margin-block-end: 0.25rem;
-    --nav-sub-margin-inline-start: 0.5rem;
-    --nav-sub-margin-inline-end: 0;
-    --nav-sub-border-width: 1px;
-    --nav-sub-border-color: var(--fr-border);
-    --nav-sub-border-o: 10%;
-    --nav-sub-active-border-color: var(--fr-primary);
-
-    /* Computed values */
-    --nav-item-bg-computed: color-mix(
-      in srgb,
-      var(--nav-item-bg) var(--nav-item-bg-o),
-      transparent
-    );
-    --nav-item-hover-bg-computed: color-mix(
-      in srgb,
-      var(--nav-item-hover-bg) var(--nav-item-hover-bg-o),
-      transparent
-    );
-    --nav-item-active-bg-computed: color-mix(
-      in srgb,
-      var(--nav-item-active-bg) var(--nav-item-active-bg-o),
-      transparent
-    );
-    --nav-divider-color-computed: color-mix(
-      in srgb,
-      var(--nav-divider-color) var(--nav-divider-o),
-      transparent
-    );
-    --nav-sub-border-color-computed: color-mix(
-      in srgb,
-      var(--nav-sub-border-color) var(--nav-sub-border-o),
-      transparent
-    );
+    /* Global Settings */
+    --uk-nav-radius: var(--radius-md);
   }
 
-  /* Nav Items */
-  .fr-nav > li > a {
-    display: flex;
-    align-items: center;
-    height: var(--nav-item-height);
-    padding: var(--nav-item-padding);
-    margin: var(--nav-item-margin);
-    border-radius: var(--nav-item-radius);
-    background-color: var(--nav-item-bg-computed);
-    color: var(--nav-item-color);
-    font-weight: var(--nav-item-font-weight);
-    text-decoration: none;
-    transition:
-      background-color 0.15s ease-in-out,
-      color 0.15s ease-in-out;
+  /* Nav Alt  */
+  .uk-nav-alt {
+    --uk-nav-item-padding: 0.5rem 1rem;
+    --uk-nav-item-margin: 0.25rem;
+    --uk-nav-sub-item-padding: 0.5rem 1rem;
+    --uk-nav-sub-item-margin: 0 0.5rem;
+    --uk-nav-item-active-font-weight: 400;
   }
 
-  .fr-nav > li > a:hover {
-    background-color: var(--nav-item-hover-bg-computed);
-    color: var(--nav-item-hover-color);
-    text-decoration: var(--nav-item-hover-decoration);
+  /* Nav Default Variant */
+  .uk-nav-default {
+    --uk-nav-item-color: var(--uk-muted-f);
+    --uk-nav-item-color-o: 100%;
+    --uk-nav-item-hover-color: var(--uk-muted-f);
+    --uk-nav-item-hover-color-o: 100%;
   }
 
-  .fr-nav > li.fr-active > a {
-    background-color: var(--nav-item-active-bg-computed);
-    color: var(--nav-item-active-color);
-    font-weight: var(--nav-item-active-font-weight);
+  .uk-nav-default > li.uk-active {
+    --uk-nav-item-font-weight: 500;
+    --uk-nav-item-color: var(--uk-bg-f);
+    --uk-nav-item-color-o: 100%;
+  }
+
+  /* Nav Primary Variant */
+  .uk-nav-primary > li.uk-active {
+    --uk-nav-item-bg: var(--uk-primary);
+    --uk-nav-item-bg-o: 100%;
+    --uk-nav-item-color: var(--uk-primary-f);
+    --uk-nav-item-color-o: 100%;
+  }
+
+  .uk-nav-primary > li > a:hover {
+    --uk-nav-item-hover-bg: var(--uk-accent);
+    --uk-nav-item-hover-bg-o: 4%;
+    --uk-nav-item-hover-color: var(--uk-accent-f);
+    --uk-nav-item-hover-color-o: 100%;
+  }
+
+  .uk-nav-primary .uk-nav-sub li > a:hover {
+    --uk-nav-item-hover-bg: var(--uk-accent);
+    --uk-nav-item-hover-bg-o: 4%;
+    --uk-nav-item-hover-color: var(--uk-accent-f);
+    --uk-nav-item-hover-color-o: 100%;
   }
 
   /* Nav Header */
-  .fr-nav-header {
-    padding: var(--nav-header-padding);
-    margin: var(--nav-header-margin);
-    color: var(--nav-header-color);
-    font-weight: var(--nav-header-font-weight);
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .uk-nav-header {
+    font-weight: 600;
+    margin: var(--uk-nav-item-margin);
+    padding: var(--uk-nav-item-padding);
   }
 
   /* Nav Divider */
-  .fr-nav-divider {
-    margin: var(--nav-divider-margin);
-    border-top-width: var(--nav-divider-width);
-    border-top-style: solid;
-    border-top-color: var(--nav-divider-color-computed);
+  .uk-nav-divider {
+    --uk-nav-divider-color: var(--uk-border);
+    --uk-nav-divider-color-o: 10%;
+    --uk-nav-divider-color-computed: color-mix(
+      in srgb,
+      var(--uk-nav-divider-color) var(--uk-nav-divider-color-o),
+      transparent
+    );
+
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: var(--uk-nav-divider-color-computed);
   }
 
-  /* Sub Navigation */
-  .fr-nav-sub {
-    margin-inline-start: var(--nav-sub-margin-inline-start);
-    margin-top: var(--nav-sub-margin-top);
-    border-inline-start-width: var(--nav-sub-border-width);
-    border-inline-start-style: solid;
-    border-inline-start-color: var(--nav-sub-border-color-computed);
+  /* Nav Sub Spacing */
+  ul.uk-nav-sub > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
   }
 
-  .fr-nav-sub li {
-    position: relative;
+  .uk-nav-sub ul > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
   }
 
-  .fr-nav-sub li > a {
-    display: flex;
-    align-items: center;
-    height: var(--nav-item-height);
-    padding: var(--nav-sub-padding);
-    margin-block-start: var(--nav-sub-margin-block-start);
-    margin-block-end: var(--nav-sub-margin-block-end);
-    margin-inline-start: var(--nav-sub-margin-inline-start);
-    margin-inline-end: var(--nav-sub-margin-inline-end);
-    border-radius: var(--nav-item-radius);
-    color: var(--nav-item-color);
-    text-decoration: none;
-    transition:
-      background-color 0.15s ease-in-out,
-      color 0.15s ease-in-out;
+  /* Nav Sub Borders */
+  .uk-nav-sub,
+  .uk-nav-sub ul {
+    --uk-nav-sub-border: var(--uk-border);
+    --uk-nav-sub-border-o: 10%;
+    --uk-nav-sub-border-computed: color-mix(
+      in srgb,
+      var(--uk-nav-sub-border) var(--uk-nav-sub-border-o),
+      transparent
+    );
+
+    border-inline-start-width: var(--uk-nav-sub-border-w);
+    border-color: var(--uk-nav-sub-border-computed);
+    border-inline-start-color: var(--uk-nav-sub-border-computed);
   }
 
-  .fr-nav-sub li > a:hover {
-    background-color: var(--nav-item-hover-bg-computed);
-    color: var(--nav-item-hover-color);
-    text-decoration: var(--nav-item-hover-decoration);
+  .uk-nav-sub {
+    --uk-nav-sub-active-bg: var(--uk-primary);
+    --uk-nav-sub-active-bg-o: 100%;
+    --uk-nav-sub-active-bg-computed: color-mix(
+      in srgb,
+      var(--uk-nav-sub-active-bg) var(--uk-nav-sub-active-bg-o),
+      transparent
+    );
+
+    margin-inline-start: 1.25rem;
+    /* margin-inline-end: 0.25rem; */
   }
 
-  .fr-nav-sub li.fr-active::before {
-    content: '';
-    position: absolute;
-    inset-inline-start: calc(var(--nav-sub-border-width) * -1);
-    inset-block: 0;
-    width: var(--nav-sub-border-width);
-    background-color: var(--nav-sub-active-border-color);
-  }
-
-  /* Nested Sub Navigation */
-  .fr-nav-sub .fr-nav-sub {
+  .uk-nav-sub ul {
     margin-inline-start: 1.25rem;
     margin-top: 0.25rem;
   }
 
-  /* Nav Primary Variant */
-  .fr-nav-primary {
-    --nav-item-active-bg: var(--fr-primary);
-    --nav-item-active-bg-o: 100%;
-    --nav-item-active-color: var(--fr-primary-f);
+  /* Nav Sub Active Indicator */
+  .uk-nav-sub li {
+    position: relative;
   }
 
-  /* Base Subnav */
-  .fr-subnav {
-    --subnav-item-color: var(--fr-muted-f);
-    --subnav-item-padding: 0.5rem 1rem;
-    --subnav-item-radius: 9999px;
-    --subnav-item-height: auto;
-    --subnav-item-font-weight: 500;
+  .uk-nav-sub li::before {
+    content: '';
+    position: absolute;
+    /* [RTL FIX] Changed `left` to `inset-inline-start` */
+    inset-inline-start: calc(var(--uk-nav-sub-border-w) * -1);
+    bottom: 0px;
+    top: 0px;
+    width: var(--uk-nav-sub-border-w);
+  }
 
-    --subnav-item-hover-color: var(--fr-primary);
+  .uk-nav-sub li.uk-active::before {
+    background-color: var(--uk-nav-sub-active-bg-computed);
+  }
 
-    --subnav-item-active-bg: var(--fr-primary);
-    --subnav-item-active-bg-o: 100%;
-    --subnav-item-active-color: var(--fr-primary-f);
+  /* Nav Parent Icon */
+  .uk-nav-parent-icon {
+    margin-inline-start: auto;
+    transition: transform 0.3s ease-out;
+  }
 
-    --subnav-item-active-hover-bg: var(--fr-primary);
-    --subnav-item-active-hover-bg-o: 80%;
-    --subnav-item-active-hover-color: var(--fr-primary-f);
+  .uk-nav > li.uk-open > a .uk-nav-parent-icon {
+    transform: rotate(180deg);
+  }
 
-    /* Computed values */
-    --subnav-item-active-bg-computed: color-mix(
-      in srgb,
-      var(--subnav-item-active-bg) var(--subnav-item-active-bg-o),
-      transparent
-    );
-    --subnav-item-active-hover-bg-computed: color-mix(
-      in srgb,
-      var(--subnav-item-active-hover-bg) var(--subnav-item-active-hover-bg-o),
-      transparent
-    );
+  /* Nav Links */
+  .uk-nav a {
+    border-radius: var(--uk-nav-radius);
+  }
 
+  .uk-nav li > a {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
   }
 
-  .fr-subnav > li > a {
+  /* Nav Top Level Items */
+  .uk-nav > li > a {
+    /* Computed values */
+    --uk-nav-item-bg-computed: color-mix(
+      in srgb,
+      var(--uk-nav-item-bg, transparent) var(--uk-nav-item-bg-o, 0%),
+      transparent
+    );
+    --uk-nav-item-color-computed: color-mix(
+      in srgb,
+      var(--uk-nav-item-color, var(--uk-bg-f)) var(--uk-nav-item-color-o, 100%),
+      transparent
+    );
+
+    background-color: var(--uk-nav-item-bg-computed);
+    color: var(--uk-nav-item-color-computed);
+    padding: var(--uk-nav-item-padding);
+    margin: var(--uk-nav-item-margin);
+  }
+
+  .uk-nav > li.uk-active > a {
+    font-weight: var(--uk-nav-item-active-font-weight, 500);
+  }
+
+  .uk-nav li:not(.uk-active) > a:hover {
+    /* Computed hover values */
+    --uk-nav-item-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-nav-item-hover-bg, transparent) var(--uk-nav-item-hover-bg-o, 0%),
+      transparent
+    );
+    --uk-nav-item-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-nav-item-hover-color, var(--uk-bg-f))
+        var(--uk-nav-item-hover-color-o, 100%),
+      transparent
+    );
+
+    background-color: var(--uk-nav-item-hover-bg-computed);
+    color: var(--uk-nav-item-hover-color-computed);
+    text-decoration: none;
+    transition-property: background-color, color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  /* Nav Sub Items */
+  .uk-nav-sub a {
+    padding: var(--uk-nav-sub-item-padding);
+    margin: var(--uk-nav-sub-item-margin);
+  }
+
+  /* ============================================
+     Subnav Component
+     ============================================ */
+  .uk-subnav {
+    display: flex;
+    align-items: center;
+  }
+
+  .uk-subnav > * > :first-child {
+    /* Base Variables */
+    --uk-subnav-item-color: var(--uk-muted-f);
+    --uk-subnav-item-color-o: 100%;
+    --uk-subnav-item-hover-color: var(--uk-primary);
+    --uk-subnav-item-hover-color-o: 100%;
+
+    /* Computed values */
+    --uk-subnav-item-color-computed: color-mix(
+      in srgb,
+      var(--uk-subnav-item-color) var(--uk-subnav-item-color-o),
+      transparent
+    );
+    --uk-subnav-item-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-subnav-item-hover-color) var(--uk-subnav-item-hover-color-o),
+      transparent
+    );
+
+    transition: 0.1s ease-in-out;
+    transition-property: color, background-color;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: var(--subnav-item-height);
-    padding: var(--subnav-item-padding);
-    border-radius: var(--subnav-item-radius);
-    color: var(--subnav-item-color);
-    font-weight: var(--subnav-item-font-weight);
-    text-decoration: none;
+    border-radius: 9999px;
+    /* [RTL FIX] Changed `padding-left/right` to `padding-inline` */
+    padding-inline: 1rem;
     text-align: center;
-    transition:
-      background-color 0.1s ease-in-out,
-      color 0.1s ease-in-out;
+    font-weight: 500;
+    color: var(--uk-subnav-item-color-computed);
   }
 
-  .fr-subnav > li > a:hover {
-    color: var(--subnav-item-hover-color);
+  .uk-subnav > * > a:hover {
+    color: var(--uk-subnav-item-hover-color-computed);
   }
 
-  .fr-subnav > li.fr-active > a {
-    background-color: var(--subnav-item-active-bg-computed);
-    color: var(--subnav-item-active-color);
+  .uk-subnav > .uk-active > a {
+    --uk-subnav-item-active-bg-computed: color-mix(
+      in srgb,
+      var(--uk-subnav-item-active-background, transparent)
+        var(--uk-subnav-item-active-background-o, 0%),
+      transparent
+    );
+    --uk-subnav-item-active-color-computed: color-mix(
+      in srgb,
+      var(--uk-subnav-item-active-color, var(--uk-bg-f))
+        var(--uk-subnav-item-active-color-o, 100%),
+      transparent
+    );
+
+    background-color: var(--uk-subnav-item-active-bg-computed);
+    color: var(--uk-subnav-item-active-color-computed);
   }
 
-  .fr-subnav > li.fr-active > a:hover {
-    background-color: var(--subnav-item-active-hover-bg-computed);
-    color: var(--subnav-item-active-hover-color);
+  .uk-subnav > .uk-active > a:hover {
+    --uk-subnav-item-active-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-subnav-item-active-hover-background, transparent)
+        var(--uk-subnav-item-active-hover-background-o, 0%),
+      transparent
+    );
+    --uk-subnav-item-active-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-subnav-item-active-hover-color, var(--uk-bg-f))
+        var(--uk-subnav-item-active-hover-color-o, 100%),
+      transparent
+    );
+
+    background-color: var(--uk-subnav-item-active-hover-bg-computed);
+    color: var(--uk-subnav-item-active-hover-color-computed);
+  }
+
+  /* Subnav Primary Variant */
+  .uk-subnav-primary {
+    --uk-subnav-item-active-background: var(--uk-primary);
+    --uk-subnav-item-active-background-o: 100%;
+    --uk-subnav-item-active-color: var(--uk-primary-f);
+    --uk-subnav-item-active-color-o: 100%;
+    --uk-subnav-item-active-hover-background: var(--uk-primary);
+    --uk-subnav-item-active-hover-background-o: 80%;
+    --uk-subnav-item-active-hover-color: var(--uk-primary-f);
+    --uk-subnav-item-active-hover-color-o: 100%;
   }
 }

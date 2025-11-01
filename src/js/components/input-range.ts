@@ -9,7 +9,7 @@ import { Base } from './shared/base';
  *
  * This is a headless component - all styling is delegated to `cls` and `stl` attributes.
  *
- * @element fr-input-range
+ * @element uk-input-range
  * @extends {Input}
  *
  * Features:
@@ -23,19 +23,19 @@ import { Base } from './shared/base';
  * - Headless design with flexible styling via cls/stl
  * - Comprehensive i18n support
  *
- * @fires fr-input-range:input - Dispatched when the range value changes
+ * @fires uk-input-range:input - Dispatched when the range value changes
  *
  * @example
  * Basic usage:
  * ```html
- * <fr-input-range min="0" max="100" step="1"></fr-input-range>
- * <fr-input-range multiple min="10" max="50" step="5"></fr-input-range>
+ * <uk-input-range min="0" max="100" step="1"></uk-input-range>
+ * <uk-input-range multiple min="10" max="50" step="5"></uk-input-range>
  * ```
  *
  * @example
  * With styling via cls attribute:
  * ```html
- * <fr-input-range
+ * <uk-input-range
  *   cls='{
  *     "container": "custom-range",
  *     "track": "range-track",
@@ -46,13 +46,13 @@ import { Base } from './shared/base';
  *     "knobHigh": "range-knob-high",
  *     "label": "range-label"
  *   }'
- * ></fr-input-range>
+ * ></uk-input-range>
  * ```
  *
  * @example
  * With i18n and configuration via script:
  * ```html
- * <fr-input-range>
+ * <uk-input-range>
  *   <script type="application/json">
  *   {
  *     "i18n": {
@@ -67,10 +67,10 @@ import { Base } from './shared/base';
  *     }
  *   }
  *   </script>
- * </fr-input-range>
+ * </uk-input-range>
  * ```
  */
-@customElement('fr-input-range')
+@customElement('uk-input-range')
 export class InputRange extends InputMixin(Base) {
   /**
    * The default element key used for applying simple string CSS classes via `cls`.
@@ -88,7 +88,7 @@ export class InputRange extends InputMixin(Base) {
    * Custom event name emitted when the value changes.
    * Used for dispatching input events from this component.
    */
-  protected readonly 'input-event' = 'fr-input-range:input';
+  protected readonly 'input-event' = 'uk-input-range:input';
 
   /**
    * Enables dual-knob mode for selecting a value range.
@@ -97,7 +97,7 @@ export class InputRange extends InputMixin(Base) {
    * @default false
    * @example
    * ```html
-   * <fr-input-range multiple></fr-input-range>
+   * <uk-input-range multiple></uk-input-range>
    * ```
    */
   @property({ type: Boolean })
@@ -109,7 +109,7 @@ export class InputRange extends InputMixin(Base) {
    * @default 0
    * @example
    * ```html
-   * <fr-input-range min="10"></fr-input-range>
+   * <uk-input-range min="10"></uk-input-range>
    * ```
    */
   @property({ type: Number })
@@ -121,7 +121,7 @@ export class InputRange extends InputMixin(Base) {
    * @default 100
    * @example
    * ```html
-   * <fr-input-range max="200"></fr-input-range>
+   * <uk-input-range max="200"></uk-input-range>
    * ```
    */
   @property({ type: Number })
@@ -133,7 +133,7 @@ export class InputRange extends InputMixin(Base) {
    * @default 1
    * @example
    * ```html
-   * <fr-input-range step="5"></fr-input-range>
+   * <uk-input-range step="5"></uk-input-range>
    * ```
    */
   @property({ type: Number })
@@ -146,8 +146,8 @@ export class InputRange extends InputMixin(Base) {
    * @default false
    * @example
    * ```html
-   * <fr-input-range label="Value"></fr-input-range>
-   * <fr-input-range label></fr-input-range>
+   * <uk-input-range label="Value"></uk-input-range>
+   * <uk-input-range label></uk-input-range>
    * ```
    */
   @property({ type: String })
@@ -159,7 +159,7 @@ export class InputRange extends InputMixin(Base) {
    * @default 'top'
    * @example
    * ```html
-   * <fr-input-range label-position="bottom"></fr-input-range>
+   * <uk-input-range label-position="bottom"></uk-input-range>
    * ```
    */
   @property({ type: String })
@@ -171,7 +171,7 @@ export class InputRange extends InputMixin(Base) {
    *
    * @example
    * ```html
-   * <fr-input-range aria-label="Volume control"></fr-input-range>
+   * <uk-input-range aria-label="Volume control"></uk-input-range>
    * ```
    */
   @property({ type: String })
@@ -704,6 +704,6 @@ export class InputRange extends InputMixin(Base) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fr-input-range': InputRange;
+    'uk-input-range': InputRange;
   }
 }

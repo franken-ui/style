@@ -40,7 +40,7 @@ interface Stl extends Record<string, string> {
 /**
  * A headless PIN/OTP input component that creates multiple single-character input fields.
  *
- * @element fr-input-pin
+ * @element uk-input-pin
  * @extends {Input}
  *
  * Features:
@@ -54,8 +54,8 @@ interface Stl extends Record<string, string> {
  * - Headless design - all styling via cls/stl attributes
  * - Multi-level internationalization (global, local attribute, script tag)
  *
- * @fires fr-input-pin:change - Emitted when the PIN value changes
- * @fires fr-input-pin:complete - Emitted when all PIN fields are filled
+ * @fires uk-input-pin:change - Emitted when the PIN value changes
+ * @fires uk-input-pin:complete - Emitted when all PIN fields are filled
  *
  * @slot label - Custom label content (overrides i18n label)
  * @slot description - Custom description content (overrides i18n description)
@@ -70,24 +70,24 @@ interface Stl extends Record<string, string> {
  * @example
  * ```html
  * <!-- Basic usage -->
- * <fr-input-pin name="pin" length="6"></fr-input-pin>
+ * <uk-input-pin name="pin" length="6"></uk-input-pin>
  *
  * <!-- With i18n attribute -->
- * <fr-input-pin
+ * <uk-input-pin
  *   name="verification-code"
  *   length="4"
  *   autofocus
  *   i18n='{"label": "Verification Code"}'>
- * </fr-input-pin>
+ * </uk-input-pin>
  *
  * <!-- With custom styling -->
- * <fr-input-pin
+ * <uk-input-pin
  *   cls='{"container": "pin-group", "input": "pin-digit"}'
  *   stl='{"input": "width: 40px; height: 50px;"}'>
- * </fr-input-pin>
+ * </uk-input-pin>
  *
  * <!-- Using script tag for configuration -->
- * <fr-input-pin name="pin" length="6">
+ * <uk-input-pin name="pin" length="6">
  *   <script type="application/json">
  *   {
  *     "i18n": {
@@ -100,10 +100,10 @@ interface Stl extends Record<string, string> {
  *     }
  *   }
  *   </script>
- * </fr-input-pin>
+ * </uk-input-pin>
  * ```
  */
-@customElement('fr-input-pin')
+@customElement('uk-input-pin')
 export class InputPin extends InputMixin(Base) {
   /**
    * The default element key used for applying simple string CSS classes via `cls` attribute.
@@ -118,7 +118,7 @@ export class InputPin extends InputMixin(Base) {
   protected 'stl-default-element' = 'container';
 
   /** Custom event name emitted when value changes */
-  protected 'input-event' = 'fr-input-pin:change';
+  protected 'input-event' = 'uk-input-pin:change';
 
   /**
    * Whether to automatically focus the first input field when the component loads.
@@ -257,7 +257,7 @@ export class InputPin extends InputMixin(Base) {
         const regex = new RegExp(`^[${this.pattern}]*$`);
         if (!regex.test(trimmedValue)) {
           console.warn(
-            `[fr-input-pin] Initial value "${this.value}" does not match pattern "${this.pattern}"`,
+            `[uk-input-pin] Initial value "${this.value}" does not match pattern "${this.pattern}"`,
           );
           return;
         }
@@ -550,7 +550,7 @@ export class InputPin extends InputMixin(Base) {
    */
   private emitComplete(): void {
     this.dispatchEvent(
-      new CustomEvent('fr-input-pin:complete', {
+      new CustomEvent('uk-input-pin:complete', {
         detail: {
           value: this.$value,
         },
@@ -767,6 +767,6 @@ export class InputPin extends InputMixin(Base) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'fr-input-pin': InputPin;
+    'uk-input-pin': InputPin;
   }
 }

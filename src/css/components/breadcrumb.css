@@ -1,34 +1,39 @@
 @layer components {
-  .fr-breadcrumb > * {
+  .uk-breadcrumb > * {
     display: contents;
   }
-  .fr-breadcrumb > * > * {
+
+  .uk-breadcrumb > * > * {
     display: inline-flex;
     align-items: center;
-    color: var(--fr-muted-f);
+    color: var(--uk-muted-f);
   }
-  .fr-breadcrumb > * > :hover {
+
+  .uk-breadcrumb > * > :hover {
     text-decoration: none;
-    color: var(--fr-background-f);
+    color: var(--uk-background-f);
 
     transition-property: color;
     transition-duration: 150ms;
     transition-timing-function: ease-in-out;
   }
-  .fr-breadcrumb > :last-child > span,
-  .fr-breadcrumb > :last-child > a:not([href]) {
+
+  .uk-breadcrumb > :last-child > span,
+  .uk-breadcrumb > :last-child > a:not([href]) {
     font-weight: 500;
-    color: var(--fr-background-f);
+    color: var(--uk-background-f);
   }
-  .fr-breadcrumb > :nth-child(n + 2):not(.fr-first-column)::before {
-    content: var(--fr-breadcrumb-divider, '/');
+
+  .uk-breadcrumb > :nth-child(n + 2):not(.uk-first-column)::before {
+    content: var(--uk-breadcrumb-divider, '/');
     display: inline-block;
-    margin-inline: var(--fr-breadcrumb-divider-margin-start, 0.5rem)
-      var(--fr-breadcrumb-divider-margin-end, 0.75rem);
-    color: var(--fr-muted-f);
+    margin-inline: var(--uk-breadcrumb-divider-margin-start, 0.5rem)
+      var(--uk-breadcrumb-divider-margin-end, 0.75rem);
+    color: var(--uk-muted-f);
   }
-  .fr-breadcrumb > .fr-disabled > * {
-    opacity: var(--fr-breadcrumb-disabled-opacity, 0.5);
+
+  .uk-breadcrumb > .uk-disabled > * {
+    opacity: var(--uk-breadcrumb-disabled-opacity, 0.5);
     pointer-events: none;
   }
 }
