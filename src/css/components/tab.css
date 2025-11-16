@@ -1,0 +1,186 @@
+@layer components {
+  /* ============================================
+     Tab Component
+     ============================================ */
+  .uk-tab {
+    /* Base Variables */
+    --uk-tab-item-padding: 0.3125rem 0.625rem;
+    --uk-tab-link-gap: 0.25em;
+    --uk-tab-radius: var(--radius-md);
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    position: relative;
+    list-style: none;
+  }
+
+  .uk-tab::before {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--uk-border) 10%, transparent);
+  }
+
+  .uk-tab > * {
+    flex: none;
+    position: relative;
+  }
+
+  .uk-tab > * > a {
+    /* Base Variables */
+    --uk-tab-link-color: var(--uk-muted-f);
+    --uk-tab-link-color-o: 100%;
+    --uk-tab-link-hover-color: var(--uk-bg-f);
+    --uk-tab-link-hover-color-o: 100%;
+
+    /* Computed values */
+    --uk-tab-link-color-computed: color-mix(
+      in srgb,
+      var(--uk-tab-link-color) var(--uk-tab-link-color-o),
+      transparent
+    );
+    --uk-tab-link-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-tab-link-hover-color) var(--uk-tab-link-hover-color-o),
+      transparent
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--uk-tab-item-padding);
+    column-gap: var(--uk-tab-link-gap);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: none;
+    color: var(--uk-tab-link-color-computed);
+    border-bottom: 2px solid transparent;
+    transition: color 100ms ease-in-out;
+  }
+
+  .uk-tab > * > a:hover {
+    color: var(--uk-tab-link-hover-color-computed);
+    text-decoration: none;
+  }
+
+  .uk-tab > .uk-active > a {
+    /* Base Variable */
+    --uk-tab-active-border-color: var(--uk-primary);
+    --uk-tab-active-border-color-o: 100%;
+
+    /* Computed value */
+    --uk-tab-active-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-tab-active-border-color) var(--uk-tab-active-border-color-o),
+      transparent
+    );
+
+    border-color: var(--uk-tab-active-border-color-computed);
+    background-color: var(--uk-bg);
+    color: var(--uk-bg-f);
+  }
+
+  .uk-tab > .uk-disabled > a {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* Tab Bottom Variant */
+  .uk-tab-bottom::before {
+    inset: 0 0 auto 0;
+  }
+
+  .uk-tab-bottom > * > a {
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  /* Tab Left & Right (Vertical) Variants */
+  .uk-tab-left,
+  .uk-tab-right {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .uk-tab-left > *,
+  .uk-tab-right > * {
+    padding-left: 0;
+  }
+
+  .uk-tab-left::before {
+    inset: 0 0 0 auto;
+    border-left: 1px solid color-mix(in srgb, var(--uk-border) 10%, transparent);
+    border-bottom: none;
+  }
+
+  .uk-tab-right::before {
+    inset: 0 auto 0 0;
+    border-left: 1px solid color-mix(in srgb, var(--uk-border) 10%, transparent);
+    border-bottom: none;
+  }
+
+  .uk-tab-left > * > a {
+    justify-content: left;
+    border-right: 2px solid transparent;
+    border-bottom: none;
+  }
+
+  .uk-tab-right > * > a {
+    justify-content: left;
+    border-left: 2px solid transparent;
+    border-bottom: none;
+  }
+
+  .uk-tab .uk-dropdown {
+    margin-left: 2rem;
+  }
+
+  /* ============================================
+     Tab Alt Component (Pill Style)
+     ============================================ */
+  .uk-tab-alt {
+    /* Base Variables */
+    --uk-tab-alt-padding: 0.25rem;
+    --uk-tab-alt-link-padding: 0.25rem 0.75rem;
+
+    display: flex;
+    height: 2.25rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: var(--uk-tab-alt-padding);
+    border-radius: var(--uk-tab-radius);
+    background-color: color-mix(
+      in srgb,
+      var(--uk-muted) var(--uk-muted-o, 4%),
+      transparent
+    );
+    color: var(--uk-muted-f);
+  }
+
+  .uk-tab-alt > * {
+    flex-grow: 1;
+  }
+
+  .uk-tab-alt > * > a {
+    display: inline-flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding: var(--uk-tab-alt-link-padding);
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .uk-tab-alt > .uk-active > a {
+    border-radius: calc(var(--uk-tab-radius) - 0.125rem);
+    background-color: var(--uk-bg);
+    color: var(--uk-bg-f);
+    border-bottom: none;
+  }
+}

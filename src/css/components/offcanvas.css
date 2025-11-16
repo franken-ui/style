@@ -1,0 +1,160 @@
+@layer components {
+  /* ============================================
+     Offcanvas Component
+     ============================================ */
+  .uk-offcanvas {
+    /* Base Variables */
+    --uk-offcanvas-bar-width: 288px;
+    --uk-offcanvas-z-index: 1000;
+
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--uk-offcanvas-z-index);
+  }
+
+  .uk-offcanvas-flip .uk-offcanvas {
+    right: 0;
+    left: auto;
+  }
+
+  /* Offcanvas Bar */
+  .uk-offcanvas-bar {
+    /* Base Variables */
+    --uk-offcanvas-bar-border-width: 1px;
+    --uk-offcanvas-bar-transition: left 0.3s ease-out;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--uk-offcanvas-bar-width) * -1);
+    box-sizing: border-box;
+    width: var(--uk-offcanvas-bar-width);
+    overflow-y: auto;
+    border-right-width: var(--uk-offcanvas-bar-border-width);
+    border-color: color-mix(in srgb, var(--uk-border) 10%, transparent);
+    background-color: var(--uk-bg);
+  }
+
+  .uk-offcanvas-flip .uk-offcanvas-bar {
+    left: auto;
+    right: calc(var(--uk-offcanvas-bar-width) * -1);
+    border-right: none;
+    border-left-width: var(--uk-offcanvas-bar-border-width);
+    border-color: color-mix(in srgb, var(--uk-border) 10%, transparent);
+  }
+
+  .uk-open > .uk-offcanvas-bar {
+    left: 0;
+  }
+
+  .uk-offcanvas-flip .uk-open > .uk-offcanvas-bar {
+    left: auto;
+    right: 0;
+  }
+
+  .uk-offcanvas-bar-animation {
+    transition: var(--uk-offcanvas-bar-transition);
+  }
+
+  .uk-offcanvas-flip .uk-offcanvas-bar-animation {
+    transition-property: right;
+  }
+
+  /* Offcanvas Reveal Mode */
+  .uk-offcanvas-reveal {
+    /* Base Variables */
+    --uk-offcanvas-reveal-transition: width 0.3s ease-out;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    transition: var(--uk-offcanvas-reveal-transition);
+  }
+
+  .uk-offcanvas-reveal .uk-offcanvas-bar {
+    left: 0;
+  }
+
+  .uk-offcanvas-flip .uk-offcanvas-reveal .uk-offcanvas-bar {
+    left: auto;
+    right: 0;
+  }
+
+  .uk-open > .uk-offcanvas-reveal {
+    width: var(--uk-offcanvas-bar-width);
+  }
+
+  .uk-offcanvas-flip .uk-offcanvas-reveal {
+    right: 0;
+    left: auto;
+  }
+
+  /* Offcanvas Overlay */
+  .uk-offcanvas-overlay {
+    /* Base Variables */
+    --uk-offcanvas-overlay-bg: var(--color-black);
+    --uk-offcanvas-overlay-bg-o: 80%;
+    --uk-offcanvas-overlay-opacity: 1;
+    --uk-offcanvas-overlay-transition: opacity 0.15s linear;
+    --uk-offcanvas-overlay-blur: var(--blur-xs);
+
+    /* Computed value */
+    --uk-offcanvas-overlay-bg-computed: color-mix(
+      in srgb,
+      var(--uk-offcanvas-overlay-bg) var(--uk-offcanvas-overlay-bg-o),
+      transparent
+    );
+
+    width: 100vw;
+    touch-action: none;
+  }
+
+  .uk-offcanvas-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--uk-offcanvas-overlay-bg-computed);
+    opacity: 0;
+    transition: var(--uk-offcanvas-overlay-transition);
+    -webkit-backdrop-filter: blur(var(--uk-offcanvas-overlay-blur));
+    backdrop-filter: blur(var(--uk-offcanvas-overlay-blur));
+  }
+
+  .uk-offcanvas-overlay.uk-open::before {
+    opacity: var(--uk-offcanvas-overlay-opacity);
+  }
+
+  /* Offcanvas Page & Container */
+  .uk-offcanvas-page,
+  .uk-offcanvas-container {
+    overflow-x: hidden clip;
+  }
+
+  .uk-offcanvas-container {
+    /* Base Variables */
+    --uk-offcanvas-container-transition: left 0.3s ease-out;
+
+    position: relative;
+    left: 0;
+    transition: var(--uk-offcanvas-container-transition);
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  :not(.uk-offcanvas-flip).uk-offcanvas-container-animation {
+    left: var(--uk-offcanvas-bar-width);
+  }
+
+  .uk-offcanvas-flip.uk-offcanvas-container-animation {
+    left: calc(var(--uk-offcanvas-bar-width) * -1);
+  }
+}
