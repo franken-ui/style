@@ -1,0 +1,132 @@
+@layer components {
+  /* ============================================
+     Lightbox Component
+     ============================================ */
+  .uk-lightbox {
+    /* Base Variables */
+    --uk-lightbox-z-index: 1010;
+    --uk-lightbox-transition: opacity 0.15s linear;
+
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--uk-lightbox-z-index);
+    opacity: 0;
+    transition: var(--uk-lightbox-transition);
+    touch-action: pinch-zoom;
+    background: var(--uk-bg);
+  }
+
+  .uk-lightbox.uk-open {
+    display: block;
+    opacity: 1;
+  }
+
+  .uk-lightbox-page {
+    overflow: hidden;
+  }
+
+  /* Lightbox Items */
+  .uk-lightbox-items > * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    will-change: transform, opacity;
+    overflow: auto;
+  }
+
+  .uk-lightbox-items > .uk-active {
+    display: flex;
+  }
+
+  /* Lightbox Items Fit */
+  .uk-lightbox-items-fit > * {
+    align-items: center;
+  }
+
+  .uk-lightbox-items-fit > * > * {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+
+  .uk-lightbox-items-fit > * > :not(iframe) {
+    width: auto;
+    height: auto;
+  }
+
+  .uk-lightbox-items.uk-lightbox-items-fit .uk-lightbox-zoom:hover {
+    cursor: zoom-in;
+  }
+
+  .uk-lightbox-items:not(.uk-lightbox-items-fit) .uk-lightbox-zoom:hover {
+    cursor: zoom-out;
+  }
+
+  /* Lightbox Thumbnav */
+  .uk-lightbox-thumbnav-vertical :where(img, video) {
+    /* Base Variables */
+    --uk-lightbox-thumb-max-width: 100px;
+
+    max-width: var(--uk-lightbox-thumb-max-width);
+  }
+
+  .uk-lightbox-thumbnav:not(.uk-lightbox-thumbnav-vertical) :where(img, video) {
+    /* Base Variables */
+    --uk-lightbox-thumb-max-height: 100px;
+
+    max-height: var(--uk-lightbox-thumb-max-height);
+  }
+
+  .uk-lightbox-thumbnav:empty,
+  .uk-lightbox-dotnav:empty {
+    display: none;
+  }
+
+  /* Lightbox Caption */
+  .uk-lightbox-caption {
+    /* Base Variables */
+    --uk-lightbox-caption-padding: 1rem;
+    --uk-lightbox-caption-bg: var(--uk-secondary);
+    --uk-lightbox-caption-bg-o: 4%;
+    --uk-lightbox-caption-color: var(--uk-secondary-f);
+    --uk-lightbox-caption-color-o: 100%;
+
+    /* Computed values */
+    --uk-lightbox-caption-bg-computed: color-mix(
+      in srgb,
+      var(--uk-lightbox-caption-bg) var(--uk-lightbox-caption-bg-o),
+      transparent
+    );
+    --uk-lightbox-caption-color-computed: color-mix(
+      in srgb,
+      var(--uk-lightbox-caption-color) var(--uk-lightbox-caption-color-o),
+      transparent
+    );
+
+    background-color: var(--uk-lightbox-caption-bg-computed);
+    padding: var(--uk-lightbox-caption-padding);
+    color: var(--uk-lightbox-caption-color-computed);
+  }
+
+  .uk-lightbox-caption:empty {
+    display: none;
+  }
+
+  /* Lightbox Iframe */
+  .uk-lightbox-iframe {
+    /* Base Variables */
+    --uk-lightbox-iframe-width: 80%;
+    --uk-lightbox-iframe-height: 80%;
+
+    width: var(--uk-lightbox-iframe-width);
+    height: var(--uk-lightbox-iframe-height);
+  }
+}

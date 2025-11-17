@@ -1,0 +1,295 @@
+@layer components {
+  /* ============================================
+     Table Component
+     ============================================ */
+  .uk-table {
+    /* Base Variables */
+    --uk-table-cell-padding: 1rem 0.75rem;
+
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .uk-table th {
+    /* Base Variables */
+    --uk-table-header-font-size: 0.875rem;
+    --uk-table-header-font-weight: normal;
+    --uk-table-header-color: var(--uk-muted-f);
+    --uk-table-header-color-o: 100%;
+
+    /* Computed value */
+    --uk-table-header-color-computed: color-mix(
+      in srgb,
+      var(--uk-table-header-color) var(--uk-table-header-color-o),
+      transparent
+    );
+
+    padding: var(--uk-table-cell-padding);
+    text-align: left;
+    font-size: var(--uk-table-header-font-size);
+    font-weight: var(--uk-table-header-font-weight);
+    color: var(--uk-table-header-color-computed);
+  }
+
+  .uk-table td {
+    padding: var(--uk-table-cell-padding);
+    vertical-align: top;
+  }
+
+  .uk-table tfoot {
+    /* Base Variables */
+    --uk-table-footer-font-size: 0.875rem;
+
+    font-size: var(--uk-table-footer-font-size);
+  }
+
+  .uk-table caption {
+    /* Base Variables */
+    --uk-table-caption-font-size: 0.875rem;
+    --uk-table-caption-color: var(--uk-muted-f);
+    --uk-table-caption-color-o: 100%;
+
+    /* Computed value */
+    --uk-table-caption-color-computed: color-mix(
+      in srgb,
+      var(--uk-table-caption-color) var(--uk-table-caption-color-o),
+      transparent
+    );
+
+    font-size: var(--uk-table-caption-font-size);
+    color: var(--uk-table-caption-color-computed);
+  }
+
+  /* Table Middle */
+  .uk-table-middle,
+  .uk-table-middle td {
+    vertical-align: middle !important;
+  }
+
+  /* Table Divider */
+  .uk-table-divider > tr:not(:first-child),
+  .uk-table-divider > :not(:first-child) > tr,
+  .uk-table-divider > :first-child > tr:not(:first-child) {
+    border-top: 1px solid color-mix(in srgb, var(--uk-border) 10%, transparent);
+  }
+
+  /* Table Striped */
+  .uk-table-striped > tr:nth-of-type(odd),
+  .uk-table-striped tbody tr:nth-of-type(odd) {
+    /* Base Variables */
+    --uk-table-striped-bg: var(--uk-muted);
+    --uk-table-striped-bg-o: 50%;
+
+    /* Computed value */
+    --uk-table-striped-bg-computed: color-mix(
+      in srgb,
+      var(--uk-table-striped-bg) var(--uk-table-striped-bg-o),
+      transparent
+    );
+
+    border-top: 1px solid color-mix(in srgb, var(--uk-border) 10%, transparent);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--uk-border) 10%, transparent);
+    background-color: var(--uk-table-striped-bg-computed);
+  }
+
+  /* Table Hover */
+  .uk-table-hover > tr:hover,
+  .uk-table-hover tbody tr:hover {
+    /* Base Variables */
+    --uk-table-hover-bg: var(--uk-muted);
+    --uk-table-hover-bg-o: 50%;
+    --uk-table-hover-transition: background-color 150ms ease-in-out;
+
+    /* Computed value */
+    --uk-table-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-table-hover-bg) var(--uk-table-hover-bg-o),
+      transparent
+    );
+
+    background-color: var(--uk-table-hover-bg-computed);
+    transition: var(--uk-table-hover-transition);
+  }
+
+  /* Table Active */
+  .uk-table > tr.uk-active,
+  .uk-table tbody tr.uk-active {
+    /* Base Variables */
+    --uk-table-active-bg: var(--uk-muted);
+    --uk-table-active-bg-o: 100%;
+
+    /* Computed value */
+    --uk-table-active-bg-computed: color-mix(
+      in srgb,
+      var(--uk-table-active-bg) var(--uk-table-active-bg-o),
+      transparent
+    );
+
+    background-color: var(--uk-table-active-bg-computed);
+  }
+
+  /* Table Justify */
+  .uk-table-justify th:first-child,
+  .uk-table-justify td:first-child {
+    padding-left: 0;
+  }
+
+  .uk-table-justify th:last-child,
+  .uk-table-justify td:last-child {
+    padding-right: 0;
+  }
+
+  /* Table Shrink & Expand */
+  .uk-table-shrink {
+    width: 1px;
+  }
+
+  .uk-table-expand {
+    /* Base Variables */
+    --uk-table-expand-min-width: 10rem;
+
+    min-width: var(--uk-table-expand-min-width);
+  }
+
+  /* Table Link */
+  .uk-table-link {
+    padding: 0 !important;
+  }
+
+  .uk-table-link > a {
+    padding: var(--uk-table-cell-padding);
+    display: block;
+  }
+
+  /* Table Striped Last Row */
+  .uk-table-striped > tr:nth-of-type(even):last-child,
+  .uk-table-striped tbody tr:nth-of-type(even):last-child {
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--uk-border) 10%, transparent);
+  }
+
+  /* ============================================
+     Table Size Variants
+     ============================================ */
+  .uk-table-sm {
+    --uk-table-cell-padding: 0.625rem 0.75rem;
+  }
+
+  .uk-table-lg {
+    --uk-table-cell-padding: 1.5rem 0.75rem;
+  }
+
+  /* ============================================
+     Table Responsive
+     ============================================ */
+  .uk-table-responsive {
+    /* Base Variables */
+    --uk-table-responsive-label-width: 50%;
+    --uk-table-responsive-label-weight: 500;
+    --uk-table-responsive-label-size: 0.875rem;
+    --uk-table-responsive-padding-y: 0.5rem;
+    --uk-table-responsive-label-color: var(--uk-muted-f);
+    --uk-table-responsive-label-color-o: 100%;
+
+    /* Computed value */
+    --uk-table-responsive-label-color-computed: color-mix(
+      in srgb,
+      var(--uk-table-responsive-label-color)
+        var(--uk-table-responsive-label-color-o),
+      transparent
+    );
+  }
+
+  .uk-table-responsive.uk-table-responsive-compact {
+    --uk-table-responsive-label-width: 40%;
+    --uk-table-responsive-padding-y: 0.25rem;
+  }
+
+  .uk-table-responsive.uk-table-responsive-stack td[data-label] {
+    padding-left: var(--uk-table-cell-padding);
+    text-align: left;
+  }
+
+  .uk-table-responsive.uk-table-responsive-stack td[data-label]::before {
+    /* Base Variables */
+    --uk-table-responsive-stack-gap: 0.25rem;
+
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: var(--uk-table-responsive-stack-gap);
+    font-weight: var(--uk-table-responsive-label-weight);
+  }
+
+  @media (max-width: 768px) {
+    .uk-table-responsive,
+    .uk-table-responsive tbody,
+    .uk-table-responsive th,
+    .uk-table-responsive td,
+    .uk-table-responsive tr {
+      display: block;
+    }
+
+    .uk-table-responsive thead {
+      display: none;
+    }
+
+    .uk-table-responsive th,
+    .uk-table-responsive td {
+      width: auto !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+      white-space: normal !important;
+    }
+
+    .uk-table-responsive td[data-label] {
+      position: relative;
+      padding-left: var(--uk-table-responsive-label-width);
+      text-align: right;
+      border-bottom: 1px solid
+        color-mix(in srgb, var(--uk-border) 10%, transparent);
+    }
+
+    .uk-table-responsive td[data-label]::before {
+      content: attr(data-label) ':';
+      position: absolute;
+      left: var(--uk-table-cell-padding);
+      top: var(--uk-table-cell-padding);
+      width: calc(var(--uk-table-responsive-label-width) - 1rem);
+      text-align: left;
+      font-weight: var(--uk-table-responsive-label-weight);
+      color: var(--uk-table-responsive-label-color-computed);
+      font-size: var(--uk-table-responsive-label-size);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .uk-table-responsive tr:last-child td[data-label]:last-child {
+      border-bottom: none;
+    }
+
+    .uk-table-responsive th:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive
+      td:not(:first-child):not(.uk-table-link):not([data-label]),
+    .uk-table-responsive .uk-table-link:not(:first-child) > a {
+      padding-top: var(--uk-table-responsive-padding-y) !important;
+    }
+
+    .uk-table-responsive th:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive
+      td:not(:last-child):not(.uk-table-link):not([data-label]),
+    .uk-table-responsive .uk-table-link:not(:last-child) > a {
+      padding-bottom: var(--uk-table-responsive-padding-y) !important;
+    }
+
+    .uk-table-justify.uk-table-responsive th,
+    .uk-table-justify.uk-table-responsive td {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

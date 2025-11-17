@@ -1,0 +1,164 @@
+@layer components {
+  /* ============================================
+     Modal Component
+     ============================================ */
+  .uk-modal {
+    /* Base Variables */
+    --uk-modal-padding: 1rem;
+    --uk-modal-padding-header: var(--uk-modal-padding);
+    --uk-modal-padding-body: var(--uk-modal-padding);
+    --uk-modal-padding-footer: var(--uk-modal-padding);
+    --uk-modal-padding-top-between: 0;
+    --uk-modal-padding-top-after-header: 0;
+    --uk-modal-padding-bottom-scrollable: 0;
+    --uk-modal-padding-top-after-scrollable: var(--uk-modal-padding);
+    --uk-modal-radius: var(--radius-md);
+    --uk-modal-z-index: 1010;
+    --uk-modal-transition: opacity 0.15s linear;
+    --uk-modal-overlay-bg: var(--color-black);
+    --uk-modal-overlay-bg-o: 80%;
+    --uk-modal-overlay-blur: var(--blur-xs);
+
+    /* Computed value */
+    --uk-modal-overlay-bg-computed: color-mix(
+      in srgb,
+      var(--uk-modal-overlay-bg) var(--uk-modal-overlay-bg-o),
+      transparent
+    );
+
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--uk-modal-z-index);
+    overflow-y: auto;
+    background-color: var(--uk-modal-overlay-bg-computed);
+    opacity: 0;
+    transition: var(--uk-modal-transition);
+    padding: var(--uk-modal-padding);
+    -webkit-backdrop-filter: blur(var(--uk-modal-overlay-blur));
+    backdrop-filter: blur(var(--uk-modal-overlay-blur));
+  }
+
+  .uk-modal.uk-open {
+    opacity: 1;
+  }
+
+  .uk-modal-page {
+    overflow: hidden;
+  }
+
+  /* Modal Dialog */
+  .uk-modal-dialog {
+    /* Base Variables */
+    --uk-modal-dialog-width: 32rem;
+    --uk-modal-dialog-transform: translateY(-100px);
+    --uk-modal-dialog-transition: 0.3s linear;
+    --uk-modal-dialog-border-width: 1px;
+    --uk-modal-dialog-border-color: var(--uk-border);
+    --uk-modal-dialog-border-color-o: 10%;
+
+    /* Computed value */
+    --uk-modal-dialog-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-modal-dialog-border-color) var(--uk-modal-dialog-border-color-o),
+      transparent
+    );
+
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: var(--uk-modal-dialog-width);
+    max-width: 100%;
+    opacity: 0;
+    transform: var(--uk-modal-dialog-transform);
+    transition: var(--uk-modal-dialog-transition);
+    transition-property: opacity, transform;
+    border-radius: var(--uk-modal-radius);
+    overflow: hidden;
+    border-width: var(--uk-modal-dialog-border-width);
+    border-style: solid;
+    border-color: var(--uk-modal-dialog-border-color-computed);
+    background-color: var(--uk-bg);
+  }
+
+  .uk-open > .uk-modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .uk-modal-container .uk-modal-dialog {
+    width: 1200px;
+  }
+
+  /* Modal Full */
+  .uk-modal-full {
+    padding: 0 !important;
+    background: none;
+  }
+
+  .uk-modal-full .uk-modal-dialog {
+    margin: 0;
+    max-width: 100%;
+    transform: translateY(0);
+    width: 100%;
+    border-radius: 0;
+    border-style: none;
+  }
+
+  /* Modal Body, Header, Footer */
+  .uk-modal-body {
+    display: flow-root;
+    padding: var(--uk-modal-padding-body);
+  }
+
+  .uk-modal-header {
+    display: flow-root;
+    padding: var(--uk-modal-padding-header);
+  }
+
+  .uk-modal-footer {
+    display: flow-root;
+    padding: var(--uk-modal-padding-footer);
+  }
+
+  .uk-modal-body > :last-child,
+  .uk-modal-header > :last-child,
+  .uk-modal-footer > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* Modal Title */
+  .uk-modal-title {
+    /* Base Variables */
+    --uk-modal-title-size: 1.125rem;
+    --uk-modal-title-weight: 600;
+    --uk-modal-title-leading: 1;
+    --uk-modal-title-tracking: -0.025em;
+
+    font-size: var(--uk-modal-title-size);
+    font-weight: var(--uk-modal-title-weight);
+    line-height: var(--uk-modal-title-leading);
+    letter-spacing: var(--uk-modal-title-tracking);
+  }
+
+  /* Modal Spacing Adjustments */
+  .uk-modal-header + .uk-modal-body,
+  .uk-modal-body + .uk-modal-footer {
+    padding-top: var(--uk-modal-padding-top-between);
+  }
+
+  .uk-modal-header ~ .uk-modal-footer {
+    padding-top: var(--uk-modal-padding-top-after-header);
+  }
+
+  .uk-modal-header + .uk-modal-body.uk-overflow-auto {
+    padding-bottom: var(--uk-modal-padding-bottom-scrollable);
+  }
+
+  .uk-modal-body.uk-overflow-auto + .uk-modal-footer {
+    padding-top: var(--uk-modal-padding-top-after-scrollable);
+  }
+}
