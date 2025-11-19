@@ -540,7 +540,7 @@
     opacity: 0.5;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     .uk-form-horizontal .uk-form-label {
       display: block;
       margin: 0 0 5px 0;

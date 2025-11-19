@@ -223,7 +223,7 @@
     font-weight: var(--uk-table-responsive-label-weight);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     .uk-table-responsive,
     .uk-table-responsive tbody,
     .uk-table-responsive th,

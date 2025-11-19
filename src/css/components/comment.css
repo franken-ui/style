@@ -1,0 +1,152 @@
+@layer components {
+  /* ============================================
+     Comment Component
+     ============================================ */
+  .uk-comment {
+    /* Base Variables */
+    --uk-comment-padding: 0.75rem;
+
+    padding: var(--uk-comment-padding);
+  }
+
+  .uk-comment-body {
+    display: flow-root;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .uk-comment-header {
+    /* Base Variables */
+    --uk-comment-header-margin: 1.25rem;
+
+    display: flow-root;
+    margin-block-end: var(--uk-comment-header-margin);
+  }
+
+  .uk-comment-body > :last-child,
+  .uk-comment-header > :last-child {
+    margin-block-end: 0;
+  }
+
+  /* Comment Title */
+  .uk-comment-title {
+    /* Base Variables */
+    --uk-comment-title-font-size: 1rem;
+    --uk-comment-title-font-weight: 500;
+
+    font-size: var(--uk-comment-title-font-size);
+    font-weight: var(--uk-comment-title-font-weight);
+  }
+
+  /* Comment Meta */
+  .uk-comment-meta {
+    /* Base Variables */
+    --uk-comment-meta-font-size: 0.75rem;
+    --uk-comment-meta-leading: 1rem;
+    --uk-comment-meta-margin-top: 0.25rem;
+
+    font-size: var(--uk-comment-meta-font-size);
+    line-height: var(--uk-comment-meta-leading);
+    margin-block-start: var(--uk-comment-meta-margin-top);
+  }
+
+  /* Comment Avatar */
+  .uk-comment-avatar {
+    /* Base Variables */
+    --uk-comment-avatar-size: 2.5rem;
+    --uk-comment-avatar-radius: 9999px;
+    --uk-comment-avatar-bg: var(--uk-muted);
+    --uk-comment-avatar-bg-o: 4%;
+
+    /* Computed value */
+    --uk-comment-avatar-bg-computed: color-mix(
+      in srgb,
+      var(--uk-comment-avatar-bg) var(--uk-comment-avatar-bg-o),
+      transparent
+    );
+
+    height: var(--uk-comment-avatar-size);
+    width: var(--uk-comment-avatar-size);
+    overflow: hidden;
+    border-radius: var(--uk-comment-avatar-radius);
+    background-color: var(--uk-comment-avatar-bg-computed);
+  }
+
+  .uk-comment-avatar img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Comment List */
+  .uk-comment-list > :nth-child(n + 2) {
+    /* Base Variables */
+    --uk-comment-list-gap: 0.75rem;
+
+    margin-block-start: var(--uk-comment-list-gap);
+  }
+
+  /* Comment Nested */
+  .uk-comment-list .uk-comment ~ ul {
+    /* Base Variables */
+    --uk-comment-nested-margin: 1.5rem;
+    --uk-comment-nested-margin-top: 1.5rem;
+    --uk-comment-nested-border-width: 1px;
+    --uk-comment-nested-border-color: var(--uk-border);
+    --uk-comment-nested-border-color-o: 10%;
+
+    /* Computed value */
+    --uk-comment-nested-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-comment-nested-border-color)
+        var(--uk-comment-nested-border-color-o),
+      transparent
+    );
+
+    margin-inline-start: var(--uk-comment-nested-margin);
+    margin-block-start: var(--uk-comment-nested-margin-top);
+    border-inline-start-width: var(--uk-comment-nested-border-width);
+    border-inline-start-style: solid;
+    border-inline-start-color: var(--uk-comment-nested-border-color-computed);
+  }
+
+  .uk-comment-list .uk-comment ~ ul > :nth-child(n + 2) {
+    /* Base Variables */
+    --uk-comment-nested-item-gap: 1.5rem;
+
+    margin-block-start: var(--uk-comment-nested-item-gap);
+  }
+
+  .uk-comment-list .uk-comment ~ ul > li {
+    /* Base Variables */
+    --uk-comment-nested-item-margin: 0.75rem;
+
+    margin-inline-start: var(--uk-comment-nested-item-margin);
+  }
+
+  /* Comment Primary Variant */
+  .uk-comment-primary {
+    /* Base Variables */
+    --uk-comment-primary-radius: var(--radius-md);
+    --uk-comment-primary-bg: var(--uk-primary);
+    --uk-comment-primary-bg-o: 100%;
+    --uk-comment-primary-color: var(--uk-primary-f);
+    --uk-comment-primary-color-o: 100%;
+
+    /* Computed values */
+    --uk-comment-primary-bg-computed: color-mix(
+      in srgb,
+      var(--uk-comment-primary-bg) var(--uk-comment-primary-bg-o),
+      transparent
+    );
+    --uk-comment-primary-color-computed: color-mix(
+      in srgb,
+      var(--uk-comment-primary-color) var(--uk-comment-primary-color-o),
+      transparent
+    );
+
+    border-radius: var(--uk-comment-primary-radius);
+    background-color: var(--uk-comment-primary-bg-computed);
+    color: var(--uk-comment-primary-color-computed);
+  }
+}
