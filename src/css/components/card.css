@@ -1,0 +1,163 @@
+@layer components {
+  /* ============================================
+     Card Component
+     ============================================ */
+  .uk-card {
+    /* Base Variables */
+    --uk-card-padding: 1rem;
+    --uk-card-radius: var(--radius-md);
+    --uk-card-shadow: var(--shadow-xs);
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-border);
+    --uk-card-border-color-o: 10%;
+    --uk-card-bg: var(--uk-card);
+    --uk-card-bg-o: 100%;
+    --uk-card-color: var(--uk-card-f);
+    --uk-card-color-o: 100%;
+    --uk-card-adjacent-padding: 0;
+    --uk-card-header-footer-padding: 0;
+
+    /* Computed values */
+    --uk-card-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-card-border-color) var(--uk-card-border-color-o),
+      transparent
+    );
+    --uk-card-bg-computed: color-mix(
+      in srgb,
+      var(--uk-card-bg) var(--uk-card-bg-o),
+      transparent
+    );
+    --uk-card-color-computed: color-mix(
+      in srgb,
+      var(--uk-card-color) var(--uk-card-color-o),
+      transparent
+    );
+
+    position: relative;
+    box-sizing: border-box;
+    border: var(--uk-card-border-width) solid
+      var(--uk-card-border-color-computed);
+    border-radius: var(--uk-card-radius);
+    box-shadow: var(--uk-card-shadow);
+    background-color: var(--uk-card-bg-computed);
+    color: var(--uk-card-color-computed);
+  }
+
+  .uk-card-body,
+  .uk-card-header,
+  .uk-card-footer {
+    padding: var(--uk-card-padding);
+  }
+
+  .uk-card-body > :last-child,
+  .uk-card-header > :last-child,
+  .uk-card-footer > :last-child {
+    margin-block-end: 0;
+  }
+
+  /* Card Title */
+  .uk-card-title {
+    /* Base Variables */
+    --uk-card-title-font-size: 1.125rem;
+    --uk-card-title-weight: 600;
+    --uk-card-title-height: 1;
+    --uk-card-title-tracking: -0.025em;
+
+    font-size: var(--uk-card-title-font-size);
+    font-weight: var(--uk-card-title-weight);
+    line-height: var(--uk-card-title-height);
+    letter-spacing: var(--uk-card-title-tracking);
+  }
+
+  /* Card Spacing Adjustments */
+  .uk-card-header + .uk-card-body,
+  .uk-card-body + .uk-card-footer {
+    padding-block-start: var(--uk-card-adjacent-padding);
+  }
+
+  .uk-card-header ~ .uk-card-footer {
+    padding-block-start: var(--uk-card-header-footer-padding);
+  }
+
+  /* ============================================
+     Card Variants
+     ============================================ */
+
+  /* Primary Card */
+  .uk-card-primary {
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-primary);
+    --uk-card-border-color-o: 0%;
+    --uk-card-bg: var(--uk-primary);
+    --uk-card-bg-o: 100%;
+    --uk-card-color: var(--uk-primary-f);
+    --uk-card-color-o: 100%;
+  }
+
+  /* Secondary Card */
+  .uk-card-secondary {
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-secondary);
+    --uk-card-border-color-o: 0%;
+    --uk-card-bg: var(--uk-secondary);
+    --uk-card-bg-o: 4%;
+    --uk-card-color: var(--uk-secondary-f);
+    --uk-card-color-o: 100%;
+  }
+
+  /* Danger Card */
+  .uk-card-danger {
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-danger);
+    --uk-card-border-color-o: 0%;
+    --uk-card-bg: var(--uk-danger);
+    --uk-card-bg-o: 100%;
+    --uk-card-color: var(--color-white);
+    --uk-card-color-o: 100%;
+  }
+
+  /* Success Card */
+  .uk-card-success {
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-success);
+    --uk-card-border-color-o: 0%;
+    --uk-card-bg: var(--uk-success);
+    --uk-card-bg-o: 100%;
+    --uk-card-color: var(--color-white);
+    --uk-card-color-o: 100%;
+  }
+
+  /* Warning Card */
+  .uk-card-warning {
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-warning);
+    --uk-card-border-color-o: 0%;
+    --uk-card-bg: var(--uk-warning);
+    --uk-card-bg-o: 100%;
+    --uk-card-color: var(--color-white);
+    --uk-card-color-o: 100%;
+  }
+
+  /* Info Card */
+  .uk-card-info {
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-info);
+    --uk-card-border-color-o: 0%;
+    --uk-card-bg: var(--uk-info);
+    --uk-card-bg-o: 100%;
+    --uk-card-color: var(--color-white);
+    --uk-card-color-o: 100%;
+  }
+
+  /* Muted Card */
+  .uk-card-muted {
+    --uk-card-border-width: 1px;
+    --uk-card-border-color: var(--uk-muted);
+    --uk-card-border-color-o: 0%;
+    --uk-card-bg: var(--uk-muted);
+    --uk-card-bg-o: 4%;
+    --uk-card-color: var(--uk-muted-f);
+    --uk-card-color-o: 100%;
+  }
+}

@@ -1,0 +1,75 @@
+@layer components {
+  /* ============================================
+     Divider Component
+     ============================================ */
+  [class*='uk-divider'] {
+    border: none;
+    height: 1px;
+  }
+
+  /* HR (Horizontal Rule) */
+  .uk-hr {
+    /* Base Variables */
+    --uk-hr-color: var(--uk-border);
+    --uk-hr-color-o: 10%;
+
+    /* Computed value */
+    --uk-hr-color-computed: color-mix(
+      in srgb,
+      var(--uk-hr-color) var(--uk-hr-color-o),
+      transparent
+    );
+
+    border-color: var(--uk-hr-color-computed);
+  }
+
+  /* Small Divider */
+  .uk-divider-small {
+    /* Base Variables */
+    --uk-divider-small-width: 100px;
+    --uk-divider-small-border-color: var(--uk-border);
+    --uk-divider-small-border-color-o: 10%;
+
+    /* Computed value */
+    --uk-divider-small-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-divider-small-border-color)
+        var(--uk-divider-small-border-color-o),
+      transparent
+    );
+
+    line-height: 0;
+  }
+
+  .uk-divider-small::after {
+    content: '';
+    display: inline-block;
+    width: var(--uk-divider-small-width);
+    max-width: 100%;
+    border-top: 1px solid var(--uk-divider-small-border-color-computed);
+    vertical-align: top;
+  }
+
+  /* Vertical Divider */
+  .uk-divider-vertical {
+    /* Base Variables */
+    --uk-divider-vertical-height: 100px;
+    --uk-divider-vertical-border-color: var(--uk-border);
+    --uk-divider-vertical-border-color-o: 10%;
+
+    /* Computed value */
+    --uk-divider-vertical-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-divider-vertical-border-color)
+        var(--uk-divider-vertical-border-color-o),
+      transparent
+    );
+
+    width: max-content;
+    height: var(--uk-divider-vertical-height);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    border-inline-start: 1px solid
+      var(--uk-divider-vertical-border-color-computed);
+  }
+}
