@@ -1,0 +1,140 @@
+@layer components {
+  /* ============================================
+     Dotnav Component
+     ============================================ */
+  .uk-dotnav {
+    /* Base Variables */
+    --uk-dotnav-item-padding: 0.75rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline-start: calc(var(--uk-dotnav-item-padding) * -1);
+  }
+
+  .uk-dotnav > * {
+    flex: none;
+    padding-inline-start: var(--uk-dotnav-item-padding);
+  }
+
+  .uk-dotnav > * > * {
+    /* Base Variables */
+    --uk-dotnav-dot-size: 10px;
+    --uk-dotnav-dot-border-color: var(--uk-primary);
+    --uk-dotnav-dot-border-color-o: 100%;
+    --uk-dotnav-dot-bg: transparent;
+    --uk-dotnav-dot-bg-o: 0%;
+    --uk-dotnav-dot-transition: 0.2s ease-in-out;
+
+    /* Computed values */
+    --uk-dotnav-dot-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-border-color) var(--uk-dotnav-dot-border-color-o),
+      transparent
+    );
+    --uk-dotnav-dot-bg-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-bg) var(--uk-dotnav-dot-bg-o),
+      transparent
+    );
+
+    display: block;
+    box-sizing: border-box;
+    width: var(--uk-dotnav-dot-size);
+    height: var(--uk-dotnav-dot-size);
+    border: 1px solid var(--uk-dotnav-dot-border-color-computed);
+    border-radius: 50%;
+    background-color: var(--uk-dotnav-dot-bg-computed);
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: var(--uk-dotnav-dot-transition);
+    transition-property: background-color, border-color;
+  }
+
+  .uk-dotnav > * > :hover {
+    /* Base Variables */
+    --uk-dotnav-dot-hover-border-color: var(--uk-primary);
+    --uk-dotnav-dot-hover-border-color-o: 0%;
+    --uk-dotnav-dot-hover-bg: var(--uk-primary);
+    --uk-dotnav-dot-hover-bg-o: 100%;
+
+    /* Computed values */
+    --uk-dotnav-dot-hover-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-hover-border-color)
+        var(--uk-dotnav-dot-hover-border-color-o),
+      transparent
+    );
+    --uk-dotnav-dot-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-hover-bg) var(--uk-dotnav-dot-hover-bg-o),
+      transparent
+    );
+
+    border-color: var(--uk-dotnav-dot-hover-border-color-computed);
+    background-color: var(--uk-dotnav-dot-hover-bg-computed);
+  }
+
+  .uk-dotnav > * > :active {
+    /* Base Variables */
+    --uk-dotnav-dot-active-border-color: var(--uk-primary);
+    --uk-dotnav-dot-active-border-color-o: 0%;
+    --uk-dotnav-dot-active-bg: var(--uk-primary);
+    --uk-dotnav-dot-active-bg-o: 100%;
+
+    /* Computed values */
+    --uk-dotnav-dot-active-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-active-border-color)
+        var(--uk-dotnav-dot-active-border-color-o),
+      transparent
+    );
+    --uk-dotnav-dot-active-bg-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-active-bg) var(--uk-dotnav-dot-active-bg-o),
+      transparent
+    );
+
+    border-color: var(--uk-dotnav-dot-active-border-color-computed);
+    background-color: var(--uk-dotnav-dot-active-bg-computed);
+  }
+
+  .uk-dotnav > .uk-active > * {
+    /* Base Variables */
+    --uk-dotnav-dot-current-border-color: var(--uk-primary);
+    --uk-dotnav-dot-current-border-color-o: 0%;
+    --uk-dotnav-dot-current-bg: var(--uk-primary);
+    --uk-dotnav-dot-current-bg-o: 100%;
+
+    /* Computed values */
+    --uk-dotnav-dot-current-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-current-border-color)
+        var(--uk-dotnav-dot-current-border-color-o),
+      transparent
+    );
+    --uk-dotnav-dot-current-bg-computed: color-mix(
+      in srgb,
+      var(--uk-dotnav-dot-current-bg) var(--uk-dotnav-dot-current-bg-o),
+      transparent
+    );
+
+    border-color: var(--uk-dotnav-dot-current-border-color-computed);
+    background-color: var(--uk-dotnav-dot-current-bg-computed);
+  }
+
+  /* Vertical Variant */
+  .uk-dotnav-vertical {
+    /* Base Variables */
+    --uk-dotnav-vertical-item-padding-top: 0.75rem;
+
+    flex-direction: column;
+    margin-inline-start: 0;
+    margin-block-start: calc(var(--uk-dotnav-vertical-item-padding-top) * -1);
+  }
+
+  .uk-dotnav-vertical > * {
+    padding-inline-start: 0;
+    padding-block-start: var(--uk-dotnav-vertical-item-padding-top);
+  }
+}

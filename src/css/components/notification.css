@@ -1,0 +1,218 @@
+@layer components {
+  /* ============================================
+     Notification Component
+     ============================================ */
+  .uk-notification {
+    /* Base Variables */
+    --uk-notification-offset-y: 10px;
+    --uk-notification-offset-x: 10px;
+    --uk-notification-z-index: 1040;
+    --uk-notification-width: 350px;
+
+    position: fixed;
+    top: var(--uk-notification-offset-y);
+    inset-inline-start: var(--uk-notification-offset-x);
+    z-index: var(--uk-notification-z-index);
+    box-sizing: border-box;
+    width: var(--uk-notification-width);
+  }
+
+  /* Position Variants */
+  .uk-notification-top-right,
+  .uk-notification-bottom-right {
+    inset-inline-start: auto;
+    inset-inline-end: var(--uk-notification-offset-x);
+  }
+
+  .uk-notification-top-center,
+  .uk-notification-bottom-center {
+    inset-inline-start: 50%;
+    margin-inline-start: calc(var(--uk-notification-width) / -2);
+  }
+
+  .uk-notification-bottom-left,
+  .uk-notification-bottom-right,
+  .uk-notification-bottom-center {
+    top: auto;
+    bottom: var(--uk-notification-offset-y);
+  }
+
+  /* Notification Message */
+  .uk-notification-message {
+    /* Base Variables */
+    --uk-notification-padding: 1rem 1.5rem 1rem 1rem;
+    --uk-notification-radius: var(--radius-md);
+    --uk-notification-shadow: var(--shadow-xs);
+    --uk-notification-border-width: 1px;
+    --uk-notification-border-color: var(--uk-border);
+    --uk-notification-border-color-o: 10%;
+    --uk-notification-bg: var(--uk-bg);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--uk-bg-f);
+    --uk-notification-color-o: 100%;
+
+    /* Computed values */
+    --uk-notification-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-notification-border-color) var(--uk-notification-border-color-o),
+      transparent
+    );
+    --uk-notification-bg-computed: color-mix(
+      in srgb,
+      var(--uk-notification-bg) var(--uk-notification-bg-o),
+      transparent
+    );
+    --uk-notification-color-computed: color-mix(
+      in srgb,
+      var(--uk-notification-color) var(--uk-notification-color-o),
+      transparent
+    );
+
+    position: relative;
+    cursor: pointer;
+    border-radius: var(--uk-notification-radius);
+    box-shadow: var(--uk-notification-shadow);
+    border: var(--uk-notification-border-width) solid
+      var(--uk-notification-border-color-computed);
+    background-color: var(--uk-notification-bg-computed);
+    padding: var(--uk-notification-padding);
+    color: var(--uk-notification-color-computed);
+  }
+
+  * + .uk-notification-message {
+    /* Base Variables */
+    --uk-notification-gap: 10px;
+
+    margin-block-start: var(--uk-notification-gap);
+  }
+
+  /* Notification Close Button */
+  .uk-notification-close {
+    /* Base Variables */
+    --uk-notification-close-offset-x: 0.25rem;
+    --uk-notification-close-offset-y: 0.25rem;
+    --uk-notification-close-padding: 0.25rem;
+    --uk-notification-close-color: var(--uk-bg-f);
+    --uk-notification-close-color-o: 50%;
+
+    /* Computed value */
+    --uk-notification-close-color-computed: color-mix(
+      in srgb,
+      var(--uk-notification-close-color) var(--uk-notification-close-color-o),
+      transparent
+    );
+
+    display: none;
+    position: absolute;
+    inset-inline-end: var(--uk-notification-close-offset-x);
+    inset-block-start: var(--uk-notification-close-offset-y);
+    padding: var(--uk-notification-close-padding);
+    color: var(--uk-notification-close-color-computed);
+  }
+
+  .uk-notification-message:hover .uk-notification-close {
+    display: block;
+  }
+
+  /* ============================================
+     Notification Message Variants
+     ============================================ */
+
+  /* Primary Variant */
+  .uk-notification-message-primary {
+    --uk-notification-border-color: var(--uk-primary);
+    --uk-notification-border-color-o: 100%;
+    --uk-notification-bg: var(--uk-primary);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--color-white);
+    --uk-notification-color-o: 100%;
+    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color-o: 50%;
+  }
+
+  /* Secondary Variant */
+  .uk-notification-message-secondary {
+    --uk-notification-border-color: var(--uk-secondary);
+    --uk-notification-border-color-o: 100%;
+    --uk-notification-bg: var(--uk-secondary);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--color-white);
+    --uk-notification-color-o: 100%;
+    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color-o: 50%;
+  }
+
+  /* Danger Variant */
+  .uk-notification-message-danger {
+    --uk-notification-border-color: var(--uk-danger);
+    --uk-notification-border-color-o: 100%;
+    --uk-notification-bg: var(--uk-danger);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--color-white);
+    --uk-notification-color-o: 100%;
+    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color-o: 50%;
+  }
+
+  /* Success Variant */
+  .uk-notification-message-success {
+    --uk-notification-border-color: var(--uk-success);
+    --uk-notification-border-color-o: 100%;
+    --uk-notification-bg: var(--uk-success);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--color-white);
+    --uk-notification-color-o: 100%;
+    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color-o: 50%;
+  }
+
+  /* Warning Variant */
+  .uk-notification-message-warning {
+    --uk-notification-border-color: var(--uk-warning);
+    --uk-notification-border-color-o: 100%;
+    --uk-notification-bg: var(--uk-warning);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--color-white);
+    --uk-notification-color-o: 100%;
+    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color-o: 50%;
+  }
+
+  /* Info Variant */
+  .uk-notification-message-info {
+    --uk-notification-border-color: var(--uk-info);
+    --uk-notification-border-color-o: 100%;
+    --uk-notification-bg: var(--uk-info);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--color-white);
+    --uk-notification-color-o: 100%;
+    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color-o: 50%;
+  }
+
+  /* Muted Variant */
+  .uk-notification-message-muted {
+    --uk-notification-border-color: var(--uk-muted);
+    --uk-notification-border-color-o: 100%;
+    --uk-notification-bg: var(--uk-muted);
+    --uk-notification-bg-o: 100%;
+    --uk-notification-color: var(--color-white);
+    --uk-notification-color-o: 100%;
+    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color-o: 50%;
+  }
+
+  /* ============================================
+     Responsive Breakpoint
+     ============================================ */
+  @media (max-width: 40rem) {
+    .uk-notification {
+      --uk-notification-offset-x: 10px;
+
+      inset-inline-start: var(--uk-notification-offset-x);
+      inset-inline-end: var(--uk-notification-offset-x);
+      width: auto;
+      margin: 0;
+    }
+  }
+}

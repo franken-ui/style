@@ -1,0 +1,168 @@
+@layer components {
+  /* ============================================
+     List Component
+     ============================================ */
+  .uk-list > * {
+    -moz-column-break-inside: avoid;
+    break-inside: avoid-column;
+  }
+
+  .uk-list > * > :last-child {
+    margin-block-end: 0;
+  }
+
+  .uk-list > :nth-child(n + 2),
+  .uk-list > * > ul {
+    /* Base Variables */
+    --uk-list-item-margin-top: 0.5rem;
+
+    margin-block-start: var(--uk-list-item-margin-top);
+  }
+
+  /* List Style Types */
+  .uk-list-disc,
+  .uk-list-circle,
+  .uk-list-square,
+  .uk-list-decimal,
+  .uk-list-hyphen {
+    /* Base Variables */
+    --uk-list-indent: 32px;
+
+    padding-inline-start: var(--uk-list-indent);
+  }
+
+  .uk-list-disc {
+    list-style-type: disc;
+  }
+
+  .uk-list-circle {
+    list-style-type: circle;
+  }
+
+  .uk-list-square {
+    list-style-type: square;
+  }
+
+  .uk-list-decimal {
+    list-style-type: decimal;
+  }
+
+  .uk-list-hyphen {
+    list-style-type: '–  ';
+  }
+
+  /* List Marker Color Variants */
+  .uk-list-muted > ::marker {
+    /* Base Variables */
+    --uk-list-marker-muted-color: var(--uk-muted-f);
+    --uk-list-marker-muted-color-o: 100%;
+
+    /* Computed value */
+    --uk-list-marker-muted-color-computed: color-mix(
+      in srgb,
+      var(--uk-list-marker-muted-color) var(--uk-list-marker-muted-color-o),
+      transparent
+    );
+
+    color: var(--uk-list-marker-muted-color-computed);
+  }
+
+  .uk-list-primary > ::marker {
+    /* Base Variables */
+    --uk-list-marker-primary-color: var(--uk-primary);
+    --uk-list-marker-primary-color-o: 100%;
+
+    /* Computed value */
+    --uk-list-marker-primary-color-computed: color-mix(
+      in srgb,
+      var(--uk-list-marker-primary-color) var(--uk-list-marker-primary-color-o),
+      transparent
+    );
+
+    color: var(--uk-list-marker-primary-color-computed);
+  }
+
+  .uk-list-secondary > ::marker {
+    /* Base Variables */
+    --uk-list-marker-secondary-color: var(--uk-secondary-f);
+    --uk-list-marker-secondary-color-o: 100%;
+
+    /* Computed value */
+    --uk-list-marker-secondary-color-computed: color-mix(
+      in srgb,
+      var(--uk-list-marker-secondary-color)
+        var(--uk-list-marker-secondary-color-o),
+      transparent
+    );
+
+    color: var(--uk-list-marker-secondary-color-computed);
+  }
+
+  /* List Divider */
+  .uk-list-divider > :nth-child(n + 2) {
+    /* Base Variables */
+    --uk-list-divider-item-margin-top: 0.5rem;
+    --uk-list-divider-item-padding-top: 0.5rem;
+    --uk-list-divider-border-width: 1px;
+    --uk-list-divider-border-color: var(--uk-border);
+    --uk-list-divider-border-color-o: 10%;
+
+    /* Computed value */
+    --uk-list-divider-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-list-divider-border-color) var(--uk-list-divider-border-color-o),
+      transparent
+    );
+
+    margin-block-start: var(--uk-list-divider-item-margin-top);
+    border-top-width: var(--uk-list-divider-border-width);
+    border-color: var(--uk-list-divider-border-color-computed);
+    padding-block-start: var(--uk-list-divider-item-padding-top);
+  }
+
+  /* List Striped */
+  .uk-list-striped > * {
+    /* Base Variables */
+    --uk-list-striped-item-padding: 0.5rem;
+
+    padding: var(--uk-list-striped-item-padding);
+  }
+
+  .uk-list-striped > *:nth-of-type(odd) {
+    /* Base Variables */
+    --uk-list-striped-border-width: 1px;
+    --uk-list-striped-border-color: var(--uk-border);
+    --uk-list-striped-border-color-o: 10%;
+
+    /* Computed value */
+    --uk-list-striped-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-list-striped-border-color) var(--uk-list-striped-border-color-o),
+      transparent
+    );
+
+    border-top-width: var(--uk-list-striped-border-width);
+    border-bottom-width: var(--uk-list-striped-border-width);
+    border-color: var(--uk-list-striped-border-color-computed);
+  }
+
+  .uk-list-striped > :nth-of-type(odd) {
+    /* Base Variables */
+    --uk-list-striped-background-color: var(--uk-muted);
+    --uk-list-striped-background-color-o: 50%;
+
+    /* Computed value */
+    --uk-list-striped-background-color-computed: color-mix(
+      in srgb,
+      var(--uk-list-striped-background-color)
+        var(--uk-list-striped-background-color-o),
+      transparent
+    );
+
+    background-color: var(--uk-list-striped-background-color-computed);
+  }
+
+  .uk-list-striped > :nth-child(n + 2) {
+    margin-block-start: 0;
+  }
+}

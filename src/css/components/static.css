@@ -689,12 +689,11 @@
   .uk-svg {
     transform: translate(0, 0);
   }
-}
 
-/* ========================================================================
+  /* ========================================================================
    Component: Cover
  ========================================================================== */
-/*
+  /*
  * Works with iframes and embedded content
  * 1. Use attribute to apply transform instantly. Needed if transform is transitioned.
  * 2. Reset responsiveness for embedded content
@@ -702,35 +701,448 @@
  * Note: Percent values on the `top` property only works if this element
  *       is absolute positioned or if the container has a height
  */
-/* 1 */
-[uk-cover]:where(canvas, iframe, svg),
-[data-uk-cover]:where(canvas, iframe, svg) {
-  /* 2 */
-  max-width: none;
-  /* 3 */
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  --uk-position-translate-x: -50%;
-  --uk-position-translate-y: -50%;
-  transform: translate(
-    var(--uk-position-translate-x),
-    var(--uk-position-translate-y)
-  );
-}
-iframe[uk-cover],
-iframe[data-uk-cover] {
-  pointer-events: none;
-}
-[uk-cover]:where(img, video),
-[data-uk-cover]:where(img, video) {
-  /* 3 */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  object-fit: cover;
-  object-position: center;
+  /* 1 */
+  [uk-cover]:where(canvas, iframe, svg),
+  [data-uk-cover]:where(canvas, iframe, svg) {
+    /* 2 */
+    max-width: none;
+    /* 3 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    --uk-position-translate-x: -50%;
+    --uk-position-translate-y: -50%;
+    transform: translate(
+      var(--uk-position-translate-x),
+      var(--uk-position-translate-y)
+    );
+  }
+  iframe[uk-cover],
+  iframe[data-uk-cover] {
+    pointer-events: none;
+  }
+  [uk-cover]:where(img, video),
+  [data-uk-cover]:where(img, video) {
+    /* 3 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ============================================
+     Icon Component
+     ============================================ */
+  .uk-icon {
+    display: inline-flex;
+    color: inherit;
+    fill: currentcolor;
+  }
+
+  button.uk-icon:not(:disabled) {
+    cursor: pointer;
+  }
+
+  .uk-icon::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  .uk-icon:not(.uk-preserve) [fill*='#']:not(.uk-preserve) {
+    fill: currentcolor;
+  }
+
+  .uk-icon:not(.uk-preserve) [stroke*='#']:not(.uk-preserve) {
+    stroke: currentcolor;
+  }
+
+  .uk-icon > * {
+    transform: translate(0, 0);
+  }
+
+  /* Icon Image */
+  .uk-icon-image {
+    /* Base Variables */
+    --uk-icon-image-size: 1.25rem;
+
+    width: var(--uk-icon-image-size);
+    height: var(--uk-icon-image-size);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    object-fit: scale-down;
+    max-width: none;
+  }
+
+  /* ============================================
+     Leader Component
+     ============================================ */
+  .uk-leader {
+    overflow: hidden;
+  }
+
+  .uk-leader-fill::after {
+    /* Base Variables */
+    --uk-leader-spacing: 1rem;
+
+    display: inline-block;
+    margin-inline-start: var(--uk-leader-spacing);
+    width: 0;
+    content: attr(data-fill);
+    white-space: nowrap;
+  }
+
+  .uk-leader-fill.uk-leader-hide::after {
+    display: none;
+  }
+
+  /* ============================================
+     Link Component
+     ============================================ */
+  .uk-link {
+    /* Base Variables */
+    --uk-link-font-weight: 500;
+    --uk-link-underline-offset: 4px;
+
+    font-weight: var(--uk-link-font-weight);
+    text-decoration-line: underline;
+    text-underline-offset: var(--uk-link-underline-offset);
+  }
+
+  /* Link Muted */
+  a.uk-link-muted,
+  .uk-link-muted a,
+  .uk-link-toggle .uk-link-muted {
+    /* Base Variables */
+    --uk-link-muted-font-weight: 500;
+    --uk-link-muted-color: var(--uk-muted-f);
+    --uk-link-muted-color-o: 100%;
+
+    /* Computed value */
+    --uk-link-muted-color-computed: color-mix(
+      in srgb,
+      var(--uk-link-muted-color) var(--uk-link-muted-color-o),
+      transparent
+    );
+
+    font-weight: var(--uk-link-muted-font-weight);
+    color: var(--uk-link-muted-color-computed);
+    text-decoration-line: underline;
+    text-underline-offset: var(--uk-link-underline-offset);
+  }
+
+  /* Link Text */
+  a.uk-link-text:hover,
+  .uk-link-text a:hover,
+  .uk-link-toggle:hover .uk-link-text {
+    text-decoration-line: underline;
+    text-underline-offset: var(--uk-link-underline-offset);
+  }
+
+  /* Link Reset */
+  a.uk-link-reset,
+  .uk-link-reset a {
+    text-decoration: none !important;
+    font-weight: 400 !important;
+  }
+
+  /* Link Toggle */
+  .uk-link-toggle {
+    text-decoration: none !important;
+  }
+
+  /* ============================================
+     Progress Component
+     ============================================ */
+  .uk-progress {
+    /* Base Variables */
+    --uk-progress-margin-bottom: 1.25rem;
+    --uk-progress-height: 1rem;
+    --uk-progress-radius: 500px;
+    --uk-progress-transition: width 0.6s ease;
+    --uk-progress-track-color: var(--uk-primary);
+    --uk-progress-track-color-o: 20%;
+    --uk-progress-value-color: var(--uk-primary);
+    --uk-progress-value-color-o: 100%;
+
+    /* Computed values */
+    --uk-progress-track-color-computed: color-mix(
+      in srgb,
+      var(--uk-progress-track-color) var(--uk-progress-track-color-o),
+      transparent
+    );
+    --uk-progress-value-color-computed: color-mix(
+      in srgb,
+      var(--uk-progress-value-color) var(--uk-progress-value-color-o),
+      transparent
+    );
+
+    vertical-align: baseline;
+    display: block;
+    width: 100%;
+    border: 0;
+    margin-block-end: var(--uk-progress-margin-bottom);
+    height: var(--uk-progress-height);
+    border-radius: var(--uk-progress-radius);
+    overflow: hidden;
+    background-color: var(--uk-progress-track-color-computed);
+  }
+
+  .uk-progress::-webkit-progress-bar {
+    background-color: transparent;
+  }
+
+  .uk-progress::-webkit-progress-value {
+    transition: var(--uk-progress-transition);
+    background-color: var(--uk-progress-value-color-computed);
+  }
+
+  .uk-progress::-moz-progress-bar {
+    transition: var(--uk-progress-transition);
+    background-color: var(--uk-progress-value-color-computed);
+  }
+
+  /* ============================================
+     Slider Component
+     ============================================ */
+  .uk-slider {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .uk-slider-container {
+    overflow: hidden;
+    overflow: clip;
+  }
+
+  .uk-slider-items {
+    display: flex;
+    will-change: transform;
+    position: relative;
+    touch-action: pan-y;
+  }
+
+  .uk-slider-items > * {
+    flex: none !important;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+  }
+
+  /* ============================================
+     Slidenav Component
+     ============================================ */
+  .uk-slidenav {
+    /* Base Variables */
+    --uk-slidenav-height: 2.25rem;
+    --uk-slidenav-width: 2.25rem;
+    --uk-slidenav-radius: 9999px;
+    --uk-slidenav-shadow: var(--shadow-sm);
+    --uk-slidenav-border-width: 1px;
+    --uk-slidenav-border-color: var(--uk-border);
+    --uk-slidenav-border-color-o: 10%;
+    --uk-slidenav-bg: var(--uk-bg);
+    --uk-slidenav-bg-o: 100%;
+    --uk-slidenav-hover-bg: var(--uk-accent);
+    --uk-slidenav-hover-bg-o: 100%;
+    --uk-slidenav-hover-color: var(--uk-accent-f);
+    --uk-slidenav-hover-color-o: 100%;
+    --uk-slidenav-active-bg: var(--uk-accent);
+    --uk-slidenav-active-bg-o: 100%;
+    --uk-slidenav-active-color: var(--uk-accent-f);
+    --uk-slidenav-active-color-o: 100%;
+    --uk-slidenav-svg-height: 1rem;
+    --uk-slidenav-svg-width: 1rem;
+
+    /* Computed values */
+    --uk-slidenav-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-slidenav-border-color) var(--uk-slidenav-border-color-o),
+      transparent
+    );
+    --uk-slidenav-bg-computed: color-mix(
+      in srgb,
+      var(--uk-slidenav-bg) var(--uk-slidenav-bg-o),
+      transparent
+    );
+    --uk-slidenav-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-slidenav-hover-bg) var(--uk-slidenav-hover-bg-o),
+      transparent
+    );
+    --uk-slidenav-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-slidenav-hover-color) var(--uk-slidenav-hover-color-o),
+      transparent
+    );
+    --uk-slidenav-active-bg-computed: color-mix(
+      in srgb,
+      var(--uk-slidenav-active-bg) var(--uk-slidenav-active-bg-o),
+      transparent
+    );
+    --uk-slidenav-active-color-computed: color-mix(
+      in srgb,
+      var(--uk-slidenav-active-color) var(--uk-slidenav-active-color-o),
+      transparent
+    );
+
+    box-shadow: var(--uk-slidenav-shadow);
+    display: inline-flex;
+    height: var(--uk-slidenav-height);
+    width: var(--uk-slidenav-width);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--uk-slidenav-radius);
+    border-width: var(--uk-slidenav-border-width);
+    border-style: solid;
+    border-color: var(--uk-slidenav-border-color-computed);
+    background-color: var(--uk-slidenav-bg-computed);
+  }
+
+  .uk-slidenav:hover {
+    background-color: var(--uk-slidenav-hover-bg-computed);
+    color: var(--uk-slidenav-hover-color-computed);
+  }
+
+  .uk-slidenav:active {
+    background-color: var(--uk-slidenav-active-bg-computed);
+    color: var(--uk-slidenav-active-color-computed);
+  }
+
+  .uk-slidenav-lg {
+    /* Base Variables */
+    --uk-slidenav-large-padding: 10px;
+
+    padding: var(--uk-slidenav-large-padding);
+  }
+
+  .uk-slidenav-container {
+    display: flex;
+  }
+
+  .uk-slidenav svg {
+    height: var(--uk-slidenav-svg-height);
+    width: var(--uk-slidenav-svg-width);
+  }
+
+  /* ============================================
+     Slideshow Component
+     ============================================ */
+  .uk-slideshow {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .uk-slideshow-items {
+    position: relative;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+  }
+
+  .uk-slideshow-items > * {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    bottom: 0;
+    overflow: hidden;
+    will-change: transform, opacity;
+  }
+
+  .uk-slideshow-items > :not(.uk-active) {
+    display: none;
+  }
+
+  /* ============================================
+     Sortable Component
+     ============================================ */
+  .uk-sortable {
+    position: relative;
+  }
+
+  .uk-sortable > :last-child {
+    margin-block-end: 0;
+  }
+
+  .uk-sortable-drag {
+    /* Base Variables */
+    --uk-sortable-drag-z-index: 1050;
+
+    position: fixed !important;
+    z-index: var(--uk-sortable-drag-z-index) !important;
+    pointer-events: none;
+  }
+
+  .uk-sortable-placeholder {
+    /* Base Variables */
+    --uk-sortable-placeholder-opacity: 0;
+
+    opacity: var(--uk-sortable-placeholder-opacity);
+    pointer-events: none;
+  }
+
+  .uk-sortable-empty {
+    /* Base Variables */
+    --uk-sortable-empty-min-height: 3.5rem;
+
+    min-height: var(--uk-sortable-empty-min-height);
+  }
+
+  .uk-sortable-handle:hover {
+    cursor: move;
+  }
+
+  /* ============================================
+     Spinner Component
+     ============================================ */
+  .uk-spinner > * {
+    animation: uk-spinner-rotate 1.4s linear infinite;
+  }
+
+  @keyframes uk-spinner-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  .uk-spinner > * > * {
+    stroke-dasharray: 88px;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: uk-spinner-dash 1.4s ease-in-out infinite;
+    stroke-width: 1;
+    stroke-linecap: round;
+  }
+
+  @keyframes uk-spinner-dash {
+    0% {
+      stroke-dashoffset: 88px;
+    }
+    50% {
+      stroke-dashoffset: 22px;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 88px;
+      transform: rotate(450deg);
+    }
+  }
+
+  /* ============================================
+     Switcher Component
+     ============================================ */
+  .uk-switcher > :not(.uk-active) {
+    display: none;
+  }
 }

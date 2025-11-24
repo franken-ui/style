@@ -213,7 +213,192 @@
   .uk-pagination > * > *:focus-visible {
     outline: 2px dotted var(--uk-focus);
   }
+}
 
+@layer utilities {
+  /* Overflow Utilities */
+  .uk-overflow-hidden {
+    overflow: hidden;
+  }
+
+  .uk-overflow-auto {
+    overflow: auto;
+  }
+
+  /* Resize Utilities */
+  .uk-resize {
+    resize: both;
+  }
+
+  .uk-resize-horizontal {
+    resize: horizontal;
+  }
+
+  .uk-resize-vertical {
+    resize: vertical;
+  }
+
+  /* Inline Utilities */
+  [class*='uk-inline'] {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    vertical-align: middle;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .uk-inline-clip {
+    overflow: hidden;
+  }
+
+  /* Preserve Width */
+  .uk-preserve-width,
+  .uk-preserve-width canvas,
+  .uk-preserve-width img,
+  .uk-preserve-width svg,
+  .uk-preserve-width video {
+    max-width: none;
+  }
+
+  /* Responsive Utilities */
+  .uk-responsive-width,
+  .uk-responsive-height {
+    box-sizing: border-box;
+  }
+
+  .uk-responsive-width {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  .uk-responsive-height {
+    max-height: 100%;
+    width: auto;
+    max-width: none;
+  }
+
+  [uk-responsive],
+  [data-uk-responsive] {
+    max-width: 100%;
+  }
+
+  .uk-inline-clip[class*='uk-border-'] {
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Dropcap */
+  .uk-dropcap::first-letter,
+  .uk-dropcap > p:first-of-type::first-letter {
+    /* Base Variables */
+    --uk-dropcap-font-size: 4.5em;
+    --uk-dropcap-line-height: 1;
+    --uk-dropcap-margin-inline-end: 10px;
+    --uk-dropcap-margin-block-end: -2px;
+
+    display: block;
+    margin-inline-end: var(--uk-dropcap-margin-inline-end);
+    float: inline-start;
+    font-size: var(--uk-dropcap-font-size);
+    line-height: var(--uk-dropcap-line-height);
+    margin-block-end: var(--uk-dropcap-margin-block-end);
+  }
+
+  @-moz-document url-prefix() {
+    .uk-dropcap::first-letter,
+    .uk-dropcap > p:first-of-type::first-letter {
+      /* Base Variables */
+      --uk-dropcap-moz-margin-block-start: 1.1%;
+
+      margin-block-start: var(--uk-dropcap-moz-margin-block-start);
+    }
+  }
+
+  /* Disabled */
+  .uk-disabled {
+    pointer-events: none;
+  }
+
+  /* Transform Utilities */
+  .uk-transform-center {
+    transform: translate(-50%, -50%);
+  }
+
+  .uk-transform-origin-top-left {
+    transform-origin: 0 0;
+  }
+
+  .uk-transform-origin-top-center {
+    transform-origin: 50% 0;
+  }
+
+  .uk-transform-origin-top-right {
+    transform-origin: 100% 0;
+  }
+
+  .uk-transform-origin-center-left {
+    transform-origin: 0 50%;
+  }
+
+  .uk-transform-origin-center-right {
+    transform-origin: 100% 50%;
+  }
+
+  .uk-transform-origin-bottom-left {
+    transform-origin: 0 100%;
+  }
+
+  .uk-transform-origin-bottom-center {
+    transform-origin: 50% 100%;
+  }
+
+  .uk-transform-origin-bottom-right {
+    transform-origin: 100% 100%;
+  }
+
+  /* Text Alignment */
+  .uk-text-right {
+    text-align: end;
+  }
+
+  .uk-text-center {
+    text-align: center;
+  }
+
+  /* Text Break */
+  .uk-text-break {
+    overflow-wrap: break-word;
+  }
+
+  /* Border Radius */
+  .uk-rounded {
+    border-radius: var(--radius-md);
+  }
+
+  .uk-rounded-sm {
+    border-radius: var(--radius-sm);
+  }
+
+  /* Box Shadow */
+  .uk-shadow {
+    box-shadow: var(--shadow-xs);
+  }
+
+  .uk-shadow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Text Sizes */
+  .uk-text-sm {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .uk-text-base {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  /* Flex Utilities */
   .uk-flex {
     display: flex !important;
   }
@@ -226,11 +411,13 @@
     align-content: flex-start;
   }
 
+  /* Margin Auto */
   .uk-margin-auto-vertical {
-    margin-top: auto !important;
-    margin-bottom: auto !important;
+    margin-block-start: auto !important;
+    margin-block-end: auto !important;
   }
 
+  /* Text Truncate */
   .uk-text-truncate {
     max-width: 100%;
     overflow: hidden;
