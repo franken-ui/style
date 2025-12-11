@@ -70,8 +70,8 @@
     --uk-position-offset: 10px;
     --uk-position-viewport-offset: 8px;
     --uk-dropdown-width: auto;
-    --uk-dropdown-radius: var(--radius-md);
-    --uk-dropdown-shadow: var(--shadow-xs);
+    --uk-dropdown-radius: var(--uk-global-radius);
+    --uk-dropdown-shadow: var(--uk-global-shadow-small);
     --uk-dropdown-border-width: 1px;
     --uk-dropdown-border-color: var(--uk-border);
     --uk-dropdown-border-color-o: 10%;

@@ -29,11 +29,11 @@
     height: 1.25rem;
     min-width: 1.25rem;
     padding: 0 0.375rem;
-    font-size: var(--font-size-sm);
-    line-height: var(--font-size-sm--line-height);
+    font-size: var(--uk-global-font-size-small);
+    line-height: var(--uk-global-line-height-small);
     font-weight: 600;
     border-radius: 9999px;
-    box-shadow: var(--uk-badge-shadow, --shadow-sm);
+    box-shadow: var(--uk-badge-shadow, var(--uk-global-shadow));
     border-width: 1px;
     border-style: solid;
     border-color: var(--uk-badge-border-computed);

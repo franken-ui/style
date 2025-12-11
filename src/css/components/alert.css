@@ -27,7 +27,7 @@
     padding: 1rem 2rem 1rem 1rem;
     background-color: var(--uk-alert-bg-computed);
     color: var(--uk-alert-color-computed);
-    border-radius: var(--radius-md);
+    border-radius: var(--uk-global-radius);
     border-width: 1px;
     border-style: solid;
     border-color: var(--uk-alert-border-computed);

@@ -98,11 +98,11 @@
   /* Offcanvas Overlay */
   .uk-offcanvas-overlay {
     /* Base Variables */
-    --uk-offcanvas-overlay-bg: var(--color-black);
+    --uk-offcanvas-overlay-bg: #000;
     --uk-offcanvas-overlay-bg-o: 80%;
     --uk-offcanvas-overlay-opacity: 1;
     --uk-offcanvas-overlay-transition: opacity 0.15s linear;
-    --uk-offcanvas-overlay-blur: var(--blur-xs);
+    --uk-offcanvas-overlay-blur: var(--uk-global-blur);
 
     /* Computed value */
     --uk-offcanvas-overlay-bg-computed: color-mix(

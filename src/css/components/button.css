@@ -2,6 +2,9 @@
   /* Base Button */
   .uk-button {
     --uk-button-height: 2.5rem;
+    --uk-button-padding: 0.625rem 1.25rem;
+    --uk-button-font-size: var(--uk-global-font-size);
+    --uk-button-line-height: var(--uk-global-line-height);
 
     --uk-button-bg: var(--uk-bg);
     --uk-button-bg-o: 100%;
@@ -11,11 +14,11 @@
     --uk-button-border: var(--uk-border);
     --uk-button-border-o: 10%;
 
-    --uk-button-radius: var(--radius-md);
+    --uk-button-radius: var(--uk-global-radius);
 
     --uk-button-font-weight: 500;
 
-    --uk-button-shadow: var(--shadow-sm);
+    --uk-button-shadow: var(--uk-global-shadow-small);
 
     --uk-button-hover-bg: var(--uk-accent);
     --uk-button-hover-bg-o: 4%;
@@ -24,8 +27,6 @@
     --uk-button-disabled-o: 50%;
 
     --uk-button-icon-size: 1rem;
-
-    --uk-button-padding: 0.625rem 1.25rem;
 
     /* Computed values */
     --uk-button-bg-computed: color-mix(
@@ -61,6 +62,8 @@
     box-sizing: border-box;
     width: auto;
     font-weight: var(--uk-button-font-weight);
+    font-size: var(--uk-button-font-size);
+    line-height: var(--uk-button-line-height);
     text-align: center;
     white-space: nowrap;
     border-radius: var(--uk-button-radius);
@@ -109,7 +112,7 @@
     --uk-button-border: var(--uk-border);
     --uk-button-border-o: 10%;
     --uk-button-hover-bg: var(--uk-accent);
-    --uk-button-hover-bg-o: 100%;
+    --uk-button-hover-bg-o: var(--uk-accent-o);
     --uk-button-hover-color: var(--uk-accent-f);
   }
 
@@ -138,45 +141,45 @@
   .uk-button-danger {
     --uk-button-bg: var(--uk-danger);
     --uk-button-bg-o: 100%;
-    --uk-button-color: var(--color-white);
+    --uk-button-color: #fff;
     --uk-button-border: var(--uk-danger);
     --uk-button-border-o: 100%;
     --uk-button-hover-bg: var(--uk-danger);
     --uk-button-hover-bg-o: 90%;
-    --uk-button-hover-color: var(--color-white);
+    --uk-button-hover-color: #fff;
   }
 
   .uk-button-success {
     --uk-button-bg: var(--uk-success);
     --uk-button-bg-o: 100%;
-    --uk-button-color: var(--color-white);
+    --uk-button-color: #fff;
     --uk-button-border: var(--uk-success);
     --uk-button-border-o: 100%;
     --uk-button-hover-bg: var(--uk-success);
     --uk-button-hover-bg-o: 90%;
-    --uk-button-hover-color: var(--color-white);
+    --uk-button-hover-color: #fff;
   }
 
   .uk-button-warning {
     --uk-button-bg: var(--uk-warning);
     --uk-button-bg-o: 100%;
-    --uk-button-color: var(--color-white);
+    --uk-button-color: #fff;
     --uk-button-border: var(--uk-warning);
     --uk-button-border-o: 100%;
     --uk-button-hover-bg: var(--uk-warning);
     --uk-button-hover-bg-o: 90%;
-    --uk-button-hover-color: var(--color-white);
+    --uk-button-hover-color: #fff;
   }
 
   .uk-button-info {
     --uk-button-bg: var(--uk-info);
     --uk-button-bg-o: 100%;
-    --uk-button-color: var(--color-white);
+    --uk-button-color: #fff;
     --uk-button-border: var(--uk-info);
     --uk-button-border-o: 100%;
     --uk-button-hover-bg: var(--uk-info);
     --uk-button-hover-bg-o: 90%;
-    --uk-button-hover-color: var(--color-white);
+    --uk-button-hover-color: #fff;
   }
 
   /* Outline Buttons */
@@ -368,31 +371,31 @@
   }
 
   /* Button Sizes */
-  .uk-button-xs {
-    height: 1.75rem;
-    padding: 0.375rem 0.75rem;
-    font-size: var(--font-size-xs);
-    line-height: var(--font-size-xs--line-height);
+  .uk-button-xsmall {
+    --uk-button-height: 1.75rem;
+    --uk-button-padding: 0.375rem 0.75rem;
+    --uk-button-font-size: var(--uk-global-font-size-small);
+    --uk-button-line-height: var(--uk-global-line-height-small);
   }
 
-  .uk-button-sm {
-    height: 2rem;
-    padding: 0.5rem 1rem;
-    font-size: var(--font-size-sm);
-    line-height: var(--font-size-sm--line-height);
+  .uk-button-small {
+    --uk-button-height: 2rem;
+    --uk-button-padding: 0.5rem 1rem;
+    --uk-button-font-size: var(--uk-global-font-size-small);
+    --uk-button-line-height: var(--uk-global-line-height-small);
   }
 
-  .uk-button-md {
-    height: 3rem;
-    padding: 0.75rem 1.5rem;
-    font-size: var(--uk-texts);
-    line-height: var(--font-size--line-height);
+  .uk-button-medium {
+    --uk-button-height: 3rem;
+    --uk-button-padding: 0.75rem 1.5rem;
+    --uk-button-font-size: var(--uk-global-font-size);
+    --uk-button-line-height: var(--uk-global-line-height);
   }
 
-  .uk-button-lg {
-    height: 3.5rem;
-    padding: 0.875rem 1.75rem;
-    font-size: var(--uk-texts);
-    line-height: var(--font-size--line-height);
+  .uk-button-large {
+    --uk-button-height: 3.5rem;
+    --uk-button-padding: 0.875rem 1.75rem;
+    --uk-button-font-size: var(--uk-global-font-size);
+    --uk-button-line-height: var(--uk-global-line-height);
   }
 }

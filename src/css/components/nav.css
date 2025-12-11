@@ -11,7 +11,7 @@
     --uk-nav-sub-border-w: 1px;
 
     /* Global Settings */
-    --uk-nav-radius: var(--radius-md);
+    --uk-nav-radius: var(--uk-global-radius);
   }
 
   /* Nav Alt  */

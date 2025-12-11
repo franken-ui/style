@@ -127,7 +127,7 @@
   /* Comment Primary Variant */
   .uk-comment-primary {
     /* Base Variables */
-    --uk-comment-primary-radius: var(--radius-md);
+    --uk-comment-primary-radius: var(--uk-global-radius);
     --uk-comment-primary-bg: var(--uk-primary);
     --uk-comment-primary-bg-o: 100%;
     --uk-comment-primary-color: var(--uk-primary-f);

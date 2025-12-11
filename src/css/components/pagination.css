@@ -11,8 +11,8 @@
     --uk-pagination-item-font-size: 0.875rem;
     --uk-pagination-item-line-height: 1.25rem;
     --uk-pagination-item-font-weight: 500;
-    --uk-pagination-item-radius: var(--radius-md);
-    --uk-pagination-item-shadow: var(--shadow-sm);
+    --uk-pagination-item-radius: var(--uk-global-radius);
+    --uk-pagination-item-shadow: var(--uk-global-shadow-small);
     --uk-pagination-item-icon-size: 1rem;
 
     display: flex;
@@ -286,11 +286,11 @@
     /* Base Variables */
     --uk-pagination-item-bg: var(--uk-danger);
     --uk-pagination-item-bg-o: 100%;
-    --uk-pagination-item-color: var(--color-white);
+    --uk-pagination-item-color: #fff;
     --uk-pagination-item-color-o: 100%;
     --uk-pagination-item-hover-bg: var(--uk-danger);
     --uk-pagination-item-hover-bg-o: 90%;
-    --uk-pagination-item-hover-color: var(--color-white);
+    --uk-pagination-item-hover-color: #fff;
     --uk-pagination-item-hover-color-o: 100%;
 
     /* Computed values */

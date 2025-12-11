@@ -11,7 +11,7 @@
 
   .uk-breadcrumb > * > :hover {
     text-decoration: none;
-    color: var(--uk-background-f);
+    color: var(--uk-bg-f);
 
     transition-property: color;
     transition-duration: 150ms;
@@ -21,7 +21,7 @@
   .uk-breadcrumb > :last-child > span,
   .uk-breadcrumb > :last-child > a:not([href]) {
     font-weight: 500;
-    color: var(--uk-background-f);
+    color: var(--uk-bg-f);
   }
 
   .uk-breadcrumb > :nth-child(n + 2):not(.uk-first-column)::before {

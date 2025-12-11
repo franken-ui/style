@@ -1,0 +1,220 @@
+@layer components {
+  /* ============================================
+     Typography Component
+     ============================================ */
+
+  /* Text Lead */
+  .uk-text-lead {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--uk-muted-f);
+  }
+
+  /* Text Meta */
+  .uk-text-meta {
+    color: var(--uk-muted-f);
+  }
+
+  /* Text Background */
+  .uk-text-background {
+    /* Base Variables */
+    --uk-text-background-bg: #1e87f0;
+    --uk-text-background-image: linear-gradient(
+      90deg,
+      #1e87f0 0%,
+      #411ef0 100%
+    );
+
+    -webkit-background-clip: text;
+    color: transparent !important;
+    display: inline-block;
+    background-color: var(--uk-text-background-bg);
+    background-image: var(--uk-text-background-image);
+  }
+
+  /* Paragraph */
+  .uk-paragraph {
+    line-height: 1.75rem;
+  }
+
+  .uk-paragraph:not(:first-child) {
+    margin-block-start: 1.5rem;
+  }
+
+  /* Blockquote */
+  .uk-blockquote {
+    margin-block-start: 1.5rem;
+    border-inline-start-width: 2px;
+    border-color: color-mix(in srgb, var(--uk-border) 10%, transparent);
+    padding-inline-start: 1.5rem;
+    font-style: italic;
+  }
+
+  /* Code Span */
+  .uk-codespan {
+    position: relative;
+    border-radius: var(--radius-sm);
+    background-color: color-mix(
+      in srgb,
+      var(--uk-muted) var(--uk-muted-o),
+      transparent
+    );
+    padding: 0.2rem 0.3rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+  }
+
+  /* Keyboard */
+  .uk-kbd {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.375rem;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-style: solid;
+    border-color: color-mix(in srgb, var(--uk-border) 10%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--uk-muted) var(--uk-muted-o),
+      transparent
+    );
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--uk-muted-f);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============================================
+     Hero Sizes
+     ============================================ */
+  .uk-hero-sm {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .uk-hero-md {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .uk-hero-lg {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .uk-hero-xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .uk-hero-2xl {
+    font-size: 5.25rem;
+    line-height: 1;
+  }
+
+  .uk-hero-3xl {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  /* ============================================
+     Heading Variants
+     ============================================ */
+
+  /* Heading Divider */
+  .uk-heading-divider {
+    padding-block-end: calc(5px + 0.1em);
+    border-block-end-width: calc(0.2px + 0.05em);
+    border-block-end-style: solid;
+    border-block-end-color: color-mix(
+      in srgb,
+      var(--uk-border) 10%,
+      transparent
+    );
+  }
+
+  /* Heading Bullet */
+  .uk-heading-bullet {
+    position: relative;
+  }
+
+  .uk-heading-bullet::before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: calc(-0.1 * 1em);
+    vertical-align: middle;
+    height: calc(4px + 0.7em);
+    margin-inline-end: calc(5px + 0.2em);
+    border-inline-start-width: calc(5px + 0.1em);
+    border-inline-start-style: solid;
+    border-inline-start-color: color-mix(
+      in srgb,
+      var(--uk-border) 10%,
+      transparent
+    );
+  }
+
+  /* Heading Line */
+  .uk-heading-line {
+    overflow: hidden;
+  }
+
+  .uk-heading-line > * {
+    display: inline-block;
+    position: relative;
+  }
+
+  .uk-heading-line > ::before,
+  .uk-heading-line > ::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - (calc(0.2px + 0.05em) / 2));
+    width: 2000px;
+    border-block-end: calc(0.2px + 0.05em) solid;
+    border-color: color-mix(in srgb, var(--uk-border) 10%, transparent);
+  }
+
+  .uk-heading-line > ::before {
+    inset-inline-end: 100%;
+    margin-inline-end: calc(5px + 0.3em);
+  }
+
+  .uk-heading-line > ::after {
+    inset-inline-start: 100%;
+    margin-inline-start: calc(5px + 0.3em);
+  }
+
+  /* ============================================
+     Standard Headings
+     ============================================ */
+  .uk-h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+
+  .uk-h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+
+  .uk-h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+
+  .uk-h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+}

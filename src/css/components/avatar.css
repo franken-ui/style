@@ -2,7 +2,7 @@
   .fr-avatar {
     --uk-avatar-bg: var(--uk-bg);
     --uk-avatar-size: 2.5rem;
-    --uk-avatar-radius: var(--radius-md);
+    --uk-avatar-radius: var(--uk-global-radius);
     --uk-avatar-border: var(--uk-border);
     --uk-avatar-border-o: 4%;
 
@@ -26,7 +26,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: var(--radius-sm);
+    border-radius: var(--uk-global-radius-small);
   }
 
   .fr-avatar-text {
@@ -35,7 +35,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    border-radius: var(--radius-sm);
+    border-radius: var(--uk-global-radius-small);
   }
 
   /* Rounded variant */

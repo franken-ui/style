@@ -4,15 +4,15 @@
      ============================================ */
   :root {
     /* Base Variables */
-    --uk-form-input-radius: var(--radius-md);
-    --uk-form-input-shadow: var(--shadow-sm);
+    --uk-form-input-radius: var(--uk-global-radius);
+    --uk-form-input-shadow: var(--uk-global-shadow);
     --uk-form-input-height: 2.5rem;
     --uk-form-input-font-size: 0.875rem;
     --uk-form-input-leading: 1.25rem;
     --uk-form-input-padding: 0.375rem 0.75rem;
-    --uk-form-toggle-switch-shadow: var(--shadow-sm);
-    --uk-form-radio-radius: var(--radius-sm);
-    --uk-form-radio-shadow: var(--shadow-xs);
+    --uk-form-toggle-switch-shadow: var(--uk-global-shadow-small);
+    --uk-form-radio-radius: var(--uk-global-radius-small);
+    --uk-form-radio-shadow: var(--uk-global-shadow-small);
 
     /* Checkbox and Radio Images - to be filled manually */
     --uk-form-checkbox-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-check-icon lucide-check'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
@@ -278,9 +278,9 @@
   .uk-radio:checked,
   .uk-checkbox:checked {
     /* Base Variables */
-    --uk-form-radio-checked-bg: var(--color-blue-500);
+    --uk-form-radio-checked-bg: oklch(62.3% 0.214 259.815);
     --uk-form-radio-checked-bg-o: 100%;
-    --uk-form-radio-checked-border-color: var(--color-blue-500);
+    --uk-form-radio-checked-border-color: oklch(62.3% 0.214 259.815);
     --uk-form-radio-checked-border-color-o: 100%;
 
     /* Computed values */
@@ -507,26 +507,26 @@
   /* ============================================
      Form Size Variants
      ============================================ */
-  .uk-form-xs {
-    --uk-form-input-font-size: 0.75rem;
-    --uk-form-input-leading: 1rem;
+  .uk-form-xsmall {
+    --uk-form-input-font-size: var(--uk-global-font-size-small);
+    --uk-form-input-leading: var(--uk-global-line-height-small);
     --uk-form-input-height: 1.75rem;
     --uk-form-input-padding: 0.25rem 0.5rem;
   }
 
-  .uk-form-sm {
-    --uk-form-input-font-size: 0.75rem;
-    --uk-form-input-leading: 1rem;
+  .uk-form-small {
+    --uk-form-input-font-size: var(--uk-global-font-size-small);
+    --uk-form-input-leading: var(--uk-global-line-height-small);
     --uk-form-input-height: 2rem;
     --uk-form-input-padding: 0.25rem 0.5rem;
   }
 
-  .uk-form-md {
+  .uk-form-medium {
     --uk-form-input-height: 3rem;
     --uk-form-input-padding: 0.5rem 1rem;
   }
 
-  .uk-form-lg {
+  .uk-form-large {
     --uk-form-input-height: 3.5rem;
     --uk-form-input-padding: 0.5rem 1rem;
   }

@@ -6,7 +6,7 @@
     /* Base Variables */
     --uk-tab-item-padding: 0.3125rem 0.625rem;
     --uk-tab-link-gap: 0.25em;
-    --uk-tab-radius: var(--radius-md);
+    --uk-tab-radius: var(--uk-global-radius);
 
     display: flex;
     flex-wrap: wrap;
@@ -178,7 +178,7 @@
   }
 
   .uk-tab-alt > .uk-active > a {
-    border-radius: calc(var(--uk-tab-radius) - 0.125rem);
+    border-radius: var(--uk-global-radius-small);
     background-color: var(--uk-bg);
     color: var(--uk-bg-f);
     border-bottom: none;

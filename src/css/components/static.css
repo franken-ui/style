@@ -941,7 +941,7 @@
     --uk-slidenav-height: 2.25rem;
     --uk-slidenav-width: 2.25rem;
     --uk-slidenav-radius: 9999px;
-    --uk-slidenav-shadow: var(--shadow-sm);
+    --uk-slidenav-shadow: var(--uk-global-shadow-small);
     --uk-slidenav-border-width: 1px;
     --uk-slidenav-border-color: var(--uk-border);
     --uk-slidenav-border-color-o: 10%;

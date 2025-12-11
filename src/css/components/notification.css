@@ -41,8 +41,8 @@
   .uk-notification-message {
     /* Base Variables */
     --uk-notification-padding: 1rem 1.5rem 1rem 1rem;
-    --uk-notification-radius: var(--radius-md);
-    --uk-notification-shadow: var(--shadow-xs);
+    --uk-notification-radius: var(--uk-global-radius);
+    --uk-notification-shadow: var(--uk-global-shadow-small);
     --uk-notification-border-width: 1px;
     --uk-notification-border-color: var(--uk-border);
     --uk-notification-border-color-o: 10%;
@@ -124,9 +124,9 @@
     --uk-notification-border-color-o: 100%;
     --uk-notification-bg: var(--uk-primary);
     --uk-notification-bg-o: 100%;
-    --uk-notification-color: var(--color-white);
+    --uk-notification-color: #fff;
     --uk-notification-color-o: 100%;
-    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color: #fff;
     --uk-notification-close-color-o: 50%;
   }
 
@@ -136,9 +136,9 @@
     --uk-notification-border-color-o: 100%;
     --uk-notification-bg: var(--uk-secondary);
     --uk-notification-bg-o: 100%;
-    --uk-notification-color: var(--color-white);
+    --uk-notification-color: #fff;
     --uk-notification-color-o: 100%;
-    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color: #fff;
     --uk-notification-close-color-o: 50%;
   }
 
@@ -148,9 +148,9 @@
     --uk-notification-border-color-o: 100%;
     --uk-notification-bg: var(--uk-danger);
     --uk-notification-bg-o: 100%;
-    --uk-notification-color: var(--color-white);
+    --uk-notification-color: #fff;
     --uk-notification-color-o: 100%;
-    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color: #fff;
     --uk-notification-close-color-o: 50%;
   }
 
@@ -160,9 +160,9 @@
     --uk-notification-border-color-o: 100%;
     --uk-notification-bg: var(--uk-success);
     --uk-notification-bg-o: 100%;
-    --uk-notification-color: var(--color-white);
+    --uk-notification-color: #fff;
     --uk-notification-color-o: 100%;
-    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color: #fff;
     --uk-notification-close-color-o: 50%;
   }
 
@@ -172,9 +172,9 @@
     --uk-notification-border-color-o: 100%;
     --uk-notification-bg: var(--uk-warning);
     --uk-notification-bg-o: 100%;
-    --uk-notification-color: var(--color-white);
+    --uk-notification-color: #fff;
     --uk-notification-color-o: 100%;
-    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color: #fff;
     --uk-notification-close-color-o: 50%;
   }
 
@@ -184,9 +184,9 @@
     --uk-notification-border-color-o: 100%;
     --uk-notification-bg: var(--uk-info);
     --uk-notification-bg-o: 100%;
-    --uk-notification-color: var(--color-white);
+    --uk-notification-color: #fff;
     --uk-notification-color-o: 100%;
-    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color: #fff;
     --uk-notification-close-color-o: 50%;
   }
 
@@ -196,9 +196,9 @@
     --uk-notification-border-color-o: 100%;
     --uk-notification-bg: var(--uk-muted);
     --uk-notification-bg-o: 100%;
-    --uk-notification-color: var(--color-white);
+    --uk-notification-color: #fff;
     --uk-notification-color-o: 100%;
-    --uk-notification-close-color: var(--color-white);
+    --uk-notification-close-color: #fff;
     --uk-notification-close-color-o: 50%;
   }
 

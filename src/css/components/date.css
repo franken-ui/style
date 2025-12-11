@@ -160,7 +160,7 @@
     /* Base Variables */
     --uk-cal-cell-body-font-size: 1rem;
     --uk-cal-cell-padding: 0;
-    --uk-cal-cell-radius: var(--radius-md);
+    --uk-cal-cell-radius: var(--uk-global-radius);
 
     width: var(--uk-cal-cell-size);
     height: var(--uk-cal-cell-size);

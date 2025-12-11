@@ -5,8 +5,8 @@
   .uk-card {
     /* Base Variables */
     --uk-card-padding: 1rem;
-    --uk-card-radius: var(--radius-md);
-    --uk-card-shadow: var(--shadow-xs);
+    --uk-card-radius: var(--uk-global-radius);
+    --uk-card-shadow: var(--uk-global-shadow);
     --uk-card-border-width: 1px;
     --uk-card-border-color: var(--uk-border);
     --uk-card-border-color-o: 10%;
@@ -113,7 +113,7 @@
     --uk-card-border-color-o: 0%;
     --uk-card-bg: var(--uk-danger);
     --uk-card-bg-o: 100%;
-    --uk-card-color: var(--color-white);
+    --uk-card-color: #fff;
     --uk-card-color-o: 100%;
   }
 
@@ -124,7 +124,7 @@
     --uk-card-border-color-o: 0%;
     --uk-card-bg: var(--uk-success);
     --uk-card-bg-o: 100%;
-    --uk-card-color: var(--color-white);
+    --uk-card-color: #fff;
     --uk-card-color-o: 100%;
   }
 
@@ -135,7 +135,7 @@
     --uk-card-border-color-o: 0%;
     --uk-card-bg: var(--uk-warning);
     --uk-card-bg-o: 100%;
-    --uk-card-color: var(--color-white);
+    --uk-card-color: #fff;
     --uk-card-color-o: 100%;
   }
 
@@ -146,7 +146,7 @@
     --uk-card-border-color-o: 0%;
     --uk-card-bg: var(--uk-info);
     --uk-card-bg-o: 100%;
-    --uk-card-color: var(--color-white);
+    --uk-card-color: #fff;
     --uk-card-color-o: 100%;
   }
 
