@@ -1,4 +1,4 @@
-import { rules } from './runtime-rules';
+import { rules as defaultRules } from './runtime-rules';
 
 (() => {
   type Breakpoints = Record<string, string>;
@@ -61,6 +61,62 @@ import { rules } from './runtime-rules';
     utilities: GeneratedCssLayer;
   }
 
+  // Merge default rules with custom rules
+  function getMergedRules(): RuleConfig[] {
+    const customRules = (window as any).FS?.customRules || [];
+
+    if (!Array.isArray(customRules)) {
+      console.warn(
+        '[fs] FS.customRules must be an array. Ignoring custom rules.',
+      );
+      return defaultRules as RuleConfig[];
+    }
+
+    // Validate custom rules
+    const validatedCustomRules = customRules.filter((rule: any) => {
+      if (!rule.selector || typeof rule.selector !== 'string') {
+        console.warn(
+          '[fs] Custom rule missing or invalid "selector" property:',
+          rule,
+        );
+        return false;
+      }
+      if (!rule.properties) {
+        console.warn('[fs] Custom rule missing "properties" property:', rule);
+        return false;
+      }
+      if (!rule.arbitrary && (!rule.values || !Array.isArray(rule.values))) {
+        console.warn(
+          '[fs] Non-arbitrary custom rule missing or invalid "values" array:',
+          rule,
+        );
+        return false;
+      }
+      return true;
+    });
+
+    // Merge rules: custom rules override default rules with the same selector
+    const merged = [...(defaultRules as RuleConfig[])];
+
+    validatedCustomRules.forEach((customRule: RuleConfig) => {
+      const existingIndex = merged.findIndex(
+        r => r.selector === customRule.selector,
+      );
+      if (existingIndex !== -1) {
+        console.info(
+          `[fs] Overriding default rule for selector: "${customRule.selector}"`,
+        );
+        merged[existingIndex] = customRule;
+      } else {
+        merged.push(customRule);
+      }
+    });
+
+    return merged;
+  }
+
+  const rules = getMergedRules();
+
   function escapeCssIdentifier(str: string): string {
     return str.replace(/([ !"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g, '\\$1');
   }
@@ -90,9 +146,7 @@ import { rules } from './runtime-rules';
   }
 
   function findStyleRule(selector: string): RuleConfig | null {
-    return (
-      (rules as RuleConfig[]).find(rule => rule.selector === selector) || null
-    );
+    return rules.find(rule => rule.selector === selector) || null;
   }
 
   function buildCssRule({
@@ -293,35 +347,64 @@ import { rules } from './runtime-rules';
     }
   }
 
+  let currentObserver: MutationObserver | null = null;
+
   function init(): void {
+    // Log merged rules info
+    const customRulesCount = ((window as any).FS?.customRules || []).length;
+    if (customRulesCount > 0) {
+      console.info(`[fs] Loaded ${customRulesCount} custom rule(s)`);
+    }
+
     // Step 1: Always generate styles once (for all [data-uk] elements)
     generateInteractiveStyles();
 
-    // Step 2: Only activate MutationObserver if [data-uk-reactive] exists
-    const hasReactive = document.querySelector('[data-uk-reactive]');
+    // Step 2: Only activate MutationObserver if [data-uk] exists
+    const hasReactive = document.querySelector('[data-uk]');
     if (!hasReactive) {
-      console.info(
-        '[fs] No [data-uk-reactive] found — reactive mode disabled.',
-      );
+      console.info('[fs] No [data-uk] found — reactive mode disabled.');
       return;
     }
 
-    const observer = new MutationObserver(handleMutations);
-    observer.observe(document.body, {
+    // Disconnect existing observer if any
+    if (currentObserver) {
+      currentObserver.disconnect();
+    }
+
+    currentObserver = new MutationObserver(handleMutations);
+    currentObserver.observe(document.body, {
       childList: true,
       subtree: true,
       attributes: true,
       attributeFilter: ['data-uk', 'class', 'cls'],
     });
 
-    (window as any).__fsInteractive = {
-      regenerate: generateInteractiveStyles,
-      stop: () => observer.disconnect(),
-      getCache: () => ruleCache,
-    };
-
-    window.addEventListener('beforeunload', () => observer.disconnect());
+    window.addEventListener('beforeunload', () =>
+      currentObserver?.disconnect(),
+    );
   }
+
+  function refresh(): void {
+    console.info('[fs] Refreshing interactive styles...');
+
+    // Clear the rule cache to force regeneration
+    ruleCache.clear();
+
+    // Regenerate styles with potentially new DOM content
+    init();
+  }
+
+  // Initialize FS namespace if it doesn't exist
+  (window as any).FS = (window as any).FS || {};
+
+  // Expose public API
+  Object.assign((window as any).FS, {
+    refresh,
+    regenerate: generateInteractiveStyles,
+    stop: () => currentObserver?.disconnect(),
+    getCache: () => ruleCache,
+    getRules: () => getMergedRules(),
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
