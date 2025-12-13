@@ -1,7 +1,6 @@
 import { type PropertyValues, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { styleMap } from 'lit/directives/style-map.js';
 import { InputMixin } from './shared/input';
 import { Base } from './shared/base';
 
@@ -9,8 +8,8 @@ import { Base } from './shared/base';
  * CSS class names interface for styling different parts of the PIN input component.
  */
 interface Cls extends Record<string, string> {
-  /** CSS classes for the main container/group wrapper. */
-  container: string;
+  /** CSS classes for the main div. */
+  'host-inner': string;
   /** CSS classes for the inputs wrapper div. */
   wrapper: string;
   /** CSS classes for individual input fields. */
@@ -60,12 +59,12 @@ interface Stl extends Record<string, string> {
  * @slot label - Custom label content (overrides i18n label)
  * @slot description - Custom description content (overrides i18n description)
  *
- * @csspart container - The main container/group wrapper
- * @csspart wrapper - The inputs wrapper div
- * @csspart input - Individual input fields
- * @csspart label - The label element
- * @csspart description - The description element
- * @csspart live-region - The screen reader announcement region
+ * @cls host-inner - The main div
+ * @cls wrapper - The inputs wrapper div
+ * @cls input - Individual input fields
+ * @cls label - The label element
+ * @cls description - The description element
+ * @cls live-region - The screen reader announcement region
  *
  * @example
  * ```html
@@ -82,20 +81,20 @@ interface Stl extends Record<string, string> {
  *
  * <!-- With custom styling -->
  * <uk-input-pin
- *   cls='{"container": "pin-group", "input": "pin-digit"}'
+ *   cls='{"host-inner": "pin-group", "input": "pin-digit"}'
  *   stl='{"input": "width: 40px; height: 50px;"}'>
  * </uk-input-pin>
  *
  * <!-- Using script tag for configuration -->
  * <uk-input-pin name="pin" length="6">
- *   <script type="application/json">
+ *   <script data-fn="config" type="application/json">
  *   {
  *     "i18n": {
  *       "label": "Security PIN",
  *       "description": "Enter your 6-digit PIN"
  *     },
  *     "cls": {
- *       "container": "security-pin",
+ *       "host-inner": "security-pin",
  *       "input": "pin-field"
  *     }
  *   }
@@ -109,13 +108,13 @@ export class InputPin extends InputMixin(Base) {
    * The default element key used for applying simple string CSS classes via `cls` attribute.
    * This targets the main container.
    */
-  protected 'cls-default-element' = 'container';
+  protected 'cls-default-element' = 'host-inner';
 
   /**
    * The default element key used for applying simple string inline styles via `stl` attribute.
    * This targets the main container.
    */
-  protected 'stl-default-element' = 'container';
+  protected 'stl-default-element' = 'host-inner';
 
   /** Custom event name emitted when value changes */
   protected 'input-event' = 'uk-input-pin:change';
@@ -170,8 +169,8 @@ export class InputPin extends InputMixin(Base) {
    */
   @state()
   protected $cls: Cls = {
-    container: '',
-    wrapper: '',
+    'host-inner': '',
+    wrapper: 'uk-input-pin',
     input: '',
     label: '',
     description: '',
@@ -623,9 +622,8 @@ export class InputPin extends InputMixin(Base) {
 
     return html`
       <input
-        part="input"
-        class=${this.$cls.input}
-        style=${this.$stl.input}
+        class=${this.$cls['input']}
+        style=${this.$stl['input']}
         data-pin-input
         type="text"
         inputmode=${this['input-mode']}
@@ -656,13 +654,12 @@ export class InputPin extends InputMixin(Base) {
     if (hasCustomLabel) {
       return html`
         <span
-          part="label"
           id="${this.groupId}-label"
           class=${classMap({
-            [this.$cls.label]: true,
+            [this.$cls['label']]: true,
             'sr-only': !this['show-labels'],
           })}
-          style=${this.$stl.label}
+          style=${this.$stl['label']}
         >
           <slot name="label"></slot>
         </span>
@@ -671,13 +668,12 @@ export class InputPin extends InputMixin(Base) {
 
     return html`
       <span
-        part="label"
         id="${this.groupId}-label"
         class=${classMap({
-          [this.$cls.label]: true,
+          [this.$cls['label']]: true,
           'sr-only': !this['show-labels'],
         })}
-        style=${this.$stl.label}
+        style=${this.$stl['label']}
       >
         ${this.groupLabel}
       </span>
@@ -694,13 +690,12 @@ export class InputPin extends InputMixin(Base) {
     if (hasCustomDescription) {
       return html`
         <span
-          part="description"
           id="${this.groupId}-desc"
           class=${classMap({
-            [this.$cls.description]: true,
+            [this.$cls['description']]: true,
             'sr-only': !this['show-labels'],
           })}
-          style=${this.$stl.description}
+          style=${this.$stl['description']}
         >
           <slot name="description"></slot>
         </span>
@@ -709,13 +704,12 @@ export class InputPin extends InputMixin(Base) {
 
     return html`
       <span
-        part="description"
         id="${this.groupId}-desc"
         class=${classMap({
-          [this.$cls.description]: true,
+          [this.$cls['description']]: true,
           'sr-only': !this['show-labels'],
         })}
-        style=${this.$stl.description}
+        style=${this.$stl['description']}
       >
         ${this.groupDescription}
       </span>
@@ -732,18 +726,16 @@ export class InputPin extends InputMixin(Base) {
     return html`
       <div
         data-host-inner
-        part="container"
-        class=${classMap(this.$cls)}
-        style=${styleMap(this.$stl)}
+        class=${this.$cls['host-inner']}
+        style=${this.$cls['host-inner']}
         role="group"
         aria-labelledby="${this.groupId}-label ${this.groupId}-desc"
       >
         ${this.renderLabel()} ${this.renderDescription()}
 
         <div
-          part="wrapper"
-          class=${this.$cls.wrapper}
-          style=${this.$stl.wrapper}
+          class=${this.$cls['wrapper']}
+          style=${this.$stl['wrapper']}
           role="presentation"
         >
           ${Array(this.length)
@@ -752,7 +744,6 @@ export class InputPin extends InputMixin(Base) {
         </div>
 
         <span
-          part="live-region"
           role="status"
           aria-live="polite"
           aria-atomic="true"
