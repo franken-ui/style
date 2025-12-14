@@ -112,7 +112,7 @@
   .uk-input-range {
     /* Base Variables - Declare here so all child elements can access */
     --uk-input-range-track-height: 0.375rem;
-    --uk-input-range-track-radius: var(--radius-md);
+    --uk-input-range-track-radius: var(--uk-global-radius);
     --uk-input-range-label-offset-y: 2.5rem;
 
     position: relative;
@@ -170,7 +170,7 @@
     /* Base Variables */
     --uk-input-range-knob-size: 1rem;
     --uk-input-range-knob-radius: 9999px;
-    --uk-input-range-knob-shadow: var(--shadow-xs);
+    --uk-input-range-knob-shadow: var(--uk-global-shadow);
     --uk-input-range-knob-border-color: var(--uk-primary);
     --uk-input-range-knob-border-color-o: 50%;
     --uk-input-range-knob-bg: var(--uk-bg);
@@ -219,5 +219,234 @@
 
   .uk-input-range-label-bottom {
     inset-block-start: var(--uk-input-range-label-offset-y);
+  }
+
+  /* ============================================
+     Input Tag Component
+     ============================================ */
+  .uk-input-tag {
+    /* Base Variables */
+    --uk-input-tag-min-height: 2.5rem;
+    --uk-input-tag-padding: 0.5rem;
+    --uk-input-tag-gap: 0.25rem;
+    --uk-input-tag-shadow: var(--uk-form-input-shadow);
+    --uk-input-tag-radius: var(--uk-form-input-radius);
+    --uk-input-tag-border-width: 1px;
+    --uk-input-tag-border-color: var(--uk-input);
+    --uk-input-tag-border-color-o: 10%;
+    --uk-input-tag-focus-ring-color: var(--uk-focus);
+    --uk-input-tag-focus-ring-color-o: 100%;
+
+    /* Computed values */
+    --uk-input-tag-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-input-tag-border-color) var(--uk-input-tag-border-color-o),
+      transparent
+    );
+    --uk-input-tag-focus-ring-color-computed: color-mix(
+      in srgb,
+      var(--uk-input-tag-focus-ring-color)
+        var(--uk-input-tag-focus-ring-color-o),
+      transparent
+    );
+
+    background-color: transparent;
+    display: flex;
+    min-height: var(--uk-input-tag-min-height);
+    padding: var(--uk-input-tag-padding);
+    gap: var(--uk-input-tag-gap);
+    flex-wrap: wrap;
+    align-items: center;
+    box-shadow: var(--uk-input-tag-shadow);
+    border-radius: var(--uk-input-tag-radius);
+    border-width: var(--uk-input-tag-border-width);
+    border-style: solid;
+    border-color: var(--uk-input-tag-border-color-computed);
+  }
+
+  .uk-input-tag:has(input:focus) {
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: var(--uk-input-tag-focus-ring-color-computed);
+    outline-offset: 0px;
+    box-shadow: none;
+  }
+
+  .uk-input-tag.uk-disabled {
+    opacity: 0.5;
+  }
+
+  .uk-input-tag input {
+    /* Base Variables */
+    --uk-input-tag-input-min-height: 1.75rem;
+    --uk-input-tag-input-padding: 0 0.25rem;
+    --uk-input-tag-input-color: var(--uk-bg-f);
+    --uk-input-tag-input-color-o: 100%;
+
+    /* Computed value */
+    --uk-input-tag-input-color-computed: color-mix(
+      in srgb,
+      var(--uk-input-tag-input-color) var(--uk-input-tag-input-color-o),
+      transparent
+    );
+
+    background-color: transparent;
+    outline: none;
+    min-height: var(--uk-input-tag-input-min-height);
+    flex: 1;
+    padding: var(--uk-input-tag-input-padding);
+    color: var(--uk-input-tag-input-color-computed);
+  }
+
+  .uk-input-tag input::placeholder {
+    color: var(--uk-muted-f);
+  }
+
+  /* Danger Variant */
+  .uk-input-tag.uk-form-danger {
+    --uk-input-tag-focus-ring-color: var(--uk-danger);
+  }
+
+  .uk-input-tag-list {
+    display: flex;
+    gap: var(--uk-input-tag-list-gap, 0.25rem);
+  }
+
+  /* ============================================
+     Tag Component
+     ============================================ */
+  .uk-tag {
+    /* Base Variables */
+    --uk-tag-height: 1.75rem;
+    --uk-tag-padding: 0.25rem 0.5rem;
+    --uk-tag-gap: 0.5rem;
+    --uk-tag-font-size: var(--uk-global-font-size-small);
+    --uk-tag-leading: var(--uk-global-line-height-small);
+    --uk-tag-radius: var(--uk-global-radius-small);
+    --uk-tag-bg: transparent;
+    --uk-tag-bg-o: 0%;
+    --uk-tag-color: var(--uk-bg-f);
+    --uk-tag-color-o: 100%;
+    --uk-tag-hover-duration: 150ms;
+    --uk-tag-hover-opacity: 0.8;
+
+    /* Computed values */
+    --uk-tag-bg-computed: color-mix(
+      in srgb,
+      var(--uk-tag-bg) var(--uk-tag-bg-o),
+      transparent
+    );
+    --uk-tag-color-computed: color-mix(
+      in srgb,
+      var(--uk-tag-color) var(--uk-tag-color-o),
+      transparent
+    );
+
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--uk-tag-height);
+    padding: var(--uk-tag-padding);
+    gap: var(--uk-tag-gap);
+    font-size: var(--uk-tag-font-size);
+    line-height: var(--uk-tag-leading);
+    border-radius: var(--uk-tag-radius);
+    background-color: var(--uk-tag-bg-computed);
+    color: var(--uk-tag-color-computed);
+    transition: none;
+  }
+
+  .uk-tag:hover {
+    transition-property: background-color;
+    transition-duration: var(--uk-tag-hover-duration);
+    transition-timing-function: ease-in-out;
+    opacity: var(--uk-tag-hover-opacity);
+  }
+
+  /* ============================================
+     Tag Variants
+     ============================================ */
+
+  /* Primary Variant */
+  .uk-tag-primary {
+    --uk-tag-bg: var(--uk-primary);
+    --uk-tag-bg-o: 100%;
+    --uk-tag-color: var(--uk-primary-f);
+    --uk-tag-color-o: 100%;
+  }
+
+  .uk-tag-primary:hover {
+    --uk-tag-bg-o: 80%;
+  }
+
+  /* Secondary Variant */
+  .uk-tag-secondary {
+    --uk-tag-bg: var(--uk-secondary);
+    --uk-tag-bg-o: 4%;
+    --uk-tag-color: var(--uk-secondary-f);
+    --uk-tag-color-o: 100%;
+  }
+
+  .uk-tag-secondary:hover {
+    --uk-tag-bg-o: 8%;
+  }
+
+  /* Danger Variant */
+  .uk-tag-danger {
+    --uk-tag-bg: var(--uk-danger);
+    --uk-tag-bg-o: 100%;
+    --uk-tag-color: var(--color-white);
+    --uk-tag-color-o: 100%;
+  }
+
+  .uk-tag-danger:hover {
+    --uk-tag-bg-o: 80%;
+  }
+
+  /* Success Variant */
+  .uk-tag-success {
+    --uk-tag-bg: var(--uk-success);
+    --uk-tag-bg-o: 100%;
+    --uk-tag-color: var(--color-white);
+    --uk-tag-color-o: 100%;
+  }
+
+  .uk-tag-success:hover {
+    --uk-tag-bg-o: 80%;
+  }
+
+  /* Warning Variant */
+  .uk-tag-warning {
+    --uk-tag-bg: var(--uk-warning);
+    --uk-tag-bg-o: 100%;
+    --uk-tag-color: var(--color-white);
+    --uk-tag-color-o: 100%;
+  }
+
+  .uk-tag-warning:hover {
+    --uk-tag-bg-o: 80%;
+  }
+
+  /* Info Variant */
+  .uk-tag-info {
+    --uk-tag-bg: var(--uk-info);
+    --uk-tag-bg-o: 100%;
+    --uk-tag-color: var(--color-white);
+    --uk-tag-color-o: 100%;
+  }
+
+  .uk-tag-info:hover {
+    --uk-tag-bg-o: 80%;
+  }
+
+  /* Muted Variant */
+  .uk-tag-muted {
+    --uk-tag-bg: var(--uk-muted);
+    --uk-tag-bg-o: 4%;
+    --uk-tag-color: var(--uk-muted-f);
+    --uk-tag-color-o: 100%;
+  }
+
+  .uk-tag-muted:hover {
+    --uk-tag-bg-o: 8%;
   }
 }

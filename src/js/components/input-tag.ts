@@ -15,6 +15,50 @@ type SlugOptions = {
 };
 
 /**
+ * CSS class names interface for styling different parts of the tag input component.
+ */
+interface Cls extends Record<string, string> {
+  /** CSS classes for the main container div. */
+  'host-inner': string;
+  /** CSS classes for tags and input div. */
+  wrapper: string;
+  /** CSS classes for the tag list container. */
+  'tag-list': string;
+  /** CSS classes for individual tag elements. */
+  tag: string;
+  /** CSS classes for tag text spans. */
+  'tag-text': string;
+  /** CSS classes for tag remove buttons. */
+  'tag-remove': string;
+  /** CSS classes for the input field. */
+  input: string;
+  /** CSS classes for error messages. */
+  error: string;
+}
+
+/**
+ * Inline styles interface for different parts of the component.
+ */
+interface Stl extends Record<string, string> {
+  /** Inline styles for the main container div. */
+  'host-inner': string;
+  /** Inline styles for tags and input div. */
+  wrapper: string;
+  /** Inline styles for the tag list container. */
+  'tag-list': string;
+  /** Inline styles for individual tag elements. */
+  tag: string;
+  /** Inline styles for tag text spans. */
+  'tag-text': string;
+  /** Inline styles for tag remove buttons. */
+  'tag-remove': string;
+  /** Inline styles for the input field. */
+  input: string;
+  /** Inline styles for error messages. */
+  error: string;
+}
+
+/**
  * A headless tag input component that allows users to add, edit, and remove tags.
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
  *
@@ -52,7 +96,7 @@ type SlugOptions = {
  * <uk-input-tag
  *   cls='{
  *     "container": "tag-input-wrapper",
- *     "tagList": "tags-list",
+ *     "tag-list": "tags-list",
  *     "tag": "tag-item",
  *     "tagText": "tag-text",
  *     "tagRemove": "tag-remove-btn",
@@ -71,10 +115,10 @@ type SlugOptions = {
  *       "placeholder": "Add a tag...",
  *       "removeLabel": "Remove tag",
  *       "editLabel": "Edit tag",
- *       "tagListLabel": "Tags",
- *       "minLengthError": "Tag must be at least {min} characters",
- *       "maxLengthError": "Tag cannot exceed {max} characters",
- *       "duplicateError": "Tag already exists"
+ *       "tag-list-label": "Tags",
+ *       "min-length-error": "Tag must be at least {min} characters",
+ *       "max-length-error": "Tag cannot exceed {max} characters",
+ *       "duplicate-error": "Tag already exists"
  *     },
  *     "cls": {
  *       "container": "my-tag-input",
@@ -89,15 +133,15 @@ type SlugOptions = {
 export class InputTag extends InputMixin(Base) {
   /**
    * The default element key used for applying simple string CSS classes via `cls`.
-   * For this component, it targets the container div element.
+   * For this component, it targets the main container.
    */
-  protected readonly 'cls-default-element' = 'container';
+  protected readonly 'cls-default-element' = 'host-inner';
 
   /**
    * The default element key used for applying simple string inline styles via `stl`.
-   * For this component, it targets the container div element.
+   * For this component, it targets the main container.
    */
-  protected readonly 'stl-default-element' = 'container';
+  protected readonly 'stl-default-element' = 'host-inner';
 
   /**
    * Custom event name emitted when the value changes.
@@ -233,14 +277,47 @@ export class InputTag extends InputMixin(Base) {
    */
   private readonly defaultI18n = {
     placeholder: 'Add a tag...',
-    removeLabel: 'Remove tag',
-    editLabel: 'Edit tag',
-    tagListLabel: 'Tags',
-    minLengthError: 'Tag must be at least {min} characters',
-    maxLengthError: 'Tag cannot exceed {max} characters',
-    duplicateError: 'Tag already exists',
-    maxTagsError: 'Maximum {max} tags allowed',
-    inputLabel: 'Tag input',
+    'remove-label': 'Remove tag',
+    'edit-label': 'Edit tag',
+    'tag-list-label': 'Tags',
+    'min-length-error': 'Tag must be at least {min} characters',
+    'max-length-error': 'Tag cannot exceed {max} characters',
+    'duplicate-error': 'Tag already exists',
+    'max-tags-error': 'Maximum {max} tags allowed',
+    'input-label': 'Tag input',
+  };
+
+  /**
+   * CSS class configuration for component styling.
+   * Allows customization of different component parts.
+   * @internal
+   */
+  @state()
+  protected $cls: Cls = {
+    'host-inner': '',
+    wrapper: 'uk-input-tag',
+    'tag-list': 'uk-input-tag-list',
+    tag: 'uk-tag uk-tag-secondary',
+    'tag-text': '',
+    'tag-remove': '',
+    input: '',
+    error: 'sr-only',
+  };
+
+  /**
+   * Inline styles configuration for component styling.
+   * @internal
+   */
+  @state()
+  protected $stl: Stl = {
+    'host-inner': '',
+    wrapper: '',
+    'tag-list': '',
+    tag: '',
+    'tag-text': '',
+    'tag-remove': '',
+    input: '',
+    error: '',
   };
 
   /**
@@ -334,26 +411,26 @@ export class InputTag extends InputMixin(Base) {
     this.$error = '';
 
     if (tag.length < this.minlength) {
-      this.$error = this.getI18nText('minLengthError', this.defaultI18n, {
+      this.$error = this.getI18nText('min-length-error', this.defaultI18n, {
         min: String(this.minlength),
       });
       return false;
     }
 
     if (tag.length > this.maxlength) {
-      this.$error = this.getI18nText('maxLengthError', this.defaultI18n, {
+      this.$error = this.getI18nText('max-length-error', this.defaultI18n, {
         max: String(this.maxlength),
       });
       return false;
     }
 
     if (!this['allow-duplicates'] && this.$tags.includes(tag)) {
-      this.$error = this.getI18nText('duplicateError', this.defaultI18n);
+      this.$error = this.getI18nText('duplicate-error', this.defaultI18n);
       return false;
     }
 
     if (this['max-tags'] > 0 && this.$tags.length >= this['max-tags']) {
-      this.$error = this.getI18nText('maxTagsError', this.defaultI18n, {
+      this.$error = this.getI18nText('max-tags-error', this.defaultI18n, {
         max: String(this['max-tags']),
       });
       return false;
@@ -526,21 +603,19 @@ export class InputTag extends InputMixin(Base) {
    * @internal
    */
   private renderTag(tag: string, index: number) {
-    const removeLabel = this.getI18nText('removeLabel', this.defaultI18n);
-    const editLabel = this.getI18nText('editLabel', this.defaultI18n);
+    const removeLabel = this.getI18nText('remove-label', this.defaultI18n);
+    const editLabel = this.getI18nText('edit-label', this.defaultI18n);
 
     return html`
       <div
         class="${this.$cls['tag'] || ''}"
-        part="tag"
         style="${this.$stl['tag'] || ''}"
         role="listitem"
         data-tag-index="${index}"
       >
         <span
-          class="${this.$cls['tagText'] || ''}"
-          part="tag-text"
-          style="${this.$stl['tagText'] || ''}"
+          class="${this.$cls['tag-text'] || ''}"
+          style="${this.$stl['tag-text'] || ''}"
           role="button"
           tabindex="${this.disabled ? '-1' : '0'}"
           aria-label="${editLabel}: ${tag}"
@@ -556,9 +631,8 @@ export class InputTag extends InputMixin(Base) {
         </span>
         <button
           type="button"
-          class="${this.$cls['tagRemove'] || ''}"
-          part="tag-remove"
-          style="${this.$stl['tagRemove'] || ''}"
+          class="${this.$cls['tag-remove'] || ''}"
+          style="${this.$stl['tag-remove'] || ''}"
           aria-label="${removeLabel}: ${tag}"
           ?disabled="${this.disabled}"
           @click="${() => this.removeTag(index)}"
@@ -581,7 +655,6 @@ export class InputTag extends InputMixin(Base) {
     return html`
       <div
         class="${this.$cls['error'] || ''}"
-        part="error"
         style="${this.$stl['error'] || ''}"
         role="alert"
         aria-live="polite"
@@ -600,46 +673,48 @@ export class InputTag extends InputMixin(Base) {
   render() {
     const placeholder =
       this.placeholder || this.getI18nText('placeholder', this.defaultI18n);
-    const tagListLabel = this.getI18nText('tagListLabel', this.defaultI18n);
-    const inputLabel = this.getI18nText('inputLabel', this.defaultI18n);
+    const tagListLabel = this.getI18nText('tag-list-label', this.defaultI18n);
+    const inputLabel = this.getI18nText('input-label', this.defaultI18n);
 
     return html`
       <div
         data-host-inner
-        class="${this.$cls['container'] || ''}"
-        part="container"
-        style="${this.$stl['container'] || ''}"
+        class="${this.$cls['host-inner'] || ''}"
+        style="${this.$stl['host-inner'] || ''}"
         data-disabled="${this.disabled}"
         data-has-error="${!!this.$error}"
       >
         <div
-          class="${this.$cls['tagList'] || ''}"
-          part="tag-list"
-          style="${this.$stl['tagList'] || ''}"
-          role="list"
-          aria-label="${tagListLabel}"
+          class="${this.$cls['wrapper'] || ''}"
+          style="${this.$stl['wrapper'] || ''}"
         >
-          ${this.$tags.map((tag, index) => this.renderTag(tag, index))}
-        </div>
+          <div
+            class="${this.$cls['tag-list'] || ''}"
+            style="${this.$stl['tag-list'] || ''}"
+            role="list"
+            aria-label="${tagListLabel}"
+          >
+            ${this.$tags.map((tag, index) => this.renderTag(tag, index))}
+          </div>
 
-        <input
-          class="${this.$cls['input'] || ''}"
-          part="input"
-          style="${this.$stl['input'] || ''}"
-          type="text"
-          role="textbox"
-          aria-label="${inputLabel}"
-          aria-invalid="${!!this.$error}"
-          aria-describedby="${this.$error ? 'tag-error' : ''}"
-          autocomplete="off"
-          placeholder="${placeholder}"
-          maxlength="${this.maxlength}"
-          .value="${this.$input}"
-          ?disabled="${this.disabled}"
-          @keydown="${this.handleKeydown}"
-          @input="${this.handleInput}"
-          @paste="${this.handlePaste}"
-        />
+          <input
+            class="${this.$cls['input'] || ''}"
+            style="${this.$stl['input'] || ''}"
+            type="text"
+            role="textbox"
+            aria-label="${inputLabel}"
+            aria-invalid="${!!this.$error}"
+            aria-describedby="${this.$error ? 'tag-error' : ''}"
+            autocomplete="off"
+            placeholder="${placeholder}"
+            maxlength="${this.maxlength}"
+            .value="${this.$input}"
+            ?disabled="${this.disabled}"
+            @keydown="${this.handleKeydown}"
+            @input="${this.handleInput}"
+            @paste="${this.handlePaste}"
+          />
+        </div>
 
         ${this.renderError()} ${this.renderHidden()}
       </div>

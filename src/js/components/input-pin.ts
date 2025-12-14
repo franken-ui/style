@@ -163,6 +163,21 @@ export class InputPin extends InputMixin(Base) {
   'show-labels': boolean = false;
 
   /**
+   * Default i18n strings for labels and messages.
+   * These can be overridden via the i18n attribute or config script.
+   * @internal
+   */
+  private readonly defaultI18n = {
+    label: 'PIN Code',
+    description: 'Enter {length}-digit code',
+    'field-label': 'Digit {n} of {total}',
+    loaded: 'PIN input ready',
+    complete: 'PIN entry complete',
+    'field-filled': 'Field {n} filled',
+    'invalid-character': 'Invalid character entered',
+  };
+
+  /**
    * CSS class configuration for component styling.
    * Allows customization of different component parts.
    * @internal
@@ -280,9 +295,7 @@ export class InputPin extends InputMixin(Base) {
     this.populateInitialValue();
 
     // Announce loaded state
-    this.announceToScreenReader(
-      this.getI18nText('loaded', { loaded: 'PIN input ready' }),
-    );
+    this.announceToScreenReader(this.getI18nText('loaded', this.defaultI18n));
   }
 
   /**
@@ -344,9 +357,7 @@ export class InputPin extends InputMixin(Base) {
       const regex = new RegExp(`^[${this.pattern}]*$`);
       if (!regex.test(trimmedText)) {
         this.announceToScreenReader(
-          this.getI18nText('invalidCharacter', {
-            invalidCharacter: 'Invalid character entered',
-          }),
+          this.getI18nText('invalid-character', this.defaultI18n),
         );
         return;
       }
@@ -374,19 +385,15 @@ export class InputPin extends InputMixin(Base) {
       nextInput.disabled = false;
       nextInput.focus();
       this.announceToScreenReader(
-        this.getI18nText(
-          'fieldFilled',
-          { fieldFilled: 'Field {n} filled' },
-          {
-            n: trimmedText.length + 1,
-          },
-        ),
+        this.getI18nText('field-filled', this.defaultI18n, {
+          n: trimmedText.length + 1,
+        }),
       );
     } else {
       const currentInput = this.$inputs[this.$focus as number];
       currentInput?.blur();
       this.announceToScreenReader(
-        this.getI18nText('complete', { complete: 'PIN entry complete' }),
+        this.getI18nText('complete', this.defaultI18n),
       );
       this.emitComplete();
     }
@@ -491,9 +498,7 @@ export class InputPin extends InputMixin(Base) {
     ) {
       input.value = '';
       this.announceToScreenReader(
-        this.getI18nText('invalidCharacter', {
-          invalidCharacter: 'Invalid character entered',
-        }),
+        this.getI18nText('invalid-character', this.defaultI18n),
       );
       return;
     }
@@ -506,19 +511,15 @@ export class InputPin extends InputMixin(Base) {
         nextInput.disabled = false;
         nextInput.focus();
         this.announceToScreenReader(
-          this.getI18nText(
-            'fieldFilled',
-            { fieldFilled: 'Field {n} filled' },
-            {
-              n: fieldIndex + 2,
-            },
-          ),
+          this.getI18nText('field-filled', this.defaultI18n, {
+            n: fieldIndex + 2,
+          }),
         );
       } else {
         // Last field - blur to complete entry
         input.blur();
         this.announceToScreenReader(
-          this.getI18nText('complete', { complete: 'PIN entry complete' }),
+          this.getI18nText('complete', this.defaultI18n),
         );
         this.emitComplete();
       }
@@ -582,7 +583,7 @@ export class InputPin extends InputMixin(Base) {
    * @internal
    */
   private get groupLabel(): string {
-    return this.getI18nText('label', { label: 'PIN Code' });
+    return this.getI18nText('label', this.defaultI18n);
   }
 
   /**
@@ -590,11 +591,9 @@ export class InputPin extends InputMixin(Base) {
    * @internal
    */
   private get groupDescription(): string {
-    return this.getI18nText(
-      'description',
-      { description: 'Enter {length}-digit code' },
-      { length: this.length },
-    );
+    return this.getI18nText('description', this.defaultI18n, {
+      length: this.length,
+    });
   }
 
   /**
@@ -603,11 +602,10 @@ export class InputPin extends InputMixin(Base) {
    * @internal
    */
   private getFieldLabel(index: number): string {
-    return this.getI18nText(
-      'fieldLabel',
-      { fieldLabel: 'Digit {n} of {total}' },
-      { n: index + 1, total: this.length },
-    );
+    return this.getI18nText('field-label', this.defaultI18n, {
+      n: index + 1,
+      total: this.length,
+    });
   }
 
   /**
