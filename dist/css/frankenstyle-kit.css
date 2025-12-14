@@ -5058,6 +5058,92 @@
     border-radius: var(--uk-input-pin-radius);
     box-shadow: var(--uk-input-pin-separated-input-shadow);
   }
+  .uk-input-range {
+    --uk-input-range-track-height: 0.375rem;
+    --uk-input-range-track-radius: var(--radius-md);
+    --uk-input-range-label-offset-y: 2.5rem;
+    position: relative;
+    display: block;
+    height: 2.5rem;
+    user-select: none;
+  }
+  .uk-input-range-runnable {
+    --uk-input-range-track-bg: var(--uk-primary);
+    --uk-input-range-track-bg-o: 20%;
+    --uk-input-range-track-bg-computed: color-mix(
+      in srgb,
+      var(--uk-input-range-track-bg) var(--uk-input-range-track-bg-o),
+      transparent
+    );
+    position: absolute;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    inset-block-start: 50%;
+    height: var(--uk-input-range-track-height);
+    border-radius: var(--uk-input-range-track-radius);
+    background-color: var(--uk-input-range-track-bg-computed);
+    transform: translateY(-50%);
+  }
+  .uk-input-range-fill {
+    --uk-input-range-fill-bg: var(--uk-primary);
+    --uk-input-range-fill-bg-o: 100%;
+    --uk-input-range-fill-bg-computed: color-mix(
+      in srgb,
+      var(--uk-input-range-fill-bg) var(--uk-input-range-fill-bg-o),
+      transparent
+    );
+    position: absolute;
+    inset-block-start: 50%;
+    height: var(--uk-input-range-track-height);
+    border-radius: var(--uk-input-range-track-radius);
+    background-color: var(--uk-input-range-fill-bg-computed);
+    transform: translateY(-50%);
+  }
+  .uk-input-range-knob {
+    --uk-input-range-knob-size: 1rem;
+    --uk-input-range-knob-radius: 9999px;
+    --uk-input-range-knob-shadow: var(--shadow-xs);
+    --uk-input-range-knob-border-color: var(--uk-primary);
+    --uk-input-range-knob-border-color-o: 50%;
+    --uk-input-range-knob-bg: var(--uk-bg);
+    --uk-input-range-knob-bg-o: 100%;
+    --uk-input-range-knob-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-input-range-knob-border-color)
+        var(--uk-input-range-knob-border-color-o),
+      transparent
+    );
+    --uk-input-range-knob-bg-computed: color-mix(
+      in srgb,
+      var(--uk-input-range-knob-bg) var(--uk-input-range-knob-bg-o),
+      transparent
+    );
+    position: absolute;
+    inset-block-start: 50%;
+    height: var(--uk-input-range-knob-size);
+    width: var(--uk-input-range-knob-size);
+    box-shadow: var(--uk-input-range-knob-shadow);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: var(--uk-input-range-knob-radius);
+    border: 1px solid var(--uk-input-range-knob-border-color-computed);
+    background-color: var(--uk-input-range-knob-bg-computed);
+  }
+  .uk-input-range-knob:disabled {
+    cursor: not-allowed;
+  }
+  .uk-input-range-label {
+    position: absolute;
+    inset-block-start: 1rem;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .uk-input-range-label-top {
+    inset-block-start: calc(var(--uk-input-range-label-offset-y) * -1);
+  }
+  .uk-input-range-label-bottom {
+    inset-block-start: var(--uk-input-range-label-offset-y);
+  }
   [class*='uk-position-top'],
   [class*='uk-position-bottom'],
   [class*='uk-position-left'],

@@ -74,15 +74,15 @@ import { Base } from './shared/base';
 export class InputRange extends InputMixin(Base) {
   /**
    * The default element key used for applying simple string CSS classes via `cls`.
-   * For this component, it targets the container div element.
+   * For this component, it targets the main container.
    */
-  protected readonly 'cls-default-element' = 'container';
+  protected readonly 'cls-default-element' = 'host-inner';
 
   /**
    * The default element key used for applying simple string inline styles via `stl`.
-   * For this component, it targets the container div element.
+   * For this component, it targets the main container.
    */
-  protected readonly 'stl-default-element' = 'container';
+  protected readonly 'stl-default-element' = 'host-inner';
 
   /**
    * Custom event name emitted when the value changes.
@@ -248,6 +248,20 @@ export class InputRange extends InputMixin(Base) {
   }
 
   /**
+   * Calculates the number of decimal places based on the step value.
+   * e.g., step="0.5" -> 1, step="0.01" -> 2, step="1" -> 0
+   */
+  private get precision(): number {
+    const stepString = this.step.toString();
+
+    if (stepString.includes('.')) {
+      return stepString.split('.')[1].length;
+    }
+
+    return 0;
+  }
+
+  /**
    * Initializes the component and sets up label state and touch event listeners.
    * @override
    */
@@ -315,15 +329,11 @@ export class InputRange extends InputMixin(Base) {
   }
 
   /**
-   * Formats a numeric value to a string with appropriate decimal places.
-   *
-   * @param value Numeric value to format
-   * @returns Formatted value string
-   * @internal
+   * Formats a numeric value to a string based on the step precision.
+   * Forces decimal padding (e.g., 5 becomes "5.00" if step is 0.01).
    */
   private formatValue(value: number): string {
-    const fixed = value.toFixed(2);
-    return fixed.endsWith('.00') ? fixed.slice(0, -3) : fixed;
+    return value.toFixed(this.precision);
   }
 
   /**
@@ -334,7 +344,10 @@ export class InputRange extends InputMixin(Base) {
    * @internal
    */
   private clamp(val: number): number {
-    return parseFloat(Math.min(Math.max(val, this.min), this.max).toFixed(2));
+    const clamped = Math.min(Math.max(val, this.min), this.max);
+    // Parse back to float to remove excess precision for internal storage,
+    // but ensure it matches the step precision to avoid floating point errors.
+    return parseFloat(clamped.toFixed(this.precision));
   }
 
   /**
@@ -389,7 +402,14 @@ export class InputRange extends InputMixin(Base) {
    * @internal
    */
   private handleValueChange(knob: 'low' | 'high', newValue: number): void {
-    newValue = this.clamp(Math.round(newValue / this.step) * this.step);
+    // 1. Calculate the raw stepped value
+    const stepped = Math.round(newValue / this.step) * this.step;
+
+    // 2. Fix floating point precision artifacts (e.g., 0.300000004) before clamping
+    const fixedPrecision = parseFloat(stepped.toFixed(this.precision));
+
+    // 3. Clamp
+    newValue = this.clamp(fixedPrecision);
 
     if (knob === 'low') {
       this._lowValue = this.multiple
@@ -606,18 +626,23 @@ export class InputRange extends InputMixin(Base) {
 
     const isDraggingThis = this.isDragging && this.activeKnob === type;
     const knobClasses = [
-      this.$cls['knob'] || '',
+      this.$cls['knob'] || 'uk-input-range-knob',
       this.$cls[type === 'low' ? 'knobLow' : 'knobHigh'] || '',
       isDraggingThis ? this.$cls['knobDragging'] || '' : '',
     ]
       .filter(Boolean)
       .join(' ');
 
+    // Build label classes with proper uk-* convention
+    const labelPositionClass =
+      this['label-position'] === 'top'
+        ? this.$cls['labelTop'] || 'uk-input-range-label-top'
+        : this.$cls['labelBottom'] || 'uk-input-range-label-bottom';
+
     return html`
       <button
         type="button"
         class="${knobClasses}"
-        part="knob knob-${type} ${isDraggingThis ? 'knob-dragging' : ''}"
         role="slider"
         aria-label="${this.getKnobAriaLabel(type)}"
         aria-valuemin="${min}"
@@ -638,10 +663,8 @@ export class InputRange extends InputMixin(Base) {
         ${this._label
           ? html`
               <span
-                class="${this.$cls['label'] || ''} ${this.$cls[
-                  `label-${this['label-position']}`
-                ] || ''}"
-                part="label label-${this['label-position']}"
+                class="${this.$cls['label'] ||
+                'uk-input-range-label'} ${labelPositionClass}"
                 style="${this.$stl['label'] || ''}"
                 data-label-position="${this['label-position']}"
               >
@@ -674,8 +697,7 @@ export class InputRange extends InputMixin(Base) {
     return html`
       <div
         data-host-inner
-        class="${this.$cls['container'] || ''}"
-        part="container"
+        class="${this.$cls['container'] || 'uk-input-range'}"
         style="${this.$stl['container'] || ''}"
         role="group"
         aria-label="${ariaLabel}"
@@ -683,16 +705,13 @@ export class InputRange extends InputMixin(Base) {
         data-multiple="${this.multiple}"
       >
         <div
-          class="${this.$cls['runnable'] || ''}"
-          part="runnable-track"
+          class="${this.$cls['runnable'] || 'uk-input-range-runnable'}"
           style="${this.$stl['runnable'] || ''}"
           data-range-track
         ></div>
         <div
-          class="${this.$cls['fill'] || ''} ${this.$cls['track'] || ''}"
-          part="fill-track"
-          style="${this.$stl['fill'] || ''}${this.$stl['track'] ||
-          ''}${rangeStyle}"
+          class="${this.$cls['fill'] || 'uk-input-range-fill'}"
+          style="${this.$stl['fill'] || ''}${rangeStyle}"
           data-fill-track
         ></div>
         ${this.renderKnob('low')}
