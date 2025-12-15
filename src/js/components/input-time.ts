@@ -4,6 +4,27 @@ import { validateTime } from '../helpers/date';
 import { InputMixin } from './shared/input';
 import { Base } from './shared/base';
 
+/* New: CLASSES / STYLES interfaces and state holders */
+interface Cls extends Record<string, string> {
+  container: string;
+  input: string;
+  'hour-input': string;
+  'minute-input': string;
+  separator: string;
+  'meridiem-button': string;
+  button: string;
+}
+
+interface Stl extends Record<string, string> {
+  container: string;
+  input: string;
+  'hour-input': string;
+  'minute-input': string;
+  separator: string;
+  'meridiem-button': string;
+  button: string;
+}
+
 /**
  * A headless time input component with separate hour/minute fields and AM/PM selector (for 12h clock).
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
@@ -178,13 +199,36 @@ export class InputTime extends InputMixin(Base) {
   private readonly defaultI18n = {
     am: 'AM',
     pm: 'PM',
-    hourLabel: 'Hour',
-    minuteLabel: 'Minute',
-    meridiemLabel: 'AM/PM',
-    timeLabel: 'Time',
-    hourPlaceholder: 'HH',
-    minutePlaceholder: 'MM',
-    invalidTime: 'Invalid time format',
+    'hour-label': 'Hour',
+    'minute-label': 'Minute',
+    'meridiem-label': 'AM/PM',
+    'time-label': 'Time',
+    'hour-placeholder': 'HH',
+    'minute-placeholder': 'MM',
+    'invalid-time': 'Invalid time format',
+  };
+
+  /* New: component cls/stl states (headless defaults) */
+  @state()
+  protected $cls: Cls = {
+    container: 'uk-input-time',
+    input: 'uk-input',
+    'hour-input': '',
+    'minute-input': '',
+    separator: '',
+    'meridiem-button': 'uk-input-fake',
+    button: '',
+  };
+
+  @state()
+  protected $stl: Stl = {
+    container: '',
+    input: '',
+    'hour-input': '',
+    'minute-input': '',
+    separator: '',
+    'meridiem-button': '',
+    button: '',
   };
 
   /**
@@ -287,7 +331,7 @@ export class InputTime extends InputMixin(Base) {
       this.$min = minutes;
       this.$meridiem = hours < 12 ? 'am' : 'pm';
     } catch (error) {
-      console.error(this.getI18nText('invalidTime', this.defaultI18n), error);
+      console.error(this.getI18nText('invalid-time', this.defaultI18n), error);
     }
   }
 
@@ -510,27 +554,25 @@ export class InputTime extends InputMixin(Base) {
           : '00';
 
     const label = this.getI18nText(
-      isHour ? 'hourLabel' : 'minuteLabel',
+      isHour ? 'hour-label' : 'minute-label',
       this.defaultI18n,
     );
 
     const placeholder = this.getI18nText(
-      isHour ? 'hourPlaceholder' : 'minutePlaceholder',
+      isHour ? 'hour-placeholder' : 'minute-placeholder',
       this.defaultI18n,
     );
 
     const inputClass = isHour
-      ? this.$cls['hourInput'] || this.$cls['input'] || ''
-      : this.$cls['minuteInput'] || this.$cls['input'] || '';
+      ? this.$cls['hour-input'] || this.$cls['input'] || ''
+      : this.$cls['minute-input'] || this.$cls['input'] || '';
 
     const inputStyle = isHour
-      ? this.$stl['hourInput'] || this.$stl['input'] || ''
-      : this.$stl['minuteInput'] || this.$stl['input'] || '';
-
+      ? this.$stl['hour-input'] || this.$stl['input'] || ''
+      : this.$stl['minute-input'] || this.$stl['input'] || '';
     return html`
       <input
         class="${inputClass}"
-        part="${isHour ? 'hour-input' : 'minute-input'} input"
         style="${inputStyle}"
         data-key="${key}"
         data-field="${state}"
@@ -564,8 +606,8 @@ export class InputTime extends InputMixin(Base) {
    * @returns Rendered template for the time input component
    */
   render() {
-    const timeLabel = this.getI18nText('timeLabel', this.defaultI18n);
-    const meridiemLabel = this.getI18nText('meridiemLabel', this.defaultI18n);
+    const timeLabel = this.getI18nText('time-label', this.defaultI18n);
+    const meridiemLabel = this.getI18nText('meridiem-label', this.defaultI18n);
 
     let meridiemButton = html``;
 
@@ -576,9 +618,8 @@ export class InputTime extends InputMixin(Base) {
 
       meridiemButton = html`
         <button
-          class="${this.$cls['meridiemButton'] || this.$cls['button'] || ''}"
-          part="meridiem-button button"
-          style="${this.$stl['meridiemButton'] || this.$stl['button'] || ''}"
+          class="${this.$cls['meridiem-button'] || this.$cls['button'] || ''}"
+          style="${this.$stl['meridiem-button'] || this.$stl['button'] || ''}"
           data-key="meridiem"
           data-meridiem="${this.$meridiem}"
           type="button"
@@ -601,7 +642,6 @@ export class InputTime extends InputMixin(Base) {
       <div
         data-host-inner
         class="${this.$cls['container'] || ''}"
-        part="container"
         style="${this.$stl['container'] || ''}"
         role="group"
         aria-label="${timeLabel}"
@@ -617,7 +657,6 @@ export class InputTime extends InputMixin(Base) {
         })}
         <span
           class="${this.$cls['separator'] || ''}"
-          part="separator"
           style="${this.$stl['separator'] || ''}"
           aria-hidden="true"
         >

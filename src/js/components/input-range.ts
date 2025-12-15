@@ -1,7 +1,33 @@
 import { html, type PropertyValues } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
+import { property, customElement, state } from 'lit/decorators.js';
 import { InputMixin } from './shared/input';
 import { Base } from './shared/base';
+
+/* New: kebab-case CLASSES / STYLES interfaces */
+interface Cls extends Record<string, string> {
+  'host-inner': string;
+  runnable: string;
+  fill: string;
+  knob: string;
+  'knob-low': string;
+  'knob-high': string;
+  'knob-dragging': string;
+  label: string;
+  'label-top': string;
+  'label-bottom': string;
+}
+
+interface Stl extends Record<string, string> {
+  'host-inner': string;
+  runnable: string;
+  fill: string;
+  knob: string;
+  'knob-low': string;
+  'knob-high': string;
+  label: string;
+  'label-top': string;
+  'label-bottom': string;
+}
 
 /**
  * A headless, customizable range slider component that supports single and dual knob modes.
@@ -219,11 +245,38 @@ export class InputRange extends InputMixin(Base) {
    * @internal
    */
   private readonly defaultI18n = {
-    ariaValueText: 'Value: {value}',
-    ariaRangeText: 'Range from {low} to {high}',
-    lowKnobLabel: 'Minimum value',
-    highKnobLabel: 'Maximum value',
-    ariaLabel: 'Range slider',
+    'aria-value-text': 'Value: {value}',
+    'aria-range-text': 'Range from {low} to {high}',
+    'low-knob-label': 'Minimum value',
+    'high-knob-label': 'Maximum value',
+    'aria-label': 'Range slider',
+  };
+
+  @state()
+  protected $cls: Cls = {
+    'host-inner': 'uk-input-range',
+    runnable: '',
+    fill: '',
+    knob: '',
+    'knob-low': '',
+    'knob-high': '',
+    'knob-dragging': '',
+    label: '',
+    'label-top': '',
+    'label-bottom': '',
+  };
+
+  @state()
+  protected $stl: Stl = {
+    'host-inner': '',
+    runnable: '',
+    fill: '',
+    knob: '',
+    'knob-low': '',
+    'knob-high': '',
+    label: '',
+    'label-top': '',
+    'label-bottom': '',
   };
 
   /**
@@ -587,12 +640,12 @@ export class InputRange extends InputMixin(Base) {
    */
   private getAriaValueText(value: number): string {
     if (this.multiple) {
-      return this.getI18nText('ariaRangeText', this.defaultI18n, {
+      return this.getI18nText('aria-range-text', this.defaultI18n, {
         low: this.formatValue(this._lowValue),
         high: this.formatValue(this._highValue),
       });
     }
-    return this.getI18nText('ariaValueText', this.defaultI18n, {
+    return this.getI18nText('aria-value-text', this.defaultI18n, {
       value: this.formatValue(value),
     });
   }
@@ -605,7 +658,7 @@ export class InputRange extends InputMixin(Base) {
    * @internal
    */
   private getKnobAriaLabel(type: 'low' | 'high'): string {
-    const key = type === 'low' ? 'lowKnobLabel' : 'highKnobLabel';
+    const key = type === 'low' ? 'low-knob-label' : 'high-knob-label';
     return this.getI18nText(key, this.defaultI18n);
   }
 
@@ -627,8 +680,8 @@ export class InputRange extends InputMixin(Base) {
     const isDraggingThis = this.isDragging && this.activeKnob === type;
     const knobClasses = [
       this.$cls['knob'] || 'uk-input-range-knob',
-      this.$cls[type === 'low' ? 'knobLow' : 'knobHigh'] || '',
-      isDraggingThis ? this.$cls['knobDragging'] || '' : '',
+      this.$cls[type === 'low' ? 'knob-low' : 'knob-high'] || '',
+      isDraggingThis ? this.$cls['knob-dragging'] || '' : '',
     ]
       .filter(Boolean)
       .join(' ');
@@ -636,8 +689,8 @@ export class InputRange extends InputMixin(Base) {
     // Build label classes with proper uk-* convention
     const labelPositionClass =
       this['label-position'] === 'top'
-        ? this.$cls['labelTop'] || 'uk-input-range-label-top'
-        : this.$cls['labelBottom'] || 'uk-input-range-label-bottom';
+        ? this.$cls['label-top'] || 'uk-input-range-label-top'
+        : this.$cls['label-bottom'] || 'uk-input-range-label-bottom';
 
     return html`
       <button
@@ -652,7 +705,7 @@ export class InputRange extends InputMixin(Base) {
         aria-disabled="${this.disabled}"
         ?disabled=${this.disabled}
         style="${this.$stl['knob'] || ''}${this.$stl[
-          type === 'low' ? 'knobLow' : 'knobHigh'
+          type === 'low' ? 'knob-low' : 'knob-high'
         ] || ''}left: ${percent}%;"
         data-knob="${type}"
         data-dragging="${isDraggingThis}"
@@ -692,13 +745,13 @@ export class InputRange extends InputMixin(Base) {
     const rangeStyle = `left: ${this.multiple ? lowPercent : 0}%; width: ${this.multiple ? highPercent - lowPercent : lowPercent}%`;
 
     const ariaLabel =
-      this['aria-label'] || this.getI18nText('ariaLabel', this.defaultI18n);
+      this['aria-label'] || this.getI18nText('aria-label', this.defaultI18n);
 
     return html`
       <div
         data-host-inner
-        class="${this.$cls['container'] || 'uk-input-range'}"
-        style="${this.$stl['container'] || ''}"
+        class="${this.$cls['host-inner'] || ''}"
+        style="${this.$stl['host-inner'] || ''}"
         role="group"
         aria-label="${ariaLabel}"
         data-disabled="${this.disabled}"

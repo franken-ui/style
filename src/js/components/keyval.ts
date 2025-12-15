@@ -3,6 +3,41 @@ import { customElement, property, state } from 'lit/decorators.js';
 import { Base } from './shared/base';
 import { randomString } from '../helpers/common';
 
+/* New: kebab-case CLASSES / STYLES interfaces */
+interface Cls extends Record<string, string> {
+  container: string;
+  table: string;
+  'header-row': string;
+  row: string;
+  'add-button': string;
+  button: string;
+  'key-input': string;
+  input: string;
+  'value-wrapper': string;
+  'random-button': string;
+  'value-input': string;
+  actions: string;
+  'toggle-button': string;
+  'remove-button': string;
+}
+
+interface Stl extends Record<string, string> {
+  container: string;
+  table: string;
+  'header-row': string;
+  row: string;
+  'add-button': string;
+  button: string;
+  'key-input': string;
+  input: string;
+  'value-wrapper': string;
+  'random-button': string;
+  'value-input': string;
+  actions: string;
+  'toggle-button': string;
+  'remove-button': string;
+}
+
 /**
  * A headless dynamic key-value table component with advanced features.
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
@@ -179,23 +214,68 @@ export class Keyval extends Base {
   protected valueVisibility: { [key: number]: boolean } = {};
 
   /**
-   * Default i18n strings for labels and accessibility.
+   * Default i18n strings (kebab-case keys).
    * These can be overridden via the i18n attribute or config script.
    * @internal
    */
-  private readonly defaultI18n = {
-    headerKey: 'Key',
-    headerValue: 'Value',
-    placeholderKey: 'Enter key',
-    placeholderValue: 'Enter value',
-    addRowLabel: 'Add row',
-    removeRowLabel: 'Remove row',
-    toggleVisibilityLabel: 'Toggle visibility',
-    generateRandomLabel: 'Generate random value',
-    tableLabel: 'Key-value pairs',
-    actionsLabel: 'Actions',
-    keyLabel: 'Key for row {index}',
-    valueLabel: 'Value for row {index}',
+  protected readonly $defaultI18n = {
+    'header-key': 'Key',
+    'header-value': 'Value',
+    'placeholder-key': 'Enter key',
+    'placeholder-value': 'Enter value',
+    'add-row-label': 'Add row',
+    'remove-row-label': 'Remove row',
+    'toggle-visibility-label': 'Toggle visibility',
+    'generate-random-label': 'Generate random value',
+    'table-label': 'Key-value pairs',
+    'actions-label': 'Actions',
+    'key-label': 'Key for row {index}',
+    'value-label': 'Value for row {index}',
+  };
+
+  /**
+   * CSS class configuration (kebab-case keys).
+   * Headless defaults can be overridden via `cls` attribute/config.
+   * @internal
+   */
+  @state()
+  protected $cls: Cls = {
+    container: 'uk-keyval',
+    table: 'uk-table uk-table-divider',
+    'header-row': '',
+    row: '',
+    'add-button': 'uk-button uk-button-default',
+    button: 'uk-keyval-button',
+    'key-input': '',
+    input: 'uk-input',
+    'value-wrapper': 'uk-keyval-value-wrapper',
+    'random-button': '',
+    'value-input': 'uk-input',
+    actions: 'uk-keyval-actions',
+    'toggle-button': '',
+    'remove-button': '',
+  };
+
+  /**
+   * Inline styles configuration (kebab-case keys).
+   * @internal
+   */
+  @state()
+  protected $stl: Stl = {
+    container: '',
+    table: '',
+    'header-row': '',
+    row: '',
+    'add-button': '',
+    button: '',
+    'key-input': '',
+    input: '',
+    'value-wrapper': '',
+    'random-button': '',
+    'value-input': '',
+    actions: '',
+    'toggle-button': '',
+    'remove-button': '',
   };
 
   /**
@@ -592,11 +672,11 @@ export class Keyval extends Base {
    */
   render() {
     const tableLabel =
-      this['aria-label'] || this.getI18nText('tableLabel', this.defaultI18n);
-    const headerKey = this.getI18nText('headerKey', this.defaultI18n);
-    const headerValue = this.getI18nText('headerValue', this.defaultI18n);
-    const actionsLabel = this.getI18nText('actionsLabel', this.defaultI18n);
-    const addRowLabel = this.getI18nText('addRowLabel', this.defaultI18n);
+      this['aria-label'] || this.getI18nText('table-label', this.$defaultI18n);
+    const headerKey = this.getI18nText('header-key', this.$defaultI18n);
+    const headerValue = this.getI18nText('header-value', this.$defaultI18n);
+    const actionsLabel = this.getI18nText('actions-label', this.$defaultI18n);
+    const addRowLabel = this.getI18nText('add-row-label', this.$defaultI18n);
 
     return html`
       <div
@@ -613,8 +693,8 @@ export class Keyval extends Base {
         >
           <thead>
             <tr
-              class="${this.$cls['headerRow'] || ''}"
-              style="${this.$stl['headerRow'] || ''}"
+              class="${this.$cls['header-row'] || ''}"
+              style="${this.$stl['header-row'] || ''}"
               role="row"
             >
               <th role="columnheader">${headerKey}</th>
@@ -625,10 +705,10 @@ export class Keyval extends Base {
                   ? ''
                   : html`
                       <button
-                        class="${this.$cls['addButton'] ||
+                        class="${this.$cls['add-button'] ||
                         this.$cls['button'] ||
                         ''}"
-                        style="${this.$stl['addButton'] ||
+                        style="${this.$stl['add-button'] ||
                         this.$stl['button'] ||
                         ''}"
                         type="button"
@@ -646,38 +726,34 @@ export class Keyval extends Base {
             ${this.$data.__ && this.$data.__.options
               ? this.$data.__.options.map((option, index) => {
                   const keyLabel = this.getI18nText(
-                    'keyLabel',
-                    this.defaultI18n,
-                    {
-                      index: String(index + 1),
-                    },
+                    'key-label',
+                    this.$defaultI18n,
+                    { index: String(index + 1) },
                   );
                   const valueLabel = this.getI18nText(
-                    'valueLabel',
-                    this.defaultI18n,
-                    {
-                      index: String(index + 1),
-                    },
+                    'value-label',
+                    this.$defaultI18n,
+                    { index: String(index + 1) },
                   );
                   const placeholderKey = this.getI18nText(
-                    'placeholderKey',
-                    this.defaultI18n,
+                    'placeholder-key',
+                    this.$defaultI18n,
                   );
                   const placeholderValue = this.getI18nText(
-                    'placeholderValue',
-                    this.defaultI18n,
+                    'placeholder-value',
+                    this.$defaultI18n,
                   );
                   const removeLabel = this.getI18nText(
-                    'removeRowLabel',
-                    this.defaultI18n,
+                    'remove-row-label',
+                    this.$defaultI18n,
                   );
                   const toggleLabel = this.getI18nText(
-                    'toggleVisibilityLabel',
-                    this.defaultI18n,
+                    'toggle-visibility-label',
+                    this.$defaultI18n,
                   );
                   const randomLabel = this.getI18nText(
-                    'generateRandomLabel',
-                    this.defaultI18n,
+                    'generate-random-label',
+                    this.$defaultI18n,
                   );
 
                   return html`
@@ -689,10 +765,10 @@ export class Keyval extends Base {
                     >
                       <td role="cell">
                         <input
-                          class="${this.$cls['keyInput'] ||
+                          class="${this.$cls['key-input'] ||
                           this.$cls['input'] ||
                           ''}"
-                          style="${this.$stl['keyInput'] ||
+                          style="${this.$stl['key-input'] ||
                           this.$stl['input'] ||
                           ''}"
                           autocomplete="off"
@@ -706,16 +782,16 @@ export class Keyval extends Base {
                       </td>
                       <td role="cell">
                         <div
-                          class="${this.$cls['valueWrapper'] || ''}"
-                          style="${this.$stl['valueWrapper'] || ''}"
+                          class="${this.$cls['value-wrapper'] || ''}"
+                          style="${this.$stl['value-wrapper'] || ''}"
                         >
                           ${this.sensitive
                             ? html`
                                 <button
-                                  class="${this.$cls['randomButton'] ||
+                                  class="${this.$cls['random-button'] ||
                                   this.$cls['button'] ||
                                   ''}"
-                                  style="${this.$stl['randomButton'] ||
+                                  style="${this.$stl['random-button'] ||
                                   this.$stl['button'] ||
                                   ''}"
                                   type="button"
@@ -729,10 +805,10 @@ export class Keyval extends Base {
                             : ''}
 
                           <input
-                            class="${this.$cls['valueInput'] ||
+                            class="${this.$cls['value-input'] ||
                             this.$cls['input'] ||
                             ''}"
-                            style="${this.$stl['valueInput'] ||
+                            style="${this.$stl['value-input'] ||
                             this.$stl['input'] ||
                             ''}"
                             autocomplete="off"
@@ -758,10 +834,10 @@ export class Keyval extends Base {
                           ${this.sensitive
                             ? html`
                                 <button
-                                  class="${this.$cls['toggleButton'] ||
+                                  class="${this.$cls['toggle-button'] ||
                                   this.$cls['button'] ||
                                   ''}"
-                                  style="${this.$stl['toggleButton'] ||
+                                  style="${this.$stl['toggle-button'] ||
                                   this.$stl['button'] ||
                                   ''}"
                                   type="button"
@@ -779,10 +855,10 @@ export class Keyval extends Base {
                               `
                             : ''}
                           <button
-                            class="${this.$cls['removeButton'] ||
+                            class="${this.$cls['remove-button'] ||
                             this.$cls['button'] ||
                             ''}"
-                            style="${this.$stl['removeButton'] ||
+                            style="${this.$stl['remove-button'] ||
                             this.$stl['button'] ||
                             ''}"
                             type="button"

@@ -449,4 +449,34 @@
   .uk-tag-muted:hover {
     --uk-tag-bg-o: 8%;
   }
+
+  /**============================================
+     Keyval Component
+     ============================================ */
+  .uk-keyval {
+    --uk-keyval-border-color: var(--uk-border);
+    --uk-keyval-border-color-o: 10%;
+
+    /* Computed value */
+    --uk-keyval-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-keyval-border-color) var(--uk-keyval-border-color-o),
+      transparent
+    );
+
+    border-radius: var(--uk-global-radius);
+    box-shadow: var(--uk-global-shadow);
+    border-width: 1px;
+    border-color: var(--uk-keyval-border-color-computed);
+  }
+
+  .uk-keyval-value-wrapper {
+    width: 100%;
+  }
+
+  .uk-keyval-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 0.5rem;
+  }
 }
