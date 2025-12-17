@@ -2038,10 +2038,6 @@
     height: var(--uk-button-height);
     padding: var(--uk-button-padding);
     cursor: pointer;
-    transition:
-      background-color 150ms ease-in-out,
-      color 150ms ease-in-out,
-      border-color 150ms ease-in-out;
   }
   .uk-button::-moz-focus-inner {
     border: 0;
@@ -2050,6 +2046,10 @@
   .uk-button:hover {
     background-color: var(--uk-button-hover-bg-computed);
     color: var(--uk-button-hover-color-computed);
+    transition:
+      background-color 150ms ease-in-out,
+      color 150ms ease-in-out,
+      border-color 150ms ease-in-out;
   }
   .uk-button:disabled {
     opacity: var(--uk-button-disabled-o);
@@ -2715,7 +2715,7 @@
   }
   .uk-cal table tbody tr td button:hover {
     --uk-cal-cell-hover-bg: var(--uk-accent);
-    --uk-cal-cell-hover-bg-o: 100%;
+    --uk-cal-cell-hover-bg-o: var(--uk-accent-o);
     --uk-cal-cell-hover-color: var(--uk-accent-f);
     --uk-cal-cell-hover-color-o: 100%;
     --uk-cal-hover-duration: 150ms;
@@ -2748,7 +2748,7 @@
     );
     color: var(--uk-cal-cell-oom-color-computed);
   }
-  .uk-cal table tbody tr td.uk-active button {
+  .uk-cal table tbody tr td button.uk-active {
     --uk-cal-cell-active-bg: var(--uk-primary);
     --uk-cal-cell-active-bg-o: 100%;
     --uk-cal-cell-active-color: var(--uk-primary-f);
@@ -2800,7 +2800,7 @@
     --uk-cal-marked-border-color-o: 32%;
     --uk-cal-marked-dot-color: var(--uk-info);
     --uk-cal-marked-dot-color-o: 100%;
-    --uk-cal-marked-dot-size: 0.375rem;
+    --uk-cal-marked-dot-size: 0.25rem;
     --uk-cal-marked-bg-computed: color-mix(
       in srgb,
       var(--uk-cal-marked-bg) var(--uk-cal-marked-bg-o),
@@ -2822,7 +2822,7 @@
     border: 1px solid var(--uk-cal-marked-border-color-computed);
   }
   .uk-cal-marked::after {
-    --uk-cal-marked-dot-offset: 0.5rem;
+    --uk-cal-marked-dot-offset: 0.75rem;
     content: '';
     position: absolute;
     top: 50%;
@@ -3790,7 +3790,7 @@
     --uk-modal-padding-top-after-scrollable: var(--uk-modal-padding);
     --uk-modal-radius: var(--uk-global-radius);
     --uk-modal-z-index: 1010;
-    --uk-modal-transition: opacity 0.15s linear;
+    --uk-modal-transition: opacity 0.15s ease-out;
     --uk-modal-overlay-bg: #000;
     --uk-modal-overlay-bg-o: 80%;
     --uk-modal-overlay-blur: var(--uk-global-blur);
@@ -3822,8 +3822,8 @@
   }
   .uk-modal-dialog {
     --uk-modal-dialog-width: 32rem;
-    --uk-modal-dialog-transform: translateY(-100px);
-    --uk-modal-dialog-transition: 0.3s linear;
+    --uk-modal-dialog-transform: translateY(-8px) scale(0.95);
+    --uk-modal-dialog-transition: 0.15s ease-out;
     --uk-modal-dialog-border-width: 1px;
     --uk-modal-dialog-border-color: var(--uk-border);
     --uk-modal-dialog-border-color-o: 10%;
@@ -3850,7 +3850,7 @@
   }
   .uk-open > .uk-modal-dialog {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   .uk-modal-container .uk-modal-dialog {
     width: 1200px;

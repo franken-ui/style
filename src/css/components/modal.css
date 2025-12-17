@@ -14,7 +14,7 @@
     --uk-modal-padding-top-after-scrollable: var(--uk-modal-padding);
     --uk-modal-radius: var(--uk-global-radius);
     --uk-modal-z-index: 1010;
-    --uk-modal-transition: opacity 0.15s linear;
+    --uk-modal-transition: opacity 0.15s ease-out;
     --uk-modal-overlay-bg: #000;
     --uk-modal-overlay-bg-o: 80%;
     --uk-modal-overlay-blur: var(--uk-global-blur);
@@ -54,8 +54,8 @@
   .uk-modal-dialog {
     /* Base Variables */
     --uk-modal-dialog-width: 32rem;
-    --uk-modal-dialog-transform: translateY(-100px);
-    --uk-modal-dialog-transition: 0.3s linear;
+    --uk-modal-dialog-transform: translateY(-8px) scale(0.95);
+    --uk-modal-dialog-transition: 0.15s ease-out;
     --uk-modal-dialog-border-width: 1px;
     --uk-modal-dialog-border-color: var(--uk-border);
     --uk-modal-dialog-border-color-o: 10%;
@@ -86,7 +86,7 @@
 
   .uk-open > .uk-modal-dialog {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 
   .uk-modal-container .uk-modal-dialog {

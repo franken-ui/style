@@ -183,7 +183,7 @@
   .uk-cal table tbody tr td button:hover {
     /* Base Variables */
     --uk-cal-cell-hover-bg: var(--uk-accent);
-    --uk-cal-cell-hover-bg-o: 100%;
+    --uk-cal-cell-hover-bg-o: var(--uk-accent-o);
     --uk-cal-cell-hover-color: var(--uk-accent-f);
     --uk-cal-cell-hover-color-o: 100%;
     --uk-cal-hover-duration: 150ms;
@@ -228,7 +228,7 @@
   }
 
   /* Active Cell */
-  .uk-cal table tbody tr td.uk-active button {
+  .uk-cal table tbody tr td button.uk-active {
     /* Base Variables */
     --uk-cal-cell-active-bg: var(--uk-primary);
     --uk-cal-cell-active-bg-o: 100%;
@@ -302,7 +302,7 @@
     --uk-cal-marked-border-color-o: 32%;
     --uk-cal-marked-dot-color: var(--uk-info);
     --uk-cal-marked-dot-color-o: 100%;
-    --uk-cal-marked-dot-size: 0.375rem;
+    --uk-cal-marked-dot-size: 0.25rem;
 
     /* Computed values */
     --uk-cal-marked-bg-computed: color-mix(
@@ -329,7 +329,7 @@
 
   .uk-cal-marked::after {
     /* Base Variables */
-    --uk-cal-marked-dot-offset: 0.5rem;
+    --uk-cal-marked-dot-offset: 0.75rem;
 
     content: '';
     position: absolute;

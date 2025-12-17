@@ -76,10 +76,6 @@
     height: var(--uk-button-height);
     padding: var(--uk-button-padding);
     cursor: pointer;
-    transition:
-      background-color 150ms ease-in-out,
-      color 150ms ease-in-out,
-      border-color 150ms ease-in-out;
   }
 
   .uk-button::-moz-focus-inner {
@@ -90,6 +86,10 @@
   .uk-button:hover {
     background-color: var(--uk-button-hover-bg-computed);
     color: var(--uk-button-hover-color-computed);
+    transition:
+      background-color 150ms ease-in-out,
+      color 150ms ease-in-out,
+      border-color 150ms ease-in-out;
   }
 
   .uk-button:disabled {
