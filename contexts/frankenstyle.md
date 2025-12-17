@@ -1171,29 +1171,29 @@ Prefix classes with breakpoints:
 
 ### Utilities (absolute values)
 
-| Selector              | Style                         |
-| --------------------- | ----------------------------- |
-| `.block`              | `display: block`              |
-| `.inline-block`       | `display: inline-block`       |
-| `.inline`             | `display: inline`             |
-| `.flex`               | `display: flex`               |
-| `.inline-flex`        | `display: inline-flex`        |
-| `.table`              | `display: table`              |
-| `.inline-table`       | `display: inline-table`       |
-| `.table-caption`      | `display: table-caption`      |
-| `.table-cell`         | `display: table-cell`         |
-| `.table-column`       | `display: table-column`       |
-| `.table-column-group` | `display: table-column-group` |
-| `.table-footer-group` | `display: table-footer-group` |
-| `.table-header-group` | `display: table-header-group` |
-| `.table-row-group`    | `display: table-row-group`    |
-| `.table-row`          | `display: table-row`          |
-| `.flow-root`          | `display: flow-root`          |
-| `.grid`               | `display: grid`               |
-| `.inline-grid`        | `display: inline-grid`        |
-| `.contents`           | `display: contents`           |
-| `.list-item`          | `display: list-item`          |
-| `.hidden`             | `display: none`               |
+| Selector                      | Style                         |
+| ----------------------------- | ----------------------------- |
+| `.display-block`              | `display: block`              |
+| `.display-inline-block`       | `display: inline-block`       |
+| `.display-inline`             | `display: inline`             |
+| `.display-flex`               | `display: flex`               |
+| `.display-inline-flex`        | `display: inline-flex`        |
+| `.display-table`              | `display: table`              |
+| `.display-inline-table`       | `display: inline-table`       |
+| `.display-table-caption`      | `display: table-caption`      |
+| `.display-table-cell`         | `display: table-cell`         |
+| `.display-table-column`       | `display: table-column`       |
+| `.display-table-column-group` | `display: table-column-group` |
+| `.display-table-footer-group` | `display: table-footer-group` |
+| `.display-table-header-group` | `display: table-header-group` |
+| `.display-table-row-group`    | `display: table-row-group`    |
+| `.display-table-row`          | `display: table-row`          |
+| `.display-flow-root`          | `display: flow-root`          |
+| `.display-grid`               | `display: grid`               |
+| `.display-inline-grid`        | `display: inline-grid`        |
+| `.display-contents`           | `display: contents`           |
+| `.display-list-item`          | `display: list-item`          |
+| `.display-hidden`             | `display: none`               |
 
 
 

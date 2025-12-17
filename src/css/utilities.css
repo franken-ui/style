@@ -1136,67 +1136,67 @@
   .cursor-zoom-out {
     cursor: zoom-out;
   }
-  .block {
+  .display-block {
     display: block;
   }
-  .inline-block {
+  .display-inline-block {
     display: inline-block;
   }
-  .inline {
+  .display-inline {
     display: inline;
   }
-  .flex {
+  .display-flex {
     display: flex;
   }
-  .inline-flex {
+  .display-inline-flex {
     display: inline-flex;
   }
-  .table {
+  .display-table {
     display: table;
   }
-  .inline-table {
+  .display-inline-table {
     display: inline-table;
   }
-  .table-caption {
+  .display-table-caption {
     display: table-caption;
   }
-  .table-cell {
+  .display-table-cell {
     display: table-cell;
   }
-  .table-column {
+  .display-table-column {
     display: table-column;
   }
-  .table-column-group {
+  .display-table-column-group {
     display: table-column-group;
   }
-  .table-footer-group {
+  .display-table-footer-group {
     display: table-footer-group;
   }
-  .table-header-group {
+  .display-table-header-group {
     display: table-header-group;
   }
-  .table-row-group {
+  .display-table-row-group {
     display: table-row-group;
   }
-  .table-row {
+  .display-table-row {
     display: table-row;
   }
-  .flow-root {
+  .display-flow-root {
     display: flow-root;
   }
-  .grid {
+  .display-grid {
     display: grid;
   }
-  .inline-grid {
+  .display-inline-grid {
     display: inline-grid;
   }
-  .contents {
+  .display-contents {
     display: contents;
   }
-  .list-item {
+  .display-list-item {
     display: list-item;
   }
-  .hidden {
+  .display-hidden {
     display: none;
   }
   .divide-x-reverse :where(& > :not(:last-child)) {
@@ -4164,67 +4164,67 @@
     .sm\:cursor-zoom-out {
       cursor: zoom-out;
     }
-    .sm\:block {
+    .sm\:display-block {
       display: block;
     }
-    .sm\:inline-block {
+    .sm\:display-inline-block {
       display: inline-block;
     }
-    .sm\:inline {
+    .sm\:display-inline {
       display: inline;
     }
-    .sm\:flex {
+    .sm\:display-flex {
       display: flex;
     }
-    .sm\:inline-flex {
+    .sm\:display-inline-flex {
       display: inline-flex;
     }
-    .sm\:table {
+    .sm\:display-table {
       display: table;
     }
-    .sm\:inline-table {
+    .sm\:display-inline-table {
       display: inline-table;
     }
-    .sm\:table-caption {
+    .sm\:display-table-caption {
       display: table-caption;
     }
-    .sm\:table-cell {
+    .sm\:display-table-cell {
       display: table-cell;
     }
-    .sm\:table-column {
+    .sm\:display-table-column {
       display: table-column;
     }
-    .sm\:table-column-group {
+    .sm\:display-table-column-group {
       display: table-column-group;
     }
-    .sm\:table-footer-group {
+    .sm\:display-table-footer-group {
       display: table-footer-group;
     }
-    .sm\:table-header-group {
+    .sm\:display-table-header-group {
       display: table-header-group;
     }
-    .sm\:table-row-group {
+    .sm\:display-table-row-group {
       display: table-row-group;
     }
-    .sm\:table-row {
+    .sm\:display-table-row {
       display: table-row;
     }
-    .sm\:flow-root {
+    .sm\:display-flow-root {
       display: flow-root;
     }
-    .sm\:grid {
+    .sm\:display-grid {
       display: grid;
     }
-    .sm\:inline-grid {
+    .sm\:display-inline-grid {
       display: inline-grid;
     }
-    .sm\:contents {
+    .sm\:display-contents {
       display: contents;
     }
-    .sm\:list-item {
+    .sm\:display-list-item {
       display: list-item;
     }
-    .sm\:hidden {
+    .sm\:display-hidden {
       display: none;
     }
     .sm\:divide-x-reverse :where(& > :not(:last-child)) {
@@ -7193,67 +7193,67 @@
     .md\:cursor-zoom-out {
       cursor: zoom-out;
     }
-    .md\:block {
+    .md\:display-block {
       display: block;
     }
-    .md\:inline-block {
+    .md\:display-inline-block {
       display: inline-block;
     }
-    .md\:inline {
+    .md\:display-inline {
       display: inline;
     }
-    .md\:flex {
+    .md\:display-flex {
       display: flex;
     }
-    .md\:inline-flex {
+    .md\:display-inline-flex {
       display: inline-flex;
     }
-    .md\:table {
+    .md\:display-table {
       display: table;
     }
-    .md\:inline-table {
+    .md\:display-inline-table {
       display: inline-table;
     }
-    .md\:table-caption {
+    .md\:display-table-caption {
       display: table-caption;
     }
-    .md\:table-cell {
+    .md\:display-table-cell {
       display: table-cell;
     }
-    .md\:table-column {
+    .md\:display-table-column {
       display: table-column;
     }
-    .md\:table-column-group {
+    .md\:display-table-column-group {
       display: table-column-group;
     }
-    .md\:table-footer-group {
+    .md\:display-table-footer-group {
       display: table-footer-group;
     }
-    .md\:table-header-group {
+    .md\:display-table-header-group {
       display: table-header-group;
     }
-    .md\:table-row-group {
+    .md\:display-table-row-group {
       display: table-row-group;
     }
-    .md\:table-row {
+    .md\:display-table-row {
       display: table-row;
     }
-    .md\:flow-root {
+    .md\:display-flow-root {
       display: flow-root;
     }
-    .md\:grid {
+    .md\:display-grid {
       display: grid;
     }
-    .md\:inline-grid {
+    .md\:display-inline-grid {
       display: inline-grid;
     }
-    .md\:contents {
+    .md\:display-contents {
       display: contents;
     }
-    .md\:list-item {
+    .md\:display-list-item {
       display: list-item;
     }
-    .md\:hidden {
+    .md\:display-hidden {
       display: none;
     }
     .md\:divide-x-reverse :where(& > :not(:last-child)) {
@@ -10222,67 +10222,67 @@
     .lg\:cursor-zoom-out {
       cursor: zoom-out;
     }
-    .lg\:block {
+    .lg\:display-block {
       display: block;
     }
-    .lg\:inline-block {
+    .lg\:display-inline-block {
       display: inline-block;
     }
-    .lg\:inline {
+    .lg\:display-inline {
       display: inline;
     }
-    .lg\:flex {
+    .lg\:display-flex {
       display: flex;
     }
-    .lg\:inline-flex {
+    .lg\:display-inline-flex {
       display: inline-flex;
     }
-    .lg\:table {
+    .lg\:display-table {
       display: table;
     }
-    .lg\:inline-table {
+    .lg\:display-inline-table {
       display: inline-table;
     }
-    .lg\:table-caption {
+    .lg\:display-table-caption {
       display: table-caption;
     }
-    .lg\:table-cell {
+    .lg\:display-table-cell {
       display: table-cell;
     }
-    .lg\:table-column {
+    .lg\:display-table-column {
       display: table-column;
     }
-    .lg\:table-column-group {
+    .lg\:display-table-column-group {
       display: table-column-group;
     }
-    .lg\:table-footer-group {
+    .lg\:display-table-footer-group {
       display: table-footer-group;
     }
-    .lg\:table-header-group {
+    .lg\:display-table-header-group {
       display: table-header-group;
     }
-    .lg\:table-row-group {
+    .lg\:display-table-row-group {
       display: table-row-group;
     }
-    .lg\:table-row {
+    .lg\:display-table-row {
       display: table-row;
     }
-    .lg\:flow-root {
+    .lg\:display-flow-root {
       display: flow-root;
     }
-    .lg\:grid {
+    .lg\:display-grid {
       display: grid;
     }
-    .lg\:inline-grid {
+    .lg\:display-inline-grid {
       display: inline-grid;
     }
-    .lg\:contents {
+    .lg\:display-contents {
       display: contents;
     }
-    .lg\:list-item {
+    .lg\:display-list-item {
       display: list-item;
     }
-    .lg\:hidden {
+    .lg\:display-hidden {
       display: none;
     }
     .lg\:divide-x-reverse :where(& > :not(:last-child)) {
@@ -13251,67 +13251,67 @@
     .xl\:cursor-zoom-out {
       cursor: zoom-out;
     }
-    .xl\:block {
+    .xl\:display-block {
       display: block;
     }
-    .xl\:inline-block {
+    .xl\:display-inline-block {
       display: inline-block;
     }
-    .xl\:inline {
+    .xl\:display-inline {
       display: inline;
     }
-    .xl\:flex {
+    .xl\:display-flex {
       display: flex;
     }
-    .xl\:inline-flex {
+    .xl\:display-inline-flex {
       display: inline-flex;
     }
-    .xl\:table {
+    .xl\:display-table {
       display: table;
     }
-    .xl\:inline-table {
+    .xl\:display-inline-table {
       display: inline-table;
     }
-    .xl\:table-caption {
+    .xl\:display-table-caption {
       display: table-caption;
     }
-    .xl\:table-cell {
+    .xl\:display-table-cell {
       display: table-cell;
     }
-    .xl\:table-column {
+    .xl\:display-table-column {
       display: table-column;
     }
-    .xl\:table-column-group {
+    .xl\:display-table-column-group {
       display: table-column-group;
     }
-    .xl\:table-footer-group {
+    .xl\:display-table-footer-group {
       display: table-footer-group;
     }
-    .xl\:table-header-group {
+    .xl\:display-table-header-group {
       display: table-header-group;
     }
-    .xl\:table-row-group {
+    .xl\:display-table-row-group {
       display: table-row-group;
     }
-    .xl\:table-row {
+    .xl\:display-table-row {
       display: table-row;
     }
-    .xl\:flow-root {
+    .xl\:display-flow-root {
       display: flow-root;
     }
-    .xl\:grid {
+    .xl\:display-grid {
       display: grid;
     }
-    .xl\:inline-grid {
+    .xl\:display-inline-grid {
       display: inline-grid;
     }
-    .xl\:contents {
+    .xl\:display-contents {
       display: contents;
     }
-    .xl\:list-item {
+    .xl\:display-list-item {
       display: list-item;
     }
-    .xl\:hidden {
+    .xl\:display-hidden {
       display: none;
     }
     .xl\:divide-x-reverse :where(& > :not(:last-child)) {
@@ -16280,67 +16280,67 @@
     .\32xl\:cursor-zoom-out {
       cursor: zoom-out;
     }
-    .\32xl\:block {
+    .\32xl\:display-block {
       display: block;
     }
-    .\32xl\:inline-block {
+    .\32xl\:display-inline-block {
       display: inline-block;
     }
-    .\32xl\:inline {
+    .\32xl\:display-inline {
       display: inline;
     }
-    .\32xl\:flex {
+    .\32xl\:display-flex {
       display: flex;
     }
-    .\32xl\:inline-flex {
+    .\32xl\:display-inline-flex {
       display: inline-flex;
     }
-    .\32xl\:table {
+    .\32xl\:display-table {
       display: table;
     }
-    .\32xl\:inline-table {
+    .\32xl\:display-inline-table {
       display: inline-table;
     }
-    .\32xl\:table-caption {
+    .\32xl\:display-table-caption {
       display: table-caption;
     }
-    .\32xl\:table-cell {
+    .\32xl\:display-table-cell {
       display: table-cell;
     }
-    .\32xl\:table-column {
+    .\32xl\:display-table-column {
       display: table-column;
     }
-    .\32xl\:table-column-group {
+    .\32xl\:display-table-column-group {
       display: table-column-group;
     }
-    .\32xl\:table-footer-group {
+    .\32xl\:display-table-footer-group {
       display: table-footer-group;
     }
-    .\32xl\:table-header-group {
+    .\32xl\:display-table-header-group {
       display: table-header-group;
     }
-    .\32xl\:table-row-group {
+    .\32xl\:display-table-row-group {
       display: table-row-group;
     }
-    .\32xl\:table-row {
+    .\32xl\:display-table-row {
       display: table-row;
     }
-    .\32xl\:flow-root {
+    .\32xl\:display-flow-root {
       display: flow-root;
     }
-    .\32xl\:grid {
+    .\32xl\:display-grid {
       display: grid;
     }
-    .\32xl\:inline-grid {
+    .\32xl\:display-inline-grid {
       display: inline-grid;
     }
-    .\32xl\:contents {
+    .\32xl\:display-contents {
       display: contents;
     }
-    .\32xl\:list-item {
+    .\32xl\:display-list-item {
       display: list-item;
     }
-    .\32xl\:hidden {
+    .\32xl\:display-hidden {
       display: none;
     }
     .\32xl\:divide-x-reverse :where(& > :not(:last-child)) {
