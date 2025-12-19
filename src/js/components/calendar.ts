@@ -87,8 +87,10 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
   protected $cls: Cls = {
     'host-inner': 'uk-cal',
     header: 'uk-cal-header',
-    'previous-button': 'uk-button uk-button-icon uk-button-small',
-    'next-button': 'uk-button uk-button-icon uk-button-small',
+    'previous-button':
+      'uk-button uk-button-secondary uk-button-icon uk-button-small',
+    'next-button':
+      'uk-button uk-button-secondary uk-button-icon uk-button-small',
     title: 'uk-cal-title',
     jumper: 'uk-cal-jumper',
     'month-select': 'uk-select uk-form-small',
@@ -101,7 +103,8 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
     'day-button': '',
     'jumper-month': 'uk-cal-jumper-month',
     'jumper-year': 'uk-cal-jumper-year',
-    'jumper-button': 'uk-button uk-button-icon uk-button-small',
+    'jumper-button':
+      'uk-button uk-button-secondary uk-button-icon uk-button-small',
     'day-outside-month': 'uk-cal-oom',
     'day-selected': 'uk-active',
     'day-today': 'uk-nothing',

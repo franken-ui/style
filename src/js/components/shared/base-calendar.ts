@@ -257,7 +257,10 @@ export const BaseCalendarMixin = <
      */
     protected $icons(icon: string) {
       const customIcon = super.$icons(icon);
-      if (customIcon) return customIcon;
+
+      if (customIcon) {
+        return customIcon;
+      }
 
       switch (icon) {
         case 'chevron-left':

@@ -28,6 +28,82 @@ interface Stl extends Record<string, string> {
   time: string;
 }
 
+/**
+ * A date input component with calendar picker and optional time selection.
+ * Provides a user-friendly interface for date/time selection with full keyboard navigation.
+ *
+ * @element uk-input-date
+ * @extends {BaseCalendarMixin(InputMixin(Base))}
+ *
+ * Features:
+ * - Calendar date picker with dropdown
+ * - Optional time selection with clock formats (12h/24h)
+ * - Customizable date display format
+ * - Date range validation (min/max)
+ * - Marked and disabled dates support
+ * - Full keyboard navigation and ARIA accessibility
+ * - Headless design with flexible styling via cls/stl
+ * - Comprehensive i18n support
+ * - Form integration with hidden input
+ *
+ * @fires uk-input-date:change - Emitted when the date/time value changes
+ *
+ * @example
+ * Basic usage:
+ * ```html
+ * <uk-input-date
+ *   name="appointment"
+ *   placeholder="Choose date"
+ *   required>
+ * </uk-input-date>
+ * ```
+ *
+ * @example
+ * With time selection:
+ * ```html
+ * <uk-input-date
+ *   name="meeting"
+ *   with-time
+ *   clock="24h"
+ *   display-format="MMM DD, YYYY"
+ *   value="2025-01-15T14:30">
+ * </uk-input-date>
+ * ```
+ *
+ * @example
+ * With date constraints and custom icons:
+ * ```html
+ * <uk-input-date
+ *   min="2025-01-01"
+ *   max="2025-12-31"
+ *   disabled-dates="2025-01-15,2025-02-14"
+ *   marked-dates="2025-01-20,2025-03-15">
+ *   <template data-fn="icons">
+ *     <svg data-key="calendar"><!-- custom icon --></svg>
+ *   </template>
+ * </uk-input-date>
+ * ```
+ *
+ * @example
+ * With configuration and i18n via script:
+ * ```html
+ * <uk-input-date>
+ *   <script type="application/json">
+ *   {
+ *     "i18n": {
+ *       "button-label": "Pick a date",
+ *       "dialog-label": "Calendar picker",
+ *       "placeholder": "DD/MM/YYYY"
+ *     },
+ *     "cls": {
+ *       "button": "custom-date-button",
+ *       "dropdown": "custom-dropdown"
+ *     }
+ *   }
+ *   </script>
+ * </uk-input-date>
+ * ```
+ */
 @customElement('uk-input-date')
 export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
   protected 'cls-default-element' = 'button';
@@ -58,12 +134,12 @@ export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
   @state()
   protected $cls: Cls = {
     container: '',
-    button: 'uk-input-fake',
+    button: '',
     'button-text': '',
     icon: '',
     dropdown: 'uk-datepicker-dropdown',
     calendar: '',
-    'time-wrapper': '',
+    'time-wrapper': 'uk-datepicker-time',
     time: '',
   };
 
@@ -77,6 +153,19 @@ export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
     calendar: '',
     'time-wrapper': '',
     time: '',
+  };
+
+  /**
+   * Default internationalization strings for labels and accessibility.
+   * These can be overridden via the i18n attribute or config script.
+   * @internal
+   */
+  private readonly defaultI18n = {
+    'button-label': 'Select date',
+    'dialog-label': 'Date picker',
+    selected: 'selected',
+    placeholder: 'Select a date',
+    'placeholder-with-time': 'Select a date and time',
   };
 
   protected get $value(): string {
@@ -119,10 +208,8 @@ export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
     }
 
     return this.getI18nText(
-      'placeholder',
-      this['with-time']
-        ? { placeholder: 'Select a date and time' }
-        : { placeholder: 'Select a date' },
+      this['with-time'] ? 'placeholder-with-time' : 'placeholder',
+      this.defaultI18n,
     );
   }
 
@@ -182,21 +269,17 @@ export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
   }
 
   private get buttonLabel(): string {
-    const baseLabel = this.getI18nText('buttonLabel', {
-      buttonLabel: 'Select date',
-    });
+    const baseLabel = this.getI18nText('button-text', this.defaultI18n);
 
     if (this.$value) {
-      return `${baseLabel}, ${this.getI18nText('selected', { selected: 'selected' })}: ${this.$text}`;
+      return `${baseLabel}, ${this.getI18nText('selected', this.defaultI18n)}: ${this.$text}`;
     }
 
     return baseLabel;
   }
 
   render() {
-    const ariaLabel = this.getI18nText('dialogLabel', {
-      dialogLabel: 'Date picker',
-    });
+    const ariaLabel = this.getI18nText('dialog-label', this.defaultI18n);
 
     return html`
       <div
@@ -219,7 +302,7 @@ export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
             >
               ${this.$text}
             </span>
-            ${this.$icons('calendar') || ''}
+            ${this.$icons('calendar') || nothing}
           </button>
 
           <div
@@ -266,8 +349,8 @@ export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
         style="${this.$stl['time-wrapper']}"
       >
         <uk-input-time
-          class="${this.$cls.time}"
-          style="${this.$stl.time}"
+          class="${this.$cls['time']}"
+          style="${this.$stl['time']}"
           ?required=${this['require-time']}
           .i18n=${this.i18n}
           .value=${this.$time || ''}
