@@ -479,4 +479,99 @@
     flex-wrap: nowrap;
     column-gap: 0.5rem;
   }
+
+  /* ============================================
+     Command Palette Component
+     ============================================ */
+
+  /* Command Header */
+  .uk-cmd-header {
+    /* Base Variables */
+    --uk-cmd-header-gap: 0.5rem;
+    --uk-cmd-header-padding: 0 0.75rem;
+
+    display: flex;
+    align-items: center;
+    gap: var(--uk-cmd-header-gap);
+    padding: var(--uk-cmd-header-padding);
+  }
+
+  .uk-cmd-header-input {
+    /* Base Variables */
+    --uk-cmd-header-input-padding: 0.75rem 0;
+
+    flex: 1;
+    padding: var(--uk-cmd-header-input-padding);
+  }
+
+  .uk-cmd-header-input input {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .uk-cmd-header-input input:focus {
+    outline: none;
+  }
+
+  .uk-cmd-header-input input::placeholder {
+    color: var(--uk-muted-f);
+  }
+
+  .uk-cmd-header-icon {
+    /* Base Variables */
+    --uk-cmd-header-icon-size: 1rem;
+
+    width: var(--uk-cmd-header-icon-size);
+    height: var(--uk-cmd-header-icon-size);
+    flex: none;
+    color: var(--uk-muted-f);
+  }
+
+  .uk-cmd-header-esc {
+    flex: none;
+  }
+
+  /* Command Body */
+  .uk-cmd-body {
+    /* Base Variables */
+    --uk-cmd-body-max-height: 20rem;
+
+    max-height: var(--uk-cmd-body-max-height);
+  }
+
+  /* Command Item */
+  .uk-cmd-item-wrapper {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+
+  .uk-cmd-item-icon {
+    /* Base Variables */
+    --uk-cmd-item-icon-margin: 0.5rem;
+    --uk-cmd-item-icon-size: 1rem;
+
+    margin-inline-end: var(--uk-cmd-item-icon-margin);
+    width: var(--uk-cmd-item-icon-size);
+    height: var(--uk-cmd-item-icon-size);
+    flex: none;
+  }
+
+  .uk-cmd-item-text {
+    flex: 1;
+  }
+
+  .uk-cmd-item-key {
+    /* Base Variables */
+    --uk-cmd-item-key-font-family: var(--uk-global-font-family-mono);
+    --uk-cmd-item-key-font-size: var(--uk-global-font-size-small);
+    --uk-cmd-item-key-leading: var(--uk-global-line-height-small);
+    --uk-cmd-item-key-tracking: 0.1em;
+
+    font-family: var(--uk-cmd-item-key-font-family);
+    font-size: var(--uk-cmd-item-key-font-size);
+    line-height: var(--uk-cmd-item-key-leading);
+    letter-spacing: var(--uk-cmd-item-key-tracking);
+    color: var(--uk-muted-f);
+  }
 }

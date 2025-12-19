@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Date</title>
+
+    <link rel="stylesheet" href="../src/css/core.css" />
+    <link rel="stylesheet" href="../src/css/kit.css" />
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <link rel="stylesheet" href="../src/css/components/date.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/utilities.css" />
+
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script type="module" src="../src/js/core.ts"></script>
+
+    <script>
+      const htmlElement = document.documentElement;
+
+      const __FRANKEN__ = JSON.parse(
+        localStorage.getItem('__FRANKEN__') || '{}',
+      );
+
+      if (
+        __FRANKEN__.mode === 'dark' ||
+        (!__FRANKEN__.mode &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+
+      htmlElement.classList.add(__FRANKEN__.theme || 'uk-theme-zinc');
+      htmlElement.classList.add(__FRANKEN__.radii || 'uk-radii-md');
+      htmlElement.classList.add(__FRANKEN__.shadows || 'uk-shadows-sm');
+      htmlElement.classList.add(__FRANKEN__.font || 'uk-font-sm');
+      htmlElement.classList.add(__FRANKEN__.chart || 'uk-chart-default');
+    </script>
+  </head>
+  <body
+    class="bg color antialiased"
+    style="--bg: var(--uk-bg); --color: var(--uk-bg-f)"
+  >
+    <div class="uk-container my" style="--my: 10">
+      <div class="mb display-flex justify-center" style="--mb: 2">
+        <a
+          class="uk-focus-visible text-muted-foreground display-inline-flex gap-x justify-between"
+          style="--gap-x: 2"
+          href="/kit/index.html"
+        >
+          <uk-icon icon="arrow-left"></uk-icon>
+          <span class="uk-text-small">Back</span>
+        </a>
+      </div>
+      <h1 class="uk-h1 mb text-center" style="--mb: 6">Input Date</h1>
+
+      <div class="space-y" style="--space-y: 6">
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">Basic</h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Render without attributes. Verifies default dropdown
+                    behavior and placeholder.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Component renders as a button that opens a calendar.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Button displays placeholder "Select a date".</li>
+                    <li>
+                      Clicking the button opens the dropdown with a
+                      <code class="uk-codespan">uk-calendar</code> inside.
+                    </li>
+                    <li>
+                      Selecting a date closes the dropdown (optional standard
+                      behavior) or updates the button text to the formatted date
+                      (e.g., "October 25, 2023").
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <uk-input-date></uk-input-date>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">display-format</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Customize the date format on the button. <br />
+                    <code class="uk-codespan">display-format="DD/MM/YYYY"</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Selected date follows the provided format string.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Select a date (e.g., Oct 31, 2023).</li>
+                    <li>Button text should read "31/10/2023".</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <uk-input-date display-format="DD/MM/YYYY"></uk-input-date>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">with-time</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>Enable time selection alongside date.</p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Dropdown contains both calendar and time input.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>
+                      Dropdown opens showing
+                      <code class="uk-calendar"></code> AND
+                      <code class="uk-input-time"></code>.
+                    </li>
+                    <li>Placeholder reads "Select a date and time".</li>
+                    <li>
+                      Selecting both updates button text (e.g., "October 25,
+                      2023 2:30 PM").
+                    </li>
+                    <li>
+                      Internal value includes 'T' separator (e.g.,
+                      "2023-10-25T14:30").
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <uk-input-date with-time></uk-input-date>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">value</code> (Date Only)
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Pre-fill with an ISO date string:
+                    <code class="uk-codespan">value="2023-12-25"</code>.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Component initializes with selected date.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Button text reads "December 25, 2023".</li>
+                    <li>
+                      Opening dropdown shows December 2023 with 25th selected.
+                    </li>
+                    <li>Time component is absent.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <uk-input-date value="2023-12-25"></uk-input-date>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">value</code> (Date + Time)
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Pre-fill with ISO date-time:
+                    <code class="uk-codespan">value="2023-12-25T14:30"</code
+                    >.<br />
+                    Requires <code class="uk-codespan">with-time</code> and
+                    <code class="uk-codespan">clock="24h"</code>.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>
+                    Component initializes with date and time parts split
+                    correctly.
+                  </p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>
+                      Button text includes time: "December 25, 2023 14:30" (due
+                      to 24h clock).
+                    </li>
+                    <li>Dropdown shows correct date selected.</li>
+                    <li>Time picker is pre-filled with 14:30.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <uk-input-date
+              value="2023-12-25T14:30"
+              with-time
+              clock="24h"
+            ></uk-input-date>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">Calendar Pass-through</h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Verify
+                    <code class="uk-codespan">uk-calendar</code> attributes are
+                    passed through.<br />
+                    Attrs: <code class="uk-codespan">today</code>,
+                    <code class="uk-codespan">jumpable</code>,
+                    <code class="uk-codespan">starts-with="1"</code>.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Inner calendar reflects configuration.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>
+                      Dropdown opens to today's date selected (<code
+                        class="uk-codespan"
+                        >today</code
+                      >).
+                    </li>
+                    <li>
+                      Calendar header has Month/Year select inputs (<code
+                        class="uk-codespan"
+                        >jumpable</code
+                      >).
+                    </li>
+                    <li>
+                      Weeks start on Monday (<code class="uk-codespan"
+                        >starts-with="1"</code
+                      >).
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <uk-input-date today jumpable starts-with="1"></uk-input-date>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom right fixed" style="--bottom: 8; --right: 8">
+      <uk-lsh
+        class="display-inline-block size"
+        style="--size: 14"
+        toggle
+        group="mode"
+        cls="uk-button uk-button-icon uk-button-primary uk-button-large relative rounded-full"
+      >
+        <template data-fn="template">
+          <uk-icon
+            class="dark-slide-icon dark-slide-moon dark:dark-slide-moon"
+            icon="moon"
+          >
+          </uk-icon>
+          <uk-icon
+            class="dark-slide-icon dark-slide-sun dark:dark-slide-sun"
+            icon="sun"
+          >
+          </uk-icon>
+        </template>
+      </uk-lsh>
+    </div>
+
+    <script type="module" src="../src/js/icon.ts"></script>
+    <script type="module" src="../src/js/components.ts"></script>
+    <script type="module" src="../src/js/runtime.ts"></script>
+  </body>
+</html>

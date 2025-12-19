@@ -1,0 +1,50 @@
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+.dark-slide-icon {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dark-slide-sun {
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dark-slide-moon {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.dark\:dark-slide-moon:where(.dark, .dark *) {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dark\:dark-slide-sun:where(.dark, .dark *) {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}

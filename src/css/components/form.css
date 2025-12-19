@@ -546,4 +546,109 @@
       margin: 0 0 5px 0;
     }
   }
+
+  /* ============================================
+     Input Range
+     ============================================ */
+  .uk-range {
+    /* Base Variables */
+    --uk-range-track-height: 3px;
+    --uk-range-track-radius: 500px;
+    --uk-range-track-bg: var(--uk-primary);
+    --uk-range-track-bg-o: 20%;
+    --uk-range-thumb-size: 1rem;
+    --uk-range-thumb-margin-top: -7px;
+    --uk-range-thumb-radius: 500px;
+    --uk-range-thumb-border-color: var(--uk-primary);
+    --uk-range-thumb-border-color-o: 50%;
+    --uk-range-thumb-bg: var(--uk-bg);
+    --uk-range-thumb-bg-o: 100%;
+
+    /* Computed values */
+    --uk-range-track-bg-computed: color-mix(
+      in srgb,
+      var(--uk-range-track-bg) var(--uk-range-track-bg-o),
+      transparent
+    );
+    --uk-range-thumb-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-range-thumb-border-color) var(--uk-range-thumb-border-color-o),
+      transparent
+    );
+    --uk-range-thumb-bg-computed: color-mix(
+      in srgb,
+      var(--uk-range-thumb-bg) var(--uk-range-thumb-bg-o),
+      transparent
+    );
+
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    margin: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    width: 100%;
+    background: transparent;
+  }
+
+  .uk-range:focus {
+    outline: none;
+  }
+
+  .uk-range::-moz-focus-outer {
+    border: none;
+  }
+
+  .uk-range:not(:disabled)::-webkit-slider-thumb {
+    cursor: pointer;
+  }
+
+  .uk-range:not(:disabled)::-moz-range-thumb {
+    cursor: pointer;
+  }
+
+  /* Webkit Track */
+  .uk-range::-webkit-slider-runnable-track {
+    height: var(--uk-range-track-height);
+    border-radius: var(--uk-range-track-radius);
+    background-color: var(--uk-range-track-bg-computed);
+  }
+
+  .uk-range:focus::-webkit-slider-runnable-track,
+  .uk-range:active::-webkit-slider-runnable-track {
+    background-color: var(--uk-range-track-bg-computed);
+  }
+
+  /* Firefox Track */
+  .uk-range::-moz-range-track {
+    height: var(--uk-range-track-height);
+    border-radius: var(--uk-range-track-radius);
+    background-color: var(--uk-range-track-bg-computed);
+  }
+
+  .uk-range:focus::-moz-range-track {
+    background-color: var(--uk-range-track-bg-computed);
+  }
+
+  /* Webkit Thumb */
+  .uk-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: var(--uk-range-thumb-margin-top);
+    height: var(--uk-range-thumb-size);
+    width: var(--uk-range-thumb-size);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--uk-range-thumb-border-color-computed);
+    border-radius: var(--uk-range-thumb-radius);
+    background-color: var(--uk-range-thumb-bg-computed);
+  }
+
+  /* Firefox Thumb */
+  .uk-range::-moz-range-thumb {
+    height: var(--uk-range-thumb-size);
+    width: var(--uk-range-thumb-size);
+    margin-top: var(--uk-range-thumb-margin-top);
+    border: 1px solid var(--uk-range-thumb-border-color-computed);
+    border-radius: var(--uk-range-thumb-radius);
+    background-color: var(--uk-range-thumb-bg-computed);
+  }
 }

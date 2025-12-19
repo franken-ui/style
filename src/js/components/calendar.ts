@@ -24,7 +24,7 @@ interface Cls extends Record<string, string> {
   'day-button': string;
   'jumper-month': string;
   'jumper-year': string;
-  'jumper-btn': string;
+  'jumper-button': string;
   'day-outside-month': string;
   'day-selected': string;
   'day-today': string;
@@ -52,7 +52,7 @@ interface Stl extends Record<string, string> {
   'day-button': string;
   'jumper-month': string;
   'jumper-year': string;
-  'jumper-btn': string;
+  'jumper-button': string;
   'day-outside-month': string;
   'day-selected': string;
   'day-today': string;
@@ -75,7 +75,9 @@ interface Day {
 @customElement('uk-calendar')
 export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
   protected 'cls-default-element' = 'host-inner';
+
   protected 'stl-default-element' = 'host-inner';
+
   protected 'input-event' = 'uk-calendar:change';
 
   @state()
@@ -85,29 +87,29 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
   protected $cls: Cls = {
     'host-inner': 'uk-cal',
     header: 'uk-cal-header',
-    'previous-button': 'uk-button',
-    'next-button': 'uk-button',
+    'previous-button': 'uk-button uk-button-icon uk-button-small',
+    'next-button': 'uk-button uk-button-icon uk-button-small',
     title: 'uk-cal-title',
     jumper: 'uk-cal-jumper',
-    'month-select': '',
-    'year-input': '',
+    'month-select': 'uk-select uk-form-small',
+    'year-input': 'uk-input uk-form-small',
     grid: '',
     weekdays: '',
     weekday: '',
     week: '',
     day: '',
     'day-button': '',
-    'jumper-month': '',
-    'jumper-year': '',
-    'jumper-btn': '',
-    'day-outside-month': 'x',
-    'day-selected': 'x',
-    'day-today': 'x',
+    'jumper-month': 'uk-cal-jumper-month',
+    'jumper-year': 'uk-cal-jumper-year',
+    'jumper-button': 'uk-button uk-button-icon uk-button-small',
+    'day-outside-month': 'uk-cal-oom',
+    'day-selected': 'uk-active',
+    'day-today': 'uk-nothing',
     'day-marked': 'uk-cal-marked',
-    'button-outside-month': 'x',
-    'button-selected': 'uk-active',
-    'button-today': 'x',
-    'button-marked': 'x',
+    'button-outside-month': 'uk-nothing',
+    'button-selected': 'uk-nothing',
+    'button-today': 'uk-nothing',
+    'button-marked': 'uk-nothing',
   };
 
   @state()
@@ -128,7 +130,7 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
     'day-button': '',
     'jumper-month': '',
     'jumper-year': '',
-    'jumper-btn': '',
+    'jumper-button': '',
     'day-outside-month': '',
     'day-selected': '',
     'day-today': '',
@@ -571,8 +573,8 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
           style=${this.$stl['jumper-month']}
         >
           <button
-            class="${this.$cls['jumper-btn']}"
-            style=${this.$stl['jumper-btn']}
+            class="${this.$cls['jumper-button']}"
+            style=${this.$stl['jumper-button']}
             @click=${() => this.navigateMonth('prev')}
             type="button"
             aria-label=${prevMonthLabel}
@@ -589,11 +591,13 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
             @change=${(e: Event) =>
               this.selectMonth(Number((e.target as HTMLSelectElement).value))}
           >
-            ${months.map((m, i) => html`<option value=${i}>${m}</option>`)}
+            ${months.map(
+              (m, i) => html`<option value=${i}>${m.substring(0, 3)}</option>`,
+            )}
           </select>
           <button
-            class="${this.$cls['jumper-month']}"
-            style=${this.$stl['jumper-month']}
+            class="${this.$cls['jumper-button']}"
+            style=${this.$stl['jumper-button']}
             @click=${() => this.navigateMonth('next')}
             type="button"
             aria-label=${nextMonthLabel}
@@ -606,8 +610,8 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
           style=${this.$stl['jumper-year']}
         >
           <button
-            class="${this.$cls['jumper-btn']}"
-            style=${this.$stl['jumper-btn']}
+            class="${this.$cls['jumper-button']}"
+            style=${this.$stl['jumper-button']}
             @click=${() => this.navigateYear('prev')}
             type="button"
             aria-label=${prevYearLabel}
@@ -631,8 +635,8 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
             }}
           />
           <button
-            class="${this.$cls['jumper-btn']}"
-            style=${this.$stl['jumper-btn']}
+            class="${this.$cls['jumper-button']}"
+            style=${this.$stl['jumper-button']}
             @click=${() => this.navigateYear('next')}
             type="button"
             aria-label=${nextYearLabel}
@@ -669,7 +673,7 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
     });
 
     const dayCellClasses = {
-      [this.$cls.day]: true,
+      [this.$cls['day']]: true,
       [this.$cls['day-outside-month']]: day.month !== 'current',
       [this.$cls['day-selected']]: isSelected,
       [this.$cls['day-today']]: day.isToday,

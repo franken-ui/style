@@ -11,15 +11,36 @@ import type { Base } from './base';
 type Constructor<T = {}> = abstract new (...args: any[]) => T;
 
 /**
- * Mixin that adds select functionality to components
- * Provides filtering, navigation, and option management
+ * Mixin that adds select functionality to components.
+ *
+ * This mixin provides:
+ * - reactive state for search term, focus index and open state
+ * - keyboard navigation and focus management
+ * - filtered option grouping and counts
+ * - rendering helpers for list and headers
+ *
+ * @template TBase - Constructor of a class extending Base
+ * @param BaseClass - Base class to extend
+ * @returns Extended class with select-related behavior
  */
 export const BaseSelectMixin = <TBase extends Constructor<Base>>(
   BaseClass: TBase,
 ) => {
+  /**
+   * Abstract class returned by the mixin. Implementers must provide
+   * concrete values/overrides for the abstract members below.
+   */
   abstract class BaseSelectClass extends BaseClass {
+    /**
+     * Name of event to dispatch when search term changes.
+     * Implement the exact event string in the subclass.
+     */
     protected abstract readonly 'search-event': string;
 
+    /**
+     * Return class map for element parts.
+     * Implement to provide scoped class names used for rendering.
+     */
     protected abstract _cls(options?: { item: OptionItem; index: number }): {
       button: string;
       icon: string;
@@ -37,39 +58,73 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
       [key: string]: string;
     };
 
+    /**
+     * Handle click on an item. Receives the item and its index in the group.
+     */
     protected abstract onClick(context: {
       item: OptionItem;
       index: number;
     }): void;
 
+    /**
+     * Select the given option item (update state/value).
+     */
     protected abstract select(item: OptionItem): void;
 
+    /**
+     * Handler invoked when Enter is pressed while an option is focused.
+     */
     protected abstract onKeydownEnter(): void;
 
+    /**
+     * Render a single list item. Return a TemplateResult or undefined to skip.
+     *
+     * @param key - Group key the item belongs to
+     * @param item - OptionItem to render
+     * @param index - Index of the item within the group
+     */
     protected abstract renderListItem(
       key: string,
       item: OptionItem,
       index: number,
     ): TemplateResult | undefined;
 
+    /**
+     * Current search term used to filter options.
+     */
     @state()
     $term: string = '';
 
+    /**
+     * Index of the currently focused option in the flattened/filtered list.
+     * -1 means no focus.
+     */
     @state()
     $focused: number = -1;
 
+    /**
+     * Whether the dropdown/list is open.
+     */
     @state()
     $open: boolean = false;
 
+    /**
+     * Reference to the listbox element (role="listbox").
+     */
     @query('[role="listbox"]')
     protected listboxEl?: HTMLElement;
 
     protected activeOptionEl?: HTMLElement;
+
     protected selected: OptionItem | null = null;
+
     protected HTMLRectParent: HTMLElement | null = null;
 
     /**
-     * Get filtered options based on search term
+     * Compute grouped options filtered by the current search term.
+     *
+     * Only options whose keywords contain the lowercase search term are included.
+     * Returns an OptionGrouped object with the same grouping keys.
      */
     get options(): OptionGrouped {
       const options: OptionGrouped = {};
@@ -94,7 +149,9 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     }
 
     /**
-     * Get total count of filtered options
+     * Total count of filtered options across all groups.
+     *
+     * Note: subtracts 1 to make indexing align with zero-based focused index.
      */
     get count(): number {
       let total = 0;
@@ -107,6 +164,12 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
       return total - 1;
     }
 
+    /**
+     * Lit lifecycle callback: react to changes on tracked properties.
+     *
+     * - Emits search-event when $term changes.
+     * - Updates focused element attributes and scroll on $focused changes.
+     */
     protected updated(_changedProperties: PropertyValues): void {
       super.updated(_changedProperties);
 
@@ -147,7 +210,11 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     }
 
     /**
-     * Navigate through options with keyboard
+     * Move focus index up ('t' = top) or down ('d' = down).
+     *
+     * Wraps around when reaching boundaries.
+     *
+     * @param direction - 't' to move up, 'd' to move down
      */
     protected navigate(direction: 't' | 'd'): void {
       switch (direction) {
@@ -170,7 +237,9 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     }
 
     /**
-     * Scroll to active option in listbox
+     * Scroll the listbox so the active option is centered (or visible).
+     *
+     * @param behavior - Scroll behavior: 'smooth' or 'auto'
      */
     protected focusActiveOption(behavior: ScrollBehavior = 'smooth'): void {
       if (this.listboxEl && this.activeOptionEl) {
@@ -191,7 +260,9 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     }
 
     /**
-     * Handle keyboard navigation in listbox
+     * Keyboard handler for listbox navigation.
+     *
+     * Handles ArrowUp/ArrowDown/Home/End/Enter when dropdown is open.
      */
     protected onKeydown(e: KeyboardEvent): void {
       if (this.$open === true) {
@@ -230,7 +301,9 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     }
 
     /**
-     * Render the listbox with options
+     * Render the listbox element with grouped options.
+     *
+     * The list has role="listbox" and delegates item rendering to renderListItem.
      */
     protected renderList(): TemplateResult {
       const cls = this._cls();
@@ -259,7 +332,9 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     }
 
     /**
-     * Render group header
+     * Render a group header. Returns an empty string for the default group '__'.
+     *
+     * @param header - Group key string
      */
     protected renderListHeader(header: string): TemplateResult | string {
       const cls = this._cls();
@@ -272,7 +347,8 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     }
 
     /**
-     * Reset select state when drop closes
+     * Reset transient select UI state when dropdown closes.
+     * Clears focus and search term.
      */
     protected onDropClose(): void {
       this.$focused = -1;

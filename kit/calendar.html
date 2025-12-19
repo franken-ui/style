@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+
+    <link rel="stylesheet" href="../src/css/core.css" />
+    <link rel="stylesheet" href="../src/css/kit.css" />
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <link rel="stylesheet" href="../src/css/components/date.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/utilities.css" />
+
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script type="module" src="../src/js/core.ts"></script>
+
+    <script>
+      const htmlElement = document.documentElement;
+
+      const __FRANKEN__ = JSON.parse(
+        localStorage.getItem('__FRANKEN__') || '{}',
+      );
+
+      if (
+        __FRANKEN__.mode === 'dark' ||
+        (!__FRANKEN__.mode &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+
+      htmlElement.classList.add(__FRANKEN__.theme || 'uk-theme-zinc');
+      htmlElement.classList.add(__FRANKEN__.radii || 'uk-radii-md');
+      htmlElement.classList.add(__FRANKEN__.shadows || 'uk-shadows-sm');
+      htmlElement.classList.add(__FRANKEN__.font || 'uk-font-sm');
+      htmlElement.classList.add(__FRANKEN__.chart || 'uk-chart-default');
+    </script>
+  </head>
+  <body
+    class="bg color antialiased"
+    style="--bg: var(--uk-bg); --color: var(--uk-bg-f)"
+  >
+    <div class="uk-container my" style="--my: 10">
+      <div class="mb display-flex justify-center" style="--mb: 2">
+        <a
+          class="uk-focus-visible text-muted-foreground display-inline-flex gap-x justify-between"
+          style="--gap-x: 2"
+          href="/kit/index.html"
+        >
+          <uk-icon icon="arrow-left"></uk-icon>
+          <span class="uk-text-small">Back</span>
+        </a>
+      </div>
+      <h1 class="uk-h1 mb text-center" style="--mb: 6">Calendar</h1>
+
+      <div class="space-y" style="--space-y: 6">
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">Basic</h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Render without attributes. Verifies default state (Current
+                    Month).
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>
+                    The calendar initializes to the current real-world month.
+                  </p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Header shows current Month and Year.</li>
+                    <li>No specific day is highlighted (selected).</li>
+                    <li>Navigation arrows work.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">today</code> &amp;
+            <code class="uk-codespan">name</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Render with
+                    <code class="uk-codespan">today</code> attribute.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Today's date is automatically selected.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Header shows current Month/Year.</li>
+                    <li>Current day is highlighted as active.</li>
+                    <li>Internal value matches today's ISO string.</li>
+                    <li>Renders a hidden input.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar today name="date"></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">value</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Render with
+                    <code class="uk-codespan">value="2023-12-25"</code>.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Calendar opens to December 2023 with the 25th selected.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Header displays "December 2023".</li>
+                    <li>The 25th is highlighted as active.</li>
+                    <li>
+                      <code class="uk-codespan">view-date</code> automatically
+                      syncs to the value's month.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar value="2023-12-25"></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">view-date</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Render with
+                    <code class="uk-codespan">view-date="2000-01-01"</code>
+                    (Millennium test).
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>
+                    Calendar opens to January 2000, but
+                    <strong>no date</strong> is selected.
+                  </p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Header displays "January 2000".</li>
+                    <li>Grid shows January 2000 dates.</li>
+                    <li>No visual selection (active state) on the grid.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar view-date="2000-01-01"></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">min</code> &
+            <code class="uk-codespan">max</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Strict range. <br />
+                    <code class="uk-codespan">view-date="2023-10-15"</code>
+                    <br />
+                    <code class="uk-codespan">min="2023-10-10"</code> <br />
+                    <code class="uk-codespan">max="2023-10-20"</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Only days 10 through 20 are selectable.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Days 1-9 are disabled (dimmed/unclickable).</li>
+                    <li>Days 21-31 are disabled.</li>
+                    <li>Days 10-20 are active and clickable.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar
+              view-date="2023-10-15"
+              min="2023-10-10"
+              max="2023-10-20"
+            ></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">disabled-dates</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Disable specific dates using comma-separated ISO strings.
+                    <br />
+                    Target:
+                    <code class="uk-codespan">2023-10-15, 2023-10-16</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Specific days are disabled while others remain active.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>October 15th and 16th are disabled.</li>
+                    <li>Surrounding days (14th, 17th) are enabled.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar
+              view-date="2023-10-01"
+              disabled-dates="2023-10-15, 2023-10-16"
+            ></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">marked-dates</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Highlight specific dates visually. <br />
+                    Target: <code class="uk-codespan">2023-10-05</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>
+                    The marked date receives a specific visual indicator (CSS
+                    class <code class="uk-codespan">uk-cal-marked</code>).
+                  </p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>
+                      October 5th should have a visual marker (e.g., dot or
+                      color change).
+                    </li>
+                    <li>The date remains selectable.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar
+              view-date="2023-10-01"
+              marked-dates="2023-10-05"
+            ></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">jumpable</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>Enable "jumpable" header controls.</p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Header interface changes from text to input controls.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Header shows a Month dropdown (Select).</li>
+                    <li>Header shows a Year numeric input.</li>
+                    <li>
+                      Standard Prev/Next title text is replaced by these
+                      controls.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar jumpable></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">starts-with</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Change start of week to Monday using
+                    <code class="uk-codespan">starts-with="1"</code>.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Grid columns shift layout.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>The first column label is "Mon" (not Sun).</li>
+                    <li>Dates shift accordingly in the grid.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar starts-with="1"></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">weekday-format</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Set weekday labels to
+                    <code class="uk-codespan">long</code> (e.g., Monday).
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Column headers display full names.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>
+                      Headers show "Sunday", "Monday", etc., instead of
+                      abbreviations.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar weekday-format="long"></uk-calendar>
+          </div>
+        </div>
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">
+            Attr: <code class="uk-codespan">lang</code>
+          </h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Set locale to Spanish (<code class="uk-codespan">es-ES</code
+                    >).
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>Date entities are localized.</p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>
+                      Month name in header is in Spanish (e.g., "Octubre").
+                    </li>
+                    <li>Weekday labels are in Spanish (e.g., "dom", "lun").</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="uk-rounded uk-shadow border-w border/o p display-inline-block"
+            style="
+              --border-w: 1px;
+              --border: var(--uk-border);
+              --border-o: var(--uk-border-o);
+              --p: 3;
+            "
+          >
+            <uk-calendar lang="es-ES" view-date="2023-10-01"></uk-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom right fixed" style="--bottom: 8; --right: 8">
+      <uk-lsh
+        class="display-inline-block size"
+        style="--size: 14"
+        toggle
+        group="mode"
+        cls="uk-button uk-button-icon uk-button-primary uk-button-large relative rounded-full"
+      >
+        <template data-fn="template">
+          <uk-icon
+            class="dark-slide-icon dark-slide-moon dark:dark-slide-moon"
+            icon="moon"
+          >
+          </uk-icon>
+          <uk-icon
+            class="dark-slide-icon dark-slide-sun dark:dark-slide-sun"
+            icon="sun"
+          >
+          </uk-icon>
+        </template>
+      </uk-lsh>
+    </div>
+
+    <script type="module" src="../src/js/icon.ts"></script>
+    <script type="module" src="../src/js/components.ts"></script>
+    <script type="module" src="../src/js/runtime.ts"></script>
+  </body>
+</html>

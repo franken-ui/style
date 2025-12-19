@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blank</title>
+
+    <link rel="stylesheet" href="../src/css/core.css" />
+    <link rel="stylesheet" href="../src/css/kit.css" />
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/utilities.css" />
+
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script type="module" src="../src/js/core.ts"></script>
+
+    <script>
+      const htmlElement = document.documentElement;
+
+      const __FRANKEN__ = JSON.parse(
+        localStorage.getItem('__FRANKEN__') || '{}',
+      );
+
+      if (
+        __FRANKEN__.mode === 'dark' ||
+        (!__FRANKEN__.mode &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+
+      htmlElement.classList.add(__FRANKEN__.theme || 'uk-theme-zinc');
+      htmlElement.classList.add(__FRANKEN__.radii || 'uk-radii-md');
+      htmlElement.classList.add(__FRANKEN__.shadows || 'uk-shadows-sm');
+      htmlElement.classList.add(__FRANKEN__.font || 'uk-font-sm');
+      htmlElement.classList.add(__FRANKEN__.chart || 'uk-chart-default');
+    </script>
+  </head>
+  <body
+    class="bg color antialiased"
+    style="--bg: var(--uk-bg); --color: var(--uk-bg-f)"
+  >
+    <div class="uk-container my" style="--my: 10">
+      <div class="mb display-flex justify-center" style="--mb: 2">
+        <a
+          class="uk-focus-visible text-muted-foreground display-inline-flex gap-x justify-between"
+          style="--gap-x: 2"
+          href="/kit/index.html"
+        >
+          <uk-icon icon="arrow-left"></uk-icon>
+          <span class="uk-text-small">Back</span>
+        </a>
+      </div>
+      <h1 class="uk-h1 mb text-center" style="--mb: 6">Blank</h1>
+
+      <div class="space-y" style="--space-y: 6">
+        <!-- #1 -->
+        <div
+          class="border-b-w border-b/o pb space-y"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+            --space-y: 6;
+          "
+        >
+          <h2 class="uk-heading-bullet uk-h2">Basic</h2>
+          <table class="uk-table uk-table-divider">
+            <tbody>
+              <tr>
+                <th>Description</th>
+                <td>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Expectation</th>
+                <td class="space-y" style="--space-y: 2">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  </p>
+                  <ul class="uk-list uk-list-disc">
+                    <li>Test 1</li>
+                    <li>Test 2</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-gray-400)"
+                      icon="circle"
+                    ></uk-icon>
+                    Pending
+                  </span>
+
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-green-400)"
+                      icon="check-circle"
+                    ></uk-icon>
+
+                    Passed
+                  </span>
+
+                  <span
+                    class="display-inline-flex gap-x items-center"
+                    style="--gap-x: 2"
+                  >
+                    <uk-icon
+                      class="color"
+                      style="--color: var(--color-blue-400)"
+                      icon="check-circle"
+                    ></uk-icon>
+
+                    Passed with notes
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>Notes</th>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class=""></div>
+        </div>
+        <!-- End #1  -->
+
+        <div
+          class="border-b-w border-b/o pb"
+          style="
+            --border-b-w: 1px;
+            --border-b: var(--uk-border);
+            --border-b-o: var(--uk-border-o);
+            --pb: 6;
+          "
+        >
+          <h2 class="mb uk-heading-bullet uk-h2" style="--mb: 6">
+            Attr: <code class="uk-codespan">blank</code>
+          </h2>
+          <div class=""></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom right fixed" style="--bottom: 8; --right: 8">
+      <uk-lsh
+        class="display-inline-block size"
+        style="--size: 14"
+        toggle
+        group="mode"
+        cls="uk-button uk-button-icon uk-button-primary uk-button-large relative rounded-full"
+      >
+        <template data-fn="template">
+          <uk-icon
+            class="dark-slide-icon dark-slide-moon dark:dark-slide-moon"
+            icon="moon"
+          >
+          </uk-icon>
+          <uk-icon
+            class="dark-slide-icon dark-slide-sun dark:dark-slide-sun"
+            icon="sun"
+          >
+          </uk-icon>
+        </template>
+      </uk-lsh>
+    </div>
+
+    <script type="module" src="../src/js/icon.ts"></script>
+    <script type="module" src="../src/js/components.ts"></script>
+    <script type="module" src="../src/js/runtime.ts"></script>
+  </body>
+</html>

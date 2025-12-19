@@ -33,6 +33,7 @@
     margin-block-end: 0.5rem;
     display: flex;
     column-gap: var(--uk-cal-header-column-gap);
+    align-items: center;
   }
 
   .uk-cal-header-l,
@@ -49,26 +50,40 @@
     display: flex;
     flex: 1 1 0%;
     align-items: center;
+    justify-content: center;
     justify-content: space-between;
     column-gap: var(--uk-cal-jumper-column-gap);
   }
 
-  .uk-cal-jumper .uk-input-fake {
-    justify-content: center;
+  .uk-cal-jumper-month {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 0.25rem;
   }
 
-  .uk-cal-jumper input {
-    width: var(--uk-cal-jumper-input-width);
-    text-align: center;
+  .uk-cal-jumper-month select {
+    width: 100%;
   }
 
-  .uk-cal-jumper input[type='number']::-webkit-inner-spin-button,
-  .uk-cal-jumper input[type='number']::-webkit-outer-spin-button {
+  .uk-cal-jumper-year {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .uk-cal-jumper-year input {
+    width: 100%;
+  }
+
+  .uk-cal-jumper-year input[type='number']::-webkit-inner-spin-button,
+  .uk-cal-jumper-year input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  .uk-cal-jumper input[type='number'] {
+  .uk-cal-jumper-year input[type='number'] {
     -moz-appearance: textfield;
   }
 
@@ -80,32 +95,6 @@
     width: 100%;
     text-align: center;
     font-weight: var(--uk-cal-title-font-weight);
-  }
-
-  /* Calendar Month Dropdown */
-  .uk-cal-month-dropdown {
-    /* Base Variables */
-    --uk-cal-month-dropdown-item-padding: 0.25rem;
-    --uk-cal-month-dropdown-max-height: 10rem;
-    --uk-cal-month-dropdown-min-width: 9rem;
-
-    --uk-dropdown-nav-item-padding: var(--uk-cal-month-dropdown-item-padding);
-    flex: 1 1 0%;
-  }
-
-  .uk-cal-month-dropdown button {
-    width: 100%;
-  }
-
-  .uk-cal-month-dropdown .uk-drop {
-    max-height: var(--uk-cal-month-dropdown-max-height);
-    min-width: var(--uk-cal-month-dropdown-min-width);
-    overflow-y: auto;
-  }
-
-  .uk-cal-month-dropdown-item a {
-    align-items: center;
-    justify-content: space-between;
   }
 
   /* Calendar Table */
@@ -228,7 +217,7 @@
   }
 
   /* Active Cell */
-  .uk-cal table tbody tr td button.uk-active {
+  .uk-cal table tbody tr td.uk-active button {
     /* Base Variables */
     --uk-cal-cell-active-bg: var(--uk-primary);
     --uk-cal-cell-active-bg-o: 100%;
