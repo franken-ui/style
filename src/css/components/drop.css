@@ -136,7 +136,7 @@
     --uk-dropdown-nav-item-padding: 0.375rem 0.25rem;
     --uk-dropdown-nav-item-margin: 0.25rem;
     --uk-dropdown-nav-item-hover-bg: var(--uk-accent);
-    --uk-dropdown-nav-item-hover-bg-o: 100%;
+    --uk-dropdown-nav-item-hover-bg-o: var(--uk-accent-o);
     --uk-dropdown-nav-item-hover-color: var(--uk-accent-f);
     --uk-dropdown-nav-item-hover-color-o: 100%;
     --uk-dropdown-nav-header-padding: 0.375rem 0.25rem;
@@ -169,7 +169,6 @@
 
     /* Nav component overrides - aligned with nav.css */
     --uk-nav-item-padding: var(--uk-dropdown-nav-item-padding);
-    --uk-nav-item-margin: var(--uk-dropdown-nav-item-margin);
     --uk-nav-item-hover-bg: var(--uk-dropdown-nav-item-hover-bg);
     --uk-nav-item-hover-bg-o: var(--uk-dropdown-nav-item-hover-bg-o);
     --uk-nav-item-hover-color: var(--uk-dropdown-nav-item-hover-color);
@@ -184,6 +183,18 @@
     --uk-nav-divider-color-o: var(--uk-dropdown-nav-divider-border-color-o);
 
     user-select: none;
+  }
+
+  .uk-dropdown-nav a {
+    --uk-nav-radius: var(--uk-global-radius-small);
+  }
+
+  .uk-dropdown-nav > li > a {
+    --uk-nav-item-margin: var(--uk-dropdown-nav-item-margin);
+  }
+
+  .uk-dropdown-nav > li[role='option'][aria-selected='true'] > a {
+    font-weight: 500;
   }
 
   /* ============================================

@@ -1,5 +1,5 @@
 // refactored select.ts
-import { html, type PropertyValues, type TemplateResult } from 'lit';
+import { html, nothing, type PropertyValues, type TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { type OptionItem } from '../helpers/select';
 import { BaseSelectMixin } from './shared/base-select';
@@ -16,7 +16,7 @@ type I18N = {
 };
 
 type Cls = {
-  container: string;
+  'host-inner': string;
   button: string;
   'button-text': string;
   icon: string;
@@ -33,10 +33,11 @@ type Cls = {
   'search-input': string;
   'search-icon': string;
   dropdown: string;
+  divider: string;
 };
 
 type Stl = {
-  container: string;
+  'host-inner': string;
   button: string;
   'button-text': string;
   icon: string;
@@ -53,6 +54,7 @@ type Stl = {
   'search-input': string;
   'search-icon': string;
   dropdown: string;
+  divider: string;
 };
 
 @customElement('uk-select')
@@ -63,7 +65,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
   protected readonly 'search-event': string = 'uk-select:search';
 
   @property({ type: String })
-  drop: string = 'mode: click; animation: uk-anmt-slide-top-sm;';
+  drop: string = 'mode: click; animation: uk-animation-slide-top-small;';
 
   @property({ type: Boolean })
   searchable: boolean = false;
@@ -100,28 +102,29 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
 
   @state()
   protected $cls: Cls = {
-    container: '',
+    'host-inner': 'uk-position-relative',
     button: '',
     'button-text': '',
     icon: '',
-    list: '',
+    list: 'uk-nav uk-dropdown-nav uk-overflow-auto uk-custom-select-list',
     item: '',
     'item-header': '',
     'item-link': '',
-    'item-wrapper': '',
+    'item-wrapper': 'uk-custom-select-item-wrapper',
     'item-icon': '',
-    'item-text': '',
+    'item-text': 'uk-custom-select-item-text',
     'item-check': '',
     'item-subtitle': '',
-    search: '',
+    search: 'uk-custom-select-search',
     'search-input': '',
     'search-icon': '',
     dropdown: 'uk-select-dropdown',
+    divider: 'uk-hr',
   };
 
   @state()
   protected $stl: Stl = {
-    container: '',
+    'host-inner': '',
     button: '',
     'button-text': '',
     icon: '',
@@ -138,6 +141,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     'search-input': '',
     'search-icon': '',
     dropdown: '',
+    divider: 'uk-hr',
   };
 
   private HTMLDrop: Element | null = null;
@@ -408,8 +412,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         data-key="${key}"
         data-index="${index}"
       >
-        <button
-          type="button"
+        <a
           class="${cls['item-link']}"
           @click="${() => this.onClick({ item, index })}"
           tabindex="-1"
@@ -432,7 +435,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
               : html`<span class="${cls['item-text']}">${item.text}</span>`}
           </div>
           ${isSelected ? html`<span class="${cls['item-check']}">✓</span>` : ''}
-        </button>
+        </a>
       </li>
     `;
   }
@@ -564,9 +567,9 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     return this.searchable === true
       ? html`
           <div class="${cls['search']}" role="search">
-            <span class="${cls['search-icon']}"
-              >${this.getI18nText('searchIcon', { searchIcon: '🔍' })}</span
-            >
+            <span class="${cls['search-icon']}">
+              ${this.$icons('search') || nothing}
+            </span>
             <input
               class="${cls['search-input']}"
               placeholder="${this.getI18nText('search-placeholder', {
@@ -585,6 +588,12 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
               @keydown="${this.onInputKeydown}"
             />
           </div>
+          ${Object.keys(this.options).length > 0
+            ? html`<hr
+                class="${this.$cls['divider']}"
+                style="${this.$stl['divider']}"
+              />`
+            : ''}
         `
       : '';
   }
@@ -651,51 +660,48 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     return html`
       <div
         data-host-inner
-        class="${this.$cls.container}"
-        style="${this.$stl.container}"
+        class="${this.$cls['host-inner']}"
+        style="${this.$stl['host-inner']}"
       >
-        <div class="uk-position-relative">
-          <button
-            id="${buttonId}"
-            class="${cls['button']}"
-            style="${this.$stl.button}"
-            type="button"
-            role="combobox"
-            aria-haspopup="listbox"
-            aria-expanded="${this.$open}"
-            aria-controls="${listboxId}"
-            aria-label="${this.getI18nText('buttonLabel', {
-              buttonLabel: 'Select an option',
-            })}"
-            ?disabled="${this.disabled}"
-            @keydown="${this.onKeydown}"
+        <button
+          id="${buttonId}"
+          class="${cls['button']}"
+          style="${this.$stl.button}"
+          type="button"
+          role="combobox"
+          aria-haspopup="listbox"
+          aria-expanded="${this.$open}"
+          aria-controls="${listboxId}"
+          aria-label="${this.getI18nText('buttonLabel', {
+            buttonLabel: 'Select an option',
+          })}"
+          ?disabled="${this.disabled}"
+          @keydown="${this.onKeydown}"
+        >
+          <span
+            class="${cls['button-text']}"
+            style="${this.$stl['button-text']}"
+            >${this.$text}</span
           >
-            <span
-              class="${cls['button-text']}"
-              style="${this.$stl['button-text']}"
-              >${this.$text}</span
-            >
-            ${this.icon
-              ? html`<span class="${cls['icon']}" style="${this.$stl.icon}"
-                  >${this.icon}</span
-                >`
-              : ''}
-          </button>
+          ${this.icon
+            ? html`<span class="${cls['icon']}" style="${this.$stl.icon}"
+                >${this.icon}</span
+              >`
+            : ''}
+        </button>
 
-          <div
-            id="${listboxId}"
-            class="${cls['dropdown']} uk-drop"
-            style="${this.$stl.dropdown}"
-            data-uk-dropdown="${this.drop}"
-            role="dialog"
-            aria-label="${this.getI18nText('buttonLabel', {
-              buttonLabel: 'Select an option',
-            })}"
-          >
-            ${this.renderSearch()} ${this.renderList()}
-          </div>
+        <div
+          id="${listboxId}"
+          class="${cls['dropdown']} uk-drop"
+          style="${this.$stl.dropdown}"
+          data-uk-dropdown="${this.drop}"
+          role="dialog"
+          aria-label="${this.getI18nText('buttonLabel', {
+            buttonLabel: 'Select an option',
+          })}"
+        >
+          ${this.renderSearch()} ${this.renderList()}
         </div>
-
         ${this.renderHidden()}
       </div>
     `;

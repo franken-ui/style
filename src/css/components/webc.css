@@ -574,4 +574,72 @@
     letter-spacing: var(--uk-cmd-item-key-tracking);
     color: var(--uk-muted-f);
   }
+
+  /* ============================================
+     Custom Select Component
+     ============================================ */
+
+  /* Custom Select Search */
+  .uk-custom-select-search {
+    /* Base Variables */
+    --uk-custom-select-search-padding: 0 0.75rem;
+    --uk-custom-select-search-icon-margin: 0.5rem;
+    --uk-custom-select-search-icon-opacity: 0.5;
+    --uk-custom-select-search-input-padding: 0.75rem 0;
+
+    display: flex;
+    align-items: center;
+    padding: var(--uk-custom-select-search-padding);
+  }
+
+  .uk-custom-select-search svg {
+    margin-inline-end: var(--uk-custom-select-search-icon-margin);
+    opacity: var(--uk-custom-select-search-icon-opacity);
+  }
+
+  .uk-custom-select-search input {
+    width: 100%;
+    padding: var(--uk-custom-select-search-input-padding);
+    background-color: transparent;
+    outline: none;
+  }
+
+  .uk-custom-select-search input::placeholder {
+    color: var(--uk-muted-f);
+  }
+
+  /* Custom Select List */
+  .uk-custom-select-list {
+    /* Base Variables */
+    --uk-custom-select-list-max-height: 10rem;
+
+    max-height: var(--uk-custom-select-list-max-height);
+  }
+
+  /* Custom Select Item */
+  .uk-custom-select-item-wrapper {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+
+  .uk-custom-select-item-icon {
+    /* Base Variables */
+    --uk-custom-select-item-icon-margin: 0.5rem;
+
+    margin-inline-end: var(--uk-custom-select-item-icon-margin);
+    flex-shrink: 0;
+  }
+
+  .uk-custom-select-item-text {
+    flex: 1;
+  }
+
+  .uk-custom-select-item-check {
+    /* Base Variables */
+    --uk-custom-select-item-check-margin: 0.5rem;
+
+    margin-inline-start: var(--uk-custom-select-item-check-margin);
+    flex-shrink: 0;
+  }
 }

@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select</title>
+
+    <link rel="stylesheet" href="../src/css/core.css" />
+    <link rel="stylesheet" href="../src/css/kit.css" />
+    <link rel="stylesheet" href="../src/css/components.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/utilities.css" />
+
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script type="module" src="../src/js/core.ts"></script>
+
+    <script>
+      const htmlElement = document.documentElement;
+
+      const __FRANKEN__ = JSON.parse(
+        localStorage.getItem('__FRANKEN__') || '{}',
+      );
+
+      if (
+        __FRANKEN__.mode === 'dark' ||
+        (!__FRANKEN__.mode &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+
+      htmlElement.classList.add(__FRANKEN__.theme || 'uk-theme-zinc');
+      htmlElement.classList.add(__FRANKEN__.radii || 'uk-radii-md');
+      htmlElement.classList.add(__FRANKEN__.shadows || 'uk-shadows-sm');
+      htmlElement.classList.add(__FRANKEN__.font || 'uk-font-sm');
+      htmlElement.classList.add(__FRANKEN__.chart || 'uk-chart-default');
+    </script>
+
+    <style></style>
+  </head>
+  <body
+    class="bg color antialiased"
+    style="--bg: var(--uk-bg); --color: var(--uk-bg-f)"
+  >
+    <div class="uk-container my" style="--my: 10">
+      <div class="mb display-flex justify-center" style="--mb: 2">
+        <a
+          class="uk-focus-visible text-muted-foreground display-inline-flex gap-x justify-between"
+          style="--gap-x: 2"
+          href="/kit/index.html"
+        >
+          <uk-icon icon="arrow-left"></uk-icon>
+          <span class="uk-text-small">Back</span>
+        </a>
+      </div>
+      <h1 class="uk-h1 mb text-center" style="--mb: 6">Select</h1>
+
+      <!-- #1 Basic -->
+      <div
+        class="mb border-b-w border-b/o pb space-y"
+        style="
+          --mb: 6;
+          --border-b-w: 1px;
+          --border-b: var(--uk-border);
+          --border-b-o: var(--uk-border-o);
+          --pb: 6;
+          --space-y: 6;
+        "
+      >
+        <h2 class="uk-heading-bullet uk-h2">Basic</h2>
+        <table class="uk-table uk-table-divider">
+          <tbody>
+            <tr>
+              <th>Description</th>
+              <td>
+                <p>
+                  Default select component with no attributes. Options provided
+                  via inline select element with
+                  <code class="uk-codespan">data-fn="data-source"</code>.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th>Expectation</th>
+              <td class="space-y" style="--space-y: 2">
+                <p>Component should:</p>
+                <ul class="uk-list uk-list-disc">
+                  <li>
+                    Display a button showing default placeholder text "Select an
+                    option"
+                  </li>
+                  <li>Show all options when clicked</li>
+                  <li>
+                    Close dropdown and update button text when an option is
+                    selected
+                  </li>
+                  <li>
+                    Support keyboard navigation (Arrow Up/Down, Enter, Home,
+                    End)
+                  </li>
+                  <li>
+                    Have proper ARIA attributes (role="combobox", aria-haspopup,
+                    aria-expanded)
+                  </li>
+                  <li>
+                    Auto-close dropdown after selection (single select mode)
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>
+                <span
+                  class="display-inline-flex gap-x items-center"
+                  style="--gap-x: 2"
+                >
+                  <uk-icon
+                    class="color"
+                    style="--color: var(--color-green-400)"
+                    icon="check-circle"
+                  ></uk-icon>
+                  Passed
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="h" style="--h: 10">
+          <uk-select cls="button: uk-input-fake; dropdown: w-full;">
+            <select data-fn="data-source" hidden>
+              <option value="apple">Apple</option>
+              <option value="banana">Banana</option>
+              <option value="orange">Orange</option>
+              <option value="grape">Grape</option>
+              <option value="mango">Mango</option>
+            </select>
+          </uk-select>
+        </div>
+      </div>
+
+      <!-- #2 Attr: value -->
+      <div
+        class="mb border-b-w border-b/o pb space-y"
+        style="
+          --mb: 6;
+          --border-b-w: 1px;
+          --border-b: var(--uk-border);
+          --border-b-o: var(--uk-border-o);
+          --pb: 6;
+          --space-y: 6;
+        "
+      >
+        <h2 class="uk-heading-bullet uk-h2">
+          Attr: <code class="uk-codespan">value="banana"</code>
+        </h2>
+        <table class="uk-table uk-table-divider">
+          <tbody>
+            <tr>
+              <th>Description</th>
+              <td>
+                <p>
+                  Select component with pre-selected value via value attribute.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th>Expectation</th>
+              <td class="space-y" style="--space-y: 2">
+                <p>Component should:</p>
+                <ul class="uk-list uk-list-disc">
+                  <li>Display "Banana" as the selected option on load</li>
+                  <li>
+                    Show checkmark next to "Banana" when dropdown is opened
+                  </li>
+                  <li>
+                    Create hidden input with name and value for form submission
+                  </li>
+                  <li>
+                    Value attribute should override any selected attributes in
+                    option elements
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>
+                <span
+                  class="display-inline-flex gap-x items-center"
+                  style="--gap-x: 2"
+                >
+                  <uk-icon
+                    class="color"
+                    style="--color: var(--color-green-400)"
+                    icon="check-circle"
+                  ></uk-icon>
+                  Passed
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="h" style="--h: 10">
+          <uk-select
+            cls="button: uk-input-fake; dropdown: w-full; list: uk-nav uk-dropdown-nav uk-overflow-auto uk-custom-select-list"
+            value="banana"
+            name="fruit"
+          >
+            <select data-fn="data-source" hidden>
+              <option value="apple">Apple</option>
+              <option value="banana">Banana</option>
+              <option value="orange">Orange</option>
+              <option value="grape">Grape</option>
+              <option value="mango">Mango</option>
+            </select>
+          </uk-select>
+        </div>
+      </div>
+
+      <!-- #3 Attr: placeholder -->
+      <div
+        class="mb border-b-w border-b/o pb space-y"
+        style="
+          --mb: 6;
+          --border-b-w: 1px;
+          --border-b: var(--uk-border);
+          --border-b-o: var(--uk-border-o);
+          --pb: 6;
+          --space-y: 6;
+        "
+      >
+        <h2 class="uk-heading-bullet uk-h2">
+          Attr: <code class="uk-codespan">placeholder="Choose a fruit"</code>
+        </h2>
+        <table class="uk-table uk-table-divider">
+          <tbody>
+            <tr>
+              <th>Description</th>
+              <td>
+                <p>Select component with custom placeholder text.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Expectation</th>
+              <td class="space-y" style="--space-y: 2">
+                <p>Component should:</p>
+                <ul class="uk-list uk-list-disc">
+                  <li>
+                    Display "Choose a fruit" instead of default "Select an
+                    option"
+                  </li>
+                  <li>
+                    Placeholder should be visible only when no option is
+                    selected
+                  </li>
+                  <li>
+                    After selecting an option, show the selected option text
+                  </li>
+                  <li>
+                    Placeholder should reappear if selection is cleared (in
+                    future implementations)
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>
+                <span
+                  class="display-inline-flex gap-x items-center"
+                  style="--gap-x: 2"
+                >
+                  <uk-icon
+                    class="color"
+                    style="--color: var(--color-green-400)"
+                    icon="check-circle"
+                  ></uk-icon>
+                  Passed
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="h" style="--h: 10">
+          <uk-select
+            cls="button: uk-input-fake; dropdown: w-full; list: uk-nav uk-dropdown-nav uk-overflow-auto uk-custom-select-list"
+            placeholder="Choose a fruit"
+          >
+            <select data-fn="data-source" hidden>
+              <option value="apple">Apple</option>
+              <option value="banana">Banana</option>
+              <option value="orange">Orange</option>
+              <option value="grape">Grape</option>
+              <option value="mango">Mango</option>
+            </select>
+          </uk-select>
+        </div>
+      </div>
+
+      <!-- #4 Attr: disabled -->
+      <div
+        class="mb border-b-w border-b/o pb space-y"
+        style="
+          --mb: 6;
+          --border-b-w: 1px;
+          --border-b: var(--uk-border);
+          --border-b-o: var(--uk-border-o);
+          --pb: 6;
+          --space-y: 6;
+        "
+      >
+        <h2 class="uk-heading-bullet uk-h2">
+          Attr: <code class="uk-codespan">disabled</code>
+        </h2>
+        <table class="uk-table uk-table-divider">
+          <tbody>
+            <tr>
+              <th>Description</th>
+              <td>
+                <p>
+                  Select component in disabled state with pre-selected value.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th>Expectation</th>
+              <td class="space-y" style="--space-y: 2">
+                <p>Component should:</p>
+                <ul class="uk-list uk-list-disc">
+                  <li>
+                    Display the selected value but prevent all interactions
+                  </li>
+                  <li>Button should have disabled attribute</li>
+                  <li>Not open dropdown when clicked</li>
+                  <li>Not respond to keyboard navigation</li>
+                  <li>Not be focusable via tab navigation</li>
+                  <li>
+                    Visual indication of disabled state (grayed out, cursor
+                    not-allowed)
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>
+                <span
+                  class="display-inline-flex gap-x items-center"
+                  style="--gap-x: 2"
+                >
+                  <uk-icon
+                    class="color"
+                    style="--color: var(--color-green-400)"
+                    icon="check-circle"
+                  ></uk-icon>
+                  Passed
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="h" style="--h: 10">
+          <uk-select
+            cls="button: uk-input-fake; dropdown: w-full; list: uk-nav uk-dropdown-nav uk-overflow-auto uk-custom-select-list"
+            value="orange"
+            disabled
+          >
+            <select data-fn="data-source" hidden>
+              <option value="apple">Apple</option>
+              <option value="banana">Banana</option>
+              <option value="orange">Orange</option>
+              <option value="grape">Grape</option>
+              <option value="mango">Mango</option>
+            </select>
+          </uk-select>
+        </div>
+      </div>
+
+      <!-- #5 Attr: required -->
+      <div
+        class="mb border-b-w border-b/o pb space-y"
+        style="
+          --mb: 6;
+          --border-b-w: 1px;
+          --border-b: var(--uk-border);
+          --border-b-o: var(--uk-border-o);
+          --pb: 6;
+          --space-y: 6;
+        "
+      >
+        <h2 class="uk-heading-bullet uk-h2">
+          Attr: <code class="uk-codespan">required</code>
+        </h2>
+        <table class="uk-table uk-table-divider">
+          <tbody>
+            <tr>
+              <th>Description</th>
+              <td>
+                <p>Select component marked as required for form validation.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>Expectation</th>
+              <td class="space-y" style="--space-y: 2">
+                <p>Component should:</p>
+                <ul class="uk-list uk-list-disc">
+                  <li>Integrate with HTML5 form validation</li>
+                  <li>Prevent form submission if no option is selected</li>
+                  <li>
+                    Show validation error message on submit without selection
+                  </li>
+                  <li>Hidden input should have required attribute</li>
+                  <li>Validation should clear once an option is selected</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>
+                <span
+                  class="display-inline-flex gap-x items-center"
+                  style="--gap-x: 2"
+                >
+                  <uk-icon
+                    class="color"
+                    style="--color: var(--color-green-400)"
+                    icon="check-circle"
+                  ></uk-icon>
+                  Passed
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <td>
+                Test within a form with submit button to verify validation
+                behavior.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form class="space-y" style="--space-y: 2">
+          <div class="h" style="--h: 10">
+            <uk-select
+              cls="button: uk-input-fake; dropdown: w-full; list: uk-nav uk-dropdown-nav uk-overflow-auto uk-custom-select-list"
+              required
+              name="required-fruit"
+              placeholder="Select a fruit (required)"
+            >
+              <select data-fn="data-source" hidden>
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+                <option value="orange">Orange</option>
+                <option value="grape">Grape</option>
+                <option value="mango">Mango</option>
+              </select>
+            </uk-select>
+          </div>
+
+          <button class="uk-button uk-button-primary" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- #6 Attr: name -->
+      <div
+        class="mb border-b-w border-b/o pb space-y"
+        style="
+          --mb: 6;
+          --border-b-w: 1px;
+          --border-b: var(--uk-border);
+          --border-b-o: var(--uk-border-o);
+          --pb: 6;
+          --space-y: 6;
+        "
+      >
+        <h2 class="uk-heading-bullet uk-h2">
+          Attr: <code class="uk-codespan">name="favorite-fruit"</code>
+        </h2>
+        <table class="uk-table uk-table-divider">
+          <tbody>
+            <tr>
+              <th>Description</th>
+              <td>
+                <p>
+                  Select component with name attribute for form submission.
+                  Inspect DOM to verify hidden input creation.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th>Expectation</th>
+              <td class="space-y" style="--space-y: 2">
+                <p>Component should:</p>
+                <ul class="uk-list uk-list-disc">
+                  <li>Create a hidden input with name="favorite-fruit"</li>
+                  <li>
+                    Hidden input value should update when selection changes
+                  </li>
+                  <li>
+                    Form submission should include the selected value with
+                    correct name
+                  </li>
+                  <li>Hidden input should be inspectable in DevTools</li>
+                  <li>Work with standard form serialization (FormData API)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>
+                <span
+                  class="display-inline-flex gap-x items-center"
+                  style="--gap-x: 2"
+                >
+                  <uk-icon
+                    class="color"
+                    style="--color: var(--color-green-400)"
+                    icon="check-circle"
+                  ></uk-icon>
+                  Passed
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <td>
+                Use browser DevTools to inspect hidden input element and verify
+                name/value attributes.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="h" style="--h: 10">
+          <uk-select
+            cls="button: uk-input-fake; dropdown: w-full; list: uk-nav uk-dropdown-nav uk-overflow-auto uk-custom-select-list"
+            name="favorite-fruit"
+            value="apple"
+          >
+            <select data-fn="data-source" hidden>
+              <option value="apple">Apple</option>
+              <option value="banana">Banana</option>
+              <option value="orange">Orange</option>
+              <option value="grape">Grape</option>
+              <option value="mango">Mango</option>
+            </select>
+          </uk-select>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom right fixed" style="--bottom: 8; --right: 8">
+      <uk-lsh
+        class="display-inline-block size"
+        style="--size: 14"
+        toggle
+        group="mode"
+        cls="uk-button uk-button-icon uk-button-primary uk-button-large relative rounded-full"
+      >
+        <template data-fn="template">
+          <uk-icon
+            class="dark-slide-icon dark-slide-moon dark:dark-slide-moon"
+            icon="moon"
+          >
+          </uk-icon>
+          <uk-icon
+            class="dark-slide-icon dark-slide-sun dark:dark-slide-sun"
+            icon="sun"
+          >
+          </uk-icon>
+        </template>
+      </uk-lsh>
+    </div>
+
+    <script type="module" src="../src/js/icon.ts"></script>
+    <script type="module" src="../src/js/components.ts"></script>
+    <script type="module" src="../src/js/runtime.ts"></script>
+  </body>
+</html>
