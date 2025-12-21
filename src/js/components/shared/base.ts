@@ -145,12 +145,12 @@ export abstract class Base extends LitElement {
   /**
    * Reference to the div element containing icon definitions.
    */
-  protected HTMLIconContainer: HTMLDivElement | null = null;
+  protected HTMLIconContainer: HTMLTemplateElement | null = null;
 
   /**
    * Reference to the div element containing template content.
    */
-  protected HTMLTemplateContainer: HTMLDivElement | null = null;
+  protected HTMLTemplateContainer: HTMLTemplateElement | null = null;
 
   protected HTMLDataSource: HTMLSelectElement | null = null;
 
@@ -439,7 +439,8 @@ export abstract class Base extends LitElement {
       return;
     }
 
-    const icons = this.HTMLIconContainer.querySelectorAll('[data-key]');
+    // Access the template's content (DocumentFragment)
+    const icons = this.HTMLIconContainer.content.querySelectorAll('[data-key]');
 
     icons.forEach(iconElement => {
       const key = iconElement.getAttribute('data-key');

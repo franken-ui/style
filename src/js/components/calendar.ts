@@ -144,6 +144,20 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
     'button-marked': '',
   };
 
+  /**
+   * Default internationalization strings for labels and accessibility.
+   * These can be overridden via the i18n attribute or config script.
+   * @internal
+   */
+  private readonly defaultI18n = {
+    'prev-month': 'Previous month',
+    'next-month': 'Next month',
+    'prev-year': 'Previous year',
+    'next-year': 'Next year',
+    'select-month': 'Select month',
+    'select-year': 'Select year',
+  };
+
   protected get $value(): string {
     return this.$active ? this.$active.slice(0, 10) : '';
   }
@@ -498,12 +512,8 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
 
   private renderHeader() {
     const { year, monthName } = this.getTimestampComponent(this.$viewDate);
-    const prevMonthLabel = this.getI18nText('prevMonth', {
-      prevMonth: 'Previous month',
-    });
-    const nextMonthLabel = this.getI18nText('nextMonth', {
-      nextMonth: 'Next month',
-    });
+    const prevMonthLabel = this.getI18nText('prev-month', this.defaultI18n);
+    const nextMonthLabel = this.getI18nText('next-month', this.defaultI18n);
 
     return html`
       <div class=${this.$cls.header} style=${this.$stl.header}>
@@ -556,18 +566,10 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
       });
     });
 
-    const prevMonthLabel = this.getI18nText('prevMonth', {
-      prevMonth: 'Previous month',
-    });
-    const nextMonthLabel = this.getI18nText('nextMonth', {
-      nextMonth: 'Next month',
-    });
-    const prevYearLabel = this.getI18nText('prevYear', {
-      prevYear: 'Previous year',
-    });
-    const nextYearLabel = this.getI18nText('nextYear', {
-      nextYear: 'Next year',
-    });
+    const prevMonthLabel = this.getI18nText('prev-month', this.defaultI18n);
+    const nextMonthLabel = this.getI18nText('next-month', this.defaultI18n);
+    const prevYearLabel = this.getI18nText('prev-year', this.defaultI18n);
+    const nextYearLabel = this.getI18nText('next-year', this.defaultI18n);
 
     return html`
       <div class=${this.$cls.jumper} style=${this.$stl.jumper}>
@@ -587,7 +589,7 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
           <select
             class=${this.$cls['month-select']}
             style=${this.$stl['month-select']}
-            aria-label=${this.getI18nText('selectMonth', {
+            aria-label=${this.getI18nText('select-month', {
               selectMonth: 'Select month',
             })}
             .value=${(month - 1).toString()}
@@ -626,9 +628,7 @@ export class Calendar extends BaseCalendarMixin(InputMixin(Base)) {
             style=${this.$stl['year-input']}
             type="number"
             step="1"
-            aria-label=${this.getI18nText('selectYear', {
-              selectYear: 'Select year',
-            })}
+            aria-label=${this.getI18nText('select-year', this.defaultI18n)}
             .value=${year.toString()}
             @input=${(e: Event) => {
               const input = e.target as HTMLInputElement;

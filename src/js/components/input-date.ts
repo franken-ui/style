@@ -356,6 +356,7 @@ export class InputDate extends BaseCalendarMixin(InputMixin(Base)) {
           .value=${this.$time || ''}
           .clock=${this.clock}
           .lang=${this.lang}
+          .now=${this.today}
         ></uk-input-time>
       </div>
     `;

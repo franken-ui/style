@@ -423,8 +423,10 @@
                     Verify
                     <code class="uk-codespan">uk-calendar</code> attributes are
                     passed through.<br />
-                    Attrs: <code class="uk-codespan">today</code>,
-                    <code class="uk-codespan">jumpable</code>,
+                    Attrs: <code class="uk-codespan">today</code>,<code
+                      class="uk-codespan"
+                      >with-time</code
+                    >, <code class="uk-codespan">jumpable</code>,
                     <code class="uk-codespan">starts-with="1"</code>.
                   </p>
                 </td>
@@ -432,13 +434,11 @@
               <tr>
                 <th>Expectation</th>
                 <td class="space-y" style="--space-y: 2">
-                  <p>Inner calendar reflects configuration.</p>
+                  <p>Inner calendar and time input reflect configuration.</p>
                   <ul class="uk-list uk-list-disc">
                     <li>
-                      Dropdown opens to today's date selected (<code
-                        class="uk-codespan"
-                        >today</code
-                      >).
+                      Dropdown opens to today's date and time prepopulated
+                      (<code class="uk-codespan">today</code>).
                     </li>
                     <li>
                       Calendar header has Month/Year select inputs (<code
@@ -449,6 +449,10 @@
                     <li>
                       Weeks start on Monday (<code class="uk-codespan"
                         >starts-with="1"</code
+                      >).
+                    </li>
+                    <li>
+                      With time input (<code class="uk-codespan">with-time</code
                       >).
                     </li>
                   </ul>
@@ -482,7 +486,7 @@
               today
               jumpable
               starts-with="1"
-              icon="smile"
+              with-time
             ></uk-input-date>
           </div>
         </div>

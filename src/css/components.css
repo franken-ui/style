@@ -2692,6 +2692,12 @@
     transition-timing-function: ease-in-out;
   }
   .uk-nav-sub a {
+    --uk-nav-sub-item-color-computed: color-mix(
+      in srgb,
+      var(--uk-nav-item-color, var(--uk-bg-f)) var(--uk-nav-item-color-o, 100%),
+      transparent
+    );
+    color: var(--uk-nav-sub-item-color-computed);
     padding: var(--uk-nav-sub-item-padding);
     margin: var(--uk-nav-sub-item-margin);
   }
