@@ -351,6 +351,7 @@
   /* Disabled */
   .uk-disabled {
     pointer-events: none;
+    opacity: var(--uk-disabled-opacity, 0.5);
   }
 
   /* Transform Utilities */

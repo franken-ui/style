@@ -22,6 +22,8 @@ type Cls = {
   icon: string;
   list: string;
   item: string;
+  'item-active': string;
+  'item-disabled': string;
   'item-header': string;
   'item-link': string;
   'item-wrapper': string;
@@ -43,6 +45,8 @@ type Stl = {
   icon: string;
   list: string;
   item: string;
+  'item-active': string;
+  'item-disabled': string;
   'item-header': string;
   'item-link': string;
   'item-wrapper': string;
@@ -108,7 +112,9 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     icon: '',
     list: 'uk-nav uk-dropdown-nav uk-overflow-auto uk-custom-select-list',
     item: '',
-    'item-header': '',
+    'item-active': 'uk-active',
+    'item-disabled': 'uk-disabled',
+    'item-header': 'uk-nav-header',
     'item-link': '',
     'item-wrapper': 'uk-custom-select-item-wrapper',
     'item-icon': '',
@@ -130,6 +136,8 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     icon: '',
     list: '',
     item: '',
+    'item-active': 'uk-active',
+    'item-disabled': 'uk-disabled',
     'item-header': '',
     'item-link': '',
     'item-wrapper': '',
@@ -354,6 +362,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
 
   protected onClick(options: { item: OptionItem; index: number }): void {
     const { item } = options;
+
     this.select(item);
   }
 
@@ -375,11 +384,21 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     dropdown: string;
     [key: string]: string;
   } {
+    const item: string[] = [this.$cls['item']];
+
+    if (options?.item.disabled) {
+      item.push(this.$cls['item-disabled']);
+    }
+
+    if (this.$focused === options?.index) {
+      item.push(this.$cls['item-active']);
+    }
+
     return {
-      button: this.$cls.button,
-      icon: this.$cls.icon,
-      list: this.$cls.list,
-      item: options?.item.disabled === true ? this.$cls.item : this.$cls.item,
+      button: this.$cls['button'],
+      icon: this.$cls['icon'],
+      list: this.$cls['list'],
+      item: item.join(' '),
       'item-header': this.$cls['item-header'],
       'item-link': this.multiple === false ? 'uk-drop-close' : '',
       'item-wrapper': this.$cls['item-wrapper'],
@@ -421,8 +440,12 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         >
           <div class="${cls['item-wrapper']}">
             ${item.data.icon
-              ? html`<span class="${cls['item-icon']}">${item.data.icon}</span>`
-              : ''}
+              ? html`
+                  <span class="${cls['item-icon']}">
+                    ${this.$icons(item.data.icon) || nothing}
+                  </span>
+                `
+              : nothing}
             ${item.data.description
               ? html`
                   <div>
@@ -434,7 +457,13 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
                 `
               : html`<span class="${cls['item-text']}">${item.text}</span>`}
           </div>
-          ${isSelected ? html`<span class="${cls['item-check']}">✓</span>` : ''}
+          ${isSelected
+            ? html`
+                <span class="${cls['item-check']}">
+                  ${this.$icons('check') || nothing}
+                </span>
+              `
+            : nothing}
         </a>
       </li>
     `;
@@ -683,11 +712,11 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
             style="${this.$stl['button-text']}"
             >${this.$text}</span
           >
-          ${this.icon
-            ? html`<span class="${cls['icon']}" style="${this.$stl.icon}"
-                >${this.icon}</span
-              >`
-            : ''}
+          <span class="${cls['icon']}" style="${this.$stl.icon}">
+            ${this.icon
+              ? this.$icons(this.icon) || nothing
+              : this.$icons('chevrons-up-down')}
+          </span>
         </button>
 
         <div

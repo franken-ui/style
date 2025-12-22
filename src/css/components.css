@@ -1646,60 +1646,7 @@
     background-color: var(--uk-dropdown-dropbar-bg-computed);
     box-shadow: var(--uk-dropdown-dropbar-shadow);
   }
-  .uk-dropdown-nav {
-    --uk-dropdown-nav-item-padding: 0.375rem 0.25rem;
-    --uk-dropdown-nav-item-margin: 0.25rem;
-    --uk-dropdown-nav-item-hover-bg: var(--uk-accent);
-    --uk-dropdown-nav-item-hover-bg-o: var(--uk-accent-o);
-    --uk-dropdown-nav-item-hover-color: var(--uk-accent-f);
-    --uk-dropdown-nav-item-hover-color-o: 100%;
-    --uk-dropdown-nav-header-padding: 0.375rem 0.25rem;
-    --uk-dropdown-nav-header-margin: 0.25rem;
-    --uk-dropdown-nav-header-weight: 600;
-    --uk-dropdown-nav-divider-margin: 0;
-    --uk-dropdown-nav-divider-border-width: 1px;
-    --uk-dropdown-nav-divider-border-color: var(--uk-border);
-    --uk-dropdown-nav-divider-border-color-o: 10%;
-    --uk-dropdown-nav-item-hover-bg-computed: color-mix(
-      in srgb,
-      var(--uk-dropdown-nav-item-hover-bg)
-        var(--uk-dropdown-nav-item-hover-bg-o),
-      transparent
-    );
-    --uk-dropdown-nav-item-hover-color-computed: color-mix(
-      in srgb,
-      var(--uk-dropdown-nav-item-hover-color)
-        var(--uk-dropdown-nav-item-hover-color-o),
-      transparent
-    );
-    --uk-dropdown-nav-divider-border-color-computed: color-mix(
-      in srgb,
-      var(--uk-dropdown-nav-divider-border-color)
-        var(--uk-dropdown-nav-divider-border-color-o),
-      transparent
-    );
-    --uk-nav-item-padding: var(--uk-dropdown-nav-item-padding);
-    --uk-nav-item-hover-bg: var(--uk-dropdown-nav-item-hover-bg);
-    --uk-nav-item-hover-bg-o: var(--uk-dropdown-nav-item-hover-bg-o);
-    --uk-nav-item-hover-color: var(--uk-dropdown-nav-item-hover-color);
-    --uk-nav-item-hover-color-o: var(--uk-dropdown-nav-item-hover-color-o);
-    --uk-nav-header-padding: var(--uk-dropdown-nav-header-padding);
-    --uk-nav-header-margin: var(--uk-dropdown-nav-header-margin);
-    --uk-nav-header-font-weight: var(--uk-dropdown-nav-header-weight);
-    --uk-nav-divider-margin: var(--uk-dropdown-nav-divider-margin);
-    --uk-nav-divider-width: var(--uk-dropdown-nav-divider-border-width) 0 0 0;
-    --uk-nav-divider-style: solid;
-    --uk-nav-divider-color: var(--uk-dropdown-nav-divider-border-color);
-    --uk-nav-divider-color-o: var(--uk-dropdown-nav-divider-border-color-o);
-    user-select: none;
-  }
-  .uk-dropdown-nav a {
-    --uk-nav-radius: var(--uk-global-radius-small);
-  }
-  .uk-dropdown-nav > li > a {
-    --uk-nav-item-margin: var(--uk-dropdown-nav-item-margin);
-  }
-  .uk-dropdown-nav > li[role='option'][aria-selected='true'] > a {
+  .uk-dropdown-nav > li[aria-selected='true'] > a {
     font-weight: 500;
   }
   .uk-dropnav-dropbar {
@@ -2582,9 +2529,11 @@
     --uk-nav-item-hover-color-o: 100%;
   }
   .uk-nav-header {
+    --uk-nav-header-margin: var(--uk-nav-item-margin);
+    --uk-nav-header-padding: var(--uk-nav-item-padding);
     font-weight: 600;
-    margin: var(--uk-nav-item-margin);
-    padding: var(--uk-nav-item-padding);
+    margin: var(--uk-nav-header-margin);
+    padding: var(--uk-nav-header-padding);
   }
   .uk-nav-divider {
     --uk-nav-divider-color: var(--uk-border);
@@ -2708,6 +2657,55 @@
     color: var(--uk-nav-sub-item-color-computed);
     padding: var(--uk-nav-sub-item-padding);
     margin: var(--uk-nav-sub-item-margin);
+  }
+  .uk-dropdown-nav {
+    --uk-dropdown-nav-item-padding: 0.375rem 0.25rem;
+    --uk-dropdown-nav-item-margin: 0.25rem;
+    --uk-dropdown-nav-item-hover-bg: var(--uk-accent);
+    --uk-dropdown-nav-item-hover-bg-o: var(--uk-accent-o);
+    --uk-dropdown-nav-item-hover-color: var(--uk-accent-f);
+    --uk-dropdown-nav-item-hover-color-o: 100%;
+    --uk-dropdown-nav-header-padding: 0.375rem 0.25rem;
+    --uk-dropdown-nav-header-margin: 0.25rem;
+    --uk-dropdown-nav-header-weight: 600;
+    --uk-dropdown-nav-divider-margin: 0;
+    --uk-dropdown-nav-divider-border-width: 1px;
+    --uk-dropdown-nav-divider-border-color: var(--uk-border);
+    --uk-dropdown-nav-divider-border-color-o: 10%;
+    --uk-dropdown-nav-item-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-dropdown-nav-item-hover-bg)
+        var(--uk-dropdown-nav-item-hover-bg-o),
+      transparent
+    );
+    --uk-dropdown-nav-item-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-dropdown-nav-item-hover-color)
+        var(--uk-dropdown-nav-item-hover-color-o),
+      transparent
+    );
+    --uk-dropdown-nav-divider-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-dropdown-nav-divider-border-color)
+        var(--uk-dropdown-nav-divider-border-color-o),
+      transparent
+    );
+    --uk-nav-item-padding: var(--uk-dropdown-nav-item-padding);
+    --uk-nav-item-margin: var(--uk-dropdown-nav-item-margin);
+    --uk-nav-item-hover-bg: var(--uk-dropdown-nav-item-hover-bg);
+    --uk-nav-item-hover-bg-o: var(--uk-dropdown-nav-item-hover-bg-o);
+    --uk-nav-item-hover-color: var(--uk-dropdown-nav-item-hover-color);
+    --uk-nav-item-hover-color-o: var(--uk-dropdown-nav-item-hover-color-o);
+    --uk-nav-header-padding: var(--uk-dropdown-nav-header-padding);
+    --uk-nav-header-margin: var(--uk-dropdown-nav-header-margin);
+    --uk-nav-header-font-weight: var(--uk-dropdown-nav-header-weight);
+    --uk-nav-divider-margin: var(--uk-dropdown-nav-divider-margin);
+    --uk-nav-divider-width: var(--uk-dropdown-nav-divider-border-width) 0 0 0;
+    --uk-nav-divider-style: solid;
+    --uk-nav-divider-color: var(--uk-dropdown-nav-divider-border-color);
+    --uk-nav-divider-color-o: var(--uk-dropdown-nav-divider-border-color-o);
+    --uk-nav-radius: var(--uk-global-radius-small);
+    user-select: none;
   }
   .uk-subnav {
     display: flex;
