@@ -193,7 +193,7 @@
     --uk-nav-item-margin: var(--uk-dropdown-nav-item-margin);
   }
 
-  .uk-dropdown-nav > li[role='option'][aria-selected='true'] > a {
+  .uk-dropdown-nav > li[aria-selected='true'] > a {
     font-weight: 500;
   }
 
