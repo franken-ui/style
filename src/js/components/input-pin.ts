@@ -1,6 +1,5 @@
 import { type PropertyValues, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { classMap } from 'lit/directives/class-map.js';
 import { InputMixin } from './shared/input';
 import { Base } from './shared/base';
 
@@ -56,15 +55,11 @@ interface Stl extends Record<string, string> {
  * @fires uk-input-pin:change - Emitted when the PIN value changes
  * @fires uk-input-pin:complete - Emitted when all PIN fields are filled
  *
- * @slot label - Custom label content (overrides i18n label)
- * @slot description - Custom description content (overrides i18n description)
- *
  * @cls host-inner - The main div
  * @cls wrapper - The inputs wrapper div
  * @cls input - Individual input fields
- * @cls label - The label element
- * @cls description - The description element
- * @cls live-region - The screen reader announcement region
+ * @cls label - The label element (always visually hidden, accessible to screen readers)
+ * @cls description - The description element (always visually hidden, accessible to screen readers)
  *
  * @example
  * ```html
@@ -76,13 +71,7 @@ interface Stl extends Record<string, string> {
  *   name="verification-code"
  *   length="4"
  *   autofocus
- *   i18n='{"label": "Verification Code"}'>
- * </uk-input-pin>
- *
- * <!-- With custom styling -->
- * <uk-input-pin
- *   cls='{"host-inner": "pin-group", "input": "pin-digit"}'
- *   stl='{"input": "width: 40px; height: 50px;"}'>
+ *   i18n='{"label": "Verification Code", "description": "Enter {length}-digit code"}'>
  * </uk-input-pin>
  *
  * <!-- Using script tag for configuration -->
@@ -106,15 +95,15 @@ interface Stl extends Record<string, string> {
 export class InputPin extends InputMixin(Base) {
   /**
    * The default element key used for applying simple string CSS classes via `cls` attribute.
-   * This targets the main container.
+   * This targets the div wrapping all input fields.
    */
-  protected 'cls-default-element' = 'host-inner';
+  protected 'cls-default-element' = 'wrapper';
 
   /**
    * The default element key used for applying simple string inline styles via `stl` attribute.
-   * This targets the main container.
+   * This targets the div wrapping all input fields.
    */
-  protected 'stl-default-element' = 'host-inner';
+  protected 'stl-default-element' = 'wrapper';
 
   /** Custom event name emitted when value changes */
   protected 'input-event' = 'uk-input-pin:change';
@@ -154,15 +143,6 @@ export class InputPin extends InputMixin(Base) {
   pattern?: string;
 
   /**
-   * Whether to show visual labels (not recommended - use aria-label via i18n instead).
-   * When false, labels are visually hidden but still accessible to screen readers.
-   *
-   * @default false
-   */
-  @property({ type: Boolean, attribute: 'show-labels' })
-  'show-labels': boolean = false;
-
-  /**
    * Default i18n strings for labels and messages.
    * These can be overridden via the i18n attribute or config script.
    * @internal
@@ -187,8 +167,8 @@ export class InputPin extends InputMixin(Base) {
     'host-inner': '',
     wrapper: 'uk-input-pin',
     input: '',
-    label: '',
-    description: '',
+    label: 'sr-only',
+    description: 'sr-only',
   };
 
   /**
@@ -643,78 +623,6 @@ export class InputPin extends InputMixin(Base) {
   }
 
   /**
-   * Renders the label element.
-   * @internal
-   */
-  private renderLabel() {
-    const hasCustomLabel = this.querySelector('[slot="label"]');
-
-    if (hasCustomLabel) {
-      return html`
-        <span
-          id="${this.groupId}-label"
-          class=${classMap({
-            [this.$cls['label']]: true,
-            'sr-only': !this['show-labels'],
-          })}
-          style=${this.$stl['label']}
-        >
-          <slot name="label"></slot>
-        </span>
-      `;
-    }
-
-    return html`
-      <span
-        id="${this.groupId}-label"
-        class=${classMap({
-          [this.$cls['label']]: true,
-          'sr-only': !this['show-labels'],
-        })}
-        style=${this.$stl['label']}
-      >
-        ${this.groupLabel}
-      </span>
-    `;
-  }
-
-  /**
-   * Renders the description element.
-   * @internal
-   */
-  private renderDescription() {
-    const hasCustomDescription = this.querySelector('[slot="description"]');
-
-    if (hasCustomDescription) {
-      return html`
-        <span
-          id="${this.groupId}-desc"
-          class=${classMap({
-            [this.$cls['description']]: true,
-            'sr-only': !this['show-labels'],
-          })}
-          style=${this.$stl['description']}
-        >
-          <slot name="description"></slot>
-        </span>
-      `;
-    }
-
-    return html`
-      <span
-        id="${this.groupId}-desc"
-        class=${classMap({
-          [this.$cls['description']]: true,
-          'sr-only': !this['show-labels'],
-        })}
-        style=${this.$stl['description']}
-      >
-        ${this.groupDescription}
-      </span>
-    `;
-  }
-
-  /**
    * Renders the complete PIN input component, including all input fields, hidden form input,
    * ARIA labels, and live region for screen reader announcements.
    *
@@ -725,11 +633,25 @@ export class InputPin extends InputMixin(Base) {
       <div
         data-host-inner
         class=${this.$cls['host-inner']}
-        style=${this.$cls['host-inner']}
+        style=${this.$stl['host-inner']}
         role="group"
         aria-labelledby="${this.groupId}-label ${this.groupId}-desc"
       >
-        ${this.renderLabel()} ${this.renderDescription()}
+        <span
+          id="${this.groupId}-label"
+          class="${this.$cls['label']}"
+          style=${this.$stl['label']}
+        >
+          ${this.groupLabel}
+        </span>
+
+        <span
+          id="${this.groupId}-desc"
+          class="${this.$cls['description']}"
+          style=${this.$stl['description']}
+        >
+          ${this.groupDescription}
+        </span>
 
         <div
           class=${this.$cls['wrapper']}
