@@ -117,7 +117,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     'item-header': 'uk-nav-header',
     'item-link': '',
     'item-wrapper': 'uk-custom-select-item-wrapper',
-    'item-icon': '',
+    'item-icon': 'uk-custom-select-item-icon',
     'item-text': 'uk-custom-select-item-text',
     'item-check': '',
     'item-subtitle': '',
@@ -152,13 +152,26 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     divider: 'uk-hr',
   };
 
+  /**
+   * Default i18n strings for labels and messages.
+   * These can be overridden via the i18n attribute or config script.
+   * @internal
+   */
+  private readonly defaultI18n = {
+    'button-label': 'Select an option',
+    'selection-count': '{n} options selected',
+    'search-placeholder': 'Search',
+    insert: 'Insert',
+    'list-label': 'Options',
+  };
+
   private HTMLDrop: Element | null = null;
 
   protected get $text(): string {
     if (this.$selected.length === 0) {
       return this.placeholder !== ''
         ? this.placeholder
-        : this.getI18nText('buttonLabel', { buttonLabel: 'Select an option' });
+        : this.getI18nText('button-label', this.defaultI18n);
     }
 
     if (this.multiple === false && this.selected) {
@@ -169,11 +182,9 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
       return this.selected.text;
     }
 
-    return this.getI18nText(
-      'selection-count',
-      { 'selection-count': '{n} options selected' },
-      { n: this.$selected.length },
-    );
+    return this.getI18nText('selection-count', this.defaultI18n, {
+      n: this.$selected.length,
+    });
   }
 
   protected get $value(): string | string[] {
@@ -601,14 +612,16 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
             </span>
             <input
               class="${cls['search-input']}"
-              placeholder="${this.getI18nText('search-placeholder', {
-                'search-placeholder': 'Search',
-              })}"
+              placeholder="${this.getI18nText(
+                'search-placeholder',
+                this.defaultI18n,
+              )}"
               type="text"
               role="searchbox"
-              aria-label="${this.getI18nText('search-placeholder', {
-                'search-placeholder': 'Search',
-              })}"
+              aria-label="${this.getI18nText(
+                'search-placeholder',
+                this.defaultI18n,
+              )}"
               .value="${this.$term}"
               @input="${(e: InputEvent) => {
                 const input = e.target as HTMLInputElement;
@@ -640,10 +653,10 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
             this.insert();
           }}"
           tabindex="-1"
-          aria-label="${this.getI18nText('insert', { insert: 'Insert' })} ${this
+          aria-label="${this.getI18nText('insert', this.defaultI18n)} ${this
             .$term}"
         >
-          ${this.getI18nText('insert', { insert: 'Insert' })} ${this.$term}
+          ${this.getI18nText('insert', this.defaultI18n)} ${this.$term}
         </button>
       </li>
     `;
@@ -657,7 +670,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         class="${cls['list']}"
         role="listbox"
         tabindex="-1"
-        aria-label="${this.getI18nText('listLabel', { listLabel: 'Options' })}"
+        aria-label="${this.getI18nText('list-label', this.defaultI18n)}"
         aria-multiselectable="${this.multiple}"
         @keydown="${this.onKeydown}"
       >
@@ -701,9 +714,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
           aria-haspopup="listbox"
           aria-expanded="${this.$open}"
           aria-controls="${listboxId}"
-          aria-label="${this.getI18nText('buttonLabel', {
-            buttonLabel: 'Select an option',
-          })}"
+          aria-label="${this.getI18nText('button-label', this.defaultI18n)}"
           ?disabled="${this.disabled}"
           @keydown="${this.onKeydown}"
         >
@@ -725,9 +736,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
           style="${this.$stl.dropdown}"
           data-uk-dropdown="${this.drop}"
           role="dialog"
-          aria-label="${this.getI18nText('buttonLabel', {
-            buttonLabel: 'Select an option',
-          })}"
+          aria-label="${this.getI18nText('button-label', this.defaultI18n)}"
         >
           ${this.renderSearch()} ${this.renderList()}
         </div>
