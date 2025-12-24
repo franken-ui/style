@@ -60,7 +60,7 @@
       transparent
     );
     padding: 0.2rem 0.3rem;
-    font-family: var(--font-mono);
+    font-family: var(--uk-global-font-family-mono);
     font-weight: 600;
   }
 
@@ -78,7 +78,7 @@
       var(--uk-muted) var(--uk-muted-o),
       transparent
     );
-    font-family: var(--font-mono);
+    font-family: var(--uk-global-font-family-mono);
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--uk-muted-f);
