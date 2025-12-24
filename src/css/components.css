@@ -2490,6 +2490,10 @@
     --uk-nav-sub-item-padding: 0.25rem 0.5rem;
     --uk-nav-sub-item-margin: 0;
     --uk-nav-sub-border-w: 1px;
+    --uk-nav-item-color: var(--uk-muted-f);
+    --uk-nav-item-color-o: 100%;
+    --uk-nav-item-hover-color: var(--uk-bg-f);
+    --uk-nav-item-hover-color-o: 100%;
     --uk-nav-radius: var(--uk-global-radius);
   }
   .uk-nav-alt {
@@ -2569,6 +2573,8 @@
     border-inline-start-color: var(--uk-nav-sub-border-computed);
   }
   .uk-nav-sub {
+    --uk-nav-item-color: var(--uk-muted-f);
+    --uk-nav-item-color-o: 100%;
     --uk-nav-sub-active-bg: var(--uk-primary);
     --uk-nav-sub-active-bg-o: 100%;
     --uk-nav-sub-active-bg-computed: color-mix(
