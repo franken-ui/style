@@ -1,18 +1,10 @@
 // refactored command.ts
-import { html, type PropertyValues, type TemplateResult } from 'lit';
+import { html, nothing, type PropertyValues, type TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { type OptionItem } from '../helpers/select';
 import { BaseSelectMixin } from './shared/base-select';
 import { Base } from './shared/base';
 import { titleCase } from '../helpers/common';
-
-type I18N = {
-  placeholder: string;
-  searchLabel: string;
-  listLabel: string;
-  closeLabel: string;
-  modalLabel: string;
-};
 
 type Cls = {
   modal: string;
@@ -30,6 +22,7 @@ type Cls = {
   'item-text': string;
   'item-key': string;
   'item-subtitle': string;
+  'escape-button': string;
 };
 
 type Stl = {
@@ -48,6 +41,7 @@ type Stl = {
   'item-text': string;
   'item-key': string;
   'item-subtitle': string;
+  'escape-button': string;
 };
 
 @customElement('uk-command')
@@ -67,15 +61,6 @@ export class Command extends BaseSelectMixin(Base) {
   toggle: string = '';
 
   @state()
-  $i18n: I18N = {
-    placeholder: 'Search commands...',
-    searchLabel: 'Search',
-    listLabel: 'Commands',
-    closeLabel: 'Close',
-    modalLabel: 'Command palette',
-  };
-
-  @state()
   protected $cls: Cls = {
     modal: 'uk-modal uk-flex-top',
     dialog: 'uk-modal-dialog uk-margin-auto-vertical',
@@ -83,7 +68,7 @@ export class Command extends BaseSelectMixin(Base) {
     'header-icon': 'uk-cmd-header-icon',
     'header-input': 'uk-cmd-header-input',
     'header-esc': 'uk-cmd-header-esc',
-    list: 'uk-overflow-auto uk-nav uk-nav-secondary uk-cmd-body',
+    list: 'uk-overflow-auto uk-nav uk-nav-alt uk-nav-primary uk-nav-cmd uk-cmd-body',
     item: '',
     'item-header': 'uk-nav-header',
     'item-link': '',
@@ -92,6 +77,7 @@ export class Command extends BaseSelectMixin(Base) {
     'item-text': 'uk-cmd-item-text',
     'item-key': 'uk-cmd-item-key',
     'item-subtitle': 'uk-nav-subtitle',
+    'escape-button': 'uk-button uk-button-default uk-button-small',
   };
 
   @state()
@@ -111,6 +97,21 @@ export class Command extends BaseSelectMixin(Base) {
     'item-text': '',
     'item-key': '',
     'item-subtitle': '',
+    'escape-button': 'uk-button uk-button-default uk-button-small',
+  };
+
+  /**
+   * Default internationalization strings for labels and accessibility.
+   * These can be overridden via the i18n attribute or config script.
+   * @internal
+   */
+  protected readonly defaultI18n = {
+    placeholder: 'Search commands...',
+    'search-label': 'Search',
+    'list-label': 'Commands',
+    'close-label': 'Close',
+    'modal-label': 'Command palette',
+    'escape-button-label': 'Esc',
   };
 
   private HTMLModal: Element | null = null;
@@ -204,10 +205,7 @@ export class Command extends BaseSelectMixin(Base) {
       button: '',
       icon: '',
       list: this.$cls.list,
-      item:
-        options?.item.disabled === true
-          ? 'uk-disabled opacity-50'
-          : this.$cls.item,
+      item: options?.item.disabled === true ? 'uk-disabled' : this.$cls.item,
       'item-header': this.$cls['item-header'],
       'item-link':
         options?.item.disabled === false
@@ -231,7 +229,7 @@ export class Command extends BaseSelectMixin(Base) {
   }
 
   protected onKeydownEnter(): void {
-    const dataset = this.activeOptionEl?.dataset;
+    const dataset = this.HTMLRectActive?.dataset;
 
     if (dataset) {
       const key: string = dataset.key as string;
@@ -272,15 +270,16 @@ export class Command extends BaseSelectMixin(Base) {
     return html`
       <li
         class="${cls['item']}"
+        style="${this.$stl['item']}"
         role="option"
         aria-selected="${globalIndex === this.$focused ? 'true' : 'false'}"
         aria-disabled="${item.disabled ? 'true' : 'false'}"
         data-key="${key}"
         data-index="${index}"
       >
-        <button
-          type="button"
+        <a
           class="${cls['item-link']}"
+          style="${this.$stl['item-link']}"
           @click="${() => this.onClick({ item, index })}"
           tabindex="-1"
           ?disabled="${item.disabled}"
@@ -288,21 +287,36 @@ export class Command extends BaseSelectMixin(Base) {
             ? ` (${titleCase(item.data?.modifier || 'ctrl')} + ${item.data.key.toUpperCase()})`
             : ''}"
         >
-          <div class="${cls['item-wrapper']}">
+          <div
+            class="${cls['item-wrapper']}"
+            style="${this.$stl['item-wrapper']}"
+          >
             ${item.data.icon
-              ? html`<span class="${cls['item-icon']}">${item.data.icon}</span>`
-              : ''}
-            <span class="${cls['item-text']}">${item.text}</span>
+              ? html`
+                  <span
+                    class="${cls['item-icon']}"
+                    style="${this.$stl['item-icon']}"
+                  >
+                    ${this.$icons(item.data.icon) || nothing}
+                  </span>
+                `
+              : nothing}
+            <span class="${cls['item-text']}" style="${this.$stl['item-text']}">
+              ${item.text}
+            </span>
             ${item.data.key
               ? html`
-                  <span class="${cls['item-key']}">
+                  <span
+                    class="${cls['item-key']}"
+                    style="${this.$stl['item-key']}"
+                  >
                     ${titleCase(item.data?.modifier) || 'Ctrl'} +
                     ${item.data.key.toUpperCase()}
                   </span>
                 `
               : ''}
           </div>
-        </button>
+        </a>
       </li>
     `;
   }
@@ -372,27 +386,24 @@ export class Command extends BaseSelectMixin(Base) {
 
   private renderSearch(): TemplateResult {
     return html`
-      <div class="${this.$cls.header}" style="${this.$stl.header}">
+      <div class="${this.$cls['header']}" style="${this.$stl['header']}">
         <div
           class="${this.$cls['header-icon']}"
           style="${this.$stl['header-icon']}"
           aria-hidden="true"
         >
-          ${this.getI18nText('searchIcon', { searchIcon: '🔍' })}
+          ${this.$icons('search')}
         </div>
         <div
           class="${this.$cls['header-input']}"
           style="${this.$stl['header-input']}"
         >
           <input
+            autofocus
             type="text"
             role="searchbox"
-            aria-label="${this.getI18nText('searchLabel', {
-              searchLabel: 'Search',
-            })}"
-            placeholder="${this.getI18nText('placeholder', {
-              placeholder: 'Search commands...',
-            })}"
+            aria-label="${this.getI18nText('search-label', this.defaultI18n)}"
+            placeholder="${this.getI18nText('placeholder', this.defaultI18n)}"
             .value="${this.$term}"
             @keydown=${this.onInputKeydown}
             @input=${(e: InputEvent) => {
@@ -407,35 +418,15 @@ export class Command extends BaseSelectMixin(Base) {
         >
           <button
             type="button"
-            class="uk-modal-close uk-btn uk-btn-default uk-btn-sm"
-            aria-label="${this.getI18nText('closeLabel', {
-              closeLabel: 'Close',
-            })}"
+            class="${this.$cls['escape-button']} uk-modal-close"
+            style="${this.$stl['escape-button']}"
+            aria-label="${this.getI18nText('close-label', this.defaultI18n)}"
           >
-            Esc
+            ${this.getI18nText('escape-button-label', this.defaultI18n)}
           </button>
         </div>
       </div>
       ${Object.keys(this.options).length > 0 ? html`<hr class="uk-hr" />` : ''}
-    `;
-  }
-
-  protected override renderList(): TemplateResult {
-    const cls = this._cls();
-
-    return html`
-      <ul
-        class="${cls['list']}"
-        style="${this.$stl.list}"
-        role="listbox"
-        tabindex="-1"
-        aria-label="${this.getI18nText('listLabel', {
-          listLabel: 'Commands',
-        })}"
-        @keydown="${this.onKeydown}"
-      >
-        ${super.renderList()}
-      </ul>
     `;
   }
 
@@ -447,15 +438,13 @@ export class Command extends BaseSelectMixin(Base) {
     return html`
       <div
         data-host-inner
-        class="${this.$cls.modal}"
-        style="${this.$stl.modal}"
+        class="${this.$cls['modal']}"
+        style="${this.$stl['modal']}"
         id="${modalId}"
         data-uk-modal
         role="dialog"
         aria-modal="true"
-        aria-label="${this.getI18nText('modalLabel', {
-          modalLabel: 'Command palette',
-        })}"
+        aria-label="${this.getI18nText('modal-label', this.defaultI18n)}"
       >
         <div
           class="${this.$cls.dialog}"

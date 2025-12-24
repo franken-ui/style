@@ -7,14 +7,6 @@ import { repeat } from 'lit/directives/repeat.js';
 import { InputMixin } from './shared/input';
 import { Base } from './shared/base';
 
-type I18N = {
-  'search-placeholder': string;
-  'selection-count': string;
-  insert: string;
-  listLabel: string;
-  buttonLabel: string;
-};
-
 type Cls = {
   'host-inner': string;
   button: string;
@@ -96,15 +88,6 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
   $selected: string[] = [];
 
   @state()
-  $i18n: I18N = {
-    'search-placeholder': 'Search',
-    'selection-count': '{n} options selected',
-    insert: 'Insert',
-    listLabel: 'Options',
-    buttonLabel: 'Select an option',
-  };
-
-  @state()
   protected $cls: Cls = {
     'host-inner': 'uk-position-relative',
     button: '',
@@ -157,7 +140,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
    * These can be overridden via the i18n attribute or config script.
    * @internal
    */
-  private readonly defaultI18n = {
+  protected readonly defaultI18n = {
     'button-label': 'Select an option',
     'selection-count': '{n} options selected',
     'search-placeholder': 'Search',
@@ -357,7 +340,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
   };
 
   protected onKeydownEnter(): void {
-    const dataset = this.activeOptionEl?.dataset;
+    const dataset = this.HTMLRectActive?.dataset;
 
     if (dataset) {
       const key: string = dataset.key as string;

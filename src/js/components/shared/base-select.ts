@@ -1,5 +1,5 @@
 // refactored base-select.ts
-import { state, query } from 'lit/decorators.js';
+import { state } from 'lit/decorators.js';
 import { html, type PropertyValues, type TemplateResult } from 'lit';
 import { type OptionGrouped, type OptionItem } from '../../helpers/select';
 import { repeat } from 'lit/directives/repeat.js';
@@ -36,6 +36,13 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
      * Implement the exact event string in the subclass.
      */
     protected abstract readonly 'search-event': string;
+
+    /**
+     * Default internationalization strings for labels and accessibility.
+     * Implement the exact event string in the subclass.
+     * @internal
+     */
+    protected abstract readonly defaultI18n: { [key: string]: string };
 
     /**
      * Return class map for element parts.
@@ -108,17 +115,19 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
     @state()
     $open: boolean = false;
 
-    /**
-     * Reference to the listbox element (role="listbox").
-     */
-    @query('[role="listbox"]')
-    protected listboxEl?: HTMLElement;
-
-    protected activeOptionEl?: HTMLElement;
-
     protected selected: OptionItem | null = null;
 
+    /**
+     * Reference to the parent container element for scrolling calculations.
+     * Used for focus management and keyboard navigation.
+     */
     protected HTMLRectParent: HTMLElement | null = null;
+
+    /**
+     * Reference to the currently active/focused option element.
+     * Used for visual focus indicators and scrolling.
+     */
+    protected HTMLRectActive: HTMLElement | null = null;
 
     /**
      * Compute grouped options filtered by the current search term.
@@ -192,18 +201,19 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
         });
       }
 
-      if (_changedProperties.has('$focused') && this.listboxEl) {
-        this.listboxEl
-          .querySelector('[role="option"][aria-selected="true"]')
-          ?.removeAttribute('aria-selected');
+      if (_changedProperties.has('$focused') && this.HTMLRectParent) {
+        this.HTMLRectParent.querySelector(
+          '[role="option"][aria-selected="true"]',
+        )?.removeAttribute('aria-selected');
 
         const options = Array.from(
-          this.listboxEl.querySelectorAll('[role="option"]'),
+          this.HTMLRectParent.querySelectorAll('[role="option"]'),
         );
-        this.activeOptionEl = options[this.$focused] as HTMLElement;
 
-        if (this.activeOptionEl) {
-          this.activeOptionEl.setAttribute('aria-selected', 'true');
+        this.HTMLRectActive = options[this.$focused] as HTMLElement;
+
+        if (this.HTMLRectActive) {
+          this.HTMLRectActive.setAttribute('aria-selected', 'true');
           this.focusActiveOption();
         }
       }
@@ -242,16 +252,16 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
      * @param behavior - Scroll behavior: 'smooth' or 'auto'
      */
     protected focusActiveOption(behavior: ScrollBehavior = 'smooth'): void {
-      if (this.listboxEl && this.activeOptionEl) {
+      if (this.HTMLRectParent && this.HTMLRectActive) {
         const rects = {
-          parent: this.listboxEl.getBoundingClientRect(),
-          active: this.activeOptionEl.getBoundingClientRect(),
+          parent: this.HTMLRectParent.getBoundingClientRect(),
+          active: this.HTMLRectActive.getBoundingClientRect(),
         };
 
-        this.listboxEl.scrollTo({
+        this.HTMLRectParent.scrollTo({
           top:
-            this.activeOptionEl.offsetTop -
-            this.listboxEl.offsetTop -
+            this.HTMLRectActive.offsetTop -
+            this.HTMLRectParent.offsetTop -
             rects.parent.height / 2 +
             rects.active.height / 2,
           behavior: behavior,
@@ -311,11 +321,10 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
       return html`
         <ul
           class="${cls['list']}"
+          style="${this.$stl['list']}"
           role="listbox"
           tabindex="-1"
-          aria-label="${this.getI18nText('listLabel', {
-            listLabel: 'Options',
-          })}"
+          aria-label="${this.getI18nText('list-label', this.defaultI18n)}"
           @keydown="${this.onKeydown}"
         >
           ${repeat(
@@ -340,7 +349,11 @@ export const BaseSelectMixin = <TBase extends Constructor<Base>>(
       const cls = this._cls();
 
       return header !== '__'
-        ? html`<li class="${cls['item-header']}" role="presentation">
+        ? html`<li
+            class="${cls['item-header']}"
+            style="${this.$cls['item-header']}"
+            role="presentation"
+          >
             ${header}
           </li>`
         : '';

@@ -575,6 +575,17 @@
     color: var(--uk-muted-f);
   }
 
+  .uk-nav-cmd {
+    --uk-nav-item-padding: 0.375rem 0.5rem;
+  }
+
+  .uk-nav-cmd > li[aria-selected='true'] > a {
+    --uk-nav-item-bg: var(--uk-accent);
+    --uk-nav-item-bg-o: 4%;
+    --uk-nav-item-color: var(--uk-accent-f);
+    --uk-nav-item-color-o: 100%;
+  }
+
   /* ============================================
      Custom Select Component
      ============================================ */

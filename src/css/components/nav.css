@@ -29,6 +29,12 @@
 
   /* Nav Alt  */
   .uk-nav-alt {
+    /* --------------------------------------------------------- */
+    /* FIX: Reset item color to avoid inheriting muted text      */
+    /* from the `uk-nav` class.                                  */
+    /* --------------------------------------------------------- */
+    --uk-nav-item-color: var(--uk-bg-f);
+
     --uk-nav-item-padding: 0.5rem 1rem;
     --uk-nav-item-margin: 0.25rem;
     --uk-nav-sub-item-padding: 0.5rem 1rem;
@@ -40,7 +46,7 @@
   .uk-nav-default {
     --uk-nav-item-color: var(--uk-muted-f);
     --uk-nav-item-color-o: 100%;
-    --uk-nav-item-hover-color: var(--uk-muted-f);
+    --uk-nav-item-hover-color: var(--uk-bg-f);
     --uk-nav-item-hover-color-o: 100%;
   }
 

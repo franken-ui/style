@@ -2497,6 +2497,7 @@
     --uk-nav-radius: var(--uk-global-radius);
   }
   .uk-nav-alt {
+    --uk-nav-item-color: var(--uk-bg-f);
     --uk-nav-item-padding: 0.5rem 1rem;
     --uk-nav-item-margin: 0.25rem;
     --uk-nav-sub-item-padding: 0.5rem 1rem;
@@ -2506,7 +2507,7 @@
   .uk-nav-default {
     --uk-nav-item-color: var(--uk-muted-f);
     --uk-nav-item-color-o: 100%;
-    --uk-nav-item-hover-color: var(--uk-muted-f);
+    --uk-nav-item-hover-color: var(--uk-bg-f);
     --uk-nav-item-hover-color-o: 100%;
   }
   .uk-nav-default > li.uk-active {
@@ -4044,6 +4045,15 @@
     line-height: var(--uk-cmd-item-key-leading);
     letter-spacing: var(--uk-cmd-item-key-tracking);
     color: var(--uk-muted-f);
+  }
+  .uk-nav-cmd {
+    --uk-nav-item-padding: 0.375rem 0.5rem;
+  }
+  .uk-nav-cmd > li[aria-selected='true'] > a {
+    --uk-nav-item-bg: var(--uk-accent);
+    --uk-nav-item-bg-o: 4%;
+    --uk-nav-item-color: var(--uk-accent-f);
+    --uk-nav-item-color-o: 100%;
   }
   .uk-custom-select-search {
     --uk-custom-select-search-padding: 0 0.75rem;
