@@ -133,15 +133,15 @@ interface Stl extends Record<string, string> {
 export class InputTag extends InputMixin(Base) {
   /**
    * The default element key used for applying simple string CSS classes via `cls`.
-   * For this component, it targets the main container.
+   * This targets the div wrapping tags list and input field.
    */
-  protected readonly 'cls-default-element' = 'host-inner';
+  protected readonly 'cls-default-element' = 'wrapper';
 
   /**
    * The default element key used for applying simple string inline styles via `stl`.
-   * For this component, it targets the main container.
+   * This targets the div wrapping tags list and input field.
    */
-  protected readonly 'stl-default-element' = 'host-inner';
+  protected readonly 'stl-default-element' = 'wrapper';
 
   /**
    * Custom event name emitted when the value changes.
