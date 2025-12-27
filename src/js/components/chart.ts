@@ -185,7 +185,7 @@ export class Chart extends Base {
   @state()
   protected $cls: Cls = {
     'host-inner': '',
-    chart: '',
+    chart: 'uk-chart',
     loading: 'sr-only',
     error: 'sr-only',
   };
