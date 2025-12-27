@@ -4,26 +4,47 @@ import { type PropertyValues, html } from 'lit';
 import ApexCharts from 'apexcharts';
 
 /**
+ * CSS class names interface for styling different parts of the component.
+ */
+interface Cls extends Record<string, string> {
+  'host-inner': string;
+  chart: string;
+  loading: string;
+  error: string;
+}
+
+/**
+ * Inline styles interface for different parts of the component.
+ */
+interface Stl extends Record<string, string> {
+  'host-inner': string;
+  chart: string;
+  loading: string;
+  error: string;
+}
+
+/**
+ * Internationalization keys for the chart component.
+ */
+interface I18n extends Record<string, string> {
+  'chart-label': string;
+  'loading-message': string;
+  'error-message': string;
+  'no-data-message': string;
+}
+
+/**
  * A headless Lit-based web component that wraps ApexCharts for declarative chart rendering.
  * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
  *
  * @element uk-chart
  * @extends {Base}
  *
- * Features:
- * - Declarative chart configuration via JSON script tags or attributes
- * - Optional reactive updates when configuration changes (via data-reactive attribute)
- * - Integration with Base class for i18n and custom CSS support
- * - Automatic chart lifecycle management
- * - Loading states and error handling
- * - Accessibility support with ARIA attributes
- * - Headless design with flexible styling
- *
  * @example
- * Basic usage:
+ * Basic usage with inline configuration:
  * ```html
  * <uk-chart>
- *   <script type="application/json">
+ *   <script data-fn="config" type="application/json">
  *   {
  *     "apexCharts": {
  *       "chart": { "type": "bar" },
@@ -38,7 +59,7 @@ import ApexCharts from 'apexcharts';
  * With reactive updates:
  * ```html
  * <uk-chart>
- *   <script type="application/json" data-reactive>
+ *   <script data-fn="config" type="application/json" data-reactive>
  *   {
  *     "apexCharts": {
  *       "chart": { "type": "line" },
@@ -50,23 +71,24 @@ import ApexCharts from 'apexcharts';
  * ```
  *
  * @example
- * With i18n and styling:
+ * With custom styling and i18n:
  * ```html
  * <uk-chart>
- *   <script type="application/json">
+ *   <script data-fn="config" type="application/json">
  *   {
  *     "apexCharts": {
  *       "chart": { "type": "area" },
  *       "series": [{ "name": "Revenue", "data": [100, 200, 150] }]
  *     },
  *     "i18n": {
- *       "chartLabel": "Revenue Chart",
- *       "loadingMessage": "Loading chart...",
- *       "errorMessage": "Failed to load chart"
+ *       "chart-label": "Revenue Chart",
+ *       "loading-message": "Loading chart data...",
+ *       "error-message": "Unable to display chart"
  *     },
  *     "cls": {
- *       "container": "chart-wrapper shadow-lg rounded",
- *       "loading": "text-gray-500 animate-pulse"
+ *       "host-inner": "chart-wrapper shadow-lg rounded",
+ *       "loading": "sr-only",
+ *       "error": "text-red-500"
  *     }
  *   }
  *   </script>
@@ -74,12 +96,18 @@ import ApexCharts from 'apexcharts';
  * ```
  *
  * @example
- * With loading state:
+ * Area chart with custom styling:
  * ```html
- * <uk-chart loading>
- *   <script type="application/json">
+ * <uk-chart>
+ *   <script data-fn="config" type="application/json">
  *   {
- *     "apexCharts": { "chart": { "type": "pie" } }
+ *     "apexCharts": {
+ *       "series": [{ "name": "Desktops", "data": [186, 305, 237, 73, 209, 214] }],
+ *       "chart": { "type": "area", "toolbar": { "show": false } },
+ *       "stroke": { "curve": "smooth", "width": 2 },
+ *       "colors": ["hsl(var(--chart-1))"],
+ *       "xaxis": { "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"] }
+ *     }
  *   }
  *   </script>
  * </uk-chart>
@@ -88,112 +116,115 @@ import ApexCharts from 'apexcharts';
 @customElement('uk-chart')
 export class Chart extends Base {
   /**
-   * The default element key used for applying simple string CSS classes via `cls`.
-   * For this component, it targets the container div element.
+   * The default element key for applying CSS classes via `cls` attribute.
    */
-  protected readonly 'cls-default-element': string = 'container';
+  protected readonly 'cls-default-element': string = 'host-inner';
 
   /**
-   * The default element key used for applying simple string inline styles via `stl`.
-   * For this component, it targets the container div element.
+   * The default element key for applying inline styles via `stl` attribute.
    */
-  protected readonly 'stl-default-element': string = 'container';
+  protected readonly 'stl-default-element': string = 'host-inner';
+
+  /**
+   * Default i18n strings for labels and messages.
+   * These can be overridden via the i18n attribute or config script.
+   */
+  protected readonly defaultI18n: I18n = {
+    'chart-label': 'Chart',
+    'loading-message': 'Loading chart...',
+    'error-message': 'Failed to load chart. Please try again.',
+    'no-data-message': 'No data available',
+  };
 
   /**
    * Shows a loading state before the chart is rendered.
    * Useful when chart data is being fetched asynchronously.
    *
+   * @attr loading
+   * @type {boolean}
    * @default false
-   * @example
-   * ```html
-   * <uk-chart loading></uk-chart>
-   * ```
    */
   @property({ type: Boolean })
   loading: boolean = false;
 
   /**
    * Width of the chart container.
-   * Can be a number (pixels) or string with units.
+   * Can be a number (pixels) or string with units (e.g., "100%", "500px").
    *
-   * @example
-   * ```html
-   * <uk-chart width="500"></uk-chart>
-   * <uk-chart width="100%"></uk-chart>
-   * ```
+   * @attr width
+   * @type {string}
+   * @default "100%"
    */
   @property({ type: String })
   width: string = '100%';
 
   /**
    * Height of the chart container.
-   * Can be a number (pixels) or string with units.
+   * Can be a number (pixels) or string with units (e.g., "400px", "50vh").
    *
-   * @example
-   * ```html
-   * <uk-chart height="400"></uk-chart>
-   * <uk-chart height="50vh"></uk-chart>
-   * ```
+   * @attr height
+   * @type {string}
+   * @default "auto"
    */
   @property({ type: String })
   height: string = 'auto';
 
   /**
-   * ARIA label for the chart container.
-   * Overrides i18n label if provided.
+   * Tracks whether an error occurred during chart initialization or updates.
    *
-   * @example
-   * ```html
-   * <uk-chart aria-label="Sales performance chart"></uk-chart>
-   * ```
-   */
-  @property({ type: String })
-  'aria-label': string = '';
-
-  /**
-   * Tracks whether an error occurred during chart initialization.
    * @internal
    */
   @state()
   protected hasError: boolean = false;
 
   /**
-   * Error message if chart initialization fails.
+   * CSS class configuration for component styling.
+   * Allows customization of different component parts.
    * @internal
    */
   @state()
-  protected errorMessage: string = '';
+  protected $cls: Cls = {
+    'host-inner': '',
+    chart: '',
+    loading: 'sr-only',
+    error: 'sr-only',
+  };
+
+  /**
+   * Inline styles configuration for component styling.
+   * @internal
+   */
+  @state()
+  protected $stl: Stl = {
+    'host-inner': '',
+    chart: '',
+    loading: '',
+    error: '',
+  };
 
   /**
    * ApexCharts instance for rendering and managing the chart.
+   *
    * @internal
    */
   private apexCharts: ApexCharts | null = null;
 
   /**
-   * Default i18n strings for labels and messages.
-   * These can be overridden via the i18n attribute or config script.
-   * @internal
-   */
-  private readonly defaultI18n = {
-    chartLabel: 'Chart',
-    loadingMessage: 'Loading chart...',
-    errorMessage: 'Failed to load chart. Please try again.',
-    noDataMessage: 'No data available',
-  };
-
-  /**
-   * Extracts ApexCharts-specific configuration from $config.
-   * Returns the apexCharts object if present, otherwise returns an empty object.
+   * Extracts ApexCharts configuration from `$config.apexCharts`.
+   * Returns the chart configuration object or an empty object if not present.
    *
-   * @returns ApexCharts configuration object
+   * @returns {object} ApexCharts configuration object
    *
    * @example
-   * With apexCharts wrapper:
+   * Configuration structure:
    * ```json
-   * { "apexCharts": { "chart": { "type": "bar" } } }
+   * {
+   *   "apexCharts": {
+   *     "chart": { "type": "bar" },
+   *     "series": [{ "data": [1, 2, 3] }]
+   *   }
+   * }
    * ```
-   * Returns: `{ "chart": { "type": "bar" } }`
    */
   protected get $apexChartsConfig(): object {
     if ('apexCharts' in this.$config && typeof this.$config === 'object') {
@@ -205,7 +236,8 @@ export class Chart extends Base {
 
   /**
    * Checks if the chart has valid configuration.
-   * @returns True if chart config exists
+   *
+   * @returns {boolean} True if chart config exists and is not empty
    * @internal
    */
   private hasValidConfig(): boolean {
@@ -213,10 +245,10 @@ export class Chart extends Base {
   }
 
   /**
-   * Lit lifecycle method called after first render.
+   * Lit lifecycle: Called after the component's first render.
    * Creates and renders the ApexCharts instance if not in loading state.
    *
-   * @param changedProperties Changed properties in this update
+   * @param {PropertyValues} changedProperties - Map of changed properties
    */
   protected firstUpdated(changedProperties: PropertyValues): void {
     super.firstUpdated(changedProperties);
@@ -227,23 +259,23 @@ export class Chart extends Base {
   }
 
   /**
-   * Lit lifecycle method called on every update.
-   * Handles loading state changes.
+   * Lit lifecycle: Called on every component update.
+   * Handles loading state transitions and initializes chart when loading completes.
    *
-   * @param changedProperties Changed properties in this update
+   * @param {PropertyValues} changedProperties - Map of changed properties
    */
   protected updated(changedProperties: PropertyValues): void {
     super.updated(changedProperties);
 
-    // If loading changed from true to false, initialize chart
+    // Initialize chart when loading changes from true to false
     if (changedProperties.has('loading') && !this.loading && !this.apexCharts) {
       this.initializeApexCharts();
     }
   }
 
   /**
-   * Lit lifecycle method called when component is removed from DOM.
-   * Cleans up chart resources.
+   * Lit lifecycle: Called when component is removed from the DOM.
+   * Cleans up chart resources and destroys the ApexCharts instance.
    */
   disconnectedCallback(): void {
     super.disconnectedCallback();
@@ -255,31 +287,30 @@ export class Chart extends Base {
   }
 
   /**
-   * Hook called when script configuration changes (via reactive observer).
-   * Updates the chart with the new configuration.
+   * Hook called when script configuration changes (via reactive observer from Base).
+   * Updates the chart with new configuration or initializes if not yet created.
+   *
+   * @internal
    */
   protected onConfigChanged(): void {
     if (this.apexCharts && this.hasValidConfig()) {
       try {
         this.apexCharts.updateOptions(this.$apexChartsConfig, true, true);
         this.hasError = false;
-        this.errorMessage = '';
       } catch (error) {
         console.error('uk-chart: Failed to update chart:', error);
-
         this.hasError = true;
-        this.errorMessage =
-          error instanceof Error ? error.message : 'Unknown error';
       }
     } else if (!this.apexCharts && this.hasValidConfig()) {
-      // If chart doesn't exist yet but we have config, initialize it
+      // Initialize chart if it doesn't exist but we have valid config
       this.initializeApexCharts();
     }
   }
 
   /**
    * Initializes the ApexCharts instance and renders the chart.
-   * Handles errors gracefully and sets appropriate state.
+   * Handles errors gracefully and updates component state accordingly.
+   *
    * @internal
    */
   private async initializeApexCharts(): Promise<void> {
@@ -288,23 +319,19 @@ export class Chart extends Base {
     );
 
     if (!chartContainer) {
-      console.warn('uk-chart: Chart container not found');
-
+      console.warn('uk-chart: Chart container not found in render root');
       return;
     }
 
     if (!this.hasValidConfig()) {
       console.warn('uk-chart: No valid chart configuration found');
-
       this.hasError = true;
-      this.errorMessage = this.getI18nText('noDataMessage', this.defaultI18n);
-
       return;
     }
 
     if (this.apexCharts === null) {
       try {
-        // Merge width/height into config if specified
+        // Merge width/height into config
         const config = {
           ...this.$apexChartsConfig,
           chart: {
@@ -320,31 +347,26 @@ export class Chart extends Base {
 
         this.isRendered = true;
         this.hasError = false;
-        this.errorMessage = '';
       } catch (error) {
         console.error('uk-chart: Failed to initialize chart:', error);
-
         this.hasError = true;
-        this.errorMessage =
-          error instanceof Error
-            ? error.message
-            : this.getI18nText('errorMessage', this.defaultI18n);
       }
     }
   }
 
   /**
-   * Renders the loading state.
-   * @returns Template for loading state
+   * Renders the loading state with appropriate ARIA attributes.
+   *
+   * @returns {TemplateResult} Template for loading state
    * @internal
    */
   private renderLoading() {
-    const message = this.getI18nText('loadingMessage', this.defaultI18n);
+    const message = this.getI18nText('loading-message', this.defaultI18n);
 
     return html`
       <div
-        class="${this.$cls['loading'] || ''}"
-        style="${this.$stl['loading'] || ''}"
+        class="${this.$cls['loading']}"
+        style="${this.$stl['loading']}"
         role="status"
         aria-live="polite"
         aria-label="${message}"
@@ -355,19 +377,20 @@ export class Chart extends Base {
   }
 
   /**
-   * Renders the error state.
-   * @returns Template for error state
+   * Renders the error state with appropriate ARIA attributes.
+   *
+   * @returns {TemplateResult} Template for error state
    * @internal
    */
   private renderError() {
-    const message =
-      this.errorMessage || this.getI18nText('errorMessage', this.defaultI18n);
+    const message = this.hasValidConfig()
+      ? this.getI18nText('error-message', this.defaultI18n)
+      : this.getI18nText('no-data-message', this.defaultI18n);
 
     return html`
       <div
-        class="${this.$cls['error'] || ''}"
-        part="error"
-        style="${this.$stl['error'] || ''}"
+        class="${this.$cls['error']}"
+        style="${this.$stl['error']}"
         role="alert"
         aria-live="assertive"
       >
@@ -377,21 +400,19 @@ export class Chart extends Base {
   }
 
   /**
-   * Renders the chart container element.
-   * The container receives the chart instance and applies custom CSS classes and styles.
-   * Handles loading and error states.
+   * Renders the chart component with conditional loading and error states.
+   * The chart container receives the ApexCharts instance and applies custom CSS.
    *
-   * @returns Template for the chart component
+   * @returns {TemplateResult} Template for the chart component
    */
   render() {
-    const ariaLabel =
-      this['aria-label'] || this.getI18nText('chartLabel', this.defaultI18n);
+    const ariaLabel = this.getI18nText('chart-label', this.defaultI18n);
 
     return html`
       <div
         data-host-inner
-        class="${this.$cls['container']}"
-        style="${this.$stl['container']}"
+        class="${this.$cls['host-inner']}"
+        style="${this.$stl['host-inner']}"
         role="img"
         aria-label="${ariaLabel}"
         data-loading="${this.loading}"
@@ -405,9 +426,8 @@ export class Chart extends Base {
             : html`
                 <div
                   data-chart-container
-                  class="${this.$cls['chart'] || ''}"
-                  part="chart"
-                  style="${this.$stl['chart'] || ''}"
+                  class="${this.$cls['chart']}"
+                  style="${this.$stl['chart']}"
                 ></div>
               `}
       </div>
@@ -415,19 +435,20 @@ export class Chart extends Base {
   }
 
   /**
-   * Public API: Updates the chart with new options.
+   * Public API: Updates the chart with new ApexCharts options.
    * Useful for programmatic updates from JavaScript.
    *
-   * @param options - New ApexCharts options to apply
-   * @param redrawPaths - Whether to redraw paths (default: true)
-   * @param animate - Whether to animate the update (default: true)
-   * @returns Promise that resolves when update is complete
+   * @param {object} options - New ApexCharts options to apply
+   * @param {boolean} [redrawPaths=true] - Whether to redraw chart paths
+   * @param {boolean} [animate=true] - Whether to animate the update
+   * @returns {Promise<void>} Promise that resolves when update completes
+   * @throws {Error} If chart is not initialized
    *
    * @example
    * ```javascript
    * const chart = document.querySelector('uk-chart');
    * await chart.updateChart({
-   *   series: [{ data: [5, 10, 15] }]
+   *   series: [{ data: [5, 10, 15, 20] }]
    * });
    * ```
    */
@@ -439,16 +460,10 @@ export class Chart extends Base {
     if (this.apexCharts) {
       try {
         await this.apexCharts.updateOptions(options, redrawPaths, animate);
-
         this.hasError = false;
-        this.errorMessage = '';
       } catch (error) {
         console.error('uk-chart: Failed to update chart:', error);
-
         this.hasError = true;
-        this.errorMessage =
-          error instanceof Error ? error.message : 'Unknown error';
-
         throw error;
       }
     } else {
@@ -458,16 +473,19 @@ export class Chart extends Base {
 
   /**
    * Public API: Updates chart series data.
-   * Convenient method for updating just the series.
+   * Convenient method for updating only the series without changing other options.
    *
-   * @param newSeries - New series data
-   * @param animate - Whether to animate the update (default: true)
-   * @returns Promise that resolves when update is complete
+   * @param {ApexAxisChartSeries | ApexNonAxisChartSeries} newSeries - New series data
+   * @param {boolean} [animate=true] - Whether to animate the update
+   * @returns {Promise<void>} Promise that resolves when update completes
+   * @throws {Error} If chart is not initialized
    *
    * @example
    * ```javascript
    * const chart = document.querySelector('uk-chart');
-   * await chart.updateSeries([{ data: [20, 30, 40] }]);
+   * await chart.updateSeries([
+   *   { name: 'Sales', data: [20, 30, 40, 50] }
+   * ]);
    * ```
    */
   public async updateSeries(
@@ -477,16 +495,10 @@ export class Chart extends Base {
     if (this.apexCharts) {
       try {
         await this.apexCharts.updateSeries(newSeries, animate);
-
         this.hasError = false;
-        this.errorMessage = '';
       } catch (error) {
         console.error('uk-chart: Failed to update series:', error);
-
         this.hasError = true;
-        this.errorMessage =
-          error instanceof Error ? error.message : 'Unknown error';
-
         throw error;
       }
     } else {
@@ -496,9 +508,9 @@ export class Chart extends Base {
 
   /**
    * Public API: Gets the current ApexCharts instance.
-   * Useful for accessing ApexCharts methods directly.
+   * Provides direct access to ApexCharts methods for advanced usage.
    *
-   * @returns The ApexCharts instance or null if not initialized
+   * @returns {ApexCharts | null} The ApexCharts instance or null if not initialized
    *
    * @example
    * ```javascript
@@ -506,6 +518,9 @@ export class Chart extends Base {
    * const apexInstance = chart.getChartInstance();
    * if (apexInstance) {
    *   apexInstance.toggleSeries('Series 1');
+   *   apexInstance.dataURI().then(({ imgURI }) => {
+   *     // Download chart as image
+   *   });
    * }
    * ```
    */
