@@ -2,7 +2,7 @@
   "name": "frankenstyle",
   "author": "Reden <reden@franken-ui.dev>",
   "description": "Frankenstyle is a no-buid, lightweight, fully responsive, utility-first CSS framework.",
-  "version": "0.1.0-next.7",
+  "version": "0.1.0-next.8",
   "type": "module",
   "repository": {
     "type": "git",
@@ -58,7 +58,8 @@
     },
     "./css/frankenstyle.css": "./dist/css/frankenstyle.css",
     "./css/frankenstyle-kit.css": "./dist/css/frankenstyle-kit.css",
-    "./css/chart.css": "./dist/css/chart.css"
+    "./css/chart.css": "./dist/css/chart.css",
+    "./css/frankenstyle-kit-standalone.css": "./dist/css/frankenstyle-kit-standalone.css"
   },
   "files": [
     "dist"
