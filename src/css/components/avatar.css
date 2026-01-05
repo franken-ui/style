@@ -68,13 +68,13 @@
   .uk-avatar-dot-top-left::after {
     content: '';
     position: absolute;
-    height: var(--dot-size, 0.875rem);
-    width: var(--dot-size, 0.875rem);
+    height: var(--uk-avatar-dot-size, 0.875rem);
+    width: var(--uk-avatar-dot-size, 0.875rem);
     border-radius: 9999px;
     border-width: 0.125rem;
     border-style: solid;
-    border-color: var(--dot-border, var(--uk-bg));
-    background-color: var(--dot-bg, var(--uk-primary));
+    border-color: var(--uk-avatar-dot-border, var(--uk-bg));
+    background-color: var(--uk-avatar-dot-bg, var(--uk-primary));
     z-index: 10;
   }
 
@@ -130,22 +130,22 @@
 
   /* Dot color variants */
   .uk-avatar-dot-danger::after {
-    --dot-bg: var(--uk-danger);
+    --uk-avatar-dot-bg: var(--uk-danger);
   }
 
   .uk-avatar-dot-warning::after {
-    --dot-bg: var(--uk-warning);
+    --uk-avatar-dot-bg: var(--uk-warning);
   }
 
   .uk-avatar-dot-success::after {
-    --dot-bg: var(--uk-success);
+    --uk-avatar-dot-bg: var(--uk-success);
   }
 
   .uk-avatar-dot-info::after {
-    --dot-bg: var(--uk-info);
+    --uk-avatar-dot-bg: var(--uk-info);
   }
 
   .uk-avatar-dot-muted::after {
-    --dot-bg: var(--uk-muted-f);
+    --uk-avatar-dot-bg: var(--uk-muted-f);
   }
 }
