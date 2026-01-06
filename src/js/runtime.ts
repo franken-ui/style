@@ -1,5 +1,10 @@
 import { rules as defaultRules } from './runtime-rules';
 
+// Ensure window.FS exists immediately for module consumers
+if (typeof window !== 'undefined') {
+  (window as any).FS = (window as any).FS || {};
+}
+
 (() => {
   type Breakpoints = Record<string, string>;
 
@@ -27,6 +32,7 @@ import { rules as defaultRules } from './runtime-rules';
 
   const ruleCache = new Map<string, CssRule>();
   let scheduled: number | null = null;
+  let isGenerating = false; // Prevent concurrent generation
 
   interface CssRule {
     css: string;
@@ -242,62 +248,76 @@ import { rules as defaultRules } from './runtime-rules';
   }
 
   function generateInteractiveStyles(): void {
-    const nodes = document.querySelectorAll('[data-uk]');
-    const allInteractiveClasses: ParsedClass[] = [];
+    // Prevent concurrent execution
+    if (isGenerating) {
+      return;
+    }
 
-    nodes.forEach(node => {
-      allInteractiveClasses.push(...extractInteractiveClasses(node));
-    });
+    isGenerating = true;
 
-    const generatedCss: GeneratedCSS = {
-      styles: { base: [], media: {} },
-      utilities: { base: [], media: {} },
-    };
+    // Clear the scheduled timeout since we're executing now
+    if (scheduled !== null) {
+      clearTimeout(scheduled);
+      scheduled = null;
+    }
 
-    allInteractiveClasses.forEach(parsedClass => {
-      const { fullClass, state, isDark, prefix } = parsedClass;
-      const ruleKey = `${fullClass}${state}${isDark ? '-dark' : ''}${prefix || ''}`;
+    try {
+      const nodes = document.querySelectorAll('[data-fs]');
+      const allInteractiveClasses: ParsedClass[] = [];
 
-      if (ruleCache.has(ruleKey)) return;
+      nodes.forEach(node => {
+        allInteractiveClasses.push(...extractInteractiveClasses(node));
+      });
 
-      const rule = buildCssRule(parsedClass);
-      if (!rule) return;
+      const generatedCss: GeneratedCSS = {
+        styles: { base: [], media: {} },
+        utilities: { base: [], media: {} },
+      };
 
-      ruleCache.set(ruleKey, rule);
+      allInteractiveClasses.forEach(parsedClass => {
+        const { fullClass, state, isDark, prefix } = parsedClass;
+        const ruleKey = `${fullClass}${state}${isDark ? '-dark' : ''}${prefix || ''}`;
 
-      const layer = rule.layer as keyof GeneratedCSS;
+        if (ruleCache.has(ruleKey)) return;
 
-      if (rule.breakpoint) {
-        const mediaBucket = generatedCss[layer].media;
-        mediaBucket[rule.breakpoint] = mediaBucket[rule.breakpoint] || [];
-        mediaBucket[rule.breakpoint].push(rule.css);
-      } else {
-        generatedCss[layer].base.push(rule.css);
-      }
-    });
+        const rule = buildCssRule(parsedClass);
+        if (!rule) return;
 
-    const buildLayer = (
-      layerName: string,
-      { base, media }: GeneratedCssLayer,
-    ): string => {
-      const mediaQueries = Object.entries(media)
-        .map(
-          ([size, rules]) =>
-            `@media (min-width: ${size}) {\n  ${rules.join('\n  ')}\n}`,
-        )
-        .join('\n');
-      const content = [...base, mediaQueries].filter(Boolean).join('\n');
-      return content ? `@layer ${layerName} {\n${content}\n}` : '';
-    };
+        ruleCache.set(ruleKey, rule);
 
-    const finalCss = [
-      buildLayer('styles', generatedCss.styles),
-      buildLayer('utilities', generatedCss.utilities),
-    ]
-      .filter(Boolean)
-      .join('\n\n');
+        const layer = rule.layer as keyof GeneratedCSS;
 
-    requestAnimationFrame(() => {
+        if (rule.breakpoint) {
+          const mediaBucket = generatedCss[layer].media;
+          mediaBucket[rule.breakpoint] = mediaBucket[rule.breakpoint] || [];
+          mediaBucket[rule.breakpoint].push(rule.css);
+        } else {
+          generatedCss[layer].base.push(rule.css);
+        }
+      });
+
+      const buildLayer = (
+        layerName: string,
+        { base, media }: GeneratedCssLayer,
+      ): string => {
+        const mediaQueries = Object.entries(media)
+          .map(
+            ([size, rules]) =>
+              `@media (min-width: ${size}) {\n  ${rules.join('\n  ')}\n}`,
+          )
+          .join('\n');
+        const content = [...base, mediaQueries].filter(Boolean).join('\n');
+        return content ? `@layer ${layerName} {\n${content}\n}` : '';
+      };
+
+      const finalCss = [
+        buildLayer('styles', generatedCss.styles),
+        buildLayer('utilities', generatedCss.utilities),
+      ]
+        .filter(Boolean)
+        .join('\n\n');
+
+      // Use synchronous DOM update instead of requestAnimationFrame
       let styleTag = document.getElementById(
         'uk-interactive-styles',
       ) as HTMLStyleElement | null;
@@ -305,45 +325,106 @@ import { rules as defaultRules } from './runtime-rules';
       if (!styleTag) {
         styleTag = document.createElement('style');
         styleTag.id = 'uk-interactive-styles';
+        // Add attribute to prevent observer from reacting to this
+        styleTag.setAttribute('data-fs-managed', 'true');
         document.head.appendChild(styleTag);
       }
 
       styleTag.textContent = finalCss;
-    });
+    } finally {
+      isGenerating = false;
+    }
   }
 
   function scheduleGenerate(): void {
-    if (scheduled) {
+    // Don't schedule if already generating
+    if (isGenerating) {
+      return;
+    }
+
+    if (scheduled !== null) {
       clearTimeout(scheduled);
     }
 
-    scheduled = window.setTimeout(generateInteractiveStyles, 50);
+    scheduled = window.setTimeout(() => {
+      scheduled = null;
+      generateInteractiveStyles();
+    }, 50);
+  }
+
+  function shouldIgnoreMutation(target: Node): boolean {
+    if (!(target instanceof Element)) {
+      return false;
+    }
+
+    // Ignore our managed style tag
+    if (target.hasAttribute?.('data-fs-managed')) {
+      return true;
+    }
+
+    // Ignore elements marked with data-fs-ignore
+    if (target.hasAttribute?.('data-fs-ignore')) {
+      return true;
+    }
+
+    // Check if target is inside an ignored container
+    let current: Element | null = target;
+    while (current) {
+      if (current.hasAttribute?.('data-fs-ignore')) {
+        return true;
+      }
+      current = current.parentElement;
+    }
+
+    return false;
   }
 
   function handleMutations(mutationsList: MutationRecord[]): void {
+    // Skip if currently generating to prevent loops
+    if (isGenerating) {
+      return;
+    }
+
+    let shouldRegenerate = false;
+
     for (const mutation of mutationsList) {
+      // Ignore mutations on excluded elements
+      if (shouldIgnoreMutation(mutation.target)) {
+        continue;
+      }
+
       if (
         mutation.type === 'attributes' &&
         (mutation.attributeName === 'class' ||
           mutation.attributeName === 'cls' ||
-          mutation.attributeName === 'data-uk')
+          mutation.attributeName === 'data-fs')
       ) {
-        scheduleGenerate();
-        return;
+        shouldRegenerate = true;
+        break;
       }
 
       if (mutation.type === 'childList') {
         for (const node of [...mutation.addedNodes, ...mutation.removedNodes]) {
+          // Skip ignored nodes
+          if (shouldIgnoreMutation(node)) {
+            continue;
+          }
+
           if (
             node.nodeType === 1 &&
-            ((node as Element).hasAttribute?.('data-uk') ||
-              (node as Element).querySelector?.('[data-uk]'))
+            ((node as Element).hasAttribute?.('data-fs') ||
+              (node as Element).querySelector?.('[data-fs]'))
           ) {
-            scheduleGenerate();
-            return;
+            shouldRegenerate = true;
+            break;
           }
         }
+        if (shouldRegenerate) break;
       }
+    }
+
+    if (shouldRegenerate) {
+      scheduleGenerate();
     }
   }
 
@@ -356,13 +437,13 @@ import { rules as defaultRules } from './runtime-rules';
       console.info(`[fs] Loaded ${customRulesCount} custom rule(s)`);
     }
 
-    // Step 1: Always generate styles once (for all [data-uk] elements)
+    // Step 1: Always generate styles once (for all [data-fs] elements)
     generateInteractiveStyles();
 
-    // Step 2: Only activate MutationObserver if [data-uk] exists
-    const hasReactive = document.querySelector('[data-uk]');
+    // Step 2: Only activate MutationObserver if [data-fs] exists
+    const hasReactive = document.querySelector('[data-fs]');
     if (!hasReactive) {
-      console.info('[fs] No [data-uk] found — reactive mode disabled.');
+      console.info('[fs] No [data-fs] found — reactive mode disabled.');
       return;
     }
 
@@ -376,7 +457,7 @@ import { rules as defaultRules } from './runtime-rules';
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ['data-uk', 'class', 'cls'],
+      attributeFilter: ['data-fs', 'class', 'cls'],
     });
 
     window.addEventListener('beforeunload', () =>
@@ -395,20 +476,41 @@ import { rules as defaultRules } from './runtime-rules';
   }
 
   // Initialize FS namespace if it doesn't exist
-  (window as any).FS = (window as any).FS || {};
+  if (typeof window !== 'undefined') {
+    (window as any).FS = (window as any).FS || {};
 
-  // Expose public API
-  Object.assign((window as any).FS, {
-    refresh,
-    regenerate: generateInteractiveStyles,
-    stop: () => currentObserver?.disconnect(),
-    getCache: () => ruleCache,
-    getRules: () => getMergedRules(),
-  });
+    // Expose public API
+    Object.assign((window as any).FS, {
+      refresh,
+      regenerate: generateInteractiveStyles,
+      stop: () => currentObserver?.disconnect(),
+      getCache: () => ruleCache,
+      getRules: () => getMergedRules(),
+      _initialized: true, // Flag for debugging
+    });
+  }
+
+  // Multiple initialization strategies for different environments
+  function safeInit(): void {
+    if (document.body) {
+      init();
+    } else {
+      // Fallback if body doesn't exist yet
+      setTimeout(safeInit, 10);
+    }
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
+  } else if (document.readyState === 'interactive') {
+    // DOM is ready but resources may still be loading
+    setTimeout(init, 0);
   } else {
-    init();
+    // Document is fully loaded
+    safeInit();
   }
 })();
+
+// Export for module usage - do this OUTSIDE the IIFE
+// Export default for ES module imports
+export default typeof window !== 'undefined' ? (window as any).FS : {};
