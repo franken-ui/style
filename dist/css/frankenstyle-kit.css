@@ -4628,7 +4628,6 @@
   .uk-tab {
     --uk-tab-item-padding: 0.3125rem 0.625rem;
     --uk-tab-link-gap: 0.25em;
-    --uk-tab-radius: var(--uk-global-radius);
     display: flex;
     flex-wrap: wrap;
     padding: 0;
@@ -4735,14 +4734,16 @@
   }
   .uk-tab-alt {
     --uk-tab-alt-padding: 0.25rem;
-    --uk-tab-alt-link-padding: 0.25rem 0.75rem;
+    --uk-tab-alt-padding-inner: 0 0.75rem;
+    --uk-tab-alt-radius: var(--uk-global-radius);
+    --uk-tab-alt-radius-inner: var(--uk-global-radius-small);
     display: flex;
     height: 2.25rem;
     width: 100%;
     align-items: center;
     justify-content: center;
     padding: var(--uk-tab-alt-padding);
-    border-radius: var(--uk-tab-radius);
+    border-radius: var(--uk-tab-alt-radius);
     background-color: color-mix(
       in srgb,
       var(--uk-muted) var(--uk-muted-o, 4%),
@@ -4752,20 +4753,21 @@
   }
   .uk-tab-alt > * {
     flex-grow: 1;
+    height: 100%;
   }
   .uk-tab-alt > * > a {
-    display: inline-flex;
+    display: flex;
     width: 100%;
-    height: auto;
+    height: 100%;
     align-items: center;
     justify-content: center;
-    padding: var(--uk-tab-alt-link-padding);
     font-weight: 500;
     white-space: nowrap;
     text-decoration: none;
+    padding: var(--uk-tab-alt-padding-inner);
   }
   .uk-tab-alt > .uk-active > a {
-    border-radius: var(--uk-global-radius-small);
+    border-radius: var(--uk-tab-alt-radius-inner);
     background-color: var(--uk-bg);
     color: var(--uk-bg-f);
     border-bottom: none;

@@ -13,4 +13,4 @@ If you’d like to support the work, you can do so here:
 
 ## License
 
-Licensed under the [MIT License](https://github.com/franken-ui/ui/blob/master/LICENSE.md).
+Licensed under the [MIT License](https://codeberg.org/FRNKN/style/src/branch/master/LICENSE.md).

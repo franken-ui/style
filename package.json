@@ -6,10 +6,10 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/franken-ui/style.git"
+    "url": "git+https://codeberg.org/FRNKN/style.git"
   },
   "bugs": {
-    "url": "https://github.com/franken-ui/style/issues"
+    "url": "https://codeberg.org/FRNKN/style/issues"
   },
   "homepage": "https://www.franken.style",
   "license": "MIT",

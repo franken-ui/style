@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 [Franken UI contributors](https://github.com/franken-ui/style/graphs/contributors)
+Copyright (c) 2025 FRNKN
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
