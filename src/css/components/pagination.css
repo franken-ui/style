@@ -4,16 +4,28 @@
      ============================================ */
   .uk-pagination {
     /* Base Variables */
-    --uk-pagination-gap: 0.25rem;
-    --uk-pagination-item-gap: 0.5rem;
-    --uk-pagination-item-height: 2.5rem;
-    --uk-pagination-item-padding: 0.625rem 1.25rem;
-    --uk-pagination-item-font-size: 0.875rem;
-    --uk-pagination-item-line-height: 1.25rem;
+    --uk-pagination-item-height: calc(
+      var(--uk-global-font-size) * var(--uk-interactive-height-multiplier)
+    );
+    --uk-pagination-item-padding-block: calc(
+      var(--uk-global-font-size) *
+        var(--uk-interactive-padding-block-multiplier)
+    );
+    --uk-pagination-item-padding-inline: calc(
+      var(--uk-global-font-size) *
+        var(--uk-interactive-padding-inline-multiplier)
+    );
+    --uk-pagination-item-padding: var(--uk-pagination-item-padding-block)
+      var(--uk-pagination-item-padding-inline);
+
+    --uk-pagination-gap: calc(var(--uk-global-font-size) * 0.25);
+    --uk-pagination-item-gap: calc(var(--uk-global-font-size) * 0.5);
+    --uk-pagination-item-font-size: var(--uk-global-font-size);
+    --uk-pagination-item-line-height: var(--uk-global-line-height);
     --uk-pagination-item-font-weight: 500;
     --uk-pagination-item-radius: var(--uk-global-radius);
     --uk-pagination-item-shadow: var(--uk-global-shadow-small);
-    --uk-pagination-item-icon-size: 1rem;
+    --uk-pagination-item-icon-size: calc(var(--uk-global-font-size) * 1);
 
     display: flex;
     flex-wrap: wrap;
@@ -79,28 +91,34 @@
   /* ============================================
      Pagination Size Variants
      ============================================ */
-  .uk-pagination-xs > * > * {
-    --uk-pagination-item-height: 1.75rem;
-    --uk-pagination-item-padding: 0.375rem 0.75rem;
-    --uk-pagination-item-font-size: 0.75rem;
-    --uk-pagination-item-line-height: 1rem;
+  .uk-pagination-xsmall > * > * {
+    --uk-interactive-height-multiplier: 2;
+    --uk-interactive-padding-block-multiplier: 0.5;
+    --uk-interactive-padding-inline-multiplier: 1;
+    --uk-pagination-item-icon-size: calc(var(--uk-global-font-size-small) * 1);
+    --uk-pagination-item-font-size: var(--uk-global-font-size-small);
+    --uk-pagination-item-line-height: var(--uk-global-line-height-small);
   }
 
-  .uk-pagination-sm > * > * {
-    --uk-pagination-item-height: 2rem;
-    --uk-pagination-item-padding: 0.5rem 1rem;
-    --uk-pagination-item-font-size: 0.75rem;
-    --uk-pagination-item-line-height: 1rem;
+  .uk-pagination-small > * > * {
+    --uk-interactive-height-multiplier: 2.25;
+    --uk-interactive-padding-block-multiplier: 0.5625;
+    --uk-interactive-padding-inline-multiplier: 1.125;
+    --uk-pagination-item-icon-size: calc(var(--uk-global-font-size-small) * 1);
+    --uk-pagination-item-font-size: var(--uk-global-font-size-small);
+    --uk-pagination-item-line-height: var(--uk-global-line-height-small);
   }
 
-  .uk-pagination-md > * > * {
-    --uk-pagination-item-height: 3rem;
-    --uk-pagination-item-padding: 0.75rem 1.5rem;
+  .uk-pagination-medium > * > * {
+    --uk-interactive-height-multiplier: 2.75;
+    --uk-interactive-padding-block-multiplier: 0.6875;
+    --uk-interactive-padding-inline-multiplier: 1.375;
   }
 
-  .uk-pagination-lg > * > * {
-    --uk-pagination-item-height: 3.5rem;
-    --uk-pagination-item-padding: 0.875rem 1.75rem;
+  .uk-pagination-large > * > * {
+    --uk-interactive-height-multiplier: 3;
+    --uk-interactive-padding-block-multiplier: 0.75;
+    --uk-interactive-padding-inline-multiplier: 1.5;
   }
 
   /* ============================================

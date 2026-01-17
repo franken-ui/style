@@ -86,6 +86,14 @@
     --uk-global-font-family-mono:
       Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
       'Liberation Mono', 'Courier New';
+
+    /* ============================================
+     Interactive Components Base Scale
+     Shared by buttons, forms, pagination, etc.
+     ============================================ */
+    --uk-interactive-height-multiplier: 2.5;
+    --uk-interactive-padding-block-multiplier: 0.625;
+    --uk-interactive-padding-inline-multiplier: 1.25;
   }
 
   .aside {

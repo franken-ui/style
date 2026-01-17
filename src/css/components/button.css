@@ -1,8 +1,20 @@
 @layer components {
   /* Base Button */
   .uk-button {
-    --uk-button-height: 2.5rem;
-    --uk-button-padding: 0.625rem 1.25rem;
+    --uk-button-height: calc(
+      var(--uk-global-font-size) * var(--uk-interactive-height-multiplier)
+    );
+    --uk-button-padding-block: calc(
+      var(--uk-global-font-size) *
+        var(--uk-interactive-padding-block-multiplier)
+    );
+    --uk-button-padding-inline: calc(
+      var(--uk-global-font-size) *
+        var(--uk-interactive-padding-inline-multiplier)
+    );
+    --uk-button-padding: var(--uk-button-padding-block)
+      var(--uk-button-padding-inline);
+
     --uk-button-font-size: var(--uk-global-font-size);
     --uk-button-line-height: var(--uk-global-line-height);
 
@@ -372,30 +384,32 @@
 
   /* Button Sizes */
   .uk-button-xsmall {
-    --uk-button-height: 1.75rem;
-    --uk-button-padding: 0.375rem 0.75rem;
-    --uk-button-font-size: var(--uk-global-font-size-small);
-    --uk-button-line-height: var(--uk-global-line-height-small);
+    --uk-interactive-height-multiplier: 2;
+    --uk-interactive-padding-block-multiplier: 0.5;
+    --uk-interactive-padding-inline-multiplier: 1;
+
+    font-size: var(--uk-global-font-size-small);
+    line-height: var(--uk-global-line-height-small);
   }
 
   .uk-button-small {
-    --uk-button-height: 2rem;
-    --uk-button-padding: 0.5rem 1rem;
-    --uk-button-font-size: var(--uk-global-font-size-small);
-    --uk-button-line-height: var(--uk-global-line-height-small);
+    --uk-interactive-height-multiplier: 2.25;
+    --uk-interactive-padding-block-multiplier: 0.5625;
+    --uk-interactive-padding-inline-multiplier: 1.125;
+
+    font-size: var(--uk-global-font-size-small);
+    line-height: var(--uk-global-line-height-small);
   }
 
   .uk-button-medium {
-    --uk-button-height: 3rem;
-    --uk-button-padding: 0.75rem 1.5rem;
-    --uk-button-font-size: var(--uk-global-font-size);
-    --uk-button-line-height: var(--uk-global-line-height);
+    --uk-interactive-height-multiplier: 2.75;
+    --uk-interactive-padding-block-multiplier: 0.6875;
+    --uk-interactive-padding-inline-multiplier: 1.375;
   }
 
   .uk-button-large {
-    --uk-button-height: 3.5rem;
-    --uk-button-padding: 0.875rem 1.75rem;
-    --uk-button-font-size: var(--uk-global-font-size);
-    --uk-button-line-height: var(--uk-global-line-height);
+    --uk-interactive-height-multiplier: 3;
+    --uk-interactive-padding-block-multiplier: 0.75;
+    --uk-interactive-padding-inline-multiplier: 1.5;
   }
 }

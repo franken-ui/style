@@ -79,7 +79,7 @@
   .uk-table-striped tbody tr:nth-of-type(odd) {
     /* Base Variables */
     --uk-table-striped-bg: var(--uk-muted);
-    --uk-table-striped-bg-o: 50%;
+    --uk-table-striped-bg-o: var(--uk-muted-o);
 
     /* Computed value */
     --uk-table-striped-bg-computed: color-mix(
@@ -99,7 +99,7 @@
   .uk-table-hover tbody tr:hover {
     /* Base Variables */
     --uk-table-hover-bg: var(--uk-muted);
-    --uk-table-hover-bg-o: 50%;
+    --uk-table-hover-bg-o: var(--uk-muted-o);
     --uk-table-hover-transition: background-color 150ms ease-in-out;
 
     /* Computed value */
@@ -173,11 +173,11 @@
   /* ============================================
      Table Size Variants
      ============================================ */
-  .uk-table-sm {
+  .uk-table-small {
     --uk-table-cell-padding: 0.625rem 0.75rem;
   }
 
-  .uk-table-lg {
+  .uk-table-large {
     --uk-table-cell-padding: 1.5rem 0.75rem;
   }
 
