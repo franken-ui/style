@@ -472,4 +472,24 @@
   td.uk-text-break {
     word-break: break-word;
   }
+
+  /* ============================================
+     Typography Scale Utilities
+     ============================================ */
+
+  .uk-texts-small {
+    --uk-global-font-size: 0.875rem;
+    --uk-global-line-height: 1.25rem;
+
+    --uk-global-font-size-small: 0.75rem;
+    --uk-global-line-height-small: 1rem;
+  }
+
+  .uk-texts-medium {
+    --uk-global-font-size: 1.125rem;
+    --uk-global-line-height: 1.75rem;
+
+    --uk-global-font-size-small: 1rem;
+    --uk-global-line-height-small: 1.5rem;
+  }
 }
