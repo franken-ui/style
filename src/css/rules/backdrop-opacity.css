@@ -1,35 +1,35 @@
 @layer styles {
   .backdrop-opacity {
-    backdrop-filter: opacity(--backdrop-opacity);
+    backdrop-filter: opacity(var(--backdrop-opacity));
   }
 
   @media (min-width: 40rem) {
     .sm\:backdrop-opacity {
-      backdrop-filter: opacity(--sm-backdrop-opacity);
+      backdrop-filter: opacity(var(--sm-backdrop-opacity));
     }
   }
 
   @media (min-width: 48rem) {
     .md\:backdrop-opacity {
-      backdrop-filter: opacity(--md-backdrop-opacity);
+      backdrop-filter: opacity(var(--md-backdrop-opacity));
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:backdrop-opacity {
-      backdrop-filter: opacity(--lg-backdrop-opacity);
+      backdrop-filter: opacity(var(--lg-backdrop-opacity));
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:backdrop-opacity {
-      backdrop-filter: opacity(--xl-backdrop-opacity);
+      backdrop-filter: opacity(var(--xl-backdrop-opacity));
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:backdrop-opacity {
-      backdrop-filter: opacity(--\32xl-backdrop-opacity);
+      backdrop-filter: opacity(var(--\32xl-backdrop-opacity));
     }
   }
 }

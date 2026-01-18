@@ -2,6 +2,6 @@
 
 ### Utilities (value-driven)
 
-| Selector    | Style                          | Variables Required |
-| ----------- | ------------------------------ | ------------------ |
-| `.saturate` | `filter: saturate(--saturate)` | -                  |
+| Selector    | Style                               | Variables Required |
+| ----------- | ----------------------------------- | ------------------ |
+| `.saturate` | `filter: saturate(var(--saturate))` | `--saturate`       |

@@ -1,35 +1,35 @@
 @layer styles {
   .brightness {
-    filter: brightness(--brightness);
+    filter: brightness(var(--brightness));
   }
 
   @media (min-width: 40rem) {
     .sm\:brightness {
-      filter: brightness(--sm-brightness);
+      filter: brightness(var(--sm-brightness));
     }
   }
 
   @media (min-width: 48rem) {
     .md\:brightness {
-      filter: brightness(--md-brightness);
+      filter: brightness(var(--md-brightness));
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:brightness {
-      filter: brightness(--lg-brightness);
+      filter: brightness(var(--lg-brightness));
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:brightness {
-      filter: brightness(--xl-brightness);
+      filter: brightness(var(--xl-brightness));
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:brightness {
-      filter: brightness(--\32xl-brightness);
+      filter: brightness(var(--\32xl-brightness));
     }
   }
 }

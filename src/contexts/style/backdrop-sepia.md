@@ -2,6 +2,6 @@
 
 ### Utilities (value-driven)
 
-| Selector          | Style                                      | Variables Required |
-| ----------------- | ------------------------------------------ | ------------------ |
-| `.backdrop-sepia` | `backdrop-filter: sepia(--backdrop-sepia)` | -                  |
+| Selector          | Style                                           | Variables Required |
+| ----------------- | ----------------------------------------------- | ------------------ |
+| `.backdrop-sepia` | `backdrop-filter: sepia(var(--backdrop-sepia))` | `--backdrop-sepia` |

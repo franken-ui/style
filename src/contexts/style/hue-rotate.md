@@ -2,6 +2,6 @@
 
 ### Utilities (value-driven)
 
-| Selector      | Style                              | Variables Required |
-| ------------- | ---------------------------------- | ------------------ |
-| `.hue-rotate` | `filter: hue-rotate(--hue-rotate)` | -                  |
+| Selector      | Style                                   | Variables Required |
+| ------------- | --------------------------------------- | ------------------ |
+| `.hue-rotate` | `filter: hue-rotate(var(--hue-rotate))` | `--hue-rotate`     |

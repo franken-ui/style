@@ -2,6 +2,6 @@
 
 ### Utilities (value-driven)
 
-| Selector  | Style                      | Variables Required |
-| --------- | -------------------------- | ------------------ |
-| `.invert` | `filter: invert(--invert)` | -                  |
+| Selector  | Style                           | Variables Required |
+| --------- | ------------------------------- | ------------------ |
+| `.invert` | `filter: invert(var(--invert))` | `--invert`         |

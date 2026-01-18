@@ -2,6 +2,6 @@
 
 ### Utilities (value-driven)
 
-| Selector            | Style                                          | Variables Required |
-| ------------------- | ---------------------------------------------- | ------------------ |
-| `.backdrop-opacity` | `backdrop-filter: opacity(--backdrop-opacity)` | -                  |
+| Selector            | Style                                               | Variables Required   |
+| ------------------- | --------------------------------------------------- | -------------------- |
+| `.backdrop-opacity` | `backdrop-filter: opacity(var(--backdrop-opacity))` | `--backdrop-opacity` |

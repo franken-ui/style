@@ -1,35 +1,35 @@
 @layer styles {
   .backdrop-invert {
-    backdrop-filter: invert(--backdrop-invert);
+    backdrop-filter: invert(var(--backdrop-invert));
   }
 
   @media (min-width: 40rem) {
     .sm\:backdrop-invert {
-      backdrop-filter: invert(--sm-backdrop-invert);
+      backdrop-filter: invert(var(--sm-backdrop-invert));
     }
   }
 
   @media (min-width: 48rem) {
     .md\:backdrop-invert {
-      backdrop-filter: invert(--md-backdrop-invert);
+      backdrop-filter: invert(var(--md-backdrop-invert));
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:backdrop-invert {
-      backdrop-filter: invert(--lg-backdrop-invert);
+      backdrop-filter: invert(var(--lg-backdrop-invert));
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:backdrop-invert {
-      backdrop-filter: invert(--xl-backdrop-invert);
+      backdrop-filter: invert(var(--xl-backdrop-invert));
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:backdrop-invert {
-      backdrop-filter: invert(--\32xl-backdrop-invert);
+      backdrop-filter: invert(var(--\32xl-backdrop-invert));
     }
   }
 }

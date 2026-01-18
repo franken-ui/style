@@ -1,35 +1,35 @@
 @layer styles {
   .backdrop-grayscale {
-    backdrop-filter: grayscale(--backdrop-grayscale);
+    backdrop-filter: grayscale(var(--backdrop-grayscale));
   }
 
   @media (min-width: 40rem) {
     .sm\:backdrop-grayscale {
-      backdrop-filter: grayscale(--sm-backdrop-grayscale);
+      backdrop-filter: grayscale(var(--sm-backdrop-grayscale));
     }
   }
 
   @media (min-width: 48rem) {
     .md\:backdrop-grayscale {
-      backdrop-filter: grayscale(--md-backdrop-grayscale);
+      backdrop-filter: grayscale(var(--md-backdrop-grayscale));
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:backdrop-grayscale {
-      backdrop-filter: grayscale(--lg-backdrop-grayscale);
+      backdrop-filter: grayscale(var(--lg-backdrop-grayscale));
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:backdrop-grayscale {
-      backdrop-filter: grayscale(--xl-backdrop-grayscale);
+      backdrop-filter: grayscale(var(--xl-backdrop-grayscale));
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:backdrop-grayscale {
-      backdrop-filter: grayscale(--\32xl-backdrop-grayscale);
+      backdrop-filter: grayscale(var(--\32xl-backdrop-grayscale));
     }
   }
 }

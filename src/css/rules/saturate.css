@@ -1,35 +1,35 @@
 @layer styles {
   .saturate {
-    filter: saturate(--saturate);
+    filter: saturate(var(--saturate));
   }
 
   @media (min-width: 40rem) {
     .sm\:saturate {
-      filter: saturate(--sm-saturate);
+      filter: saturate(var(--sm-saturate));
     }
   }
 
   @media (min-width: 48rem) {
     .md\:saturate {
-      filter: saturate(--md-saturate);
+      filter: saturate(var(--md-saturate));
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:saturate {
-      filter: saturate(--lg-saturate);
+      filter: saturate(var(--lg-saturate));
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:saturate {
-      filter: saturate(--xl-saturate);
+      filter: saturate(var(--xl-saturate));
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:saturate {
-      filter: saturate(--\32xl-saturate);
+      filter: saturate(var(--\32xl-saturate));
     }
   }
 }

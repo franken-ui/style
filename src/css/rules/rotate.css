@@ -3,17 +3,17 @@
     rotate: var(--rotate);
   }
   .rotate-x {
-    --tw-rotate-x: rotateX(--rotate-x);
+    --tw-rotate-x: rotateX(var(--rotate-x));
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
       var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .rotate-y {
-    --tw-rotate-y: rotateY(--rotate-y);
+    --tw-rotate-y: rotateY(var(--rotate-y));
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
       var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .rotate-z {
-    --tw-rotate-z: rotateZ(--rotate-z);
+    --tw-rotate-z: rotateZ(var(--rotate-z));
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
       var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -23,17 +23,17 @@
       rotate: var(--sm-rotate);
     }
     .sm\:rotate-x {
-      --tw-rotate-x: rotateX(--sm-rotate-x);
+      --tw-rotate-x: rotateX(var(--sm-rotate-x));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .sm\:rotate-y {
-      --tw-rotate-y: rotateY(--sm-rotate-y);
+      --tw-rotate-y: rotateY(var(--sm-rotate-y));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .sm\:rotate-z {
-      --tw-rotate-z: rotateZ(--sm-rotate-z);
+      --tw-rotate-z: rotateZ(var(--sm-rotate-z));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
@@ -44,17 +44,17 @@
       rotate: var(--md-rotate);
     }
     .md\:rotate-x {
-      --tw-rotate-x: rotateX(--md-rotate-x);
+      --tw-rotate-x: rotateX(var(--md-rotate-x));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .md\:rotate-y {
-      --tw-rotate-y: rotateY(--md-rotate-y);
+      --tw-rotate-y: rotateY(var(--md-rotate-y));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .md\:rotate-z {
-      --tw-rotate-z: rotateZ(--md-rotate-z);
+      --tw-rotate-z: rotateZ(var(--md-rotate-z));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
@@ -65,17 +65,17 @@
       rotate: var(--lg-rotate);
     }
     .lg\:rotate-x {
-      --tw-rotate-x: rotateX(--lg-rotate-x);
+      --tw-rotate-x: rotateX(var(--lg-rotate-x));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .lg\:rotate-y {
-      --tw-rotate-y: rotateY(--lg-rotate-y);
+      --tw-rotate-y: rotateY(var(--lg-rotate-y));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .lg\:rotate-z {
-      --tw-rotate-z: rotateZ(--lg-rotate-z);
+      --tw-rotate-z: rotateZ(var(--lg-rotate-z));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
@@ -86,17 +86,17 @@
       rotate: var(--xl-rotate);
     }
     .xl\:rotate-x {
-      --tw-rotate-x: rotateX(--xl-rotate-x);
+      --tw-rotate-x: rotateX(var(--xl-rotate-x));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .xl\:rotate-y {
-      --tw-rotate-y: rotateY(--xl-rotate-y);
+      --tw-rotate-y: rotateY(var(--xl-rotate-y));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .xl\:rotate-z {
-      --tw-rotate-z: rotateZ(--xl-rotate-z);
+      --tw-rotate-z: rotateZ(var(--xl-rotate-z));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
@@ -107,17 +107,17 @@
       rotate: var(--\32xl-rotate);
     }
     .\32xl\:rotate-x {
-      --tw-rotate-x: rotateX(--\32xl-rotate-x);
+      --tw-rotate-x: rotateX(var(--\32xl-rotate-x));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .\32xl\:rotate-y {
-      --tw-rotate-y: rotateY(--\32xl-rotate-y);
+      --tw-rotate-y: rotateY(var(--\32xl-rotate-y));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }
     .\32xl\:rotate-z {
-      --tw-rotate-z: rotateZ(--\32xl-rotate-z);
+      --tw-rotate-z: rotateZ(var(--\32xl-rotate-z));
       transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
         var(--tw-skew-x,) var(--tw-skew-y,);
     }

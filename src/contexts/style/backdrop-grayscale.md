@@ -2,6 +2,6 @@
 
 ### Utilities (value-driven)
 
-| Selector              | Style                                              | Variables Required |
-| --------------------- | -------------------------------------------------- | ------------------ |
-| `.backdrop-grayscale` | `backdrop-filter: grayscale(--backdrop-grayscale)` | -                  |
+| Selector              | Style                                                   | Variables Required     |
+| --------------------- | ------------------------------------------------------- | ---------------------- |
+| `.backdrop-grayscale` | `backdrop-filter: grayscale(var(--backdrop-grayscale))` | `--backdrop-grayscale` |

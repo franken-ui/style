@@ -2,9 +2,9 @@
 
 ### Utilities (value-driven)
 
-| Selector | Style                  | Variables Required |
-| -------- | ---------------------- | ------------------ |
-| `.blur`  | `filter: blur(--blur)` | -                  |
+| Selector | Style                       | Variables Required |
+| -------- | --------------------------- | ------------------ |
+| `.blur`  | `filter: blur(var(--blur))` | `--blur`           |
 
 ### Utilities (absolute values)
 

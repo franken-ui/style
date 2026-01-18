@@ -1,35 +1,35 @@
 @layer styles {
   .sepia {
-    filter: sepia(--sepia);
+    filter: sepia(var(--sepia));
   }
 
   @media (min-width: 40rem) {
     .sm\:sepia {
-      filter: sepia(--sm-sepia);
+      filter: sepia(var(--sm-sepia));
     }
   }
 
   @media (min-width: 48rem) {
     .md\:sepia {
-      filter: sepia(--md-sepia);
+      filter: sepia(var(--md-sepia));
     }
   }
 
   @media (min-width: 64rem) {
     .lg\:sepia {
-      filter: sepia(--lg-sepia);
+      filter: sepia(var(--lg-sepia));
     }
   }
 
   @media (min-width: 80rem) {
     .xl\:sepia {
-      filter: sepia(--xl-sepia);
+      filter: sepia(var(--xl-sepia));
     }
   }
 
   @media (min-width: 96rem) {
     .\32xl\:sepia {
-      filter: sepia(--\32xl-sepia);
+      filter: sepia(var(--\32xl-sepia));
     }
   }
 }

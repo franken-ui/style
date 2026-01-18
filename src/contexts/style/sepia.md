@@ -2,6 +2,6 @@
 
 ### Utilities (value-driven)
 
-| Selector | Style                    | Variables Required |
-| -------- | ------------------------ | ------------------ |
-| `.sepia` | `filter: sepia(--sepia)` | -                  |
+| Selector | Style                         | Variables Required |
+| -------- | ----------------------------- | ------------------ |
+| `.sepia` | `filter: sepia(var(--sepia))` | `--sepia`          |

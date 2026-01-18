@@ -258,22 +258,22 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector         | Style                                    | Variables Required |
-| ---------------- | ---------------------------------------- | ------------------ |
-| `.backdrop-blur` | `backdrop-filter: blur(--backdrop-blur)` | -                  |
+| Selector         | Style                                         | Variables Required |
+| ---------------- | --------------------------------------------- | ------------------ |
+| `.backdrop-blur` | `backdrop-filter: blur(var(--backdrop-blur))` | `--backdrop-blur`  |
 
 ### Utilities (absolute values)
 
-| Selector              | Style                           |
-| --------------------- | ------------------------------- |
-| `.backdrop-blur-xs`   | `filter: blur(var(--blur-xs))`  |
-| `.backdrop-blur-sm`   | `filter: blur(var(--blur-sm))`  |
-| `.backdrop-blur-md`   | `filter: blur(var(--blur-md))`  |
-| `.backdrop-blur-lg`   | `filter: blur(var(--blur-lg))`  |
-| `.backdrop-blur-xl`   | `filter: blur(var(--blur-xl))`  |
-| `.backdrop-blur-2xl`  | `filter: blur(var(--blur-2xl))` |
-| `.backdrop-blur-3xl`  | `filter: blur(var(--blur-3xl))` |
-| `.backdrop-blur-none` | `filter: blur(0)`               |
+| Selector              | Style                                                                                                                                                                                                                                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.backdrop-blur-xs`   | `--tw-backdrop-blur: blur(var(--blur-xs))`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)`  |
+| `.backdrop-blur-sm`   | `--tw-backdrop-blur: blur(var(--blur-sm))`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)`  |
+| `.backdrop-blur-md`   | `--tw-backdrop-blur: blur(var(--blur-md))`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)`  |
+| `.backdrop-blur-lg`   | `--tw-backdrop-blur: blur(var(--blur-lg))`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)`  |
+| `.backdrop-blur-xl`   | `--tw-backdrop-blur: blur(var(--blur-xl))`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)`  |
+| `.backdrop-blur-2xl`  | `--tw-backdrop-blur: blur(var(--blur-2xl))`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)` |
+| `.backdrop-blur-3xl`  | `--tw-backdrop-blur: blur(var(--blur-3xl))`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)` |
+| `.backdrop-blur-none` | `--tw-backdrop-blur: blur(0)`, `backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)`               |
 
 
 
@@ -281,9 +281,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector               | Style                                                | Variables Required |
-| ---------------------- | ---------------------------------------------------- | ------------------ |
-| `.backdrop-brightness` | `backdrop-filter: brightness(--backdrop-brightness)` | -                  |
+| Selector               | Style                                                     | Variables Required      |
+| ---------------------- | --------------------------------------------------------- | ----------------------- |
+| `.backdrop-brightness` | `backdrop-filter: brightness(var(--backdrop-brightness))` | `--backdrop-brightness` |
 
 
 
@@ -291,9 +291,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector             | Style                                            | Variables Required |
-| -------------------- | ------------------------------------------------ | ------------------ |
-| `.backdrop-contrast` | `backdrop-filter: contrast(--backdrop-contrast)` | -                  |
+| Selector             | Style                                                 | Variables Required    |
+| -------------------- | ----------------------------------------------------- | --------------------- |
+| `.backdrop-contrast` | `backdrop-filter: contrast(var(--backdrop-contrast))` | `--backdrop-contrast` |
 
 
 
@@ -317,9 +317,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector              | Style                                              | Variables Required |
-| --------------------- | -------------------------------------------------- | ------------------ |
-| `.backdrop-grayscale` | `backdrop-filter: grayscale(--backdrop-grayscale)` | -                  |
+| Selector              | Style                                                   | Variables Required     |
+| --------------------- | ------------------------------------------------------- | ---------------------- |
+| `.backdrop-grayscale` | `backdrop-filter: grayscale(var(--backdrop-grayscale))` | `--backdrop-grayscale` |
 
 
 
@@ -327,9 +327,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector               | Style                                                | Variables Required |
-| ---------------------- | ---------------------------------------------------- | ------------------ |
-| `.backdrop-hue-rotate` | `backdrop-filter: hue-rotate(--backdrop-hue-rotate)` | -                  |
+| Selector               | Style                                                     | Variables Required      |
+| ---------------------- | --------------------------------------------------------- | ----------------------- |
+| `.backdrop-hue-rotate` | `backdrop-filter: hue-rotate(var(--backdrop-hue-rotate))` | `--backdrop-hue-rotate` |
 
 
 
@@ -337,9 +337,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector           | Style                                        | Variables Required |
-| ------------------ | -------------------------------------------- | ------------------ |
-| `.backdrop-invert` | `backdrop-filter: invert(--backdrop-invert)` | -                  |
+| Selector           | Style                                             | Variables Required  |
+| ------------------ | ------------------------------------------------- | ------------------- |
+| `.backdrop-invert` | `backdrop-filter: invert(var(--backdrop-invert))` | `--backdrop-invert` |
 
 
 
@@ -347,9 +347,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector            | Style                                          | Variables Required |
-| ------------------- | ---------------------------------------------- | ------------------ |
-| `.backdrop-opacity` | `backdrop-filter: opacity(--backdrop-opacity)` | -                  |
+| Selector            | Style                                               | Variables Required   |
+| ------------------- | --------------------------------------------------- | -------------------- |
+| `.backdrop-opacity` | `backdrop-filter: opacity(var(--backdrop-opacity))` | `--backdrop-opacity` |
 
 
 
@@ -357,9 +357,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector             | Style                                            | Variables Required |
-| -------------------- | ------------------------------------------------ | ------------------ |
-| `.backdrop-saturate` | `backdrop-filter: saturate(--backdrop-saturate)` | -                  |
+| Selector             | Style                                                 | Variables Required    |
+| -------------------- | ----------------------------------------------------- | --------------------- |
+| `.backdrop-saturate` | `backdrop-filter: saturate(var(--backdrop-saturate))` | `--backdrop-saturate` |
 
 
 
@@ -367,9 +367,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector          | Style                                      | Variables Required |
-| ----------------- | ------------------------------------------ | ------------------ |
-| `.backdrop-sepia` | `backdrop-filter: sepia(--backdrop-sepia)` | -                  |
+| Selector          | Style                                           | Variables Required |
+| ----------------- | ----------------------------------------------- | ------------------ |
+| `.backdrop-sepia` | `backdrop-filter: sepia(var(--backdrop-sepia))` | `--backdrop-sepia` |
 
 
 
@@ -545,9 +545,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector | Style                  | Variables Required |
-| -------- | ---------------------- | ------------------ |
-| `.blur`  | `filter: blur(--blur)` | -                  |
+| Selector | Style                       | Variables Required |
+| -------- | --------------------------- | ------------------ |
+| `.blur`  | `filter: blur(var(--blur))` | `--blur`           |
 
 ### Utilities (absolute values)
 
@@ -976,9 +976,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector      | Style                              | Variables Required |
-| ------------- | ---------------------------------- | ------------------ |
-| `.brightness` | `filter: brightness(--brightness)` | -                  |
+| Selector      | Style                                   | Variables Required |
+| ------------- | --------------------------------------- | ------------------ |
+| `.brightness` | `filter: brightness(var(--brightness))` | `--brightness`     |
 
 
 
@@ -1110,9 +1110,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector    | Style                          | Variables Required |
-| ----------- | ------------------------------ | ------------------ |
-| `.contrast` | `filter: contrast(--contrast)` | -                  |
+| Selector    | Style                               | Variables Required |
+| ----------- | ----------------------------------- | ------------------ |
+| `.contrast` | `filter: contrast(var(--contrast))` | `--contrast`       |
 
 
 
@@ -1564,9 +1564,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector     | Style                            | Variables Required |
-| ------------ | -------------------------------- | ------------------ |
-| `.grayscale` | `filter: grayscale(--grayscale)` | -                  |
+| Selector     | Style                                 | Variables Required |
+| ------------ | ------------------------------------- | ------------------ |
+| `.grayscale` | `filter: grayscale(var(--grayscale))` | `--grayscale`      |
 
 
 
@@ -1697,9 +1697,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector      | Style                              | Variables Required |
-| ------------- | ---------------------------------- | ------------------ |
-| `.hue-rotate` | `filter: hue-rotate(--hue-rotate)` | -                  |
+| Selector      | Style                                   | Variables Required |
+| ------------- | --------------------------------------- | ------------------ |
+| `.hue-rotate` | `filter: hue-rotate(var(--hue-rotate))` | `--hue-rotate`     |
 
 
 
@@ -1921,9 +1921,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector  | Style                      | Variables Required |
-| --------- | -------------------------- | ------------------ |
-| `.invert` | `filter: invert(--invert)` | -                  |
+| Selector  | Style                           | Variables Required |
+| --------- | ------------------------------- | ------------------ |
+| `.invert` | `filter: invert(var(--invert))` | `--invert`         |
 
 
 
@@ -2816,12 +2816,12 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector    | Style                                                                                                                                              | Variables Required |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `.rotate`   | `rotate: var(--rotate)`                                                                                                                            | `--rotate`         |
-| `.rotate-x` | `--tw-rotate-x: rotateX(--rotate-x)`, `transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)` | -                  |
-| `.rotate-y` | `--tw-rotate-y: rotateY(--rotate-y)`, `transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)` | -                  |
-| `.rotate-z` | `--tw-rotate-z: rotateZ(--rotate-z)`, `transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)` | -                  |
+| Selector    | Style                                                                                                                                                   | Variables Required |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `.rotate`   | `rotate: var(--rotate)`                                                                                                                                 | `--rotate`         |
+| `.rotate-x` | `--tw-rotate-x: rotateX(var(--rotate-x))`, `transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)` | `--rotate-x`       |
+| `.rotate-y` | `--tw-rotate-y: rotateY(var(--rotate-y))`, `transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)` | `--rotate-y`       |
+| `.rotate-z` | `--tw-rotate-z: rotateZ(var(--rotate-z))`, `transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)` | `--rotate-z`       |
 
 ### Utilities (absolute values)
 
@@ -2835,9 +2835,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector    | Style                          | Variables Required |
-| ----------- | ------------------------------ | ------------------ |
-| `.saturate` | `filter: saturate(--saturate)` | -                  |
+| Selector    | Style                               | Variables Required |
+| ----------- | ----------------------------------- | ------------------ |
+| `.saturate` | `filter: saturate(var(--saturate))` | `--saturate`       |
 
 
 
@@ -2969,9 +2969,9 @@ Prefix classes with breakpoints:
 
 ### Utilities (value-driven)
 
-| Selector | Style                    | Variables Required |
-| -------- | ------------------------ | ------------------ |
-| `.sepia` | `filter: sepia(--sepia)` | -                  |
+| Selector | Style                         | Variables Required |
+| -------- | ----------------------------- | ------------------ |
+| `.sepia` | `filter: sepia(var(--sepia))` | `--sepia`          |
 
 
 
