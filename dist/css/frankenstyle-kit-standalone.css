@@ -485,7 +485,7 @@
      Typography Scale Utilities
      ============================================ */
 
-  .uk-texts-small {
+  .uk-layout-small {
     --uk-global-font-size: 0.875rem;
     --uk-global-line-height: 1.25rem;
 
@@ -493,7 +493,7 @@
     --uk-global-line-height-small: 1rem;
   }
 
-  .uk-texts-medium {
+  .uk-layout-medium {
     --uk-global-font-size: 1.125rem;
     --uk-global-line-height: 1.75rem;
 
