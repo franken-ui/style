@@ -8,6 +8,9 @@
     --uk-input-pin-shadow: var(--uk-form-input-shadow);
     --uk-input-pin-focus-ring-color: var(--uk-focus);
     --uk-input-pin-focus-ring-color-o: 100%;
+    --uk-form-input-height: calc(
+      var(--uk-global-font-size) * var(--uk-interactive-height-multiplier)
+    );
 
     /* Computed value */
     --uk-input-pin-focus-ring-color-computed: color-mix(
