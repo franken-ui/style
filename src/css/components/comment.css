@@ -42,11 +42,11 @@
   .uk-comment-meta {
     /* Base Variables */
     --uk-comment-meta-font-size: 0.75rem;
-    --uk-comment-meta-leading: 1rem;
+    --uk-comment-meta-line-height: 1rem;
     --uk-comment-meta-margin-top: 0.25rem;
 
     font-size: var(--uk-comment-meta-font-size);
-    line-height: var(--uk-comment-meta-leading);
+    line-height: var(--uk-comment-meta-line-height);
     margin-block-start: var(--uk-comment-meta-margin-top);
   }
 

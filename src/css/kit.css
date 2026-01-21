@@ -414,34 +414,70 @@
   }
 
   /* Border Radius */
-  .uk-rounded {
-    border-radius: 0.375rem;
+  /* Border Radius */
+  .uk-rounded-small {
+    border-radius: var(--uk-global-radius-small);
   }
 
-  .uk-rounded-sm {
-    border-radius: 0.125rem;
+  .uk-rounded {
+    border-radius: var(--uk-global-radius);
   }
 
   /* Box Shadow */
+  /* Box Shadow */
+  .uk-shadow-small {
+    box-shadow: var(--uk-global-shadow-small);
+  }
+
   .uk-shadow {
-    box-shadow: 0 1px 2px 0 #0000000d;
+    box-shadow: var(--uk-global-shadow);
   }
 
-  .uk-shadow-sm {
-    box-shadow:
-      0 1px 3px 0 #0000001a,
-      0 1px 2px -1px #0000001a;
+  /* Text Sizes - Modular Scale 1.25 ratio */
+  /* Text Sizes - Modular Scale 1.25 ratio */
+  .uk-text-2xsmall {
+    font-size: calc(var(--uk-global-font-size) / 1.563);
+    line-height: calc(var(--uk-global-line-height) / 1.563);
   }
 
-  /* Text Sizes */
-  .uk-text-sm {
-    font-size: 0.75rem;
-    line-height: 1rem;
+  .uk-text-xsmall {
+    font-size: calc(var(--uk-global-font-size) / 1.25);
+    line-height: calc(var(--uk-global-line-height) / 1.25);
+  }
+
+  .uk-text-small {
+    font-size: var(--uk-global-font-size-small);
+    line-height: var(--uk-global-line-height-small);
   }
 
   .uk-text-base {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: var(--uk-global-font-size);
+    line-height: var(--uk-global-line-height);
+  }
+
+  .uk-text-medium {
+    font-size: calc(var(--uk-global-font-size) * 1.25);
+    line-height: calc(var(--uk-global-line-height) * 1.167);
+  }
+
+  .uk-text-large {
+    font-size: calc(var(--uk-global-font-size) * 1.563);
+    line-height: calc(var(--uk-global-line-height) * 1.2);
+  }
+
+  .uk-text-xlarge {
+    font-size: calc(var(--uk-global-font-size) * 1.953);
+    line-height: calc(var(--uk-global-line-height) * 1.067);
+  }
+
+  .uk-text-2xlarge {
+    font-size: calc(var(--uk-global-font-size) * 2.441);
+    line-height: calc(var(--uk-global-line-height) * 1);
+  }
+
+  .uk-text-3xlarge {
+    font-size: calc(var(--uk-global-font-size) * 3.052);
+    line-height: calc(var(--uk-global-line-height) * 0.933);
   }
 
   /* Flex Utilities */

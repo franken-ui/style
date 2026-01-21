@@ -135,12 +135,12 @@
     /* Base Variables */
     --uk-modal-title-size: 1.125rem;
     --uk-modal-title-weight: 600;
-    --uk-modal-title-leading: 1;
+    --uk-modal-title-line-height: 1;
     --uk-modal-title-tracking: -0.025em;
 
     font-size: var(--uk-modal-title-size);
     font-weight: var(--uk-modal-title-weight);
-    line-height: var(--uk-modal-title-leading);
+    line-height: var(--uk-modal-title-line-height);
     letter-spacing: var(--uk-modal-title-tracking);
   }
 

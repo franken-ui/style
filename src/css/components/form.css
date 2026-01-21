@@ -7,7 +7,7 @@
     --uk-form-input-radius: var(--uk-global-radius);
     --uk-form-input-shadow: var(--uk-global-shadow);
     --uk-form-input-font-size: var(--uk-global-font-size);
-    --uk-form-input-leading: var(--uk-global-line-height);
+    --uk-form-input-line-height: var(--uk-global-line-height);
     --uk-form-toggle-switch-shadow: var(--uk-global-shadow-small);
     --uk-form-radio-radius: 9999px;
     --uk-form-radio-shadow: var(--uk-global-shadow-small);
@@ -124,7 +124,7 @@
     box-shadow: var(--uk-form-input-shadow);
     padding: var(--uk-form-input-padding);
     font-size: var(--uk-form-input-font-size);
-    line-height: var(--uk-form-input-leading);
+    line-height: var(--uk-form-input-line-height);
     border-width: 1px;
     border-style: solid;
     border-color: var(--uk-form-input-border-color-computed);
@@ -535,7 +535,7 @@
     --uk-interactive-padding-inline-multiplier: 1;
 
     --uk-form-input-font-size: var(--uk-global-font-size-small);
-    --uk-form-input-leading: var(--uk-global-line-height-small);
+    --uk-form-input-line-height: var(--uk-global-line-height-small);
   }
 
   .uk-form-small {
@@ -544,7 +544,7 @@
     --uk-interactive-padding-inline-multiplier: 1.125;
 
     --uk-form-input-font-size: var(--uk-global-font-size-small);
-    --uk-form-input-leading: var(--uk-global-line-height-small);
+    --uk-form-input-line-height: var(--uk-global-line-height-small);
   }
 
   .uk-form-medium {

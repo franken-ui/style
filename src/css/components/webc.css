@@ -42,7 +42,7 @@
     margin: 0 -1px 0 0;
     display: flex;
     font-size: var(--uk-form-input-font-size);
-    line-height: var(--uk-form-input-leading);
+    line-height: var(--uk-form-input-line-height);
     text-align: center;
     background-color: transparent;
     outline: none;
@@ -321,7 +321,7 @@
     --uk-tag-padding: 0.25rem 0.5rem;
     --uk-tag-gap: 0.5rem;
     --uk-tag-font-size: var(--uk-global-font-size-small);
-    --uk-tag-leading: var(--uk-global-line-height-small);
+    --uk-tag-line-height: var(--uk-global-line-height-small);
     --uk-tag-radius: var(--uk-global-radius-small);
     --uk-tag-bg: transparent;
     --uk-tag-bg-o: 0%;
@@ -348,7 +348,7 @@
     padding: var(--uk-tag-padding);
     gap: var(--uk-tag-gap);
     font-size: var(--uk-tag-font-size);
-    line-height: var(--uk-tag-leading);
+    line-height: var(--uk-tag-line-height);
     border-radius: var(--uk-tag-radius);
     background-color: var(--uk-tag-bg-computed);
     color: var(--uk-tag-color-computed);
@@ -565,12 +565,12 @@
     /* Base Variables */
     --uk-cmd-item-key-font-family: var(--uk-global-font-family-mono);
     --uk-cmd-item-key-font-size: var(--uk-global-font-size-small);
-    --uk-cmd-item-key-leading: var(--uk-global-line-height-small);
+    --uk-cmd-item-key-line-height: var(--uk-global-line-height-small);
     --uk-cmd-item-key-tracking: 0.1em;
 
     font-family: var(--uk-cmd-item-key-font-family);
     font-size: var(--uk-cmd-item-key-font-size);
-    line-height: var(--uk-cmd-item-key-leading);
+    line-height: var(--uk-cmd-item-key-line-height);
     letter-spacing: var(--uk-cmd-item-key-tracking);
     color: var(--uk-muted-f);
   }
