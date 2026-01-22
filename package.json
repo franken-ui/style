@@ -19,7 +19,8 @@
     "build:components": "tsc && vite -c config/components.js build",
     "build:icon": "tsc && vite -c config/icon.js build",
     "build:chart": "tsc && vite -c config/chart.js build",
-    "build:runtime": "tsc && vite -c config/runtime.js build"
+    "build:runtime": "tsc && vite -c config/runtime.js build",
+    "build:ft-core": "vite -c config/ft-core.js build"
   },
   "dependencies": {
     "@frankenstyle/uikit": "^0.0.3",
@@ -34,19 +35,31 @@
     "lit": "^3.3.1",
     "lodash": "^4.17.21",
     "lucide": "^0.562.0",
+    "motion": "^12.28.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "slugify": "^1.6.6",
     "vite": "^7.1.7"
   },
   "devDependencies": {
-    "@open-wc/eslint-config": "^12.0.3",
+    "@eslint/js": "^9.39.2",
+    "@open-wc/eslint-config": "^13.0.0",
     "@types/lodash": "^4.17.20",
-    "eslint": "^8.57.1",
+    "@types/node": "^24.10.9",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.25",
+    "globals": "^17.0.0",
     "gzip-size": "^7.0.0",
     "lightningcss-cli": "^1.30.1",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.12",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.53.0"
   },
   "exports": {
     ".": {
