@@ -64,9 +64,11 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                   '--h': '8',
                   '--w': '16',
                   '--border-t-w': '1px',
-                  '--border-t': 'var(--ft-border-color, var(--color-slate-700))',
+                  '--border-t':
+                    'var(--ft-border-color, var(--color-slate-700))',
                   '--border-r-w': '1px',
-                  '--border-r': 'var(--ft-border-color, var(--color-slate-700))',
+                  '--border-r':
+                    'var(--ft-border-color, var(--color-slate-700))',
                 } as React.CSSProperties
               }
               className="h w border-t-w border-r-w relative border-r border-t"
@@ -85,7 +87,8 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                       '--h': '6',
                       '--w': '10',
                       '--stroke-w': '1px',
-                      '--color': 'var(--ft-border-color, var(--color-slate-700))',
+                      '--color':
+                        'var(--ft-border-color, var(--color-slate-700))',
                     } as React.CSSProperties
                   }
                   className="top left h w stroke color pointer-events-none absolute"
@@ -107,9 +110,8 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 
 export const Boxes = React.memo(BoxesCore);
 
-const container = document.getElementById('bg-boxes');
-
-if (container) {
+document.querySelectorAll('[data-ft-bg-boxes]').forEach(container => {
   const root = createRoot(container);
+
   root.render(<Boxes />);
-}
+});

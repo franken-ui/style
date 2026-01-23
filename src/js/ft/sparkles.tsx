@@ -439,14 +439,11 @@ export const SparklesCore = (props: ParticlesProps) => {
   );
 };
 
-const container = document.getElementById('sparkles');
-
-if (container) {
-  // Try to find the config script tag
-  const configScript = container.querySelector('script[data-fn="config"]');
+document.querySelectorAll('[data-ft-sparkles]').forEach(container => {
+  const configScript = container.querySelector('script[data-fn="props"]');
 
   // Default props
-  let sparklesProps = {
+  let defaultProps = {
     background: 'transparent',
     minSize: 0.4,
     maxSize: 1,
@@ -457,15 +454,13 @@ if (container) {
 
   if (configScript) {
     try {
-      // Parse the JSON configuration and merge with defaults
-      const config = JSON.parse(configScript.textContent);
-      sparklesProps = { ...sparklesProps, ...config };
+      const props = JSON.parse(configScript.textContent || '{}');
+      defaultProps = { ...defaultProps, ...props };
     } catch (error) {
       console.error('Failed to parse sparkles config:', error);
     }
   }
 
-  // Create and render the React component
-  const root = createRoot(container);
-  root.render(<SparklesCore {...sparklesProps} />);
-}
+  const root = createRoot(container as HTMLElement);
+  root.render(<SparklesCore {...defaultProps} />);
+});
