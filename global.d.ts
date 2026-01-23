@@ -9,8 +9,5 @@ declare global {
     Lucide: any;
     ApexCharts: any;
     UIkit: any;
-    React: any;
-    ReactDOM: any;
-    Motion: any;
   }
 }

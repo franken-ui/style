@@ -291,18 +291,22 @@ export const AnimatedTestimonials = ({
 const container = document.getElementById('animated-testimonials');
 
 if (container) {
-  // Find the config script tag
+  // Try to find the config script tag
   const configScript = container.querySelector('script[data-fn="config"]');
+
+  let testimonials = [];
 
   if (configScript) {
     try {
       // Parse the JSON configuration
       const config = JSON.parse(configScript.textContent);
-      const testimonials = config.testimonials || [];
-
-      // Create and render the React component
-      const root = createRoot(container);
-      root.render(<AnimatedTestimonials testimonials={testimonials} />);
-    } catch (error) {}
+      testimonials = config.testimonials || [];
+    } catch (error) {
+      console.error('Failed to parse testimonials config:', error);
+    }
   }
+
+  // Create and render the React component (with empty array if no config found)
+  const root = createRoot(container);
+  root.render(<AnimatedTestimonials testimonials={testimonials} />);
 }
