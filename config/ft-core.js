@@ -16,7 +16,6 @@ export default defineConfig({
           'react-dom/client': 'ReactDOM',
           'motion/react': 'Motion',
           '@tsparticles/react': 'Particles',
-          '@tsparticles/engine': 'TSParticlesEngine',
           '@tsparticles/slim': 'TSParticlesSlim',
         },
       },
