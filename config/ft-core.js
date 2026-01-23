@@ -15,11 +15,12 @@ export default defineConfig({
           react: 'React',
           'react-dom/client': 'ReactDOM',
           'motion/react': 'Motion',
-          '@tsparticles/react': 'Particles',
-          '@tsparticles/slim': 'TSParticlesSlim',
         },
       },
     },
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify('production'),
   },
   esbuild: {
     legalComments: 'none',
