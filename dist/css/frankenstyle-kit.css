@@ -6318,13 +6318,13 @@
     --uk-slidenav-border-color-o: 10%;
     --uk-slidenav-bg: var(--uk-bg);
     --uk-slidenav-bg-o: 100%;
-    --uk-slidenav-hover-bg: var(--uk-accent);
+    --uk-slidenav-hover-bg: var(--uk-bg);
     --uk-slidenav-hover-bg-o: 100%;
-    --uk-slidenav-hover-color: var(--uk-accent-f);
+    --uk-slidenav-hover-color: var(--uk-bg-f);
     --uk-slidenav-hover-color-o: 100%;
-    --uk-slidenav-active-bg: var(--uk-accent);
+    --uk-slidenav-active-bg: var(--uk-bg);
     --uk-slidenav-active-bg-o: 100%;
-    --uk-slidenav-active-color: var(--uk-accent-f);
+    --uk-slidenav-active-color: var(--uk-bg-f);
     --uk-slidenav-active-color-o: 100%;
     --uk-slidenav-svg-height: 1rem;
     --uk-slidenav-svg-width: 1rem;
