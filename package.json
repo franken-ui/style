@@ -2,7 +2,7 @@
   "name": "frankenstyle",
   "author": "Reden <reden@franken-ui.dev>",
   "description": "Frankenstyle is the spiritual successor to Franken UI.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "repository": {
     "type": "git",

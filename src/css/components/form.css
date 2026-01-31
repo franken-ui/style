@@ -373,7 +373,7 @@
   /* Form Stacked */
   .uk-form-stacked .uk-form-label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
   }
 
   /* Form Icon */
@@ -569,13 +569,6 @@
 
   .uk-inline:has(input[disabled]) .uk-form-icon {
     opacity: 0.5;
-  }
-
-  @media (max-width: 48rem) {
-    .uk-form-horizontal .uk-form-label {
-      display: block;
-      margin: 0 0 5px 0;
-    }
   }
 
   /* ============================================

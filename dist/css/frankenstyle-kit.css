@@ -3467,7 +3467,7 @@
   }
   .uk-form-stacked .uk-form-label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
   }
   .uk-form-icon,
   .uk-input {
@@ -6515,11 +6515,16 @@
       margin-right: -40px;
     }
   }
-  @media (max-width: 48rem) {
-    .uk-form-horizontal .uk-form-label {
-      display: block;
-      margin: 0 0 5px 0;
+  @media (max-width: 40rem) {
+    .uk-notification {
+      --uk-notification-offset-x: 10px;
+      inset-inline-start: var(--uk-notification-offset-x);
+      inset-inline-end: var(--uk-notification-offset-x);
+      width: auto;
+      margin: 0;
     }
+  }
+  @media (max-width: 48rem) {
     .uk-table-responsive,
     .uk-table-responsive tbody,
     .uk-table-responsive th,
@@ -6578,15 +6583,6 @@
     .uk-table-justify.uk-table-responsive td {
       padding-left: 0;
       padding-right: 0;
-    }
-  }
-  @media (max-width: 40rem) {
-    .uk-notification {
-      --uk-notification-offset-x: 10px;
-      inset-inline-start: var(--uk-notification-offset-x);
-      inset-inline-end: var(--uk-notification-offset-x);
-      width: auto;
-      margin: 0;
     }
   }
   @media (min-width: 80rem) {
