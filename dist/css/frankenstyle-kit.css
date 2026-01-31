@@ -3469,8 +3469,11 @@
     display: block;
     margin-bottom: 5px;
   }
-  .uk-form-icon {
+  .uk-form-icon,
+  .uk-input {
     --uk-form-icon-width: 2.5rem;
+  }
+  .uk-form-icon {
     position: absolute;
     top: 0;
     bottom: 0;

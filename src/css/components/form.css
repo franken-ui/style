@@ -377,10 +377,13 @@
   }
 
   /* Form Icon */
-  .uk-form-icon {
+  .uk-form-icon,
+  .uk-input {
     /* Base Variables */
     --uk-form-icon-width: 2.5rem;
+  }
 
+  .uk-form-icon {
     position: absolute;
     top: 0;
     bottom: 0;
