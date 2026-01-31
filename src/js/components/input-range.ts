@@ -1,9 +1,17 @@
+/**
+ * @fileoverview
+ * A headless, customizable range slider component that supports single and dual knob modes.
+ * Provides touch-friendly interaction with improved mobile compatibility and full accessibility.
+ *
+ * This component is headless - all styling is delegated to `cls` and `stl` attributes.
+ * Each element includes a `data-part` attribute for targeted styling and scripting.
+ */
+
 import { html, type PropertyValues } from 'lit';
 import { property, customElement, state } from 'lit/decorators.js';
 import { InputMixin } from './shared/input';
 import { Base } from './shared/base';
 
-/* New: kebab-case CLASSES / STYLES interfaces */
 interface Cls extends Record<string, string> {
   'host-inner': string;
   runnable: string;
@@ -68,8 +76,8 @@ interface Stl extends Record<string, string> {
  *     "runnable": "range-runnable",
  *     "fill": "range-fill",
  *     "knob": "range-knob",
- *     "knobLow": "range-knob-low",
- *     "knobHigh": "range-knob-high",
+ *     "knob-low": "range-knob-low",
+ *     "knob-high": "range-knob-high",
  *     "label": "range-label"
  *   }'
  * ></uk-input-range>
@@ -82,10 +90,10 @@ interface Stl extends Record<string, string> {
  *   <script type="application/json">
  *   {
  *     "i18n": {
- *       "ariaValueText": "Value: {value}",
- *       "ariaRangeText": "Range from {low} to {high}",
- *       "lowKnobLabel": "Minimum value",
- *       "highKnobLabel": "Maximum value"
+ *       "aria-value-text": "Value: {value}",
+ *       "aria-range-text": "Range from {low} to {high}",
+ *       "low-knob-label": "Minimum value",
+ *       "high-knob-label": "Maximum value"
  *     },
  *     "cls": {
  *       "container": "my-range-container",
@@ -686,7 +694,6 @@ export class InputRange extends InputMixin(Base) {
       .filter(Boolean)
       .join(' ');
 
-    // Build label classes with proper uk-* convention
     const labelPositionClass =
       this['label-position'] === 'top'
         ? this.$cls['label-top'] || 'uk-input-range-label-top'
@@ -695,6 +702,7 @@ export class InputRange extends InputMixin(Base) {
     return html`
       <button
         type="button"
+        data-part="knob"
         class="${knobClasses}"
         role="slider"
         aria-label="${this.getKnobAriaLabel(type)}"
@@ -716,6 +724,7 @@ export class InputRange extends InputMixin(Base) {
         ${this._label
           ? html`
               <span
+                data-part="label"
                 class="${this.$cls['label'] ||
                 'uk-input-range-label'} ${labelPositionClass}"
                 style="${this.$stl['label'] || ''}"
@@ -734,6 +743,7 @@ export class InputRange extends InputMixin(Base) {
   /**
    * Renders the complete range slider component, including track, knobs, and labels.
    * This is a headless component - all styling comes from cls/stl attributes.
+   * Each element includes a data-part attribute for easy targeting.
    *
    * @returns Template for the component
    */
@@ -749,6 +759,7 @@ export class InputRange extends InputMixin(Base) {
 
     return html`
       <div
+        data-part="host-inner"
         data-host-inner
         class="${this.$cls['host-inner'] || ''}"
         style="${this.$stl['host-inner'] || ''}"
@@ -758,11 +769,13 @@ export class InputRange extends InputMixin(Base) {
         data-multiple="${this.multiple}"
       >
         <div
+          data-part="runnable"
           class="${this.$cls['runnable'] || 'uk-input-range-runnable'}"
           style="${this.$stl['runnable'] || ''}"
           data-range-track
         ></div>
         <div
+          data-part="fill"
           class="${this.$cls['fill'] || 'uk-input-range-fill'}"
           style="${this.$stl['fill'] || ''}${rangeStyle}"
           data-fill-track

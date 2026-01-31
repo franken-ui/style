@@ -1,3 +1,14 @@
+/**
+ * @fileoverview
+ * Chart Component - A headless Lit wrapper around ApexCharts that enables
+ * declarative chart rendering via embedded JSON config scripts.
+ *
+ * Features:
+ * - Accessible container and status/error states
+ * - Customizable classes/styles via `cls` and `stl`
+ * - Public APIs to update options and series programmatically
+ * - Graceful error handling and lifecycle management of the ApexCharts instance
+ */
 import { customElement, property, state } from 'lit/decorators.js';
 import { Base } from './shared/base';
 import { type PropertyValues, html } from 'lit';
@@ -367,6 +378,7 @@ export class Chart extends Base {
       <div
         class="${this.$cls['loading']}"
         style="${this.$stl['loading']}"
+        data-part="loading"
         role="status"
         aria-live="polite"
         aria-label="${message}"
@@ -391,6 +403,7 @@ export class Chart extends Base {
       <div
         class="${this.$cls['error']}"
         style="${this.$stl['error']}"
+        data-part="error"
         role="alert"
         aria-live="assertive"
       >
@@ -413,6 +426,7 @@ export class Chart extends Base {
         data-host-inner
         class="${this.$cls['host-inner']}"
         style="${this.$stl['host-inner']}"
+        data-part="host-inner"
         role="img"
         aria-label="${ariaLabel}"
         data-loading="${this.loading}"
@@ -428,6 +442,7 @@ export class Chart extends Base {
                   data-chart-container
                   class="${this.$cls['chart']}"
                   style="${this.$stl['chart']}"
+                  data-part="chart"
                 ></div>
               `}
       </div>

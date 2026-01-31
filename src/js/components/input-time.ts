@@ -4,7 +4,6 @@ import { validateTime } from '../helpers/date';
 import { InputMixin } from './shared/input';
 import { Base } from './shared/base';
 
-/* New: CLASSES / STYLES interfaces and state holders */
 interface Cls extends Record<string, string> {
   container: string;
   input: string;
@@ -63,10 +62,10 @@ interface Stl extends Record<string, string> {
  * <uk-input-time
  *   cls='{
  *     "container": "time-input-wrapper",
- *     "hourInput": "hour-field",
- *     "minuteInput": "minute-field",
+ *     "hour-input": "hour-field",
+ *     "minute-input": "minute-field",
  *     "separator": "time-separator",
- *     "meridiemButton": "am-pm-toggle"
+ *     "meridiem-button": "am-pm-toggle"
  *   }'
  * ></uk-input-time>
  * ```
@@ -80,14 +79,14 @@ interface Stl extends Record<string, string> {
  *     "i18n": {
  *       "am": "AM",
  *       "pm": "PM",
- *       "hourLabel": "Hour",
- *       "minuteLabel": "Minute",
- *       "meridiemLabel": "Time of day",
- *       "timeLabel": "Time input"
+ *       "hour-label": "Hour",
+ *       "minute-label": "Minute",
+ *       "meridiem-label": "Time of day",
+ *       "time-label": "Time input"
  *     },
  *     "cls": {
  *       "container": "my-time-input",
- *       "hourInput": "custom-hour"
+ *       "hour-input": "custom-hour"
  *     }
  *   }
  *   </script>

@@ -1,3 +1,15 @@
+/**
+ * @fileoverview
+ * PIN/OTP Input Component
+ *
+ * A headless, customizable PIN or one-time password (OTP) input component that
+ * renders multiple single-character input fields with full keyboard navigation,
+ * paste support, and ARIA accessibility features. Integrates seamlessly with
+ * forms and provides configurable styling via CSS classes and inline styles.
+ *
+ * @see InputPin for component details and usage examples
+ */
+
 import { type PropertyValues, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { InputMixin } from './shared/input';
@@ -600,6 +612,7 @@ export class InputPin extends InputMixin(Base) {
 
     return html`
       <input
+        data-part="input"
         class=${this.$cls['input']}
         style=${this.$stl['input']}
         data-pin-input
@@ -631,6 +644,7 @@ export class InputPin extends InputMixin(Base) {
   render() {
     return html`
       <div
+        data-part="host-inner"
         data-host-inner
         class=${this.$cls['host-inner']}
         style=${this.$stl['host-inner']}
@@ -638,6 +652,7 @@ export class InputPin extends InputMixin(Base) {
         aria-labelledby="${this.groupId}-label ${this.groupId}-desc"
       >
         <span
+          data-part="label"
           id="${this.groupId}-label"
           class="${this.$cls['label']}"
           style=${this.$stl['label']}
@@ -646,6 +661,7 @@ export class InputPin extends InputMixin(Base) {
         </span>
 
         <span
+          data-part="description"
           id="${this.groupId}-desc"
           class="${this.$cls['description']}"
           style=${this.$stl['description']}
@@ -654,6 +670,7 @@ export class InputPin extends InputMixin(Base) {
         </span>
 
         <div
+          data-part="wrapper"
           class=${this.$cls['wrapper']}
           style=${this.$stl['wrapper']}
           role="presentation"

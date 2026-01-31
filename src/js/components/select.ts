@@ -1,4 +1,22 @@
-// refactored select.ts
+/**
+ * @fileoverview
+ * Select Component - A customizable dropdown select with search and multi-select support.
+ *
+ * This component provides a dropdown select interface with optional search functionality,
+ * multi-select capability, and dynamic option insertion. It integrates with UIKit's
+ * dropdown system and supports keyboard navigation, accessibility features, and
+ * customizable styling.
+ *
+ * Features:
+ * - Single and multi-select modes
+ * - Optional search filtering
+ * - Dynamic option insertion via API
+ * - Keyboard navigation (arrow keys, Enter, Escape)
+ * - Accessibility support (ARIA labels, roles, semantic HTML)
+ * - Customizable styling via CSS classes and inline styles
+ * - Icon support for options and buttons
+ * - Internationalization support for labels and messages
+ */
 import { html, nothing, type PropertyValues, type TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { type OptionItem } from '../helpers/select';
@@ -81,9 +99,18 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
   @property({ type: Boolean })
   multiple: boolean = false;
 
+  /**
+   * Icon to display in the select button.
+   * If not provided, defaults to 'chevrons-up-down'.
+   */
   @property({ type: String })
   icon: string = '';
 
+  /**
+   * Array of currently selected values.
+   * In single-select mode, contains at most one value.
+   * In multi-select mode, can contain multiple values.
+   */
   @state()
   $selected: string[] = [];
 
@@ -178,6 +205,11 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         : '';
   }
 
+  /**
+   * Calculates the total count of available options.
+   * Includes the insertable option if search term is non-empty
+   * and doesn't match an existing option.
+   */
   override get count(): number {
     let total =
       this.insertable && this.$term !== '' && !this.hasOption(this.$term)
@@ -192,6 +224,10 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     return total - 1;
   }
 
+  /**
+   * Lifecycle hook called when the component is inserted into the DOM.
+   * Automatically enables search if insertable mode is enabled.
+   */
   connectedCallback(): void {
     super.connectedCallback();
 
@@ -200,6 +236,11 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     }
   }
 
+  /**
+   * Lifecycle hook called after the component has rendered for the first time.
+   * Initializes dropdown event handlers, sets up UIKit integration,
+   * and processes initial selection state from attributes or options.
+   */
   protected firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated?.(_changedProperties);
 
@@ -267,6 +308,11 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     this.isRendered = true;
   }
 
+  /**
+   * Lifecycle hook called after properties have been updated.
+   * Emits the input event only after initial render is complete
+   * to avoid unnecessary event emissions.
+   */
   protected updated(changedProperties: PropertyValues): void {
     super.updated(changedProperties);
 
@@ -280,10 +326,22 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     }
   }
 
+  /**
+   * Initializes the component's value from attributes or default state.
+   * This is handled in firstUpdated for this component.
+   */
   protected initializeValue(): void {
     // Value initialization handled in firstUpdated
   }
 
+  /**
+   * Selects or deselects an option item.
+   * In multi-select mode, toggles the item in the selection array.
+   * In single-select mode, replaces the current selection.
+   * Does nothing if the item is disabled.
+   *
+   * @param item - The option item to select/deselect
+   */
   protected select(item: OptionItem): void {
     if (item.disabled) {
       return;
@@ -308,6 +366,11 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     }
   }
 
+  /**
+   * Updates the `selected` property based on the current $selected values.
+   * Finds the last selected value in the options and updates the selected item.
+   * Useful after programmatic changes to $selected.
+   */
   private updateSelectedFromValues(): void {
     if (this.$selected.length > 0) {
       const lastValue = this.$selected[this.$selected.length - 1];
@@ -325,6 +388,13 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     }
   }
 
+  /**
+   * Handles keydown events on the search input.
+   * Delegates to onKeydown for navigation and special key handling.
+   * Prevents Tab key propagation when dropdown is open.
+   *
+   * @param e - The keyboard event
+   */
   private onInputKeydown = (e: KeyboardEvent): void => {
     this.onKeydown(e);
 
@@ -339,6 +409,10 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     }
   };
 
+  /**
+   * Handles Enter key press when a list item is focused.
+   * Selects the focused item or triggers insertion if the insert option is focused.
+   */
   protected onKeydownEnter(): void {
     const dataset = this.HTMLRectActive?.dataset;
 
@@ -354,12 +428,25 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     }
   }
 
+  /**
+   * Handles click events on option items.
+   * Delegates to the select method to update selection state.
+   *
+   * @param options - Object containing the clicked item and its index
+   */
   protected onClick(options: { item: OptionItem; index: number }): void {
     const { item } = options;
 
     this.select(item);
   }
 
+  /**
+   * Builds the CSS class strings for various elements in the select component.
+   * Applies active/disabled states based on item and focus state.
+   *
+   * @param options - Optional object containing the item and its index
+   * @returns Object containing class strings for all select elements
+   */
   protected _cls(options?: { item: OptionItem; index: number }): {
     button: string;
     icon: string;
@@ -400,13 +487,22 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
       'item-text': this.$cls['item-text'],
       'item-check': this.$cls['item-check'],
       'item-subtitle': this.$cls['item-subtitle'],
-      search: this.$cls.search,
+      search: this.$cls['search'],
       'search-input': this.$cls['search-input'],
       'search-icon': this.$cls['search-icon'],
-      dropdown: this.$cls.dropdown,
+      dropdown: this.$cls['dropdown'],
     };
   }
 
+  /**
+   * Renders a single list item with optional icon, description, and selection indicator.
+   * Sets up proper ARIA attributes for accessibility and click handlers.
+   *
+   * @param key - The option group key
+   * @param item - The option item to render
+   * @param index - The index within the group
+   * @returns The template result for the list item
+   */
   protected renderListItem(
     key: string,
     item: OptionItem,
@@ -418,6 +514,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
 
     return html`
       <li
+        data-part="item"
         class="${cls['item']}"
         role="option"
         aria-selected="${globalIndex === this.$focused ? 'true' : 'false'}"
@@ -426,16 +523,17 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         data-index="${index}"
       >
         <a
+          data-part="item-link"
           class="${cls['item-link']}"
           @click="${() => this.onClick({ item, index })}"
           tabindex="-1"
           ?disabled="${item.disabled}"
           aria-label="${item.text}"
         >
-          <div class="${cls['item-wrapper']}">
+          <div class="${cls['item-wrapper']}" data-part="item-wrapper">
             ${item.data.icon
               ? html`
-                  <span class="${cls['item-icon']}">
+                  <span class="${cls['item-icon']}" data-part="item-icon">
                     ${this.$icons(item.data.icon) || nothing}
                   </span>
                 `
@@ -443,17 +541,24 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
             ${item.data.description
               ? html`
                   <div>
-                    <span class="${cls['item-text']}">${item.text}</span>
-                    <div class="${cls['item-subtitle']}">
+                    <span class="${cls['item-text']}" data-part="item-text"
+                      >${item.text}</span
+                    >
+                    <div
+                      class="${cls['item-subtitle']}"
+                      data-part="item-subtitle"
+                    >
                       ${item.data.description}
                     </div>
                   </div>
                 `
-              : html`<span class="${cls['item-text']}">${item.text}</span>`}
+              : html`<span class="${cls['item-text']}" data-part="item-text"
+                  >${item.text}</span
+                >`}
           </div>
           ${isSelected
             ? html`
-                <span class="${cls['item-check']}">
+                <span class="${cls['item-check']}" data-part="item-check">
                   ${this.$icons('check') || nothing}
                 </span>
               `
@@ -463,6 +568,14 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     `;
   }
 
+  /**
+   * Calculates the global index of an item across all groups.
+   * Used for keyboard navigation and focus management.
+   *
+   * @param key - The option group key
+   * @param index - The index within the group
+   * @returns The global index, or -1 if not found
+   */
   private getGlobalIndex(key: string, index: number): number {
     let globalIndex = 0;
     let found = false;
@@ -483,12 +596,26 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     return found ? globalIndex : -1;
   }
 
+  /**
+   * Checks if an option with the given value exists in any group.
+   *
+   * @param value - The value to search for
+   * @returns True if the option exists, false otherwise
+   */
   private hasOption(value: string): boolean {
     return Object.values(this.$data).some(group =>
       group.options.some(option => option.value === value),
     );
   }
 
+  /**
+   * Adds a new option to the specified group.
+   * Creates the group if it doesn't exist.
+   *
+   * @param item - The option item to add
+   * @param key - The group key (typically the group ID)
+   * @returns True if the option was added, false if it already existed
+   */
   private addOption(item: OptionItem, key: string): boolean {
     const options = this.$data[key]?.options || [];
     const exists = options.some(option => option.value === item.value);
@@ -509,6 +636,13 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     return !exists;
   }
 
+  /**
+   * Sends the current search term to the server to fetch matching options.
+   * Falls back to creating a local option if the request fails or returns invalid data.
+   * Validates response data structure before returning.
+   *
+   * @returns Promise resolving to an OptionItem from the server or a fallback item
+   */
   private async send(): Promise<OptionItem> {
     function validate(data: any): boolean {
       return (
@@ -569,6 +703,11 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     }
   }
 
+  /**
+   * Inserts the current search term as a new option and selects it.
+   * Fetches the option from the server via the send() method.
+   * Clears the search term after insertion.
+   */
   protected async insert(): Promise<void> {
     const item = await this.send();
 
@@ -584,17 +723,24 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     this.$term = '';
   }
 
+  /**
+   * Renders the search input field and divider.
+   * Only rendered if searchable property is true.
+   *
+   * @returns The search section template or empty string
+   */
   private renderSearch() {
     const cls = this._cls();
 
     return this.searchable === true
       ? html`
-          <div class="${cls['search']}" role="search">
-            <span class="${cls['search-icon']}">
+          <div class="${cls['search']}" data-part="search" role="search">
+            <span class="${cls['search-icon']}" data-part="search-icon">
               ${this.$icons('search') || nothing}
             </span>
             <input
               class="${cls['search-input']}"
+              data-part="search-input"
               placeholder="${this.getI18nText(
                 'search-placeholder',
                 this.defaultI18n,
@@ -616,6 +762,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
           ${Object.keys(this.options).length > 0
             ? html`<hr
                 class="${this.$cls['divider']}"
+                data-part="divider"
                 style="${this.$stl['divider']}"
               />`
             : ''}
@@ -623,14 +770,27 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
       : '';
   }
 
+  /**
+   * Renders the insertion button for adding new options.
+   * Only shown when insertable is true, search term is non-empty,
+   * and the term doesn't match an existing option.
+   *
+   * @returns The insertion button template
+   */
   private renderInsertion() {
     const cls = this._cls();
 
     return html`
-      <li class="${cls['item']}" role="option" data-key="__insert__">
+      <li
+        class="${cls['item']}"
+        data-part="item"
+        role="option"
+        data-key="__insert__"
+      >
         <button
           type="button"
           class="${cls['item-link']}"
+          data-part="item-link"
           @click="${(e: MouseEvent) => {
             e.preventDefault();
             this.insert();
@@ -645,12 +805,20 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     `;
   }
 
+  /**
+   * Renders the main options list with all groups and items.
+   * Includes the insertion option if applicable.
+   * Sets up proper ARIA attributes for accessibility.
+   *
+   * @returns The options list template
+   */
   protected override renderList() {
     const cls = this._cls();
 
     return html`
       <ul
         class="${cls['list']}"
+        data-part="list"
         role="listbox"
         tabindex="-1"
         aria-label="${this.getI18nText('list-label', this.defaultI18n)}"
@@ -673,6 +841,12 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     `;
   }
 
+  /**
+   * Renders the complete select component including button, dropdown, and hidden input.
+   * Generates unique IDs for accessibility relationships (aria-controls, aria-labelledby).
+   *
+   * @returns The complete component template
+   */
   render() {
     const cls = this._cls();
     const buttonId = this.id
@@ -685,13 +859,15 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
     return html`
       <div
         data-host-inner
+        data-part="host-inner"
         class="${this.$cls['host-inner']}"
         style="${this.$stl['host-inner']}"
       >
         <button
           id="${buttonId}"
           class="${cls['button']}"
-          style="${this.$stl.button}"
+          data-part="button"
+          style="${this.$stl['button']}"
           type="button"
           role="combobox"
           aria-haspopup="listbox"
@@ -703,10 +879,15 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         >
           <span
             class="${cls['button-text']}"
+            data-part="button-text"
             style="${this.$stl['button-text']}"
             >${this.$text}</span
           >
-          <span class="${cls['icon']}" style="${this.$stl.icon}">
+          <span
+            class="${cls['icon']}"
+            data-part="icon"
+            style="${this.$stl['icon']}"
+          >
             ${this.icon
               ? this.$icons(this.icon) || nothing
               : this.$icons('chevrons-up-down')}
@@ -716,7 +897,8 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         <div
           id="${listboxId}"
           class="${cls['dropdown']} uk-drop"
-          style="${this.$stl.dropdown}"
+          data-part="dropdown"
+          style="${this.$stl['dropdown']}"
           data-uk-dropdown="${this.drop}"
           role="dialog"
           aria-label="${this.getI18nText('button-label', this.defaultI18n)}"

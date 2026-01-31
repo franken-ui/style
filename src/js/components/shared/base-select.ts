@@ -1,4 +1,3 @@
-// refactored base-select.ts
 import { state } from 'lit/decorators.js';
 import { html, type PropertyValues, type TemplateResult } from 'lit';
 import { type OptionGrouped, type OptionItem } from '../../helpers/select';

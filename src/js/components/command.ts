@@ -1,4 +1,21 @@
-// refactored command.ts
+/**
+ * @fileoverview
+ * Command Palette Component - A searchable command palette with keyboard shortcuts.
+ *
+ * This component provides a modal-based command palette that displays categorized
+ * commands with keyboard shortcuts. It supports global keyboard activation via
+ * modifier + key combination (e.g., Ctrl+K) and enables keyboard navigation through
+ * command items.
+ *
+ * Features:
+ * - Global keyboard activation with configurable modifier + key
+ * - Real-time search filtering across command categories
+ * - Keyboard navigation (arrow keys, Enter, Escape)
+ * - Accessibility support (ARIA labels, roles, semantic HTML)
+ * - Customizable styling via CSS classes and inline styles
+ * - Icon support for commands and keyboard shortcuts
+ * - Internationalization support for labels and placeholders
+ */
 import { html, nothing, type PropertyValues, type TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { type OptionItem } from '../helpers/select';
@@ -6,6 +23,10 @@ import { BaseSelectMixin } from './shared/base-select';
 import { Base } from './shared/base';
 import { titleCase } from '../helpers/common';
 
+/**
+ * Class definition mapping for Command component styling.
+ * @internal
+ */
 type Cls = {
   modal: string;
   dialog: string;
@@ -25,6 +46,10 @@ type Cls = {
   'escape-button': string;
 };
 
+/**
+ * Style definition mapping for Command component styling.
+ * @internal
+ */
 type Stl = {
   modal: string;
   dialog: string;
@@ -44,6 +69,24 @@ type Stl = {
   'escape-button': string;
 };
 
+/**
+ * Command Palette Component
+ *
+ * A searchable command palette that displays categorized commands with keyboard shortcuts.
+ * Supports global keyboard activation via modifier + key combination.
+ *
+ * @example
+ * ```html
+ * <uk-command
+ *   key="k"
+ *   modifier="ctrl"
+ *   .options=${{ category: { title: 'Commands', options: [...] } }}
+ * ></uk-command>
+ * ```
+ *
+ * @fires uk-command:click - Dispatched when a command is selected
+ * @fires uk-command:search - Dispatched on search term changes
+ */
 @customElement('uk-command')
 export class Command extends BaseSelectMixin(Base) {
   protected 'cls-default-element' = 'modal';
@@ -51,15 +94,33 @@ export class Command extends BaseSelectMixin(Base) {
   protected readonly 'search-event': string = 'uk-command:search';
   protected readonly 'input-event': string = 'uk-command:click';
 
+  /**
+   * Keyboard key to trigger command palette toggle.
+   * Used with modifier key (e.g., 'k' with 'ctrl' = Ctrl+K).
+   */
   @property({ type: String })
   key: string | undefined;
 
+  /**
+   * Modifier key for global keyboard activation.
+   * Supported values: 'ctrl', 'alt', 'shift', 'meta'.
+   * @default 'ctrl'
+   */
   @property({ type: String })
   modifier: string = 'ctrl';
 
+  /**
+   * Optional modal element ID for manual control.
+   * If not provided, a unique ID will be generated.
+   */
   @property({ type: String })
   toggle: string = '';
 
+  /**
+   * Default CSS class names for component elements.
+   * Can be overridden via configuration.
+   * @internal
+   */
   @state()
   protected $cls: Cls = {
     modal: 'uk-modal uk-flex-top',
@@ -80,6 +141,11 @@ export class Command extends BaseSelectMixin(Base) {
     'escape-button': 'uk-button uk-button-default uk-button-small',
   };
 
+  /**
+   * Default inline styles for component elements.
+   * Can be overridden via configuration.
+   * @internal
+   */
   @state()
   protected $stl: Stl = {
     modal: '',
@@ -114,6 +180,7 @@ export class Command extends BaseSelectMixin(Base) {
     'escape-button-label': 'Esc',
   };
 
+  /** Reference to the modal DOM element. */
   private HTMLModal: Element | null = null;
 
   protected get $value(): string | string[] {
@@ -124,6 +191,10 @@ export class Command extends BaseSelectMixin(Base) {
     return '';
   }
 
+  /**
+   * Lifecycle hook: Called when element is attached to DOM.
+   * Registers global keyboard listener if key property is set.
+   */
   connectedCallback(): void {
     super.connectedCallback();
 
@@ -132,6 +203,10 @@ export class Command extends BaseSelectMixin(Base) {
     }
   }
 
+  /**
+   * Lifecycle hook: Called when element is removed from DOM.
+   * Removes global keyboard listener if previously registered.
+   */
   disconnectedCallback(): void {
     super.disconnectedCallback();
 
@@ -140,6 +215,10 @@ export class Command extends BaseSelectMixin(Base) {
     }
   }
 
+  /**
+   * Lifecycle hook: Called after first render.
+   * Initializes modal element references and event listeners.
+   */
   protected firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated?.(_changedProperties);
 
@@ -165,6 +244,11 @@ export class Command extends BaseSelectMixin(Base) {
 
   protected initializeValue(): void {}
 
+  /**
+   * Handles global keydown events for modal activation.
+   * Toggles modal when the configured modifier + key combination is pressed.
+   * @param e - KeyboardEvent from document
+   */
   private handleGlobalKeydown = (e: KeyboardEvent): void => {
     const modifierPressed = this.getModifierPressed(e);
 
@@ -176,6 +260,10 @@ export class Command extends BaseSelectMixin(Base) {
     }
   };
 
+  /**
+   * Sets focus to the search input field.
+   * Called when modal is opened to enable immediate search input.
+   */
   private focusSearchInput(): void {
     const input = this.renderRoot.querySelector(
       'input[type="text"]',
@@ -185,6 +273,12 @@ export class Command extends BaseSelectMixin(Base) {
     }
   }
 
+  /**
+   * Computes computed class names for list items and sub-elements.
+   * Adds dynamic classes based on item state (disabled, focused, etc.).
+   * @param options - Item and index information
+   * @returns Object containing computed class names for all item parts
+   */
   protected _cls(options?: { item: OptionItem; index: number }): {
     button: string;
     icon: string;
@@ -204,8 +298,8 @@ export class Command extends BaseSelectMixin(Base) {
     return {
       button: '',
       icon: '',
-      list: this.$cls.list,
-      item: options?.item.disabled === true ? 'uk-disabled' : this.$cls.item,
+      list: this.$cls['list'],
+      item: options?.item.disabled === true ? 'uk-disabled' : this.$cls['item'],
       'item-header': this.$cls['item-header'],
       'item-link':
         options?.item.disabled === false
@@ -223,11 +317,20 @@ export class Command extends BaseSelectMixin(Base) {
     };
   }
 
+  /**
+   * Handles click events on command list items.
+   * Selects the clicked item and closes the modal.
+   * @param options - Item and index information
+   */
   protected onClick(options: { item: OptionItem; index: number }): void {
     const { item } = options;
     this.select(item);
   }
 
+  /**
+   * Handles Enter key press on focused list item.
+   * Selects the currently focused item.
+   */
   protected onKeydownEnter(): void {
     const dataset = this.HTMLRectActive?.dataset;
 
@@ -239,6 +342,11 @@ export class Command extends BaseSelectMixin(Base) {
     }
   }
 
+  /**
+   * Selects a command item and dispatches selection event.
+   * Closes the modal and emits 'uk-command:click' event with selected item.
+   * @param item - The command item to select
+   */
   protected select(item: OptionItem): void {
     if (item.disabled) {
       return;
@@ -259,6 +367,14 @@ export class Command extends BaseSelectMixin(Base) {
     );
   }
 
+  /**
+   * Renders a single command list item.
+   * Includes icon, text, and keyboard shortcut if available.
+   * @param key - Group key for the item
+   * @param item - OptionItem data
+   * @param index - Index within the group
+   * @returns Template for the list item or undefined
+   */
   protected renderListItem(
     key: string,
     item: OptionItem,
@@ -269,6 +385,7 @@ export class Command extends BaseSelectMixin(Base) {
 
     return html`
       <li
+        data-part="item"
         class="${cls['item']}"
         style="${this.$stl['item']}"
         role="option"
@@ -278,6 +395,7 @@ export class Command extends BaseSelectMixin(Base) {
         data-index="${index}"
       >
         <a
+          data-part="item-link"
           class="${cls['item-link']}"
           style="${this.$stl['item-link']}"
           @click="${() => this.onClick({ item, index })}"
@@ -288,12 +406,14 @@ export class Command extends BaseSelectMixin(Base) {
             : ''}"
         >
           <div
+            data-part="item-wrapper"
             class="${cls['item-wrapper']}"
             style="${this.$stl['item-wrapper']}"
           >
             ${item.data.icon
               ? html`
                   <span
+                    data-part="item-icon"
                     class="${cls['item-icon']}"
                     style="${this.$stl['item-icon']}"
                   >
@@ -301,12 +421,17 @@ export class Command extends BaseSelectMixin(Base) {
                   </span>
                 `
               : nothing}
-            <span class="${cls['item-text']}" style="${this.$stl['item-text']}">
+            <span
+              data-part="item-text"
+              class="${cls['item-text']}"
+              style="${this.$stl['item-text']}"
+            >
               ${item.text}
             </span>
             ${item.data.key
               ? html`
                   <span
+                    data-part="item-key"
                     class="${cls['item-key']}"
                     style="${this.$stl['item-key']}"
                   >
@@ -321,6 +446,13 @@ export class Command extends BaseSelectMixin(Base) {
     `;
   }
 
+  /**
+   * Calculates the global index of an item across all groups.
+   * Used for keyboard navigation and focus management.
+   * @param key - Group key
+   * @param index - Index within the group
+   * @returns Global index or -1 if not found
+   */
   private getGlobalIndex(key: string, index: number): number {
     let globalIndex = 0;
     let found = false;
@@ -337,6 +469,12 @@ export class Command extends BaseSelectMixin(Base) {
     return found ? globalIndex : -1;
   }
 
+  /**
+   * Checks if the specified modifier key is pressed.
+   * @param e - KeyboardEvent to check
+   * @param modifier - Modifier name ('ctrl', 'alt', 'shift', 'meta')
+   * @returns True if modifier is pressed
+   */
   private getModifierPressed(e: KeyboardEvent, modifier?: string): boolean {
     const mod = modifier || this.modifier;
 
@@ -354,6 +492,10 @@ export class Command extends BaseSelectMixin(Base) {
     }
   }
 
+  /**
+   * Handles keydown events in the search input.
+   * Supports keyboard navigation and direct command execution via shortcuts.
+   */
   private onInputKeydown = (e: KeyboardEvent): void => {
     if (!this.$open) {
       return;
@@ -384,10 +526,19 @@ export class Command extends BaseSelectMixin(Base) {
     });
   };
 
+  /**
+   * Renders the search header with icon, input field, and close button.
+   * @returns Template for the header section
+   */
   private renderSearch(): TemplateResult {
     return html`
-      <div class="${this.$cls['header']}" style="${this.$stl['header']}">
+      <div
+        data-part="header"
+        class="${this.$cls['header']}"
+        style="${this.$stl['header']}"
+      >
         <div
+          data-part="header-icon"
           class="${this.$cls['header-icon']}"
           style="${this.$stl['header-icon']}"
           aria-hidden="true"
@@ -395,6 +546,7 @@ export class Command extends BaseSelectMixin(Base) {
           ${this.$icons('search')}
         </div>
         <div
+          data-part="header-input"
           class="${this.$cls['header-input']}"
           style="${this.$stl['header-input']}"
         >
@@ -413,11 +565,13 @@ export class Command extends BaseSelectMixin(Base) {
           />
         </div>
         <div
+          data-part="header-esc"
           class="${this.$cls['header-esc']}"
           style="${this.$stl['header-esc']}"
         >
           <button
             type="button"
+            data-part="escape-button"
             class="${this.$cls['escape-button']} uk-modal-close"
             style="${this.$stl['escape-button']}"
             aria-label="${this.getI18nText('close-label', this.defaultI18n)}"
@@ -430,6 +584,11 @@ export class Command extends BaseSelectMixin(Base) {
     `;
   }
 
+  /**
+   * Renders the main component template.
+   * Contains the modal wrapper, dialog, header, and command list.
+   * @returns Template for the command palette component
+   */
   render(): TemplateResult {
     const modalId =
       this.toggle ||
@@ -438,6 +597,7 @@ export class Command extends BaseSelectMixin(Base) {
     return html`
       <div
         data-host-inner
+        data-part="modal"
         class="${this.$cls['modal']}"
         style="${this.$stl['modal']}"
         id="${modalId}"
@@ -447,8 +607,9 @@ export class Command extends BaseSelectMixin(Base) {
         aria-label="${this.getI18nText('modal-label', this.defaultI18n)}"
       >
         <div
-          class="${this.$cls.dialog}"
-          style="${this.$stl.dialog}"
+          data-part="dialog"
+          class="${this.$cls['dialog']}"
+          style="${this.$stl['dialog']}"
           role="document"
         >
           ${this.renderSearch()} ${this.renderList()}

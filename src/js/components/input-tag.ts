@@ -1,3 +1,11 @@
+/**
+ * @fileoverview
+ * A headless tag input component that allows users to add, edit, and remove tags.
+ * All styling is delegated to `cls` and `stl` attributes for maximum flexibility.
+ * This component provides full i18n support, keyboard navigation, form integration,
+ * and ARIA accessibility features.
+ */
+
 import { html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { parseOptions } from '../helpers/options';
@@ -608,12 +616,14 @@ export class InputTag extends InputMixin(Base) {
 
     return html`
       <div
+        data-part="tag"
         class="${this.$cls['tag'] || ''}"
         style="${this.$stl['tag'] || ''}"
         role="listitem"
         data-tag-index="${index}"
       >
         <span
+          data-part="tag-text"
           class="${this.$cls['tag-text'] || ''}"
           style="${this.$stl['tag-text'] || ''}"
           role="button"
@@ -630,6 +640,7 @@ export class InputTag extends InputMixin(Base) {
           ${tag}
         </span>
         <button
+          data-part="tag-remove"
           type="button"
           class="${this.$cls['tag-remove'] || ''}"
           style="${this.$stl['tag-remove'] || ''}"
@@ -654,10 +665,12 @@ export class InputTag extends InputMixin(Base) {
 
     return html`
       <div
+        data-part="error"
         class="${this.$cls['error'] || ''}"
         style="${this.$stl['error'] || ''}"
         role="alert"
         aria-live="polite"
+        id="tag-error"
       >
         ${this.$error}
       </div>
@@ -678,6 +691,7 @@ export class InputTag extends InputMixin(Base) {
 
     return html`
       <div
+        data-part="host-inner"
         data-host-inner
         class="${this.$cls['host-inner'] || ''}"
         style="${this.$stl['host-inner'] || ''}"
@@ -685,10 +699,12 @@ export class InputTag extends InputMixin(Base) {
         data-has-error="${!!this.$error}"
       >
         <div
+          data-part="wrapper"
           class="${this.$cls['wrapper'] || ''}"
           style="${this.$stl['wrapper'] || ''}"
         >
           <div
+            data-part="tag-list"
             class="${this.$cls['tag-list'] || ''}"
             style="${this.$stl['tag-list'] || ''}"
             role="list"
@@ -698,6 +714,7 @@ export class InputTag extends InputMixin(Base) {
           </div>
 
           <input
+            data-part="input"
             class="${this.$cls['input'] || ''}"
             style="${this.$stl['input'] || ''}"
             type="text"

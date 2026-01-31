@@ -1,3 +1,20 @@
+/**
+ * @fileoverview
+ * Icon Component - A headless Lucide icon renderer with full accessibility support.
+ *
+ * This component provides a simple, accessible wrapper around Lucide icons with support
+ * for customizable sizing, colors, strokes, and styling. It integrates with the Base
+ * component to support i18n, custom CSS classes, and inline styles.
+ *
+ * Features:
+ * - 1000+ Lucide icons support
+ * - Full ARIA accessibility (labels, roles, hidden states)
+ * - i18n support for icon labels
+ * - Decorative vs semantic icon modes
+ * - Customizable size, stroke, color, and fill
+ * - Configuration via attributes or script tags
+ * - Dynamic SVG generation and styling
+ */
 import { nothing, type PropertyValues } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import * as icons from 'lucide';

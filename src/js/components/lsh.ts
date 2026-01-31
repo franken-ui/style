@@ -1,4 +1,12 @@
-// refactored lsh.ts
+/**
+ * @fileoverview
+ * Theme/style switcher component that manages and persists style configurations.
+ *
+ * The Lsh component provides theme switching capabilities (light/dark mode) and other style
+ * configurations with localStorage persistence and cross-instance synchronization. It emits
+ * cancelable events and supports both toggle mode and specific value selection.
+ */
+
 import { type PropertyValues, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { Base } from './shared/base';
@@ -548,9 +556,10 @@ export class Lsh extends Base {
   render() {
     return html`
       <button
+        data-part="button"
         data-host-inner
-        class="${this.$cls.button} ${this.isActive ? 'uk-active' : ''}"
-        style="${this.$stl.button}"
+        class="${this.$cls['button']} ${this.isActive ? 'uk-active' : ''}"
+        style="${this.$stl['button']}"
         @click="${this.handleClick}"
         @keydown="${this.handleKeydown}"
         type="button"

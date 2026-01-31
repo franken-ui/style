@@ -10,6 +10,9 @@ export default defineConfig({
       formats: ['iife'],
     },
   },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  },
   esbuild: {
     legalComments: 'none',
     drop: ['console'],
