@@ -209,6 +209,91 @@ if (typeof window !== 'undefined') {
     };
   }
 
+  /**
+   * Parse a class name string into a ParsedClass object
+   */
+  function parseClassName(className: string): ParsedClass | null {
+    const normalizedClass = normalizeClsClass(className);
+    const match = normalizedClass.match(classParser);
+
+    if (!match) {
+      return null;
+    }
+
+    const [, dark, prefix, baseClass, state] = match;
+    return {
+      baseClass,
+      state,
+      fullClass: normalizedClass,
+      isDark: !!dark,
+      prefix: prefix || null,
+    };
+  }
+
+  /**
+   * Get safelist classes from window.FS.safelist
+   */
+  function getSafelistClasses(): ParsedClass[] {
+    const safelist = (window as any).FS?.safelist;
+
+    if (!safelist) {
+      return [];
+    }
+
+    if (!Array.isArray(safelist)) {
+      console.warn('[fs] FS.safelist must be an array. Ignoring safelist.');
+      return [];
+    }
+
+    const parsedClasses: ParsedClass[] = [];
+
+    safelist.forEach((item: any) => {
+      if (typeof item === 'string') {
+        const parsed = parseClassName(item);
+        if (parsed) {
+          parsedClasses.push(parsed);
+        } else {
+          console.warn(`[fs] Invalid safelist class: "${item}"`);
+        }
+      } else if (typeof item === 'object' && item !== null) {
+        // Support object format: { class: 'btn', states: [':hover', ':active'] }
+        const baseClass = item.class || item.className;
+        if (!baseClass || typeof baseClass !== 'string') {
+          console.warn('[fs] Safelist object missing "class" property:', item);
+          return;
+        }
+
+        const itemStates = item.states || [];
+        const itemPrefixes = item.prefixes || [null];
+        const itemDarkModes = item.dark === true ? [false, true] : [false];
+
+        // Generate all combinations
+        itemDarkModes.forEach(isDark => {
+          itemPrefixes.forEach((prefix: any) => {
+            itemStates.forEach((state: any) => {
+              // Construct the full class name
+              let fullClass = baseClass;
+              if (prefix) fullClass = `${prefix}:${fullClass}`;
+              if (isDark) fullClass = `dark:${fullClass}`;
+
+              parsedClasses.push({
+                baseClass,
+                state,
+                fullClass,
+                isDark,
+                prefix: prefix || null,
+              });
+            });
+          });
+        });
+      } else {
+        console.warn('[fs] Invalid safelist entry:', item);
+      }
+    });
+
+    return parsedClasses;
+  }
+
   function extractInteractiveClasses(element: Element): ParsedClass[] {
     const interactiveClasses: ParsedClass[] = [];
     const classLists: { classes: string[] | DOMTokenList; fromCls: boolean }[] =
@@ -268,6 +353,10 @@ if (typeof window !== 'undefined') {
       nodes.forEach(node => {
         allInteractiveClasses.push(...extractInteractiveClasses(node));
       });
+
+      // Add safelist classes
+      const safelistClasses = getSafelistClasses();
+      allInteractiveClasses.push(...safelistClasses);
 
       const generatedCss: GeneratedCSS = {
         styles: { base: [], media: {} },
@@ -437,7 +526,13 @@ if (typeof window !== 'undefined') {
       console.info(`[fs] Loaded ${customRulesCount} custom rule(s)`);
     }
 
-    // Step 1: Always generate styles once (for all [data-fs] elements)
+    // Log safelist info
+    const safelistCount = getSafelistClasses().length;
+    if (safelistCount > 0) {
+      console.info(`[fs] Loaded ${safelistCount} safelist class(es)`);
+    }
+
+    // Step 1: Always generate styles once (for all [data-fs] elements + safelist)
     generateInteractiveStyles();
 
     // Step 2: Only activate MutationObserver if [data-fs] exists
@@ -486,6 +581,7 @@ if (typeof window !== 'undefined') {
       stop: () => currentObserver?.disconnect(),
       getCache: () => ruleCache,
       getRules: () => getMergedRules(),
+      getSafelist: () => getSafelistClasses(),
       _initialized: true, // Flag for debugging
     });
   }
