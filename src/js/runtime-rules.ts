@@ -1867,14 +1867,8 @@ export const rules = [
   {
     layer: 'styles',
     selector: 'ring',
-    properties: [
-      '--tw-ring-width',
-      '--tw-ring-color',
-      '--tw-ring-shadow',
-      'box-shadow',
-    ],
+    properties: ['--tw-ring-color', '--tw-ring-shadow', 'box-shadow'],
     values: [
-      '1px',
       'var({var}, currentColor)',
       'var(--tw-ring-inset,) 0 0 0 calc(var(--tw-ring-width) + var(--tw-ring-offset-width)) var(--tw-ring-color)',
       'var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)',
@@ -1885,14 +1879,8 @@ export const rules = [
   {
     layer: 'styles',
     selector: 'ring/o',
-    properties: [
-      '--tw-ring-width',
-      '--tw-ring-color',
-      '--tw-ring-shadow',
-      'box-shadow',
-    ],
+    properties: ['--tw-ring-color', '--tw-ring-shadow', 'box-shadow'],
     values: [
-      '1px',
       'color-mix(in oklab, var({var}) var({var2}, 100%), transparent)',
       'var(--tw-ring-inset,) 0 0 0 calc(var(--tw-ring-width) + var(--tw-ring-offset-width)) var(--tw-ring-color)',
       'var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)',

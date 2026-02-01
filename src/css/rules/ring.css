@@ -1,6 +1,5 @@
 @layer styles {
   .ring {
-    --tw-ring-width: 1px;
     --tw-ring-color: var(--ring, currentColor);
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
       calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -10,7 +9,6 @@
       var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .dark .dark\:ring {
-    --tw-ring-width: 1px;
     --tw-ring-color: var(--dark-ring, currentColor);
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
       calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -22,7 +20,6 @@
 
   @media (min-width: 40rem) {
     .sm\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--sm-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -32,7 +29,6 @@
         var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
     .dark .dark\:sm\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--dark-sm-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -45,7 +41,6 @@
 
   @media (min-width: 48rem) {
     .md\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--md-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -55,7 +50,6 @@
         var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
     .dark .dark\:md\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--dark-md-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -68,7 +62,6 @@
 
   @media (min-width: 64rem) {
     .lg\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--lg-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -78,7 +71,6 @@
         var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
     .dark .dark\:lg\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--dark-lg-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -91,7 +83,6 @@
 
   @media (min-width: 80rem) {
     .xl\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--xl-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -101,7 +92,6 @@
         var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
     .dark .dark\:xl\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--dark-xl-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -114,7 +104,6 @@
 
   @media (min-width: 96rem) {
     .\32xl\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--\32xl-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
@@ -124,7 +113,6 @@
         var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
     .dark .dark\:2xl\:ring {
-      --tw-ring-width: 1px;
       --tw-ring-color: var(--dark-2xl-ring, currentColor);
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0
         calc(var(--tw-ring-width) + var(--tw-ring-offset-width))
