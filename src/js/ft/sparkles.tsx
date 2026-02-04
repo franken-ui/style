@@ -3,11 +3,12 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 import { motion, useAnimation } from 'motion/react';
-import { createRoot } from 'react-dom/client';
+import { cn, render } from './shared/common';
 
 type ParticlesProps = {
   id?: string;
   className?: string;
+  stl?: { [key: string]: string };
   background?: string;
   particleSize?: number;
   minSize?: number;
@@ -20,6 +21,7 @@ export const SparklesCore = (props: ParticlesProps) => {
   const {
     id,
     className,
+    stl,
     background,
     minSize,
     maxSize,
@@ -56,8 +58,8 @@ export const SparklesCore = (props: ParticlesProps) => {
   return (
     <motion.div
       animate={controls}
-      className="opacity"
-      style={{ '--opacity': '0' } as React.CSSProperties}
+      className={cn('opacity', className)}
+      style={{ '--opacity': '0', ...stl } as React.CSSProperties}
     >
       {init && (
         <Particles
@@ -439,28 +441,11 @@ export const SparklesCore = (props: ParticlesProps) => {
   );
 };
 
-document.querySelectorAll('[data-ft-sparkles]').forEach(container => {
-  const configScript = container.querySelector('script[data-fn="props"]');
-
-  // Default props
-  let defaultProps = {
-    background: 'transparent',
-    minSize: 0.4,
-    maxSize: 1,
-    particleDensity: 1200,
-    className: 'h-full w-full',
-    particleColor: '#FFFFFF',
-  };
-
-  if (configScript) {
-    try {
-      const props = JSON.parse(configScript.textContent || '{}');
-      defaultProps = { ...defaultProps, ...props };
-    } catch (error) {
-      console.error('Failed to parse sparkles config:', error);
-    }
-  }
-
-  const root = createRoot(container as HTMLElement);
-  root.render(<SparklesCore {...defaultProps} />);
+render('[data-ft-sparkles]', SparklesCore, {
+  background: 'transparent',
+  minSize: 0.4,
+  maxSize: 1,
+  particleDensity: 1200,
+  className: 'h-full w-full',
+  particleColor: '#FFFFFF',
 });

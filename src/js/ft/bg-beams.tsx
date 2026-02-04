@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { createRoot } from 'react-dom/client';
+import { cn, render } from './shared/common';
 
 export const BackgroundBeams = React.memo(
   ({
@@ -64,19 +64,13 @@ export const BackgroundBeams = React.memo(
     ];
     return (
       <div
-        className={[
-          'inset display-flex absolute h-full w-full items-center justify-center',
-          className,
-        ]
-          .join(' ')
-          .split(/\s+/)
-          .filter((v, i, a) => a.indexOf(v) === i)
-          .join(' ')}
+        className={cn('inset display-flex absolute h-full w-full items-center justify-center', className)}
         style={
           {
             '--inset': '0',
             maskRepeat: 'no-repeat',
             maskSize: '40px',
+            ...stl,
           } as React.CSSProperties
         }
       >
@@ -157,29 +151,4 @@ export const BackgroundBeams = React.memo(
 
 BackgroundBeams.displayName = 'BackgroundBeams';
 
-document.querySelectorAll('[data-ft-bg-beams]').forEach(container => {
-  const configScript = container.querySelector('script[data-fn="props"]');
-
-  let defaultProps = {
-    className: '',
-    stl: {},
-  };
-
-  if (configScript) {
-    try {
-      const props = JSON.parse(configScript.textContent || '{}');
-      defaultProps = { ...defaultProps, ...props };
-    } catch (error) {
-      console.error('Failed to parse bg-beams config:', error);
-    }
-  }
-
-  const root = createRoot(container);
-
-  root.render(
-    <BackgroundBeams
-      className={defaultProps.className}
-      stl={defaultProps.stl}
-    />,
-  );
-});
+render('[data-ft-bg-beams]', BackgroundBeams);

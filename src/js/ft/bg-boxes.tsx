@@ -1,8 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion } from 'motion/react';
+import { cn, render } from './shared/common';
 
-export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
+export const BoxesCore = ({ className, stl, ...rest }: { className?: string; stl?: { [key: string]: string }; }) => {
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
   let colors = [
@@ -22,18 +23,19 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 
   return (
     <div
-      style={
-        {
-          transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
-          '--top': '-25%',
-          '--left': '25%',
-          '--z': '0',
-          '--translate-x': '-50%',
-          '--translate-y': '-50%',
-          '--p': '4',
-        } as React.CSSProperties
-      }
-      className="top left z display-flex -translate-x -translate-y p absolute h-full w-full"
+    className={cn('top left z display-flex -translate-x -translate-y p absolute h-full w-full', className)}
+    style={
+      {
+        transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
+        '--top': '-25%',
+        '--left': '25%',
+        '--z': '0',
+        '--translate-x': '-50%',
+        '--translate-y': '-50%',
+        '--p': '4',
+        ...stl
+      } as React.CSSProperties
+    }
       {...rest}
     >
       {rows.map((_, i) => (
@@ -115,3 +117,5 @@ document.querySelectorAll('[data-ft-bg-boxes]').forEach(container => {
 
   root.render(<Boxes />);
 });
+
+render('[data-ft-bg-boxes]', Boxes);

@@ -1,6 +1,6 @@
-import { createRoot } from 'react-dom/client';
 import { motion } from 'motion/react';
 import React from 'react';
+import { cn, render } from './shared/common';
 
 export const BackgroundLines = ({
   children,
@@ -17,11 +17,7 @@ export const BackgroundLines = ({
 }) => {
   return (
     <div
-      className={['h w-full md:h-screen', className]
-        .join(' ')
-        .split(/\s+/)
-        .filter((v, i, a) => a.indexOf(v) === i)
-        .join(' ')}
+      className={cn('h w-full md:h-screen', className)}
       style={{ '--h': '80', ...stl } as React.CSSProperties}
     >
       <SVG svgOptions={svgOptions} />
@@ -153,33 +149,4 @@ const SVG = ({
   );
 };
 
-document.querySelectorAll('[data-ft-bg-lines]').forEach(container => {
-  const configScript = container.querySelector('script[data-fn="props"]');
-  const children = container.querySelector('template[data-fn="template"]');
-
-  let defaultProps = {
-    className: '',
-    stl: {},
-    svgOptions: {},
-  };
-
-  if (configScript) {
-    try {
-      const props = JSON.parse(configScript.textContent || '{}');
-      defaultProps = { ...defaultProps, ...props };
-    } catch (error) {
-      console.error('Failed to parse bg-lines config:', error);
-    }
-  }
-
-  const root = createRoot(container);
-
-  root.render(
-    <BackgroundLines
-      className={defaultProps.className}
-      stl={defaultProps.stl}
-      children={children?.innerHTML.trim() || ''}
-      svgOptions={defaultProps.svgOptions}
-    />,
-  );
-});
+render('[data-ft-bg-lines]', BackgroundLines);

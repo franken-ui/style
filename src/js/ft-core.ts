@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { motion, useAnimation, AnimatePresence } from 'motion/react';
+import { motion, useInView, useAnimation, AnimatePresence } from 'motion/react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
@@ -11,7 +11,7 @@ import { loadSlim } from '@tsparticles/slim';
 (window as any).ReactDOM = { createRoot };
 
 // Expose Motion with all exports
-(window as any).Motion = { motion, useAnimation, AnimatePresence };
+(window as any).Motion = { motion, useInView, useAnimation, AnimatePresence };
 
 // Expose Particles - default export
 (window as any).Particles = Particles;

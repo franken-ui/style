@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from './shared/common';
 
 type Testimonial = {
   quote: string;
@@ -288,27 +288,6 @@ export const AnimatedTestimonials = ({
   );
 };
 
-document
-  .querySelectorAll('[data-ft-animated-testimonials]')
-  .forEach(container => {
-    const configScript = container.querySelector('script[data-fn="props"]');
-
-    let defaultProps = {
-      testimonials: [],
-    };
-
-    if (configScript) {
-      try {
-        const props = JSON.parse(configScript.textContent || '{}');
-        defaultProps = { ...defaultProps, ...props };
-      } catch (error) {
-        console.error('Failed to parse testimonials config:', error);
-      }
-    }
-
-    const root = createRoot(container as HTMLElement);
-
-    root.render(
-      <AnimatedTestimonials testimonials={defaultProps.testimonials} />,
-    );
-  });
+render('[data-ft-animated-testimonials]', AnimatedTestimonials, {
+  testimonials: [],
+});
