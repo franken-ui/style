@@ -948,6 +948,186 @@
   inherits: false;
 }
 
+@property --tw-mask-linear {
+  syntax: '*';
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+
+@property --tw-mask-radial {
+  syntax: '*';
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+
+@property --tw-mask-conic {
+  syntax: '*';
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+
+@property --tw-mask-left {
+  syntax: '*';
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+
+@property --tw-mask-right {
+  syntax: '*';
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+
+@property --tw-mask-bottom {
+  syntax: '*';
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+
+@property --tw-mask-top {
+  syntax: '*';
+  inherits: false;
+  initial-value: linear-gradient(#fff, #fff);
+}
+
+@property --tw-mask-top-from-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-mask-top-to-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-mask-top-from-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: black;
+}
+
+@property --tw-mask-top-to-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --tw-mask-right-from-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-mask-right-to-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-mask-right-from-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: black;
+}
+
+@property --tw-mask-right-to-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --tw-mask-bottom-from-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-mask-bottom-to-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-mask-bottom-from-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: black;
+}
+
+@property --tw-mask-bottom-to-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --tw-mask-left-from-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-mask-left-to-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-mask-left-from-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: black;
+}
+
+@property --tw-mask-left-to-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --tw-mask-radial-from-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-mask-radial-to-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-mask-radial-from-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: black;
+}
+
+@property --tw-mask-radial-to-color {
+  syntax: '*';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --tw-mask-radial-shape {
+  syntax: '*';
+  inherits: false;
+  initial-value: ellipse;
+}
+
+@property --tw-mask-radial-size {
+  syntax: '*';
+  inherits: false;
+  initial-value: farthest-corner;
+}
+
+@property --tw-mask-radial-position {
+  syntax: '*';
+  inherits: false;
+  initial-value: center;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
