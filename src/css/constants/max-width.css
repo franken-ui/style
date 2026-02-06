@@ -1,0 +1,299 @@
+@layer utilities {
+  .max-w-full {
+    max-width: 100%;
+  }
+
+  .max-w-screen {
+    max-width: 100vw;
+  }
+
+  .max-w-dvw {
+    max-width: 100dvw;
+  }
+
+  .max-w-dvh {
+    max-width: 100dvh;
+  }
+
+  .max-w-lvw {
+    max-width: 100lvw;
+  }
+
+  .max-w-lvh {
+    max-width: 100lvh;
+  }
+
+  .max-w-svw {
+    max-width: 100svw;
+  }
+
+  .max-w-svh {
+    max-width: 100svh;
+  }
+
+  .max-w-min {
+    max-width: min-content;
+  }
+
+  .max-w-max {
+    max-width: max-content;
+  }
+
+  .max-w-fit {
+    max-width: fit-content;
+  }
+
+  .max-w-none {
+    max-width: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:max-w-full {
+      max-width: 100%;
+    }
+
+    .sm\:max-w-screen {
+      max-width: 100vw;
+    }
+
+    .sm\:max-w-dvw {
+      max-width: 100dvw;
+    }
+
+    .sm\:max-w-dvh {
+      max-width: 100dvh;
+    }
+
+    .sm\:max-w-lvw {
+      max-width: 100lvw;
+    }
+
+    .sm\:max-w-lvh {
+      max-width: 100lvh;
+    }
+
+    .sm\:max-w-svw {
+      max-width: 100svw;
+    }
+
+    .sm\:max-w-svh {
+      max-width: 100svh;
+    }
+
+    .sm\:max-w-min {
+      max-width: min-content;
+    }
+
+    .sm\:max-w-max {
+      max-width: max-content;
+    }
+
+    .sm\:max-w-fit {
+      max-width: fit-content;
+    }
+
+    .sm\:max-w-none {
+      max-width: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:max-w-full {
+      max-width: 100%;
+    }
+
+    .md\:max-w-screen {
+      max-width: 100vw;
+    }
+
+    .md\:max-w-dvw {
+      max-width: 100dvw;
+    }
+
+    .md\:max-w-dvh {
+      max-width: 100dvh;
+    }
+
+    .md\:max-w-lvw {
+      max-width: 100lvw;
+    }
+
+    .md\:max-w-lvh {
+      max-width: 100lvh;
+    }
+
+    .md\:max-w-svw {
+      max-width: 100svw;
+    }
+
+    .md\:max-w-svh {
+      max-width: 100svh;
+    }
+
+    .md\:max-w-min {
+      max-width: min-content;
+    }
+
+    .md\:max-w-max {
+      max-width: max-content;
+    }
+
+    .md\:max-w-fit {
+      max-width: fit-content;
+    }
+
+    .md\:max-w-none {
+      max-width: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:max-w-full {
+      max-width: 100%;
+    }
+
+    .lg\:max-w-screen {
+      max-width: 100vw;
+    }
+
+    .lg\:max-w-dvw {
+      max-width: 100dvw;
+    }
+
+    .lg\:max-w-dvh {
+      max-width: 100dvh;
+    }
+
+    .lg\:max-w-lvw {
+      max-width: 100lvw;
+    }
+
+    .lg\:max-w-lvh {
+      max-width: 100lvh;
+    }
+
+    .lg\:max-w-svw {
+      max-width: 100svw;
+    }
+
+    .lg\:max-w-svh {
+      max-width: 100svh;
+    }
+
+    .lg\:max-w-min {
+      max-width: min-content;
+    }
+
+    .lg\:max-w-max {
+      max-width: max-content;
+    }
+
+    .lg\:max-w-fit {
+      max-width: fit-content;
+    }
+
+    .lg\:max-w-none {
+      max-width: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:max-w-full {
+      max-width: 100%;
+    }
+
+    .xl\:max-w-screen {
+      max-width: 100vw;
+    }
+
+    .xl\:max-w-dvw {
+      max-width: 100dvw;
+    }
+
+    .xl\:max-w-dvh {
+      max-width: 100dvh;
+    }
+
+    .xl\:max-w-lvw {
+      max-width: 100lvw;
+    }
+
+    .xl\:max-w-lvh {
+      max-width: 100lvh;
+    }
+
+    .xl\:max-w-svw {
+      max-width: 100svw;
+    }
+
+    .xl\:max-w-svh {
+      max-width: 100svh;
+    }
+
+    .xl\:max-w-min {
+      max-width: min-content;
+    }
+
+    .xl\:max-w-max {
+      max-width: max-content;
+    }
+
+    .xl\:max-w-fit {
+      max-width: fit-content;
+    }
+
+    .xl\:max-w-none {
+      max-width: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:max-w-full {
+      max-width: 100%;
+    }
+
+    .\32xl\:max-w-screen {
+      max-width: 100vw;
+    }
+
+    .\32xl\:max-w-dvw {
+      max-width: 100dvw;
+    }
+
+    .\32xl\:max-w-dvh {
+      max-width: 100dvh;
+    }
+
+    .\32xl\:max-w-lvw {
+      max-width: 100lvw;
+    }
+
+    .\32xl\:max-w-lvh {
+      max-width: 100lvh;
+    }
+
+    .\32xl\:max-w-svw {
+      max-width: 100svw;
+    }
+
+    .\32xl\:max-w-svh {
+      max-width: 100svh;
+    }
+
+    .\32xl\:max-w-min {
+      max-width: min-content;
+    }
+
+    .\32xl\:max-w-max {
+      max-width: max-content;
+    }
+
+    .\32xl\:max-w-fit {
+      max-width: fit-content;
+    }
+
+    .\32xl\:max-w-none {
+      max-width: none;
+    }
+  }
+}

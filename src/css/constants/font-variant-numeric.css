@@ -1,0 +1,35 @@
+@layer utilities {
+  .normal-nums {
+    font-variant-numeric: normal;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:normal-nums {
+      font-variant-numeric: normal;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:normal-nums {
+      font-variant-numeric: normal;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:normal-nums {
+      font-variant-numeric: normal;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:normal-nums {
+      font-variant-numeric: normal;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:normal-nums {
+      font-variant-numeric: normal;
+    }
+  }
+}

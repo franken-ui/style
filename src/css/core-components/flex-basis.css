@@ -1,0 +1,323 @@
+@layer components {
+  .basis-3xs {
+    flex-basis: var(--container-3xs);
+  }
+
+  .basis-2xs {
+    flex-basis: var(--container-2xs);
+  }
+
+  .basis-xs {
+    flex-basis: var(--container-xs);
+  }
+
+  .basis-sm {
+    flex-basis: var(--container-sm);
+  }
+
+  .basis-md {
+    flex-basis: var(--container-md);
+  }
+
+  .basis-lg {
+    flex-basis: var(--container-lg);
+  }
+
+  .basis-xl {
+    flex-basis: var(--container-xl);
+  }
+
+  .basis-2xl {
+    flex-basis: var(--container-2xl);
+  }
+
+  .basis-3xl {
+    flex-basis: var(--container-3xl);
+  }
+
+  .basis-4xl {
+    flex-basis: var(--container-4xl);
+  }
+
+  .basis-5xl {
+    flex-basis: var(--container-5xl);
+  }
+
+  .basis-6xl {
+    flex-basis: var(--container-6xl);
+  }
+
+  .basis-7xl {
+    flex-basis: var(--container-7xl);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:basis-3xs {
+      flex-basis: var(--container-3xs);
+    }
+
+    .sm\:basis-2xs {
+      flex-basis: var(--container-2xs);
+    }
+
+    .sm\:basis-xs {
+      flex-basis: var(--container-xs);
+    }
+
+    .sm\:basis-sm {
+      flex-basis: var(--container-sm);
+    }
+
+    .sm\:basis-md {
+      flex-basis: var(--container-md);
+    }
+
+    .sm\:basis-lg {
+      flex-basis: var(--container-lg);
+    }
+
+    .sm\:basis-xl {
+      flex-basis: var(--container-xl);
+    }
+
+    .sm\:basis-2xl {
+      flex-basis: var(--container-2xl);
+    }
+
+    .sm\:basis-3xl {
+      flex-basis: var(--container-3xl);
+    }
+
+    .sm\:basis-4xl {
+      flex-basis: var(--container-4xl);
+    }
+
+    .sm\:basis-5xl {
+      flex-basis: var(--container-5xl);
+    }
+
+    .sm\:basis-6xl {
+      flex-basis: var(--container-6xl);
+    }
+
+    .sm\:basis-7xl {
+      flex-basis: var(--container-7xl);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:basis-3xs {
+      flex-basis: var(--container-3xs);
+    }
+
+    .md\:basis-2xs {
+      flex-basis: var(--container-2xs);
+    }
+
+    .md\:basis-xs {
+      flex-basis: var(--container-xs);
+    }
+
+    .md\:basis-sm {
+      flex-basis: var(--container-sm);
+    }
+
+    .md\:basis-md {
+      flex-basis: var(--container-md);
+    }
+
+    .md\:basis-lg {
+      flex-basis: var(--container-lg);
+    }
+
+    .md\:basis-xl {
+      flex-basis: var(--container-xl);
+    }
+
+    .md\:basis-2xl {
+      flex-basis: var(--container-2xl);
+    }
+
+    .md\:basis-3xl {
+      flex-basis: var(--container-3xl);
+    }
+
+    .md\:basis-4xl {
+      flex-basis: var(--container-4xl);
+    }
+
+    .md\:basis-5xl {
+      flex-basis: var(--container-5xl);
+    }
+
+    .md\:basis-6xl {
+      flex-basis: var(--container-6xl);
+    }
+
+    .md\:basis-7xl {
+      flex-basis: var(--container-7xl);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:basis-3xs {
+      flex-basis: var(--container-3xs);
+    }
+
+    .lg\:basis-2xs {
+      flex-basis: var(--container-2xs);
+    }
+
+    .lg\:basis-xs {
+      flex-basis: var(--container-xs);
+    }
+
+    .lg\:basis-sm {
+      flex-basis: var(--container-sm);
+    }
+
+    .lg\:basis-md {
+      flex-basis: var(--container-md);
+    }
+
+    .lg\:basis-lg {
+      flex-basis: var(--container-lg);
+    }
+
+    .lg\:basis-xl {
+      flex-basis: var(--container-xl);
+    }
+
+    .lg\:basis-2xl {
+      flex-basis: var(--container-2xl);
+    }
+
+    .lg\:basis-3xl {
+      flex-basis: var(--container-3xl);
+    }
+
+    .lg\:basis-4xl {
+      flex-basis: var(--container-4xl);
+    }
+
+    .lg\:basis-5xl {
+      flex-basis: var(--container-5xl);
+    }
+
+    .lg\:basis-6xl {
+      flex-basis: var(--container-6xl);
+    }
+
+    .lg\:basis-7xl {
+      flex-basis: var(--container-7xl);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:basis-3xs {
+      flex-basis: var(--container-3xs);
+    }
+
+    .xl\:basis-2xs {
+      flex-basis: var(--container-2xs);
+    }
+
+    .xl\:basis-xs {
+      flex-basis: var(--container-xs);
+    }
+
+    .xl\:basis-sm {
+      flex-basis: var(--container-sm);
+    }
+
+    .xl\:basis-md {
+      flex-basis: var(--container-md);
+    }
+
+    .xl\:basis-lg {
+      flex-basis: var(--container-lg);
+    }
+
+    .xl\:basis-xl {
+      flex-basis: var(--container-xl);
+    }
+
+    .xl\:basis-2xl {
+      flex-basis: var(--container-2xl);
+    }
+
+    .xl\:basis-3xl {
+      flex-basis: var(--container-3xl);
+    }
+
+    .xl\:basis-4xl {
+      flex-basis: var(--container-4xl);
+    }
+
+    .xl\:basis-5xl {
+      flex-basis: var(--container-5xl);
+    }
+
+    .xl\:basis-6xl {
+      flex-basis: var(--container-6xl);
+    }
+
+    .xl\:basis-7xl {
+      flex-basis: var(--container-7xl);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:basis-3xs {
+      flex-basis: var(--container-3xs);
+    }
+
+    .\32xl\:basis-2xs {
+      flex-basis: var(--container-2xs);
+    }
+
+    .\32xl\:basis-xs {
+      flex-basis: var(--container-xs);
+    }
+
+    .\32xl\:basis-sm {
+      flex-basis: var(--container-sm);
+    }
+
+    .\32xl\:basis-md {
+      flex-basis: var(--container-md);
+    }
+
+    .\32xl\:basis-lg {
+      flex-basis: var(--container-lg);
+    }
+
+    .\32xl\:basis-xl {
+      flex-basis: var(--container-xl);
+    }
+
+    .\32xl\:basis-2xl {
+      flex-basis: var(--container-2xl);
+    }
+
+    .\32xl\:basis-3xl {
+      flex-basis: var(--container-3xl);
+    }
+
+    .\32xl\:basis-4xl {
+      flex-basis: var(--container-4xl);
+    }
+
+    .\32xl\:basis-5xl {
+      flex-basis: var(--container-5xl);
+    }
+
+    .\32xl\:basis-6xl {
+      flex-basis: var(--container-6xl);
+    }
+
+    .\32xl\:basis-7xl {
+      flex-basis: var(--container-7xl);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer components {
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:aspect-video {
+      aspect-ratio: var(--aspect-video);
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@layer utilities {
+  .snap-none {
+    scroll-snap-type: none;
+  }
+
+  .snap-mandatory {
+    --tw-scroll-snap-strictness: mandatory;
+  }
+
+  .snap-proximity {
+    --tw-scroll-snap-strictness: proximity;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:snap-none {
+      scroll-snap-type: none;
+    }
+
+    .sm\:snap-mandatory {
+      --tw-scroll-snap-strictness: mandatory;
+    }
+
+    .sm\:snap-proximity {
+      --tw-scroll-snap-strictness: proximity;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:snap-none {
+      scroll-snap-type: none;
+    }
+
+    .md\:snap-mandatory {
+      --tw-scroll-snap-strictness: mandatory;
+    }
+
+    .md\:snap-proximity {
+      --tw-scroll-snap-strictness: proximity;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:snap-none {
+      scroll-snap-type: none;
+    }
+
+    .lg\:snap-mandatory {
+      --tw-scroll-snap-strictness: mandatory;
+    }
+
+    .lg\:snap-proximity {
+      --tw-scroll-snap-strictness: proximity;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:snap-none {
+      scroll-snap-type: none;
+    }
+
+    .xl\:snap-mandatory {
+      --tw-scroll-snap-strictness: mandatory;
+    }
+
+    .xl\:snap-proximity {
+      --tw-scroll-snap-strictness: proximity;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:snap-none {
+      scroll-snap-type: none;
+    }
+
+    .\32xl\:snap-mandatory {
+      --tw-scroll-snap-strictness: mandatory;
+    }
+
+    .\32xl\:snap-proximity {
+      --tw-scroll-snap-strictness: proximity;
+    }
+  }
+}

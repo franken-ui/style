@@ -1,0 +1,71 @@
+@layer components {
+  .transform-gpu {
+    transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+      var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+
+  .transform-cpu {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+      var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+
+    .sm\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+
+    .md\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+
+    .lg\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+
+    .xl\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:transform-gpu {
+      transform: translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,)
+        var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+
+    .\32xl\:transform-cpu {
+      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
+        var(--tw-skew-x,) var(--tw-skew-y,);
+    }
+  }
+}

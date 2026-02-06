@@ -1,0 +1,71 @@
+@layer components {
+  .font-mono {
+    font-family: var(--font-family-mono);
+  }
+  .font-sans {
+    font-family: var(--font-family-sans);
+  }
+  .font-serif {
+    font-family: var(--font-family-serif);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .sm\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .sm\:font-serif {
+      font-family: var(--font-family-serif);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .md\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .md\:font-serif {
+      font-family: var(--font-family-serif);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .lg\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .lg\:font-serif {
+      font-family: var(--font-family-serif);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .xl\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .xl\:font-serif {
+      font-family: var(--font-family-serif);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:font-mono {
+      font-family: var(--font-family-mono);
+    }
+    .\32xl\:font-sans {
+      font-family: var(--font-family-sans);
+    }
+    .\32xl\:font-serif {
+      font-family: var(--font-family-serif);
+    }
+  }
+}

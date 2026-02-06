@@ -1,0 +1,59 @@
+@layer utilities {
+  .basis-auto {
+    flex-basis: auto;
+  }
+
+  .basis-full {
+    flex-basis: 100%;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:basis-auto {
+      flex-basis: auto;
+    }
+
+    .sm\:basis-full {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:basis-auto {
+      flex-basis: auto;
+    }
+
+    .md\:basis-full {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:basis-auto {
+      flex-basis: auto;
+    }
+
+    .lg\:basis-full {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:basis-auto {
+      flex-basis: auto;
+    }
+
+    .xl\:basis-full {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:basis-auto {
+      flex-basis: auto;
+    }
+
+    .\32xl\:basis-full {
+      flex-basis: 100%;
+    }
+  }
+}

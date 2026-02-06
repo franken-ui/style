@@ -1,0 +1,35 @@
+@layer utilities {
+  .shadow-none {
+    box-shadow: 0 0 #0000;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:shadow-none {
+      box-shadow: 0 0 #0000;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:shadow-none {
+      box-shadow: 0 0 #0000;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:shadow-none {
+      box-shadow: 0 0 #0000;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:shadow-none {
+      box-shadow: 0 0 #0000;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:shadow-none {
+      box-shadow: 0 0 #0000;
+    }
+  }
+}

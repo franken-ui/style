@@ -1,0 +1,35 @@
+@layer components {
+  .perspective-none {
+    perspective: none;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:perspective-none {
+      perspective: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:perspective-none {
+      perspective: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:perspective-none {
+      perspective: none;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:perspective-none {
+      perspective: none;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:perspective-none {
+      perspective: none;
+    }
+  }
+}

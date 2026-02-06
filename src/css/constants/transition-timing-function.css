@@ -1,0 +1,59 @@
+@layer utilities {
+  .ease-linear {
+    transition-timing-function: linear;
+  }
+
+  .ease-initial {
+    transition-timing-function: initial;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .sm\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .md\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .lg\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .xl\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:ease-linear {
+      transition-timing-function: linear;
+    }
+
+    .\32xl\:ease-initial {
+      transition-timing-function: initial;
+    }
+  }
+}

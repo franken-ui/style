@@ -1,0 +1,35 @@
+@layer utilities {
+  .columns-auto {
+    columns: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:columns-auto {
+      columns: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:columns-auto {
+      columns: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:columns-auto {
+      columns: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:columns-auto {
+      columns: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:columns-auto {
+      columns: auto;
+    }
+  }
+}

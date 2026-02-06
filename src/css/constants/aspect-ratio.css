@@ -1,0 +1,59 @@
+@layer utilities {
+  .aspect-square {
+    aspect-ratio: 1/1;
+  }
+
+  .aspect-auto {
+    aspect-ratio: auto;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .sm\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .md\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .lg\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .xl\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:aspect-square {
+      aspect-ratio: 1/1;
+    }
+
+    .\32xl\:aspect-auto {
+      aspect-ratio: auto;
+    }
+  }
+}

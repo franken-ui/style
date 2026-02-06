@@ -27,3 +27,8 @@ dist-ssr
 
 # CommonJS
 *.cjs
+
+# Test files
+ft/
+kit/
+style/

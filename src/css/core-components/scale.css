@@ -1,0 +1,35 @@
+@layer components {
+  .scale-3d {
+    scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:scale-3d {
+      scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
+    }
+  }
+}

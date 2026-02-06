@@ -1,0 +1,203 @@
+@layer components {
+  .blur-xs {
+    filter: blur(var(--blur-xs));
+  }
+
+  .blur-sm {
+    filter: blur(var(--blur-sm));
+  }
+
+  .blur-md {
+    filter: blur(var(--blur-md));
+  }
+
+  .blur-lg {
+    filter: blur(var(--blur-lg));
+  }
+
+  .blur-xl {
+    filter: blur(var(--blur-xl));
+  }
+
+  .blur-2xl {
+    filter: blur(var(--blur-2xl));
+  }
+
+  .blur-3xl {
+    filter: blur(var(--blur-3xl));
+  }
+
+  .blur-none {
+    filter: blur(0);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .sm\:blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .sm\:blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .sm\:blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .sm\:blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .sm\:blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .sm\:blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .sm\:blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .md\:blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .md\:blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .md\:blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .md\:blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .md\:blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .md\:blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .md\:blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .lg\:blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .lg\:blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .lg\:blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .lg\:blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .lg\:blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .lg\:blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .lg\:blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .xl\:blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .xl\:blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .xl\:blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .xl\:blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .xl\:blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .xl\:blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .xl\:blur-none {
+      filter: blur(0);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:blur-xs {
+      filter: blur(var(--blur-xs));
+    }
+
+    .\32xl\:blur-sm {
+      filter: blur(var(--blur-sm));
+    }
+
+    .\32xl\:blur-md {
+      filter: blur(var(--blur-md));
+    }
+
+    .\32xl\:blur-lg {
+      filter: blur(var(--blur-lg));
+    }
+
+    .\32xl\:blur-xl {
+      filter: blur(var(--blur-xl));
+    }
+
+    .\32xl\:blur-2xl {
+      filter: blur(var(--blur-2xl));
+    }
+
+    .\32xl\:blur-3xl {
+      filter: blur(var(--blur-3xl));
+    }
+
+    .\32xl\:blur-none {
+      filter: blur(0);
+    }
+  }
+}

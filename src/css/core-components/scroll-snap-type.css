@@ -1,0 +1,83 @@
+@layer components {
+  .snap-x {
+    scroll-snap-type: x var(--tw-scroll-snap-strictness);
+  }
+
+  .snap-y {
+    scroll-snap-type: y var(--tw-scroll-snap-strictness);
+  }
+
+  .snap-both {
+    scroll-snap-type: both var(--tw-scroll-snap-strictness);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:snap-x {
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+    }
+
+    .sm\:snap-y {
+      scroll-snap-type: y var(--tw-scroll-snap-strictness);
+    }
+
+    .sm\:snap-both {
+      scroll-snap-type: both var(--tw-scroll-snap-strictness);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:snap-x {
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+    }
+
+    .md\:snap-y {
+      scroll-snap-type: y var(--tw-scroll-snap-strictness);
+    }
+
+    .md\:snap-both {
+      scroll-snap-type: both var(--tw-scroll-snap-strictness);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:snap-x {
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+    }
+
+    .lg\:snap-y {
+      scroll-snap-type: y var(--tw-scroll-snap-strictness);
+    }
+
+    .lg\:snap-both {
+      scroll-snap-type: both var(--tw-scroll-snap-strictness);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:snap-x {
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+    }
+
+    .xl\:snap-y {
+      scroll-snap-type: y var(--tw-scroll-snap-strictness);
+    }
+
+    .xl\:snap-both {
+      scroll-snap-type: both var(--tw-scroll-snap-strictness);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:snap-x {
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+    }
+
+    .\32xl\:snap-y {
+      scroll-snap-type: y var(--tw-scroll-snap-strictness);
+    }
+
+    .\32xl\:snap-both {
+      scroll-snap-type: both var(--tw-scroll-snap-strictness);
+    }
+  }
+}
