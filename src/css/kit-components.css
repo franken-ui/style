@@ -3639,7 +3639,7 @@
       transparent
     );
     padding: 0.2rem 0.3rem;
-    font-family: var(--uk-global-font-family-mono);
+    font-family: var(--uk-global-font-family-mono, var(--font-family-mono));
     font-size: var(--uk-global-font-size-small);
     line-height: var(--uk-global-line-height-small);
     font-weight: 600;
@@ -3657,7 +3657,7 @@
       var(--uk-muted) var(--uk-muted-o),
       transparent
     );
-    font-family: var(--uk-global-font-family-mono);
+    font-family: var(--uk-global-font-family-mono, var(--font-family-mono));
     font-size: var(--uk-global-font-size-small);
     line-height: var(--uk-global-line-height-small);
     font-weight: 500;
@@ -4209,7 +4209,10 @@
     flex: 1;
   }
   .uk-cmd-item-key {
-    --uk-cmd-item-key-font-family: var(--uk-global-font-family-mono);
+    --uk-cmd-item-key-font-family: var(
+      --uk-global-font-family-mono,
+      var(--font-family-mono)
+    );
     --uk-cmd-item-key-font-size: var(--uk-global-font-size-small);
     --uk-cmd-item-key-line-height: var(--uk-global-line-height-small);
     --uk-cmd-item-key-tracking: 0.1em;

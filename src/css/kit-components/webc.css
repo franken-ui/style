@@ -566,7 +566,10 @@
 
   .uk-cmd-item-key {
     /* Base Variables */
-    --uk-cmd-item-key-font-family: var(--uk-global-font-family-mono);
+    --uk-cmd-item-key-font-family: var(
+      --uk-global-font-family-mono,
+      var(--font-family-mono)
+    );
     --uk-cmd-item-key-font-size: var(--uk-global-font-size-small);
     --uk-cmd-item-key-line-height: var(--uk-global-line-height-small);
     --uk-cmd-item-key-tracking: 0.1em;

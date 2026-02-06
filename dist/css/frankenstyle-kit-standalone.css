@@ -80,13 +80,6 @@
       0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --uk-global-shadow-small: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
-    --uk-global-font-family-sans:
-      Geist Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --uk-global-font-family-mono:
-      Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-      'Liberation Mono', 'Courier New';
-
     /* ============================================
      Interactive Components Base Scale
      Shared by buttons, forms, pagination, etc.
@@ -4179,7 +4172,7 @@
       transparent
     );
     padding: 0.2rem 0.3rem;
-    font-family: var(--uk-global-font-family-mono);
+    font-family: var(--uk-global-font-family-mono, var(--font-family-mono));
     font-size: var(--uk-global-font-size-small);
     line-height: var(--uk-global-line-height-small);
     font-weight: 600;
@@ -4197,7 +4190,7 @@
       var(--uk-muted) var(--uk-muted-o),
       transparent
     );
-    font-family: var(--uk-global-font-family-mono);
+    font-family: var(--uk-global-font-family-mono, var(--font-family-mono));
     font-size: var(--uk-global-font-size-small);
     line-height: var(--uk-global-line-height-small);
     font-weight: 500;
@@ -4749,7 +4742,10 @@
     flex: 1;
   }
   .uk-cmd-item-key {
-    --uk-cmd-item-key-font-family: var(--uk-global-font-family-mono);
+    --uk-cmd-item-key-font-family: var(
+      --uk-global-font-family-mono,
+      var(--font-family-mono)
+    );
     --uk-cmd-item-key-font-size: var(--uk-global-font-size-small);
     --uk-cmd-item-key-line-height: var(--uk-global-line-height-small);
     --uk-cmd-item-key-tracking: 0.1em;

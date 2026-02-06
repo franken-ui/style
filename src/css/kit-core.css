@@ -80,13 +80,6 @@
       0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --uk-global-shadow-small: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
-    --uk-global-font-family-sans:
-      Geist Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --uk-global-font-family-mono:
-      Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-      'Liberation Mono', 'Courier New';
-
     /* ============================================
      Interactive Components Base Scale
      Shared by buttons, forms, pagination, etc.
