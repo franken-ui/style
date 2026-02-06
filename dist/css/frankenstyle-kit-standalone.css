@@ -5476,6 +5476,24 @@
   .uk-switcher > :not(.uk-active) {
     display: none;
   }
+  .uk-placeholder {
+    --uk-placeholder-margin-bottom: 1.25rem;
+    --uk-placeholder-padding: 2rem;
+    --uk-placeholder-border-color: var(--uk-border);
+    --uk-placeholder-border-color-o: 10%;
+    --uk-placeholder-border-color-computed: color-mix(
+      in srgb,
+      var(--uk-placeholder-border-color) var(--uk-placeholder-border-color-o),
+      transparent
+    );
+    margin-bottom: var(--uk-placeholder-margin-bottom);
+    padding: var(--uk-placeholder-padding);
+    background: transparent;
+    border: 1px dashed var(--uk-placeholder-border-color-computed);
+  }
+  .uk-placeholder > :last-child {
+    margin-bottom: 0;
+  }
   @media (min-width: 40rem) {
     .uk-container {
       padding-left: 30px;
