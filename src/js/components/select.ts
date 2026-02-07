@@ -787,8 +787,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
         role="option"
         data-key="__insert__"
       >
-        <button
-          type="button"
+        <a
           class="${cls['item-link']}"
           data-part="item-link"
           @click="${(e: MouseEvent) => {
@@ -800,7 +799,7 @@ export class Select extends BaseSelectMixin(InputMixin(Base)) {
             .$term}"
         >
           ${this.getI18nText('insert', this.defaultI18n)} ${this.$term}
-        </button>
+        </a>
       </li>
     `;
   }

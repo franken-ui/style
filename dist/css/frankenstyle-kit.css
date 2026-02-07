@@ -11521,6 +11521,7 @@
   }
   .uk-custom-select-list {
     --uk-custom-select-list-max-height: 10rem;
+    --uk-nav-item-color: var(--uk-bg-f);
     max-height: var(--uk-custom-select-list-max-height);
   }
   .uk-custom-select-item-wrapper {

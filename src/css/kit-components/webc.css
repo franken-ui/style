@@ -629,6 +629,7 @@
   .uk-custom-select-list {
     /* Base Variables */
     --uk-custom-select-list-max-height: 10rem;
+    --uk-nav-item-color: var(--uk-bg-f);
 
     max-height: var(--uk-custom-select-list-max-height);
   }

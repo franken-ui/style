@@ -908,8 +908,7 @@ var __COMPONENTS__=(function(o,c,Tt,te){"use strict";function ee(a){const t=Obje
         role="option"
         data-key="__insert__"
       >
-        <button
-          type="button"
+        <a
           class="${t["item-link"]}"
           data-part="item-link"
           @click="${e=>{e.preventDefault(),this.insert()}}"
@@ -917,7 +916,7 @@ var __COMPONENTS__=(function(o,c,Tt,te){"use strict";function ee(a){const t=Obje
           aria-label="${this.getI18nText("insert",this.defaultI18n)} ${this.$term}"
         >
           ${this.getI18nText("insert",this.defaultI18n)} ${this.$term}
-        </button>
+        </a>
       </li>
     `}renderList(){const t=this._cls();return c.html`
       <ul
