@@ -477,7 +477,12 @@ export class Lsh extends Base {
       return;
     }
 
-    const { group } = customEvent.detail;
+    const { group, config } = customEvent.detail;
+
+    // Update local config with the fresh config from the event
+    if (config) {
+      this.lshConfig = config;
+    }
 
     if (group === this.group) {
       this.updateActiveState();
