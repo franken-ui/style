@@ -31,8 +31,6 @@ if (typeof window !== 'undefined') {
   );
 
   const ruleCache = new Map<string, CssRule>();
-  let scheduled: number | null = null;
-  let isGenerating = false; // Prevent concurrent generation
 
   interface CssRule {
     css: string;
@@ -63,11 +61,13 @@ if (typeof window !== 'undefined') {
   }
 
   interface GeneratedCSS {
+    components: GeneratedCssLayer;
     styles: GeneratedCssLayer;
     utilities: GeneratedCssLayer;
   }
 
-  // Merge default rules with custom rules
+  // --- Rule Merging Logic ---
+
   function getMergedRules(): RuleConfig[] {
     const customRules = (window as any).FS?.customRules || [];
 
@@ -78,30 +78,14 @@ if (typeof window !== 'undefined') {
       return defaultRules as RuleConfig[];
     }
 
-    // Validate custom rules
     const validatedCustomRules = customRules.filter((rule: any) => {
-      if (!rule.selector || typeof rule.selector !== 'string') {
-        console.warn(
-          '[fs] Custom rule missing or invalid "selector" property:',
-          rule,
-        );
+      if (!rule.selector || typeof rule.selector !== 'string') return false;
+      if (!rule.properties) return false;
+      if (!rule.arbitrary && (!rule.values || !Array.isArray(rule.values)))
         return false;
-      }
-      if (!rule.properties) {
-        console.warn('[fs] Custom rule missing "properties" property:', rule);
-        return false;
-      }
-      if (!rule.arbitrary && (!rule.values || !Array.isArray(rule.values))) {
-        console.warn(
-          '[fs] Non-arbitrary custom rule missing or invalid "values" array:',
-          rule,
-        );
-        return false;
-      }
       return true;
     });
 
-    // Merge rules: custom rules override default rules with the same selector
     const merged = [...(defaultRules as RuleConfig[])];
 
     validatedCustomRules.forEach((customRule: RuleConfig) => {
@@ -109,9 +93,6 @@ if (typeof window !== 'undefined') {
         r => r.selector === customRule.selector,
       );
       if (existingIndex !== -1) {
-        console.info(
-          `[fs] Overriding default rule for selector: "${customRule.selector}"`,
-        );
         merged[existingIndex] = customRule;
       } else {
         merged.push(customRule);
@@ -122,6 +103,8 @@ if (typeof window !== 'undefined') {
   }
 
   const rules = getMergedRules();
+
+  // --- Helper Functions ---
 
   function escapeCssIdentifier(str: string): string {
     return str.replace(/([ !"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g, '\\$1');
@@ -165,7 +148,7 @@ if (typeof window !== 'undefined') {
     const config = findStyleRule(baseClass);
 
     if (!config) {
-      console.warn(`Unknown class: "${baseClass}"`);
+      // Quietly fail for unknown classes to avoid console spam
       return null;
     }
 
@@ -209,16 +192,11 @@ if (typeof window !== 'undefined') {
     };
   }
 
-  /**
-   * Parse a class name string into a ParsedClass object
-   */
   function parseClassName(className: string): ParsedClass | null {
     const normalizedClass = normalizeClsClass(className);
     const match = normalizedClass.match(classParser);
 
-    if (!match) {
-      return null;
-    }
+    if (!match) return null;
 
     const [, dark, prefix, baseClass, state] = match;
     return {
@@ -230,48 +208,29 @@ if (typeof window !== 'undefined') {
     };
   }
 
-  /**
-   * Get safelist classes from window.FS.safelist
-   */
+  // --- Safelist Logic ---
+
   function getSafelistClasses(): ParsedClass[] {
     const safelist = (window as any).FS?.safelist;
-
-    if (!safelist) {
-      return [];
-    }
-
-    if (!Array.isArray(safelist)) {
-      console.warn('[fs] FS.safelist must be an array. Ignoring safelist.');
-      return [];
-    }
+    if (!safelist || !Array.isArray(safelist)) return [];
 
     const parsedClasses: ParsedClass[] = [];
 
     safelist.forEach((item: any) => {
       if (typeof item === 'string') {
         const parsed = parseClassName(item);
-        if (parsed) {
-          parsedClasses.push(parsed);
-        } else {
-          console.warn(`[fs] Invalid safelist class: "${item}"`);
-        }
+        if (parsed) parsedClasses.push(parsed);
       } else if (typeof item === 'object' && item !== null) {
-        // Support object format: { class: 'btn', states: [':hover', ':active'] }
         const baseClass = item.class || item.className;
-        if (!baseClass || typeof baseClass !== 'string') {
-          console.warn('[fs] Safelist object missing "class" property:', item);
-          return;
-        }
+        if (!baseClass) return;
 
         const itemStates = item.states || [];
         const itemPrefixes = item.prefixes || [null];
         const itemDarkModes = item.dark === true ? [false, true] : [false];
 
-        // Generate all combinations
         itemDarkModes.forEach(isDark => {
           itemPrefixes.forEach((prefix: any) => {
             itemStates.forEach((state: any) => {
-              // Construct the full class name
               let fullClass = baseClass;
               if (prefix) fullClass = `${prefix}:${fullClass}`;
               if (isDark) fullClass = `dark:${fullClass}`;
@@ -286,13 +245,13 @@ if (typeof window !== 'undefined') {
             });
           });
         });
-      } else {
-        console.warn('[fs] Invalid safelist entry:', item);
       }
     });
 
     return parsedClasses;
   }
+
+  // --- Interactive Style Generation ---
 
   function extractInteractiveClasses(element: Element): ParsedClass[] {
     const interactiveClasses: ParsedClass[] = [];
@@ -332,21 +291,13 @@ if (typeof window !== 'undefined') {
     return interactiveClasses;
   }
 
+  /**
+   * Main function to scan DOM and generate CSS.
+   * Now synchronous and manual-trigger only.
+   */
   function generateInteractiveStyles(): void {
-    // Prevent concurrent execution
-    if (isGenerating) {
-      return;
-    }
-
-    isGenerating = true;
-
-    // Clear the scheduled timeout since we're executing now
-    if (scheduled !== null) {
-      clearTimeout(scheduled);
-      scheduled = null;
-    }
-
     try {
+      // 1. Scan the DOM
       const nodes = document.querySelectorAll('[data-fs]');
       const allInteractiveClasses: ParsedClass[] = [];
 
@@ -354,20 +305,39 @@ if (typeof window !== 'undefined') {
         allInteractiveClasses.push(...extractInteractiveClasses(node));
       });
 
-      // Add safelist classes
+      // 2. Add Safelist
       const safelistClasses = getSafelistClasses();
       allInteractiveClasses.push(...safelistClasses);
 
+      // 3. Prepare buckets
       const generatedCss: GeneratedCSS = {
+        components: { base: [], media: {} },
         styles: { base: [], media: {} },
         utilities: { base: [], media: {} },
       };
 
+      // 4. Build Rules
       allInteractiveClasses.forEach(parsedClass => {
         const { fullClass, state, isDark, prefix } = parsedClass;
         const ruleKey = `${fullClass}${state}${isDark ? '-dark' : ''}${prefix || ''}`;
 
-        if (ruleCache.has(ruleKey)) return;
+        // Cache hit check
+        if (ruleCache.has(ruleKey)) {
+          const rule = ruleCache.get(ruleKey)!;
+          const layer = rule.layer as keyof GeneratedCSS;
+          if (rule.breakpoint) {
+            const mediaBucket = generatedCss[layer].media;
+            mediaBucket[rule.breakpoint] = mediaBucket[rule.breakpoint] || [];
+            if (!mediaBucket[rule.breakpoint].includes(rule.css)) {
+              mediaBucket[rule.breakpoint].push(rule.css);
+            }
+          } else {
+            if (!generatedCss[layer].base.includes(rule.css)) {
+              generatedCss[layer].base.push(rule.css);
+            }
+          }
+          return;
+        }
 
         const rule = buildCssRule(parsedClass);
         if (!rule) return;
@@ -385,6 +355,7 @@ if (typeof window !== 'undefined') {
         }
       });
 
+      // 5. Construct CSS String
       const buildLayer = (
         layerName: string,
         { base, media }: GeneratedCssLayer,
@@ -400,13 +371,14 @@ if (typeof window !== 'undefined') {
       };
 
       const finalCss = [
+        buildLayer('components', generatedCss.components),
         buildLayer('styles', generatedCss.styles),
         buildLayer('utilities', generatedCss.utilities),
       ]
         .filter(Boolean)
         .join('\n\n');
 
-      // Use synchronous DOM update instead of requestAnimationFrame
+      // 6. Inject into DOM
       let styleTag = document.getElementById(
         'uk-interactive-styles',
       ) as HTMLStyleElement | null;
@@ -414,199 +386,55 @@ if (typeof window !== 'undefined') {
       if (!styleTag) {
         styleTag = document.createElement('style');
         styleTag.id = 'uk-interactive-styles';
-        // Add attribute to prevent observer from reacting to this
         styleTag.setAttribute('data-fs-managed', 'true');
         document.head.appendChild(styleTag);
       }
 
       styleTag.textContent = finalCss;
-    } finally {
-      isGenerating = false;
+    } catch (e) {
+      console.error('[fs] Error generating styles:', e);
     }
   }
-
-  function scheduleGenerate(): void {
-    // Don't schedule if already generating
-    if (isGenerating) {
-      return;
-    }
-
-    if (scheduled !== null) {
-      clearTimeout(scheduled);
-    }
-
-    scheduled = window.setTimeout(() => {
-      scheduled = null;
-      generateInteractiveStyles();
-    }, 50);
-  }
-
-  function shouldIgnoreMutation(target: Node): boolean {
-    if (!(target instanceof Element)) {
-      return false;
-    }
-
-    // Ignore our managed style tag
-    if (target.hasAttribute?.('data-fs-managed')) {
-      return true;
-    }
-
-    // Ignore elements marked with data-fs-ignore
-    if (target.hasAttribute?.('data-fs-ignore')) {
-      return true;
-    }
-
-    // Check if target is inside an ignored container
-    let current: Element | null = target;
-    while (current) {
-      if (current.hasAttribute?.('data-fs-ignore')) {
-        return true;
-      }
-      current = current.parentElement;
-    }
-
-    return false;
-  }
-
-  function handleMutations(mutationsList: MutationRecord[]): void {
-    // Skip if currently generating to prevent loops
-    if (isGenerating) {
-      return;
-    }
-
-    let shouldRegenerate = false;
-
-    for (const mutation of mutationsList) {
-      // Ignore mutations on excluded elements
-      if (shouldIgnoreMutation(mutation.target)) {
-        continue;
-      }
-
-      if (
-        mutation.type === 'attributes' &&
-        (mutation.attributeName === 'class' ||
-          mutation.attributeName === 'cls' ||
-          mutation.attributeName === 'data-fs')
-      ) {
-        shouldRegenerate = true;
-        break;
-      }
-
-      if (mutation.type === 'childList') {
-        for (const node of [...mutation.addedNodes, ...mutation.removedNodes]) {
-          // Skip ignored nodes
-          if (shouldIgnoreMutation(node)) {
-            continue;
-          }
-
-          if (
-            node.nodeType === 1 &&
-            ((node as Element).hasAttribute?.('data-fs') ||
-              (node as Element).querySelector?.('[data-fs]'))
-          ) {
-            shouldRegenerate = true;
-            break;
-          }
-        }
-        if (shouldRegenerate) break;
-      }
-    }
-
-    if (shouldRegenerate) {
-      scheduleGenerate();
-    }
-  }
-
-  let currentObserver: MutationObserver | null = null;
 
   function init(): void {
-    // Log merged rules info
+    // Log info
     const customRulesCount = ((window as any).FS?.customRules || []).length;
-    if (customRulesCount > 0) {
+    if (customRulesCount > 0)
       console.info(`[fs] Loaded ${customRulesCount} custom rule(s)`);
-    }
 
-    // Log safelist info
-    const safelistCount = getSafelistClasses().length;
-    if (safelistCount > 0) {
-      console.info(`[fs] Loaded ${safelistCount} safelist class(es)`);
-    }
-
-    // Step 1: Always generate styles once (for all [data-fs] elements + safelist)
+    // Generate once
     generateInteractiveStyles();
-
-    // Step 2: Only activate MutationObserver if [data-fs] exists
-    const hasReactive = document.querySelector('[data-fs]');
-    if (!hasReactive) {
-      console.info('[fs] No [data-fs] found — reactive mode disabled.');
-      return;
-    }
-
-    // Disconnect existing observer if any
-    if (currentObserver) {
-      currentObserver.disconnect();
-    }
-
-    currentObserver = new MutationObserver(handleMutations);
-    currentObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['data-fs', 'class', 'cls'],
-    });
-
-    window.addEventListener('beforeunload', () =>
-      currentObserver?.disconnect(),
-    );
   }
 
   function refresh(): void {
     console.info('[fs] Refreshing interactive styles...');
-
-    // Clear the rule cache to force regeneration
     ruleCache.clear();
-
-    // Regenerate styles with potentially new DOM content
-    init();
+    generateInteractiveStyles();
   }
 
-  // Initialize FS namespace if it doesn't exist
+  // --- Initialization & Exports ---
+
+  // Initialize FS namespace
   if (typeof window !== 'undefined') {
     (window as any).FS = (window as any).FS || {};
 
-    // Expose public API
     Object.assign((window as any).FS, {
       refresh,
       regenerate: generateInteractiveStyles,
-      stop: () => currentObserver?.disconnect(),
       getCache: () => ruleCache,
       getRules: () => getMergedRules(),
       getSafelist: () => getSafelistClasses(),
-      _initialized: true, // Flag for debugging
+      _initialized: true,
     });
   }
 
-  // Multiple initialization strategies for different environments
-  function safeInit(): void {
-    if (document.body) {
-      init();
-    } else {
-      // Fallback if body doesn't exist yet
-      setTimeout(safeInit, 10);
-    }
-  }
-
+  // Safe Loading Strategy
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
-  } else if (document.readyState === 'interactive') {
-    // DOM is ready but resources may still be loading
-    setTimeout(init, 0);
   } else {
-    // Document is fully loaded
-    safeInit();
+    // If already loaded (defer/async scripts), run immediately
+    init();
   }
 })();
 
-// Export for module usage - do this OUTSIDE the IIFE
-// Export default for ES module imports
 export default typeof window !== 'undefined' ? (window as any).FS : {};
