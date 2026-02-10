@@ -251,6 +251,89 @@
   }
 }
 
+@layer components {
+  /* Border Radius */
+  .uk-rounded-small {
+    border-radius: var(--uk-global-radius-small);
+  }
+
+  .uk-rounded {
+    border-radius: var(--uk-global-radius);
+  }
+
+  /* Box Shadow */
+  .uk-shadow-small {
+    box-shadow: var(--uk-global-shadow-small);
+  }
+
+  .uk-shadow {
+    box-shadow: var(--uk-global-shadow);
+  }
+
+  /* Text Sizes - Modular Scale 1.25 ratio */
+  .uk-text-2xsmall {
+    font-size: calc(var(--uk-global-font-size) / 1.563);
+    line-height: calc(var(--uk-global-line-height) / 1.563);
+  }
+
+  .uk-text-xsmall {
+    font-size: calc(var(--uk-global-font-size) / 1.25);
+    line-height: calc(var(--uk-global-line-height) / 1.25);
+  }
+
+  .uk-text-small {
+    font-size: var(--uk-global-font-size-small);
+    line-height: var(--uk-global-line-height-small);
+  }
+
+  .uk-text-base {
+    font-size: var(--uk-global-font-size);
+    line-height: var(--uk-global-line-height);
+  }
+
+  .uk-text-medium {
+    font-size: calc(var(--uk-global-font-size) * 1.25);
+    line-height: calc(var(--uk-global-line-height) * 1.167);
+  }
+
+  .uk-text-large {
+    font-size: calc(var(--uk-global-font-size) * 1.563);
+    line-height: calc(var(--uk-global-line-height) * 1.2);
+  }
+
+  .uk-text-xlarge {
+    font-size: calc(var(--uk-global-font-size) * 1.953);
+    line-height: calc(var(--uk-global-line-height) * 1.067);
+  }
+
+  .uk-text-2xlarge {
+    font-size: calc(var(--uk-global-font-size) * 2.441);
+    line-height: calc(var(--uk-global-line-height) * 1);
+  }
+
+  .uk-text-3xlarge {
+    font-size: calc(var(--uk-global-font-size) * 3.052);
+    line-height: calc(var(--uk-global-line-height) * 0.933);
+  }
+
+  /* Typography Scale  */
+  .uk-layout-small {
+    --uk-global-font-size: 0.875rem;
+    --uk-global-line-height: 1.25rem;
+
+    --uk-global-font-size-small: 0.75rem;
+    --uk-global-line-height-small: 1rem;
+  }
+
+  .uk-layout-medium {
+    --uk-global-font-size: 1.125rem;
+    --uk-global-line-height: 1.75rem;
+
+    --uk-global-font-size-small: 1rem;
+    --uk-global-line-height-small: 1.5rem;
+  }
+}
+
 @layer utilities {
   /* Overflow Utilities */
   .uk-overflow-hidden {
@@ -406,73 +489,6 @@
     overflow-wrap: break-word;
   }
 
-  /* Border Radius */
-  /* Border Radius */
-  .uk-rounded-small {
-    border-radius: var(--uk-global-radius-small);
-  }
-
-  .uk-rounded {
-    border-radius: var(--uk-global-radius);
-  }
-
-  /* Box Shadow */
-  /* Box Shadow */
-  .uk-shadow-small {
-    box-shadow: var(--uk-global-shadow-small);
-  }
-
-  .uk-shadow {
-    box-shadow: var(--uk-global-shadow);
-  }
-
-  /* Text Sizes - Modular Scale 1.25 ratio */
-  /* Text Sizes - Modular Scale 1.25 ratio */
-  .uk-text-2xsmall {
-    font-size: calc(var(--uk-global-font-size) / 1.563);
-    line-height: calc(var(--uk-global-line-height) / 1.563);
-  }
-
-  .uk-text-xsmall {
-    font-size: calc(var(--uk-global-font-size) / 1.25);
-    line-height: calc(var(--uk-global-line-height) / 1.25);
-  }
-
-  .uk-text-small {
-    font-size: var(--uk-global-font-size-small);
-    line-height: var(--uk-global-line-height-small);
-  }
-
-  .uk-text-base {
-    font-size: var(--uk-global-font-size);
-    line-height: var(--uk-global-line-height);
-  }
-
-  .uk-text-medium {
-    font-size: calc(var(--uk-global-font-size) * 1.25);
-    line-height: calc(var(--uk-global-line-height) * 1.167);
-  }
-
-  .uk-text-large {
-    font-size: calc(var(--uk-global-font-size) * 1.563);
-    line-height: calc(var(--uk-global-line-height) * 1.2);
-  }
-
-  .uk-text-xlarge {
-    font-size: calc(var(--uk-global-font-size) * 1.953);
-    line-height: calc(var(--uk-global-line-height) * 1.067);
-  }
-
-  .uk-text-2xlarge {
-    font-size: calc(var(--uk-global-font-size) * 2.441);
-    line-height: calc(var(--uk-global-line-height) * 1);
-  }
-
-  .uk-text-3xlarge {
-    font-size: calc(var(--uk-global-font-size) * 3.052);
-    line-height: calc(var(--uk-global-line-height) * 0.933);
-  }
-
   /* Flex Utilities */
   .uk-flex {
     display: flex !important;
@@ -508,26 +524,6 @@
   th.uk-text-break,
   td.uk-text-break {
     word-break: break-word;
-  }
-
-  /* ============================================
-     Typography Scale Utilities
-     ============================================ */
-
-  .uk-layout-small {
-    --uk-global-font-size: 0.875rem;
-    --uk-global-line-height: 1.25rem;
-
-    --uk-global-font-size-small: 0.75rem;
-    --uk-global-line-height-small: 1rem;
-  }
-
-  .uk-layout-medium {
-    --uk-global-font-size: 1.125rem;
-    --uk-global-line-height: 1.75rem;
-
-    --uk-global-font-size-small: 1rem;
-    --uk-global-line-height-small: 1.5rem;
   }
 }
 

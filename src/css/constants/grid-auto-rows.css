@@ -1,0 +1,107 @@
+@layer utilities {
+  .auto-rows-auto {
+    grid-auto-rows: auto;
+  }
+
+  .auto-rows-min {
+    grid-auto-rows: min-content;
+  }
+
+  .auto-rows-max {
+    grid-auto-rows: max-content;
+  }
+
+  .auto-rows-fr {
+    grid-auto-rows: minmax(0, 1fr);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+
+    .sm\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+
+    .sm\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+
+    .sm\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+
+    .md\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+
+    .md\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+
+    .md\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+
+    .lg\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+
+    .lg\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+
+    .lg\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+
+    .xl\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+
+    .xl\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+
+    .xl\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+
+    .\32xl\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+
+    .\32xl\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+
+    .\32xl\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
+    }
+  }
+}

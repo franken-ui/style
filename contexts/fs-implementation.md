@@ -1570,6 +1570,25 @@ Prefix classes with breakpoints:
 
 
 
+## Grid Auto Columns
+
+### Utilities (value-driven)
+
+| Selector     | Style                                 | Variables Required |
+| ------------ | ------------------------------------- | ------------------ |
+| `.auto-cols` | `grid-auto-columns: var(--auto-cols)` | `--auto-cols`      |
+
+### Utilities (absolute values)
+
+| Selector          | Style                               |
+| ----------------- | ----------------------------------- |
+| `.auto-cols-auto` | `grid-auto-columns: auto`           |
+| `.auto-cols-min`  | `grid-auto-columns: min-content`    |
+| `.auto-cols-max`  | `grid-auto-columns: max-content`    |
+| `.auto-cols-fr`   | `grid-auto-columns: minmax(0, 1fr)` |
+
+
+
 ## Grid Auto Flow
 
 ### Utilities (absolute values)
@@ -1581,6 +1600,25 @@ Prefix classes with breakpoints:
 | `.grid-flow-dense`     | `grid-auto-flow: dense`        |
 | `.grid-flow-row-dense` | `grid-auto-flow: row dense`    |
 | `.grid-flow-col-dense` | `grid-auto-flow: column dense` |
+
+
+
+## Grid Auto Rows
+
+### Utilities (value-driven)
+
+| Selector     | Style                              | Variables Required |
+| ------------ | ---------------------------------- | ------------------ |
+| `.auto-rows` | `grid-auto-rows: var(--auto-rows)` | `--auto-rows`      |
+
+### Utilities (absolute values)
+
+| Selector          | Style                            |
+| ----------------- | -------------------------------- |
+| `.auto-rows-auto` | `grid-auto-rows: auto`           |
+| `.auto-rows-min`  | `grid-auto-rows: min-content`    |
+| `.auto-rows-max`  | `grid-auto-rows: max-content`    |
+| `.auto-rows-fr`   | `grid-auto-rows: minmax(0, 1fr)` |
 
 
 

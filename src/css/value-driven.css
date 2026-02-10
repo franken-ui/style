@@ -712,6 +712,12 @@
   .grayscale {
     filter: grayscale(var(--grayscale));
   }
+  .auto-cols {
+    grid-auto-columns: var(--auto-cols);
+  }
+  .auto-rows {
+    grid-auto-rows: var(--auto-rows);
+  }
   .col {
     grid-column: var(--col);
   }
@@ -2131,6 +2137,12 @@
     }
     .sm\:grayscale {
       filter: grayscale(var(--sm-grayscale));
+    }
+    .sm\:auto-cols {
+      grid-auto-columns: var(--sm-auto-cols);
+    }
+    .sm\:auto-rows {
+      grid-auto-rows: var(--sm-auto-rows);
     }
     .sm\:col {
       grid-column: var(--sm-col);
@@ -3562,6 +3574,12 @@
     .md\:grayscale {
       filter: grayscale(var(--md-grayscale));
     }
+    .md\:auto-cols {
+      grid-auto-columns: var(--md-auto-cols);
+    }
+    .md\:auto-rows {
+      grid-auto-rows: var(--md-auto-rows);
+    }
     .md\:col {
       grid-column: var(--md-col);
     }
@@ -4992,6 +5010,12 @@
     .lg\:grayscale {
       filter: grayscale(var(--lg-grayscale));
     }
+    .lg\:auto-cols {
+      grid-auto-columns: var(--lg-auto-cols);
+    }
+    .lg\:auto-rows {
+      grid-auto-rows: var(--lg-auto-rows);
+    }
     .lg\:col {
       grid-column: var(--lg-col);
     }
@@ -6421,6 +6445,12 @@
     }
     .xl\:grayscale {
       filter: grayscale(var(--xl-grayscale));
+    }
+    .xl\:auto-cols {
+      grid-auto-columns: var(--xl-auto-cols);
+    }
+    .xl\:auto-rows {
+      grid-auto-rows: var(--xl-auto-rows);
     }
     .xl\:col {
       grid-column: var(--xl-col);
@@ -7857,6 +7887,12 @@
     }
     .\32xl\:grayscale {
       filter: grayscale(var(--\32xl-grayscale));
+    }
+    .\32xl\:auto-cols {
+      grid-auto-columns: var(--\32xl-auto-cols);
+    }
+    .\32xl\:auto-rows {
+      grid-auto-rows: var(--\32xl-auto-rows);
     }
     .\32xl\:col {
       grid-column: var(--\32xl-col);

@@ -1,0 +1,35 @@
+@layer styles {
+  .auto-cols {
+    grid-auto-columns: var(--auto-cols);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:auto-cols {
+      grid-auto-columns: var(--sm-auto-cols);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:auto-cols {
+      grid-auto-columns: var(--md-auto-cols);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:auto-cols {
+      grid-auto-columns: var(--lg-auto-cols);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:auto-cols {
+      grid-auto-columns: var(--xl-auto-cols);
+    }
+  }
+
+  @media (min-width: 96rem) {
+    .\32xl\:auto-cols {
+      grid-auto-columns: var(--\32xl-auto-cols);
+    }
+  }
+}

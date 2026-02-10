@@ -7445,6 +7445,12 @@
   .grayscale {
     filter: grayscale(var(--grayscale));
   }
+  .auto-cols {
+    grid-auto-columns: var(--auto-cols);
+  }
+  .auto-rows {
+    grid-auto-rows: var(--auto-rows);
+  }
   .col {
     grid-column: var(--col);
   }
@@ -8864,6 +8870,12 @@
     }
     .sm\:grayscale {
       filter: grayscale(var(--sm-grayscale));
+    }
+    .sm\:auto-cols {
+      grid-auto-columns: var(--sm-auto-cols);
+    }
+    .sm\:auto-rows {
+      grid-auto-rows: var(--sm-auto-rows);
     }
     .sm\:col {
       grid-column: var(--sm-col);
@@ -10295,6 +10307,12 @@
     .md\:grayscale {
       filter: grayscale(var(--md-grayscale));
     }
+    .md\:auto-cols {
+      grid-auto-columns: var(--md-auto-cols);
+    }
+    .md\:auto-rows {
+      grid-auto-rows: var(--md-auto-rows);
+    }
     .md\:col {
       grid-column: var(--md-col);
     }
@@ -11725,6 +11743,12 @@
     .lg\:grayscale {
       filter: grayscale(var(--lg-grayscale));
     }
+    .lg\:auto-cols {
+      grid-auto-columns: var(--lg-auto-cols);
+    }
+    .lg\:auto-rows {
+      grid-auto-rows: var(--lg-auto-rows);
+    }
     .lg\:col {
       grid-column: var(--lg-col);
     }
@@ -13154,6 +13178,12 @@
     }
     .xl\:grayscale {
       filter: grayscale(var(--xl-grayscale));
+    }
+    .xl\:auto-cols {
+      grid-auto-columns: var(--xl-auto-cols);
+    }
+    .xl\:auto-rows {
+      grid-auto-rows: var(--xl-auto-rows);
     }
     .xl\:col {
       grid-column: var(--xl-col);
@@ -14590,6 +14620,12 @@
     }
     .\32xl\:grayscale {
       filter: grayscale(var(--\32xl-grayscale));
+    }
+    .\32xl\:auto-cols {
+      grid-auto-columns: var(--\32xl-auto-cols);
+    }
+    .\32xl\:auto-rows {
+      grid-auto-rows: var(--\32xl-auto-rows);
     }
     .\32xl\:col {
       grid-column: var(--\32xl-col);
@@ -16100,6 +16136,18 @@
   .forced-color-adjust-none {
     forced-color-adjust: none;
   }
+  .auto-cols-auto {
+    grid-auto-columns: auto;
+  }
+  .auto-cols-min {
+    grid-auto-columns: min-content;
+  }
+  .auto-cols-max {
+    grid-auto-columns: max-content;
+  }
+  .auto-cols-fr {
+    grid-auto-columns: minmax(0, 1fr);
+  }
   .grid-flow-row {
     grid-auto-flow: row;
   }
@@ -16114,6 +16162,18 @@
   }
   .grid-flow-col-dense {
     grid-auto-flow: column dense;
+  }
+  .auto-rows-auto {
+    grid-auto-rows: auto;
+  }
+  .auto-rows-min {
+    grid-auto-rows: min-content;
+  }
+  .auto-rows-max {
+    grid-auto-rows: max-content;
+  }
+  .auto-rows-fr {
+    grid-auto-rows: minmax(0, 1fr);
   }
   .col-auto {
     grid-column: auto;
@@ -18250,6 +18310,18 @@
     .sm\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
+    .sm\:auto-cols-auto {
+      grid-auto-columns: auto;
+    }
+    .sm\:auto-cols-min {
+      grid-auto-columns: min-content;
+    }
+    .sm\:auto-cols-max {
+      grid-auto-columns: max-content;
+    }
+    .sm\:auto-cols-fr {
+      grid-auto-columns: minmax(0, 1fr);
+    }
     .sm\:grid-flow-row {
       grid-auto-flow: row;
     }
@@ -18264,6 +18336,18 @@
     }
     .sm\:grid-flow-col-dense {
       grid-auto-flow: column dense;
+    }
+    .sm\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+    .sm\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+    .sm\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+    .sm\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
     }
     .sm\:col-auto {
       grid-column: auto;
@@ -20401,6 +20485,18 @@
     .md\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
+    .md\:auto-cols-auto {
+      grid-auto-columns: auto;
+    }
+    .md\:auto-cols-min {
+      grid-auto-columns: min-content;
+    }
+    .md\:auto-cols-max {
+      grid-auto-columns: max-content;
+    }
+    .md\:auto-cols-fr {
+      grid-auto-columns: minmax(0, 1fr);
+    }
     .md\:grid-flow-row {
       grid-auto-flow: row;
     }
@@ -20415,6 +20511,18 @@
     }
     .md\:grid-flow-col-dense {
       grid-auto-flow: column dense;
+    }
+    .md\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+    .md\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+    .md\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+    .md\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
     }
     .md\:col-auto {
       grid-column: auto;
@@ -22552,6 +22660,18 @@
     .lg\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
+    .lg\:auto-cols-auto {
+      grid-auto-columns: auto;
+    }
+    .lg\:auto-cols-min {
+      grid-auto-columns: min-content;
+    }
+    .lg\:auto-cols-max {
+      grid-auto-columns: max-content;
+    }
+    .lg\:auto-cols-fr {
+      grid-auto-columns: minmax(0, 1fr);
+    }
     .lg\:grid-flow-row {
       grid-auto-flow: row;
     }
@@ -22566,6 +22686,18 @@
     }
     .lg\:grid-flow-col-dense {
       grid-auto-flow: column dense;
+    }
+    .lg\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+    .lg\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+    .lg\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+    .lg\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
     }
     .lg\:col-auto {
       grid-column: auto;
@@ -24703,6 +24835,18 @@
     .xl\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
+    .xl\:auto-cols-auto {
+      grid-auto-columns: auto;
+    }
+    .xl\:auto-cols-min {
+      grid-auto-columns: min-content;
+    }
+    .xl\:auto-cols-max {
+      grid-auto-columns: max-content;
+    }
+    .xl\:auto-cols-fr {
+      grid-auto-columns: minmax(0, 1fr);
+    }
     .xl\:grid-flow-row {
       grid-auto-flow: row;
     }
@@ -24717,6 +24861,18 @@
     }
     .xl\:grid-flow-col-dense {
       grid-auto-flow: column dense;
+    }
+    .xl\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+    .xl\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+    .xl\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+    .xl\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
     }
     .xl\:col-auto {
       grid-column: auto;
@@ -26854,6 +27010,18 @@
     .\32xl\:forced-color-adjust-none {
       forced-color-adjust: none;
     }
+    .\32xl\:auto-cols-auto {
+      grid-auto-columns: auto;
+    }
+    .\32xl\:auto-cols-min {
+      grid-auto-columns: min-content;
+    }
+    .\32xl\:auto-cols-max {
+      grid-auto-columns: max-content;
+    }
+    .\32xl\:auto-cols-fr {
+      grid-auto-columns: minmax(0, 1fr);
+    }
     .\32xl\:grid-flow-row {
       grid-auto-flow: row;
     }
@@ -26868,6 +27036,18 @@
     }
     .\32xl\:grid-flow-col-dense {
       grid-auto-flow: column dense;
+    }
+    .\32xl\:auto-rows-auto {
+      grid-auto-rows: auto;
+    }
+    .\32xl\:auto-rows-min {
+      grid-auto-rows: min-content;
+    }
+    .\32xl\:auto-rows-max {
+      grid-auto-rows: max-content;
+    }
+    .\32xl\:auto-rows-fr {
+      grid-auto-rows: minmax(0, 1fr);
     }
     .\32xl\:col-auto {
       grid-column: auto;
