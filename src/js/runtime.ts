@@ -24,6 +24,7 @@ if (typeof window !== 'undefined') {
     ':target',
     ':checked',
     ':disabled',
+    ':group-hover',
   ];
 
   const classParser = new RegExp(
@@ -148,12 +149,24 @@ if (typeof window !== 'undefined') {
     const config = findStyleRule(baseClass);
 
     if (!config) {
-      // Quietly fail for unknown classes to avoid console spam
       return null;
     }
 
-    const escapedSelector = `.${escapeCssIdentifier(fullClass)}${state}`;
-    const selector = isDark ? `.dark ${escapedSelector}` : escapedSelector;
+    // --- UPDATED SELECTOR LOGIC START ---
+    const escapedClass = escapeCssIdentifier(fullClass);
+    let selectorCore = '';
+
+    if (state === ':group-hover') {
+      // Logic: Parent (.group) is hovered -> Child (this element) gets styles
+      selectorCore = `.group:hover .${escapedClass}`;
+    } else {
+      // Logic: Standard pseudo-class (e.g. .btn:hover)
+      selectorCore = `.${escapedClass}${state}`;
+    }
+
+    const selector = isDark ? `.dark ${selectorCore}` : selectorCore;
+    // --- UPDATED SELECTOR LOGIC END ---
+
     const declarations: Record<string, string> = {};
 
     const props = Array.isArray(config.properties)
