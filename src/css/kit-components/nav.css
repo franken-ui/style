@@ -27,22 +27,42 @@
     --uk-nav-radius: var(--uk-global-radius);
   }
 
-  /* Nav Alt  */
+  /* ============================================
+     Nav Alt Variant
+     ============================================ */
   .uk-nav-alt {
-    /* --------------------------------------------------------- */
-    /* FIX: Reset item color to avoid inheriting muted text      */
-    /* from the `uk-nav` class.                                  */
-    /* --------------------------------------------------------- */
+    /* Base Resets */
     --uk-nav-item-color: var(--uk-bg-f);
-
     --uk-nav-item-padding: 0.5rem 1rem;
     --uk-nav-item-margin: 0.25rem;
     --uk-nav-sub-item-padding: 0.5rem 1rem;
     --uk-nav-sub-item-margin: 0 0.5rem;
     --uk-nav-item-active-font-weight: 400;
+
+    /* Hover State Defaults (Automatically inherits to child items) */
+    --uk-nav-item-hover-bg: var(--uk-accent);
+    --uk-nav-item-hover-bg-o: 4%;
+    --uk-nav-item-hover-color: var(--uk-accent-f);
+    --uk-nav-item-hover-color-o: 100%;
+
+    /* Active State Defaults */
+    --uk-nav-item-active-bg: var(--uk-primary);
+    --uk-nav-item-active-bg-o: 100%;
+    --uk-nav-item-active-color: var(--uk-primary-f);
+    --uk-nav-item-active-color-o: 100%;
   }
 
-  /* Nav Default Variant */
+  /* Active Item Application */
+  .uk-nav-alt > li.uk-active {
+    --uk-nav-item-bg: var(--uk-nav-item-active-bg);
+    --uk-nav-item-bg-o: var(--uk-nav-item-active-bg-o);
+    --uk-nav-item-color: var(--uk-nav-item-active-color);
+    --uk-nav-item-color-o: var(--uk-nav-item-active-color-o);
+  }
+
+  /* ============================================
+     Nav Default Variant
+     ============================================ */
   .uk-nav-default {
     --uk-nav-item-color: var(--uk-muted-f);
     --uk-nav-item-color-o: 100%;
@@ -56,28 +76,9 @@
     --uk-nav-item-color-o: 100%;
   }
 
-  /* Nav Primary Variant */
-  .uk-nav-primary > li.uk-active {
-    --uk-nav-item-bg: var(--uk-primary);
-    --uk-nav-item-bg-o: 100%;
-    --uk-nav-item-color: var(--uk-primary-f);
-    --uk-nav-item-color-o: 100%;
-  }
-
-  .uk-nav-primary > li > a:hover {
-    --uk-nav-item-hover-bg: var(--uk-accent);
-    --uk-nav-item-hover-bg-o: 4%;
-    --uk-nav-item-hover-color: var(--uk-accent-f);
-    --uk-nav-item-hover-color-o: 100%;
-  }
-
-  .uk-nav-primary .uk-nav-sub li > a:hover {
-    --uk-nav-item-hover-bg: var(--uk-accent);
-    --uk-nav-item-hover-bg-o: 4%;
-    --uk-nav-item-hover-color: var(--uk-accent-f);
-    --uk-nav-item-hover-color-o: 100%;
-  }
-
+  /* ============================================
+     Nav Header, Divider, Sub, etc.
+     ============================================ */
   /* Nav Header */
   .uk-nav-header {
     --uk-nav-header-margin: var(--uk-nav-item-margin);
@@ -133,7 +134,7 @@
   .uk-nav-sub {
     /* --------------------------------------------------------- */
     /* FIX: Reset item color to avoid inheriting white text      */
-    /* from the active primary parent.                           */
+    /* from the active alt parent.                               */
     /* --------------------------------------------------------- */
     --uk-nav-item-color: var(--uk-muted-f);
     --uk-nav-item-color-o: 100%;
@@ -272,6 +273,8 @@
     --uk-dropdown-nav-divider-border-color: var(--uk-border);
     --uk-dropdown-nav-divider-border-color-o: 10%;
 
+    --uk-nav-item-color: var(--uk-bg-f);
+
     /* Computed values */
     --uk-dropdown-nav-item-hover-bg-computed: color-mix(
       in srgb,
@@ -346,8 +349,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    /* [RTL FIX] Changed `padding-left/right` to `padding-inline` */
-    padding-inline: 1rem;
+    height: var(--uk-subnav-item-height, auto);
+    padding: var(--uk-subnav-item-padding, 0 1rem);
     text-align: center;
     font-weight: 500;
     color: var(--uk-subnav-item-color-computed);

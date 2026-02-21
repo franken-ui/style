@@ -3170,6 +3170,20 @@
     --uk-nav-sub-item-padding: 0.5rem 1rem;
     --uk-nav-sub-item-margin: 0 0.5rem;
     --uk-nav-item-active-font-weight: 400;
+    --uk-nav-item-hover-bg: var(--uk-accent);
+    --uk-nav-item-hover-bg-o: 4%;
+    --uk-nav-item-hover-color: var(--uk-accent-f);
+    --uk-nav-item-hover-color-o: 100%;
+    --uk-nav-item-active-bg: var(--uk-primary);
+    --uk-nav-item-active-bg-o: 100%;
+    --uk-nav-item-active-color: var(--uk-primary-f);
+    --uk-nav-item-active-color-o: 100%;
+  }
+  .uk-nav-alt > li.uk-active {
+    --uk-nav-item-bg: var(--uk-nav-item-active-bg);
+    --uk-nav-item-bg-o: var(--uk-nav-item-active-bg-o);
+    --uk-nav-item-color: var(--uk-nav-item-active-color);
+    --uk-nav-item-color-o: var(--uk-nav-item-active-color-o);
   }
   .uk-nav-default {
     --uk-nav-item-color: var(--uk-muted-f);
@@ -3181,24 +3195,6 @@
     --uk-nav-item-font-weight: 500;
     --uk-nav-item-color: var(--uk-bg-f);
     --uk-nav-item-color-o: 100%;
-  }
-  .uk-nav-primary > li.uk-active {
-    --uk-nav-item-bg: var(--uk-primary);
-    --uk-nav-item-bg-o: 100%;
-    --uk-nav-item-color: var(--uk-primary-f);
-    --uk-nav-item-color-o: 100%;
-  }
-  .uk-nav-primary > li > a:hover {
-    --uk-nav-item-hover-bg: var(--uk-accent);
-    --uk-nav-item-hover-bg-o: 4%;
-    --uk-nav-item-hover-color: var(--uk-accent-f);
-    --uk-nav-item-hover-color-o: 100%;
-  }
-  .uk-nav-primary .uk-nav-sub li > a:hover {
-    --uk-nav-item-hover-bg: var(--uk-accent);
-    --uk-nav-item-hover-bg-o: 4%;
-    --uk-nav-item-hover-color: var(--uk-accent-f);
-    --uk-nav-item-hover-color-o: 100%;
   }
   .uk-nav-header {
     --uk-nav-header-margin: var(--uk-nav-item-margin);
@@ -3346,6 +3342,7 @@
     --uk-dropdown-nav-divider-border-width: 1px;
     --uk-dropdown-nav-divider-border-color: var(--uk-border);
     --uk-dropdown-nav-divider-border-color-o: 10%;
+    --uk-nav-item-color: var(--uk-bg-f);
     --uk-dropdown-nav-item-hover-bg-computed: color-mix(
       in srgb,
       var(--uk-dropdown-nav-item-hover-bg)
@@ -3406,7 +3403,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    padding-inline: 1rem;
+    height: var(--uk-subnav-item-height, auto);
+    padding: var(--uk-subnav-item-padding, 0 1rem);
     text-align: center;
     font-weight: 500;
     color: var(--uk-subnav-item-color-computed);
