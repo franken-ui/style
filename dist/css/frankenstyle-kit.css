@@ -6934,7 +6934,9 @@
 
 @layer base {
   [class*='uk-animation-'] {
-    animation: 0.5s ease-out both;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
   }
 
   body {
