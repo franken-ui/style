@@ -2482,7 +2482,7 @@
   }
   .uk-list-striped > :nth-of-type(odd) {
     --uk-list-striped-background-color: var(--uk-muted);
-    --uk-list-striped-background-color-o: 50%;
+    --uk-list-striped-background-color-o: var(--uk-muted-o);
     --uk-list-striped-background-color-computed: color-mix(
       in srgb,
       var(--uk-list-striped-background-color)

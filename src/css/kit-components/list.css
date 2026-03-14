@@ -149,7 +149,7 @@
   .uk-list-striped > :nth-of-type(odd) {
     /* Base Variables */
     --uk-list-striped-background-color: var(--uk-muted);
-    --uk-list-striped-background-color-o: 50%;
+    --uk-list-striped-background-color-o: var(--uk-muted-o);
 
     /* Computed value */
     --uk-list-striped-background-color-computed: color-mix(
