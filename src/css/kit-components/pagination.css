@@ -278,7 +278,7 @@
   .uk-pagination-ghost > * > *.uk-active {
     /* Base Variables */
     --uk-pagination-item-hover-bg: var(--uk-accent);
-    --uk-pagination-item-hover-bg-o: 100%;
+    --uk-pagination-item-hover-bg-o: var(--uk-accent-o);
     --uk-pagination-item-hover-color: var(--uk-accent-f);
     --uk-pagination-item-hover-color-o: 100%;
 
