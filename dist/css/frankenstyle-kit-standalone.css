@@ -3811,7 +3811,7 @@
     opacity: 0.5;
     pointer-events: none;
   }
-  .uk-pagination-xsmall > * > * {
+  .uk-pagination-xsmall {
     --uk-interactive-height-multiplier: 2;
     --uk-interactive-padding-block-multiplier: 0.5;
     --uk-interactive-padding-inline-multiplier: 1;
@@ -3819,7 +3819,7 @@
     --uk-pagination-item-font-size: var(--uk-global-font-size-small);
     --uk-pagination-item-line-height: var(--uk-global-line-height-small);
   }
-  .uk-pagination-small > * > * {
+  .uk-pagination-small {
     --uk-interactive-height-multiplier: 2.25;
     --uk-interactive-padding-block-multiplier: 0.5625;
     --uk-interactive-padding-inline-multiplier: 1.125;
@@ -3827,12 +3827,12 @@
     --uk-pagination-item-font-size: var(--uk-global-font-size-small);
     --uk-pagination-item-line-height: var(--uk-global-line-height-small);
   }
-  .uk-pagination-medium > * > * {
+  .uk-pagination-medium {
     --uk-interactive-height-multiplier: 2.75;
     --uk-interactive-padding-block-multiplier: 0.6875;
     --uk-interactive-padding-inline-multiplier: 1.375;
   }
-  .uk-pagination-large > * > * {
+  .uk-pagination-large {
     --uk-interactive-height-multiplier: 3;
     --uk-interactive-padding-block-multiplier: 0.75;
     --uk-interactive-padding-inline-multiplier: 1.5;
@@ -4018,6 +4018,120 @@
   }
   .uk-pagination-danger > * > *:hover,
   .uk-pagination-danger > * > *.uk-active {
+    background-color: var(--uk-pagination-item-hover-bg-computed);
+    color: var(--uk-pagination-item-hover-color-computed);
+  }
+  .uk-pagination-success > * > * {
+    --uk-pagination-item-bg: var(--uk-success);
+    --uk-pagination-item-bg-o: 100%;
+    --uk-pagination-item-color: #fff;
+    --uk-pagination-item-color-o: 100%;
+    --uk-pagination-item-hover-bg: var(--uk-success);
+    --uk-pagination-item-hover-bg-o: 90%;
+    --uk-pagination-item-hover-color: #fff;
+    --uk-pagination-item-hover-color-o: 100%;
+    --uk-pagination-item-bg-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-bg) var(--uk-pagination-item-bg-o),
+      transparent
+    );
+    --uk-pagination-item-color-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-color) var(--uk-pagination-item-color-o),
+      transparent
+    );
+    --uk-pagination-item-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-hover-bg) var(--uk-pagination-item-hover-bg-o),
+      transparent
+    );
+    --uk-pagination-item-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-hover-color)
+        var(--uk-pagination-item-hover-color-o),
+      transparent
+    );
+    background-color: var(--uk-pagination-item-bg-computed);
+    color: var(--uk-pagination-item-color-computed);
+  }
+  .uk-pagination-success > * > *:hover,
+  .uk-pagination-success > * > *.uk-active {
+    background-color: var(--uk-pagination-item-hover-bg-computed);
+    color: var(--uk-pagination-item-hover-color-computed);
+  }
+  .uk-pagination-warning > * > * {
+    --uk-pagination-item-bg: var(--uk-warning);
+    --uk-pagination-item-bg-o: 100%;
+    --uk-pagination-item-color: #fff;
+    --uk-pagination-item-color-o: 100%;
+    --uk-pagination-item-hover-bg: var(--uk-warning);
+    --uk-pagination-item-hover-bg-o: 90%;
+    --uk-pagination-item-hover-color: #fff;
+    --uk-pagination-item-hover-color-o: 100%;
+    --uk-pagination-item-bg-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-bg) var(--uk-pagination-item-bg-o),
+      transparent
+    );
+    --uk-pagination-item-color-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-color) var(--uk-pagination-item-color-o),
+      transparent
+    );
+    --uk-pagination-item-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-hover-bg) var(--uk-pagination-item-hover-bg-o),
+      transparent
+    );
+    --uk-pagination-item-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-hover-color)
+        var(--uk-pagination-item-hover-color-o),
+      transparent
+    );
+    background-color: var(--uk-pagination-item-bg-computed);
+    color: var(--uk-pagination-item-color-computed);
+  }
+  .uk-pagination-warning > * > *:hover,
+  .uk-pagination-warning > * > *.uk-active {
+    background-color: var(--uk-pagination-item-hover-bg-computed);
+    color: var(--uk-pagination-item-hover-color-computed);
+  }
+  .uk-pagination-info > * > * {
+    --uk-pagination-item-bg: var(--uk-info);
+    --uk-pagination-item-bg-o: 100%;
+    --uk-pagination-item-color: #fff;
+    --uk-pagination-item-color-o: 100%;
+    --uk-pagination-item-hover-bg: var(--uk-info);
+    --uk-pagination-item-hover-bg-o: 90%;
+    --uk-pagination-item-hover-color: #fff;
+    --uk-pagination-item-hover-color-o: 100%;
+    --uk-pagination-item-bg-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-bg) var(--uk-pagination-item-bg-o),
+      transparent
+    );
+    --uk-pagination-item-color-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-color) var(--uk-pagination-item-color-o),
+      transparent
+    );
+    --uk-pagination-item-hover-bg-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-hover-bg) var(--uk-pagination-item-hover-bg-o),
+      transparent
+    );
+    --uk-pagination-item-hover-color-computed: color-mix(
+      in srgb,
+      var(--uk-pagination-item-hover-color)
+        var(--uk-pagination-item-hover-color-o),
+      transparent
+    );
+    background-color: var(--uk-pagination-item-bg-computed);
+    color: var(--uk-pagination-item-color-computed);
+  }
+  .uk-pagination-info > * > *:hover,
+  .uk-pagination-info > * > *.uk-active {
     background-color: var(--uk-pagination-item-hover-bg-computed);
     color: var(--uk-pagination-item-hover-color-computed);
   }
