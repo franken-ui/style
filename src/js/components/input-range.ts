@@ -614,11 +614,7 @@ export class InputRange extends InputMixin(Base) {
         e.preventDefault();
         return;
       case 'End':
-        // Go to maximum
-        this.handleValueChange(
-          knob,
-          knob === 'high' ? this.max : this._highValue,
-        );
+        this.handleValueChange(knob, this.max);
         e.preventDefault();
         return;
       case 'PageUp':
