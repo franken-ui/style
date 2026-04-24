@@ -1,4 +1,5 @@
 import { rules as defaultRules } from './runtime-rules';
+import { vd } from './runtime-vd';
 
 // Ensure window.FS exists immediately for module consumers
 if (typeof window !== 'undefined') {
@@ -221,6 +222,65 @@ if (typeof window !== 'undefined') {
     };
   }
 
+  // --- Debug Feature ---
+
+  function runVdDebug(element: HTMLElement): void {
+    if (!Array.isArray(vd) || vd.length === 0) return;
+
+    const getBase = (cls: string) => {
+      let base = normalizeClsClass(cls);
+      base = base.replace(/^dark:/, '');
+      const bpRegex = new RegExp(`^(${Object.keys(breakpoints).join('|')}):`);
+      base = base.replace(bpRegex, '');
+
+      for (const state of states) {
+        if (base.endsWith(state)) {
+          base = base.slice(0, -state.length);
+          break;
+        }
+      }
+      return base;
+    };
+
+    const targetBases = new Set(vd.map(getBase));
+
+    const allClasses = new Set<string>();
+
+    Array.from(element.classList).forEach(c => allClasses.add(c));
+
+    const clsAttr = element.getAttribute('cls');
+    if (clsAttr) {
+      clsAttr
+        .split(/\s+/)
+        .filter(Boolean)
+        .forEach(c => allClasses.add(c));
+    }
+
+    const missingVars: string[] = [];
+
+    allClasses.forEach(cls => {
+      const base = getBase(cls);
+
+      if (targetBases.has(base)) {
+        const cleanCls = normalizeClsClass(cls);
+        const varName = `--${cleanCls.replace(/[^a-zA-Z0-9-]/g, '-')}`;
+
+        const hasVar = element.style.getPropertyValue(varName) !== '';
+
+        if (!hasVar) {
+          missingVars.push(`${cls} → ${varName}`);
+        }
+      }
+    });
+
+    if (missingVars.length > 0) {
+      console.warn(
+        `[fs debug] Missing variables (${missingVars.length}): ${missingVars.join(', ')}`,
+        element,
+      );
+    }
+  }
+
   // --- Safelist Logic ---
 
   function getSafelistClasses(): ParsedClass[] {
@@ -310,6 +370,17 @@ if (typeof window !== 'undefined') {
    */
   function generateInteractiveStyles(): void {
     try {
+      const isDebug = (window as any).FS?.debug === true;
+
+      // 0. Run debugger
+      if (isDebug) {
+        const debugNodes = document.querySelectorAll('[class], [cls]');
+
+        debugNodes.forEach(node => {
+          runVdDebug(node as HTMLElement);
+        });
+      }
+
       // 1. Scan the DOM
       const nodes = document.querySelectorAll('[data-fs]');
       const allInteractiveClasses: ParsedClass[] = [];
