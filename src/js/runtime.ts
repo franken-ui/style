@@ -224,60 +224,89 @@ if (typeof window !== 'undefined') {
 
   // --- Debug Feature ---
 
-  function runVdDebug(element: HTMLElement): void {
-    if (!Array.isArray(vd) || vd.length === 0) return;
+  function runDebug(node: HTMLElement): void {
+    // --- Shared: extract all classes once ---
+    const allClasses: string[] = [...Array.from(node.classList)];
 
-    const getBase = (cls: string) => {
-      let base = normalizeClsClass(cls);
-      base = base.replace(/^dark:/, '');
-      const bpRegex = new RegExp(`^(${Object.keys(breakpoints).join('|')}):`);
-      base = base.replace(bpRegex, '');
+    const clsAttr = node.getAttribute('cls');
 
-      for (const state of states) {
-        if (base.endsWith(state)) {
-          base = base.slice(0, -state.length);
-          break;
-        }
-      }
-      return base;
-    };
-
-    const targetBases = new Set(vd.map(getBase));
-
-    const allClasses = new Set<string>();
-
-    Array.from(element.classList).forEach(c => allClasses.add(c));
-
-    const clsAttr = element.getAttribute('cls');
     if (clsAttr) {
       clsAttr
         .split(/\s+/)
         .filter(Boolean)
-        .forEach(c => allClasses.add(c));
+        .forEach(c => allClasses.push(c));
     }
 
-    const missingVars: string[] = [];
+    // --- Check 1: Interactive state classes on elements missing data-fs ---
+    if (!node.hasAttribute('data-fs')) {
+      const matchingInteractiveClasses: string[] = [];
 
-    allClasses.forEach(cls => {
-      const base = getBase(cls);
+      allClasses.forEach(cls => {
+        const normalizedClass = normalizeClsClass(cls);
+        const match = normalizedClass.match(classParser);
 
-      if (targetBases.has(base)) {
-        const cleanCls = normalizeClsClass(cls);
-        const varName = `--${cleanCls.replace(/[^a-zA-Z0-9-]/g, '-')}`;
-
-        const hasVar = element.style.getPropertyValue(varName) !== '';
-
-        if (!hasVar) {
-          missingVars.push(`${cls} → ${varName}`);
+        if (!match) {
+          return;
         }
-      }
-    });
 
-    if (missingVars.length > 0) {
-      console.warn(
-        `[fs debug] Missing variables (${missingVars.length}): ${missingVars.join(', ')}`,
-        element,
-      );
+        const [, , , baseClass, state] = match;
+
+        if (findStyleRule(baseClass)) {
+          matchingInteractiveClasses.push(`"${cls}" (state: ${state})`);
+        }
+      });
+
+      if (matchingInteractiveClasses.length > 0) {
+        console.warn(
+          `[fs debug] Element has interactive state class(es) [${matchingInteractiveClasses.join(', ')}] but is missing the \`data-fs\` attribute — these styles will have no effect.`,
+          node,
+        );
+      }
+    }
+
+    // --- Check 2: Missing CSS variables on known vd targets ---
+    if (Array.isArray(vd) && vd.length > 0) {
+      const getBase = (cls: string) => {
+        let base = normalizeClsClass(cls);
+
+        base = base.replace(/^dark:/, '');
+
+        const bpRegex = new RegExp(`^(${Object.keys(breakpoints).join('|')}):`);
+
+        base = base.replace(bpRegex, '');
+
+        for (const state of states) {
+          if (base.endsWith(state)) {
+            base = base.slice(0, -state.length);
+            break;
+          }
+        }
+
+        return base;
+      };
+
+      const targetBases = new Set(vd.map(getBase));
+      const missingVars: string[] = [];
+
+      allClasses.forEach(cls => {
+        const base = getBase(cls);
+
+        if (targetBases.has(base)) {
+          const cleanCls = normalizeClsClass(cls);
+          const varName = `--${cleanCls.replace(/[^a-zA-Z0-9-]/g, '-')}`;
+
+          if (node.style.getPropertyValue(varName) === '') {
+            missingVars.push(`${cls} → ${varName}`);
+          }
+        }
+      });
+
+      if (missingVars.length > 0) {
+        console.warn(
+          `[fs debug] Missing variables (${missingVars.length}): ${missingVars.join(', ')}`,
+          node,
+        );
+      }
     }
   }
 
@@ -372,12 +401,13 @@ if (typeof window !== 'undefined') {
     try {
       const isDebug = (window as any).FS?.debug === true;
 
-      // 0. Run debugger
+      // 0. Run debuggers
       if (isDebug) {
+        // Check for missing CSS variables on elements with data-fs
         const debugNodes = document.querySelectorAll('[class], [cls]');
 
         debugNodes.forEach(node => {
-          runVdDebug(node as HTMLElement);
+          runDebug(node as HTMLElement);
         });
       }
 
