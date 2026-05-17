@@ -5,7 +5,7 @@
     --uk-alert-color: var(--uk-muted-f);
     --uk-alert-color-o: 100%;
     --uk-alert-border: var(--uk-border);
-    --uk-alert-border-o: 10%;
+    --uk-alert-border-o: var(--uk-border-o);
 
     --uk-alert-bg-computed: color-mix(
       in srgb,

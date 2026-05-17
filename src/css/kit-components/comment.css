@@ -93,7 +93,7 @@
     --uk-comment-nested-margin-top: 1.5rem;
     --uk-comment-nested-border-width: 1px;
     --uk-comment-nested-border-color: var(--uk-border);
-    --uk-comment-nested-border-color-o: 10%;
+    --uk-comment-nested-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-comment-nested-border-color-computed: color-mix(

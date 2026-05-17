@@ -1,7 +1,7 @@
 @layer components {
   .uk-accordion {
     --uk-accordion-border: var(--uk-border);
-    --uk-accordion-border-o: 10%;
+    --uk-accordion-border-o: var(--uk-border-o);
 
     --uk-accordion-border-computed: color-mix(
       in srgb,

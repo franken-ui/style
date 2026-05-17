@@ -24,7 +24,7 @@
     --uk-button-color: var(--uk-bg-f);
 
     --uk-button-border: var(--uk-border);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
 
     --uk-button-radius: var(--uk-global-radius);
 
@@ -122,7 +122,7 @@
     --uk-button-bg-o: 100%;
     --uk-button-color: var(--uk-bg-f);
     --uk-button-border: var(--uk-border);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-accent);
     --uk-button-hover-bg-o: var(--uk-accent-o);
     --uk-button-hover-color: var(--uk-accent-f);
@@ -200,7 +200,7 @@
     --uk-button-bg-o: 0%;
     --uk-button-color: var(--uk-primary);
     --uk-button-border: var(--uk-primary);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-primary);
     --uk-button-hover-bg-o: 8%;
     --uk-button-hover-color: var(--uk-primary);
@@ -211,7 +211,7 @@
     --uk-button-bg-o: 0%;
     --uk-button-color: var(--uk-primary);
     --uk-button-border: var(--uk-primary);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-primary);
     --uk-button-hover-bg-o: 8%;
     --uk-button-hover-color: var(--uk-primary);
@@ -222,7 +222,7 @@
     --uk-button-bg-o: 0%;
     --uk-button-color: var(--uk-secondary-f);
     --uk-button-border: var(--uk-secondary);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-secondary);
     --uk-button-hover-bg-o: 8%;
     --uk-button-hover-color: var(--uk-secondary-f);

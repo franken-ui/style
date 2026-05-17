@@ -5,7 +5,7 @@
     --uk-label-color: var(--uk-bg-f);
     --uk-label-color-o: 100%;
     --uk-label-border: var(--uk-border);
-    --uk-label-border-o: 10%;
+    --uk-label-border-o: var(--uk-border-o);
 
     --uk-label-bg-computed: color-mix(
       in srgb,

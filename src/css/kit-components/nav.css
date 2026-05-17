@@ -92,7 +92,7 @@
   /* Nav Divider */
   .uk-nav-divider {
     --uk-nav-divider-color: var(--uk-border);
-    --uk-nav-divider-color-o: 10%;
+    --uk-nav-divider-color-o: var(--uk-border-o);
     --uk-nav-divider-color-computed: color-mix(
       in srgb,
       var(--uk-nav-divider-color) var(--uk-nav-divider-color-o),
@@ -119,7 +119,7 @@
   .uk-nav-sub,
   .uk-nav-sub ul {
     --uk-nav-sub-border: var(--uk-border);
-    --uk-nav-sub-border-o: 10%;
+    --uk-nav-sub-border-o: var(--uk-border-o);
     --uk-nav-sub-border-computed: color-mix(
       in srgb,
       var(--uk-nav-sub-border) var(--uk-nav-sub-border-o),
@@ -271,7 +271,7 @@
     --uk-dropdown-nav-divider-margin: 0;
     --uk-dropdown-nav-divider-border-width: 1px;
     --uk-dropdown-nav-divider-border-color: var(--uk-border);
-    --uk-dropdown-nav-divider-border-color-o: 10%;
+    --uk-dropdown-nav-divider-border-color-o: var(--uk-border-o);
 
     --uk-nav-item-color: var(--uk-bg-f);
 

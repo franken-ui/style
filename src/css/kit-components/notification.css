@@ -45,7 +45,7 @@
     --uk-notification-shadow: var(--uk-global-shadow-small);
     --uk-notification-border-width: 1px;
     --uk-notification-border-color: var(--uk-border);
-    --uk-notification-border-color-o: 10%;
+    --uk-notification-border-color-o: var(--uk-border-o);
     --uk-notification-bg: var(--uk-bg);
     --uk-notification-bg-o: 100%;
     --uk-notification-color: var(--uk-bg-f);

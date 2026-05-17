@@ -944,7 +944,7 @@
     --uk-slidenav-shadow: var(--uk-global-shadow-small);
     --uk-slidenav-border-width: 1px;
     --uk-slidenav-border-color: var(--uk-border);
-    --uk-slidenav-border-color-o: 10%;
+    --uk-slidenav-border-color-o: var(--uk-border-o);
     --uk-slidenav-bg: var(--uk-bg);
     --uk-slidenav-bg-o: 100%;
     --uk-slidenav-hover-bg: var(--uk-bg);
@@ -1154,7 +1154,7 @@
     --uk-placeholder-margin-bottom: 1.25rem;
     --uk-placeholder-padding: 2rem;
     --uk-placeholder-border-color: var(--uk-border);
-    --uk-placeholder-border-color-o: 10%;
+    --uk-placeholder-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-placeholder-border-color-computed: color-mix(

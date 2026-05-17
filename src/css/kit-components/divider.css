@@ -11,7 +11,7 @@
   .uk-hr {
     /* Base Variables */
     --uk-hr-color: var(--uk-border);
-    --uk-hr-color-o: 10%;
+    --uk-hr-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-hr-color-computed: color-mix(
@@ -28,7 +28,7 @@
     /* Base Variables */
     --uk-divider-small-width: 100px;
     --uk-divider-small-border-color: var(--uk-border);
-    --uk-divider-small-border-color-o: 10%;
+    --uk-divider-small-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-divider-small-border-color-computed: color-mix(
@@ -55,7 +55,7 @@
     /* Base Variables */
     --uk-divider-vertical-height: 100px;
     --uk-divider-vertical-border-color: var(--uk-border);
-    --uk-divider-vertical-border-color-o: 10%;
+    --uk-divider-vertical-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-divider-vertical-border-color-computed: color-mix(

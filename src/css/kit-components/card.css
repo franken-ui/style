@@ -9,7 +9,7 @@
     --uk-card-shadow: var(--uk-global-shadow);
     --uk-card-border-width: 1px;
     --uk-card-border-color: var(--uk-border);
-    --uk-card-border-color-o: 10%;
+    --uk-card-border-color-o: var(--uk-border-o);
     --uk-card-bg: var(--uk-card);
     --uk-card-bg-o: 100%;
     --uk-card-color: var(--uk-card-f);

@@ -74,7 +74,7 @@
     --uk-dropdown-shadow: var(--uk-global-shadow-small);
     --uk-dropdown-border-width: 1px;
     --uk-dropdown-border-color: var(--uk-border);
-    --uk-dropdown-border-color-o: 10%;
+    --uk-dropdown-border-color-o: var(--uk-border-o);
     --uk-dropdown-bg: var(--uk-drop);
     --uk-dropdown-bg-o: 100%;
     --uk-dropdown-color: var(--uk-drop-f);

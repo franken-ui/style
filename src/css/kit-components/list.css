@@ -105,7 +105,7 @@
     --uk-list-divider-item-padding-top: 0.5rem;
     --uk-list-divider-border-width: 1px;
     --uk-list-divider-border-color: var(--uk-border);
-    --uk-list-divider-border-color-o: 10%;
+    --uk-list-divider-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-list-divider-border-color-computed: color-mix(
@@ -132,7 +132,7 @@
     /* Base Variables */
     --uk-list-striped-border-width: 1px;
     --uk-list-striped-border-color: var(--uk-border);
-    --uk-list-striped-border-color-o: 10%;
+    --uk-list-striped-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-list-striped-border-color-computed: color-mix(

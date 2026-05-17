@@ -29,7 +29,7 @@
   .uk-input-pin input {
     /* Base Variables */
     --uk-input-pin-input-border-color: var(--uk-input);
-    --uk-input-pin-input-border-color-o: 10%;
+    --uk-input-pin-input-border-color-o: var(--uk-input-o);
 
     /* Computed value */
     --uk-input-pin-input-border-color-computed: color-mix(
@@ -236,7 +236,7 @@
     --uk-input-tag-radius: var(--uk-form-input-radius);
     --uk-input-tag-border-width: 1px;
     --uk-input-tag-border-color: var(--uk-input);
-    --uk-input-tag-border-color-o: 10%;
+    --uk-input-tag-border-color-o: var(--uk-input-o);
     --uk-input-tag-focus-ring-color: var(--uk-focus);
     --uk-input-tag-focus-ring-color-o: 100%;
 
@@ -458,7 +458,7 @@
      ============================================ */
   .uk-keyval {
     --uk-keyval-border-color: var(--uk-border);
-    --uk-keyval-border-color-o: 10%;
+    --uk-keyval-border-color-o: var(--uk-input-o);
 
     /* Computed value */
     --uk-keyval-border-color-computed: color-mix(

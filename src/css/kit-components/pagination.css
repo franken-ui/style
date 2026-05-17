@@ -129,7 +129,7 @@
   .uk-pagination-default > * > * {
     /* Base Variables */
     --uk-pagination-item-border-color: var(--uk-border);
-    --uk-pagination-item-border-color-o: 10%;
+    --uk-pagination-item-border-color-o: var(--uk-border-o);
     --uk-pagination-item-bg: var(--uk-bg);
     --uk-pagination-item-bg-o: 100%;
     --uk-pagination-item-color: var(--uk-bg-f);

@@ -257,7 +257,7 @@
     /* Base Variables */
     --uk-cal-divider-table-row-border-width: 1px;
     --uk-cal-divider-table-row-border-color: var(--uk-border);
-    --uk-cal-divider-table-row-border-color-o: 10%;
+    --uk-cal-divider-table-row-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-cal-divider-table-row-border-color-computed: color-mix(

@@ -58,7 +58,7 @@
     --uk-modal-dialog-transition: 0.15s ease-out;
     --uk-modal-dialog-border-width: 1px;
     --uk-modal-dialog-border-color: var(--uk-border);
-    --uk-modal-dialog-border-color-o: 10%;
+    --uk-modal-dialog-border-color-o: var(--uk-border-o);
 
     /* Computed value */
     --uk-modal-dialog-border-color-computed: color-mix(

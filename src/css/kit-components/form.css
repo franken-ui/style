@@ -101,7 +101,7 @@
 
     /* Base Variables */
     --uk-form-input-border-color: var(--uk-input);
-    --uk-form-input-border-color-o: 10%;
+    --uk-form-input-border-color-o: var(--uk-input-o);
     --uk-form-input-bg: transparent;
     --uk-form-input-color: var(--uk-bg-f);
     --uk-form-input-color-o: 100%;
@@ -241,7 +241,7 @@
   .uk-checkbox {
     /* Base Variables */
     --uk-form-radio-border-color: var(--uk-input);
-    --uk-form-radio-border-color-o: 10%;
+    --uk-form-radio-border-color-o: var(--uk-input-o);
 
     /* Computed values */
     --uk-form-radio-border-color-computed: color-mix(
@@ -417,7 +417,7 @@
     --uk-toggle-switch-height: 1.25rem;
     --uk-toggle-switch-width: 2.25rem;
     --uk-toggle-switch-bg: var(--uk-input);
-    --uk-toggle-switch-bg-o: 10%;
+    --uk-toggle-switch-bg-o: var(--uk-input-o);
     --uk-toggle-switch-knob-bg: var(--uk-bg);
     --uk-toggle-switch-knob-bg-o: 100%;
 

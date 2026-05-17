@@ -5,7 +5,7 @@
     --uk-badge-color: var(--uk-bg-f);
     --uk-badge-color-o: 100%;
     --uk-badge-border: var(--uk-border);
-    --uk-badge-border-o: 10%;
+    --uk-badge-border-o: var(--uk-border-o);
 
     --uk-badge-bg-computed: color-mix(
       in srgb,
