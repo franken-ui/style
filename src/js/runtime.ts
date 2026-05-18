@@ -208,6 +208,12 @@ if (typeof window !== 'undefined') {
 
   function parseClassName(className: string): ParsedClass | null {
     const normalizedClass = normalizeClsClass(className);
+
+    // Safety check to ensure we only process actual states and avoid false positives
+    if (!normalizedClass.includes(':')) {
+      return null;
+    }
+
     const match = normalizedClass.match(classParser);
 
     if (!match) return null;
@@ -243,6 +249,12 @@ if (typeof window !== 'undefined') {
 
       allClasses.forEach(cls => {
         const normalizedClass = normalizeClsClass(cls);
+
+        // Safety check to avoid flagging classes that just contain words like "hover" (e.g. hover-rect)
+        if (!normalizedClass.includes(':')) {
+          return;
+        }
+
         const match = normalizedClass.match(classParser);
 
         if (!match) {
@@ -292,7 +304,11 @@ if (typeof window !== 'undefined') {
         const base = getBase(cls);
 
         if (targetBases.has(base)) {
-          const cleanCls = normalizeClsClass(cls);
+          let cleanCls = normalizeClsClass(cls);
+
+          // Strip arbitrary brackets first to ensure variables like --grid-cols and --h are mapped properly
+          cleanCls = cleanCls.replace(/\[|\]/g, '');
+
           const varName = `--${cleanCls.replace(/[^a-zA-Z0-9-]/g, '-')}`;
 
           if (node.style.getPropertyValue(varName) === '') {
@@ -375,6 +391,12 @@ if (typeof window !== 'undefined') {
         const normalizedClass = fromCls
           ? normalizeClsClass(className)
           : className;
+
+        // Safety check to avoid parsing standard classes without actual pseudo-class states
+        if (!normalizedClass.includes(':')) {
+          continue;
+        }
+
         const match = normalizedClass.match(classParser);
 
         if (match) {
@@ -403,6 +425,10 @@ if (typeof window !== 'undefined') {
 
       // 0. Run debuggers
       if (isDebug) {
+        console.warn(
+          '[fs] Debug mode is active. Please ensure this is disabled in production for optimal performance.',
+        );
+
         // Check for missing CSS variables on elements with data-fs
         const debugNodes = document.querySelectorAll('[class], [cls]');
 
