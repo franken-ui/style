@@ -32,7 +32,7 @@ Then import it in your `main.css`:
 JavaScript is optional, but important for interactive states:
 
 ```html
-<script src="https://unpkg.com/frankenstyle@latest/dist/js/frankenstyle.min.js"></script>
+<script src="https://unpkg.com/frankenstyle@latest/dist/js/frankenstyle.iife.js"></script>
 ```
 
 ## Core Concepts & Usage

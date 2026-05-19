@@ -27,7 +27,7 @@ For Frankenstyle alone, you can get started by including just two assets. The Ja
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/frankenstyle@latest/dist/css/frankenstyle.min.css" />
-<script src="https://unpkg.com/frankenstyle@latest/dist/js/frankenstyle.min.js"></script>
+<script src="https://unpkg.com/frankenstyle@latest/dist/js/frankenstyle.iife.js"></script>
 ```
 
 ### Boilerplate (Recommended)
