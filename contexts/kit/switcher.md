@@ -1,0 +1,517 @@
+# Switcher
+
+## Usage
+
+The Switcher component consists of a number of toggles and their related content items. Add the `data-uk-switcher` attribute to a list element which contains the toggles. Add the `.uk-switcher` class to the element containing the content items.
+
+By default, the element with the `.uk-switcher` class has to succeed the toggle directly in order for the switcher to function. If you need it to be nested in another element, for example when using a grid, add the `connect: SELECTOR` option to the `data-uk-switcher` attribute and select the element containing the items for switching.
+
+Typically, the switcher toggles are styled through other components, some of which will be shown here.
+
+```html
+<!-- This is the nav containing the toggling elements -->
+<ul data-uk-switcher>
+  <li><a href="#"></a></li>
+</ul>
+
+<!-- This is the container of the content items -->
+<ul class="uk-switcher">
+  <li></li>
+</ul>
+```
+
+In this example we are using the [Subnav component](/docs/latest/kit/subnav).
+
+```html
+<ul class="uk-subnav uk-subnav-primary" data-uk-switcher>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+
+<ul class="uk-switcher mt" style="--mt: 4">
+  <li>Hello!</li>
+  <li>Hello again!</li>
+  <li>Bazinga!</li>
+</ul>
+```
+
+## Navigation controls
+
+In some cases you want to switch to another content section from within the active content. This is possible using the `data-uk-switcher-item` attribute. To target the items, you need to set the attribute to the number of the respective content item.
+
+Setting the attribute to `next` and `previous` will switch to the adjacent items.
+
+```html
+<ul class="uk-switcher mt-4">
+  <li><a href="#" data-uk-switcher-item="0"></a></li>
+  <li><a href="#" data-uk-switcher-item="1"></a></li>
+  <li><a href="#" data-uk-switcher-item="next"></a></li>
+  <li><a href="#" data-uk-switcher-item="previous"></a></li>
+</ul>
+```
+
+```html
+<ul class="uk-subnav uk-subnav-primary" data-uk-switcher>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+<ul class="uk-switcher mt" style="--mt: 4">
+  <li>
+    Hello!
+    <a class="uk-link" href="#" data-uk-switcher-item="2">Switch to item 3</a>
+  </li>
+  <li>
+    Hello again!
+    <a class="uk-link" href="#" data-uk-switcher-item="next">Next item</a>
+  </li>
+  <li>
+    Bazinga!
+    <a class="uk-link" href="#" data-uk-switcher-item="previous">
+      Previous item
+    </a>
+  </li>
+</ul>
+```
+
+## Connect multiple containers
+
+It is also possible to connect multiple content containers. Just add the `connect` parameter to the `data-uk-switcher` attribute and use a selector that applies to all items.
+
+```html
+<!-- This is the nav containing the toggling elements -->
+<ul data-uk-switcher="connect: .my-class">
+  ...
+</ul>
+
+<!-- These are the containers of the content items -->
+<ul class="my-class uk-switcher">
+  ...
+</ul>
+
+<ul class="my-class uk-switcher">
+  ...
+</ul>
+```
+
+```html
+<ul
+  class="uk-subnav uk-subnav-primary"
+  data-uk-switcher="connect: .switcher-container"
+>
+  <li><a href="#">Active</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+
+<h4 class="mt" style="--mt: 4">Container 1</h4>
+
+<ul class="switcher-container uk-switcher mt" style="--mt: 4">
+  <li>Hello!</li>
+  <li>Hello again!</li>
+  <li>Bazinga!</li>
+</ul>
+
+<h4 class="mt" style="--mt: 4">Container 2</h4>
+
+<ul class="switcher-container uk-switcher mt" style="--mt: 4">
+  <li>Hello! The first item.</li>
+  <li>Hello again! The second item.</li>
+  <li>Bazinga! The third item.</li>
+</ul>
+```
+
+## Animations
+
+You can apply all animations from the [Animation component](/docs/latest/kit/animation) to switcher items. To do so, add the `animation` parameter with the relevant class to the `data-uk-switcher` attribute.
+
+```html
+<ul data-uk-switcher="animation: uk-animation-fade">
+  ...
+</ul>
+```
+
+```html
+<ul
+  class="uk-subnav uk-subnav-primary"
+  data-uk-switcher="animation: uk-animation-fade"
+>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+
+<ul class="uk-switcher mt" style="--mt: 4">
+  <li>Hello!</li>
+  <li>Hello again!</li>
+  <li>Bazinga!</li>
+</ul>
+```
+
+### Multiple animations
+
+You can also apply multiple animations from the [Animation component](/docs/latest/kit/animation). That way you can add different in and out animations.
+
+```html
+<ul data-uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
+  ...
+</ul>
+```
+
+```html
+<ul
+  class="uk-subnav uk-subnav-primary"
+  data-uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium"
+>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+
+<ul class="uk-switcher mt" style="--mt: 4">
+  <li>Hello!</li>
+  <li>Hello again!</li>
+  <li>Bazinga!</li>
+</ul>
+```
+
+## Switcher and subnav
+
+The switcher is easily applied to the [Subnav component](/docs/latest/kit/subnav).
+
+```html
+<!-- This is the subnav containing the toggling elements -->
+<ul class="uk-subnav uk-subnav-primary" uk-switcher>
+  ...
+</ul>
+
+<!-- This is the container of the content items -->
+<ul class="uk-switcher"></ul>
+```
+
+```html
+<ul class="uk-subnav uk-subnav-primary" data-uk-switcher>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+
+<ul class="uk-switcher mt" style="--mt: 4">
+  <li>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </li>
+  <li>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat.
+  </li>
+  <li>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    eu fugiat nulla pariatur, sed do eiusmod.
+  </li>
+</ul>
+```
+
+## Switcher and tab
+
+As an exception to the rule, add the `data-uk-tab` attribute instead of `data-uk-switcher` to the tabbed navigation to combine the switcher with the [Tab component](/docs/latest/kit/tab).
+
+```html
+<!-- This is the subnav containing the toggling elements -->
+<ul data-uk-tab>
+  ...
+</ul>
+
+<!-- This is the container of the content items -->
+<ul class="uk-switcher">
+  ...
+</ul>
+```
+
+```html
+<ul class="uk-tab" data-uk-tab>
+  <li><a class="px-4 pb-3 pt-2" href="#">Item</a></li>
+  <li><a class="px-4 pb-3 pt-2" href="#">Item</a></li>
+  <li><a class="px-4 pb-3 pt-2" href="#">Item</a></li>
+</ul>
+
+<ul class="uk-switcher mt" style="--mt: 4">
+  <li>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </li>
+  <li>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat.
+  </li>
+  <li>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    eu fugiat nulla pariatur, sed do eiusmod.
+  </li>
+</ul>
+```
+
+### Vertical tabs
+
+You can use the width and grid utility classes from Tailwind CSS to display content correctly with a vertical tabbed navigation.
+
+```html
+<div uk-grid>
+  <div class="uk-width-auto">
+    <ul class="uk-tab-left" data-uk-tab="connect: #my-id">
+      ...
+    </ul>
+  </div>
+  <div class="uk-width-expand">
+    <ul id="my-id" class="uk-switcher">
+      ...
+    </ul>
+  </div>
+</div>
+```
+
+```html
+<div
+  class="display-grid grid-cols gap lg:grid-cols"
+  style="--grid-cols: 1; --gap: 4; --lg-grid-cols: 2"
+>
+  <div>
+    <div class="display-flex flex-col gap lg:flex-row" style="--gap: 4">
+      <div class="flex-none">
+        <ul
+          class="uk-tab-left"
+          data-uk-tab="connect: #component-tab-left; animation: uk-animation-fade"
+        >
+          <li><a href="#">Active</a></li>
+          <li><a href="#">Item</a></li>
+          <li><a href="#">Item</a></li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <ul id="component-tab-left" class="uk-switcher">
+          <li>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </li>
+          <li>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </li>
+          <li>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur, sed do eiusmod.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="display-flex flex-col gap-4 lg:flex-row">
+      <div class="flex-none lg:order-last">
+        <ul
+          class="uk-tab-right"
+          data-uk-tab="connect: #component-tab-right; animation: uk-animation-fade"
+        >
+          <li><a href="#">Active</a></li>
+          <li><a href="#">Item</a></li>
+          <li><a href="#">Item</a></li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <ul id="component-tab-right" class="uk-switcher">
+          <li>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </li>
+          <li>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </li>
+          <li>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur, sed do eiusmod.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## Switcher and button
+
+The switcher can also be applied to buttons or button groups from the [Button component](/docs/latest/kit/button). Just add the switcher attribute to a block around a group of buttons or to the element with the `.uk-button-group` class.
+
+```html
+<!-- This is a switcher using a number of buttons -->
+<div data-uk-switcher="toggle: > *">
+  <button class="uk-button uk-button-default" type="button"></button>
+  <button class="uk-button uk-button-default" type="button"></button>
+</div>
+
+<ul class="uk-switcher">
+  ...
+</ul>
+```
+
+```html
+<div
+  class="display-flex flex-wrap gap" style="--gap: 2"
+  data-uk-switcher="animation: uk-animation-fade; toggle: > *"
+>
+  <button class="uk-button uk-button-primary" type="button">Item</button>
+  <button class="uk-button uk-button-primary" type="button">Item</button>
+  <button class="uk-button uk-button-primary" type="button">Item</button>
+</div>
+
+<ul class="uk-switcher mt" style="--mt: 4">
+  <li>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </li>
+  <li>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat.
+  </li>
+  <li>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    eu fugiat nulla pariatur, sed do eiusmod.
+  </li>
+</ul>
+```
+
+<span class="uk-label uk-label-primary">Note</span> Since this example does not
+wrap the buttons into list items the clickable elements which trigger the
+content switching has to be changed by using the `toggle` option.
+
+## Switcher and nav
+
+To apply the switcher to the [Nav component](/docs/latest/kit/nav), add the `data-uk-switcher` attribute to the nav `<ul>` element.
+
+```html
+<div class="flex">
+  <div class="w-1/4">
+    <ul class="uk-nav uk-nav-default" data-uk-switcher="connect: #my-id">
+      ...
+    </ul>
+  </div>
+  <div class="flex-1">
+    <ul id="my-id" class="uk-switcher">
+      ...
+    </ul>
+  </div>
+</div>
+```
+
+```html
+<div class="display-flex">
+  <div class="w" style="--w: 40">
+    <ul
+      class="uk-nav uk-nav-default"
+      data-uk-switcher="connect: #component-nav; animation: uk-animation-fade"
+    >
+      <li><a href="#">Active</a></li>
+      <li><a href="#">Item</a></li>
+      <li><a href="#">Item</a></li>
+    </ul>
+  </div>
+  <div class="flex-1">
+    <ul id="component-nav" class="uk-switcher">
+      <li>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </li>
+      <li>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat.
+      </li>
+      <li>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur, sed do eiusmod.
+      </li>
+    </ul>
+  </div>
+</div>
+```
+
+## Component options
+
+Any of these options can be applied to the component attribute. Separate multiple options with a semicolon. [Learn more](/docs/latest/kit/javascript#component-configuration)
+
+| Option        | Value        | Default              | Description                                                                                              |
+| ------------- | ------------ | -------------------- | -------------------------------------------------------------------------------------------------------- |
+| `connect`     | CSS selector | `~.uk-switcher`      | Related items container. By default succeeding elements with class 'uk-switcher'.                        |
+| `toggle `     | CSS selector | `> * > :first-child` | Select the clickable elements which trigger content switching.                                           |
+| `itemNav `    | CSS selector | `false`              | Related nav container. By default, nav items are found in related items container only.                  |
+| `active `     | Number       | `0`                  | Active index on init. Providing a negative number indicates a position starting from the end of the set. |
+| `animation`   | String       | `false`              | Space-separated names of [animations](/docs/latest/kit/animation). Comma-separated for animation out.               |
+| `duration`    | Number       | `200`                | The animation duration.                                                                                  |
+| `swiping`     | Boolean      | `true`               | Use swiping.                                                                                             |
+| `followFocus` | Boolean      | `false`              | Selection follows focus automatically.                                                                   |
+
+`connect` is the _Primary_ option and its key may be omitted, if it's the only option in the attribute value.
+
+```html
+<span data-uk-switcher=".switcher-container"></span>
+```
+
+## JavaScript
+
+Learn more about [JavaScript components](/docs/latest/kit/javascript#programmatic-use).
+
+### Initialization
+
+```javascript
+UIkit.switcher(element, options);
+```
+
+### Events
+
+The following events will be triggered on the connected items of the elements with this component attached:
+
+| Name         | Description                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------------------- |
+| `beforeshow` | Fires before an item is shown. Can prevent showing by calling `preventDefault()` on the event. |
+| `show`       | Fires after an item is shown.                                                                  |
+| `shown`      | Fires after the item's show animation has completed.                                           |
+| `beforehide` | Fires before an item is hidden. Can prevent hiding by calling `preventDefault()` on the event. |
+| `hide`       | Fires after an item's hide animation has started.                                              |
+| `hidden`     | Fires after an item is hidden.                                                                 |
+
+### Methods
+
+The following methods are available for the component:
+
+#### Show
+
+```javascript
+UIkit.switcher(element).show(index);
+```
+
+Shows the Switcher item with given index.
+
+| Name    | Type                 | Default | Description                           |
+| ------- | -------------------- | ------- | ------------------------------------- |
+| `index` | String, Number, Node | 0       | Switcher item to show. 0 based index. |
+
+## Accessibility
+
+The Switcher component adheres to the [Tab WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/) and automatically sets the appropriate WAI-ARIA roles, states and properties.
+
+- The _toggle navigation_ has the `tablist` role, and if it is a [Nav component](/docs/latest/kit/nav), the `aria-orientation` state set to `vertical`.
+- The _toggle navigation items_ have the `presentation` role.
+- The _toggle navigation links_ have an ID, the `tab` role, the `aria-selected` state and the `aria-controls` property set to the ID of the respective content item.
+- The _content list_ has the `presentation` role.
+- The _content list items_ have the ID, the `tabpanel` role and the `aria-labelledby` property set to the ID of the respective toggle item.
+
+### Keyboard interaction
+
+The toggle navigation can be accessed through keyboard using the following keys.
+
+- The <kbd>tab</kbd> or <kbd>shift+tab</kbd> keys place focus on the active toggle in the toggle navigation. If the focus already is on the active toggle, the focus will move to the next element outside the toggle navigation.
+- The <kbd>left/right arrow</kbd> or <kbd>up/down arrow</kbd> keys, depending on the orientation, navigate through the toggles. If the focus is on the last toggle, it moves to the first toggle.
+- The <kbd>enter</kbd> or <kbd>space</kbd> keys activate the corresponding content item of the focused toggle.
+- The <kbd>home</kbd> or <kbd>end</kbd> keys move the focus to the first or last toggle.
+
+By default, the Switcher component has the manual activation behavior. This means the corresponding content items will only be activated using the <kbd>enter</kbd> or <kbd>space</kbd>keys. To switch to automatic activation, set `follow-focus` to `true`. When navigating through toggle items, the corresponding content item will get active automatically.

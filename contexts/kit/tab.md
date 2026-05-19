@@ -1,0 +1,272 @@
+# Tab
+
+## Usage
+
+The Tab component consists of clickable tabs, that are aligned side by side in a list. Its JavaScript functionality extends the [Switcher component](/docs/latest/kit/switcher) and is necessary to dynamically transition through different contents using the tabbed navigation.
+
+| Class/Attribute | Description                                                                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.uk-tab`       | Add this attribute to a `<ul>` element to define the Tab component. Use `<a>` elements as tab items within the list.                                           |
+| `.uk-active `   | Add this class to a list item to apply an active state.                                                                                                        |
+| `.uk-disabled ` | Add this class to a list item to apply a disabled state. Also remove the `href` attribute from the anchor to make it inaccessible through keyboard navigation. |
+
+```html
+<ul data-uk-tab>
+  <li class="uk-active"><a class="px-4 pb-3 pt-2" href=""></a></li>
+  <li><a class="px-4 pb-3 pt-2" href=""></a></li>
+  <li class="uk-disabled"><a class="px-4 pb-3 pt-2">Disabled</a></li>
+</ul>
+```
+
+```html
+<ul class="uk-tab" data-uk-tab>
+  <li class="uk-active"><a href="#">Left</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li class="uk-disabled"><a>Disabled</a></li>
+</ul>
+```
+
+## Alternative layout
+
+Use the `.uk-tab-alt` class for the alternative layout.
+
+```html
+<ul class="uk-tab-alt">
+  <li class="uk-active"><a href="#">Account</a></li>
+  <li><a href="#">Password</a></li>
+</ul>
+```
+
+## Bottom modifier
+
+Add the `.uk-tab-bottom` class to flip tab items to the bottom.
+
+```html
+<ul class="uk-tab-bottom" data-uk-tab>
+  ...
+</ul>
+```
+
+```html
+<ul class="uk-tab-bottom" data-uk-tab>
+  <li class="uk-active"><a href="#">Left</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+```
+
+## Left/Right modifiers
+
+Add the `.uk-tab-left` or `.uk-tab-right` class to align tabs vertically to the left or right side. To save space, the alignment automatically switches back to horizontal when the viewport width goes below 960px.
+
+When using the vertical alignment, you will usually create a grid to apply the layout as seen in the [Switcher example](/docs/latest/kit/switcher#vertical-tabs).
+
+```html
+<ul class="uk-tab-left" data-uk-tab>
+  ...
+</ul>
+
+<ul class="uk-tab-right" data-uk-tab>
+  ...
+</ul>
+```
+
+```html
+<div class="display-grid grid-cols gap" style="--grid-cols: 2; --gap: 4">
+  <div>
+    <ul class="uk-tab uk-tab-left flex-col">
+      <li class="uk-active"><a class="py-2" href="#">Left</a></li>
+      <li><a class="py" style="--py: 2" href="#">Item</a></li>
+      <li><a class="py" style="--py: 2" href="#">Item</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <ul class="uk-tab uk-tab-right">
+      <li class="uk-active">
+        <a class="px py" style="--px: 4; --py: 2" href="#">Right</a>
+      </li>
+      <li><a class="px py" style="--px: 4; --py: 2" href="#">Item</a></li>
+      <li><a class="px py" style="--px: 4; --py: 2" href="#">Item</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+### Responsive
+
+To change the default breakpoint between the vertical and horizontal alignment, just apply the `media` option to the attribute with the appropriate viewport width. Add a number in pixel, for example `media: 640`, or a breakpoint, for example `media: @m`.
+
+```html
+<ul class="uk-tab-left" data-uk-tab="media: @s">
+  ...
+</ul>
+```
+
+## Alignment
+
+You can combine tabs with the utility classes from Tailwind CSS to modify the alignment of the navigations.
+
+```html
+<ul class="justify-end" data-uk-tab>
+  ...
+</ul>
+```
+
+```html
+<div>
+  <ul class="uk-tab" data-uk-tab>
+    <li class="uk-active"><a href="#">Center</a></li>
+    <li><a href="#">Item</a></li>
+    <li><a href="#">Item</a></li>
+  </ul>
+</div>
+
+<div class="mt" style="--mt: 4">
+  <ul class="justify-center" data-uk-tab>
+    <li class="uk-active"><a href="#">Center</a></li>
+    <li><a href="#">Item</a></li>
+    <li><a href="#">Item</a></li>
+  </ul>
+</div>
+
+<div class="mt" style="--mt: 4">
+  <ul class="justify-end" data-uk-tab>
+    <li class="uk-active"><a href="#">Right</a></li>
+    <li><a href="#">Item</a></li>
+    <li><a href="#">Item</a></li>
+  </ul>
+</div>
+
+<div class="mt" style="--mt: 4">
+  <ul class="justify-between" data-uk-tab>
+    <li class="uk-active"><a href="#">Justify</a></li>
+    <li><a href="#">Item</a></li>
+    <li><a href="#">Item</a></li>
+    <li><a href="#">Item</a></li>
+  </ul>
+</div>
+```
+
+## Tabs and Dropdown
+
+Tabs can be used to trigger a dropdown menu from the [Dropdown component](/docs/latest/kit/dropdown).
+
+```html
+<ul data-uk-tab>
+  <li>
+    <!-- This is the menu item toggling the dropdown -->
+    <a class="px-4 pb-3 pt-2" href=""></a>
+
+    <!-- This is the dropdown -->
+    <div data-uk-dropdown="mode: click">
+      <ul class="uk-dropdown-nav uk-nav">
+        ...
+      </ul>
+    </div>
+  </li>
+</ul>
+```
+
+```html
+<ul class="uk-tab" data-uk-tab>
+  <li class="uk-active"><a href="#">Active</a></li>
+  <li><a href="#">Item</a></li>
+  <li>
+    <a href>
+      <span class="mr" style="--mr: 2">More</span>
+      <uk-icon icon="chevron-down"></uk-icon>
+    </a>
+    <div
+      class="uk-drop min-w"
+      style="--min-w: 52"
+      data-uk-dropdown="mode: click"
+    >
+      <ul class="uk-nav uk-dropdown-nav">
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li><a href="#">Item</a></li>
+        <li class="uk-nav-header">Header</li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a href="#">Item</a></li>
+      </ul>
+    </div>
+  </li>
+</ul>
+```
+
+## Component options
+
+Any of these options can be applied to the component attribute. Separate multiple options with a semicolon. [Learn more](/docs/latest/kit/javascript#component-configuration)
+
+| Option      | Value          | Default | Description                                                                                                                                                  |
+| ----------- | -------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connect`   | CSS selector   | `false` | Related item's container. By default, this is the next element with the 'uk-switcher' class.                                                                 |
+| `toggle `   | CSS selector   | `> *`   | The toggle selector, which triggers content switching on click.                                                                                              |
+| `active `   | Number         | `0`     | Active index on init. Providing a negative number indicates a position starting from the end of the set.                                                     |
+| `animation` | String         | `false` | Space-separated names of [animations](/docs/latest/kit/animation). Comma-separated for animation out.                                                                   |
+| `duration`  | Number         | `200`   | The animation duration.                                                                                                                                      |
+| `swiping`   | Boolean        | `true`  | Use swiping.                                                                                                                                                 |
+| `media`     | Number, String | `960`   | When to switch to horizontal mode - a width as integer (e.g. 640) or a breakpoint (e.g. @s, @m, @l, @xl) or any valid media query (e.g. (min-width: 900px)). |
+
+## JavaScript
+
+Learn more about [JavaScript components](/docs/latest/kit/javascript#programmatic-use).
+
+### Initialization
+
+```javascript
+UIkit.tab(element, options);
+```
+
+### Events
+
+The following events will be triggered on the connected items of the elements with this component attached:
+
+| Name         | Description                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------------------- |
+| `beforeshow` | Fires before an item is shown. Can prevent showing by calling `preventDefault()` on the event. |
+| `show`       | Fires after an item is shown.                                                                  |
+| `shown`      | Fires after the item's show animation has completed.                                           |
+| `beforehide` | Fires before an item is hidden. Can prevent hiding by calling `preventDefault()` on the event. |
+| `hide`       | Fires after an item's hide animation has started.                                              |
+| `hidden`     | Fires after an item is hidden.                                                                 |
+
+### Methods
+
+The following methods are available for the component:
+
+#### Show
+
+```javascript
+UIkit.tab(element).show(index);
+```
+
+Shows the Tab item with given index.
+
+| Name    | Type                 | Default | Description                      |
+| ------- | -------------------- | ------- | -------------------------------- |
+| `index` | String, Number, Node | 0       | Tab item to show. 0 based index. |
+
+## Accessibility
+
+The Tab component adheres to the [Tab WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/) and automatically sets the appropriate WAI-ARIA roles, states and properties.
+
+- The _tab navigation_ has the `tablist` role, and if it is a [Nav component](/docs/latest/kit/nav), the `aria-orientation` state set to `vertical`.
+- The _tab navigation items_ have the `presentation` role.
+- The _tab navigation links_ have an ID, the `tab` role, the `aria-selected` state and the `aria-controls` property set to the ID of the respective content item.
+- The _content list_ has the `presentation` role.
+- The _content list items_ have the ID, the `tabpanel` role and the `aria-labelledby` property set to the ID of the respective tab.
+
+### Keyboard interaction
+
+The tab navigation can be accessed through keyboard using the following keys.
+
+- The <kbd>tab</kbd> or <kbd>shift+tab</kbd> keys place focus on the active tab in the tab navigation. If the focus already is on the active tab, the focus will move to the next element outside the tab navigation.
+- The <kbd>left/right arrow</kbd> or <kbd>up/down arrow</kbd> keys, depending on the orientation, navigate through the tabs. If the focus is on the last tab, it moves to the first tab.
+- The <kbd>enter</kbd> or <kbd>space</kbd> keys activate the corresponding content item of the focused tab.
+- The <kbd>home</kbd> or <kbd>end</kbd> keys move the focus to the first or last tab.
+
+By default, the Switcher component has the manual activation behavior. This means the corresponding content items will only be activated using the <kbd>enter</kbd> or <kbd>space</kbd>keys. To switch to automatic activation, set `follow-focus` to `true`. When navigating through tab items, the corresponding content item will get active automatically.
