@@ -191,7 +191,7 @@
   }
   .uk-accordion {
     --uk-accordion-border: var(--uk-border);
-    --uk-accordion-border-o: 10%;
+    --uk-accordion-border-o: var(--uk-border-o);
     --uk-accordion-border-computed: color-mix(
       in srgb,
       var(--uk-accordion-border) var(--uk-accordion-border-o),
@@ -235,7 +235,7 @@
     --uk-alert-color: var(--uk-muted-f);
     --uk-alert-color-o: 100%;
     --uk-alert-border: var(--uk-border);
-    --uk-alert-border-o: 10%;
+    --uk-alert-border-o: var(--uk-border-o);
     --uk-alert-bg-computed: color-mix(
       in srgb,
       var(--uk-alert-bg) var(--uk-alert-bg-o, 100%),
@@ -422,7 +422,7 @@
     --uk-badge-color: var(--uk-bg-f);
     --uk-badge-color-o: 100%;
     --uk-badge-border: var(--uk-border);
-    --uk-badge-border-o: 10%;
+    --uk-badge-border-o: var(--uk-border-o);
     --uk-badge-bg-computed: color-mix(
       in srgb,
       var(--uk-badge-bg) var(--uk-badge-bg-o, 100%),
@@ -540,7 +540,7 @@
     --uk-button-bg-o: 100%;
     --uk-button-color: var(--uk-bg-f);
     --uk-button-border: var(--uk-border);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-radius: var(--uk-global-radius);
     --uk-button-font-weight: 500;
     --uk-button-shadow: var(--uk-global-shadow-small);
@@ -623,7 +623,7 @@
     --uk-button-bg-o: 100%;
     --uk-button-color: var(--uk-bg-f);
     --uk-button-border: var(--uk-border);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-accent);
     --uk-button-hover-bg-o: var(--uk-accent-o);
     --uk-button-hover-color: var(--uk-accent-f);
@@ -693,7 +693,7 @@
     --uk-button-bg-o: 0%;
     --uk-button-color: var(--uk-primary);
     --uk-button-border: var(--uk-primary);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-primary);
     --uk-button-hover-bg-o: 8%;
     --uk-button-hover-color: var(--uk-primary);
@@ -703,7 +703,7 @@
     --uk-button-bg-o: 0%;
     --uk-button-color: var(--uk-primary);
     --uk-button-border: var(--uk-primary);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-primary);
     --uk-button-hover-bg-o: 8%;
     --uk-button-hover-color: var(--uk-primary);
@@ -713,7 +713,7 @@
     --uk-button-bg-o: 0%;
     --uk-button-color: var(--uk-secondary-f);
     --uk-button-border: var(--uk-secondary);
-    --uk-button-border-o: 10%;
+    --uk-button-border-o: var(--uk-border-o);
     --uk-button-hover-bg: var(--uk-secondary);
     --uk-button-hover-bg-o: 8%;
     --uk-button-hover-color: var(--uk-secondary-f);
@@ -875,7 +875,7 @@
     --uk-card-shadow: var(--uk-global-shadow);
     --uk-card-border-width: 1px;
     --uk-card-border-color: var(--uk-border);
-    --uk-card-border-color-o: 10%;
+    --uk-card-border-color-o: var(--uk-border-o);
     --uk-card-bg: var(--uk-card);
     --uk-card-bg-o: 100%;
     --uk-card-color: var(--uk-card-f);
@@ -1058,7 +1058,7 @@
     --uk-comment-nested-margin-top: 1.5rem;
     --uk-comment-nested-border-width: 1px;
     --uk-comment-nested-border-color: var(--uk-border);
-    --uk-comment-nested-border-color-o: 10%;
+    --uk-comment-nested-border-color-o: var(--uk-border-o);
     --uk-comment-nested-border-color-computed: color-mix(
       in srgb,
       var(--uk-comment-nested-border-color)
@@ -1326,7 +1326,7 @@
   .uk-cal-divider table tbody tr {
     --uk-cal-divider-table-row-border-width: 1px;
     --uk-cal-divider-table-row-border-color: var(--uk-border);
-    --uk-cal-divider-table-row-border-color-o: 10%;
+    --uk-cal-divider-table-row-border-color-o: var(--uk-border-o);
     --uk-cal-divider-table-row-border-color-computed: color-mix(
       in srgb,
       var(--uk-cal-divider-table-row-border-color)
@@ -1413,7 +1413,7 @@
   }
   .uk-hr {
     --uk-hr-color: var(--uk-border);
-    --uk-hr-color-o: 10%;
+    --uk-hr-color-o: var(--uk-border-o);
     --uk-hr-color-computed: color-mix(
       in srgb,
       var(--uk-hr-color) var(--uk-hr-color-o),
@@ -1424,7 +1424,7 @@
   .uk-divider-small {
     --uk-divider-small-width: 100px;
     --uk-divider-small-border-color: var(--uk-border);
-    --uk-divider-small-border-color-o: 10%;
+    --uk-divider-small-border-color-o: var(--uk-border-o);
     --uk-divider-small-border-color-computed: color-mix(
       in srgb,
       var(--uk-divider-small-border-color)
@@ -1444,7 +1444,7 @@
   .uk-divider-vertical {
     --uk-divider-vertical-height: 100px;
     --uk-divider-vertical-border-color: var(--uk-border);
-    --uk-divider-vertical-border-color-o: 10%;
+    --uk-divider-vertical-border-color-o: var(--uk-border-o);
     --uk-divider-vertical-border-color-computed: color-mix(
       in srgb,
       var(--uk-divider-vertical-border-color)
@@ -1613,7 +1613,7 @@
     --uk-dropdown-shadow: var(--uk-global-shadow-small);
     --uk-dropdown-border-width: 1px;
     --uk-dropdown-border-color: var(--uk-border);
-    --uk-dropdown-border-color-o: 10%;
+    --uk-dropdown-border-color-o: var(--uk-border-o);
     --uk-dropdown-bg: var(--uk-drop);
     --uk-dropdown-bg-o: 100%;
     --uk-dropdown-color: var(--uk-drop-f);
@@ -1742,7 +1742,7 @@
     --uk-form-input-padding: var(--uk-form-input-padding-block)
       var(--uk-form-input-padding-inline);
     --uk-form-input-border-color: var(--uk-input);
-    --uk-form-input-border-color-o: 10%;
+    --uk-form-input-border-color-o: var(--uk-input-o);
     --uk-form-input-bg: transparent;
     --uk-form-input-color: var(--uk-bg-f);
     --uk-form-input-color-o: 100%;
@@ -1848,7 +1848,7 @@
   .uk-radio,
   .uk-checkbox {
     --uk-form-radio-border-color: var(--uk-input);
-    --uk-form-radio-border-color-o: 10%;
+    --uk-form-radio-border-color-o: var(--uk-input-o);
     --uk-form-radio-border-color-computed: color-mix(
       in srgb,
       var(--uk-form-radio-border-color) var(--uk-form-radio-border-color-o),
@@ -1981,7 +1981,7 @@
     --uk-toggle-switch-height: 1.25rem;
     --uk-toggle-switch-width: 2.25rem;
     --uk-toggle-switch-bg: var(--uk-input);
-    --uk-toggle-switch-bg-o: 10%;
+    --uk-toggle-switch-bg-o: var(--uk-input-o);
     --uk-toggle-switch-knob-bg: var(--uk-bg);
     --uk-toggle-switch-knob-bg-o: 100%;
     --uk-toggle-switch-bg-computed: color-mix(
@@ -2190,7 +2190,7 @@
     --uk-label-color: var(--uk-bg-f);
     --uk-label-color-o: 100%;
     --uk-label-border: var(--uk-border);
-    --uk-label-border-o: 10%;
+    --uk-label-border-o: var(--uk-border-o);
     --uk-label-bg-computed: color-mix(
       in srgb,
       var(--uk-label-bg) var(--uk-label-bg-o, 100%),
@@ -2452,7 +2452,7 @@
     --uk-list-divider-item-padding-top: 0.5rem;
     --uk-list-divider-border-width: 1px;
     --uk-list-divider-border-color: var(--uk-border);
-    --uk-list-divider-border-color-o: 10%;
+    --uk-list-divider-border-color-o: var(--uk-border-o);
     --uk-list-divider-border-color-computed: color-mix(
       in srgb,
       var(--uk-list-divider-border-color) var(--uk-list-divider-border-color-o),
@@ -2470,7 +2470,7 @@
   .uk-list-striped > *:nth-of-type(odd) {
     --uk-list-striped-border-width: 1px;
     --uk-list-striped-border-color: var(--uk-border);
-    --uk-list-striped-border-color-o: 10%;
+    --uk-list-striped-border-color-o: var(--uk-border-o);
     --uk-list-striped-border-color-computed: color-mix(
       in srgb,
       var(--uk-list-striped-border-color) var(--uk-list-striped-border-color-o),
@@ -2541,7 +2541,7 @@
     --uk-modal-dialog-transition: 0.15s ease-out;
     --uk-modal-dialog-border-width: 1px;
     --uk-modal-dialog-border-color: var(--uk-border);
-    --uk-modal-dialog-border-color-o: 10%;
+    --uk-modal-dialog-border-color-o: var(--uk-border-o);
     --uk-modal-dialog-border-color-computed: color-mix(
       in srgb,
       var(--uk-modal-dialog-border-color) var(--uk-modal-dialog-border-color-o),
@@ -2676,7 +2676,7 @@
   }
   .uk-nav-divider {
     --uk-nav-divider-color: var(--uk-border);
-    --uk-nav-divider-color-o: 10%;
+    --uk-nav-divider-color-o: var(--uk-border-o);
     --uk-nav-divider-color-computed: color-mix(
       in srgb,
       var(--uk-nav-divider-color) var(--uk-nav-divider-color-o),
@@ -2697,7 +2697,7 @@
   .uk-nav-sub,
   .uk-nav-sub ul {
     --uk-nav-sub-border: var(--uk-border);
-    --uk-nav-sub-border-o: 10%;
+    --uk-nav-sub-border-o: var(--uk-border-o);
     --uk-nav-sub-border-computed: color-mix(
       in srgb,
       var(--uk-nav-sub-border) var(--uk-nav-sub-border-o),
@@ -2812,7 +2812,7 @@
     --uk-dropdown-nav-divider-margin: 0;
     --uk-dropdown-nav-divider-border-width: 1px;
     --uk-dropdown-nav-divider-border-color: var(--uk-border);
-    --uk-dropdown-nav-divider-border-color-o: 10%;
+    --uk-dropdown-nav-divider-border-color-o: var(--uk-border-o);
     --uk-nav-item-color: var(--uk-bg-f);
     --uk-dropdown-nav-item-hover-bg-computed: color-mix(
       in srgb,
@@ -2959,7 +2959,7 @@
     --uk-notification-shadow: var(--uk-global-shadow-small);
     --uk-notification-border-width: 1px;
     --uk-notification-border-color: var(--uk-border);
-    --uk-notification-border-color-o: 10%;
+    --uk-notification-border-color-o: var(--uk-border-o);
     --uk-notification-bg: var(--uk-bg);
     --uk-notification-bg-o: 100%;
     --uk-notification-color: var(--uk-bg-f);
@@ -3308,7 +3308,7 @@
   }
   .uk-pagination-default > * > * {
     --uk-pagination-item-border-color: var(--uk-border);
-    --uk-pagination-item-border-color-o: 10%;
+    --uk-pagination-item-border-color-o: var(--uk-border-o);
     --uk-pagination-item-bg: var(--uk-bg);
     --uk-pagination-item-bg-o: 100%;
     --uk-pagination-item-color: var(--uk-bg-f);
@@ -4209,7 +4209,7 @@
   }
   .uk-input-pin input {
     --uk-input-pin-input-border-color: var(--uk-input);
-    --uk-input-pin-input-border-color-o: 10%;
+    --uk-input-pin-input-border-color-o: var(--uk-input-o);
     --uk-input-pin-input-border-color-computed: color-mix(
       in srgb,
       var(--uk-input-pin-input-border-color)
@@ -4364,7 +4364,7 @@
     --uk-input-tag-radius: var(--uk-form-input-radius);
     --uk-input-tag-border-width: 1px;
     --uk-input-tag-border-color: var(--uk-input);
-    --uk-input-tag-border-color-o: 10%;
+    --uk-input-tag-border-color-o: var(--uk-input-o);
     --uk-input-tag-focus-ring-color: var(--uk-focus);
     --uk-input-tag-focus-ring-color-o: 100%;
     --uk-input-tag-border-color-computed: color-mix(
@@ -4534,7 +4534,7 @@
   }
   .uk-keyval {
     --uk-keyval-border-color: var(--uk-border);
-    --uk-keyval-border-color-o: 10%;
+    --uk-keyval-border-color-o: var(--uk-input-o);
     --uk-keyval-border-color-computed: color-mix(
       in srgb,
       var(--uk-keyval-border-color) var(--uk-keyval-border-color-o),
@@ -5201,7 +5201,7 @@
     --uk-slidenav-shadow: var(--uk-global-shadow-small);
     --uk-slidenav-border-width: 1px;
     --uk-slidenav-border-color: var(--uk-border);
-    --uk-slidenav-border-color-o: 10%;
+    --uk-slidenav-border-color-o: var(--uk-border-o);
     --uk-slidenav-bg: var(--uk-bg);
     --uk-slidenav-bg-o: 100%;
     --uk-slidenav-hover-bg: var(--uk-bg);
@@ -5342,7 +5342,7 @@
     --uk-placeholder-margin-bottom: 1.25rem;
     --uk-placeholder-padding: 2rem;
     --uk-placeholder-border-color: var(--uk-border);
-    --uk-placeholder-border-color-o: 10%;
+    --uk-placeholder-border-color-o: var(--uk-border-o);
     --uk-placeholder-border-color-computed: color-mix(
       in srgb,
       var(--uk-placeholder-border-color) var(--uk-placeholder-border-color-o),
