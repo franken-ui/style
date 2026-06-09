@@ -13,7 +13,7 @@
 
 For better context, please download the following or ask the user to manually upload it:
 
-* [https://franken.style/contexts/kit-usage/modal.md](https://www.google.com/search?q=https://franken.style/contexts/kit-usage/modal.md)
+* https://franken.style/contexts/kit-usage/modal.md
 
 ## Usage & Configuration
 
