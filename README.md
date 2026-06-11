@@ -1,16 +1,3 @@
-[![ Frankenstyle is the spiritual successor to Franken UI.](https://franken.style/images/frankenstyle-banner.png)](https://franken.style)
+# Notice
 
-## Documentation
-
-For full documentation, visit [https://franken.style](https://franken.style).
-
-## Support
-
-If you’d like to support the work, you can do so here:
-
-* **GitHub Sponsors:** [https://github.com/sponsors/sveltecult](https://github.com/sponsors/sveltecult)
-* **Ko-fi:** [https://ko-fi.com/sveltecult](https://ko-fi.com/sveltecult)
-
-## License
-
-Licensed under the [MIT License](https://codeberg.org/FRNKN/style/src/branch/master/LICENSE.md).
+Franken is now 0build. Go to [https://0build.dev](https://0build.dev) to learn more.
